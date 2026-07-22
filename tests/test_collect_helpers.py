@@ -87,5 +87,36 @@ class TestFetchJson(unittest.TestCase):
             self.assertEqual(json.loads(path.read_text(encoding="utf-8"))["fresh"], 1)
 
 
+class TestMergeSourceStatuses(unittest.TestCase):
+    def test_fresh_overrides_prior(self):
+        prior = [{"name": "opendoors", "status": "ok", "fetched_at": "old"}]
+        fresh = [{"name": "opendoors", "status": "partial", "fetched_at": "new"}]
+        merged = cd.merge_source_statuses(fresh, prior)
+        self.assertEqual(merged, [{"name": "opendoors", "status": "partial", "fetched_at": "new"}])
+
+    def test_preserves_missing_status_files(self):
+        prior = [
+            {"name": "opendoors", "status": "partial", "fetched_at": "nightly"},
+            {"name": "freedomhouse", "status": "ok", "fetched_at": "nightly"},
+            {"name": "morningstarnews", "status": "ok", "fetched_at": "old"},
+        ]
+        fresh = [
+            {"name": "natural_earth_110m", "status": "ok", "fetched_at": "local"},
+            {"name": "morningstarnews", "status": "ok", "fetched_at": "local"},
+        ]
+        merged = cd.merge_source_statuses(fresh, prior)
+        by_name = {s["name"]: s for s in merged}
+        self.assertEqual(set(by_name), {"natural_earth_110m", "morningstarnews", "opendoors", "freedomhouse"})
+        self.assertEqual(by_name["opendoors"]["fetched_at"], "nightly")
+        self.assertEqual(by_name["morningstarnews"]["fetched_at"], "local")
+
+    def test_ignores_malformed_entries(self):
+        merged = cd.merge_source_statuses(
+            [{"name": "ok", "status": "ok"}, "bad", {"status": "ok"}],
+            [None, {"name": "prior", "status": "ok"}],
+        )
+        self.assertEqual([s["name"] for s in merged], ["ok", "prior"])
+
+
 if __name__ == "__main__":
     unittest.main()

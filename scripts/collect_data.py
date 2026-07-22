@@ -40,6 +40,22 @@ def backup(path: Path):
     return dest
 
 
+def merge_source_statuses(fresh: list, prior: list) -> list:
+    """Prefer freshly loaded statuses; keep prior entries when a status file is missing.
+
+    Local collect/generate often runs without data/fetched/*_status.json (gitignored),
+    which would otherwise wipe footer chips back to \"skipped\".
+    """
+    by_name: dict[str, dict] = {}
+    for s in prior or []:
+        if isinstance(s, dict) and s.get("name"):
+            by_name[s["name"]] = s
+    for s in fresh or []:
+        if isinstance(s, dict) and s.get("name"):
+            by_name[s["name"]] = s
+    return sorted(by_name.values(), key=lambda s: s["name"])
+
+
 
 def fetch_json(url: str, path: Path, name: str, skip: bool = False):
     from fetch_common import USER_AGENT, fetch_json_to_path
@@ -1791,7 +1807,19 @@ def main():
         }
 
 
-    source_statuses = [natural_earth_status, _wiki_aggregate_from_fetched()] + load_fetch_statuses()
+    fresh_statuses = [natural_earth_status, _wiki_aggregate_from_fetched()] + load_fetch_statuses()
+    prior_statuses = []
+    countries_yml = DATA / "countries.yml"
+    if countries_yml.exists():
+        try:
+            previous = yaml.safe_load(countries_yml.read_text(encoding="utf-8")) or {}
+            prior_statuses = (previous.get("fetched") or {}).get("source_statuses") or []
+        except Exception as e:
+            print(f"warning: could not read prior source_statuses: {type(e).__name__}: {e}")
+    source_statuses = merge_source_statuses(fresh_statuses, prior_statuses)
+    preserved = len(source_statuses) - len(fresh_statuses)
+    if preserved > 0:
+        print(f"preserved {preserved} prior source status(es) missing from data/fetched/")
 
     countries_data = {
         "countries": all_countries,
