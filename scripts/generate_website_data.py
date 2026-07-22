@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import yaml
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 COUNTRIES = ROOT / "countries"
@@ -8,11 +9,13 @@ ASSETS = ROOT / "assets" / "data"
 DATA.mkdir(parents=True, exist_ok=True)
 COUNTRIES.mkdir(parents=True, exist_ok=True)
 ASSETS.mkdir(parents=True, exist_ok=True)
+
 with (DATA / "countries.yml").open("r", encoding="utf-8") as f:
     data = yaml.safe_load(f)
 countries = data["countries"]
 
-PAGE = """<!DOCTYPE html>
+PAGE = """\
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -41,6 +44,8 @@ li + li {{ margin-top:6px; }}
 a {{ color:#2563eb; word-break:break-word; }}
 .status-pill {{ display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; font-size:12px; border:1px solid #e5e7eb; background:#f8fafc; }}
 .status-pill .pct {{ width:8px; height:8px; border-radius:999px; display:inline-block; }}
+.section-sources {{ margin-top:8px; font-size:13px; color:#475569; }}
+.section-sources strong {{ color:#0f172a; }}
 footer {{ margin-top:24px; padding:14px 16px; border-top:1px solid #e5e7eb; font-size:13px; color:#64748b; background:#fff; }}
 footer a {{ color:#334155; text-decoration: underline; }}
 </style>
@@ -58,7 +63,7 @@ footer a {{ color:#334155; text-decoration: underline; }}
   <div class="card">
     <div class="top">
       <h1>{title}</h1>
-      <a href="/">Back to map</a>
+      <a href="/persecutio/index.html">Back to map</a>
     </div>
     <div class="status-pill">
       <span class="pct" style="background:{status_color}"></span>
@@ -67,15 +72,17 @@ footer a {{ color:#334155; text-decoration: underline; }}
     <section>
       <h2>Historical Background</h2>
       <p>{historical}</p>
+      <div class="section-sources"><strong>Sources:</strong> {historical_sources}</div>
     </section>
     <section>
       <h2>Modern-Day Situation</h2>
       <p>{modern}</p>
+      <div class="section-sources"><strong>Sources:</strong> {modern_sources}</div>
     </section>
     <section>
-      <h2>Sources</h2>
+      <h2>All References</h2>
       <ul>
-        {sources}
+        {all_sources}
       </ul>
     </section>
   </div>
@@ -83,7 +90,7 @@ footer a {{ color:#334155; text-decoration: underline; }}
 <footer>
   <div class="wrap" style="padding:14px 16px;">
     <a href="/persecutio/index.html">Map</a> · <a href="/persecutio/about.html">About</a>
-    <div style="margin-top:6px">Data updated automatically via GitHub Actions.</div>
+    <div style="margin-top:6px">Data updated automatically via GitHub Actions. Last generated: {generated_at}</div>
   </div>
 </footer>
 </body>
@@ -95,7 +102,7 @@ COLORS = {
     "warning": "#f97316",
     "restricted": "#facc15",
     "open": "#3b82f6",
-    "persecution": "#ef4444"
+    "persecution": "#ef4444",
 }
 
 LABELS = {
@@ -106,25 +113,61 @@ LABELS = {
     "persecution": "Active Persecution",
 }
 
+generated_at = __import__('datetime').datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')
+
+
+def render_sources(source_ids: list[str], all_sources_lookup: dict) -> str:
+    items = []
+    for sid in source_ids:
+        s = all_sources_lookup.get(sid)
+        if not s:
+            continue
+        label = s.get("title", sid)
+        url = s.get("url", "#")
+        date = s.get("date", "")
+        prefix = f"({date}) " if date else ""
+        items.append(f'<a href="{url}">{prefix}{label}</a>')
+    return "; ".join(items) if items else "Sources will be listed here."
+
+
+all_sources_lookup = {}
+with (DATA / "sources.yml").open("r", encoding="utf-8") as f:
+    loaded = yaml.safe_load(f) or {}
+all_sources_lookup = loaded.get("sources", {})
+
 for c in countries:
     status = c.get("status", "")
     color = COLORS.get(status, "#94a3b8")
     label = LABELS.get(status, status.title())
-    sources_html = "".join(
-        f"""<li><a href="{s.get('url','#')}">{s.get('title','')}</a>{" ("+s.get('date','')+")" if s.get('date') else ""}</li>"""
-        for s in c.get("sources", [])
-    ) or '<li>Sources will be listed here.</li>'
+    source_ids = c.get("source_ids", {})
+    hist_ids = source_ids.get("historical", [])
+    mod_ids = source_ids.get("modern", [])
+    if not hist_ids:
+        hist_ids = list(all_sources_lookup.keys())
+    if not mod_ids:
+        mod_ids = list(all_sources_lookup.keys())
+    historical_sources = render_sources(hist_ids, all_sources_lookup)
+    modern_sources = render_sources(mod_ids, all_sources_lookup)
+    all_sources_items = [
+        f"""<li><a href="{all_sources_lookup[s].get('url','#')}">{all_sources_lookup[s].get('title', s)}</a>{" ("+all_sources_lookup[s].get('date','')+")" if all_sources_lookup[s].get('date') else ""}</li>"""
+        for s in all_sources_lookup.keys()
+        if s in {*hist_ids, *mod_ids}
+    ] or ['<li>Sources will be listed here.</li>']
     html = PAGE.format(
-        title=c['title'],
-        historical=c['historical'],
-        modern=c['modern'],
-        sources=sources_html,
-        persecution_level=c.get('persecution_level', ''),
+        title=c["title"],
+        historical=c.get("historical", ""),
+        modern=c.get("modern", ""),
+        historical_sources=historical_sources,
+        modern_sources=modern_sources,
+        all_sources="\n        ".join(all_sources_items),
+        persecution_level=c.get("persecution_level", ""),
         status_label=label,
         status_color=color,
+        generated_at=generated_at,
     )
     (COUNTRIES / f"{c['slug']}.html").write_text(html, encoding="utf-8")
     print("wrote", c["slug"])
+
 geo = {
     "type": "FeatureCollection",
     "features": [

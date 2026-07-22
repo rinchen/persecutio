@@ -1,11 +1,95 @@
-import yaml
+import os
+import shutil
+import json
+import time
+from urllib.parse import quote
 from pathlib import Path
+
+import yaml
+from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
+COUNTRIES = ROOT / "countries"
+FETCHED = DATA / "fetched"
+FETCHED.mkdir(parents=True, exist_ok=True)
 DATA.mkdir(parents=True, exist_ok=True)
+COUNTRIES.mkdir(parents=True, exist_ok=True)
 
-countries = [
+
+def backup(path: Path):
+    if not path.exists():
+        return path
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+    dest = path.with_suffix(f".bak-{ts}{path.suffix}")
+    shutil.copy2(path, dest)
+    return dest
+
+
+backup((DATA / "countries.yml"))
+backup((ROOT / "assets/data/geojson.json"))
+backup((ROOT / "assets/data/search.json"))
+
+
+def fetch_json(url: str, path: Path, skip: bool = False):
+    try:
+        if path.exists() and skip:
+            return json.loads(path.read_text(encoding="utf-8"))
+        import urllib.request
+        with urllib.request.urlopen(url, timeout=20) as resp:
+            payload = resp.read().decode("utf-8", errors="ignore")
+        path.write_text(payload, encoding="utf-8")
+        return json.loads(payload)
+    except Exception:
+        if path.exists():
+            return json.loads(path.read_text(encoding="utf-8"))
+        return {}
+
+
+natural_earth_geojson = fetch_json(
+    "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson",
+    FETCHED / "natural_earth_110m.geojson",
+    skip=False,
+)
+
+
+def country_polygons_from_geojson(geojson):
+    by_iso = {}
+    features = geojson.get("features", []) if isinstance(geojson, dict) else []
+    for feature in features:
+        props = feature.get("properties", {}) or {}
+        iso = props.get("ISO_A3") or props.get("iso_3") or props.get("ADM0_A3")
+        geo = feature.get("geometry")
+        if not iso or not geo:
+            continue
+        by_iso[str(iso).upper()] = geo
+    return by_iso
+
+
+country_polygons = country_polygons_from_geojson(natural_earth_geojson)
+
+
+def wikipedia_summary(title: str):
+    key = title.replace(" ", "_").replace("/", "_")
+    cached = FETCHED / "wiki" / f"{quote(key, safe='')}.json"
+    cached.parent.mkdir(parents=True, exist_ok=True)
+    url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{quote(key, safe='')}"
+    try:
+        import urllib.request
+        with urllib.request.urlopen(url, timeout=20) as resp:
+            payload = resp.read().decode("utf-8", errors="ignore")
+        cached.write_text(payload, encoding="utf-8")
+        return json.loads(payload)
+    except Exception:
+        if cached.exists():
+            try:
+                return json.loads(cached.read_text(encoding="utf-8"))
+            except Exception:
+                pass
+        return {}
+
+
+COUNTRIES_DATA = [
   {
     "title": "Afghanistan",
     "slug": "afghanistan",
@@ -15,7 +99,7 @@ countries = [
     "lat": 33.93,
     "lng": 67.70,
     "modern": (
-        "After the Taliban’s return to power in August 2021, Afghanistan became one of "
+        "After the Taliban's return to power in August 2021, Afghanistan became one of "
         "the most restrictive places for Christians in the world. Christian converts from "
         "Islam risk death, abduction, or expulsion. House churches operate in extreme "
         "secrecy. Bibles, Christian media, and public worship are illegal. Aid agencies "
@@ -24,15 +108,20 @@ countries = [
     "historical": (
         "Christianity has a long but small presence in Afghanistan, from ancient Silk Road "
         "churches in the north to modern Catholic and Protestant missionary activity. After "
-        "years of war in the 1980s and 1990s, the 2001–2021 period saw small but "
-        "increasing Christian communities, especially among foreign workers and a few "
-        "indigenous converts. Post-2021 Taliban rule reversed what little space had opened."
+        "years of war in the 1980s and 1990s, the 2001-2021 period saw small but "
+        "increasing Christian communities, especially among foreign workers and a few indigenous "
+        "converts. Post-2021 Taliban rule reversed what little space had opened."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Afghanistan", "url": "https://www.uscirf.gov/countries/afghanistan", "date": "2023"},
-      {"title": "BBC News — Afghanistan Christians 2021", "url": "https://www.bbc.com/news/world-asia-58293018", "date": "2021"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Afghanistan", "url": "https://www.uscirf.gov/countries/afghanistan", "date": "2023"},
+      {"title": "BBC News - Afghanistan Christians 2021", "url": "https://www.bbc.com/news/world-asia-58293018", "date": "2021"}
+    ],
+    "source_ids": {
+        "historical": ["bbc2021", "odwwl2024"],
+        "modern": ["uscirf2023afghanistan", "odwwl2024"]
+    },
+    "pew_slug": ""
   },
   {
     "title": "China",
@@ -43,7 +132,7 @@ countries = [
     "lat": 35.86,
     "lng": 104.19,
     "modern": (
-        "China ranks among the world’s most restrictive environments for Christians. The "
+        "China ranks among the world's most restrictive environments for Christians. The "
         "government controls official churches through state associations, while unregistered "
         "house churches face raids, demolition, surveillance, and detention. Regulations have "
         "tightened cross-border religious ties, youth religious activity is restricted, and "
@@ -58,9 +147,14 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — China", "url": "https://www.uscirf.gov/countries/china", "date": "2023"},
-      {"title": "Pew Research — Religion in China", "url": "https://www.pewresearch.org/religion/2023/08/30/religion-in-china/", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - China", "url": "https://www.uscirf.gov/countries/china", "date": "2023"},
+      {"title": "Pew Research - Religion in China", "url": "https://www.pewresearch.org/religion/2023/08/30/religion-in-china/", "date": "2023"}
+    ],
+    "source_ids": {
+        "historical": ["pew2023china", "odwwl2024"],
+        "modern": ["uscirf2023china", "odwwl2024"]
+    },
+    "pew_slug": "china"
   },
   {
     "title": "Colombia",
@@ -72,8 +166,8 @@ countries = [
     "lng": -74.30,
     "modern": (
         "Catholic clergy, Protestant pastors, and Christian human rights defenders continue to be "
-        "targeted by guerrillas, paramilitaries, and criminal gangs, especially in Caquetá, "
-        "Nariño, and Norte de Santander. Killings and threats persist despite the 2016 peace "
+        "targeted by guerrillas, paramilitaries, and criminal gangs, especially in Caqueta, "
+        "Narino, and Norte de Santander. Killings and threats persist despite the 2016 peace "
         "agreement, and indigenous and Afro-Colombian Christian communities are especially vulnerable."
     ),
     "historical": (
@@ -84,8 +178,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Colombia", "url": "https://www.uscirf.gov/countries/colombia", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Colombia", "url": "https://www.uscirf.gov/countries/colombia", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023colombia", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Cuba",
@@ -109,8 +205,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Cuba", "url": "https://www.uscirf.gov/countries/cuba", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Cuba", "url": "https://www.uscirf.gov/countries/cuba", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023cuba", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Eritrea",
@@ -127,14 +225,16 @@ countries = [
         "conscription is enforced under harsh conditions and can affect religious practice."
     ),
     "historical": (
-        "Christianity arrived in the 4th century and made Eritrea one of Africa’s oldest Christian "
+        "Christianity arrived in the 4th century and made Eritrea one of Africa's oldest Christian "
         "regions. Italian, British, and later Ethiopian rule shaped modern denominations. Since "
         "independence, restrictive religious policy has increased state oversight of worship."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Eritrea", "url": "https://www.uscirf.gov/countries/eritrea", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Eritrea", "url": "https://www.uscirf.gov/countries/eritrea", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023eritrea", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "India",
@@ -145,7 +245,7 @@ countries = [
     "lat": 20.59,
     "lng": 78.96,
     "modern": (
-        "Christians face rising violence and legal restrictions linked to “anti-conversion” laws in "
+        "Christians face rising violence and legal restrictions linked to anti-conversion laws in "
         "multiple states. Vigilante groups have forced re-conversions and attacked churches; pastors "
         "are sometimes jailed under these laws. Religious minorities report increasing societal "
         "intimidation and educational pressure."
@@ -158,8 +258,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — India", "url": "https://www.uscirf.gov/countries/india", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - India", "url": "https://www.uscirf.gov/countries/india", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023india", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Indonesia",
@@ -183,8 +285,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Indonesia", "url": "https://www.uscirf.gov/countries/indonesia", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Indonesia", "url": "https://www.uscirf.gov/countries/indonesia", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023indonesia", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Iran",
@@ -196,7 +300,7 @@ countries = [
     "lng": 53.68,
     "modern": (
         "Converts from Islam to Christianity face imprisonment, surveillance, and coerced "
-        "“re-education.” House churches are raided and leaders sentenced to long prison terms. "
+        "re-education. House churches are raided and leaders sentenced to long prison terms. "
         "Armenian and Assyrian communities retain limited state recognition but still face pressure "
         "over property transfer and educational rights."
     ),
@@ -208,8 +312,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Iran", "url": "https://www.uscirf.gov/countries/iran", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Iran", "url": "https://www.uscirf.gov/countries/iran", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023iran", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Iraq",
@@ -220,20 +326,22 @@ countries = [
     "lat": 33.22,
     "lng": 43.67,
     "modern": (
-        "The 2014–2017 ISIS advance devastated Assyrian, Chaldean, and Armenian communities in "
+        "The 2014-2017 ISIS advance devastated Assyrian, Chaldean, and Armenian communities in "
         "Mosul and the Nineveh Plains. Many remain displaced. Returning Christians face militia "
         "pressure, land disputes, and fragile security. Church bombings and threats still recur."
     ),
     "historical": (
-        "Mesopotamia is the cradle of Eastern Christianity, with communities dating to the 1st–2nd "
+        "Mesopotamia is the cradle of Eastern Christianity, with communities dating to the 1st-2nd "
         "centuries. These communities thrived under the Abbasids, endured Timurid and Mongol raids, "
         "and continued under the Ottoman millet system, only to face existential threat in the 21st "
         "century from jihadist violence and mass displacement."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Iraq", "url": "https://www.uscirf.gov/countries/iraq", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Iraq", "url": "https://www.uscirf.gov/countries/iraq", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023iraq", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Laos",
@@ -255,8 +363,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Laos", "url": "https://www.uscirf.gov/countries/laos", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Laos", "url": "https://www.uscirf.gov/countries/laos", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023laos", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Mexico",
@@ -269,17 +379,19 @@ countries = [
     "modern": (
         "Organized crime and local power disputes drive much anti-Christian violence. Priests have "
         "been kidnapped and killed, churches burned or extorted, and indigenous Catholic communities "
-        "displaced in Chiapas, Michoacán, and Guerrero. Clergy defending migrants are also at risk."
+        "displaced in Chiapas, Michoacan, and Guerrero. Clergy defending migrants are also at risk."
     ),
     "historical": (
         "Catholicism shaped colonial New Spain for three centuries. After independence, Mexico enacted "
-        "restrictive constitutions and fought the Cristero War (1926–1929), which killed thousands. "
+        "restrictive constitutions and fought the Cristero War (1926-1929), which killed thousands. "
         "Religious freedom was restored through late-20th-century legal reforms."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Mexico", "url": "https://www.uscirf.gov/countries/mexico", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Mexico", "url": "https://www.uscirf.gov/countries/mexico", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023mexico", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Nicaragua",
@@ -303,8 +415,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Nicaragua", "url": "https://www.uscirf.gov/countries/nicaragua", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Nicaragua", "url": "https://www.uscirf.gov/countries/nicaragua", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023nicaragua", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Nigeria",
@@ -317,19 +431,21 @@ countries = [
     "modern": (
         "Boko Haram, ISWAP, and criminal bandits have killed, kidnapped, and displaced Christian "
         "villagers and pastors across northern Nigeria. Hundreds of churches have been destroyed. "
-        "In the Middle Belt, communal violence often carries religious dimensions along farmer–herder "
+        "In the Middle Belt, communal violence often carries religious dimensions along farmer-herder "
         "lines near the Jos Plateau."
     ),
     "historical": (
         "Christianity arrived through Portuguese traders in the 15th century and expanded through "
         "19th-century missions and colonial education. Post-independence political tensions, the "
-        "1967–1970 Biafran War, and the late-20th-century spread of Salafi-jihadist ideology in "
+        "1967-1970 Biafran War, and the late-20th-century spread of Salafi-jihadist ideology in "
         "the Sahel created fertile ground for present-day violence."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Nigeria", "url": "https://www.uscirf.gov/countries/nigeria", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Nigeria", "url": "https://www.uscirf.gov/countries/nigeria", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023nigeria", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "North Korea",
@@ -345,14 +461,16 @@ countries = [
         "and enforced loyalty to the Juche ideology. No legal Christian practice is possible."
     ),
     "historical": (
-        "Before 1945, Pyongyang was known as the “Jerusalem of the East.” After the Korean War, "
+        "Before 1945, Pyongyang was known as the Jerusalem of the East. After the Korean War, "
         "the DPRK closed churches, purged clergy, and criminalized public religion. Small underground "
         "activity survived through refugees and defectors."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — North Korea", "url": "https://www.uscirf.gov/countries/north-korea", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - North Korea", "url": "https://www.uscirf.gov/countries/north-korea", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023northkorea", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Pakistan",
@@ -375,8 +493,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Pakistan", "url": "https://www.uscirf.gov/countries/pakistan", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Pakistan", "url": "https://www.uscirf.gov/countries/pakistan", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023pakistan", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Saudi Arabia",
@@ -392,14 +512,16 @@ countries = [
         "discreetly in private homes, while importing or distributing Bibles remains criminalized."
     ),
     "historical": (
-        "Christian communities once existed in Arabia but were largely extinguished after Islam’s rise. "
+        "Christian communities once existed in Arabia but were largely extinguished after Islam's rise. "
         "19th- and 20th-century Catholic and Protestant missions operated under Ottoman and later Saudi "
         "administration, but eventually all organized Christian community activity was restricted."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Saudi Arabia", "url": "https://www.uscirf.gov/countries/saudi-arabia", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Saudi Arabia", "url": "https://www.uscirf.gov/countries/saudi-arabia", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023saudiarabia", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Somalia",
@@ -417,13 +539,15 @@ countries = [
     "historical": (
         "Byzantine and Ethiopian trade linked early coastal Christian communities to wider Christian "
         "networks. European Catholic and Anglican missions grew in the late 19th and early 20th "
-        "centuries, then were expelled or closed under Siad Barre’s secular socialist rule after 1969. "
+        "centuries, then were expelled or closed under Siad Barre's secular socialist rule after 1969. "
         "Civil war destroyed remaining institutions in the 1990s."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Somalia", "url": "https://www.uscirf.gov/countries/somalia", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Somalia", "url": "https://www.uscirf.gov/countries/somalia", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023somalia", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Syria",
@@ -445,8 +569,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Syria", "url": "https://www.uscirf.gov/countries/syria", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Syria", "url": "https://www.uscirf.gov/countries/syria", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023syria", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Vietnam",
@@ -468,8 +594,10 @@ countries = [
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Vietnam", "url": "https://www.uscirf.gov/countries/vietnam", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Vietnam", "url": "https://www.uscirf.gov/countries/vietnam", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023vietnam", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Yemen",
@@ -486,14 +614,16 @@ countries = [
     ),
     "historical": (
         "Ancient southern Arabian Christianity declined after the rise of Islam; the Himyarite kingdom "
-        "saw a brief Christian period in the 5th–6th centuries. Ottoman and British colonial contact "
+        "saw a brief Christian period in the 5th-6th centuries. Ottoman and British colonial contact "
         "renewed small Catholic and Protestant communities that later contracted during 20th-century "
         "conflicts."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-      {"title": "USCIRF 2023 Annual Report — Yemen", "url": "https://www.uscirf.gov/countries/yemen", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Yemen", "url": "https://www.uscirf.gov/countries/yemen", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023yemen", "odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "United States",
@@ -504,9 +634,9 @@ countries = [
     "lat": 37.09,
     "lng": -95.71,
     "modern": (
-        "The United States constitutionally protects religious freedom, and Christians generally "
-        "worship openly. Concerns remain in the form of occasional hate crimes, zoning disputes over "
-        "church construction, and broader cultural polarization rather than state-sponsored restrictions."
+        "The United States constitutionally protects religious freedom, and Christians generally worship "
+        "openly. Concerns remain in the form of occasional hate crimes, zoning disputes over church "
+        "construction, and broader cultural polarization rather than state-sponsored restrictions."
     ),
     "historical": (
         "Catholicism arrived in Spanish Florida and French Louisiana, while Protestant groups shaped "
@@ -515,9 +645,11 @@ countries = [
         "Catholics and new immigrant churches."
     ),
     "sources": [
-      {"title": "USCIRF 2023 Annual Report — United States", "url": "https://www.uscirf.gov/countries/united-states", "date": "2023"},
-      {"title": "Pew Research — Religion in America", "url": "https://www.pewresearch.org/religion/religious-landscape-study/", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - United States", "url": "https://www.uscirf.gov/countries/united-states", "date": "2023"},
+      {"title": "Pew Research - Religion in America", "url": "https://www.pewresearch.org/religion/religious-landscape-study/", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["pew2023america"], "modern": ["uscirf2023unitedstates", "pew2023america"]},
+    "pew_slug": "america"
   },
   {
     "title": "Brazil",
@@ -528,19 +660,20 @@ countries = [
     "lat": -14.23,
     "lng": -51.92,
     "modern": (
-        "Brazil guarantees religious freedom and has one of the world’s largest Christian "
-        "populations. Occasional incidents of vandalism or anti-Christian rhetoric occur, but large-scale "
-        "or state-led persecution is not present."
+        "Brazil guarantees religious freedom and has one of the world's largest Christian populations. "
+        "Occasional incidents of vandalism or anti-Christian rhetoric occur, but large-scale or state-led "
+        "persecution is not present."
     ),
     "historical": (
-        "Catholicism dominated Brazil after Portuguese colonization, and evangelical Protestantism "
-        "expanded rapidly in the 20th century. Religious competition sometimes triggers local tension, "
-        "especially among indigenous communities and in favelas, but these have not reached systematic "
-        "persecution."
+        "Catholicism dominated Brazil after Portuguese colonization, and evangelical Protestantism expanded "
+        "rapidly in the 20th century. Religious competition sometimes triggers local tension, especially "
+        "among indigenous communities and in favelas, but these have not reached systematic persecution."
     ),
     "sources": [
       {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"}
-    ]
+    ],
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+    "pew_slug": ""
   },
   {
     "title": "Uganda",
@@ -558,16 +691,66 @@ countries = [
     ),
     "historical": (
         "Catholic and Protestant missions shaped Ugandan education and society from the 19th century "
-        "onward. The Uganda Martyrs became a powerful Catholic and Anglican symbol, and churches "
-        "remained influential through colonialism and independence."
+        "onward. The Uganda Martyrs became a powerful Catholic and Anglican symbol, and churches remained "
+        "influential through colonialism and independence."
     ),
     "sources": [
-      {"title": "USCIRF 2023 Annual Report — Uganda", "url": "https://www.uscirf.gov/countries/uganda", "date": "2023"}
-    ]
+      {"title": "USCIRF 2023 Annual Report - Uganda", "url": "https://www.uscirf.gov/countries/uganda", "date": "2023"}
+    ],
+    "source_ids": {"historical": ["uscirf2023uganda"], "modern": ["uscirf2023uganda"]},
+    "pew_slug": ""
   }
 ]
 
-countries_data = {"countries": countries}
+sources = {
+  "odwwl2024": {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+  "uscirf2023afghanistan": {"title": "USCIRF 2023 Annual Report - Afghanistan", "url": "https://www.uscirf.gov/countries/afghanistan", "date": "2023"},
+  "bbc2021": {"title": "BBC News - Afghanistan Christians 2021", "url": "https://www.bbc.com/news/world-asia-58293018", "date": "2021"},
+  "uscirf2023china": {"title": "USCIRF 2023 Annual Report - China", "url": "https://www.uscirf.gov/countries/china", "date": "2023"},
+  "pew2023china": {"title": "Pew Research - Religion in China", "url": "https://www.pewresearch.org/religion/2023/08/30/religion-in-china/", "date": "2023"},
+  "uscirf2023colombia": {"title": "USCIRF 2023 Annual Report - Colombia", "url": "https://www.uscirf.gov/countries/colombia", "date": "2023"},
+  "uscirf2023cuba": {"title": "USCIRF 2023 Annual Report - Cuba", "url": "https://www.uscirf.gov/countries/cuba", "date": "2023"},
+  "uscirf2023eritrea": {"title": "USCIRF 2023 Annual Report - Eritrea", "url": "https://www.uscirf.gov/countries/eritrea", "date": "2023"},
+  "uscirf2023india": {"title": "USCIRF 2023 Annual Report - India", "url": "https://www.uscirf.gov/countries/india", "date": "2023"},
+  "uscirf2023indonesia": {"title": "USCIRF 2023 Annual Report - Indonesia", "url": "https://www.uscirf.gov/countries/indonesia", "date": "2023"},
+  "uscirf2023iran": {"title": "USCIRF 2023 Annual Report - Iran", "url": "https://www.uscirf.gov/countries/iran", "date": "2023"},
+  "uscirf2023iraq": {"title": "USCIRF 2023 Annual Report - Iraq", "url": "https://www.uscirf.gov/countries/iraq", "date": "2023"},
+  "uscirf2023laos": {"title": "USCIRF 2023 Annual Report - Laos", "url": "https://www.uscirf.gov/countries/laos", "date": "2023"},
+  "uscirf2023mexico": {"title": "USCIRF 2023 Annual Report - Mexico", "url": "https://www.uscirf.gov/countries/mexico", "date": "2023"},
+  "uscirf2023nicaragua": {"title": "USCIRF 2023 Annual Report - Nicaragua", "url": "https://www.uscirf.gov/countries/nicaragua", "date": "2023"},
+  "uscirf2023nigeria": {"title": "USCIRF 2023 Annual Report - Nigeria", "url": "https://www.uscirf.gov/countries/nigeria", "date": "2023"},
+  "uscirf2023northkorea": {"title": "USCIRF 2023 Annual Report - North Korea", "url": "https://www.uscirf.gov/countries/north-korea", "date": "2023"},
+  "uscirf2023pakistan": {"title": "USCIRF 2023 Annual Report - Pakistan", "url": "https://www.uscirf.gov/countries/pakistan", "date": "2023"},
+  "uscirf2023saudiarabia": {"title": "USCIRF 2023 Annual Report - Saudi Arabia", "url": "https://www.uscirf.gov/countries/saudi-arabia", "date": "2023"},
+  "uscirf2023somalia": {"title": "USCIRF 2023 Annual Report - Somalia", "url": "https://www.uscirf.gov/countries/somalia", "date": "2023"},
+  "uscirf2023syria": {"title": "USCIRF 2023 Annual Report - Syria", "url": "https://www.uscirf.gov/countries/syria", "date": "2023"},
+  "uscirf2023vietnam": {"title": "USCIRF 2023 Annual Report - Vietnam", "url": "https://www.uscirf.gov/countries/vietnam", "date": "2023"},
+  "uscirf2023yemen": {"title": "USCIRF 2023 Annual Report - Yemen", "url": "https://www.uscirf.gov/countries/yemen", "date": "2023"},
+  "uscirf2023unitedstates": {"title": "USCIRF 2023 Annual Report - United States", "url": "https://www.uscirf.gov/countries/united-states", "date": "2023"},
+  "uscirf2023uganda": {"title": "USCIRF 2023 Annual Report - Uganda", "url": "https://www.uscirf.gov/countries/uganda", "date": "2023"},
+  "pew2023america": {"title": "Pew Research - Religion in America", "url": "https://www.pewresearch.org/religion/religious-landscape-study/", "date": "2023"}
+}
+
+for c in COUNTRIES_DATA:
+    iso = str(c.get("iso3", "")).upper()
+    resolved = []
+    for sid_template in c.get("source_ids", {}).get("modern", []):
+        sid = sid_template.format(slug=c.get("slug", ""), pew_slug=c.get("pew_slug", ""))
+        if sid in sources and sid not in resolved:
+            resolved.append(sid)
+    wiki = wikipedia_summary(c.get("title", ""))
+    c.setdefault("metadata", {})
+    c["metadata"]["sources"] = [sources[sid] for sid in resolved]
+    c["metadata"]["source_ids"] = resolved
+    c["metadata"]["shape_geo"] = country_polygons.get(iso)
+    c["metadata"]["wiki_url"] = wiki.get("content_urls", {}).get("desktop", {}).get("page") if isinstance(wiki, dict) else None
+    c["metadata"]["wiki_extract"] = wiki.get("extract") if isinstance(wiki, dict) else None
+    c["metadata"]["country_polygon"] = True if iso in country_polygons else False
+
+countries_data = {"countries": COUNTRIES_DATA, "sources": sources, "fetched": {
+    "natural_earth_geojson": "data/fetched/natural_earth_110m.geojson",
+    "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+}}
 (DATA / "countries.yml").write_text(
     yaml.safe_dump(countries_data, allow_unicode=True, sort_keys=False),
     encoding="utf-8",
