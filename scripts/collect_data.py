@@ -1610,6 +1610,12 @@ sources = {
     "uscirf2025turkmenistan": {"title": "USCIRF 2025 Annual Report - Turkmenistan", "url": "https://www.uscirf.gov/countries/turkmenistan", "date": "2025"},
     "uscirf2025uzbekistan": {"title": "USCIRF 2025 Annual Report - Uzbekistan", "url": "https://www.uscirf.gov/countries/uzbekistan", "date": "2025"},
     "uscirf2025tajikistan": {"title": "USCIRF 2025 Annual Report - Tajikistan", "url": "https://www.uscirf.gov/countries/tajikistan", "date": "2025"},
+    "morningstarnews2026": {"title": "Morning Star News - Christian Persecution Reports", "url": "https://morningstarnews.org/", "date": "2026"},
+    "vid2026": {"title": "Violent Incidents Database (IIRF/GCR)", "url": "https://violentincidents.plataformac.org/", "date": "2026"},
+    "gcr2026": {"title": "Global Christian Relief - Persecution Statistics 2026", "url": "https://globalchristianrelief.org/stories/christian-persecution-statistics", "date": "2026"},
+    "acn2025": {"title": "Aid to the Church in Need - Religious Freedom Report 2025", "url": "https://acninternational.org/religiousfreedomreport/", "date": "2025"},
+    "csw2026": {"title": "Christian Solidarity Worldwide - Persecution Reports", "url": "https://www.csw.org.uk/", "date": "2026"},
+    "icc2026": {"title": "International Christian Concern - Global Persecution Reports", "url": "https://www.persecution.org/", "date": "2026"},
 }
 
 
@@ -1658,6 +1664,12 @@ freedom_house = load_fetched_json("freedom_house.json")
 opendoors_data = load_fetched_json("opendoors.json")
 gdelt_data = load_fetched_json("gdelt.json")
 owid_data = load_fetched_json("owid_religion.json")
+morningstarnews_data = load_fetched_json("morningstarnews.json")
+vid_data = load_fetched_json("vid.json")
+gcr_data = load_fetched_json("gcr_stats.json")
+acn_data = load_fetched_json("acn_report.json")
+csw_data = load_fetched_json("csw.json")
+icc_data = load_fetched_json("icc.json")
 
 
 for c in COUNTRIES_DATA:
@@ -1701,6 +1713,57 @@ for c in COUNTRIES_DATA:
         c["metadata"]["christian_population"] = owid.get("christian_population")
         c["metadata"]["christian_percentage"] = owid.get("christian_percentage")
 
+    msn_countries = morningstarnews_data.get("countries", {}) if isinstance(morningstarnews_data, dict) else {}
+    msn_articles = msn_countries.get(title, [])
+    if msn_articles:
+        c["metadata"]["morningstarnews_articles"] = len(msn_articles)
+        c["metadata"]["morningstarnews_samples"] = [
+            {"title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")}
+            for a in msn_articles[:3]
+        ]
+
+    vid_countries = vid_data.get("countries", {}) if isinstance(vid_data, dict) else {}
+    vid_entry = vid_countries.get(title, {})
+    if vid_entry:
+        c["metadata"]["vid_incidents_total"] = vid_entry.get("total_incidents")
+        c["metadata"]["vid_killings"] = vid_entry.get("killings")
+        c["metadata"]["vid_breakdown"] = {k: v for k, v in vid_entry.items() if k != "total_incidents" and v}
+
+    gcr_countries = gcr_data.get("countries", {}) if isinstance(gcr_data, dict) else {}
+    gcr_entry = gcr_countries.get(title, {})
+    if gcr_entry:
+        if gcr_entry.get("killed"):
+            c["metadata"]["gcr_killed"] = gcr_entry["killed"]
+        if gcr_entry.get("persecution_score"):
+            c["metadata"]["gcr_persecution_score"] = gcr_entry["persecution_score"]
+        if gcr_entry.get("notes"):
+            c["metadata"]["gcr_notes"] = gcr_entry["notes"]
+
+    acn_countries = acn_data.get("countries", {}) if isinstance(acn_data, dict) else {}
+    acn_entry = acn_countries.get(title, {})
+    if acn_entry:
+        c["metadata"]["acn_classification"] = acn_entry.get("classification")
+        if acn_entry.get("key_findings"):
+            c["metadata"]["acn_key_findings"] = acn_entry["key_findings"][:2]
+
+    csw_countries = csw_data.get("countries", {}) if isinstance(csw_data, dict) else {}
+    csw_articles = csw_countries.get(title, [])
+    if csw_articles:
+        c["metadata"]["csw_articles"] = len(csw_articles)
+        c["metadata"]["csw_samples"] = [
+            {"title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")}
+            for a in csw_articles[:3]
+        ]
+
+    icc_countries = icc_data.get("countries", {}) if isinstance(icc_data, dict) else {}
+    icc_articles = icc_countries.get(title, [])
+    if icc_articles:
+        c["metadata"]["icc_articles"] = len(icc_articles)
+        c["metadata"]["icc_samples"] = [
+            {"title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")}
+            for a in icc_articles[:3]
+        ]
+
 source_statuses = [natural_earth_status]
 
 countries_data = {
@@ -1715,6 +1778,12 @@ countries_data = {
             "opendoors": "data/fetched/opendoors.json",
             "gdelt": "data/fetched/gdelt.json",
             "owid_religion": "data/fetched/owid_religion.json",
+            "morningstarnews": "data/fetched/morningstarnews.json",
+            "vid": "data/fetched/vid.json",
+            "gcr_stats": "data/fetched/gcr_stats.json",
+            "acn_report": "data/fetched/acn_report.json",
+            "csw": "data/fetched/csw.json",
+            "icc": "data/fetched/icc.json",
         },
     },
 }

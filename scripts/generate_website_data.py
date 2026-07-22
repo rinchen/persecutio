@@ -94,6 +94,11 @@ footer a {{ color:#334155; text-decoration: underline; }}
 .data-item {{ background:#f1f5f9; border-radius:8px; padding:10px 12px; font-size:13px; }}
 .data-item .label {{ color:#64748b; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; }}
 .data-item .value {{ color:#0f172a; font-weight:600; font-size:15px; margin-top:2px; }}
+.incidents-list {{ margin-top:10px; }}
+.incident-item {{ padding:8px 0; border-bottom:1px solid #e5e7eb; font-size:13px; }}
+.incident-item:last-child {{ border-bottom:none; }}
+.incident-source {{ display:inline-block; background:#fee2e2; color:#991b1b; font-size:11px; font-weight:600; padding:2px 6px; border-radius:4px; margin-right:6px; }}
+.incident-date {{ color:#94a3b8; font-size:12px; margin-left:6px; }}
 </style>
 </head>
 <body>
@@ -116,6 +121,7 @@ footer a {{ color:#334155; text-decoration: underline; }}
       <span>{persecution_level} · {status_label}</span>
     </div>
     {data_fields}
+    {recent_incidents}
     <section>
       <h2>Historical Background</h2>
       <p>{historical}</p>
@@ -204,9 +210,47 @@ def render_data_fields(country: dict) -> str:
     gdelt_count = meta.get("gdelt_recent_articles")
     if gdelt_count is not None:
         items.append(f'<div class="data-item"><div class="label">Recent News Events</div><div class="value">{gdelt_count}</div></div>')
+    acn_class = meta.get("acn_classification")
+    if acn_class:
+        items.append(f'<div class="data-item"><div class="label">ACN Classification</div><div class="value">{acn_class}</div></div>')
+    vid_total = meta.get("vid_incidents_total")
+    if vid_total is not None:
+        items.append(f'<div class="data-item"><div class="label">VID Incidents</div><div class="value">{vid_total}</div></div>')
+    vid_killings = meta.get("vid_killings")
+    if vid_killings is not None:
+        items.append(f'<div class="data-item"><div class="label">VID Killings</div><div class="value">{vid_killings}</div></div>')
+    gcr_killed = meta.get("gcr_killed")
+    if gcr_killed:
+        items.append(f'<div class="data-item"><div class="label">GCR Killed</div><div class="value">{gcr_killed}</div></div>')
+    gcr_score = meta.get("gcr_persecution_score")
+    if gcr_score:
+        items.append(f'<div class="data-item"><div class="label">GCR Persecution Score</div><div class="value">{gcr_score}</div></div>')
     if not items:
         return ""
     return '<div class="data-grid">' + "\n      ".join(items) + "\n    </div>"
+
+
+def render_recent_incidents(country: dict) -> str:
+    meta = country.get("metadata", {})
+    articles = []
+    for src_key, count_key, sample_key, label in [
+        ("morningstarnews_articles", "morningstarnews_articles", "morningstarnews_samples", "Morning Star News"),
+        ("csw_articles", "csw_articles", "csw_samples", "CSW"),
+        ("icc_articles", "icc_articles", "icc_samples", "ICC"),
+    ]:
+        samples = meta.get(sample_key, [])
+        for a in samples:
+            articles.append({"source": label, "title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")})
+    if not articles:
+        return ""
+    rows = []
+    for a in articles[:6]:
+        href = a.get("url", "#")
+        title = html.escape(a.get("title", "Report"))
+        src = html.escape(a.get("source", ""))
+        date = html.escape(a.get("date", ""))
+        rows.append(f'<div class="incident-item"><span class="incident-source">{src}</span> <a href="{href}" target="_blank" rel="noopener">{title}</a> <span class="incident-date">{date}</span></div>')
+    return '<h3>Recent Incidents</h3>\n<div class="incidents-list">' + "\n    ".join(rows) + "\n    </div>"
 
 
 all_sources_lookup = {}
@@ -323,6 +367,7 @@ for c in countries:
         generated_at=generated_at,
         last_pull_text=last_pull_text,
         data_fields=render_data_fields(c),
+        recent_incidents=render_recent_incidents(c),
     )
     (COUNTRIES / f"{slug}.html").write_text(page_html, encoding="utf-8")
     print("wrote", slug)

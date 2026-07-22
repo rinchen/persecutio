@@ -12581,17 +12581,47 @@ sources:
     title: USCIRF 2025 Annual Report - Tajikistan
     url: https://www.uscirf.gov/countries/tajikistan
     date: '2025'
+  morningstarnews2026:
+    title: Morning Star News - Christian Persecution Reports
+    url: https://morningstarnews.org/
+    date: '2026'
+  vid2026:
+    title: Violent Incidents Database (IIRF/GCR)
+    url: https://violentincidents.plataformac.org/
+    date: '2026'
+  gcr2026:
+    title: Global Christian Relief - Persecution Statistics 2026
+    url: https://globalchristianrelief.org/stories/christian-persecution-statistics
+    date: '2026'
+  acn2025:
+    title: Aid to the Church in Need - Religious Freedom Report 2025
+    url: https://acninternational.org/religiousfreedomreport/
+    date: '2025'
+  csw2026:
+    title: Christian Solidarity Worldwide - Persecution Reports
+    url: https://www.csw.org.uk/
+    date: '2026'
+  icc2026:
+    title: International Christian Concern - Global Persecution Reports
+    url: https://www.persecution.org/
+    date: '2026'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-07-22 03:13 UTC
+  generated_at: 2026-07-22 03:30 UTC
   source_statuses:
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-07-22T03:13:34.439158+00:00'
+    fetched_at: '2026-07-22T03:30:12.790060+00:00'
     message: null
   data_sources:
     freedom_house: data/fetched/freedom_house.json
     opendoors: data/fetched/opendoors.json
     gdelt: data/fetched/gdelt.json
     owid_religion: data/fetched/owid_religion.json
+    morningstarnews: data/fetched/morningstarnews.json
+    vid: data/fetched/vid.json
+    gcr_stats: data/fetched/gcr_stats.json
+    acn_report: data/fetched/acn_report.json
+    csw: data/fetched/csw.json
+    icc: data/fetched/icc.json

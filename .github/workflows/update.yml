@@ -24,6 +24,12 @@ jobs:
           python3 scripts/fetch_uscirf.py || true
           python3 scripts/fetch_state_dept.py || true
           python3 scripts/fetch_ohchr.py || true
+          python3 scripts/fetch_morningstarnews.py || true
+          python3 scripts/fetch_vid.py || true
+          python3 scripts/fetch_gcr_stats.py || true
+          python3 scripts/fetch_acn.py || true
+          python3 scripts/fetch_csw.py || true
+          python3 scripts/fetch_icc.py || true
       - run: python3 scripts/collect_data.py
       - run: python3 scripts/generate_website_data.py
       - run: python3 -m py_compile scripts/collect_data.py scripts/generate_website_data.py scripts/fetch_*.py tests/*.py
