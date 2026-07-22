@@ -714,6 +714,7 @@ section + section { margin-top: 1.35rem; }
 .site-footer__sources-label {
   font-size: 0.72rem;
   font-weight: 600;
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--color-text-muted);
@@ -728,13 +729,18 @@ section + section { margin-top: 1.35rem; }
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.35rem 0.75rem;
+}
+.source-legend > li + li {
+  margin-top: 0;
 }
 .source-legend__item {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
   font-size: 0.75rem;
+  line-height: 1;
   color: var(--color-text-muted);
 }
 .source-legend__swatch {
@@ -767,18 +773,24 @@ section + section { margin-top: 1.35rem; }
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.3rem;
 }
 .source-chips > li {
   display: inline-flex;
   align-items: center;
 }
+.source-chips > li + li {
+  margin-top: 0;
+}
 .source-chip {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-size: 0.7rem;
   font-weight: 600;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   background: var(--color-surface-2);
   color: var(--color-text);
