@@ -181,6 +181,71 @@ all_sources_lookup = loaded.get("sources") or {}
 if not all_sources_lookup:
     raise SystemExit("data/sources.yml is missing or has no 'sources' mapping")
 
+SOURCE_LABELS = {
+    "natural_earth_110m": "NE",
+    "odwwl2024": "OD",
+    "acn2024": "ACN",
+    "pew2023america": "Pew",
+    "pew2023china": "Pew",
+    "bbc2021": "BBC",
+}
+SOURCE_TITLES = {
+    "natural_earth_110m": "Natural Earth map boundaries",
+    "odwwl2024": "Open Doors World Watch List 2024",
+    "acn2024": "ACN Persecuted and Forgotten 2024",
+    "pew2023america": "Pew Research — Religion in America",
+    "pew2023china": "Pew Research — Religion in China",
+    "bbc2021": "BBC News — Afghanistan Christians 2021",
+}
+
+def _source_label(sid):
+    if sid in SOURCE_LABELS:
+        return SOURCE_LABELS[sid]
+    if sid.startswith("uscirf"):
+        return "UC"
+    return sid[:6].upper()
+
+def _source_title(sid):
+    if sid in SOURCE_TITLES:
+        return SOURCE_TITLES[sid]
+    s = all_sources_lookup.get(sid)
+    if s and s.get("title"):
+        return s["title"]
+    return sid
+
+fetched_statuses = data.get("fetched", {}).get("source_statuses") or []
+status_map = {}
+for s in fetched_statuses:
+    if isinstance(s, dict) and s.get("name"):
+        status_map[s["name"]] = s
+
+meta_sources = []
+for sid in all_sources_lookup:
+    fs = status_map.get(sid)
+    meta_sources.append({
+        "id": sid,
+        "label": _source_label(sid),
+        "title": _source_title(sid),
+        "status": fs.get("status", "skipped") if fs else "skipped",
+        "fetchedAt": fs.get("fetched_at") if fs else None,
+    })
+fs_ne = status_map.get("natural_earth_110m")
+if fs_ne:
+    meta_sources.append({
+        "id": "natural_earth_110m",
+        "label": "NE",
+        "title": "Natural Earth map boundaries",
+        "status": fs_ne.get("status", "ok"),
+        "fetchedAt": fs_ne.get("fetched_at"),
+    })
+
+meta = {
+    "generatedAt": data.get("fetched", {}).get("generated_at"),
+    "sources": meta_sources,
+}
+(ASSETS / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+(COUNTRIES / "meta.json").write_text((ASSETS / "meta.json").read_text(encoding="utf-8"), encoding="utf-8")
+
 for c in countries:
     if not isinstance(c, dict):
         raise SystemExit("countries.yml contains an invalid non-object country entry")

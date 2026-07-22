@@ -24,6 +24,7 @@ jobs:
           test -s data/sources.yml
           test -s assets/data/geojson.json
           test -s assets/data/search.json
+          test -s assets/data/meta.json
           test -s countries/geojson.json
           test -s countries/search.json
           COUNTRY_COUNT=$(ls countries/*.html | wc -l)
