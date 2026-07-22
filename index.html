@@ -1,4 +1,88 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Christian Persecution World Map</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="assets/css/main.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" defer></script><script src="assets/js/map.js" defer></script><script src="assets/js/search-ui.js" defer></script></head><body class="min-h-screen bg-slate-50">
-<header class="bg-slate-900 text-white border-b border-slate-700"><div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"><a href="index.html" class="text-lg font-semibold tracking-tight hover:underline">Christian Persecution World Map</a><nav class="space-x-4 text-sm"><a href="about.html" class="text-slate-200 hover:text-white">About</a></nav></div></header>
-<main class="max-w-7xl mx-auto px-2 py-6"><div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden"><div class="px-4 py-5 border-b border-slate-200"><h1 class="text-2xl font-semibold">Christian Persecution Around the World</h1><p class="text-sm text-slate-600 mt-1">Click a country to view modern and historical persecution data.</p></div><div class="relative"><input id="country-search" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm mx-4 mt-3 focus:outline-none focus:ring focus:border-blue-300" type="search" placeholder="Search country..." autocomplete="off" /><div id="search-results" class="hidden bg-white border border-slate-200 rounded-lg shadow-lg mx-4 mt-1 max-h-64 overflow-auto z-50"></div></div><div id="map" class="w-full h-[520px] mt-2"></div><div class="px-4 py-3 bg-slate-50 border-t border-slate-200 flex flex-wrap gap-3 text-xs text-slate-600" id="legend"><div class="flex items-center"><span class="inline-block w-3 h-3 rounded-full bg-red-600 mr-1"></span> Severe</div><div class="flex items-center"><span class="inline-block w-3 h-3 rounded-full bg-orange-500 mr-1"></span> Warning</div><div class="flex items-center"><span class="inline-block w-3 h-3 rounded-full bg-yellow-400 mr-1"></span> Restricted</div><div class="flex items-center"><span class="inline-block w-3 h-3 rounded-full bg-blue-500 mr-1"></span> Open</div></div></div></main>
-<footer class="border-t border-slate-200 mt-12"><div class="max-w-7xl mx-auto px-4 py-6 text-sm text-slate-500"><a href="index.html">Map</a> · <a href="about.html">About</a><br />Sources: Open Doors World Watch List, USCIRF, ACN, Pew Research Center, Wikipedia. Data updated automatically via GitHub Actions.</div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christian Persecution World Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif; background: #f8fafc; color: #0f172a; }
+    header { background: #0b132b; color: #fff; }
+    header a { text-decoration: none; color: inherit; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 16px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 700; letter-spacing: 0.3px; }
+    nav a { color: #cbd5e1; }
+    nav a:hover { color: #fff; }
+    main { padding: 24px 16px; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+    .card header { padding: 16px; border-bottom: 1px solid #e5e7eb; color: #0b132b; background: #fff; }
+    .card header h1 { margin: 0; font-size: 22px; }
+    .card header p { margin: 6px 0 0; font-size: 13px; color: #475569; }
+    .search { position: relative; }
+    .search input { width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; outline: none; }
+    .search input:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+    #search-results { position: absolute; left: 16px; right: 16px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 10px 15px rgba(0,0,0,0.08); max-height: 280px; overflow: auto; z-index: 50; margin-top: 6px; }
+    #search-results a { display: block; padding: 10px 12px; font-size: 14px; color: #0f172a; text-decoration: none; }
+    #search-results a:hover { background: #f1f5f9; }
+    #search-results .meta { color: #64748b; padding-left: 4px; }
+    #map { width: 100%; height: 520px; margin-top: 8px; }
+    .legend { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 10px 16px; border-top: 1px solid #e5e7eb; background: #f8fafc; font-size: 12px; color: #475569; }
+    .legend .dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; margin-right: 6px; }
+    footer { margin-top: 24px; padding: 14px 16px; border-top: 1px solid #e5e7eb; font-size: 13px; color: #64748b; background: #fff; }
+    footer a { color: #334155; text-decoration: underline; }
+    .country { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; }
+    .country h1 { margin: 0; font-size: 24px; }
+    .country section + section { margin-top: 18px; }
+    .country h2 { margin: 0 0 6px; font-size: 16px; color: #0b132b; }
+    .country p { margin: 0; line-height: 1.55; color: #1e293b; }
+    .country ul { margin: 0; padding-left: 18px; }
+    .country li + li { margin-top: 4px; }
+    .country a { color: #2563eb; word-break: break-word; }
+    .status-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; font-size: 12px; border: 1px solid #e5e7eb; background: #f8fafc; margin-top: 8px; }
+    .status-pill .pct { width: 8px; height: 8px; border-radius: 999px; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-50">
+  <header>
+    <div class="wrap">
+      <a class="brand" href="index.html">Christian Persecution World Map</a>
+      <nav>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="card">
+      <header>
+        <h1>Christian Persecution Around the World</h1>
+        <p>Search a country or click the map to view historical and modern persecution data.</p>
+      </header>
+      <div class="px-4 pt-3">
+        <div class="search">
+          <input id="country-search" type="search" placeholder="Search country..." autocomplete="off" />
+          <div id="search-results" class="hidden"></div>
+        </div>
+      </div>
+      <div id="map" class="mt-2"></div>
+      <div class="legend">
+        <div><span class="dot" style="background:#dc2626"></span>Severe</div>
+        <div><span class="dot" style="background:#f97316"></span>Warning</div>
+        <div><span class="dot" style="background:#facc15"></span>Restricted</div>
+        <div><span class="dot" style="background:#3b82f6"></span>Open</div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap" style="padding-top:0;padding-bottom:0">
+      <a href="index.html">Map</a> · <a href="about.html">About</a>
+      <div style="margin-top:6px">Updated continuously via GitHub Actions. Sources include Open Doors World Watch List, USCIRF, ACN, Pew Research Center, and Wikipedia.</div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+  <script src="assets/js/map.js" defer></script>
+  <script src="assets/js/search-ui.js" defer></script>
+</body>
+</html>

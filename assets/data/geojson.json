@@ -6,86 +6,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          104.19,
-          35.86
-        ]
-      },
-      "properties": {
-        "title": "China",
-        "slug": "china",
-        "iso3": "CHN",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          127.51,
-          40.34
-        ]
-      },
-      "properties": {
-        "title": "North Korea",
-        "slug": "north-korea",
-        "iso3": "PRK",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.68,
-          9.08
-        ]
-      },
-      "properties": {
-        "title": "Nigeria",
-        "slug": "nigeria",
-        "iso3": "NGA",
-        "status": "persecution"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          78.96,
-          20.59
-        ]
-      },
-      "properties": {
-        "title": "India",
-        "slug": "india",
-        "iso3": "IND",
-        "status": "warning"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          69.34,
-          30.37
-        ]
-      },
-      "properties": {
-        "title": "Pakistan",
-        "slug": "pakistan",
-        "iso3": "PAK",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           67.7,
           33.93
         ]
@@ -94,7 +14,8 @@
         "title": "Afghanistan",
         "slug": "afghanistan",
         "iso3": "AFG",
-        "status": "severe"
+        "status": "severe",
+        "level": "Extreme"
       }
     },
     {
@@ -102,143 +23,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          53.68,
-          32.42
+          104.19,
+          35.86
         ]
       },
       "properties": {
-        "title": "Iran",
-        "slug": "iran",
-        "iso3": "IRN",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          45.07,
-          23.88
-        ]
-      },
-      "properties": {
-        "title": "Saudi Arabia",
-        "slug": "saudi-arabia",
-        "iso3": "SAU",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          48.51,
-          15.55
-        ]
-      },
-      "properties": {
-        "title": "Yemen",
-        "slug": "yemen",
-        "iso3": "YEM",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          39.78,
-          15.17
-        ]
-      },
-      "properties": {
-        "title": "Eritrea",
-        "slug": "eritrea",
-        "iso3": "ERI",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          46.19,
-          5.15
-        ]
-      },
-      "properties": {
-        "title": "Somalia",
-        "slug": "somalia",
-        "iso3": "SOM",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.99,
-          34.8
-        ]
-      },
-      "properties": {
-        "title": "Syria",
-        "slug": "syria",
-        "iso3": "SYR",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          43.67,
-          33.22
-        ]
-      },
-      "properties": {
-        "title": "Iraq",
-        "slug": "iraq",
-        "iso3": "IRQ",
-        "status": "severe"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.78,
-          21.52
-        ]
-      },
-      "properties": {
-        "title": "Cuba",
-        "slug": "cuba",
-        "iso3": "CUB",
-        "status": "restricted"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -102.55,
-          23.63
-        ]
-      },
-      "properties": {
-        "title": "Mexico",
-        "slug": "mexico",
-        "iso3": "MEX",
-        "status": "warning"
+        "title": "China",
+        "slug": "china",
+        "iso3": "CHN",
+        "status": "severe",
+        "level": "Very High"
       }
     },
     {
@@ -254,7 +48,8 @@
         "title": "Colombia",
         "slug": "colombia",
         "iso3": "COL",
-        "status": "warning"
+        "status": "warning",
+        "level": "Moderate"
       }
     },
     {
@@ -262,15 +57,101 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -85.2,
-          12.86
+          -77.78,
+          21.52
         ]
       },
       "properties": {
-        "title": "Nicaragua",
-        "slug": "nicaragua",
-        "iso3": "NIC",
-        "status": "restricted"
+        "title": "Cuba",
+        "slug": "cuba",
+        "iso3": "CUB",
+        "status": "restricted",
+        "level": "Moderate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.78,
+          15.17
+        ]
+      },
+      "properties": {
+        "title": "Eritrea",
+        "slug": "eritrea",
+        "iso3": "ERI",
+        "status": "severe",
+        "level": "Very High"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.96,
+          20.59
+        ]
+      },
+      "properties": {
+        "title": "India",
+        "slug": "india",
+        "iso3": "IND",
+        "status": "warning",
+        "level": "Moderate/High"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          113.92,
+          0.79
+        ]
+      },
+      "properties": {
+        "title": "Indonesia",
+        "slug": "indonesia",
+        "iso3": "IDN",
+        "status": "warning",
+        "level": "Moderate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          53.68,
+          32.42
+        ]
+      },
+      "properties": {
+        "title": "Iran",
+        "slug": "iran",
+        "iso3": "IRN",
+        "status": "severe",
+        "level": "Very High"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.67,
+          33.22
+        ]
+      },
+      "properties": {
+        "title": "Iraq",
+        "slug": "iraq",
+        "iso3": "IRQ",
+        "status": "severe",
+        "level": "Very High"
       }
     },
     {
@@ -286,7 +167,144 @@
         "title": "Laos",
         "slug": "laos",
         "iso3": "LAO",
-        "status": "restricted"
+        "status": "restricted",
+        "level": "High"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.55,
+          23.63
+        ]
+      },
+      "properties": {
+        "title": "Mexico",
+        "slug": "mexico",
+        "iso3": "MEX",
+        "status": "warning",
+        "level": "Moderate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.2,
+          12.86
+        ]
+      },
+      "properties": {
+        "title": "Nicaragua",
+        "slug": "nicaragua",
+        "iso3": "NIC",
+        "status": "restricted",
+        "level": "Moderate/High"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.68,
+          9.08
+        ]
+      },
+      "properties": {
+        "title": "Nigeria",
+        "slug": "nigeria",
+        "iso3": "NGA",
+        "status": "persecution",
+        "level": "High"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.51,
+          40.34
+        ]
+      },
+      "properties": {
+        "title": "North Korea",
+        "slug": "north-korea",
+        "iso3": "PRK",
+        "status": "severe",
+        "level": "Extreme"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.34,
+          30.37
+        ]
+      },
+      "properties": {
+        "title": "Pakistan",
+        "slug": "pakistan",
+        "iso3": "PAK",
+        "status": "severe",
+        "level": "Very High"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.07,
+          23.88
+        ]
+      },
+      "properties": {
+        "title": "Saudi Arabia",
+        "slug": "saudi-arabia",
+        "iso3": "SAU",
+        "status": "severe",
+        "level": "Very High"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.19,
+          5.15
+        ]
+      },
+      "properties": {
+        "title": "Somalia",
+        "slug": "somalia",
+        "iso3": "SOM",
+        "status": "severe",
+        "level": "Extreme"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.99,
+          34.8
+        ]
+      },
+      "properties": {
+        "title": "Syria",
+        "slug": "syria",
+        "iso3": "SYR",
+        "status": "severe",
+        "level": "Very High"
       }
     },
     {
@@ -302,7 +320,8 @@
         "title": "Vietnam",
         "slug": "vietnam",
         "iso3": "VNM",
-        "status": "restricted"
+        "status": "restricted",
+        "level": "Moderate/High"
       }
     },
     {
@@ -310,15 +329,67 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          64.58,
-          41.37
+          48.51,
+          15.55
         ]
       },
       "properties": {
-        "title": "Uzbekistan",
-        "slug": "uzbekistan",
-        "iso3": "UZB",
-        "status": "restricted"
+        "title": "Yemen",
+        "slug": "yemen",
+        "iso3": "YEM",
+        "status": "severe",
+        "level": "Extreme"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.71,
+          37.09
+        ]
+      },
+      "properties": {
+        "title": "United States",
+        "slug": "united-states",
+        "iso3": "USA",
+        "status": "open",
+        "level": "Low"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.92,
+          -14.23
+        ]
+      },
+      "properties": {
+        "title": "Brazil",
+        "slug": "brazil",
+        "iso3": "BRA",
+        "status": "open",
+        "level": "Low"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.29,
+          1.37
+        ]
+      },
+      "properties": {
+        "title": "Uganda",
+        "slug": "uganda",
+        "iso3": "UGA",
+        "status": "open",
+        "level": "Low"
       }
     }
   ]
