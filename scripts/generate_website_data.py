@@ -12,7 +12,7 @@ with (DATA / "countries.yml").open("r", encoding="utf-8") as f:
     data = yaml.safe_load(f)
 countries = data["countries"]
 for c in countries:
-    html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{c['title']} | Christian Persecution World Map</title><link rel="stylesheet" href="/assets/css/main.css"></head><body><header><a href="/">Home</a></header><main><h1>{c['title']}</h1><section><h2>Historical</h2><p>{c['historical']}</p></section><section><h2>Modern</h2><p>{c['modern']}</p></section><section><h2>Sources</h2><ul>"""
+    html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{c['title']} | Christian Persecution World Map</title><link rel="stylesheet" href="assets/css/main.css"></head><body><header><a href="index.html">Home</a></header><main><h1>{c['title']}</h1><section><h2>Historical Background</h2><p>{c['historical']}</p></section><section><h2>Modern-Day Situation</h2><p>{c['modern']}</p></section><section><h2>Sources</h2><ul>"""
     for s in c.get("sources", []):
         html += f"""<li><a href="{s.get('url','#')}">{s.get('title','')}</a></li>"""
     html += "</ul></section></main></body></html>"
