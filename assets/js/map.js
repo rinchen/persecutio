@@ -18,7 +18,7 @@
             'Low': '#3b82f6'
           };
           return L.circleMarker(latlng, {
-            radius: 5,
+            radius: 7,
             fillColor: levels[f.properties.level] || '#94a3b8',
             color: '#fff',
             weight: 1,
