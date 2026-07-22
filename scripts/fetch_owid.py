@@ -1,14 +1,20 @@
 import csv
 import io
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-import urllib.request
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    ensure_fetched_dir,
+    exit_for_status,
+    fetch_text,
+    write_status,
+)
 
-ROOT = Path(__file__).resolve().parents[1]
-FETCHED = ROOT / "data" / "fetched"
-FETCHED.mkdir(parents=True, exist_ok=True)
+ensure_fetched_dir()
 
 CSV_SHARE = (
     "https://ourworldindata.org/grapher/religious-composition.csv"
@@ -26,7 +32,6 @@ META_URL = (
 
 CACHE_CSV = FETCHED / "owid_religion.csv"
 CACHE_JSON = FETCHED / "owid_religion.json"
-STATUS_PATH = FETCHED / "owid_status.json"
 
 SKIP_COUNTRIES = {
     "OWID_WRL", "OWID_AFR", "OWID_ASI", "OWID_EUR",
@@ -36,41 +41,29 @@ SKIP_COUNTRIES = {
 }
 
 
-def write_status(status, message=None):
-    STATUS_PATH.write_text(
-        json.dumps({
-            "name": "owid",
-            "status": status,
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
-            "message": message,
-        }, indent=2),
-        encoding="utf-8",
-    )
-
-
-def fetch_url(url, label):
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.read().decode("utf-8", errors="ignore"), None
-    except Exception as e:
-        return None, str(e)
-
-
 def parse_csv(text):
     rows = {}
+    skipped = 0
     reader = csv.DictReader(io.StringIO(text))
     for row in reader:
         code = row.get("Code", "").strip()
         if not code or code in SKIP_COUNTRIES:
             continue
         entity = row.get("Entity", "").strip()
-        year = int(row.get("Year", 0))
-        val = row.get("Share of the population who are Christians") or row.get(
+        try:
+            year = int(row.get("Year", 0))
+        except (ValueError, TypeError):
+            skipped += 1
+            continue
+        val_raw = row.get("Share of the population who are Christians") or row.get(
             "Number of people who are Christians"
         )
-        if val:
-            val = float(val)
+        if val_raw:
+            try:
+                val = float(val_raw)
+            except (ValueError, TypeError):
+                skipped += 1
+                continue
         else:
             val = None
         key = (code, year)
@@ -81,6 +74,8 @@ def parse_csv(text):
             rows[key]["share"] = val
         elif "Number" in col_name:
             rows[key]["count"] = val
+    if skipped:
+        print(f"  warning: skipped {skipped} bad CSV rows")
     return rows
 
 
@@ -125,7 +120,7 @@ def build_country_map(merged):
 
 def main():
     print("fetching OWID religious composition metadata...")
-    meta_text, meta_err = fetch_url(META_URL, "metadata")
+    meta_text, meta_err = fetch_text(META_URL)
     if meta_err:
         print(f"  metadata fetch failed: {meta_err}")
     else:
@@ -137,15 +132,16 @@ def main():
             print("  metadata parsed (non-critical)")
 
     print("fetching Christian share CSV...")
-    share_text, share_err = fetch_url(CSV_SHARE, "share")
+    share_text, share_err = fetch_text(CSV_SHARE)
     if share_err:
         print(f"  share CSV failed: {share_err}")
 
     print("fetching Christian count CSV...")
-    count_text, count_err = fetch_url(CSV_COUNT, "count")
+    count_text, count_err = fetch_text(CSV_COUNT)
     if count_err:
         print(f"  count CSV failed: {count_err}")
 
+    countries = {}
     if share_text and count_text:
         share_rows = parse_csv(share_text)
         count_rows = parse_csv(count_text)
@@ -178,25 +174,29 @@ def main():
             print(f"  using cached CSV: {CACHE_CSV}")
             raw = CACHE_CSV.read_text(encoding="utf-8")
             reader = csv.DictReader(io.StringIO(raw))
-            countries = {}
+            skipped = 0
             for row in reader:
                 code = row.get("Code", "").strip()
                 if not code:
                     continue
-                year = int(row.get("Year", 0))
-                share = row.get("Christian_Share_Pct")
-                count = row.get("Christian_Count")
+                try:
+                    year = int(row.get("Year", 0))
+                    share = row.get("Christian_Share_Pct")
+                    count = row.get("Christian_Count")
+                    pop = int(count) if count else None
+                    pct = float(share) if share else None
+                except (ValueError, TypeError):
+                    skipped += 1
+                    continue
                 if code not in countries or year > countries[code]["year"]:
                     countries[code] = {
                         "country_name": row.get("Entity", ""),
-                        "christian_population": int(count)
-                        if count
-                        else None,
-                        "christian_percentage": float(share)
-                        if share
-                        else None,
+                        "christian_population": pop,
+                        "christian_percentage": pct,
                         "year": year,
                     }
+            if skipped:
+                print(f"  warning: skipped {skipped} bad cache rows")
             output = {"countries": countries}
             CACHE_JSON.write_text(
                 json.dumps(output, indent=2, ensure_ascii=False),
@@ -205,8 +205,8 @@ def main():
             print(f"  {len(countries)} countries restored from cache")
         else:
             print("  no cache available, exiting")
-            write_status("failed", "no data available")
-            return
+            write_status("owid", "failed", "no data available")
+            exit_for_status("failed")
 
     status = {
         "fetched_at": datetime.now(timezone.utc).isoformat(),
@@ -218,14 +218,23 @@ def main():
 
     used_cache = bool((share_err or count_err) and countries)
     if share_err and count_err and not countries:
-        write_status("failed", "both share and count CSVs failed")
+        final_status = "failed"
+        write_status("owid", final_status, "both share and count CSVs failed")
     elif share_err and count_err and used_cache:
-        write_status("cached", "both CSVs failed, restored from cache")
+        final_status = "cached"
+        write_status("owid", final_status, "both CSVs failed, restored from cache")
     elif share_err or count_err:
-        write_status("partial", f"share={'ok' if not share_err else 'failed'}, count={'ok' if not count_err else 'failed'}")
+        final_status = "partial"
+        write_status(
+            "owid",
+            final_status,
+            f"share={'ok' if not share_err else 'failed'}, count={'ok' if not count_err else 'failed'}",
+        )
     else:
-        write_status("ok")
+        final_status = "ok"
+        write_status("owid", final_status)
     print("done")
+    exit_for_status(final_status)
 
 
 if __name__ == "__main__":

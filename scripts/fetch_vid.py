@@ -8,45 +8,26 @@ by country. We filter to Christian-specific incidents only.
 """
 import json
 import re
-import urllib.request
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched"
-FETCHED.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    KNOWN_COUNTRIES,
+    USER_AGENT,
+    ensure_fetched_dir,
+    exit_for_status,
+    fetch_text,
+    load_json_cache,
+    write_status,
+)
+
+ensure_fetched_dir()
 
 VID_URL = "https://violentincidents.plataformac.org/web/search/search"
 OUTPUT = FETCHED / "vid.json"
-
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-
-KNOWN_COUNTRIES = [
-    "Afghanistan", "Algeria", "Azerbaijan", "Bahrain", "Bangladesh",
-    "Bhutan", "Brazil", "Brunei", "Burkina Faso", "Cameroon",
-    "Central African Republic", "China", "Colombia", "Comoros", "Cuba",
-    "Democratic Republic of Congo", "Egypt", "Eritrea", "Ethiopia",
-    "Guinea", "Haiti", "India", "Indonesia", "Iran", "Iraq", "Jordan",
-    "Kazakhstan", "Kyrgyzstan", "Laos", "Libya", "Malaysia", "Maldives",
-    "Mali", "Mauritania", "Mexico", "Morocco", "Mozambique", "Myanmar",
-    "Nicaragua", "Niger", "Nigeria", "North Korea", "Oman", "Pakistan",
-    "Philippines", "Qatar", "Russia", "Saudi Arabia", "Somalia",
-    "Sri Lanka", "Sudan", "Syria", "Tajikistan", "Tunisia", "Turkey",
-    "Turkmenistan", "Uganda", "United States", "Uzbekistan", "Venezuela",
-    "Vietnam", "Yemen", "Zimbabwe",
-]
-
-
-def fetch_page(url):
-    """Fetch HTML page."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.read().decode("utf-8", errors="replace")
-    except Exception as e:
-        print(f"  fetch error: {e}")
-        return None
 
 
 def try_api_endpoints():
@@ -58,14 +39,14 @@ def try_api_endpoints():
         "https://violentincidents.plataformac.org/web/search/search.json?lang=en",
     ]
     for url in api_urls:
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                data = resp.read().decode("utf-8", errors="replace")
-                if data.strip().startswith(("{", "[")):
-                    return json.loads(data), url
-        except Exception:
+        text, err = fetch_text(url, timeout=15, user_agent=USER_AGENT)
+        if err or not text:
             continue
+        if text.strip().startswith(("{", "[")):
+            try:
+                return json.loads(text), url
+            except json.JSONDecodeError:
+                continue
     return None, None
 
 
@@ -100,51 +81,6 @@ def parse_country_counts(html):
                     break
 
     return countries
-
-
-def main():
-    print("Fetching Violent Incidents Database (VID)...")
-    cached = {}
-    if OUTPUT.exists():
-        try:
-            cached = json.loads(OUTPUT.read_text(encoding="utf-8"))
-        except Exception:
-            pass
-
-    api_data, api_url = try_api_endpoints()
-    if api_data:
-        print(f"  got API response from {api_url}")
-        result = process_api_data(api_data)
-        OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-        print(f"  wrote {OUTPUT}")
-        return
-
-    html = fetch_page(VID_URL)
-    if html is None:
-        if cached:
-            print("  fetch failed, using cached data")
-            cached["status"] = "cached"
-            cached["fetched_at"] = datetime.now(timezone.utc).isoformat()
-            OUTPUT.write_text(json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8")
-            return
-        print("  VID site unreachable and no cache, writing stub")
-        _write_empty("unavailable")
-        return
-
-    countries = parse_country_counts(html)
-
-    result = {
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "source": "Violent Incidents Database (IIRF/GCR)",
-        "source_url": VID_URL,
-        "status": "partial" if countries else "parse_limited",
-        "note": "Public VID shows aggregate counts only. Detailed records require subscription.",
-        "countries": countries,
-        "total_countries": len(countries),
-    }
-    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  parsed {len(countries)} countries from VID page")
-    print(f"  wrote {OUTPUT}")
 
 
 def process_api_data(data):
@@ -208,6 +144,53 @@ def _write_empty(status):
     }
     OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  wrote empty output to {OUTPUT}")
+
+
+def main():
+    print("Fetching Violent Incidents Database (VID)...")
+    cached = load_json_cache(OUTPUT)
+
+    api_data, api_url = try_api_endpoints()
+    if api_data:
+        print(f"  got API response from {api_url}")
+        result = process_api_data(api_data)
+        OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+        print(f"  wrote {OUTPUT}")
+        write_status("vid", "ok")
+        exit_for_status("ok")
+
+    html, err = fetch_text(VID_URL, user_agent=USER_AGENT)
+    if html is None:
+        if cached:
+            print("  fetch failed, using cached data")
+            cached["status"] = "cached"
+            cached["fetched_at"] = datetime.now(timezone.utc).isoformat()
+            OUTPUT.write_text(json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8")
+            write_status("vid", "cached", "fetch failed, using cache")
+            exit_for_status("cached")
+        print("  VID site unreachable and no cache, writing stub")
+        _write_empty("unavailable")
+        write_status("vid", "failed", "unavailable, no cache")
+        exit_for_status("failed")
+
+    countries = parse_country_counts(html)
+
+    result = {
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "source": "Violent Incidents Database (IIRF/GCR)",
+        "source_url": VID_URL,
+        "status": "partial" if countries else "parse_limited",
+        "note": "Public VID shows aggregate counts only. Detailed records require subscription.",
+        "countries": countries,
+        "total_countries": len(countries),
+    }
+    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"  parsed {len(countries)} countries from VID page")
+    print(f"  wrote {OUTPUT}")
+    # Page fetched successfully even if parse is limited
+    final_status = "ok" if countries else "partial"
+    write_status("vid", final_status, result["status"])
+    exit_for_status(final_status)
 
 
 if __name__ == "__main__":

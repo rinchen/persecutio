@@ -1,37 +1,28 @@
 import json
 import re
+import sys
 import time
-import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    USER_AGENT,
+    ensure_fetched_dir,
+    exit_for_status,
+    fetch_text,
+    write_status,
+)
+
+ensure_fetched_dir()
 STATE_DEPT = FETCHED / "state_dept"
 STATE_DEPT.mkdir(parents=True, exist_ok=True)
-STATUS_PATH = FETCHED / "state_dept_status.json"
 
 REPORT_YEAR = 2023
 BASE_URL = f"https://www.state.gov/reports/{REPORT_YEAR}-report-on-international-religious-freedom"
 MAIN_URL = "https://www.state.gov/international-religious-freedom-reports/"
 REQUEST_DELAY = 1.5
-USER_AGENT = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-)
-
-
-def write_status(status, message=None):
-    STATUS_PATH.write_text(
-        json.dumps({
-            "name": "statedepartment",
-            "status": status,
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
-            "message": message,
-        }, indent=2),
-        encoding="utf-8",
-    )
 
 # Some country slugs differ between our project and state.gov URLs
 SLUG_MAP = {
@@ -50,9 +41,10 @@ TARGET_COUNTRIES = [
 
 
 def fetch_url(url, timeout=20):
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read().decode("utf-8", errors="ignore")
+    text, err = fetch_text(url, timeout=timeout)
+    if err:
+        raise RuntimeError(err)
+    return text
 
 
 def strip_tags(html):
@@ -360,11 +352,15 @@ def main():
     print(f"Index written to: {index_path}")
 
     if failed == len(TARGET_COUNTRIES):
-        write_status("failed", "all countries failed")
+        final_status = "failed"
+        write_status("statedepartment", final_status, "all countries failed")
     elif failed > 0:
-        write_status("partial", f"{failed} of {len(TARGET_COUNTRIES)} failed")
+        final_status = "partial"
+        write_status("statedepartment", final_status, f"{failed} of {len(TARGET_COUNTRIES)} failed")
     else:
-        write_status("ok")
+        final_status = "ok"
+        write_status("statedepartment", final_status)
+    exit_for_status(final_status)
 
 
 if __name__ == "__main__":

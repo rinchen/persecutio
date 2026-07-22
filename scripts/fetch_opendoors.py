@@ -1,31 +1,31 @@
 import json
 import re
-import urllib.request
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched"
-FETCHED.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    USER_AGENT,
+    ensure_fetched_dir,
+    exit_for_status,
+    fetch_text,
+    load_json_cache,
+    write_status,
+)
+
+ensure_fetched_dir()
 
 WWL_URL = "https://www.opendoors.org/en-US/persecution/countries/"
 CACHE_PATH = FETCHED / "opendoors.json"
-STATUS_PATH = FETCHED / "opendoors_status.json"
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-}
 
 
 def fetch_url(url, timeout=20):
-    req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read().decode("utf-8", errors="ignore")
+    text, err = fetch_text(url, timeout=timeout, user_agent=USER_AGENT)
+    if err:
+        raise RuntimeError(err)
+    return text
 
 
 def parse_json_from_html(html):
@@ -60,29 +60,13 @@ def try_fetch_live():
 
 
 def load_cache():
-    if CACHE_PATH.exists():
-        try:
-            return json.loads(CACHE_PATH.read_text(encoding="utf-8"))
-        except Exception:
-            pass
-    return None
+    data = load_json_cache(CACHE_PATH)
+    return data if data else None
 
 
 def save_cache(data):
     CACHE_PATH.write_text(
         json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
-
-
-def write_status(status, message=None):
-    STATUS_PATH.write_text(
-        json.dumps({
-            "name": "opendoors",
-            "status": status,
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
-            "message": message,
-        }, indent=2),
-        encoding="utf-8",
     )
 
 
@@ -541,22 +525,23 @@ def main():
                 live_status,
             )
             save_cache(result)
-            write_status("ok")
+            write_status("opendoors", "ok")
             print_summary(result)
-            return
+            exit_for_status("ok")
         print("  Live data format not recognized, using static fallback")
 
     if cached:
         print(f"Using cached data from {cached.get('fetched_at', 'unknown')}")
-        write_status("cached")
+        write_status("opendoors", "cached")
         print_summary(cached)
-        return
+        exit_for_status("cached")
 
     print("Using static WWL 2025 fallback data")
     result = build_result(STATIC_WWL_2025, live_status)
     save_cache(result)
-    write_status("partial", "static fallback used")
+    write_status("opendoors", "partial", "static fallback used")
     print_summary(result)
+    exit_for_status("partial")
 
 
 if __name__ == "__main__":

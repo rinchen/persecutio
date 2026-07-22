@@ -4,21 +4,30 @@ on:
     - cron: '0 6 * * *'
   workflow_dispatch: {}
 
+concurrency:
+  group: update-persecutio
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python3 -m pip install --upgrade pip pyyaml requests beautifulsoup4 openpyxl pytest
+      - name: Install dependencies
+        run: python3 -m pip install --upgrade pip -r requirements.txt
       - name: Fetch external data sources
         id: fetch
         run: |
           FAIL=0
+          # Primary sources — failures abort the job before generate/deploy
           python3 scripts/fetch_opendoors.py || FAIL=1
           python3 scripts/fetch_freedom_house.py || FAIL=1
           python3 scripts/fetch_owid.py || FAIL=1
@@ -26,27 +35,62 @@ jobs:
           python3 scripts/fetch_uscirf.py || FAIL=1
           python3 scripts/fetch_state_dept.py || FAIL=1
           python3 scripts/fetch_ohchr.py || FAIL=1
-          echo "fetch_failed=$FAIL" >> "$GITHUB_OUTPUT"
-          if [ "$FAIL" -ne 0 ]; then
-            echo "::warning::One or more data source fetches failed — see individual status files"
-          fi
+
+          # Secondary sources — always write status; do not abort the pipeline
           python3 scripts/fetch_morningstarnews.py || true
           python3 scripts/fetch_vid.py || true
           python3 scripts/fetch_gcr_stats.py || true
           python3 scripts/fetch_acn.py || true
           python3 scripts/fetch_csw.py || true
           python3 scripts/fetch_icc.py || true
+
+          # Gate on primary status JSON only
+          python3 - <<'PY'
+          import json, sys
+          from pathlib import Path
+          PRIMARY = {
+              "opendoors", "freedomhouse", "owid", "gdelt",
+              "uscirf", "statedepartment", "ohchr",
+          }
+          failed = []
+          for p in sorted(Path("data/fetched").glob("*_status.json")):
+              try:
+                  s = json.loads(p.read_text(encoding="utf-8"))
+              except Exception as e:
+                  name = p.stem.replace("_status", "")
+                  if name in PRIMARY:
+                      failed.append(f"{p.name}: corrupt ({type(e).__name__})")
+                  continue
+              name = s.get("name") or p.stem.replace("_status", "")
+              if name in PRIMARY and s.get("status") == "failed":
+                  failed.append(f"{name}: {s.get('message') or 'failed'}")
+          if failed:
+              print("Failed primary sources:")
+              for f in failed:
+                  print(f"  - {f}")
+              sys.exit(1)
+          print("Primary source status files ok or partial/cached")
+          PY
+          STATUS_FAIL=$?
+          if [ "$STATUS_FAIL" -ne 0 ]; then
+            FAIL=1
+          fi
+
+          echo "fetch_failed=$FAIL" >> "$GITHUB_OUTPUT"
+          if [ "$FAIL" -ne 0 ]; then
+            echo "::error::One or more primary data source fetches failed — aborting before generate/deploy"
+            exit 1
+          fi
       - run: python3 scripts/collect_data.py
       - run: python3 scripts/generate_website_data.py
-      - run: python3 -m py_compile scripts/collect_data.py scripts/generate_website_data.py scripts/fetch_*.py tests/*.py
+      - run: python3 -m py_compile scripts/collect_data.py scripts/generate_website_data.py scripts/fetch_common.py scripts/fetch_*.py tests/*.py
       - run: python3 -m pytest tests
       - run: |
           test -s data/countries.yml
           test -s data/sources.yml
           test -s assets/data/geojson.json
           test -s assets/data/search.json
-          test -s countries/geojson.json
-          test -s countries/search.json
+          test -s assets/data/meta.json
           COUNTRY_COUNT=$(ls countries/*.html | wc -l)
           GEOJSON_FEATURES=$(python3 -c "import json; print(len(json.load(open('assets/data/geojson.json'))['features']))")
           if [ "$COUNTRY_COUNT" != "$GEOJSON_FEATURES" ]; then
@@ -87,19 +131,24 @@ jobs:
         uses: actions/deploy-pages@v4
       - name: Commit and push updates
         if: github.event_name == 'schedule'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git add -A
+          git add \
+            data/countries.yml \
+            data/sources.yml \
+            assets/data/ \
+            countries/ \
+            index.html \
+            about.html \
+            assets/css/ \
+            assets/js/ \
+            assets/img/ || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
             git commit -m "chore: update persecution data and site [skip ci]"
             git push origin HEAD:main
           fi
-      - name: Flag failed fetches
-        if: steps.fetch.outputs.fetch_failed == '1'
-        run: |
-          echo "::error::One or more data source fetches failed — check status files in data/fetched/*_status.json"
-          exit 1

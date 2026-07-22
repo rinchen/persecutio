@@ -1,6 +1,7 @@
 (function () {
   var mapEl = document.getElementById('map');
   var announcer = document.getElementById('status-announcer');
+  var SLUG_RE = /^[a-z0-9-]+$/;
 
   var map = L.map('map', {
     zoomControl: true,
@@ -30,11 +31,23 @@
     if (announcer) announcer.textContent = msg;
   }
 
+  function isSafeSlug(slug) {
+    return typeof slug === 'string' && SLUG_RE.test(slug);
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
   announce('Loading map data...');
 
-  fetch('countries/geojson.json?v=' + Date.now())
+  fetch('assets/data/geojson.json?v=' + Date.now())
     .then(function (r) {
-      if (!r.ok) throw new Error(r.statusText);
+      if (!r.ok) throw new Error(r.statusText || String(r.status));
       return r.json();
     })
     .then(function (data) {
@@ -68,16 +81,21 @@
         },
         onEachFeature: function (f, l) {
           l.on('click', function () {
-            window.location.href = 'countries/' + f.properties.slug + '.html';
+            var slug = f.properties && f.properties.slug;
+            if (!isSafeSlug(slug)) return;
+            window.location.href = 'countries/' + slug + '.html';
           });
-          var label = f.properties.title;
-          if (f.properties.level) {
-            label += ' \u2014 ' + f.properties.level;
+          var title = f.properties && f.properties.title ? String(f.properties.title) : '';
+          var level = f.properties && f.properties.level ? String(f.properties.level) : '';
+          var label = escapeHtml(title);
+          if (level) {
+            label += ' \u2014 ' + escapeHtml(level);
           }
           l.bindTooltip(label, {
             sticky: true,
             direction: 'top',
-            offset: [0, -baseRadius]
+            offset: [0, -baseRadius],
+            opacity: 0.95
           });
         }
       }).addTo(map);
@@ -87,7 +105,11 @@
     .catch(function (err) {
       console.error('geojson load failed', err);
       if (mapEl) {
-        mapEl.innerHTML = '<div class="loading">Map data failed to load. Please try refreshing the page.</div>';
+        mapEl.textContent = '';
+        var el = document.createElement('div');
+        el.className = 'loading';
+        el.textContent = 'Map data failed to load. Please try refreshing the page.';
+        mapEl.appendChild(el);
       }
       announce('Failed to load map data.');
     });

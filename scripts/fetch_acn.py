@@ -8,35 +8,28 @@ Source: https://acninternational.org/religiousfreedomreport/
 """
 import json
 import re
-import urllib.request
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched"
-FETCHED.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    KNOWN_COUNTRIES,
+    USER_AGENT,
+    ensure_fetched_dir,
+    exit_for_status,
+    fetch_text,
+    load_json_cache,
+    strip_html,
+    write_status,
+)
+
+ensure_fetched_dir()
 
 ACN_URL = "https://acninternational.org/religiousfreedomreport/"
 ACN_FACT_SHEET = "https://www.churchinneed.org/wp-content/uploads/2025/10/RELIGIOUS-FREEDOM-REPORT-FACT-SHEET.pdf"
 OUTPUT = FETCHED / "acn_report.json"
-
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-
-KNOWN_COUNTRIES = [
-    "Afghanistan", "Algeria", "Azerbaijan", "Bahrain", "Bangladesh",
-    "Bhutan", "Brazil", "Brunei", "Burkina Faso", "Cameroon",
-    "Central African Republic", "China", "Colombia", "Comoros", "Cuba",
-    "Democratic Republic of Congo", "Egypt", "Eritrea", "Ethiopia",
-    "Guinea", "Haiti", "India", "Indonesia", "Iran", "Iraq", "Jordan",
-    "Kazakhstan", "Kyrgyzstan", "Laos", "Libya", "Malaysia", "Maldives",
-    "Mali", "Mauritania", "Mexico", "Morocco", "Mozambique", "Myanmar",
-    "Nicaragua", "Niger", "Nigeria", "North Korea", "Oman", "Pakistan",
-    "Philippines", "Qatar", "Russia", "Saudi Arabia", "Somalia",
-    "Sri Lanka", "Sudan", "Syria", "Tajikistan", "Tunisia", "Turkey",
-    "Turkmenistan", "Uganda", "United States", "Uzbekistan", "Venezuela",
-    "Vietnam", "Yemen", "Zimbabwe",
-]
 
 PERSECUTION_KEYWORDS = [
     "persecution", "persecuted", "violence", "violence against",
@@ -47,25 +40,6 @@ PERSECUTION_KEYWORDS = [
     "harassment", "intimidation", "threat", "kidnapping",
     "abduction", "sexual violence", "forced marriage",
 ]
-
-
-def fetch_page(url):
-    """Fetch HTML page."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.read().decode("utf-8", errors="replace")
-    except Exception as e:
-        print(f"  fetch error for {url}: {e}")
-        return None
-
-
-def strip_html(html):
-    """Remove HTML tags and normalize whitespace."""
-    text = re.sub(r'<[^>]+>', ' ', html)
-    text = re.sub(r'&[a-zA-Z]+;', ' ', text)
-    text = re.sub(r'&#\d+;', ' ', text)
-    return re.sub(r'\s+', ' ', text).strip()
 
 
 def parse_acn_report(html):
@@ -142,26 +116,40 @@ def parse_acn_report(html):
     }
 
 
+def _write_empty(status):
+    result = {
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "source": "Aid to the Church in Need - Religious Freedom Report",
+        "source_url": ACN_URL,
+        "status": status,
+        "report_year": None,
+        "period": None,
+        "total_persecution_countries": None,
+        "total_discrimination_countries": None,
+        "countries": {},
+        "total_countries_with_data": 0,
+    }
+    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"  wrote empty output to {OUTPUT}")
+
+
 def main():
     print("Fetching Aid to the Church in Need report...")
-    cached = {}
-    if OUTPUT.exists():
-        try:
-            cached = json.loads(OUTPUT.read_text(encoding="utf-8"))
-        except Exception:
-            pass
+    cached = load_json_cache(OUTPUT)
 
-    html = fetch_page(ACN_URL)
+    html, err = fetch_text(ACN_URL, user_agent=USER_AGENT)
     if html is None:
         if cached:
             print("  fetch failed, using cached data")
             cached["status"] = "cached"
             cached["fetched_at"] = datetime.now(timezone.utc).isoformat()
             OUTPUT.write_text(json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8")
-            return
+            write_status("acn", "cached", "fetch failed, using cache")
+            exit_for_status("cached")
         print("  ACN site unreachable and no cache, writing stub")
         _write_empty("fetch_failed")
-        return
+        write_status("acn", "failed", "fetch failed, no cache")
+        exit_for_status("failed")
 
     report = parse_acn_report(html)
 
@@ -186,23 +174,8 @@ def main():
         entry = report["countries"][c]
         print(f"    {c}: {entry['classification']} ({entry['mentions']} mentions)")
     print(f"  wrote {OUTPUT}")
-
-
-def _write_empty(status):
-    result = {
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "source": "Aid to the Church in Need - Religious Freedom Report",
-        "source_url": ACN_URL,
-        "status": status,
-        "report_year": None,
-        "period": None,
-        "total_persecution_countries": None,
-        "total_discrimination_countries": None,
-        "countries": {},
-        "total_countries_with_data": 0,
-    }
-    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  wrote empty output to {OUTPUT}")
+    write_status("acn", "ok")
+    exit_for_status("ok")
 
 
 if __name__ == "__main__":

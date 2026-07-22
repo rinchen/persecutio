@@ -7,45 +7,27 @@ Source: https://globalchristianrelief.org/stories/christian-persecution-statisti
 """
 import json
 import re
-import urllib.request
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched"
-FETCHED.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    KNOWN_COUNTRIES,
+    USER_AGENT,
+    ensure_fetched_dir,
+    exit_for_status,
+    fetch_text,
+    load_json_cache,
+    strip_html,
+    write_status,
+)
+
+ensure_fetched_dir()
 
 STATS_URL = "https://globalchristianrelief.org/stories/christian-persecution-statistics"
 OUTPUT = FETCHED / "gcr_stats.json"
-
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-
-KNOWN_COUNTRIES = [
-    "Afghanistan", "Algeria", "Azerbaijan", "Bahrain", "Bangladesh",
-    "Bhutan", "Brazil", "Brunei", "Burkina Faso", "Cameroon",
-    "Central African Republic", "China", "Colombia", "Comoros", "Cuba",
-    "Democratic Republic of Congo", "Egypt", "Eritrea", "Ethiopia",
-    "Guinea", "Haiti", "India", "Indonesia", "Iran", "Iraq", "Jordan",
-    "Kazakhstan", "Kyrgyzstan", "Laos", "Libya", "Malaysia", "Maldives",
-    "Mali", "Mauritania", "Mexico", "Morocco", "Mozambique", "Myanmar",
-    "Nicaragua", "Niger", "Nigeria", "North Korea", "Oman", "Pakistan",
-    "Philippines", "Qatar", "Russia", "Saudi Arabia", "Somalia",
-    "Sri Lanka", "Sudan", "Syria", "Tajikistan", "Tunisia", "Turkey",
-    "Turkmenistan", "Uganda", "United States", "Uzbekistan", "Venezuela",
-    "Vietnam", "Yemen", "Zimbabwe",
-]
-
-
-def fetch_page(url):
-    """Fetch HTML page."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.read().decode("utf-8", errors="replace")
-    except Exception as e:
-        print(f"  fetch error: {e}")
-        return None
 
 
 def extract_number(text):
@@ -124,7 +106,7 @@ def parse_country_stats(html):
         if rank_match:
             entry["wwl_ranking"] = int(rank_match.group(1))
 
-        notes = re.sub(r'<[^>]+>', '', country_section).strip()[:500]
+        notes = strip_html(country_section)[:500]
         if notes:
             entry["notes"] = notes
 
@@ -134,32 +116,42 @@ def parse_country_stats(html):
     return countries
 
 
+def _write_empty(status):
+    result = {
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "source": "Global Christian Relief - Christian Persecution Statistics",
+        "source_url": STATS_URL,
+        "status": status,
+        "global_stats": {},
+        "countries": {},
+        "total_countries_with_data": 0,
+    }
+    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"  wrote empty output to {OUTPUT}")
+
+
 def main():
     print("Fetching Global Christian Relief statistics...")
-    cached = {}
-    if OUTPUT.exists():
-        try:
-            cached = json.loads(OUTPUT.read_text(encoding="utf-8"))
-        except Exception:
-            pass
+    cached = load_json_cache(OUTPUT)
 
-    html = fetch_page(STATS_URL)
+    html, err = fetch_text(STATS_URL, user_agent=USER_AGENT)
     if html is None:
         if cached:
             print("  fetch failed, using cached data")
             cached["status"] = "cached"
             cached["fetched_at"] = datetime.now(timezone.utc).isoformat()
             OUTPUT.write_text(json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8")
-            return
+            write_status("gcr", "cached", "fetch failed, using cache")
+            exit_for_status("cached")
         print("  GCR site unreachable and no cache, writing stub")
         _write_empty("fetch_failed")
-        return
+        write_status("gcr", "failed", "fetch failed, no cache")
+        exit_for_status("failed")
 
     global_stats = parse_global_stats(html)
     country_stats = parse_country_stats(html)
 
-    text = re.sub(r'<[^>]+>', ' ', html)
-    text = re.sub(r'\s+', ' ', text)
+    text = strip_html(html)
 
     for country in KNOWN_COUNTRIES:
         if country not in country_stats:
@@ -191,20 +183,8 @@ def main():
     for c in sorted(country_stats.keys()):
         print(f"    {c}: {country_stats[c]}")
     print(f"  wrote {OUTPUT}")
-
-
-def _write_empty(status):
-    result = {
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "source": "Global Christian Relief - Christian Persecution Statistics",
-        "source_url": STATS_URL,
-        "status": status,
-        "global_stats": {},
-        "countries": {},
-        "total_countries_with_data": 0,
-    }
-    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  wrote empty output to {OUTPUT}")
+    write_status("gcr", "ok")
+    exit_for_status("ok")
 
 
 if __name__ == "__main__":

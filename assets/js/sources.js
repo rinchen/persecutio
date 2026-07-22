@@ -30,7 +30,9 @@
       var st = s.status || 'unknown';
       var label = s.label || s.id;
       var title = s.title || s.id;
-      return '<li><span class="source-chip source-chip--' + escapeHtml(st) + '" title="' + escapeHtml(title) + ': ' + escapeHtml(st) + '">' + escapeHtml(label) + '</span></li>';
+      var ts = formatTimestamp(s.fetchedAt);
+      var tip = escapeHtml(title) + ': ' + escapeHtml(st) + (ts ? ' (' + escapeHtml(ts) + ')' : '');
+      return '<li><span class="source-chip source-chip--' + escapeHtml(st) + '" title="' + tip + '">' + escapeHtml(label) + '</span></li>';
     }).join('');
 
     sourcesEl.innerHTML =
@@ -48,9 +50,17 @@
   }
 
   fetch('assets/data/meta.json')
-    .then(function (r) { return r.json(); })
+    .then(function (r) {
+      if (!r.ok) throw new Error(r.statusText || String(r.status));
+      return r.json();
+    })
     .then(render)
-    .catch(function () {
+    .catch(function (err) {
+      console.error('meta.json load failed', err);
       if (updatedEl) updatedEl.textContent = 'Source status unavailable';
+      if (sourcesEl) {
+        sourcesEl.hidden = true;
+        sourcesEl.textContent = '';
+      }
     });
 })();

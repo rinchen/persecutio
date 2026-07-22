@@ -4,14 +4,21 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched"
-FETCHED.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    ROOT,
+    USER_AGENT,
+    ensure_fetched_dir,
+    exit_for_status,
+    fetch_bytes,
+    write_status,
+)
+
+ensure_fetched_dir()
 
 CACHE_XLSX = FETCHED / "freedom_house.xlsx"
 OUTPUT_JSON = FETCHED / "freedom_house.json"
-STATUS_PATH = FETCHED / "freedom_house_status.json"
 
 URLS = [
     "https://freedomhouse.org/sites/default/files/2025-02/All_data_FIW_2013-2024.xlsx",
@@ -20,46 +27,19 @@ URLS = [
 
 
 def download_xlsx(url: str) -> bytes | None:
-    import urllib.request
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.read()
-    except Exception as e:
-        print(f"  failed: {url} -- {e}")
+    data, err = fetch_bytes(url, user_agent=USER_AGENT)
+    if err:
+        print(f"  failed: {url} -- {err}")
         return None
-
-
-def write_status(status, message=None):
-    STATUS_PATH.write_text(
-        json.dumps({
-            "name": "freedomhouse",
-            "status": status,
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
-            "message": message,
-        }, indent=2),
-        encoding="utf-8",
-    )
+    return data
 
 
 def parse_with_openpyxl(raw: bytes) -> dict | None:
     try:
         import openpyxl
     except ImportError:
-        print("  openpyxl not installed, trying pip install...")
-        import subprocess
-        for install_args in [
-            [sys.executable, "-m", "pip", "install", "openpyxl", "-q", "--break-system-packages"],
-            [sys.executable, "-m", "pip", "install", "openpyxl", "-q"],
-        ]:
-            try:
-                subprocess.check_call(install_args, timeout=60)
-                import openpyxl
-                break
-            except Exception:
-                continue
-        else:
-            return None
+        print("  openpyxl not installed; cannot parse xlsx")
+        return None
 
     try:
         wb = openpyxl.load_workbook(io.BytesIO(raw), read_only=True, data_only=True)
@@ -278,8 +258,8 @@ def main():
         print("\nNo data available and no cache found.")
         result = {"countries": {}, "fetched_at": None, "error": "no data available"}
         OUTPUT_JSON.write_text(json.dumps(result, indent=2), encoding="utf-8")
-        write_status("failed", "no data available")
-        return
+        write_status("freedomhouse", "failed", "no data available")
+        exit_for_status("failed")
     else:
         fetch_status = "ok"
 
@@ -294,8 +274,8 @@ def main():
         print("  all parsers failed.")
         result = {"countries": {}, "fetched_at": None, "error": "parse failed"}
         OUTPUT_JSON.write_text(json.dumps(result, indent=2), encoding="utf-8")
-        write_status("failed", "parse failed")
-        return
+        write_status("freedomhouse", "failed", "parse failed")
+        exit_for_status("failed")
 
     result = {
         "countries": countries,
@@ -304,7 +284,7 @@ def main():
         "total_countries": len(countries),
     }
     OUTPUT_JSON.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-    write_status(fetch_status)
+    write_status("freedomhouse", fetch_status)
 
     print(f"\n{'=' * 50}")
     print(f"Total countries: {len(countries)}")
@@ -322,6 +302,7 @@ def main():
 
     print(f"\nOutput: {OUTPUT_JSON.relative_to(ROOT)}")
     print("\nDone.")
+    exit_for_status(fetch_status)
 
 
 if __name__ == "__main__":

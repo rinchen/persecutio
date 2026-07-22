@@ -385,6 +385,53 @@ section + section { margin-top: 18px; }
   font-variant-numeric: tabular-nums;
 }
 
+/* Recent incidents (country pages) */
+.incidents-list { margin-top: 10px; }
+.incident-item {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.8125rem;
+}
+.incident-item:last-child { border-bottom: none; }
+.incident-source {
+  display: inline-block;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+.incident-date {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  margin-left: 6px;
+}
+.footer-status-line { font-size: 0.75rem; }
+.footer-status-line a { color: #334155; text-decoration: underline; }
+
+/* About page */
+.post { max-width: 780px; margin: 0 auto; }
+.post h1 { margin-bottom: 8px; }
+.post h2 { margin-top: 22px; }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  margin-top: 18px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .back-link:hover { background: var(--color-accent-soft); border-color: var(--color-accent); }
+}
+
 /* Top bar (country pages) */
 .top {
   display: flex;

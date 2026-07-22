@@ -1,37 +1,27 @@
 import json
 import re
+import sys
 import time
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched" / "uscirf"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED as FETCHED_ROOT,
+    USER_AGENT,
+    ensure_fetched_dir,
+    exit_for_status,
+    write_status,
+)
+
+ensure_fetched_dir()
+FETCHED = FETCHED_ROOT / "uscirf"
 FETCHED.mkdir(parents=True, exist_ok=True)
-STATUS_PATH = DATA / "fetched" / "uscirf_status.json"
 
 BASE_URL = "https://www.uscirf.gov"
 RECOMMENDATIONS_URL = f"{BASE_URL}/countries/2026-recommendations"
-
-USER_AGENT = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-)
-
-
-def write_status(status, message=None):
-    STATUS_PATH.write_text(
-        json.dumps({
-            "name": "uscirf",
-            "status": status,
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
-            "message": message,
-        }, indent=2),
-        encoding="utf-8",
-    )
-
 
 COUNTRIES = [
     # Existing project countries that have USCIRF pages
@@ -220,35 +210,38 @@ def normalize_name(name):
 
 def detect_designation(page_html, cpc_names, swl_names):
     title_extractor = TitleExtractor()
+    parse_ok = True
     try:
         title_extractor.feed(page_html)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"  Warning: title parse error: {type(e).__name__}: {e}")
+        parse_ok = False
     country_name = title_extractor.get_title()
     norm = normalize_name(country_name)
 
     if norm in cpc_names:
-        return "CPC", country_name
+        return "CPC", country_name, parse_ok
     if norm in swl_names:
-        return "SWL", country_name
+        return "SWL", country_name, parse_ok
 
     text_lower = page_html.lower()
     if "countries of particular concern" in text_lower:
-        return "CPC", country_name
+        return "CPC", country_name, parse_ok
     if "special watch list" in text_lower:
-        return "SWL", country_name
+        return "SWL", country_name, parse_ok
 
-    return "none", country_name
+    return "none", country_name, parse_ok
 
 
 def extract_key_findings(page_html):
     parser = ContentExtractor()
     try:
         parser.feed(page_html)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"  Warning: content parse error: {type(e).__name__}: {e}")
+        return [], False
     paragraphs = parser.get_paragraphs()
-    return paragraphs[:3]
+    return paragraphs[:3], True
 
 
 def fetch_country(country):
@@ -301,6 +294,7 @@ def main():
     ok = 0
     failed = 0
     cached_count = 0
+    parse_issues = 0
 
     for i, country in enumerate(unique_countries):
         slug = country["slug"]
@@ -329,8 +323,10 @@ def main():
             print("ok")
 
         page_html = data.get("html", "")
-        designation, detected_name = detect_designation(page_html, cpc_names, swl_names)
-        findings = extract_key_findings(page_html)
+        designation, detected_name, title_ok = detect_designation(page_html, cpc_names, swl_names)
+        findings, findings_ok = extract_key_findings(page_html)
+        if not title_ok or not findings_ok:
+            parse_issues += 1
 
         results.append({
             "title": title,
@@ -356,6 +352,7 @@ def main():
             "ok": ok,
             "cached": cached_count,
             "failed": failed,
+            "parse_issues": parse_issues,
             "cpc_count": len(cpc_names),
             "swl_count": len(swl_names),
         },
@@ -377,13 +374,24 @@ def main():
     swl_found = [r for r in results if r["designation"] == "SWL"]
     none_found = [r for r in results if r["designation"] == "none"]
     print(f"Designations: {len(cpc_found)} CPC, {len(swl_found)} SWL, {len(none_found)} none")
+    if parse_issues:
+        print(f"Parse issues: {parse_issues}")
 
     if failed == len(unique_countries):
-        write_status("failed", "all countries failed")
-    elif failed > 0:
-        write_status("partial", f"{failed} of {len(unique_countries)} failed")
+        final_status = "failed"
+        write_status("uscirf", final_status, "all countries failed")
+    elif failed > 0 or parse_issues > 0:
+        final_status = "partial"
+        parts = []
+        if failed > 0:
+            parts.append(f"{failed} of {len(unique_countries)} failed")
+        if parse_issues > 0:
+            parts.append(f"{parse_issues} parse issues")
+        write_status("uscirf", final_status, "; ".join(parts))
     else:
-        write_status("ok")
+        final_status = "ok"
+        write_status("uscirf", final_status)
+    exit_for_status(final_status)
 
 
 if __name__ == "__main__":

@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0b132b" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.basemaps.cartocdn.com https://*.openstreetmap.org; connect-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Christian Persecution World Map</title>
   <link rel="icon" href="assets/img/favicon-32x32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="assets/vendor/leaflet.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
@@ -58,8 +61,8 @@
 
   <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+  <script src="assets/vendor/leaflet.js"></script>
+  <script src="assets/vendor/lunr.min.js"></script>
   <script src="assets/js/map.js" defer></script>
   <script src="assets/js/search-ui.js" defer></script>
   <script src="assets/js/sources.js" defer></script>

@@ -1,15 +1,22 @@
 import json
+import sys
 from pathlib import Path
 from datetime import datetime, timezone
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    USER_AGENT,
+    ensure_fetched_dir,
+    exit_for_status,
+    write_status,
+)
+
+ensure_fetched_dir()
 OHCHR_DIR = FETCHED / "ohchr"
 OHCHR_DIR.mkdir(parents=True, exist_ok=True)
-STATUS_PATH = FETCHED / "ohchr_status.json"
 
 API_BASE = "https://uhri.ohchr.org/api/v1"
 RECOMMENDATIONS_URL = f"{API_BASE}/measure-recommendations"
@@ -36,18 +43,6 @@ RELIGION_KEYWORDS = [
 ]
 
 
-def write_status(status, message=None):
-    STATUS_PATH.write_text(
-        json.dumps({
-            "name": "ohchr",
-            "status": status,
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
-            "message": message,
-        }, indent=2),
-        encoding="utf-8",
-    )
-
-
 def fetch_json(url, path, name, skip=False):
     status = {
         "name": name,
@@ -63,7 +58,7 @@ def fetch_json(url, path, name, skip=False):
                 path.stat().st_mtime, tz=timezone.utc
             ).isoformat()
             return json.loads(path.read_text(encoding="utf-8")), status
-        req = Request(url, headers={"User-Agent": "persecutio-uhri-fetcher/1.0"})
+        req = Request(url, headers={"User-Agent": USER_AGENT})
         with urlopen(req, timeout=30) as resp:
             code = resp.getcode()
             payload = resp.read().decode("utf-8", errors="ignore")
@@ -145,18 +140,18 @@ def main():
                 index_path.write_text(
                     json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8"
                 )
-                write_status("cached")
+                write_status("ohchr", "cached")
                 print(f"ohchr used cache: {index_path}")
-                return
+                exit_for_status("cached")
             except Exception:
                 pass
         output = build_empty_output()
         index_path.write_text(
             json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8"
         )
-        write_status("failed", "api unavailable, no cache")
+        write_status("ohchr", "failed", "api unavailable, no cache")
         print(f"ohchr wrote empty index: {index_path}")
-        return
+        exit_for_status("failed")
 
     recommendations = data
     if isinstance(data, dict):
@@ -178,8 +173,10 @@ def main():
     index_path.write_text(
         json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8"
     )
-    write_status(status["status"])
+    final_status = status["status"]
+    write_status("ohchr", final_status)
     print(f"ohchr wrote {len(countries)} countries to {index_path}")
+    exit_for_status(final_status)
 
 
 if __name__ == "__main__":

@@ -1,14 +1,20 @@
 import json
+import sys
 import urllib.request
 import urllib.parse
 from pathlib import Path
 from datetime import datetime, timezone
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched"
-FETCHED.mkdir(parents=True, exist_ok=True)
-STATUS_PATH = FETCHED / "gdelt_status.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    USER_AGENT,
+    ensure_fetched_dir,
+    exit_for_status,
+    write_status,
+)
+
+ensure_fetched_dir()
 
 GDELT_BASE = "https://api.gdeltproject.org/api/v2/doc/doc"
 
@@ -22,18 +28,6 @@ QUERIES = [
 ARTICLE_KEYS = {"title", "url", "source", "date"}
 
 
-def write_status(status, message=None):
-    STATUS_PATH.write_text(
-        json.dumps({
-            "name": "gdelt",
-            "status": status,
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
-            "message": message,
-        }, indent=2),
-        encoding="utf-8",
-    )
-
-
 def fetch_gdelt(query):
     params = urllib.parse.urlencode({
         "query": query,
@@ -43,7 +37,7 @@ def fetch_gdelt(query):
         "timespan": "30d",
     })
     url = f"{GDELT_BASE}?{params}"
-    req = urllib.request.Request(url, headers={"User-Agent": "persecutio/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             return json.loads(resp.read().decode("utf-8", errors="ignore")), url, None
@@ -136,11 +130,15 @@ def main():
 
     failed_queries = [s for s in statuses if s["status"] == "failed"]
     if len(failed_queries) == len(statuses):
-        write_status("failed", "all queries failed")
+        final_status = "failed"
+        write_status("gdelt", final_status, "all queries failed")
     elif failed_queries:
-        write_status("partial", f"{len(failed_queries)} of {len(statuses)} queries failed")
+        final_status = "partial"
+        write_status("gdelt", final_status, f"{len(failed_queries)} of {len(statuses)} queries failed")
     else:
-        write_status("ok")
+        final_status = "ok"
+        write_status("gdelt", final_status)
+    exit_for_status(final_status)
 
 
 if __name__ == "__main__":

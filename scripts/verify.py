@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ad-hoc repo verification for persecutio source/country expansion."""
+"""Legacy ad-hoc checker. Prefer `python3 -m pytest tests` (what CI runs)."""
 
 from pathlib import Path
 import subprocess, sys, json, yaml

@@ -7,35 +7,26 @@ reports with country tags.
 """
 import json
 import re
-import urllib.request
+import sys
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-FETCHED = DATA / "fetched"
-FETCHED.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fetch_common import (
+    FETCHED,
+    KNOWN_COUNTRIES,
+    ensure_fetched_dir,
+    exit_for_status,
+    fetch_text,
+    load_json_cache,
+    write_status,
+)
+
+ensure_fetched_dir()
 
 RSS_URL = "https://morningstarnews.org/feed/"
 OUTPUT = FETCHED / "morningstarnews.json"
-
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-
-KNOWN_COUNTRIES = [
-    "Afghanistan", "Algeria", "Azerbaijan", "Bahrain", "Bangladesh",
-    "Bhutan", "Brazil", "Brunei", "Burkina Faso", "Cameroon",
-    "Central African Republic", "China", "Colombia", "Comoros", "Cuba",
-    "Democratic Republic of Congo", "Egypt", "Eritrea", "Ethiopia",
-    "Guinea", "Haiti", "India", "Indonesia", "Iran", "Iraq", "Jordan",
-    "Kazakhstan", "Kyrgyzstan", "Laos", "Libya", "Malaysia", "Maldives",
-    "Mali", "Mauritania", "Mexico", "Morocco", "Mozambique", "Myanmar",
-    "Nicaragua", "Niger", "Nigeria", "North Korea", "Oman", "Pakistan",
-    "Philippines", "Qatar", "Russia", "Saudi Arabia", "Somalia",
-    "Sri Lanka", "Sudan", "Syria", "Tajikistan", "Tunisia", "Turkey",
-    "Turkmenistan", "Uganda", "United States", "Uzbekistan", "Venezuela",
-    "Vietnam", "Yemen", "Zimbabwe",
-]
 
 PERSECUTION_CATEGORIES = {
     "persecution", "religious freedom", "christianity", "apostasy",
@@ -89,35 +80,22 @@ COUNTRY_ALIASES = {
     "indonesia": "Indonesia",
     "philippines": "Philippines",
     "malaysia": "Malaysia",
-    "myanmar": "Myanmar",
     "laos": "Laos",
     "vietnam": "Vietnam",
-    "china": "China",
-    "north korea": "North Korea",
     "uzbekistan": "Uzbekistan",
     "turkmenistan": "Turkmenistan",
     "tajikistan": "Tajikistan",
     "kazakhstan": "Kazakhstan",
     "kyrgyzstan": "Kyrgyzstan",
     "azerbaijan": "Azerbaijan",
-    "russia": "Russia",
     "algeria": "Algeria",
     "morocco": "Morocco",
     "tunisia": "Tunisia",
     "libya": "Libya",
-    "egypt": "Egypt",
-    "sudan": "Sudan",
-    "somalia": "Somalia",
     "eritrea": "Eritrea",
-    "ethiopia": "Ethiopia",
-    "nigeria": "Nigeria",
     "niger": "Niger",
     "burkina faso": "Burkina Faso",
-    "mali": "Mali",
-    "cameroon": "Cameroon",
     "central african republic": "Central African Republic",
-    "dr congo": "Democratic Republic of Congo",
-    "mozambique": "Mozambique",
     "uganda": "Uganda",
     "kenya": None,
     "tanzania": None,
@@ -127,17 +105,9 @@ COUNTRY_ALIASES = {
     "sri lanka": "Sri Lanka",
     "maldives": "Maldives",
     "bhutan": "Bhutan",
-    "pakistan": "Pakistan",
-    "india": "India",
     "nepal": None,
-    "afghanistan": "Afghanistan",
-    "iran": "Iran",
-    "iraq": "Iraq",
-    "syria": "Syria",
     "jordan": "Jordan",
     "lebanon": None,
-    "israel": None,
-    "palestine": None,
     "saudi arabia": "Saudi Arabia",
     "yemen": "Yemen",
     "oman": "Oman",
@@ -147,19 +117,15 @@ COUNTRY_ALIASES = {
     "united arab emirates": None,
     "kuwait": None,
     "turkey": "Turkey",
-    "azerbaijan": "Azerbaijan",
 }
 
 
 def fetch_rss(url):
     """Fetch and parse RSS feed."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.read().decode("utf-8")
-    except Exception as e:
-        print(f"  fetch error: {e}")
+    text, err = fetch_text(url)
+    if err:
         return None
+    return text
 
 
 def detect_countries(text):
@@ -175,7 +141,7 @@ def detect_countries(text):
     return sorted(found)
 
 
-def is_persecution_article(categories):
+def is_persecution_by_categories(categories):
     """Check if article categories indicate Christian persecution content."""
     cats_lower = {c.lower().strip() for c in categories}
     if cats_lower & PERSECUTION_CATEGORIES:
@@ -213,7 +179,7 @@ def parse_rss(xml_text):
             if cat_text:
                 categories.append(cat_text)
 
-        if not is_persecution_article(categories):
+        if not is_persecution_by_categories(categories):
             continue
 
         search_text = f"{title} {desc_clean}"
@@ -237,14 +203,24 @@ def parse_rss(xml_text):
     return articles
 
 
+def _write_empty(status):
+    result = {
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "source": "Morning Star News RSS",
+        "source_url": RSS_URL,
+        "status": status,
+        "articles": [],
+        "countries": {},
+        "total_articles": 0,
+        "countries_with_articles": 0,
+    }
+    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"  wrote empty output to {OUTPUT}")
+
+
 def main():
     print("Fetching Morning Star News RSS feed...")
-    cached = {}
-    if OUTPUT.exists():
-        try:
-            cached = json.loads(OUTPUT.read_text(encoding="utf-8"))
-        except Exception:
-            pass
+    cached = load_json_cache(OUTPUT)
 
     xml_text = fetch_rss(RSS_URL)
     if xml_text is None:
@@ -252,10 +228,12 @@ def main():
             print("  fetch failed, using cached data")
             cached["status"] = "cached"
             OUTPUT.write_text(json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8")
-            return
+            write_status("morningstarnews", "cached", "fetch failed, using cache")
+            exit_for_status("cached")
         print("  no cache available, writing empty output")
         _write_empty("fetch_failed")
-        return
+        write_status("morningstarnews", "failed", "fetch failed, no cache")
+        exit_for_status("failed")
 
     articles = parse_rss(xml_text)
     print(f"  found {len(articles)} persecution-related articles")
@@ -285,21 +263,8 @@ def main():
     print(f"  countries with articles: {len(by_country)}")
     for c in sorted(by_country.keys()):
         print(f"    {c}: {len(by_country[c])} articles")
-
-
-def _write_empty(status):
-    result = {
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "source": "Morning Star News RSS",
-        "source_url": RSS_URL,
-        "status": status,
-        "articles": [],
-        "countries": {},
-        "total_articles": 0,
-        "countries_with_articles": 0,
-    }
-    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  wrote empty output to {OUTPUT}")
+    write_status("morningstarnews", "ok")
+    exit_for_status("ok")
 
 
 if __name__ == "__main__":

@@ -25,10 +25,6 @@ def backup(path: Path):
     return dest
 
 
-backup((DATA / "countries.yml"))
-backup((ROOT / "assets/data/geojson.json"))
-backup((ROOT / "assets/data/search.json"))
-
 
 def fetch_json(url: str, path: Path, name: str, skip: bool = False):
     status = {
@@ -1633,182 +1629,236 @@ def country_polygons_from_geojson(geojson):
     return by_iso
 
 
-natural_earth_geojson, natural_earth_status = fetch_json(
-    "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson",
-    FETCHED / "natural_earth_110m.geojson",
-    "natural_earth_110m",
-    skip=False,
-)
-country_polygons = country_polygons_from_geojson(natural_earth_geojson)
+def main():
+    backup((DATA / "countries.yml"))
+    backup((ROOT / "assets/data/geojson.json"))
+    backup((ROOT / "assets/data/search.json"))
+
+    natural_earth_geojson, natural_earth_status = fetch_json(
+        "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson",
+        FETCHED / "natural_earth_110m.geojson",
+        "natural_earth_110m",
+        skip=False,
+    )
+    country_polygons = country_polygons_from_geojson(natural_earth_geojson)
 
 
-def wikipedia_summary(title: str):
-    key = title.replace(" ", "_").replace("/", "_")
-    cached = FETCHED / "wiki" / f"{quote(key, safe='')}.json"
-    cached.parent.mkdir(parents=True, exist_ok=True)
-    url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{quote(key, safe='')}"
-    data, status = fetch_json(url, cached, f"wikipedia:{key}", skip=False)
-    return data, status
+    def wikipedia_summary(title: str):
+        key = title.replace(" ", "_").replace("/", "_")
+        cached = FETCHED / "wiki" / f"{quote(key, safe='')}.json"
+        cached.parent.mkdir(parents=True, exist_ok=True)
+        url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{quote(key, safe='')}"
+        data, status = fetch_json(url, cached, f"wikipedia:{key}", skip=False)
+        return data, status
 
 
-def load_fetched_json(filename):
-    path = FETCHED / filename
-    if path.exists():
-        try:
-            return json.loads(path.read_text(encoding="utf-8"))
-        except Exception:
-            pass
-    return {}
+    def load_fetched_json(filename):
+        path = FETCHED / filename
+        if path.exists():
+            try:
+                return json.loads(path.read_text(encoding="utf-8"))
+            except Exception as e:
+                print(f"warning: corrupt fetched file {filename}: {type(e).__name__}: {e}")
+        return {}
 
 
-freedom_house = load_fetched_json("freedom_house.json")
-opendoors_data = load_fetched_json("opendoors.json")
-gdelt_data = load_fetched_json("gdelt.json")
-owid_data = load_fetched_json("owid_religion.json")
-morningstarnews_data = load_fetched_json("morningstarnews.json")
-vid_data = load_fetched_json("vid.json")
-gcr_data = load_fetched_json("gcr_stats.json")
-acn_data = load_fetched_json("acn_report.json")
-csw_data = load_fetched_json("csw.json")
-icc_data = load_fetched_json("icc.json")
+    freedom_house = load_fetched_json("freedom_house.json")
+    opendoors_data = load_fetched_json("opendoors.json")
+    gdelt_data = load_fetched_json("gdelt.json")
+    owid_data = load_fetched_json("owid_religion.json")
+    morningstarnews_data = load_fetched_json("morningstarnews.json")
+    vid_data = load_fetched_json("vid.json")
+    gcr_data = load_fetched_json("gcr_stats.json")
+    acn_data = load_fetched_json("acn_report.json")
+    csw_data = load_fetched_json("csw.json")
+    icc_data = load_fetched_json("icc.json")
 
 
-for c in COUNTRIES_DATA:
-    iso = str(c.get("iso3", "")).upper()
-    title = c.get("title", "")
-    resolved = []
-    for sid in c.get("source_ids", {}).get("modern", []):
-        if sid in sources and sid not in resolved:
-            resolved.append(sid)
-    wiki, wiki_status = wikipedia_summary(title)
-    c.setdefault("metadata", {})
-    c["metadata"]["sources"] = [sources[sid] for sid in resolved]
-    c["metadata"]["source_ids"] = resolved
-    c["metadata"]["shape_geo"] = country_polygons.get(iso)
-    c["metadata"]["wiki_url"] = wiki.get("content_urls", {}).get("desktop", {}).get("page") if isinstance(wiki, dict) else None
-    c["metadata"]["wiki_extract"] = wiki.get("extract") if isinstance(wiki, dict) else None
-    c["metadata"]["country_polygon"] = bool(iso in country_polygons)
+    for c in COUNTRIES_DATA:
+        iso = str(c.get("iso3", "")).upper()
+        title = c.get("title", "")
+        resolved = []
+        for sid in c.get("source_ids", {}).get("modern", []):
+            if sid in sources and sid not in resolved:
+                resolved.append(sid)
+        wiki, wiki_status = wikipedia_summary(title)
+        c.setdefault("metadata", {})
+        c["metadata"]["sources"] = [sources[sid] for sid in resolved]
+        c["metadata"]["source_ids"] = resolved
+        c["metadata"]["shape_geo"] = country_polygons.get(iso)
+        c["metadata"]["wiki_url"] = wiki.get("content_urls", {}).get("desktop", {}).get("page") if isinstance(wiki, dict) else None
+        c["metadata"]["wiki_extract"] = wiki.get("extract") if isinstance(wiki, dict) else None
+        c["metadata"]["country_polygon"] = bool(iso in country_polygons)
 
-    fh_countries = freedom_house.get("countries", {}) if isinstance(freedom_house, dict) else {}
-    fh = fh_countries.get(title, {})
-    if fh:
-        c["metadata"]["freedom_house_status"] = fh.get("status")
-        c["metadata"]["freedom_house_pr"] = fh.get("pr_score")
-        c["metadata"]["freedom_house_cl"] = fh.get("cl_score")
+        fh_countries = freedom_house.get("countries", {}) if isinstance(freedom_house, dict) else {}
+        fh = fh_countries.get(title, {})
+        if fh:
+            c["metadata"]["freedom_house_status"] = fh.get("status")
+            c["metadata"]["freedom_house_pr"] = fh.get("pr_score")
+            c["metadata"]["freedom_house_cl"] = fh.get("cl_score")
 
-    od_countries = opendoors_data.get("countries", {}) if isinstance(opendoors_data, dict) else {}
-    od = od_countries.get(title, {})
-    if od:
-        c["metadata"]["opendoors_ranking"] = od.get("ranking")
-        c["metadata"]["opendoors_score"] = od.get("score")
+        od_countries = opendoors_data.get("countries", {}) if isinstance(opendoors_data, dict) else {}
+        od = od_countries.get(title, {})
+        if od:
+            c["metadata"]["opendoors_ranking"] = od.get("ranking")
+            c["metadata"]["opendoors_score"] = od.get("score")
 
-    gdelt_countries = gdelt_data.get("countries", {}) if isinstance(gdelt_data, dict) else {}
-    gdelt_articles = gdelt_countries.get(title, [])
-    if gdelt_articles:
-        c["metadata"]["gdelt_recent_articles"] = len(gdelt_articles)
-        c["metadata"]["gdelt_sample_urls"] = [a.get("url", "") for a in gdelt_articles[:3]]
+        gdelt_countries = gdelt_data.get("countries", {}) if isinstance(gdelt_data, dict) else {}
+        gdelt_articles = gdelt_countries.get(title, [])
+        if gdelt_articles:
+            c["metadata"]["gdelt_recent_articles"] = len(gdelt_articles)
+            c["metadata"]["gdelt_sample_urls"] = [a.get("url", "") for a in gdelt_articles[:3]]
 
-    owid_countries = owid_data.get("countries", {}) if isinstance(owid_data, dict) else {}
-    owid = owid_countries.get(title, {})
-    if owid:
-        c["metadata"]["christian_population"] = owid.get("christian_population")
-        c["metadata"]["christian_percentage"] = owid.get("christian_percentage")
+        owid_countries = owid_data.get("countries", {}) if isinstance(owid_data, dict) else {}
+        owid = owid_countries.get(title, {})
+        if owid:
+            c["metadata"]["christian_population"] = owid.get("christian_population")
+            c["metadata"]["christian_percentage"] = owid.get("christian_percentage")
 
-    msn_countries = morningstarnews_data.get("countries", {}) if isinstance(morningstarnews_data, dict) else {}
-    msn_articles = msn_countries.get(title, [])
-    if msn_articles:
-        c["metadata"]["morningstarnews_articles"] = len(msn_articles)
-        c["metadata"]["morningstarnews_samples"] = [
-            {"title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")}
-            for a in msn_articles[:3]
-        ]
+        msn_countries = morningstarnews_data.get("countries", {}) if isinstance(morningstarnews_data, dict) else {}
+        msn_articles = msn_countries.get(title, [])
+        if msn_articles:
+            c["metadata"]["morningstarnews_articles"] = len(msn_articles)
+            c["metadata"]["morningstarnews_samples"] = [
+                {"title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")}
+                for a in msn_articles[:3]
+            ]
 
-    vid_countries = vid_data.get("countries", {}) if isinstance(vid_data, dict) else {}
-    vid_entry = vid_countries.get(title, {})
-    if vid_entry:
-        c["metadata"]["vid_incidents_total"] = vid_entry.get("total_incidents")
-        c["metadata"]["vid_killings"] = vid_entry.get("killings")
-        c["metadata"]["vid_breakdown"] = {k: v for k, v in vid_entry.items() if k != "total_incidents" and v}
+        vid_countries = vid_data.get("countries", {}) if isinstance(vid_data, dict) else {}
+        vid_entry = vid_countries.get(title, {})
+        if vid_entry:
+            c["metadata"]["vid_incidents_total"] = vid_entry.get("total_incidents")
+            c["metadata"]["vid_killings"] = vid_entry.get("killings")
+            c["metadata"]["vid_breakdown"] = {k: v for k, v in vid_entry.items() if k != "total_incidents" and v}
 
-    gcr_countries = gcr_data.get("countries", {}) if isinstance(gcr_data, dict) else {}
-    gcr_entry = gcr_countries.get(title, {})
-    if gcr_entry:
-        if gcr_entry.get("killed"):
-            c["metadata"]["gcr_killed"] = gcr_entry["killed"]
-        if gcr_entry.get("persecution_score"):
-            c["metadata"]["gcr_persecution_score"] = gcr_entry["persecution_score"]
-        if gcr_entry.get("notes"):
-            c["metadata"]["gcr_notes"] = gcr_entry["notes"]
+        gcr_countries = gcr_data.get("countries", {}) if isinstance(gcr_data, dict) else {}
+        gcr_entry = gcr_countries.get(title, {})
+        if gcr_entry:
+            if gcr_entry.get("killed"):
+                c["metadata"]["gcr_killed"] = gcr_entry["killed"]
+            if gcr_entry.get("persecution_score"):
+                c["metadata"]["gcr_persecution_score"] = gcr_entry["persecution_score"]
+            if gcr_entry.get("notes"):
+                c["metadata"]["gcr_notes"] = gcr_entry["notes"]
 
-    acn_countries = acn_data.get("countries", {}) if isinstance(acn_data, dict) else {}
-    acn_entry = acn_countries.get(title, {})
-    if acn_entry:
-        c["metadata"]["acn_classification"] = acn_entry.get("classification")
-        if acn_entry.get("key_findings"):
-            c["metadata"]["acn_key_findings"] = acn_entry["key_findings"][:2]
+        acn_countries = acn_data.get("countries", {}) if isinstance(acn_data, dict) else {}
+        acn_entry = acn_countries.get(title, {})
+        if acn_entry:
+            c["metadata"]["acn_classification"] = acn_entry.get("classification")
+            if acn_entry.get("key_findings"):
+                c["metadata"]["acn_key_findings"] = acn_entry["key_findings"][:2]
 
-    csw_countries = csw_data.get("countries", {}) if isinstance(csw_data, dict) else {}
-    csw_articles = csw_countries.get(title, [])
-    if csw_articles:
-        c["metadata"]["csw_articles"] = len(csw_articles)
-        c["metadata"]["csw_samples"] = [
-            {"title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")}
-            for a in csw_articles[:3]
-        ]
+        csw_countries = csw_data.get("countries", {}) if isinstance(csw_data, dict) else {}
+        csw_articles = csw_countries.get(title, [])
+        if csw_articles:
+            c["metadata"]["csw_articles"] = len(csw_articles)
+            c["metadata"]["csw_samples"] = [
+                {"title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")}
+                for a in csw_articles[:3]
+            ]
 
-    icc_countries = icc_data.get("countries", {}) if isinstance(icc_data, dict) else {}
-    icc_articles = icc_countries.get(title, [])
-    if icc_articles:
-        c["metadata"]["icc_articles"] = len(icc_articles)
-        c["metadata"]["icc_samples"] = [
-            {"title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")}
-            for a in icc_articles[:3]
-        ]
+        icc_countries = icc_data.get("countries", {}) if isinstance(icc_data, dict) else {}
+        icc_articles = icc_countries.get(title, [])
+        if icc_articles:
+            c["metadata"]["icc_articles"] = len(icc_articles)
+            c["metadata"]["icc_samples"] = [
+                {"title": a.get("title", ""), "url": a.get("url", ""), "date": a.get("date", "")}
+                for a in icc_articles[:3]
+            ]
 
-def load_fetch_statuses():
-    statuses = []
-    if not FETCHED.exists():
+    def load_fetch_statuses():
+        statuses = []
+        if not FETCHED.exists():
+            return statuses
+        for p in sorted(FETCHED.glob("*_status.json")):
+            try:
+                s = json.loads(p.read_text(encoding="utf-8"))
+                if isinstance(s, dict) and s.get("name"):
+                    statuses.append(s)
+            except Exception as e:
+                print(f"warning: corrupt status file {p.name}: {type(e).__name__}: {e}")
+                statuses.append({
+                    "name": p.stem.replace("_status", ""),
+                    "status": "failed",
+                    "fetched_at": datetime.now(timezone.utc).isoformat(),
+                    "message": f"corrupt status file: {type(e).__name__}",
+                })
         return statuses
-    for p in sorted(FETCHED.glob("*_status.json")):
-        try:
-            s = json.loads(p.read_text(encoding="utf-8"))
-            if isinstance(s, dict) and s.get("name"):
-                statuses.append(s)
-        except Exception:
-            pass
-    return statuses
 
 
-source_statuses = [natural_earth_status] + load_fetch_statuses()
+    def _wiki_aggregate_from_fetched():
+        wiki_dir = FETCHED / "wiki"
+        counts = {"ok": 0, "failed": 0, "partial": 0}
+        if not wiki_dir.exists():
+            return {
+                "name": "wikipedia",
+                "status": "skipped",
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
+                "message": "no wiki cache",
+            }
+        for p in wiki_dir.glob("*.json"):
+            try:
+                data = json.loads(p.read_text(encoding="utf-8"))
+            except Exception:
+                counts["failed"] += 1
+                continue
+            if isinstance(data, dict) and data.get("extract"):
+                counts["ok"] += 1
+            elif isinstance(data, dict) and data:
+                counts["partial"] += 1
+            else:
+                counts["failed"] += 1
+        total = sum(counts.values())
+        if total == 0:
+            status = "skipped"
+        elif counts["failed"] == total:
+            status = "failed"
+        elif counts["failed"] or counts["partial"]:
+            status = "partial"
+        else:
+            status = "ok"
+        return {
+            "name": "wikipedia",
+            "status": status,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "message": f"ok={counts['ok']} partial={counts['partial']} failed={counts['failed']}",
+        }
 
-countries_data = {
-    "countries": COUNTRIES_DATA,
-    "sources": sources,
-    "fetched": {
-        "natural_earth_geojson": "data/fetched/natural_earth_110m.geojson",
-        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
-        "source_statuses": source_statuses,
-        "data_sources": {
-            "freedom_house": "data/fetched/freedom_house.json",
-            "opendoors": "data/fetched/opendoors.json",
-            "gdelt": "data/fetched/gdelt.json",
-            "owid_religion": "data/fetched/owid_religion.json",
-            "morningstarnews": "data/fetched/morningstarnews.json",
-            "vid": "data/fetched/vid.json",
-            "gcr_stats": "data/fetched/gcr_stats.json",
-            "acn_report": "data/fetched/acn_report.json",
-            "csw": "data/fetched/csw.json",
-            "icc": "data/fetched/icc.json",
+
+    source_statuses = [natural_earth_status, _wiki_aggregate_from_fetched()] + load_fetch_statuses()
+
+    countries_data = {
+        "countries": COUNTRIES_DATA,
+        "sources": sources,
+        "fetched": {
+            "natural_earth_geojson": "data/fetched/natural_earth_110m.geojson",
+            "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+            "source_statuses": source_statuses,
+            "data_sources": {
+                "freedom_house": "data/fetched/freedom_house.json",
+                "opendoors": "data/fetched/opendoors.json",
+                "gdelt": "data/fetched/gdelt.json",
+                "owid_religion": "data/fetched/owid_religion.json",
+                "morningstarnews": "data/fetched/morningstarnews.json",
+                "vid": "data/fetched/vid.json",
+                "gcr_stats": "data/fetched/gcr_stats.json",
+                "acn_report": "data/fetched/acn_report.json",
+                "csw": "data/fetched/csw.json",
+                "icc": "data/fetched/icc.json",
+            },
         },
-    },
-}
-(DATA / "countries.yml").write_text(
-    yaml.safe_dump(countries_data, allow_unicode=True, sort_keys=False),
-    encoding="utf-8",
-)
-(DATA / "sources.yml").write_text(
-    yaml.safe_dump({"sources": sources}, allow_unicode=True, sort_keys=False),
-    encoding="utf-8",
-)
+    }
+    (DATA / "countries.yml").write_text(
+        yaml.safe_dump(countries_data, allow_unicode=True, sort_keys=False),
+        encoding="utf-8",
+    )
+    (DATA / "sources.yml").write_text(
+        yaml.safe_dump({"sources": sources}, allow_unicode=True, sort_keys=False),
+        encoding="utf-8",
+    )
 
-print("collect ok")
+    print("collect ok")
+
+
+if __name__ == "__main__":
+    main()
