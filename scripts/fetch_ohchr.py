@@ -2,8 +2,6 @@ import json
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
-from urllib.request import Request, urlopen
-from urllib.error import URLError, HTTPError
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetch_common import (
@@ -11,6 +9,7 @@ from fetch_common import (
     USER_AGENT,
     ensure_fetched_dir,
     exit_for_status,
+    fetch_json_to_path,
     write_status,
 )
 
@@ -44,42 +43,9 @@ RELIGION_KEYWORDS = [
 
 
 def fetch_json(url, path, name, skip=False):
-    status = {
-        "name": name,
-        "url": url,
-        "status": "ok",
-        "fetched_at": None,
-        "message": None,
-    }
-    try:
-        if path.exists() and skip:
-            status["status"] = "cached"
-            status["fetched_at"] = datetime.fromtimestamp(
-                path.stat().st_mtime, tz=timezone.utc
-            ).isoformat()
-            return json.loads(path.read_text(encoding="utf-8")), status
-        req = Request(url, headers={"User-Agent": USER_AGENT})
-        with urlopen(req, timeout=30) as resp:
-            code = resp.getcode()
-            payload = resp.read().decode("utf-8", errors="ignore")
-        if code and code >= 400:
-            raise HTTPError(url, code, f"HTTP {code}", {}, None)
-        if payload.lstrip()[:1] not in ("{", "["):
-            raise ValueError("response is not JSON")
-        path.write_text(payload, encoding="utf-8")
-        status["fetched_at"] = datetime.now(timezone.utc).isoformat()
-        return json.loads(payload), status
-    except (HTTPError, URLError, OSError, ValueError, json.JSONDecodeError) as e:
-        status["status"] = "failed"
-        status["message"] = str(e)
-        if path.exists():
-            try:
-                status["status"] = "partial"
-                return json.loads(path.read_text(encoding="utf-8")), status
-            except Exception:
-                pass
-        return {}, status
-
+    return fetch_json_to_path(
+        url, path, name, skip=skip, timeout=30, user_agent=USER_AGENT
+    )
 
 def is_religion_related(text):
     if not text:

@@ -15,6 +15,7 @@ from collect_enrich import (  # noqa: E402
     collect_feed_titles,
     create_stub_countries,
     enrich_country,
+    load_archive_extracts,
     load_fetched_json,
     load_ohchr_index,
     load_state_dept_index,
@@ -41,36 +42,11 @@ def backup(path: Path):
 
 
 def fetch_json(url: str, path: Path, name: str, skip: bool = False):
-    status = {
-        "name": name,
-        "url": url,
-        "status": "ok",
-        "fetched_at": None,
-        "message": None,
-    }
-    try:
-        if path.exists() and skip:
-            status["status"] = "cached"
-            status["fetched_at"] = datetime.fromtimestamp(
-                path.stat().st_mtime, tz=timezone.utc
-            ).isoformat()
-            return json.loads(path.read_text(encoding="utf-8")), status
-        import urllib.request
-        with urllib.request.urlopen(url, timeout=20) as resp:
-            payload = resp.read().decode("utf-8", errors="ignore")
-        path.write_text(payload, encoding="utf-8")
-        status["fetched_at"] = datetime.now(timezone.utc).isoformat()
-        return json.loads(payload), status
-    except Exception as e:
-        status["status"] = "failed"
-        status["message"] = str(e)
-        if path.exists():
-            try:
-                status["status"] = "partial"
-                return json.loads(path.read_text(encoding="utf-8")), status
-            except Exception:
-                pass
-        return {}, status
+    from fetch_common import USER_AGENT, fetch_json_to_path
+
+    return fetch_json_to_path(
+        url, path, name, skip=skip, timeout=20, user_agent=USER_AGENT
+    )
 
 
 COUNTRIES_DATA = [
@@ -1690,6 +1666,9 @@ def main():
     uscirf_by_title = load_uscirf_index(FETCHED)
     state_dept_by_title = load_state_dept_index(FETCHED)
     ohchr_by_title = load_ohchr_index(FETCHED)
+    archive_by_slug = load_archive_extracts()
+    if archive_by_slug:
+        print(f"loaded archive extracts for {len(archive_by_slug)} countries")
 
     for c in COUNTRIES_DATA:
         title = c.get("title", "")
@@ -1709,6 +1688,7 @@ def main():
             state_dept_by_title=state_dept_by_title,
             ohchr_by_title=ohchr_by_title,
             news_blobs=news_blobs,
+            archive_by_slug=archive_by_slug,
         )
 
     feed_titles = collect_feed_titles(news_blobs, [])
@@ -1735,6 +1715,7 @@ def main():
         state_dept_by_title=state_dept_by_title,
         ohchr_by_title=ohchr_by_title,
         country_polygons=country_polygons,
+        archive_by_slug=archive_by_slug,
     )
     # Wikipedia for stubs (best-effort)
     for stub in stubs:

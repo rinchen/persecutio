@@ -8,9 +8,11 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from fetch_common import (  # noqa: E402
     detect_countries,
     is_persecution_article,
+    merge_articles,
     strip_html,
     write_status,
 )
+from rss_news_fetcher import parse_rss_items  # noqa: E402
 from fetch_owid import parse_csv  # noqa: E402
 from fetch_state_dept import extract_christian_mentions, strip_tags  # noqa: E402
 from fetch_uscirf import normalize_name  # noqa: E402
@@ -29,6 +31,19 @@ class TestFetchCommon(unittest.TestCase):
         self.assertTrue(is_persecution_article("Christian church attacked and burned"))
         self.assertFalse(is_persecution_article("Sports scores from yesterday"))
 
+    def test_merge_articles_caps_count(self):
+        existing = [
+            {
+                "title": f"t{i}",
+                "url": f"https://example.com/{i}",
+                "date": f"2024-01-{(i % 28) + 1:02d}",
+                "description": "church attack",
+            }
+            for i in range(20)
+        ]
+        merged = merge_articles(existing, [], max_articles=5, max_age_days=0)
+        self.assertEqual(len(merged), 5)
+
     def test_write_status(self, tmp_path=None):
         # write into real FETCHED dir shape via path override
         out = ROOT / "data" / "fetched" / "_test_status.json"
@@ -40,6 +55,30 @@ class TestFetchCommon(unittest.TestCase):
         finally:
             if out.exists():
                 out.unlink()
+
+
+class TestRssParse(unittest.TestCase):
+    def test_parse_rss_items_happy_path(self):
+        xml = """<?xml version="1.0"?>
+        <rss version="2.0"><channel>
+          <item>
+            <title>Church attacked in Nigeria</title>
+            <link>https://example.com/a</link>
+            <pubDate>Mon, 01 Jan 2024 12:00:00 GMT</pubDate>
+            <description>Christians persecuted</description>
+            <category>Nigeria</category>
+          </item>
+        </channel></rss>
+        """
+        articles, err = parse_rss_items(xml, source_label="Test", high_trust=True)
+        self.assertIsNone(err)
+        self.assertEqual(len(articles), 1)
+        self.assertIn("Nigeria", articles[0]["countries"])
+
+    def test_parse_rss_items_bad_xml(self):
+        articles, err = parse_rss_items("<not>xml", source_label="Test")
+        self.assertEqual(articles, [])
+        self.assertIsNotNone(err)
 
 
 class TestOwidParse(unittest.TestCase):

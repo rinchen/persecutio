@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Fetch Christian persecution news from International Christian Concern (ICC)."""
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -17,6 +16,7 @@ from fetch_common import (
     fetch_text,
     load_json_cache,
     normalize_date,
+    parse_html_news_listing,
     strip_html,
     write_json,
     write_status,
@@ -30,82 +30,26 @@ OUTPUT = FETCHED / "icc.json"
 
 
 def parse_articles(html: str) -> list[dict]:
-    articles = []
-
-    article_pattern = re.compile(r"<article[^>]*>(.*?)</article>", re.DOTALL | re.IGNORECASE)
-    for match in article_pattern.finditer(html):
-        article_html = match.group(1)
-        title_match = re.search(r"<h[23][^>]*>(.*?)</h[23]>", article_html, re.DOTALL | re.IGNORECASE)
-        if not title_match:
-            continue
-        title = strip_html(title_match.group(1)).strip()
-        if not title:
-            continue
-
-        link_match = re.search(r'href="(https?://www\.persecution\.org/news/[^"]+)"', article_html)
-        if not link_match:
-            link_match = re.search(r'href="(/news/[^"]+)"', article_html)
-        url = link_match.group(1) if link_match else None
-        if url and url.startswith("/"):
-            url = f"https://www.persecution.org{url}"
-
-        date_match = re.search(r'<time[^>]*datetime="([^"]+)"', article_html)
-        date = date_match.group(1) if date_match else None
-        if not date:
-            date_match = re.search(r"(\w+ \d{1,2},?\s*\d{4})", article_html)
-            date = date_match.group(1) if date_match else None
-
-        excerpt = ""
-        p_match = re.search(r"<p[^>]*>(.*?)</p>", article_html, re.DOTALL | re.IGNORECASE)
-        if p_match:
-            excerpt = strip_html(p_match.group(1)).strip()[:500]
-
-        if not is_christian_persecution(title=title, description=excerpt):
-            continue
-
-        countries = detect_countries(f"{title} {excerpt}")
-        articles.append({
-            "title": title,
-            "url": url,
-            "date": normalize_date(date) or date,
-            "description": excerpt[:300],
-            "countries": countries,
-            "source": "International Christian Concern",
-        })
-
-    if not articles:
-        link_pattern = re.compile(
-            r'<a[^>]*href="(https?://www\.persecution\.org/news/[^"]+)"[^>]*>(.*?)</a>',
-            re.DOTALL | re.IGNORECASE,
-        )
-        for match in link_pattern.finditer(html):
-            url = match.group(1)
-            title = strip_html(match.group(2)).strip()
-            if not title or len(title) < 20:
-                continue
-            if not is_christian_persecution(title=title, description=""):
-                continue
-            countries = detect_countries(title)
-            articles.append({
-                "title": title,
-                "url": url,
-                "date": None,
-                "description": "",
-                "countries": countries,
-                "source": "International Christian Concern",
-            })
-
-    return articles
+    return parse_html_news_listing(
+        html,
+        source_label="International Christian Concern",
+        absolute_link_re=r'href="(https?://www\.persecution\.org/news/[^"]+)"',
+        relative_link_re=r'href="(/news/[^"]+)"',
+        link_base="https://www.persecution.org",
+        fallback_link_re=(
+            r'<a[^>]*href="(https?://www\.persecution\.org/news/[^"]+)"[^>]*>(.*?)</a>'
+        ),
+    )
 
 
-def parse_wp_json(payload: str) -> list[dict]:
-    articles = []
+def parse_wp_json(payload: str) -> tuple[list[dict], str | None]:
+    articles: list[dict] = []
     try:
         data = json.loads(payload)
-    except json.JSONDecodeError:
-        return articles
+    except json.JSONDecodeError as e:
+        return articles, f"JSONDecodeError: {e}"
     if not isinstance(data, list):
-        return articles
+        return articles, "WP JSON root is not a list"
     for post in data:
         title = strip_html((post.get("title") or {}).get("rendered") or "")
         url = post.get("link") or ""
@@ -122,19 +66,22 @@ def parse_wp_json(payload: str) -> list[dict]:
             "countries": countries,
             "source": "International Christian Concern",
         })
-    return articles
+    return articles, None
 
 
 def main():
     print("Fetching International Christian Concern news...")
     cached = load_json_cache(OUTPUT)
     articles: list[dict] = []
+    wp_err: str | None = None
 
     # Prefer WP JSON (less bot-blocked than RSS); fall back to HTML scrape.
-    wp_text, _ = fetch_text(ICC_WP_JSON, user_agent=USER_AGENT)
+    wp_text, wp_fetch_err = fetch_text(ICC_WP_JSON, user_agent=USER_AGENT)
     if wp_text:
-        articles = parse_wp_json(wp_text)
-        print(f"  WP JSON: {len(articles)} articles")
+        articles, wp_err = parse_wp_json(wp_text)
+        print(f"  WP JSON: {len(articles)} articles" + (f" ({wp_err})" if wp_err else ""))
+    elif wp_fetch_err:
+        print(f"  WP JSON fetch failed: {wp_fetch_err}")
 
     if not articles:
         html, err = fetch_text(ICC_NEWS_URL, user_agent=USER_AGENT)
@@ -152,7 +99,8 @@ def main():
                 articles=[],
             )
             write_json(OUTPUT, result)
-            write_status("icc", "failed", "fetch failed, no cache")
+            msg = err or wp_err or wp_fetch_err or "fetch failed, no cache"
+            write_status("icc", "failed", msg)
             exit_for_status("failed")
         articles = parse_articles(html)
 

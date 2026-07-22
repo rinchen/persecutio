@@ -42,15 +42,23 @@ def main():
         mod = c.get('source_ids', {}).get('modern', [])
         check(len(mod) >= 1, f"{c['slug']} has modern sources")
 
-    gen = subprocess.run(['python3', 'scripts/generate_website_data.py'], cwd=ROOT, capture_output=True, text=True)
+    gen = subprocess.run(
+        ['python3', 'scripts/generate_website_data.py'],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if gen.returncode != 0:
+        err = (gen.stderr or gen.stdout or '').strip()
+        if err:
+            print(err, file=sys.stderr)
     check(gen.returncode == 0, 'generate_website_data.py exited 0')
 
     html_files = list((ROOT / 'countries').glob('*.html'))
     check(len(html_files) == len(data['countries']), f"html pages match country count: {len(html_files)}")
 
-    search = json.loads((ROOT / 'countries' / 'search.json').read_text(encoding='utf-8'))
+    search = json.loads((ROOT / 'assets' / 'data' / 'search.json').read_text(encoding='utf-8'))
     check(len(search) == len(data['countries']), 'search.json matches country count')
-
     for slug in ('algeria', 'bangladesh'):
         html = (ROOT / 'countries' / f'{slug}.html').read_text(encoding='utf-8')
         check('Open Doors World Watch List 2024' in html, f'{slug} html lists Open Doors source')

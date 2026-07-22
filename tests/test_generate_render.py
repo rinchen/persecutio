@@ -83,6 +83,33 @@ class TestRenderIncidents(unittest.TestCase):
         self.assertIn('href="#"', html)
         self.assertIn('href="https://morningstarnews.org/example"', html)
 
+    def test_primary_recent_incidents_path(self):
+        country = {
+            "metadata": {
+                "recent_incidents": [
+                    {
+                        "title": "Church burned",
+                        "url": "https://morningstarnews.org/burned",
+                        "date": "2025-03-01",
+                        "source": "CSW",
+                    },
+                    {
+                        "title": '<b>Attack</b>',
+                        "url": "javascript:evil",
+                        "date": "2025-01-02",
+                        "source": "Morning Star News",
+                    },
+                ]
+            }
+        }
+        html = render_recent_incidents(country)
+        self.assertIn("<h2>Recent Incidents</h2>", html)
+        self.assertIn("&lt;b&gt;Attack&lt;/b&gt;", html)
+        self.assertIn('href="#"', html)
+        self.assertIn('href="https://morningstarnews.org/burned"', html)
+        # Preserves enrich order (newest-first from build_recent_incidents)
+        self.assertLess(html.index("Church burned"), html.index("Attack"))
+
     def test_empty(self):
         self.assertEqual(render_recent_incidents({"metadata": {}}), "")
 

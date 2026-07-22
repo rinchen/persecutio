@@ -40,7 +40,7 @@ class TestFetchJson(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "sample.json"
             path.write_text('{"ok": true}', encoding="utf-8")
-            with mock.patch("urllib.request.urlopen", side_effect=OSError("down")):
+            with mock.patch("fetch_common.fetch_text", return_value=(None, "OSError: down")):
                 data, status = cd.fetch_json("https://example.invalid/x", path, "sample", skip=False)
             self.assertEqual(data, {"ok": True})
             self.assertEqual(status["status"], "partial")
@@ -56,10 +56,35 @@ class TestFetchJson(unittest.TestCase):
     def test_fail_without_cache(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "missing.json"
-            with mock.patch("urllib.request.urlopen", side_effect=OSError("down")):
+            with mock.patch("fetch_common.fetch_text", return_value=(None, "OSError: down")):
                 data, status = cd.fetch_json("https://example.invalid/x", path, "missing", skip=False)
             self.assertEqual(data, {})
             self.assertEqual(status["status"], "failed")
+
+    def test_bad_json_does_not_poison_cache(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "sample.json"
+            path.write_text('{"ok": true}', encoding="utf-8")
+            with mock.patch(
+                "fetch_common.fetch_text",
+                return_value=("<html>not json</html>", None),
+            ):
+                data, status = cd.fetch_json("https://example.invalid/x", path, "sample", skip=False)
+            self.assertEqual(data, {"ok": True})
+            self.assertEqual(status["status"], "partial")
+            self.assertEqual(json.loads(path.read_text(encoding="utf-8")), {"ok": True})
+
+    def test_valid_json_writes_cache(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "sample.json"
+            with mock.patch(
+                "fetch_common.fetch_text",
+                return_value=('{"fresh": 1}', None),
+            ):
+                data, status = cd.fetch_json("https://example.invalid/x", path, "sample", skip=False)
+            self.assertEqual(data, {"fresh": 1})
+            self.assertEqual(status["status"], "ok")
+            self.assertEqual(json.loads(path.read_text(encoding="utf-8"))["fresh"], 1)
 
 
 if __name__ == "__main__":

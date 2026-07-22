@@ -177,6 +177,18 @@ def main():
         "countries": country_stats,
         "total_countries_with_data": len(country_stats),
     }
+    if not country_stats and not global_stats:
+        if cached:
+            print("  parse yielded no stats; keeping cached data")
+            cached["status"] = "partial"
+            cached["fetched_at"] = datetime.now(timezone.utc).isoformat()
+            OUTPUT.write_text(json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8")
+            write_status("gcr", "partial", "parse yielded no stats")
+            exit_for_status("partial")
+        _write_empty("parse_empty")
+        write_status("gcr", "failed", "parse yielded no stats")
+        exit_for_status("failed")
+
     OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  global stats: {json.dumps(global_stats, indent=4)}")
     print(f"  countries with data: {len(country_stats)}")

@@ -5,7 +5,6 @@ import time
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetch_common import (
@@ -13,6 +12,7 @@ from fetch_common import (
     USER_AGENT,
     ensure_fetched_dir,
     exit_for_status,
+    fetch_text,
     write_status,
 )
 
@@ -66,9 +66,10 @@ COUNTRIES = [
 
 
 def fetch_url(url, timeout=20):
-    req = Request(url, headers={"User-Agent": USER_AGENT})
-    resp = urlopen(req, timeout=timeout)
-    return resp.read().decode("utf-8", errors="ignore")
+    text, err = fetch_text(url, timeout=timeout, user_agent=USER_AGENT)
+    if text is None:
+        raise OSError(err or "fetch failed")
+    return text
 
 
 class ContentExtractor(HTMLParser):
@@ -185,6 +186,7 @@ class RecommendationParser(HTMLParser):
 
 
 def fetch_recommendations():
+    """Return (cpc_names, swl_names) or None if the recommendations source is unavailable."""
     cache_path = FETCHED / "recommendations_2026.json"
     try:
         html = fetch_url(RECOMMENDATIONS_URL)
@@ -194,13 +196,16 @@ def fetch_recommendations():
         if cache_path.exists():
             html = cache_path.read_text(encoding="utf-8")
         else:
-            return [], []
+            return None
 
     parser = RecommendationParser()
     parser.feed(html)
 
     cpc = [normalize_name(c) for c in parser.cpc_countries]
     swl = [normalize_name(s) for s in parser.swl_countries]
+    if not cpc and not swl:
+        print("  Warning: recommendations page yielded empty CPC/SWL lists")
+        return None
     return cpc, swl
 
 
@@ -224,12 +229,8 @@ def detect_designation(page_html, cpc_names, swl_names):
     if norm in swl_names:
         return "SWL", country_name, parse_ok
 
-    text_lower = page_html.lower()
-    if "countries of particular concern" in text_lower:
-        return "CPC", country_name, parse_ok
-    if "special watch list" in text_lower:
-        return "SWL", country_name, parse_ok
-
+    # Only use list membership — do not invent CPC/SWL from boilerplate page text
+    # when the recommendations lists are the source of truth.
     return "none", country_name, parse_ok
 
 
@@ -278,7 +279,12 @@ def fetch_country(country):
 
 def main():
     print("Fetching USCIRF 2026 recommendations...")
-    cpc_names, swl_names = fetch_recommendations()
+    rec = fetch_recommendations()
+    if rec is None:
+        print("  ERROR: CPC/SWL recommendations unavailable — aborting")
+        write_status("uscirf", "failed", "recommendations page unavailable or empty CPC/SWL")
+        exit_for_status("failed")
+    cpc_names, swl_names = rec
     print(f"  CPC countries ({len(cpc_names)}): {', '.join(cpc_names)}")
     print(f"  SWL countries ({len(swl_names)}): {', '.join(swl_names)}")
     print()

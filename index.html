@@ -50,11 +50,9 @@
     </div>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <div id="data-updated">Loading data status...</div>
-      <div id="data-sources"></div>
-    </div>
+  <footer class="site-footer">
+    <p id="data-updated">Loading data freshness…</p>
+    <div id="data-sources" class="site-footer__sources" hidden></div>
   </footer>
 
   <div id="status-announcer" aria-live="polite" class="sr-only"></div>
@@ -65,7 +63,7 @@
   <script src="assets/vendor/lunr.min.js"></script>
   <script src="assets/js/map.js" defer></script>
   <script src="assets/js/search-ui.js" defer></script>
-  <script src="assets/js/sources.js" defer></script>
+  <script src="assets/js/sources.js" defer data-meta="assets/data/meta.json"></script>
   <script src="assets/js/back-to-top.js" defer></script>
 </body>
 </html>

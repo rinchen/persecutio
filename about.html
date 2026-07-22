@@ -110,7 +110,7 @@
         <p>The map uses color-coded markers to reflect country-level persecution severity: red for Extreme/Very High, orange for High, yellow for Moderate, and blue for Low. Clicking a country opens a page with historical background, modern context, data fields (scores and statistics when available), recent incident samples, and linked sources.</p>
 
         <h2>Data sources</h2>
-        <p>This project relies on publicly available reports and feeds. Country pages reference the specific reports used for each entry. The table below matches the source chips shown on the map footer.</p>
+        <p>This project relies on publicly available reports and feeds. Country pages reference the specific reports used for each entry. The table below matches the source chips shown on the site footer.</p>
 
         <div class="table-wrap">
           <table class="sources-table">
@@ -120,7 +120,7 @@
             <tbody>
               <tr>
                 <td><span class="abbr-badge">OD</span></td>
-                <td><a href="https://www.opendoorsusa.org/christian-persecution/world-watch-list/" target="_blank" rel="noopener">Open Doors World Watch List</a></td>
+                <td><a href="https://www.opendoors.org/en-US/persecution/countries/" target="_blank" rel="noopener">Open Doors World Watch List</a></td>
                 <td>Annual ranking of countries where Christians face the most persecution</td>
               </tr>
               <tr>
@@ -184,6 +184,26 @@
                 <td>Global persecution news and Global Persecution Index</td>
               </tr>
               <tr>
+                <td><span class="abbr-badge">F18</span></td>
+                <td><a href="https://www.forum18.org/" target="_blank" rel="noopener">Forum 18</a></td>
+                <td>Freedom of religion or belief news, focused on former Soviet and related regions</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">MEC</span></td>
+                <td><a href="https://www.meconcern.org/" target="_blank" rel="noopener">Middle East Concern</a></td>
+                <td>FoRB advocacy and incident reporting for the Middle East and North Africa</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">BW</span></td>
+                <td><a href="https://bitterwinter.org/" target="_blank" rel="noopener">Bitter Winter</a></td>
+                <td>FoRB news with coverage of China and related repression</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">RI</span></td>
+                <td><a href="https://www.releaseinternational.org/" target="_blank" rel="noopener">Release International</a></td>
+                <td>Advocacy and news for persecuted Christians worldwide</td>
+              </tr>
+              <tr>
                 <td><span class="abbr-badge">Pew</span></td>
                 <td><a href="https://www.pewresearch.org/religion/" target="_blank" rel="noopener">Pew Research Center</a></td>
                 <td>Religious landscape and restriction studies</td>
@@ -198,11 +218,26 @@
                 <td><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a></td>
                 <td>Public domain map boundaries for the interactive map</td>
               </tr>
+              <tr>
+                <td><span class="abbr-badge">VD</span></td>
+                <td><a href="https://www.v-dem.net/data/the-v-dem-dataset/" target="_blank" rel="noopener">V-Dem (Varieties of Democracy)</a></td>
+                <td>FoRB indicators (CC BY-SA); country subset archived under <code>data/archives/vdem/</code></td>
+              </tr>
             </tbody>
           </table>
         </div>
 
-        <p style="margin-top: 14px"><strong>Source status key</strong> (shown on the map footer):</p>
+        <h2>Archived research materials</h2>
+        <p>A one-time archive under <code>data/archives/</code> stores legally redistributable research used to enrich country pages:</p>
+        <ul>
+          <li><strong>U.S. State Department IRF</strong> country chapters (U.S. government works)</li>
+          <li><strong>USCIRF</strong> annual report PDF and country pages (U.S. government works)</li>
+          <li><strong>Open Doors World Watch Research</strong> persecution-dynamics dossiers (free use/distribution with © Open Doors International attribution)</li>
+          <li><strong>V-Dem</strong> FoRB indicator subset (CC BY-SA)</li>
+        </ul>
+        <p>See <code>data/archives/NOTICE</code> for license details. Country pages cite these sources and may show short excerpts; they do not republish full report bodies.</p>
+
+        <p style="margin-top: 14px"><strong>Source status key</strong> (shown on the site footer):</p>
         <div class="status-legend">
           <span><span class="swatch swatch--ok"></span> OK &mdash; source fetched successfully</span>
           <span><span class="swatch swatch--partial"></span> Partial &mdash; partial data retrieved</span>
@@ -211,7 +246,8 @@
         </div>
 
         <h2>Update workflow</h2>
-        <p>A GitHub Actions workflow runs <strong>daily</strong> (and on manual dispatch). It fetches external sources, regenerates country pages and JSON assets, runs tests, and deploys to GitHub Pages. On the scheduled run, data changes are also committed back to the repository. If a primary fetch fails, the workflow aborts before generate/deploy.</p>
+        <p>A GitHub Actions workflow runs <strong>daily</strong> (and on manual dispatch). It fetches external sources, regenerates country pages and JSON assets, runs tests, and deploys to GitHub Pages. On scheduled runs <strong>and</strong> manual dispatch, data changes are committed back to the repository.</p>
+        <p><strong>Primary</strong> sources (Open Doors, Freedom House, OWID, GDELT, USCIRF, State Dept) gate the job: if any fail, generate/deploy abort. <strong>Secondary</strong> sources (OHCHR, MSN, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International) enrich when available and never abort deploy. Only public site files are uploaded to Pages — not scrape caches under <code>data/fetched/</code>.</p>
 
         <h2>Privacy and access</h2>
         <p>This site does not collect personal data. Map tiles come from CARTO/OpenStreetMap; Leaflet and Lunr are self-hosted under <code>assets/vendor/</code>. If you use an ad blocker, map tiles may still be affected.</p>

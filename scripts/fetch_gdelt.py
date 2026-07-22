@@ -3,7 +3,6 @@
 import json
 import sys
 import urllib.parse
-import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -15,6 +14,7 @@ from fetch_common import (
     detect_countries,
     ensure_fetched_dir,
     exit_for_status,
+    fetch_text,
     load_json_cache,
     normalize_date,
     write_json,
@@ -43,12 +43,13 @@ def fetch_gdelt(query: str):
         "timespan": "30d",
     })
     url = f"{GDELT_BASE}?{params}"
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    text, err = fetch_text(url, timeout=30, user_agent=USER_AGENT)
+    if text is None:
+        return {}, url, err
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read().decode("utf-8", errors="ignore")), url, None
-    except Exception as e:
-        return {}, url, str(e)
+        return json.loads(text), url, None
+    except json.JSONDecodeError as e:
+        return {}, url, f"JSONDecodeError: {e}"
 
 
 def extract_articles(data: dict) -> list[dict]:

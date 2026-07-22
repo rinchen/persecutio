@@ -1,0 +1,60 @@
+Third-party archived materials
+================================
+
+This directory holds one-time, legally redistributable research materials used to
+enrich country pages. The repository's root MIT license applies to project code
+and curated site text. Upstream materials remain under their own terms below.
+
+U.S. State Department — International Religious Freedom (IRF) reports
+---------------------------------------------------------------------
+Location: state_dept/
+Status: U.S. government works are not subject to U.S. copyright
+        (17 U.S.C. §105). State Department policy permits copying and
+        distribution of unmarked content. Citation appreciated.
+        Do not redistribute third-party photos/graphics that may be copyrighted.
+Source: https://www.state.gov/international-religious-freedom-reports/
+
+U.S. Commission on International Religious Freedom (USCIRF)
+------------------------------------------------------------
+Location: uscirf/
+Status: Federal commission reports prepared as U.S. government works;
+        no U.S. copyright in staff-produced report text under 17 U.S.C. §105.
+        Attribution to USCIRF is recommended.
+Source: https://www.uscirf.gov/publications/uscirf-annual-report
+
+Open Doors International / World Watch Research
+-----------------------------------------------
+Location: opendoors/
+Status: Copyright © Open Doors International. World Watch Research documents
+        "may be used and distributed free of charge" with attribution:
+        © Open Doors International.
+        Demographics cited from the World Christian Database (Brill) remain
+        proprietary to Brill; this archive stores Open Doors analysis text only,
+        not Brill WCD tables.
+Source: https://www.opendoors.org/en-US/research-reports/
+
+Varieties of Democracy (V-Dem)
+------------------------------
+Location: vdem/
+Status: Creative Commons Attribution-ShareAlike (CC BY-SA).
+        Attribution required; adaptations must be shared alike.
+        This tree keeps a country subset of FoRB-relevant indicators only
+        (not the full V-Dem release).
+Source: https://www.v-dem.net/data/the-v-dem-dataset/
+Suggested citation: Coppedge et al., V-Dem Dataset (see V-Dem codebook for the
+current recommended citation for the downloaded version).
+
+Extracted summaries
+-------------------
+Location: extracted/
+Derived JSON used by the site pipeline. Contains short excerpts and structured
+fields only — not full republication of source documents on country pages.
+
+Large binaries (PDFs, full HTML mirrors, the V-Dem zip) are intentionally
+gitignored and can be re-fetched with:
+
+    python3 scripts/archive_download.py
+    python3 scripts/archive_extract.py
+
+Committed artifacts are NOTICE, manifest.json, per-country JSON extracts,
+extracted/countries.json, and the V-Dem FoRB CSV/JSON subset.

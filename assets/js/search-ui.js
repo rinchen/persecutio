@@ -30,6 +30,24 @@
     return typeof slug === 'string' && SLUG_RE.test(slug);
   }
 
+  /** Strip lunr special operators so raw typing cannot throw QueryParseError. */
+  function sanitizeLunrQuery(q) {
+    return String(q || '')
+      .replace(/[\\:~^*+\-]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function showEmptyResults(message) {
+    out.textContent = '';
+    var empty = document.createElement('div');
+    empty.className = 'loading';
+    empty.style.padding = '12px';
+    empty.textContent = message;
+    out.appendChild(empty);
+    out.classList.remove('hidden');
+  }
+
   function renderHits(hits, indexData) {
     out.textContent = '';
     hits.forEach(function (h) {
@@ -64,21 +82,22 @@
       if (!input || !out) return;
 
       input.addEventListener('input', function () {
-        var q = input.value.trim();
+        var q = sanitizeLunrQuery(input.value);
         if (q.length < 2) {
           out.classList.add('hidden');
           out.textContent = '';
           return;
         }
-        var hits = idx.search(q + '*').slice(0, 8);
+        var hits;
+        try {
+          hits = idx.search(q + '*').slice(0, 8);
+        } catch (err) {
+          console.warn('lunr search failed', err);
+          showEmptyResults('No results found');
+          return;
+        }
         if (!hits.length) {
-          out.textContent = '';
-          var empty = document.createElement('div');
-          empty.className = 'loading';
-          empty.style.padding = '12px';
-          empty.textContent = 'No results found';
-          out.appendChild(empty);
-          out.classList.remove('hidden');
+          showEmptyResults('No results found');
           return;
         }
         renderHits(hits, indexData);

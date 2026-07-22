@@ -4,7 +4,6 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 VENV="$ROOT/.venv"
 PYTHON="${PYTHON:-python3}"
-DEPS=(pip pyyaml requests beautifulsoup4 openpyxl pytest)
 
 cd "$ROOT"
 
@@ -16,8 +15,9 @@ fi
 # shellcheck disable=SC1091
 source "$VENV/bin/activate"
 
-echo "Upgrading dependencies…"
-python -m pip install --upgrade "${DEPS[@]}"
+echo "Installing from requirements.txt…"
+python -m pip install --upgrade pip
+python -m pip install -r "$ROOT/requirements.txt"
 
 echo
 echo "Done. Activate with:"

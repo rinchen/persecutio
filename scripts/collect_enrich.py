@@ -1,6 +1,7 @@
 """Enrich countries with fetched metadata, citations, incidents, and stubs."""
 from __future__ import annotations
 
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -27,18 +28,32 @@ NEWS_SOURCES = [
 ]
 
 INCIDENT_DISPLAY_CAP = 12
+ARCHIVES_EXTRACTED = (
+    Path(__file__).resolve().parents[1] / "data" / "archives" / "extracted" / "countries.json"
+)
 
 
 def load_fetched_json(fetched: Path, filename: str) -> dict:
     path = fetched / filename
     if path.exists():
         try:
-            import json
             return json.loads(path.read_text(encoding="utf-8"))
         except Exception as e:
             print(f"warning: corrupt fetched file {filename}: {type(e).__name__}: {e}")
     return {}
 
+
+def load_archive_extracts() -> dict[str, dict]:
+    """Load one-time archive extracts keyed by country slug."""
+    if not ARCHIVES_EXTRACTED.exists():
+        return {}
+    try:
+        data = json.loads(ARCHIVES_EXTRACTED.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"warning: corrupt archive extract: {type(e).__name__}: {e}")
+        return {}
+    countries = data.get("countries") or {}
+    return countries if isinstance(countries, dict) else {}
 
 def load_uscirf_index(fetched: Path) -> dict[str, dict]:
     import json
@@ -47,7 +62,8 @@ def load_uscirf_index(fetched: Path) -> dict[str, dict]:
         return {}
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
+    except Exception as e:
+        print(f"warning: corrupt USCIRF index: {type(e).__name__}: {e}")
         return {}
     out: dict[str, dict] = {}
     for entry in data.get("countries") or []:
@@ -66,7 +82,8 @@ def load_state_dept_index(fetched: Path) -> dict[str, dict]:
         return {}
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
+    except Exception as e:
+        print(f"warning: corrupt State Dept index: {type(e).__name__}: {e}")
         return {}
     out: dict[str, dict] = {}
     year = str(data.get("report_year") or "2023")
@@ -86,7 +103,8 @@ def load_ohchr_index(fetched: Path) -> dict[str, dict]:
         return {}
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
+    except Exception as e:
+        print(f"warning: corrupt OHCHR index: {type(e).__name__}: {e}")
         return {}
     out: dict[str, dict] = {}
     for name, entry in (data.get("countries") or {}).items():
@@ -135,6 +153,98 @@ def build_recent_incidents(country_title: str, news_blobs: dict[str, dict]) -> l
     return merged[:INCIDENT_DISPLAY_CAP]
 
 
+def _apply_archive_prose(c: dict, arch: dict) -> None:
+    """Strengthen thin/stub narratives from archived excerpts (once)."""
+    modern_ex = (arch.get("modern_excerpt") or "").strip()
+    hist_ex = (arch.get("historical_excerpt") or "").strip()
+    existing_m = (c.get("modern") or "").strip()
+    existing_h = (c.get("historical") or "").strip()
+    stub = bool((c.get("metadata") or {}).get("stub"))
+
+    if modern_ex and (stub or len(existing_m) < 280):
+        if modern_ex[:60] not in existing_m:
+            if len(existing_m) < 80:
+                c["modern"] = modern_ex
+            else:
+                c["modern"] = f"{existing_m} {modern_ex}".strip()
+    if hist_ex and (stub or len(existing_h) < 200):
+        if hist_ex[:60] not in existing_h:
+            if len(existing_h) < 80:
+                c["historical"] = hist_ex
+            else:
+                c["historical"] = f"{existing_h} {hist_ex}".strip()
+
+
+def apply_archive_enrichment(c: dict, sources: dict, archive_by_slug: dict[str, dict]) -> None:
+    """Merge one-time archive extracts into metadata, prose, and citations."""
+    slug = c.get("slug") or slugify(c.get("title") or "")
+    arch = archive_by_slug.get(slug)
+    if not arch:
+        return
+
+    c.setdefault("metadata", {})
+    meta = c["metadata"]
+    _apply_archive_prose(c, arch)
+
+    if arch.get("modern_excerpt"):
+        meta["archive_modern_excerpt"] = arch["modern_excerpt"]
+    if arch.get("historical_excerpt"):
+        meta["archive_historical_excerpt"] = arch["historical_excerpt"]
+
+    od = arch.get("opendoors") or {}
+    if od:
+        meta["archive_od_brief"] = od.get("brief_situation") or ""
+        if od.get("ranking") is not None and meta.get("opendoors_ranking") is None:
+            meta["opendoors_ranking"] = od.get("ranking")
+        if od.get("score") is not None and meta.get("opendoors_score") is None:
+            meta["opendoors_score"] = od.get("score")
+        if od.get("url"):
+            meta["archive_od_url"] = od["url"]
+
+    sd = arch.get("state_dept") or {}
+    if sd:
+        if sd.get("executive_summary") and not meta.get("state_dept_executive_summary"):
+            meta["state_dept_executive_summary"] = sd["executive_summary"][:600]
+        if sd.get("url") and not meta.get("state_dept_url"):
+            meta["state_dept_url"] = sd["url"]
+        if sd.get("christian_mention_count") is not None:
+            meta.setdefault("state_dept_christian_mentions", sd["christian_mention_count"])
+
+    uc = arch.get("uscirf") or {}
+    if uc:
+        if uc.get("designation") and not meta.get("uscirf_designation"):
+            meta["uscirf_designation"] = uc["designation"]
+        if uc.get("key_findings") and not meta.get("uscirf_key_findings"):
+            meta["uscirf_key_findings"] = uc["key_findings"][:2]
+        if uc.get("url") and not meta.get("uscirf_url"):
+            meta["uscirf_url"] = uc["url"]
+
+    vd = arch.get("vdem") or {}
+    if vd and any(vd.get(k) is not None for k in ("v2clrelig", "v2csrlgrep", "v2clrelig_ord")):
+        meta["vdem_year"] = vd.get("year")
+        if vd.get("v2clrelig") is not None:
+            meta["vdem_freedom_of_religion"] = vd["v2clrelig"]
+        if vd.get("v2clrelig_ord") is not None:
+            meta["vdem_freedom_of_religion_ord"] = vd["v2clrelig_ord"]
+        if vd.get("v2csrlgrep") is not None:
+            meta["vdem_religious_org_repression"] = vd["v2csrlgrep"]
+        if vd.get("v2csrlgrep_ord") is not None:
+            meta["vdem_religious_org_repression_ord"] = vd["v2csrlgrep_ord"]
+
+    for entry in arch.get("source_entries") or []:
+        sid = entry.get("id")
+        if not sid:
+            continue
+        ensure_source(
+            sources,
+            sid,
+            entry.get("title") or sid,
+            entry.get("url") or "",
+            entry.get("date") or "",
+        )
+        attach_citation(c, sid, sources)
+
+
 def enrich_country(
     c: dict,
     *,
@@ -151,6 +261,7 @@ def enrich_country(
     state_dept_by_title: dict,
     ohchr_by_title: dict,
     news_blobs: dict[str, dict],
+    archive_by_slug: dict[str, dict] | None = None,
 ) -> None:
     iso = str(c.get("iso3", "")).upper()
     title = c.get("title", "")
@@ -321,6 +432,9 @@ def enrich_country(
     if incidents:
         meta["recent_incidents"] = incidents
 
+    # One-time legal archives (IRF / USCIRF / OD dossiers / V-Dem subset)
+    apply_archive_enrichment(c, sources, archive_by_slug or {})
+
 
 def derive_status_from_signals(
     title: str,
@@ -385,6 +499,7 @@ def create_stub_countries(
     state_dept_by_title: dict,
     ohchr_by_title: dict,
     country_polygons: dict,
+    archive_by_slug: dict[str, dict] | None = None,
 ) -> list[dict]:
     existing_titles = {c.get("title") for c in existing}
     stubs: list[dict] = []
@@ -447,6 +562,7 @@ def create_stub_countries(
             state_dept_by_title=state_dept_by_title,
             ohchr_by_title=ohchr_by_title,
             news_blobs=news_blobs,
+            archive_by_slug=archive_by_slug,
         )
         # Ensure stub flag survives enrich
         stub["metadata"]["stub"] = True

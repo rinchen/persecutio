@@ -27,6 +27,7 @@ REQUEST_DELAY = 1.5
 # Some country slugs differ between our project and state.gov URLs
 SLUG_MAP = {
     "myanmar": "burma",
+    "democratic-republic-of-congo": "democratic-republic-of-the-congo",
 }
 
 TARGET_COUNTRIES = [

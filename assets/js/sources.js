@@ -1,6 +1,8 @@
 (function () {
   var updatedEl = document.getElementById('data-updated');
   var sourcesEl = document.getElementById('data-sources');
+  var script = document.querySelector('script[src*="sources.js"]');
+  var metaUrl = (script && script.getAttribute('data-meta')) || 'assets/data/meta.json';
 
   function escapeHtml(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -16,6 +18,29 @@
     }
   }
 
+  function legendHtml() {
+    var items = [
+      ['ok', 'OK'],
+      ['partial', 'Partial'],
+      ['error', 'Error'],
+      ['skipped', 'Skipped']
+    ];
+    return (
+      '<ul class="source-legend" aria-label="Source status color key">' +
+      items
+        .map(function (pair) {
+          return (
+            '<li class="source-legend__item">' +
+              '<span class="source-legend__swatch source-chip--' + pair[0] + '" aria-hidden="true"></span>' +
+              '<span class="source-legend__text">' + pair[1] + '</span>' +
+            '</li>'
+          );
+        })
+        .join('') +
+      '</ul>'
+    );
+  }
+
   function render(data) {
     if (updatedEl) {
       updatedEl.textContent = data.generatedAt
@@ -24,30 +49,50 @@
     }
     if (!sourcesEl) return;
     var sources = data.sources || [];
-    if (!sources.length) { sourcesEl.hidden = true; return; }
+    if (!sources.length) {
+      sourcesEl.hidden = true;
+      sourcesEl.innerHTML = '';
+      return;
+    }
 
-    var chipsHtml = sources.map(function (s) {
-      var st = s.status || 'unknown';
-      var label = s.label || s.id;
-      var title = s.title || s.id;
-      var ts = formatTimestamp(s.fetchedAt);
-      var tip = escapeHtml(title) + ': ' + escapeHtml(st) + (ts ? ' (' + escapeHtml(ts) + ')' : '');
-      return '<li><span class="source-chip source-chip--' + escapeHtml(st) + '" title="' + tip + '">' + escapeHtml(label) + '</span></li>';
-    }).join('');
+    var chipsHtml = sources
+      .map(function (s) {
+        var st = s.status || 'unknown';
+        var label = s.label || s.id;
+        var title = s.title || s.id;
+        var ts = formatTimestamp(s.fetchedAt);
+        var tip =
+          escapeHtml(title) +
+          ': ' +
+          escapeHtml(st) +
+          (ts ? ' (' + escapeHtml(ts) + ')' : '');
+        var aria = escapeHtml(title) + ': ' + escapeHtml(st);
+        return (
+          '<li><span class="source-chip source-chip--' +
+          escapeHtml(st) +
+          '" title="' +
+          tip +
+          '" aria-label="' +
+          aria +
+          '">' +
+          escapeHtml(label) +
+          '</span></li>'
+        );
+      })
+      .join('');
 
     sourcesEl.innerHTML =
-      '<span class="source-chips-label">Sources</span>' +
-      '<ul class="source-legend">' +
-        '<li class="source-legend__item"><span class="source-legend__swatch source-chip--ok"></span>OK</li>' +
-        '<li class="source-legend__item"><span class="source-legend__swatch source-chip--partial"></span>Partial</li>' +
-        '<li class="source-legend__item"><span class="source-legend__swatch source-chip--error"></span>Error</li>' +
-        '<li class="source-legend__item"><span class="source-legend__swatch source-chip--skipped"></span>Skipped</li>' +
-      '</ul>' +
-      '<ul class="source-chips">' + chipsHtml + '</ul>';
+      '<div class="site-footer__sources-head">' +
+        '<span class="site-footer__sources-label">Sources</span>' +
+        legendHtml() +
+      '</div>' +
+      '<ul class="source-chips" aria-label="Data source status">' +
+        chipsHtml +
+      '</ul>';
     sourcesEl.hidden = false;
   }
 
-  fetch('assets/data/meta.json')
+  fetch(metaUrl)
     .then(function (r) {
       if (!r.ok) throw new Error(r.statusText || String(r.status));
       return r.json();

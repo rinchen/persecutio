@@ -149,13 +149,21 @@ jobs:
             git commit -m "chore: update persecution data and site [skip ci]"
             git push origin HEAD:main
           fi
+      - name: Stage public site for Pages
+        run: |
+          mkdir -p _site
+          cp index.html about.html LICENSE _site/
+          cp -R countries assets _site/
+          # Do not publish scrape caches, scripts, tests, or local backups
+          find _site/assets -name '*.bak-*' -delete 2>/dev/null || true
+          rm -rf _site/assets/data/fetched 2>/dev/null || true
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

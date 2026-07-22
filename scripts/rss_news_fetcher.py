@@ -52,13 +52,14 @@ def parse_rss_items(
     source_label: str,
     high_trust: bool = False,
     extra_filter: Callable[[str, str, list[str]], bool] | None = None,
-) -> list[dict]:
+) -> tuple[list[dict], str | None]:
+    """Parse RSS/Atom items. Returns (articles, parse_error)."""
     articles: list[dict] = []
     try:
         root = ET.fromstring(xml_text)
     except ET.ParseError as e:
         print(f"  XML parse error: {e}")
-        return articles
+        return articles, f"XML parse error: {e}"
 
     # RSS 2.0 channel/item or Atom feed/entry
     items = root.findall(".//item")
@@ -108,7 +109,7 @@ def parse_rss_items(
                 "categories": cats,
                 "source": source_label,
             })
-        return articles
+        return articles, None
 
     for item in items:
         title = (item.findtext("title") or "").strip()
@@ -155,7 +156,7 @@ def parse_rss_items(
             "source": source_label,
         })
 
-    return articles
+    return articles, None
 
 
 def run_rss_fetcher(
@@ -186,7 +187,26 @@ def run_rss_fetcher(
         write_status(name, "failed", f"fetch failed: {err}")
         exit_for_status("failed")
 
-    articles = parse_rss_items(xml_text, source_label=source_label, high_trust=high_trust)
+    articles, parse_err = parse_rss_items(
+        xml_text, source_label=source_label, high_trust=high_trust
+    )
+    if parse_err:
+        if cached:
+            print(f"  {parse_err}; keeping cached data")
+            cached["status"] = "partial"
+            write_json(output, cached)
+            write_status(name, "partial", parse_err)
+            exit_for_status("partial")
+        result = build_news_result(
+            source=source_label,
+            source_url=rss_url,
+            status="parse_failed",
+            articles=[],
+        )
+        write_json(output, result)
+        write_status(name, "failed", parse_err)
+        exit_for_status("failed")
+
     print(f"  found {len(articles)} Christian-persecution articles")
     result = build_news_result(
         source=source_label,

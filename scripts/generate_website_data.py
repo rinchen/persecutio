@@ -1,7 +1,6 @@
 import html
 import json
 import re
-from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -67,6 +66,7 @@ PAGE = """\
       <p>{modern}</p>
       <div class="section-sources"><strong>Sources:</strong> {modern_sources}</div>
     </section>
+    {archive_notes}
     {recent_incidents}
     <section>
       <h2>All References</h2>
@@ -76,15 +76,12 @@ PAGE = """\
     </section>
   </div>
 </main>
-<footer>
-  <div class="wrap">
-    <div class="footer-status-line">
-      <strong>Source status:</strong>
-      {last_pull_text}
-    </div>
-  </div>
+<footer class="site-footer">
+  <p id="data-updated">Loading data freshness…</p>
+  <div id="data-sources" class="site-footer__sources" hidden></div>
 </footer>
 <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+<script src="../assets/js/sources.js" defer data-meta="../assets/data/meta.json"></script>
 <script src="../assets/js/back-to-top.js" defer></script>
 </body>
 </html>
@@ -114,6 +111,7 @@ SOURCE_GROUP_DEFS = {
     "freedomhouse": {"prefixes": ("freedomhouse",), "label": "FH", "title": "Freedom House Freedom in the World"},
     "statedepartment": {"prefixes": ("statedepartment",), "label": "SD", "title": "U.S. State Dept IRF Reports"},
     "ohchr": {"prefixes": ("ohchr",), "label": "OHCHR", "title": "OHCHR Universal Human Rights Index"},
+    "vdem": {"prefixes": ("vdem",), "label": "VD", "title": "V-Dem FoRB Indicators"},
     "gdelt": {"prefixes": ("gdelt",), "label": "GDELT", "title": "GDELT Global Database of Events"},
     "owid": {"prefixes": ("owid",), "label": "OWID", "title": "Our World in Data - Religious Composition"},
     "acn": {"prefixes": ("acn",), "label": "ACN", "title": "ACN Persecuted and Forgotten"},
@@ -175,41 +173,6 @@ def safe_url(url: str | None, fallback: str = "#") -> str:
 
 def valid_slug(slug: str) -> bool:
     return bool(slug) and bool(SLUG_RE.fullmatch(slug))
-
-
-def format_source_status(statuses):
-    if not statuses:
-        return "no source pull data"
-    ok = []
-    failed = []
-    cached = []
-    partial = []
-    unknown = []
-    for s in statuses:
-        name = s.get("name") if isinstance(s, dict) else None
-        state = ((s or {}).get("status") or "unknown")
-        stamp = ((s or {}).get("fetched_at") or "")
-        label = name or "source"
-        if state == "ok":
-            ok.append(f"{label} fetched {stamp}")
-        elif state == "cached":
-            cached.append(f"{label} cached {stamp}")
-        elif state == "partial":
-            partial.append(f"{label} partial")
-        elif state == "failed":
-            failed.append(f"{label} failed")
-        else:
-            unknown.append(f"{label} {state}")
-    parts = []
-    if ok:
-        parts.append("; ".join(sorted(ok)[:2]))
-    if partial:
-        parts.append("partial: " + ", ".join(sorted(partial)[:2]))
-    if cached:
-        parts.append("cached: " + ", ".join(sorted(cached)[:2]))
-    if failed or unknown:
-        parts.append("failed/unknown: " + ", ".join(sorted(failed + unknown)[:2]))
-    return "last pull: " + ("; ".join(parts) if parts else "unknown")
 
 
 def render_sources(source_ids: list[str], all_sources_lookup: dict) -> str:
@@ -317,10 +280,60 @@ def render_data_fields(country: dict) -> str:
             f'<div class="data-item"><div class="label">OHCHR Recommendations</div>'
             f'<div class="value">{esc(ohchr_count)}</div></div>'
         )
+    vdem_relig = meta.get("vdem_freedom_of_religion")
+    if vdem_relig is not None:
+        year = meta.get("vdem_year")
+        year_s = f" ({int(year)})" if isinstance(year, (int, float)) else ""
+        items.append(
+            f'<div class="data-item"><div class="label">V-Dem Freedom of Religion{esc(year_s)}</div>'
+            f'<div class="value">{esc(vdem_relig)}</div></div>'
+        )
+    vdem_repr = meta.get("vdem_religious_org_repression")
+    if vdem_repr is not None:
+        items.append(
+            f'<div class="data-item"><div class="label">V-Dem Rel. Org. Repression</div>'
+            f'<div class="value">{esc(vdem_repr)}</div></div>'
+        )
     if not items:
         return ""
     return '<div class="data-grid">' + "\n      ".join(items) + "\n    </div>"
 
+
+def render_archive_notes(country: dict) -> str:
+    """Short excerpts from archived IRF/OD/USCIRF reports (not full republication)."""
+    meta = country.get("metadata") or {}
+    bits = []
+    od_brief = (meta.get("archive_od_brief") or "").strip()
+    # Avoid duplicating text already merged into modern
+    modern = (country.get("modern") or "")
+    if od_brief and od_brief[:80] not in modern:
+        bits.append(
+            "<p><strong>Open Doors research note:</strong> "
+            f"{esc(od_brief[:600])}"
+            ' <span class="archive-attr">(© Open Doors International)</span></p>'
+        )
+    sd = (meta.get("state_dept_executive_summary") or "").strip()
+    if sd and sd[:80] not in modern and len(bits) < 2:
+        bits.append(
+            "<p><strong>U.S. State Department IRF excerpt:</strong> "
+            f"{esc(sd[:500])}</p>"
+        )
+    findings = meta.get("uscirf_key_findings") or []
+    if findings and len(bits) < 2:
+        first = str(findings[0]).strip()
+        if first and first[:80] not in modern:
+            bits.append(
+                f"<p><strong>USCIRF finding:</strong> {esc(first[:500])}</p>"
+            )
+    if not bits:
+        return ""
+    return (
+        '<section class="archive-notes">\n'
+        "      <h2>From archived reports</h2>\n"
+        "      "
+        + "\n      ".join(bits)
+        + "\n    </section>"
+    )
 
 def render_stub_note(country: dict) -> str:
     meta = country.get("metadata") or {}
@@ -431,8 +444,6 @@ def main():
         raise SystemExit("data/countries.yml is missing or has no 'countries' list")
 
     source_statuses = data.get("fetched", {}).get("source_statuses") or []
-    last_pull_text = format_source_status(source_statuses)
-    generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     with (DATA / "sources.yml").open("r", encoding="utf-8") as f:
         loaded = yaml.safe_load(f) or {}
@@ -499,10 +510,9 @@ def main():
             status_key=esc(status or "unknown"),
             status_label=esc(label),
             status_color=esc(color),
-            generated_at=esc(generated_at),
-            last_pull_text=esc(last_pull_text),
             stub_note=render_stub_note(c),
             data_fields=render_data_fields(c),
+            archive_notes=render_archive_notes(c),
             recent_incidents=render_recent_incidents(c),
         )
         out_path.write_text(page_html, encoding="utf-8")

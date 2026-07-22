@@ -153,6 +153,19 @@ def main():
 
     report = parse_acn_report(html)
 
+    countries = report["countries"]
+    if not countries:
+        if cached:
+            print("  parse yielded no countries; keeping cached data")
+            cached["status"] = "partial"
+            cached["fetched_at"] = datetime.now(timezone.utc).isoformat()
+            OUTPUT.write_text(json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8")
+            write_status("acn", "partial", "parse yielded no countries")
+            exit_for_status("partial")
+        _write_empty("parse_empty")
+        write_status("acn", "failed", "parse yielded no countries")
+        exit_for_status("failed")
+
     result = {
         "fetched_at": datetime.now(timezone.utc).isoformat(),
         "source": "Aid to the Church in Need - Religious Freedom Report",
@@ -162,21 +175,20 @@ def main():
         "period": report["period"],
         "total_persecution_countries": report["total_persecution_countries"],
         "total_discrimination_countries": report["total_discrimination_countries"],
-        "countries": report["countries"],
-        "total_countries_with_data": len(report["countries"]),
+        "countries": countries,
+        "total_countries_with_data": len(countries),
     }
     OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  report year: {report['report_year']}")
     print(f"  persecution countries: {report['total_persecution_countries']}")
     print(f"  discrimination countries: {report['total_discrimination_countries']}")
-    print(f"  countries with data: {len(report['countries'])}")
-    for c in sorted(report["countries"].keys()):
-        entry = report["countries"][c]
+    print(f"  countries with data: {len(countries)}")
+    for c in sorted(countries.keys()):
+        entry = countries[c]
         print(f"    {c}: {entry['classification']} ({entry['mentions']} mentions)")
     print(f"  wrote {OUTPUT}")
     write_status("acn", "ok")
     exit_for_status("ok")
-
 
 if __name__ == "__main__":
     main()
