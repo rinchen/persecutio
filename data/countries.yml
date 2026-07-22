@@ -33,20 +33,11 @@ countries:
     modern:
     - uscirf2023afghanistan
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id002
-      title: USCIRF 2023 Annual Report - Afghanistan
-      url: https://www.uscirf.gov/countries/afghanistan
-      date: '2023'
-    - &id001
-      title: Open Doors World Watch List 2024
-      url: https://www.opendoorsusa.org/christian-persecution/world-watch-list/
-      date: '2024'
-    source_ids:
-    - uscirf2023afghanistan
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -191,6 +182,33 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023afghanistan
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id009
+      title: USCIRF 2023 Annual Report - Afghanistan
+      url: https://www.uscirf.gov/countries/afghanistan
+      date: '2023'
+    - &id001
+      title: Open Doors World Watch List 2024
+      url: https://www.opendoorsusa.org/christian-persecution/world-watch-list/
+      date: '2024'
+    - &id002
+      title: Freedom House Freedom in the World 2024
+      url: https://freedomhouse.org/report/freedom-world
+      date: '2024'
+    - &id003
+      title: Open Doors World Watch List 2026
+      url: https://www.opendoors.org/en-US/persecution/countries/
+      date: '2026'
+    - &id004
+      title: Our World in Data - Religious Composition (Pew Research)
+      url: https://ourworldindata.org/grapher/religious-composition
+      date: '2024'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -232,17 +250,13 @@ countries:
     modern:
     - uscirf2023china
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - bitterwinter
+    - releaseintl
   pew_slug: china
   metadata:
-    sources:
-    - &id003
-      title: USCIRF 2023 Annual Report - China
-      url: https://www.uscirf.gov/countries/china
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023china
-    - odwwl2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -729,6 +743,31 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023china
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - bitterwinter
+    - releaseintl
+    sources:
+    - &id010
+      title: USCIRF 2023 Annual Report - China
+      url: https://www.uscirf.gov/countries/china
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
+    - &id044
+      title: Bitter Winter - Religious Liberty and Human Rights
+      url: https://bitterwinter.org/
+      date: '2026'
+    - &id005
+      title: Release International - Serving the Persecuted Church
+      url: https://releaseinternational.org/
+      date: '2026'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -736,6 +775,41 @@ countries:
     opendoors_score: 87
     christian_population: 25452526
     christian_percentage: 1.78
+    bitterwinter_articles: 1
+    bitterwinter_samples:
+    - title: “Brainwashing” Accusations and the Persecution of The Church of Almighty
+        God
+      url: https://bitterwinter.org/brainwashing-accusations-and-the-persecution-of-the-church-of-almighty-god
+      date: '2026-07-17'
+      description: A persecution that continues in China is now extended through transnational
+        campaigns of espionage, propaganda, and harassment. The post “Brainwashing”
+        Accusations and the Persecution of The Church of Almighty God first appeared
+        on Bitter Winter .
+      source: Bitter Winter
+    releaseintl_articles: 1
+    releaseintl_samples:
+    - title: Chinese pastor released!
+      url: https://releaseinternational.org/pastorzhangshaojie
+      date: '2025-11-17'
+      description: Chinese Pastor Zhang Shaojie is released from prison. The post
+        Chinese pastor released! appeared first on Release International .
+      source: Release International
+    recent_incidents:
+    - title: “Brainwashing” Accusations and the Persecution of The Church of Almighty
+        God
+      url: https://bitterwinter.org/brainwashing-accusations-and-the-persecution-of-the-church-of-almighty-god
+      date: '2026-07-17'
+      description: A persecution that continues in China is now extended through transnational
+        campaigns of espionage, propaganda, and harassment. The post “Brainwashing”
+        Accusations and the Persecution of The Church of Almighty God first appeared
+        on Bitter Winter .
+      source: Bitter Winter
+    - title: Chinese pastor released!
+      url: https://releaseinternational.org/pastorzhangshaojie
+      date: '2025-11-17'
+      description: Chinese Pastor Zhang Shaojie is released from prison. The post
+        Chinese pastor released! appeared first on Release International .
+      source: Release International
 - title: Colombia
   slug: colombia
   iso3: COL
@@ -766,17 +840,11 @@ countries:
     modern:
     - uscirf2023colombia
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id004
-      title: USCIRF 2023 Annual Report - Colombia
-      url: https://www.uscirf.gov/countries/colombia
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023colombia
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -983,6 +1051,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023colombia
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id011
+      title: USCIRF 2023 Annual Report - Colombia
+      url: https://www.uscirf.gov/countries/colombia
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Free
     freedom_house_pr: 2
     freedom_house_cl: 3
@@ -1018,17 +1101,11 @@ countries:
     modern:
     - uscirf2023cuba
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id005
-      title: USCIRF 2023 Annual Report - Cuba
-      url: https://www.uscirf.gov/countries/cuba
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023cuba
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -1119,6 +1196,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023cuba
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id012
+      title: USCIRF 2023 Annual Report - Cuba
+      url: https://www.uscirf.gov/countries/cuba
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -1155,17 +1247,11 @@ countries:
     modern:
     - uscirf2023eritrea
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id006
-      title: USCIRF 2023 Annual Report - Eritrea
-      url: https://www.uscirf.gov/countries/eritrea
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023eritrea
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -1228,6 +1314,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023eritrea
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id013
+      title: USCIRF 2023 Annual Report - Eritrea
+      url: https://www.uscirf.gov/countries/eritrea
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -1263,17 +1364,13 @@ countries:
     modern:
     - uscirf2023india
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
+    - releaseintl
   pew_slug: ''
   metadata:
-    sources:
-    - &id007
-      title: USCIRF 2023 Annual Report - India
-      url: https://www.uscirf.gov/countries/india
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023india
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -1552,6 +1649,28 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023india
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
+    - releaseintl
+    sources:
+    - &id014
+      title: USCIRF 2023 Annual Report - India
+      url: https://www.uscirf.gov/countries/india
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
+    - &id006
+      title: Morning Star News - Christian Persecution Reports
+      url: https://morningstarnews.org/
+      date: '2026'
+    - *id005
     freedom_house_status: Partly Free
     freedom_house_pr: 2
     freedom_house_cl: 4
@@ -1559,6 +1678,77 @@ countries:
     opendoors_score: 80
     christian_population: 31062655
     christian_percentage: 2.21
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Pastor in India Faces False Charge, Burned Church Building
+      url: https://morningstarnews.org/2026/07/pastor-in-india-faces-false-charge-burned-church-building
+      date: '2026-07-02'
+      description: NEW DELHI (Christian Daily International&#8211;Morning Star News)
+        – The wife of a pastor falsely named in a criminal case in India this week
+        sought the arrest of a Sikh man suspected of setting their church building
+        and residence ablaze on June 14, sources said. Pastor Prakash Singh, 46, fled
+        his ho
+      source: Morning Star News
+    releaseintl_articles: 3
+    releaseintl_samples:
+    - title: Threat of ‘draconian’ regulations in India
+      url: https://releaseinternational.org/podcast-india
+      date: '2026-06-04'
+      description: A leading Indian Christian speaks to the Voice podcast about a
+        proposed new regulation that would threaten Christian work in that country.
+        The post Threat of draconian regulations in India appeared first on Release
+        International .
+      source: Release International
+    - title: Threat to Christian mission work in India
+      url: https://releaseinternational.org/christianmissionindia
+      date: '2026-04-15'
+      description: Christian mission work in India and its financial support from
+        other countries could be impacted by proposed new regulations. The post Threat
+        to Christian mission work in India appeared first on Release International
+        .
+      source: Release International
+    - title: Police stand aside as Indian pastor beaten
+      url: https://releaseinternational.org/police-stand-aside-as-indian-pastor-beaten
+      date: '2026-02-10'
+      description: More than 30 pastors, ministers and Christian leaders have been
+        detained, or placed under house arrest in the latest crackdown on churches
+        in China. The post Police stand aside as Indian pastor beaten appeared first
+        on Release International .
+      source: Release International
+    recent_incidents:
+    - title: Pastor in India Faces False Charge, Burned Church Building
+      url: https://morningstarnews.org/2026/07/pastor-in-india-faces-false-charge-burned-church-building
+      date: '2026-07-02'
+      description: NEW DELHI (Christian Daily International&#8211;Morning Star News)
+        – The wife of a pastor falsely named in a criminal case in India this week
+        sought the arrest of a Sikh man suspected of setting their church building
+        and residence ablaze on June 14, sources said. Pastor Prakash Singh, 46, fled
+        his ho
+      source: Morning Star News
+    - title: Threat of ‘draconian’ regulations in India
+      url: https://releaseinternational.org/podcast-india
+      date: '2026-06-04'
+      description: A leading Indian Christian speaks to the Voice podcast about a
+        proposed new regulation that would threaten Christian work in that country.
+        The post Threat of draconian regulations in India appeared first on Release
+        International .
+      source: Release International
+    - title: Threat to Christian mission work in India
+      url: https://releaseinternational.org/christianmissionindia
+      date: '2026-04-15'
+      description: Christian mission work in India and its financial support from
+        other countries could be impacted by proposed new regulations. The post Threat
+        to Christian mission work in India appeared first on Release International
+        .
+      source: Release International
+    - title: Police stand aside as Indian pastor beaten
+      url: https://releaseinternational.org/police-stand-aside-as-indian-pastor-beaten
+      date: '2026-02-10'
+      description: More than 30 pastors, ministers and Christian leaders have been
+        detained, or placed under house arrest in the latest crackdown on churches
+        in China. The post Police stand aside as Indian pastor beaten appeared first
+        on Release International .
+      source: Release International
 - title: Indonesia
   slug: indonesia
   iso3: IDN
@@ -1588,17 +1778,12 @@ countries:
     modern:
     - uscirf2023indonesia
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
   pew_slug: ''
   metadata:
-    sources:
-    - &id008
-      title: USCIRF 2023 Annual Report - Indonesia
-      url: https://www.uscirf.gov/countries/indonesia
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023indonesia
-    - odwwl2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -2105,6 +2290,23 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023indonesia
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
+    sources:
+    - &id015
+      title: USCIRF 2023 Annual Report - Indonesia
+      url: https://www.uscirf.gov/countries/indonesia
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
+    - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -2112,6 +2314,25 @@ countries:
     opendoors_score: 49
     christian_population: 28202346
     christian_percentage: 10.26
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Muslims Protest Presence of Church in Indonesia
+      url: https://morningstarnews.org/2026/07/muslims-protest-presence-of-church-in-indonesia
+      date: '2026-07-03'
+      description: SURABAYA, Indonesia (Morning Star News) – Islamists in June demonstrated
+        against the presence of a church in one city in West Java Province, Indonesia
+        and prevented a funeral Mass in another, local sources reported. Dozens of
+        Muslims demonstrated against the church in the Hegarmanah Indah housing co
+      source: Morning Star News
+    recent_incidents:
+    - title: Muslims Protest Presence of Church in Indonesia
+      url: https://morningstarnews.org/2026/07/muslims-protest-presence-of-church-in-indonesia
+      date: '2026-07-03'
+      description: SURABAYA, Indonesia (Morning Star News) – Islamists in June demonstrated
+        against the presence of a church in one city in West Java Province, Indonesia
+        and prevented a funeral Mass in another, local sources reported. Dozens of
+        Muslims demonstrated against the church in the Hegarmanah Indah housing co
+      source: Morning Star News
 - title: Iran
   slug: iran
   iso3: IRN
@@ -2140,17 +2361,13 @@ countries:
     modern:
     - uscirf2023iran
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - mec
+    - releaseintl
   pew_slug: ''
   metadata:
-    sources:
-    - &id009
-      title: USCIRF 2023 Annual Report - Iran
-      url: https://www.uscirf.gov/countries/iran
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023iran
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -2309,6 +2526,28 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023iran
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - mec
+    - releaseintl
+    sources:
+    - &id016
+      title: USCIRF 2023 Annual Report - Iran
+      url: https://www.uscirf.gov/countries/iran
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
+    - &id007
+      title: Middle East Concern - News
+      url: https://www.meconcern.org/
+      date: '2026'
+    - *id005
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -2316,6 +2555,123 @@ countries:
     opendoors_score: 88
     christian_population: 125102
     christian_percentage: 0.14
+    mec_articles: 8
+    mec_samples:
+    - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
+      url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
+      date: '2026-07-13'
+      description: The Iranian evangelical Christian community and others concerned
+        for the preservation of Iran’s Christian heritage express their sorrow that
+        the oldest Protestant Church in the country could soon be demolished after
+        being confiscated by state authorities. St Peter’s Evangelical Church was
+        founded in
+      source: Middle East Concern
+    - title: 'Iran: Turkish immigration question custody of Iranian convert couple’s
+        adopted child'
+      url: https://www.meconcern.org/2026/06/03/iran-turkish-immigration-question-custody-of-iranian-convert-couples-adopted-child/?utm_source=rss&utm_medium=rss&utm_campaign=iran-turkish-immigration-question-custody-of-iranian-convert-couples-adopted-child
+      date: '2026-06-03'
+      description: Iranian Christian converts and asylum-seekers Sam Khosravi and
+        Maryam Falahi request prayer after an interview with Turkish immigration officials
+        on 2 June. During the interview, the officials questioned whether Sam and
+        Maryam have legal custody over their adopted daughter Lydia in view of a previou
+      source: Middle East Concern
+    - title: 'Iran: Enforced disappearance of Christian convert Mary Mohammadi'
+      url: https://www.meconcern.org/2026/06/01/iran-enforced-disappearance-of-christian-convert-mary-mohammadi/?utm_source=rss&utm_medium=rss&utm_campaign=iran-enforced-disappearance-of-christian-convert-mary-mohammadi
+      date: '2026-06-01'
+      description: 'Prayer is requested for human rights defender, journalist and
+        Christian convert Mary Mohammadi after Amnesty International reports her enforced
+        disappearance since late February 2026. Mary was arrested for the first time
+        at the age of 19 after converting from Islam to Christianity at a house church '
+      source: Middle East Concern
+    releaseintl_articles: 1
+    releaseintl_samples:
+    - title: Release International partner speaks on Iran
+      url: https://releaseinternational.org/podcastiran
+      date: '2026-04-02'
+      description: Release International partner Lazarus Yeghnazar talks about the
+        current situation in Iran and the growth of the church in the midst of persecution.
+        The post Release International partner speaks on Iran appeared first on Release
+        International .
+      source: Release International
+    recent_incidents:
+    - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
+      url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
+      date: '2026-07-13'
+      description: The Iranian evangelical Christian community and others concerned
+        for the preservation of Iran’s Christian heritage express their sorrow that
+        the oldest Protestant Church in the country could soon be demolished after
+        being confiscated by state authorities. St Peter’s Evangelical Church was
+        founded in
+      source: Middle East Concern
+    - title: 'Iran: Turkish immigration question custody of Iranian convert couple’s
+        adopted child'
+      url: https://www.meconcern.org/2026/06/03/iran-turkish-immigration-question-custody-of-iranian-convert-couples-adopted-child/?utm_source=rss&utm_medium=rss&utm_campaign=iran-turkish-immigration-question-custody-of-iranian-convert-couples-adopted-child
+      date: '2026-06-03'
+      description: Iranian Christian converts and asylum-seekers Sam Khosravi and
+        Maryam Falahi request prayer after an interview with Turkish immigration officials
+        on 2 June. During the interview, the officials questioned whether Sam and
+        Maryam have legal custody over their adopted daughter Lydia in view of a previou
+      source: Middle East Concern
+    - title: 'Iran: Enforced disappearance of Christian convert Mary Mohammadi'
+      url: https://www.meconcern.org/2026/06/01/iran-enforced-disappearance-of-christian-convert-mary-mohammadi/?utm_source=rss&utm_medium=rss&utm_campaign=iran-enforced-disappearance-of-christian-convert-mary-mohammadi
+      date: '2026-06-01'
+      description: 'Prayer is requested for human rights defender, journalist and
+        Christian convert Mary Mohammadi after Amnesty International reports her enforced
+        disappearance since late February 2026. Mary was arrested for the first time
+        at the age of 19 after converting from Islam to Christianity at a house church '
+      source: Middle East Concern
+    - title: 'Iran: Catholic convert sentenced to over nine years’ imprisonment'
+      url: https://www.meconcern.org/2026/05/27/iran-catholic-convert-sentenced-to-over-nine-years-imprisonment/?utm_source=rss&utm_medium=rss&utm_campaign=iran-catholic-convert-sentenced-to-over-nine-years-imprisonment
+      date: '2026-05-27'
+      description: Prayer is requested for Ghazal Marzban, a convert from Islam to
+        Christianity, as she faces a prison sentence of nine years and eight months
+        on charges including “propaganda against the state” and “gathering and collusion
+        against national security”. Ghazal was arrested at her home in Tehran last
+        Janu
+      source: Middle East Concern
+    - title: 'Iran: Christian convert in prison denied medical treatment'
+      url: https://www.meconcern.org/2026/05/15/iran-christian-convert-in-prison-denied-medical-treatment/?utm_source=rss&utm_medium=rss&utm_campaign=iran-christian-convert-in-prison-denied-medical-treatment
+      date: '2026-05-15'
+      description: 'Prayer is requested for Mahshar Parandin, a Christian prisoner
+        of conscience denied medical care. Human Rights Activists News Agency (HRANA)
+        reports that Mahshar, an artist, is serving a two-year sentence in Tehran’s
+        Evin Prison. She has been denied access to necessary medical care. Mahshar
+        suffers '
+      source: Middle East Concern
+    - title: Release International partner speaks on Iran
+      url: https://releaseinternational.org/podcastiran
+      date: '2026-04-02'
+      description: Release International partner Lazarus Yeghnazar talks about the
+        current situation in Iran and the growth of the church in the midst of persecution.
+        The post Release International partner speaks on Iran appeared first on Release
+        International .
+      source: Release International
+    - title: 'Iran: Concern for Christians in prison'
+      url: https://www.meconcern.org/2026/03/19/iran-concern-for-christians-in-prison/?utm_source=rss&utm_medium=rss&utm_campaign=iran-concern-for-christians-in-prison
+      date: '2026-03-19'
+      description: The families and friends of Christians in prison in Iran request
+        prayer as concerns for their well-being grow and communication has all but
+        ceased. As our joint report [1] published in February mentions, there are
+        at least 48 Christians in prison on account of their Christian faith and related
+        activ
+      source: Middle East Concern
+    - title: 'Iran: Christian convert starts prison sentence'
+      url: https://www.meconcern.org/2026/01/05/iran-christian-convert-starts-prison-sentence/?utm_source=rss&utm_medium=rss&utm_campaign=iran-christian-convert-starts-prison-sentence
+      date: '2026-01-05'
+      description: 'Prayer is requested for Christian converts Nayereh Arjaneh and
+        Qasem Esmaili from Garmsar in North Iran. Nayereh started serving two concurrent
+        five-year sentences in Semnan Prison on 23 December. Her husband Qasem’s prison
+        sentence is on hold while he has cancer treatment. Article Eighteen reports '
+      source: Middle East Concern
+    - title: 'Iran: Severe sentences for five Christians'
+      url: https://www.meconcern.org/2025/12/09/iran-severe-sentences-for-five-christians/?utm_source=rss&utm_medium=rss&utm_campaign=iran-severe-sentences-for-five-christians
+      date: '2025-12-09'
+      description: Prayer is requested for five Christians who have been given long
+        prison sentences for the peaceful expression of their faith. They were charged
+        with “gathering and collusion” and “propaganda against the Islamic Republic
+        of Iran.” According to the prosecutor, evidence of their “crimes” included
+        estab
+      source: Middle East Concern
 - title: Iraq
   slug: iraq
   iso3: IRQ
@@ -2345,17 +2701,11 @@ countries:
     modern:
     - uscirf2023iraq
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id010
-      title: USCIRF 2023 Annual Report - Iraq
-      url: https://www.uscirf.gov/countries/iraq
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023iraq
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -2422,6 +2772,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023iraq
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id017
+      title: USCIRF 2023 Annual Report - Iraq
+      url: https://www.uscirf.gov/countries/iraq
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 5
     freedom_house_cl: 6
@@ -2456,17 +2821,11 @@ countries:
     modern:
     - uscirf2023laos
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id011
-      title: USCIRF 2023 Annual Report - Laos
-      url: https://www.uscirf.gov/countries/laos
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023laos
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -2547,6 +2906,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023laos
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id018
+      title: USCIRF 2023 Annual Report - Laos
+      url: https://www.uscirf.gov/countries/laos
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -2582,17 +2956,11 @@ countries:
     modern:
     - uscirf2023mexico
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id012
-      title: USCIRF 2023 Annual Report - Mexico
-      url: https://www.uscirf.gov/countries/mexico
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023mexico
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -2939,6 +3307,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023mexico
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id019
+      title: USCIRF 2023 Annual Report - Mexico
+      url: https://www.uscirf.gov/countries/mexico
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -2974,17 +3357,11 @@ countries:
     modern:
     - uscirf2023nicaragua
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id013
-      title: USCIRF 2023 Annual Report - Nicaragua
-      url: https://www.uscirf.gov/countries/nicaragua
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023nicaragua
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -3095,6 +3472,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023nicaragua
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id020
+      title: USCIRF 2023 Annual Report - Nicaragua
+      url: https://www.uscirf.gov/countries/nicaragua
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -3131,17 +3523,12 @@ countries:
     modern:
     - uscirf2023nigeria
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
   pew_slug: ''
   metadata:
-    sources:
-    - &id014
-      title: USCIRF 2023 Annual Report - Nigeria
-      url: https://www.uscirf.gov/countries/nigeria
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023nigeria
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -3264,6 +3651,23 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023nigeria
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
+    sources:
+    - &id021
+      title: USCIRF 2023 Annual Report - Nigeria
+      url: https://www.uscirf.gov/countries/nigeria
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
+    - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
     freedom_house_cl: 5
@@ -3271,6 +3675,27 @@ countries:
     opendoors_score: 92
     christian_population: 92770287
     christian_percentage: 43.35
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Christian Campus Group Leaders in Nigeria Remain Missing
+      url: https://morningstarnews.org/2026/07/christian-campus-group-leaders-in-nigeria-remain-missing
+      date: '2026-07-06'
+      description: ABUJA, Nigeria (Christian Daily International&#8211;Morning Star
+        News) – Three weeks after the kidnapping of Scripture Union Nigeria’s national
+        general director in southeast Nigeria, he and seven other fellowship leaders
+        remain missing, according to reports. Gunmen abducted Uwem Cosmos and the
+        seven
+      source: Morning Star News
+    recent_incidents:
+    - title: Christian Campus Group Leaders in Nigeria Remain Missing
+      url: https://morningstarnews.org/2026/07/christian-campus-group-leaders-in-nigeria-remain-missing
+      date: '2026-07-06'
+      description: ABUJA, Nigeria (Christian Daily International&#8211;Morning Star
+        News) – Three weeks after the kidnapping of Scripture Union Nigeria’s national
+        general director in southeast Nigeria, he and seven other fellowship leaders
+        remain missing, according to reports. Gunmen abducted Uwem Cosmos and the
+        seven
+      source: Morning Star News
 - title: North Korea
   slug: north-korea
   iso3: PRK
@@ -3298,17 +3723,11 @@ countries:
     modern:
     - uscirf2023northkorea
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id015
-      title: USCIRF 2023 Annual Report - North Korea
-      url: https://www.uscirf.gov/countries/north-korea
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023northkorea
-    - odwwl2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -3411,6 +3830,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023northkorea
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id022
+      title: USCIRF 2023 Annual Report - North Korea
+      url: https://www.uscirf.gov/countries/north-korea
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -3447,17 +3881,12 @@ countries:
     modern:
     - uscirf2023pakistan
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
   pew_slug: ''
   metadata:
-    sources:
-    - &id016
-      title: USCIRF 2023 Annual Report - Pakistan
-      url: https://www.uscirf.gov/countries/pakistan
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023pakistan
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -3596,6 +4025,23 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023pakistan
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
+    sources:
+    - &id023
+      title: USCIRF 2023 Annual Report - Pakistan
+      url: https://www.uscirf.gov/countries/pakistan
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
+    - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 5
@@ -3603,6 +4049,88 @@ countries:
     opendoors_score: 91
     christian_population: 2988865
     christian_percentage: 1.27
+    morningstarnews_articles: 6
+    morningstarnews_samples:
+    - title: Court in Pakistan to Consider Hearing Case of Abducted Christian Girl
+      url: https://morningstarnews.org/2026/07/court-in-pakistan-to-consider-hearing-case-of-abducted-christian-girl
+      date: '2026-07-21'
+      description: 'LAHORE, Pakistan (Christian Daily International&#8211;Morning
+        Star News) – After multiple legal setbacks, relatives of a Christian girl
+        who was forcibly converted to Islam and married to her Muslim kidnapper are
+        hoping Pakistan’s highest constitutional court will revisit a controversial
+        ruling that '
+      source: Morning Star News
+    - title: Court Acquits Men Convicted of Killing Christian Couple in Pakistan
+      url: https://morningstarnews.org/2026/07/court-acquits-men-convicted-of-killing-christian-couple-in-pakistan
+      date: '2026-07-15'
+      description: 'LAHORE, Pakistan (Christian Daily International&#8211;Morning
+        Star News) – Pakistan’s Supreme Court last week overturned the death sentences
+        of the remaining three men convicted in the 2014 lynching of a Christian couple
+        burned alive after being falsely accused of blasphemy, sources said. Christian '
+      source: Morning Star News
+    - title: Majority of Blasphemy Cases in Pakistan ‘Fabricated,’ Officials Say
+      url: https://morningstarnews.org/2026/07/majority-of-blasphemy-cases-in-pakistan-fabricated-officials-say
+      date: '2026-07-13'
+      description: LAHORE, Pakistan (Christian Daily International&#8211;Morning Star
+        News) – Officials in Pakistan last week reported to a parliamentary committee
+        that a majority of 333 blasphemy cases registered in the past five years in
+        four provinces were fabricated, according to media reports. The fabricated
+        case
+      source: Morning Star News
+    recent_incidents:
+    - title: Court in Pakistan to Consider Hearing Case of Abducted Christian Girl
+      url: https://morningstarnews.org/2026/07/court-in-pakistan-to-consider-hearing-case-of-abducted-christian-girl
+      date: '2026-07-21'
+      description: 'LAHORE, Pakistan (Christian Daily International&#8211;Morning
+        Star News) – After multiple legal setbacks, relatives of a Christian girl
+        who was forcibly converted to Islam and married to her Muslim kidnapper are
+        hoping Pakistan’s highest constitutional court will revisit a controversial
+        ruling that '
+      source: Morning Star News
+    - title: Court Acquits Men Convicted of Killing Christian Couple in Pakistan
+      url: https://morningstarnews.org/2026/07/court-acquits-men-convicted-of-killing-christian-couple-in-pakistan
+      date: '2026-07-15'
+      description: 'LAHORE, Pakistan (Christian Daily International&#8211;Morning
+        Star News) – Pakistan’s Supreme Court last week overturned the death sentences
+        of the remaining three men convicted in the 2014 lynching of a Christian couple
+        burned alive after being falsely accused of blasphemy, sources said. Christian '
+      source: Morning Star News
+    - title: Majority of Blasphemy Cases in Pakistan ‘Fabricated,’ Officials Say
+      url: https://morningstarnews.org/2026/07/majority-of-blasphemy-cases-in-pakistan-fabricated-officials-say
+      date: '2026-07-13'
+      description: LAHORE, Pakistan (Christian Daily International&#8211;Morning Star
+        News) – Officials in Pakistan last week reported to a parliamentary committee
+        that a majority of 333 blasphemy cases registered in the past five years in
+        four provinces were fabricated, according to media reports. The fabricated
+        case
+      source: Morning Star News
+    - title: Protest Erupts in Pakistan after Christian Framed for ‘Blasphemy’
+      url: https://morningstarnews.org/2026/07/protest-erupts-in-pakistan-after-christian-framed-for-blasphemy
+      date: '2026-07-10'
+      description: LAHORE, Pakistan (Christian Daily International&#8211;Morning Star
+        News) – A violent protest erupted in Karachi, Pakistan on Thursday (July 9)
+        after unidentified persons mailed a desecrated page of the Quran to a Muslim
+        shopkeeper along with photographs of a Christian and his mother, sources said.
+        A
+      source: Morning Star News
+    - title: Tensions Inflamed by Blasphemy Accusation in Pakistan
+      url: https://morningstarnews.org/2026/07/tensions-inflamed-by-blasphemy-accusation-in-pakistan
+      date: '2026-07-07'
+      description: LAHORE, Pakistan (Christian Daily International&#8211;Morning Star
+        News) – More than two dozen Christian families were forced to flee their homes
+        in Pakistan last week after allegations of blasphemy against a pastor living
+        in the United States triggered fears of mob violence, sources said. Joseph
+        Na
+      source: Morning Star News
+    - title: Christian in Pakistan Acquitted of Blasphemy Charge
+      url: https://morningstarnews.org/2026/07/christian-in-pakistan-acquitted-of-blasphemy-charge
+      date: '2026-07-06'
+      description: 'LAHORE, Pakistan (Christian Daily International&#8211;Morning
+        Star News) – A court in Pakistan on Monday (July 6) acquitted a Catholic accused
+        of blasphemy, his lawyer said. Attorney Asad Jamal of the Lahore High Court
+        said Lahore Additional Sessions Judge Abdul Ghaffar acquitted 37-year-old
+        Dennis '
+      source: Morning Star News
 - title: Saudi Arabia
   slug: saudi-arabia
   iso3: SAU
@@ -3631,17 +4159,11 @@ countries:
     modern:
     - uscirf2023saudiarabia
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id017
-      title: USCIRF 2023 Annual Report - Saudi Arabia
-      url: https://www.uscirf.gov/countries/saudi-arabia
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023saudiarabia
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -3800,6 +4322,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023saudiarabia
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id024
+      title: USCIRF 2023 Annual Report - Saudi Arabia
+      url: https://www.uscirf.gov/countries/saudi-arabia
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -3836,17 +4373,12 @@ countries:
     modern:
     - uscirf2023somalia
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
   pew_slug: ''
   metadata:
-    sources:
-    - &id018
-      title: USCIRF 2023 Annual Report - Somalia
-      url: https://www.uscirf.gov/countries/somalia
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023somalia
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -3927,6 +4459,23 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023somalia
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - morningstarnews2026
+    sources:
+    - &id025
+      title: USCIRF 2023 Annual Report - Somalia
+      url: https://www.uscirf.gov/countries/somalia
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -3934,6 +4483,27 @@ countries:
     opendoors_score: 96
     christian_population: 4367
     christian_percentage: 0.03
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Christian in Somaliland Poisoned to Death after Secret Conversion
+      url: https://morningstarnews.org/2026/07/christian-in-somaliland-poisoned-to-death-after-secret-conversion
+      date: '2026-07-21'
+      description: NAIROBI, Kenya (Morning Star News) – Muslim relatives of a father
+        of five in Somaliland who recently became a Christian poisoned him to death
+        this month for converting, sources said. Sharif Ali came to faith in Christ
+        in April in an undisclosed town in Somaliland, a partially recognized state
+        border
+      source: Morning Star News
+    recent_incidents:
+    - title: Christian in Somaliland Poisoned to Death after Secret Conversion
+      url: https://morningstarnews.org/2026/07/christian-in-somaliland-poisoned-to-death-after-secret-conversion
+      date: '2026-07-21'
+      description: NAIROBI, Kenya (Morning Star News) – Muslim relatives of a father
+        of five in Somaliland who recently became a Christian poisoned him to death
+        this month for converting, sources said. Sharif Ali came to faith in Christ
+        in April in an undisclosed town in Somaliland, a partially recognized state
+        border
+      source: Morning Star News
 - title: Syria
   slug: syria
   iso3: SYR
@@ -3962,17 +4532,11 @@ countries:
     modern:
     - uscirf2023syria
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id019
-      title: USCIRF 2023 Annual Report - Syria
-      url: https://www.uscirf.gov/countries/syria
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023syria
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -4033,6 +4597,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023syria
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id026
+      title: USCIRF 2023 Annual Report - Syria
+      url: https://www.uscirf.gov/countries/syria
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -4068,17 +4647,11 @@ countries:
     modern:
     - uscirf2023vietnam
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id020
-      title: USCIRF 2023 Annual Report - Vietnam
-      url: https://www.uscirf.gov/countries/vietnam
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023vietnam
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -4173,6 +4746,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023vietnam
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id027
+      title: USCIRF 2023 Annual Report - Vietnam
+      url: https://www.uscirf.gov/countries/vietnam
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -4207,17 +4795,11 @@ countries:
     modern:
     - uscirf2023yemen
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id021
-      title: USCIRF 2023 Annual Report - Yemen
-      url: https://www.uscirf.gov/countries/yemen
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023yemen
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -4312,6 +4894,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023yemen
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id028
+      title: USCIRF 2023 Annual Report - Yemen
+      url: https://www.uscirf.gov/countries/yemen
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -4347,20 +4944,13 @@ countries:
     modern:
     - uscirf2023unitedstates
     - pew2023america
+    - freedomhouse2024
+    - owid2024
+    - morningstarnews2026
+    - forum18
+    - mec
   pew_slug: america
   metadata:
-    sources:
-    - &id022
-      title: USCIRF 2023 Annual Report - United States
-      url: https://www.uscirf.gov/countries/united-states
-      date: '2023'
-    - &id024
-      title: Pew Research - Religion in America
-      url: https://www.pewresearch.org/religion/religious-landscape-study/
-      date: '2023'
-    source_ids:
-    - uscirf2023unitedstates
-    - pew2023america
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -5261,11 +5851,99 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023unitedstates
+    - pew2023america
+    - freedomhouse2024
+    - owid2024
+    - morningstarnews2026
+    - forum18
+    - mec
+    sources:
+    - &id029
+      title: USCIRF 2023 Annual Report - United States
+      url: https://www.uscirf.gov/countries/united-states
+      date: '2023'
+    - &id031
+      title: Pew Research - Religion in America
+      url: https://www.pewresearch.org/religion/religious-landscape-study/
+      date: '2023'
+    - *id002
+    - *id004
+    - *id006
+    - &id008
+      title: Forum 18 - Freedom of Religion or Belief News
+      url: https://www.forum18.org/
+      date: '2026'
+    - *id007
     freedom_house_status: Free
     freedom_house_pr: 2
     freedom_house_cl: 2
     christian_population: 217273083
     christian_percentage: 64.01
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Tensions Inflamed by Blasphemy Accusation in Pakistan
+      url: https://morningstarnews.org/2026/07/tensions-inflamed-by-blasphemy-accusation-in-pakistan
+      date: '2026-07-07'
+      description: LAHORE, Pakistan (Christian Daily International&#8211;Morning Star
+        News) – More than two dozen Christian families were forced to flee their homes
+        in Pakistan last week after allegations of blasphemy against a pastor living
+        in the United States triggered fears of mob violence, sources said. Joseph
+        Na
+      source: Morning Star News
+    forum18_articles: 1
+    forum18_samples:
+    - title: 'RUSSIA: "Without any investigation, they''re already presuming us guilty",
+        says pastor'
+      url: https://www.forum18.org/archive.php?article_id=3052
+      date: ''
+      description: Prosecutions for religious organisations that fail to give their
+        full legal name on buildings, literature or online are often part of state
+        pressure. In Bryansk, a judge fined League of Salvation Pentecostal church
+        for this amid inspections and searches and launching of a criminal case. The
+        FSB raid
+      source: Forum 18
+    mec_articles: 1
+    mec_samples:
+    - title: 'Israel: Catholic nun comments on her attack in Jerusalem'
+      url: https://www.meconcern.org/2026/05/28/israel-catholic-nun-comments-on-her-attack-in-jerusalem/?utm_source=rss&utm_medium=rss&utm_campaign=israel-catholic-nun-comments-on-her-attack-in-jerusalem
+      date: '2026-05-28'
+      description: On 28 April a French sister working as a researcher at the French
+        School of Biblical and Archaeological Research in Jerusalem suffered a violent
+        attack by a Jewish settler as she was walking between the entrance to the
+        Tomb of David and the Upper Room in the Mount Zion district of Jerusalem.
+        The per
+      source: Middle East Concern
+    recent_incidents:
+    - title: Tensions Inflamed by Blasphemy Accusation in Pakistan
+      url: https://morningstarnews.org/2026/07/tensions-inflamed-by-blasphemy-accusation-in-pakistan
+      date: '2026-07-07'
+      description: LAHORE, Pakistan (Christian Daily International&#8211;Morning Star
+        News) – More than two dozen Christian families were forced to flee their homes
+        in Pakistan last week after allegations of blasphemy against a pastor living
+        in the United States triggered fears of mob violence, sources said. Joseph
+        Na
+      source: Morning Star News
+    - title: 'Israel: Catholic nun comments on her attack in Jerusalem'
+      url: https://www.meconcern.org/2026/05/28/israel-catholic-nun-comments-on-her-attack-in-jerusalem/?utm_source=rss&utm_medium=rss&utm_campaign=israel-catholic-nun-comments-on-her-attack-in-jerusalem
+      date: '2026-05-28'
+      description: On 28 April a French sister working as a researcher at the French
+        School of Biblical and Archaeological Research in Jerusalem suffered a violent
+        attack by a Jewish settler as she was walking between the entrance to the
+        Tomb of David and the Upper Room in the Mount Zion district of Jerusalem.
+        The per
+      source: Middle East Concern
+    - title: 'RUSSIA: "Without any investigation, they''re already presuming us guilty",
+        says pastor'
+      url: https://www.forum18.org/archive.php?article_id=3052
+      date: ''
+      description: Prosecutions for religious organisations that fail to give their
+        full legal name on buildings, literature or online are often part of state
+        pressure. In Bryansk, a judge fined League of Salvation Pentecostal church
+        for this amid inspections and searches and launching of a criminal case. The
+        FSB raid
+      source: Forum 18
 - title: Brazil
   slug: brazil
   iso3: BRA
@@ -5289,12 +5967,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -5707,6 +6383,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Free
     freedom_house_pr: 2
     freedom_house_cl: 3
@@ -5735,15 +6419,10 @@ countries:
     - uscirf2023uganda
     modern:
     - uscirf2023uganda
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id023
-      title: USCIRF 2023 Annual Report - Uganda
-      url: https://www.uscirf.gov/countries/uganda
-      date: '2023'
-    source_ids:
-    - uscirf2023uganda
     shape_geo:
       type: Polygon
       coordinates:
@@ -5806,6 +6485,17 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023uganda
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - &id030
+      title: USCIRF 2023 Annual Report - Uganda
+      url: https://www.uscirf.gov/countries/uganda
+      date: '2023'
+    - *id002
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -5831,17 +6521,11 @@ countries:
     modern:
     - uscirf2023algeria
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id025
-      title: USCIRF 2023 Annual Report - Algeria
-      url: https://www.uscirf.gov/countries/algeria
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023algeria
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -5972,6 +6656,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023algeria
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id032
+      title: USCIRF 2023 Annual Report - Algeria
+      url: https://www.uscirf.gov/countries/algeria
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -5999,17 +6698,11 @@ countries:
     modern:
     - uscirf2023bangladesh
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id026
-      title: USCIRF 2023 Annual Report - Bangladesh
-      url: https://www.uscirf.gov/countries/bangladesh
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023bangladesh
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -6088,6 +6781,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023bangladesh
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id033
+      title: USCIRF 2023 Annual Report - Bangladesh
+      url: https://www.uscirf.gov/countries/bangladesh
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 4
@@ -6114,17 +6822,11 @@ countries:
     modern:
     - uscirf2023car
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id027
-      title: USCIRF 2023 Annual Report - Central African Republic
-      url: https://www.uscirf.gov/countries/central-african-republic
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023car
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -6255,6 +6957,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023car
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id034
+      title: USCIRF 2023 Annual Report - Central African Republic
+      url: https://www.uscirf.gov/countries/central-african-republic
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -6281,17 +6998,11 @@ countries:
     modern:
     - uscirf2023egypt
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id028
-      title: USCIRF 2023 Annual Report - Egypt
-      url: https://www.uscirf.gov/countries/egypt
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023egypt
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -6386,6 +7097,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023egypt
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id035
+      title: USCIRF 2023 Annual Report - Egypt
+      url: https://www.uscirf.gov/countries/egypt
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 6
@@ -6412,17 +7138,10 @@ countries:
     modern:
     - uscirf2023haiti
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id029
-      title: USCIRF 2023 Annual Report - Haiti
-      url: https://www.uscirf.gov/countries/haiti
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023haiti
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -6471,6 +7190,19 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023haiti
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - &id036
+      title: USCIRF 2023 Annual Report - Haiti
+      url: https://www.uscirf.gov/countries/haiti
+      date: '2023'
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -6495,17 +7227,11 @@ countries:
     modern:
     - uscirf2023libya
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id030
-      title: USCIRF 2023 Annual Report - Libya
-      url: https://www.uscirf.gov/countries/libya
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023libya
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -6624,6 +7350,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023libya
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id037
+      title: USCIRF 2023 Annual Report - Libya
+      url: https://www.uscirf.gov/countries/libya
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -6650,17 +7391,10 @@ countries:
     modern:
     - uscirf2023malaysia
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id031
-      title: USCIRF 2023 Annual Report - Malaysia
-      url: https://www.uscirf.gov/countries/malaysia
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023malaysia
-    - odwwl2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -6791,6 +7525,19 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023malaysia
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - &id038
+      title: USCIRF 2023 Annual Report - Malaysia
+      url: https://www.uscirf.gov/countries/malaysia
+      date: '2023'
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 4
     freedom_house_cl: 4
@@ -6815,17 +7562,11 @@ countries:
     modern:
     - uscirf2023myanmar
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id032
-      title: USCIRF 2023 Annual Report - Myanmar
-      url: https://www.uscirf.gov/countries/myanmar
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023myanmar
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -6972,6 +7713,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023myanmar
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id039
+      title: USCIRF 2023 Annual Report - Myanmar
+      url: https://www.uscirf.gov/countries/myanmar
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -6998,17 +7754,11 @@ countries:
     modern:
     - uscirf2023sudan
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id033
-      title: USCIRF 2023 Annual Report - Sudan
-      url: https://www.uscirf.gov/countries/sudan
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023sudan
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -7177,6 +7927,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023sudan
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id040
+      title: USCIRF 2023 Annual Report - Sudan
+      url: https://www.uscirf.gov/countries/sudan
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -7203,17 +7968,11 @@ countries:
     modern:
     - uscirf2023turkey
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id034
-      title: USCIRF 2023 Annual Report - Turkey
-      url: https://www.uscirf.gov/countries/turkey
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023turkey
-    - odwwl2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -7356,6 +8115,21 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023turkey
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - &id041
+      title: USCIRF 2023 Annual Report - Turkey
+      url: https://www.uscirf.gov/countries/turkey
+      date: '2023'
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 5
     freedom_house_cl: 6
@@ -7382,17 +8156,10 @@ countries:
     modern:
     - uscirf2023venezuela
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id035
-      title: USCIRF 2023 Annual Report - Venezuela
-      url: https://www.uscirf.gov/countries/venezuela
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023venezuela
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -7583,6 +8350,19 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023venezuela
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - &id042
+      title: USCIRF 2023 Annual Report - Venezuela
+      url: https://www.uscirf.gov/countries/venezuela
+      date: '2023'
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -7607,17 +8387,10 @@ countries:
     modern:
     - uscirf2023zimbabwe
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - &id036
-      title: USCIRF 2023 Annual Report - Zimbabwe
-      url: https://www.uscirf.gov/countries/zimbabwe
-      date: '2023'
-    - *id001
-    source_ids:
-    - uscirf2023zimbabwe
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -7698,6 +8471,19 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - uscirf2023zimbabwe
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - &id043
+      title: USCIRF 2023 Annual Report - Zimbabwe
+      url: https://www.uscirf.gov/countries/zimbabwe
+      date: '2023'
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -7721,12 +8507,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -7885,6 +8670,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -7910,12 +8705,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -8000,6 +8794,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 5
@@ -8027,16 +8831,25 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo: null
     wiki_url: null
     wiki_extract: null
     country_polygon: false
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 4
     freedom_house_cl: 5
@@ -8062,12 +8875,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -8152,6 +8964,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 5
@@ -8177,12 +8999,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -8315,6 +9136,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 5
@@ -8340,12 +9171,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -8460,6 +9290,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -8486,12 +9326,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -8614,6 +9453,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 5
@@ -8641,12 +9490,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -8761,6 +9608,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -8784,12 +9639,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -8890,6 +9744,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -8917,12 +9781,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -9047,6 +9910,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 6
@@ -9072,12 +9945,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -9146,6 +10018,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 6
     freedom_house_cl: 4
@@ -9172,12 +10054,9 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -9432,6 +10311,12 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - owid2024
+    sources:
+    - *id001
+    - *id004
     christian_population: 92401422
     christian_percentage: 96.26
 - title: Bhutan
@@ -9452,12 +10337,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -9490,6 +10373,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Free
     freedom_house_pr: 2
     freedom_house_cl: 3
@@ -9513,12 +10404,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -9683,6 +10572,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 4
@@ -9706,12 +10603,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -9942,6 +10837,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 5
@@ -9965,12 +10868,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -10059,6 +10960,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -10082,12 +10991,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -10112,6 +11020,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -10137,16 +11055,22 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo: null
     wiki_url: null
     wiki_extract: null
     country_polygon: false
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 4
@@ -10170,12 +11094,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -10304,6 +11227,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 6
@@ -10329,12 +11262,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -10357,6 +11289,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -10382,12 +11324,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    - forum18
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -10464,11 +11405,40 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    - forum18
+    sources:
+    - *id001
+    - *id002
+    - *id004
+    - *id008
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 5
     christian_population: 383412
     christian_percentage: 5.75
+    forum18_articles: 1
+    forum18_samples:
+    - title: 'KYRGYZSTAN: Five Reform Adventists in 2-month pre-trial detention'
+      url: https://www.forum18.org/archive.php?article_id=3054
+      date: ''
+      description: Late on 17 June, a Bishkek court ordered five members of the now-banned
+        True and Free Reform Seventh-day Adventist Church held in pre-trial detention
+        for two months. The three men and two women face criminal charges of "Production
+        and distribution of extremist materials". If convicted as a group, ea
+      source: Forum 18
+    recent_incidents:
+    - title: 'KYRGYZSTAN: Five Reform Adventists in 2-month pre-trial detention'
+      url: https://www.forum18.org/archive.php?article_id=3054
+      date: ''
+      description: Late on 17 June, a Bishkek court ordered five members of the now-banned
+        True and Free Reform Seventh-day Adventist Church held in pre-trial detention
+        for two months. The three men and two women face criminal charges of "Production
+        and distribution of extremist materials". If convicted as a group, ea
+      source: Forum 18
 - title: Jordan
   slug: jordan
   iso3: JOR
@@ -10487,12 +11457,11 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -10537,6 +11506,16 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 5
@@ -10562,12 +11541,12 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - forum18
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -11824,6 +12803,18 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    - forum18
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
+    - *id008
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -11831,6 +12822,29 @@ countries:
     opendoors_score: 54
     christian_population: 102351281
     christian_percentage: 69.93
+    forum18_articles: 1
+    forum18_samples:
+    - title: 'RUSSIA: "Without any investigation, they''re already presuming us guilty",
+        says pastor'
+      url: https://www.forum18.org/archive.php?article_id=3052
+      date: ''
+      description: Prosecutions for religious organisations that fail to give their
+        full legal name on buildings, literature or online are often part of state
+        pressure. In Bryansk, a judge fined League of Salvation Pentecostal church
+        for this amid inspections and searches and launching of a criminal case. The
+        FSB raid
+      source: Forum 18
+    recent_incidents:
+    - title: 'RUSSIA: "Without any investigation, they''re already presuming us guilty",
+        says pastor'
+      url: https://www.forum18.org/archive.php?article_id=3052
+      date: ''
+      description: Prosecutions for religious organisations that fail to give their
+        full legal name on buildings, literature or online are often part of state
+        pressure. In Bryansk, a judge fined League of Salvation Pentecostal church
+        for this amid inspections and searches and launching of a criminal case. The
+        FSB raid
+      source: Forum 18
 - title: Azerbaijan
   slug: azerbaijan
   iso3: AZE
@@ -11849,12 +12863,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -11949,6 +12961,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -11972,12 +12992,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -12004,6 +13022,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -12027,12 +13053,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -12259,6 +13283,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -12283,12 +13315,10 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -12435,6 +13465,14 @@ countries:
     wiki_url: null
     wiki_extract: null
     country_polygon: true
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -12458,16 +13496,25 @@ countries:
     - odwwl2024
     modern:
     - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
   pew_slug: ''
   metadata:
-    sources:
-    - *id001
-    source_ids:
-    - odwwl2024
     shape_geo: null
     wiki_url: null
     wiki_extract: null
     country_polygon: false
+    source_ids:
+    - odwwl2024
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id001
+    - *id002
+    - *id003
+    - *id004
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -12475,6 +13522,149 @@ countries:
     opendoors_score: 50
     christian_population: 202789
     christian_percentage: 13.67
+- title: Kenya
+  slug: kenya
+  iso3: KEN
+  status: severe
+  persecution_level: Very High
+  lat: -0.02
+  lng: 37.91
+  historical: Auto-tracked country page for Kenya. Historical narrative has not been
+    curated yet; see Recent Incidents and referenced sources for current Christian
+    persecution reporting.
+  modern: This page was auto-created from nightly Christian persecution feeds. Editorial
+    narrative is pending; indicators and incident links below reflect the latest ingested
+    sources.
+  source_ids:
+    historical:
+    - morningstarnews2026
+    modern:
+    - morningstarnews2026
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+  pew_slug: ''
+  metadata:
+    stub: true
+    auto_created_at: '2026-07-22T04:26:48.198578+00:00'
+    shape_geo:
+      type: Polygon
+      coordinates:
+      - - - 39.20222
+          - -4.67677
+        - - 37.7669
+          - -3.67712
+        - - 37.69869
+          - -3.09699
+        - - 34.07262
+          - -1.05982
+        - - 33.903711
+          - -0.95
+        - - 33.893569
+          - 0.109814
+        - - 34.18
+          - 0.515
+        - - 34.6721
+          - 1.17694
+        - - 35.03599
+          - 1.90584
+        - - 34.59607
+          - 3.05374
+        - - 34.47913
+          - 3.5556
+        - - 34.005
+          - 4.249885
+        - - 34.620196
+          - 4.847123
+        - - 35.298007
+          - 5.506
+        - - 35.817448
+          - 5.338232
+        - - 35.817448
+          - 4.776966
+        - - 36.159079
+          - 4.447864
+        - - 36.855093
+          - 4.447864
+        - - 38.120915
+          - 3.598605
+        - - 38.43697
+          - 3.58851
+        - - 38.67114
+          - 3.61607
+        - - 38.89251
+          - 3.50074
+        - - 39.559384
+          - 3.42206
+        - - 39.85494
+          - 3.83879
+        - - 40.76848
+          - 4.25702
+        - - 41.1718
+          - 3.91909
+        - - 41.855083
+          - 3.918912
+        - - 40.98105
+          - 2.78452
+        - - 40.993
+          - -0.85829
+        - - 41.58513
+          - -1.68325
+        - - 40.88477
+          - -2.08255
+        - - 40.63785
+          - -2.49979
+        - - 40.26304
+          - -2.57309
+        - - 40.12119
+          - -3.27768
+        - - 39.80006
+          - -3.68116
+        - - 39.60489
+          - -4.34653
+        - - 39.20222
+          - -4.67677
+    wiki_url: null
+    wiki_extract: null
+    country_polygon: true
+    source_ids:
+    - morningstarnews2026
+    - freedomhouse2024
+    - odwwl2026
+    - owid2024
+    sources:
+    - *id006
+    - *id002
+    - *id003
+    - *id004
+    freedom_house_status: Partly Free
+    freedom_house_pr: 4
+    freedom_house_cl: 4
+    opendoors_ranking: 29
+    opendoors_score: 68
+    christian_population: 44734739
+    christian_percentage: 85.67
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Christian in Somaliland Poisoned to Death after Secret Conversion
+      url: https://morningstarnews.org/2026/07/christian-in-somaliland-poisoned-to-death-after-secret-conversion
+      date: '2026-07-21'
+      description: NAIROBI, Kenya (Morning Star News) – Muslim relatives of a father
+        of five in Somaliland who recently became a Christian poisoned him to death
+        this month for converting, sources said. Sharif Ali came to faith in Christ
+        in April in an undisclosed town in Somaliland, a partially recognized state
+        border
+      source: Morning Star News
+    recent_incidents:
+    - title: Christian in Somaliland Poisoned to Death after Secret Conversion
+      url: https://morningstarnews.org/2026/07/christian-in-somaliland-poisoned-to-death-after-secret-conversion
+      date: '2026-07-21'
+      description: NAIROBI, Kenya (Morning Star News) – Muslim relatives of a father
+        of five in Somaliland who recently became a Christian poisoned him to death
+        this month for converting, sources said. Sharif Ali came to faith in Christ
+        in April in an undisclosed town in Somaliland, a partially recognized state
+        border
+      source: Morning Star News
 sources:
   natural_earth_110m:
     title: Natural Earth map boundaries
@@ -12486,53 +13676,50 @@ sources:
       Faith 2022-24 / Report on Christian persecution
     url: https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/
     date: '2024'
-  uscirf2023afghanistan: *id002
+  uscirf2023afghanistan: *id009
   bbc2021:
     title: BBC News - Afghanistan Christians 2021
     url: https://www.bbc.com/news/world-asia-58293018
     date: '2021'
-  uscirf2023china: *id003
+  uscirf2023china: *id010
   pew2023china:
     title: Pew Research - Religion in China
     url: https://www.pewresearch.org/religion/2023/08/30/religion-in-china/
     date: '2023'
-  uscirf2023colombia: *id004
-  uscirf2023cuba: *id005
-  uscirf2023eritrea: *id006
-  uscirf2023india: *id007
-  uscirf2023indonesia: *id008
-  uscirf2023iran: *id009
-  uscirf2023iraq: *id010
-  uscirf2023laos: *id011
-  uscirf2023mexico: *id012
-  uscirf2023nicaragua: *id013
-  uscirf2023nigeria: *id014
-  uscirf2023northkorea: *id015
-  uscirf2023pakistan: *id016
-  uscirf2023saudiarabia: *id017
-  uscirf2023somalia: *id018
-  uscirf2023syria: *id019
-  uscirf2023vietnam: *id020
-  uscirf2023yemen: *id021
-  uscirf2023unitedstates: *id022
-  uscirf2023uganda: *id023
-  pew2023america: *id024
-  uscirf2023algeria: *id025
-  uscirf2023bangladesh: *id026
-  uscirf2023car: *id027
-  uscirf2023egypt: *id028
-  uscirf2023haiti: *id029
-  uscirf2023libya: *id030
-  uscirf2023malaysia: *id031
-  uscirf2023myanmar: *id032
-  uscirf2023sudan: *id033
-  uscirf2023turkey: *id034
-  uscirf2023venezuela: *id035
-  uscirf2023zimbabwe: *id036
-  freedomhouse2024:
-    title: Freedom House Freedom in the World 2024
-    url: https://freedomhouse.org/report/freedom-world
-    date: '2024'
+  uscirf2023colombia: *id011
+  uscirf2023cuba: *id012
+  uscirf2023eritrea: *id013
+  uscirf2023india: *id014
+  uscirf2023indonesia: *id015
+  uscirf2023iran: *id016
+  uscirf2023iraq: *id017
+  uscirf2023laos: *id018
+  uscirf2023mexico: *id019
+  uscirf2023nicaragua: *id020
+  uscirf2023nigeria: *id021
+  uscirf2023northkorea: *id022
+  uscirf2023pakistan: *id023
+  uscirf2023saudiarabia: *id024
+  uscirf2023somalia: *id025
+  uscirf2023syria: *id026
+  uscirf2023vietnam: *id027
+  uscirf2023yemen: *id028
+  uscirf2023unitedstates: *id029
+  uscirf2023uganda: *id030
+  pew2023america: *id031
+  uscirf2023algeria: *id032
+  uscirf2023bangladesh: *id033
+  uscirf2023car: *id034
+  uscirf2023egypt: *id035
+  uscirf2023haiti: *id036
+  uscirf2023libya: *id037
+  uscirf2023malaysia: *id038
+  uscirf2023myanmar: *id039
+  uscirf2023sudan: *id040
+  uscirf2023turkey: *id041
+  uscirf2023venezuela: *id042
+  uscirf2023zimbabwe: *id043
+  freedomhouse2024: *id002
   statedepartment2023:
     title: U.S. State Department International Religious Freedom Report 2023
     url: https://www.state.gov/international-religious-freedom-reports/
@@ -12545,14 +13732,8 @@ sources:
     title: GDELT Global Database of Events, Language, and Tone
     url: https://www.gdeltproject.org/
     date: '2025'
-  owid2024:
-    title: Our World in Data - Religious Composition (Pew Research)
-    url: https://ourworldindata.org/grapher/religious-composition
-    date: '2024'
-  odwwl2026:
-    title: Open Doors World Watch List 2026
-    url: https://www.opendoors.org/en-US/persecution/countries/
-    date: '2026'
+  owid2024: *id004
+  odwwl2026: *id003
   uscirf2025russia:
     title: USCIRF 2025 Annual Report - Russia
     url: https://www.uscirf.gov/countries/russia
@@ -12585,10 +13766,7 @@ sources:
     title: USCIRF 2025 Annual Report - Tajikistan
     url: https://www.uscirf.gov/countries/tajikistan
     date: '2025'
-  morningstarnews2026:
-    title: Morning Star News - Christian Persecution Reports
-    url: https://morningstarnews.org/
-    date: '2026'
+  morningstarnews2026: *id006
   vid2026:
     title: Violent Incidents Database (IIRF/GCR)
     url: https://violentincidents.plataformac.org/
@@ -12609,19 +13787,43 @@ sources:
     title: International Christian Concern - Global Persecution Reports
     url: https://www.persecution.org/
     date: '2026'
+  forum18: *id008
+  mec: *id007
+  bitterwinter: *id044
+  releaseintl: *id005
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-07-22 04:19 UTC
+  generated_at: 2026-07-22 04:26 UTC
   source_statuses:
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-07-22T04:19:45.413109+00:00'
+    fetched_at: '2026-07-22T04:26:42.674846+00:00'
     message: null
   - name: wikipedia
     status: skipped
-    fetched_at: '2026-07-22T04:19:50.485243+00:00'
+    fetched_at: '2026-07-22T04:26:48.281822+00:00'
     message: ok=0 partial=0 failed=0
+  - name: bitterwinter
+    status: ok
+    fetched_at: '2026-07-22T04:26:24.362082+00:00'
+    message: null
+  - name: forum18
+    status: ok
+    fetched_at: '2026-07-22T04:26:22.871580+00:00'
+    message: null
+  - name: mec
+    status: ok
+    fetched_at: '2026-07-22T04:26:23.561556+00:00'
+    message: null
+  - name: morningstarnews
+    status: ok
+    fetched_at: '2026-07-22T04:26:22.379091+00:00'
+    message: null
+  - name: releaseintl
+    status: ok
+    fetched_at: '2026-07-22T04:26:21.707152+00:00'
+    message: null
   data_sources:
     freedom_house: data/fetched/freedom_house.json
     opendoors: data/fetched/opendoors.json
@@ -12633,3 +13835,10 @@ fetched:
     acn_report: data/fetched/acn_report.json
     csw: data/fetched/csw.json
     icc: data/fetched/icc.json
+    forum18: data/fetched/forum18.json
+    mec: data/fetched/mec.json
+    bitterwinter: data/fetched/bitterwinter.json
+    releaseintl: data/fetched/releaseintl.json
+    uscirf: data/fetched/uscirf/index.json
+    state_dept: data/fetched/state_dept/index.json
+    ohchr: data/fetched/ohchr/index.json

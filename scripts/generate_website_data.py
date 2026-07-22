@@ -53,6 +53,7 @@ PAGE = """\
       <span class="pct" style="background:{status_color}"></span>
       <span>{persecution_level} · {status_label}</span>
     </div>
+    {stub_note}
     {data_fields}
     {recent_incidents}
     <section>
@@ -120,6 +121,10 @@ SOURCE_GROUP_DEFS = {
     "gcr": {"prefixes": ("gcr",), "label": "GCR", "title": "Global Christian Relief"},
     "csw": {"prefixes": ("csw",), "label": "CSW", "title": "Christian Solidarity Worldwide"},
     "icc": {"prefixes": ("icc",), "label": "ICC", "title": "International Christian Concern"},
+    "forum18": {"prefixes": ("forum18",), "label": "F18", "title": "Forum 18"},
+    "mec": {"prefixes": ("mec",), "label": "MEC", "title": "Middle East Concern"},
+    "bitterwinter": {"prefixes": ("bitterwinter",), "label": "BW", "title": "Bitter Winter"},
+    "releaseintl": {"prefixes": ("releaseintl",), "label": "RI", "title": "Release International"},
 }
 
 STATUS_PRIORITY = {"error": 0, "failed": 0, "partial": 1, "skipped": 2, "ok": 3, "cached": 4}
@@ -140,6 +145,10 @@ STATUS_KEY_MAP = {
     "gcr": "gcr",
     "csw": "csw",
     "icc": "icc",
+    "forum18": "forum18",
+    "mec": "mec",
+    "bitterwinter": "bitterwinter",
+    "releaseintl": "releaseintl",
     "bbc": None,
 }
 
@@ -288,31 +297,65 @@ def render_data_fields(country: dict) -> str:
             f'<div class="data-item"><div class="label">GCR Persecution Score</div>'
             f'<div class="value">{esc(gcr_score)}</div></div>'
         )
+    uscirf_des = meta.get("uscirf_designation")
+    if uscirf_des:
+        items.append(
+            f'<div class="data-item"><div class="label">USCIRF Designation</div>'
+            f'<div class="value">{esc(uscirf_des)}</div></div>'
+        )
+    if meta.get("state_dept_url"):
+        items.append(
+            f'<div class="data-item"><div class="label">State Dept IRF</div>'
+            f'<div class="value"><a href="{safe_url(meta.get("state_dept_url"))}" '
+            f'target="_blank" rel="noopener">Report</a></div></div>'
+        )
+    ohchr_count = meta.get("ohchr_recommendation_count")
+    if ohchr_count is not None:
+        items.append(
+            f'<div class="data-item"><div class="label">OHCHR Recommendations</div>'
+            f'<div class="value">{esc(ohchr_count)}</div></div>'
+        )
     if not items:
         return ""
     return '<div class="data-grid">' + "\n      ".join(items) + "\n    </div>"
 
 
+def render_stub_note(country: dict) -> str:
+    meta = country.get("metadata") or {}
+    if not meta.get("stub"):
+        return ""
+    return (
+        '<p class="stub-note"><em>Auto-tracked</em> — this country page was created from '
+        "nightly Christian persecution feeds. Editorial narrative is pending; "
+        "indicators and incident links reflect ingested sources.</p>"
+    )
+
+
 def render_recent_incidents(country: dict) -> str:
     meta = country.get("metadata", {})
-    articles = []
-    for sample_key, label in [
-        ("morningstarnews_samples", "Morning Star News"),
-        ("csw_samples", "CSW"),
-        ("icc_samples", "ICC"),
-    ]:
-        samples = meta.get(sample_key, [])
-        for a in samples:
-            articles.append({
-                "source": label,
-                "title": a.get("title", ""),
-                "url": a.get("url", ""),
-                "date": a.get("date", ""),
-            })
+    articles = list(meta.get("recent_incidents") or [])
+    if not articles:
+        # Legacy fallback for older YAML
+        for sample_key, label in [
+            ("morningstarnews_samples", "Morning Star News"),
+            ("csw_samples", "CSW"),
+            ("icc_samples", "ICC"),
+            ("forum18_samples", "Forum 18"),
+            ("mec_samples", "Middle East Concern"),
+            ("bitterwinter_samples", "Bitter Winter"),
+            ("releaseintl_samples", "Release International"),
+        ]:
+            for a in meta.get(sample_key, []) or []:
+                articles.append({
+                    "source": label,
+                    "title": a.get("title", ""),
+                    "url": a.get("url", ""),
+                    "date": a.get("date", ""),
+                })
     if not articles:
         return ""
     rows = []
-    for a in articles[:6]:
+    for a in articles[:12]:
         href = safe_url(a.get("url"))
         title = esc(a.get("title") or "Report")
         src = esc(a.get("source", ""))
@@ -448,6 +491,7 @@ def main():
             status_color=esc(color),
             generated_at=esc(generated_at),
             last_pull_text=esc(last_pull_text),
+            stub_note=render_stub_note(c),
             data_fields=render_data_fields(c),
             recent_incidents=render_recent_incidents(c),
         )

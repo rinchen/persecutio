@@ -43,6 +43,10 @@ jobs:
           python3 scripts/fetch_acn.py || true
           python3 scripts/fetch_csw.py || true
           python3 scripts/fetch_icc.py || true
+          python3 scripts/fetch_forum18.py || true
+          python3 scripts/fetch_mec.py || true
+          python3 scripts/fetch_bitterwinter.py || true
+          python3 scripts/fetch_releaseintl.py || true
 
           # Gate on primary status JSON only
           python3 - <<'PY'

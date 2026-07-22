@@ -49,7 +49,7 @@ class TestSiteCore(unittest.TestCase):
         meta = json.loads((ASSETS / "meta.json").read_text(encoding="utf-8"))
         sources = meta.get("sources") or []
         self.assertTrue(sources)
-        self.assertLessEqual(len(sources), 20)
+        self.assertLessEqual(len(sources), 30)
         self.assertGreaterEqual(len(sources), 8)
 
         by_id = {s["id"]: s for s in sources}
@@ -69,6 +69,52 @@ class TestSiteCore(unittest.TestCase):
         ne = by_id["natural_earth"]
         self.assertEqual(ne.get("status"), "ok")
         self.assertTrue(ne.get("fetchedAt"))
+
+    def test_metadata_fields_have_citations(self):
+        with (DATA / "countries.yml").open("r", encoding="utf-8") as f:
+            data = yaml.safe_load(f) or {}
+        sources = data.get("sources") or {}
+        meta_to_sid = [
+            ("opendoors_score", ("odwwl2026", "odwwl2024")),
+            ("freedom_house_status", ("freedomhouse2024",)),
+            ("christian_population", ("owid2024",)),
+            ("morningstarnews_articles", ("morningstarnews2026",)),
+            ("csw_articles", ("csw2026",)),
+            ("icc_articles", ("icc2026",)),
+            ("vid_incidents_total", ("vid2026",)),
+            ("gcr_killed", ("gcr2026",)),
+            ("acn_classification", ("acn2025", "acn2024")),
+            ("gdelt_recent_articles", ("gdelt2025",)),
+            ("uscirf_designation", None),  # dynamic uscirf* ids
+            ("ohchr_recommendation_count", ("ohchr2024",)),
+        ]
+        for country in data.get("countries") or []:
+            meta = country.get("metadata") or {}
+            modern = set((country.get("source_ids") or {}).get("modern") or [])
+            modern |= set(meta.get("source_ids") or [])
+            for key, sids in meta_to_sid:
+                if meta.get(key) is None:
+                    continue
+                if sids is None:
+                    self.assertTrue(
+                        any(s.startswith("uscirf") for s in modern),
+                        f"{country.get('title')} missing uscirf citation for {key}",
+                    )
+                    continue
+                self.assertTrue(
+                    any(s in modern for s in sids),
+                    f"{country.get('title')} missing citation {sids} for {key}",
+                )
+            incidents = meta.get("recent_incidents") or []
+            dated = [i for i in incidents if i.get("date") and len(str(i.get("date"))) >= 10]
+            dates = [str(i["date"])[:10] for i in dated]
+            self.assertEqual(dates, sorted(dates, reverse=True), f"{country.get('title')} incidents not newest-first")
+            if meta.get("stub"):
+                self.assertTrue(country.get("historical"))
+                self.assertTrue(country.get("modern"))
+                self.assertTrue(country.get("iso3"))
+            for sid in modern:
+                self.assertIn(sid, sources, f"missing source registry entry {sid}")
 
     def test_generated_pages_have_sections(self):
         pages = sorted(COUNTRIES.glob("*.html"))

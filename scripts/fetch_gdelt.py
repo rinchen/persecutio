@@ -1,22 +1,30 @@
+#!/usr/bin/env python3
+"""Fetch Christian persecution-related news from GDELT Doc API."""
 import json
 import sys
-import urllib.request
 import urllib.parse
+import urllib.request
 from pathlib import Path
-from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from christian_persecution import is_christian_persecution
 from fetch_common import (
     FETCHED,
     USER_AGENT,
+    build_news_result,
+    detect_countries,
     ensure_fetched_dir,
     exit_for_status,
+    load_json_cache,
+    normalize_date,
+    write_json,
     write_status,
 )
 
 ensure_fetched_dir()
 
 GDELT_BASE = "https://api.gdeltproject.org/api/v2/doc/doc"
+OUTPUT = FETCHED / "gdelt.json"
 
 QUERIES = [
     "church attack christian",
@@ -25,10 +33,8 @@ QUERIES = [
     "christian killed",
 ]
 
-ARTICLE_KEYS = {"title", "url", "source", "date"}
 
-
-def fetch_gdelt(query):
+def fetch_gdelt(query: str):
     params = urllib.parse.urlencode({
         "query": query,
         "mode": "artlist",
@@ -45,50 +51,33 @@ def fetch_gdelt(query):
         return {}, url, str(e)
 
 
-def extract_articles(data):
+def extract_articles(data: dict) -> list[dict]:
     articles = []
     for item in data.get("articles", []):
-        title = item.get("title", "").strip()
-        url = item.get("url", "").strip()
-        source = item.get("domain", "") or item.get("source", "") or ""
-        date = item.get("seendate", "") or item.get("date", "") or ""
+        title = (item.get("title") or "").strip()
+        url = (item.get("url") or "").strip()
+        source = item.get("domain") or item.get("source") or ""
+        date = item.get("seendate") or item.get("date") or ""
         if not title or not url:
             continue
+        if not is_christian_persecution(title=title, description=""):
+            continue
+        countries = detect_countries(title)
         articles.append({
             "title": title,
             "url": url,
-            "source": source.strip(),
-            "date": date.strip(),
+            "source": "GDELT",
+            "publisher": source.strip(),
+            "date": normalize_date(date) or date.strip(),
+            "description": "",
+            "countries": countries,
         })
     return articles
 
 
-def guess_country(article):
-    title = article.get("title", "").lower()
-    known_countries = [
-        "nigeria", "india", "pakistan", "china", "iran", "iraq", "syria",
-        "egypt", "north korea", "north korea", "myanmar", "sudan", "somalia",
-        "eritrea", "yemen", "cuba", "laos", "vietnam", "nicaragua", "colombia",
-        "mexico", "indonesia", "saudi arabia", "turkey", "algeria",
-        "bangladesh", "central african republic", "haiti", "libya", "malaysia",
-        "venezuela", "zimbabwe", "afghanistan", "uganda", "iraq",
-    ]
-    for country in known_countries:
-        if country in title:
-            return country.title()
-    return "Unknown"
-
-
-def group_by_country(articles):
-    grouped = {}
-    for article in articles:
-        country = guess_country(article)
-        grouped.setdefault(country, []).append(article)
-    return grouped
-
-
 def main():
     print("fetching gdelt articles...")
+    cached = load_json_cache(OUTPUT)
     all_articles = []
     statuses = []
 
@@ -100,44 +89,38 @@ def main():
             statuses.append({"query": query, "url": url, "status": "failed", "error": error})
             continue
         articles = extract_articles(data)
-        print(f"    got {len(articles)} articles")
+        print(f"    got {len(articles)} filtered articles")
         statuses.append({"query": query, "url": url, "status": "ok", "count": len(articles)})
         all_articles.extend(articles)
 
-    seen_urls = set()
-    unique_articles = []
-    for a in all_articles:
-        if a["url"] not in seen_urls:
-            seen_urls.add(a["url"])
-            unique_articles.append(a)
-    print(f"\ntotal unique articles: {len(unique_articles)}")
-
-    countries = group_by_country(unique_articles)
-    print(f"countries found: {len(countries)}")
-    for country, arts in sorted(countries.items(), key=lambda x: -len(x[1])):
-        print(f"  {country}: {len(arts)}")
-
-    result = {
-        "query_date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-        "countries": countries,
-        "total_articles": len(unique_articles),
-        "queries": statuses,
-    }
-
-    out_path = FETCHED / "gdelt.json"
-    out_path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"\nsaved to {out_path}")
+    result = build_news_result(
+        source="GDELT Doc API",
+        source_url=GDELT_BASE,
+        status="ok",
+        articles=all_articles,
+        previous=cached,
+    )
+    result["query_date"] = result["fetched_at"][:10]
+    result["queries"] = statuses
 
     failed_queries = [s for s in statuses if s["status"] == "failed"]
-    if len(failed_queries) == len(statuses):
+    if statuses and len(failed_queries) == len(statuses):
         final_status = "failed"
+        result["status"] = "failed"
+        write_json(OUTPUT, result)
         write_status("gdelt", final_status, "all queries failed")
     elif failed_queries:
         final_status = "partial"
+        result["status"] = "partial"
+        write_json(OUTPUT, result)
         write_status("gdelt", final_status, f"{len(failed_queries)} of {len(statuses)} queries failed")
     else:
         final_status = "ok"
+        write_json(OUTPUT, result)
         write_status("gdelt", final_status)
+
+    print(f"\ntotal accumulated: {result['total_articles']}")
+    print(f"saved to {OUTPUT}")
     exit_for_status(final_status)
 
 

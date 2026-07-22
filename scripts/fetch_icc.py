@@ -1,47 +1,41 @@
 #!/usr/bin/env python3
-"""Fetch Christian persecution news from International Christian Concern (ICC).
-
-ICC monitors and reports on Christian persecution worldwide. They publish
-news reports and a Global Persecution Index (GPI).
-Source: https://www.persecution.org/
-"""
+"""Fetch Christian persecution news from International Christian Concern (ICC)."""
 import json
 import re
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from christian_persecution import is_christian_persecution
 from fetch_common import (
     FETCHED,
     USER_AGENT,
+    build_news_result,
     detect_countries,
     ensure_fetched_dir,
     exit_for_status,
     fetch_text,
-    is_persecution_article,
     load_json_cache,
+    normalize_date,
     strip_html,
+    write_json,
     write_status,
 )
 
 ensure_fetched_dir()
 
 ICC_NEWS_URL = "https://www.persecution.org/news/"
+ICC_WP_JSON = "https://www.persecution.org/wp-json/wp/v2/posts?per_page=20"
 OUTPUT = FETCHED / "icc.json"
 
 
-def parse_articles(html):
-    """Parse ICC news page for persecution articles."""
+def parse_articles(html: str) -> list[dict]:
     articles = []
 
-    article_pattern = re.compile(
-        r'<article[^>]*>(.*?)</article>',
-        re.DOTALL | re.IGNORECASE
-    )
+    article_pattern = re.compile(r"<article[^>]*>(.*?)</article>", re.DOTALL | re.IGNORECASE)
     for match in article_pattern.finditer(html):
         article_html = match.group(1)
-        title_match = re.search(r'<h[23][^>]*>(.*?)</h[23]>', article_html, re.DOTALL | re.IGNORECASE)
+        title_match = re.search(r"<h[23][^>]*>(.*?)</h[23]>", article_html, re.DOTALL | re.IGNORECASE)
         if not title_match:
             continue
         title = strip_html(title_match.group(1)).strip()
@@ -58,24 +52,22 @@ def parse_articles(html):
         date_match = re.search(r'<time[^>]*datetime="([^"]+)"', article_html)
         date = date_match.group(1) if date_match else None
         if not date:
-            date_match = re.search(r'(\w+ \d{1,2},?\s*\d{4})', article_html)
+            date_match = re.search(r"(\w+ \d{1,2},?\s*\d{4})", article_html)
             date = date_match.group(1) if date_match else None
 
         excerpt = ""
-        p_match = re.search(r'<p[^>]*>(.*?)</p>', article_html, re.DOTALL | re.IGNORECASE)
+        p_match = re.search(r"<p[^>]*>(.*?)</p>", article_html, re.DOTALL | re.IGNORECASE)
         if p_match:
             excerpt = strip_html(p_match.group(1)).strip()[:500]
 
-        full_text = f"{title} {excerpt}"
-        if not is_persecution_article(full_text):
+        if not is_christian_persecution(title=title, description=excerpt):
             continue
 
-        countries = detect_countries(full_text)
-
+        countries = detect_countries(f"{title} {excerpt}")
         articles.append({
             "title": title,
             "url": url,
-            "date": date,
+            "date": normalize_date(date) or date,
             "description": excerpt[:300],
             "countries": countries,
             "source": "International Christian Concern",
@@ -84,14 +76,14 @@ def parse_articles(html):
     if not articles:
         link_pattern = re.compile(
             r'<a[^>]*href="(https?://www\.persecution\.org/news/[^"]+)"[^>]*>(.*?)</a>',
-            re.DOTALL | re.IGNORECASE
+            re.DOTALL | re.IGNORECASE,
         )
         for match in link_pattern.finditer(html):
             url = match.group(1)
             title = strip_html(match.group(2)).strip()
             if not title or len(title) < 20:
                 continue
-            if not is_persecution_article(title):
+            if not is_christian_persecution(title=title, description=""):
                 continue
             countries = detect_countries(title)
             articles.append({
@@ -106,67 +98,74 @@ def parse_articles(html):
     return articles
 
 
-def _write_empty(status):
-    result = {
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "source": "International Christian Concern",
-        "source_url": ICC_NEWS_URL,
-        "status": status,
-        "articles": [],
-        "countries": {},
-        "total_articles": 0,
-        "countries_with_articles": 0,
-    }
-    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  wrote empty output to {OUTPUT}")
+def parse_wp_json(payload: str) -> list[dict]:
+    articles = []
+    try:
+        data = json.loads(payload)
+    except json.JSONDecodeError:
+        return articles
+    if not isinstance(data, list):
+        return articles
+    for post in data:
+        title = strip_html((post.get("title") or {}).get("rendered") or "")
+        url = post.get("link") or ""
+        date = post.get("date") or post.get("date_gmt") or ""
+        excerpt = strip_html((post.get("excerpt") or {}).get("rendered") or "")
+        if not is_christian_persecution(title=title, description=excerpt):
+            continue
+        countries = detect_countries(f"{title} {excerpt}")
+        articles.append({
+            "title": title,
+            "url": url,
+            "date": normalize_date(date) or date,
+            "description": excerpt[:300],
+            "countries": countries,
+            "source": "International Christian Concern",
+        })
+    return articles
 
 
 def main():
     print("Fetching International Christian Concern news...")
     cached = load_json_cache(OUTPUT)
+    articles: list[dict] = []
 
-    html, err = fetch_text(ICC_NEWS_URL, user_agent=USER_AGENT)
-    if html is None:
-        if cached:
-            print("  fetch failed, using cached data")
-            cached["status"] = "cached"
-            cached["fetched_at"] = datetime.now(timezone.utc).isoformat()
-            OUTPUT.write_text(json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8")
-            write_status("icc", "cached", "fetch failed, using cache")
-            exit_for_status("cached")
-        print("  ICC site unreachable and no cache, writing stub")
-        _write_empty("fetch_failed")
-        write_status("icc", "failed", "fetch failed, no cache")
-        exit_for_status("failed")
+    # Prefer WP JSON (less bot-blocked than RSS); fall back to HTML scrape.
+    wp_text, _ = fetch_text(ICC_WP_JSON, user_agent=USER_AGENT)
+    if wp_text:
+        articles = parse_wp_json(wp_text)
+        print(f"  WP JSON: {len(articles)} articles")
 
-    articles = parse_articles(html)
+    if not articles:
+        html, err = fetch_text(ICC_NEWS_URL, user_agent=USER_AGENT)
+        if html is None:
+            if cached:
+                print("  fetch failed, using cached data")
+                cached["status"] = "cached"
+                write_json(OUTPUT, cached)
+                write_status("icc", "cached", "fetch failed, using cache")
+                exit_for_status("cached")
+            result = build_news_result(
+                source="International Christian Concern",
+                source_url=ICC_NEWS_URL,
+                status="fetch_failed",
+                articles=[],
+            )
+            write_json(OUTPUT, result)
+            write_status("icc", "failed", "fetch failed, no cache")
+            exit_for_status("failed")
+        articles = parse_articles(html)
+
     print(f"  found {len(articles)} persecution-related articles")
-
-    by_country = {}
-    for a in articles:
-        for country in a["countries"]:
-            by_country.setdefault(country, []).append({
-                "title": a["title"],
-                "url": a["url"],
-                "date": a["date"],
-                "description": a["description"],
-            })
-
-    result = {
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "source": "International Christian Concern",
-        "source_url": ICC_NEWS_URL,
-        "status": "ok",
-        "articles": articles,
-        "countries": by_country,
-        "total_articles": len(articles),
-        "countries_with_articles": len(by_country),
-    }
-    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  countries with articles: {len(by_country)}")
-    for c in sorted(by_country.keys()):
-        print(f"    {c}: {len(by_country[c])} articles")
-    print(f"  wrote {OUTPUT}")
+    result = build_news_result(
+        source="International Christian Concern",
+        source_url=ICC_NEWS_URL,
+        status="ok",
+        articles=articles,
+        previous=cached,
+    )
+    write_json(OUTPUT, result)
+    print(f"  wrote {OUTPUT} ({result['total_articles']} accumulated)")
     write_status("icc", "ok")
     exit_for_status("ok")
 
