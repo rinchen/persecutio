@@ -34,9 +34,9 @@ jobs:
           python3 scripts/fetch_gdelt.py || FAIL=1
           python3 scripts/fetch_uscirf.py || FAIL=1
           python3 scripts/fetch_state_dept.py || FAIL=1
-          python3 scripts/fetch_ohchr.py || FAIL=1
 
-          # Secondary sources — always write status; do not abort the pipeline
+          # Secondary / flaky sources — enrich when available; never abort deploy
+          python3 scripts/fetch_ohchr.py || true
           python3 scripts/fetch_morningstarnews.py || true
           python3 scripts/fetch_vid.py || true
           python3 scripts/fetch_gcr_stats.py || true
@@ -54,7 +54,7 @@ jobs:
           from pathlib import Path
           PRIMARY = {
               "opendoors", "freedomhouse", "owid", "gdelt",
-              "uscirf", "statedepartment", "ohchr",
+              "uscirf", "statedepartment",
           }
           failed = []
           for p in sorted(Path("data/fetched").glob("*_status.json")):
@@ -134,7 +134,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
       - name: Commit and push updates
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
