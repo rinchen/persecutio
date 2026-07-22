@@ -11,8 +11,10 @@ COUNTRIES.mkdir(parents=True, exist_ok=True)
 ASSETS.mkdir(parents=True, exist_ok=True)
 
 with (DATA / "countries.yml").open("r", encoding="utf-8") as f:
-    data = yaml.safe_load(f)
-countries = data["countries"]
+    data = yaml.safe_load(f) or {}
+countries = data.get("countries")
+if not countries:
+    raise SystemExit("data/countries.yml is missing or has no 'countries' list")
 
 PAGE = """\
 <!DOCTYPE html>
@@ -132,19 +134,31 @@ def render_sources(source_ids: list[str], all_sources_lookup: dict) -> str:
 all_sources_lookup = {}
 with (DATA / "sources.yml").open("r", encoding="utf-8") as f:
     loaded = yaml.safe_load(f) or {}
-all_sources_lookup = loaded.get("sources", {})
+all_sources_lookup = loaded.get("sources") or {}
+if not all_sources_lookup:
+    raise SystemExit("data/sources.yml is missing or has no 'sources' mapping")
 
 for c in countries:
+    if not isinstance(c, dict):
+        raise SystemExit("countries.yml contains an invalid non-object country entry")
+    title = c.get("title")
+    slug = c.get("slug")
+    iso3 = str(c.get("iso3", "") or "").upper()
+    if not title or not slug or not iso3:
+        raise SystemExit(f"Invalid country entry missing title/slug/iso3: {c}")
+
     status = c.get("status", "")
     color = COLORS.get(status, "#94a3b8")
-    label = LABELS.get(status, status.title())
-    source_ids = c.get("source_ids", {})
-    hist_ids = source_ids.get("historical", [])
-    mod_ids = source_ids.get("modern", [])
+    label = LABELS.get(status, status.title() if status else "Unknown")
+    source_ids = c.get("source_ids") or {}
+
+    hist_ids = source_ids.get("historical", []) or []
+    mod_ids = source_ids.get("modern", []) or []
     if not hist_ids:
         hist_ids = list(all_sources_lookup.keys())
     if not mod_ids:
         mod_ids = list(all_sources_lookup.keys())
+
     historical_sources = render_sources(hist_ids, all_sources_lookup)
     modern_sources = render_sources(mod_ids, all_sources_lookup)
     all_sources_items = [
@@ -152,8 +166,9 @@ for c in countries:
         for s in all_sources_lookup.keys()
         if s in {*hist_ids, *mod_ids}
     ] or ['<li>Sources will be listed here.</li>']
-    html = PAGE.format(
-        title=c["title"],
+
+    page_html = PAGE.format(
+        title=title,
         historical=c.get("historical", ""),
         modern=c.get("modern", ""),
         historical_sources=historical_sources,
@@ -164,8 +179,9 @@ for c in countries:
         status_color=color,
         generated_at=generated_at,
     )
-    (COUNTRIES / f"{c['slug']}.html").write_text(html, encoding="utf-8")
-    print("wrote", c["slug"])
+    (COUNTRIES / f"{slug}.html").write_text(page_html, encoding="utf-8")
+    print("wrote", slug)
+
 
 geo = {
     "type": "FeatureCollection",

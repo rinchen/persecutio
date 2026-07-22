@@ -734,8 +734,7 @@ sources = {
 for c in COUNTRIES_DATA:
     iso = str(c.get("iso3", "")).upper()
     resolved = []
-    for sid_template in c.get("source_ids", {}).get("modern", []):
-        sid = sid_template.format(slug=c.get("slug", ""), pew_slug=c.get("pew_slug", ""))
+    for sid in c.get("source_ids", {}).get("modern", []):
         if sid in sources and sid not in resolved:
             resolved.append(sid)
     wiki = wikipedia_summary(c.get("title", ""))

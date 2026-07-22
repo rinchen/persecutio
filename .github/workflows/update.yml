@@ -14,12 +14,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python3 -m pip install --upgrade pip pyyaml requests beautifulsoup4
+      - run: python3 -m pip install --upgrade pip pyyaml requests beautifulsoup4 pytest
       - run: python3 scripts/collect_data.py
       - run: python3 scripts/generate_website_data.py
-      - run: python3 -m py_compile scripts/collect_data.py scripts/generate_website_data.py
+      - run: python3 -m py_compile scripts/collect_data.py scripts/generate_website_data.py tests/*.py
+      - run: python3 -m pytest tests
       - run: |
           test -s data/countries.yml
+          test -s data/sources.yml
           test -s assets/data/geojson.json
           test -s assets/data/search.json
           test -s countries/geojson.json
@@ -47,6 +49,10 @@ jobs:
               echo "Missing source links in $page"
               exit 1
             fi
+            if grep -q 'href="/persecutio/index.html">Map</a> · <a href="/persecutio/about.html">About</a>' "$page"; then
+              echo "Footer navigation still present in $page"
+              exit 1
+            fi
           done
       - name: Setup Pages
         id: pages
@@ -58,7 +64,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - run: |
+      - name: Commit and push updates
+        if: github.event_name == 'schedule'
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
