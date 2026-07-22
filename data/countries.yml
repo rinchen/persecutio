@@ -36,6 +36,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023afghanistan
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -188,8 +191,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023afghanistan
+    - statedepartment2023
     sources:
-    - &id009
+    - &id013
       title: USCIRF 2023 Annual Report - Afghanistan
       url: https://www.uscirf.gov/countries/afghanistan
       date: '2023'
@@ -209,6 +215,18 @@ countries:
       title: Our World in Data - Religious Composition (Pew Research)
       url: https://ourworldindata.org/grapher/religious-composition
       date: '2024'
+    - &id005
+      title: Global Christian Relief - Persecution Statistics 2026
+      url: https://globalchristianrelief.org/stories/christian-persecution-statistics
+      date: '2026'
+    - &id057
+      title: U.S. State Department IRF Report 2023 - Afghanistan
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/afghanistan/
+      date: '2023'
+    - &id006
+      title: U.S. State Department International Religious Freedom Report 2023
+      url: https://www.state.gov/international-religious-freedom-reports/
+      date: '2023'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -216,6 +234,32 @@ countries:
     opendoors_score: 89
     christian_population: 7571
     christian_percentage: 0.02
+    gcr_killed: 4849
+    gcr_notes: — No. 11 India — No. 12 Saudi Arabia — No. 13 Myanmar — No. 14 Mali
+      — No. 15 Christian Persecution in Nigeria Nigeria remains the deadliest country
+      in the world for Christians and it's not even close. Of the 4,849 believers
+      killed for their faith globally during the reporting period, 3,490 of those
+      deaths happened in Nigeria. That's roughly 72% of the worldwide total. Multiple
+      armed groups drive this violence. Boko Haram, the Islamic State West Africa
+      Province (ISWAP), Fulani ethnic militias, an
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom conditions in Afghanistan are dire as the Taliban enforces
+      a strict interpretation of Sunni Islam. Authorities use religious edicts to
+      crack down on all Afghans who express dissent or different views of Islam, including
+      women and religious minorities. Ongoing attacks by the Islamic State Khorasan
+      Province (ISIS-K) also pose an ongoing threat to Shi’a Muslims in particular.
+    uscirf_url: https://www.uscirf.gov/countries/afghanistan
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/afghanistan/
+    state_dept_executive_summary: According to the Taliban, Sunni Hanafi jurisprudence
+      is the basis for the legal system, and at present, the country does not have
+      in place a cohesive legal framework, judicial system, or enforcement mechanism
+      that enables the clear and consistent application of the rule of law throughout
+      the country. According to the Taliban, laws enacted under the pre-August 2021
+      government remain in effect unless the laws violate sharia. Taliban leaders
+      largely impose their policies on citizens through guidelines or recommendations
+      specifying acceptable behaviors they justify under their interpretation of sh
+    state_dept_christian_mentions: true
 - title: China
   slug: china
   iso3: CHN
@@ -253,8 +297,12 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - bitterwinter
     - releaseintl
+    - gdelt2025
+    - statedepartment2023china
+    - statedepartment2023
   pew_slug: china
   metadata:
     shape_geo:
@@ -749,10 +797,14 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - bitterwinter
     - releaseintl
+    - gdelt2025
+    - statedepartment2023china
+    - statedepartment2023
     sources:
-    - &id010
+    - &id014
       title: USCIRF 2023 Annual Report - China
       url: https://www.uscirf.gov/countries/china
       date: '2023'
@@ -760,14 +812,24 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id044
+    - *id005
+    - &id056
       title: Bitter Winter - Religious Liberty and Human Rights
       url: https://bitterwinter.org/
       date: '2026'
-    - &id005
+    - &id007
       title: Release International - Serving the Persecuted Church
       url: https://releaseinternational.org/
       date: '2026'
+    - &id008
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
+    - &id058
+      title: U.S. State Department IRF Report 2023 - China
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/china/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -775,6 +837,13 @@ countries:
     opendoors_score: 87
     christian_population: 25452526
     christian_percentage: 1.78
+    gcr_notes: China represents a different kind of threat. Rather than armed militias
+      and bombings, the Chinese Communist Party uses surveillance, legal restrictions,
+      and bureaucratic control to squeeze an estimated 70 million Protestant house
+      church members who worship outside state-approved structures. The arrest of
+      Beijing house church pastor Jin Mingri and 17 other leaders on November 18,
+      2025, drew international condemnation. The charges were "illegally using information
+      networks," a vague offense punish
     bitterwinter_articles: 1
     bitterwinter_samples:
     - title: “Brainwashing” Accusations and the Persecution of The Church of Almighty
@@ -794,6 +863,37 @@ countries:
       description: Chinese Pastor Zhang Shaojie is released from prison. The post
         Chinese pastor released! appeared first on Release International .
       source: Release International
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Chinese Communists Step Up Persecution of Underground Church and Its
+        Priests
+      url: https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious communities in China face persecution when they refuse to submit to
+      the government’s all-encompassing control over religious affairs. Authorities
+      surveil, detain, fined, forcibly disappeared, imprison, torture, and deny medical
+      care to Uyghur Muslims, Tibetan Buddhists, underground Catholics, house church
+      Protestants, Falun Gong practitioners, Church of Almighty God members, and others.
+      Authorities engage in transnational repression against religious freedom activists
+      living abroad.
+    uscirf_url: https://www.uscirf.gov/countries/china
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/china/
+    state_dept_executive_summary: 'Reports on Hong Kong, Macau, Tibet, and Xinjiang
+      are appended at the end of this report. The constitution of the People’s Republic
+      of China (PRC), which cites the leadership of the Chinese Communist Party (CCP),
+      states that citizens “enjoy freedom of religious belief” but limits protections
+      for religious practice to “normal religious activities” without defining “normal.”
+      The government recognizes five official religions: Buddhism, Taoism, Islam,
+      Protestantism, and Catholicism. Only religious groups belonging to one of the
+      five state-sanctioned “patriotic religious associations” representing t'
+    state_dept_christian_mentions: true
     recent_incidents:
     - title: “Brainwashing” Accusations and the Persecution of The Church of Almighty
         God
@@ -804,6 +904,12 @@ countries:
         Accusations and the Persecution of The Church of Almighty God first appeared
         on Bitter Winter .
       source: Bitter Winter
+    - title: Chinese Communists Step Up Persecution of Underground Church and Its
+        Priests
+      url: https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: Chinese pastor released!
       url: https://releaseinternational.org/pastorzhangshaojie
       date: '2025-11-17'
@@ -843,6 +949,8 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023colombia
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -1057,8 +1165,10 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023colombia
+    - statedepartment2023
     sources:
-    - &id011
+    - &id015
       title: USCIRF 2023 Annual Report - Colombia
       url: https://www.uscirf.gov/countries/colombia
       date: '2023'
@@ -1066,6 +1176,11 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id059
+      title: U.S. State Department IRF Report 2023 - Colombia
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/colombia/
+      date: '2023'
+    - *id006
     freedom_house_status: Free
     freedom_house_pr: 2
     freedom_house_cl: 3
@@ -1073,6 +1188,16 @@ countries:
     opendoors_score: 66
     christian_population: 43666834
     christian_percentage: 86.25
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/colombia/
+    state_dept_executive_summary: 'The constitution provides for freedom of religion
+      and the right to profess one’s religious beliefs. It prohibits discrimination
+      based on religion. The Ministry of Interior (MOI) is responsible for formally
+      recognizing churches, religious denominations, religious federations and confederations,
+      and associations of religious ministers. During the year, the government enacted
+      two new laws relating to religious freedom. On June 6, President Gustavo Petro
+      signed Decree 922 of 2023, granting eight additional religious groups authority
+      to engage in activities such as marriages, funeral services, and '
+    state_dept_christian_mentions: true
 - title: Cuba
   slug: cuba
   iso3: CUB
@@ -1104,6 +1229,8 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023cuba
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -1202,8 +1329,10 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023cuba
+    - statedepartment2023
     sources:
-    - &id012
+    - &id016
       title: USCIRF 2023 Annual Report - Cuba
       url: https://www.uscirf.gov/countries/cuba
       date: '2023'
@@ -1211,6 +1340,11 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id060
+      title: U.S. State Department IRF Report 2023 - Cuba
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/cuba/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -1218,6 +1352,26 @@ countries:
     opendoors_score: 64
     christian_population: 6778898
     christian_percentage: 60.65
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - The Cuban government’s legal framework for controlling religious activity extends
+      state authority over virtually all worship and practice, and religious leaders
+      and communities continually face threats and harassment. The government criminalizes
+      and heavily persecutes unregistered religious groups, and it continues to wrongfully
+      imprison religious leaders while denying prisoners their religious freedom rights
+      across the prison system.
+    uscirf_url: https://www.uscirf.gov/countries/cuba
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/cuba/
+    state_dept_executive_summary: The constitution contains written provisions for
+      religious freedom and prohibitions against discrimination based on religious
+      grounds; however, provisions in the penal and administrative codes contravene
+      these protections. The constitution declares the country a secular state and
+      provides for the separation of religious institutions and the state, but the
+      Cuban Communist Party (CCP), through its Office of Religious Affairs (ORA) and
+      the Ministry of Justice (MOJ), regulates religious practice. The law requires
+      all religious groups to apply to the MOJ for official registration. By law,
+      membershi
+    state_dept_christian_mentions: true
 - title: Eritrea
   slug: eritrea
   iso3: ERI
@@ -1250,6 +1404,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023eritrea
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -1320,8 +1477,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023eritrea
+    - statedepartment2023
     sources:
-    - &id013
+    - &id017
       title: USCIRF 2023 Annual Report - Eritrea
       url: https://www.uscirf.gov/countries/eritrea
       date: '2023'
@@ -1329,6 +1489,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - &id061
+      title: U.S. State Department IRF Report 2023 - Eritrea
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/eritrea/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -1336,6 +1502,33 @@ countries:
     opendoors_score: 94
     christian_population: 1536075
     christian_percentage: 46.67
+    gcr_notes: ', Syria, Nigeria, Pakistan, Libya, and Iran rank highest; 15 countries
+      fall in the “extreme” category." } }, { "@type": "Question", "name": "How many
+      Christians are persecuted globally each year?", "acceptedAnswer": { "@type":
+      "Answer", "text": "About 388 million Christians face high levels of persecution
+      globally, roughly one in seven worldwide and one in five in Africa." } }, {
+      "@type": "Question", "name": "What are the main causes of modern Christian persecution?",
+      "acceptedAnswer": { "@type"'
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - The government in Eritrea systematically persecutes individuals for their faith
+      and only permits four recognized religions to register. The government continues
+      to imprison hundreds of Christians and dozens of Jehovah's Witnesses, many of
+      whom face violence – including torture – and harsh prison conditions without
+      access to adequate health care. Government officers apprehend religious conscientious
+      objectors and hold them in military camps indefinitely where they endure various
+      punishments.
+    uscirf_url: https://www.uscirf.gov/countries/eritrea
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/eritrea/
+    state_dept_executive_summary: 'The law and unimplemented constitution prohibit
+      religiously motivated discrimination and provide for freedom of thought, conscience,
+      and belief, as well as the freedom to practice any religion. The government
+      recognizes four officially registered religious groups: the Eritrean Orthodox
+      Tewahedo Church, Sunni Islam, the Catholic Church, and the Evangelical Lutheran
+      Church of Eritrea. During the year, the government again arrested individuals
+      based on religion. The Christian nongovernmental organization (NGO) Release
+      International reported the arrest of 177 members of unregistered Christian grou'
+    state_dept_christian_mentions: true
 - title: India
   slug: india
   iso3: IND
@@ -1367,8 +1560,12 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - morningstarnews2026
     - releaseintl
+    - gdelt2025
+    - statedepartment2023india
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -1655,10 +1852,14 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - morningstarnews2026
     - releaseintl
+    - gdelt2025
+    - statedepartment2023india
+    - statedepartment2023
     sources:
-    - &id014
+    - &id018
       title: USCIRF 2023 Annual Report - India
       url: https://www.uscirf.gov/countries/india
       date: '2023'
@@ -1666,11 +1867,18 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id006
+    - *id005
+    - &id009
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
-    - *id005
+    - *id007
+    - *id008
+    - &id062
+      title: U.S. State Department IRF Report 2023 - India
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/india/
+      date: '2023'
+    - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 2
     freedom_house_cl: 4
@@ -1678,6 +1886,14 @@ countries:
     opendoors_score: 80
     christian_population: 31062655
     christian_percentage: 2.21
+    gcr_killed: 4849
+    gcr_notes: — No. 12 Saudi Arabia — No. 13 Myanmar — No. 14 Mali — No. 15 Christian
+      Persecution in Nigeria Nigeria remains the deadliest country in the world for
+      Christians and it's not even close. Of the 4,849 believers killed for their
+      faith globally during the reporting period, 3,490 of those deaths happened in
+      Nigeria. That's roughly 72% of the worldwide total. Multiple armed groups drive
+      this violence. Boko Haram, the Islamic State West Africa Province (ISWAP), Fulani
+      ethnic militias, and a newer group
     morningstarnews_articles: 1
     morningstarnews_samples:
     - title: Pastor in India Faces False Charge, Burned Church Building
@@ -1715,7 +1931,67 @@ countries:
         in China. The post Police stand aside as Indian pastor beaten appeared first
         on Release International .
       source: Release International
+    gdelt_articles: 3
+    gdelt_samples:
+    - title: Bibles are being shipped to India Odisha State despite intense persecution
+      url: https://www.mnnonline.org/news/bibles-are-being-shipped-to-indias-odisha-state-despite-intense-persecution
+      date: '2026-07-21'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 3
+    gdelt_sample_urls:
+    - https://www.mnnonline.org/news/bibles-are-being-shipped-to-indias-odisha-state-despite-intense-persecution
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - The Indian government tolerates and perpetrates widespread harassment and violence
+      against religious minorities at the national and state level. The BJP-led government
+      has introduced and enforced discriminatory legislation that disenfranchises
+      religious minorities, including the Citizenship Amendment Act (CAA), the National
+      Register of Citizens, the Unlawful Activities Prevention Act (UAPA), and various
+      state-level anti-conversion and cow slaughter laws.
+    uscirf_url: https://www.uscirf.gov/countries/india
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/india/
+    state_dept_executive_summary: The constitution provides for freedom of conscience
+      and the right of all individuals to freely profess, practice, and propagate
+      religion; mandates a secular state; requires the state to treat all religions
+      impartially; and prohibits discrimination based on religion. It also states
+      citizens must practice their faith in a way that does not adversely affect public
+      order, morality, or health. Ten of 28 states have laws restricting religious
+      conversions for all faiths. Some of these states also impose penalties specifically
+      against forced religious conversions for the purpose of marriage. During th
+    state_dept_christian_mentions: true
     recent_incidents:
+    - title: Bibles are being shipped to India Odisha State despite intense persecution
+      url: https://www.mnnonline.org/news/bibles-are-being-shipped-to-indias-odisha-state-despite-intense-persecution
+      date: '2026-07-21'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: Pastor in India Faces False Charge, Burned Church Building
       url: https://morningstarnews.org/2026/07/pastor-in-india-faces-false-charge-burned-church-building
       date: '2026-07-02'
@@ -1782,6 +2058,8 @@ countries:
     - odwwl2026
     - owid2024
     - morningstarnews2026
+    - statedepartment2023indonesia
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -2297,8 +2575,10 @@ countries:
     - odwwl2026
     - owid2024
     - morningstarnews2026
+    - statedepartment2023indonesia
+    - statedepartment2023
     sources:
-    - &id015
+    - &id019
       title: USCIRF 2023 Annual Report - Indonesia
       url: https://www.uscirf.gov/countries/indonesia
       date: '2023'
@@ -2306,6 +2586,11 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id009
+    - &id063
+      title: U.S. State Department IRF Report 2023 - Indonesia
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/indonesia/
+      date: '2023'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -2324,6 +2609,25 @@ countries:
         and prevented a funeral Mass in another, local sources reported. Dozens of
         Muslims demonstrated against the church in the Hegarmanah Indah housing co
       source: Morning Star News
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Indonesia’s religious freedom conditions are poor. Despite constitutional FoRB
+      protections, the Criminal Code and other laws restrict worship, targeting religious
+      minorities such as Protestants, Catholics, Ahmadiyyah Muslims, Jehovah’s Witnesses,
+      and Baha'is. A new Criminal Code came into effect in 2026, broadening the criminal
+      definition of blasphemy. Religious minorities also encounter challenges when
+      constructing places of worship as local authorities often refuse to issue permits.
+    uscirf_url: https://www.uscirf.gov/countries/indonesia
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/indonesia/
+    state_dept_executive_summary: 'The constitution provides a guarantee of freedom
+      of religion and the right to worship according to one’s own beliefs, but it
+      states that citizens must accept restrictions established by law to protect
+      the rights of others and to satisfy “just demands based upon considerations
+      of morality, religious values, security, and public order in a democratic society.”
+      The Ministry of Religious Affairs (MORA) extends official recognition and support
+      to groups in six faiths: Islam, Catholicism, Protestantism, Buddhism, Hinduism,
+      and Confucianism. Some local and provincial governments, particularly in Aceh'
+    state_dept_christian_mentions: true
     recent_incidents:
     - title: Muslims Protest Presence of Church in Indonesia
       url: https://morningstarnews.org/2026/07/muslims-protest-presence-of-church-in-indonesia
@@ -2364,8 +2668,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - mec
     - releaseintl
+    - statedepartment2023iran
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -2532,10 +2839,13 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - mec
     - releaseintl
+    - statedepartment2023iran
+    - statedepartment2023
     sources:
-    - &id016
+    - &id020
       title: USCIRF 2023 Annual Report - Iran
       url: https://www.uscirf.gov/countries/iran
       date: '2023'
@@ -2543,11 +2853,17 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id007
+    - *id005
+    - &id011
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
-    - *id005
+    - *id007
+    - &id064
+      title: U.S. State Department IRF Report 2023 - Iran
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/iran/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -2555,6 +2871,13 @@ countries:
     opendoors_score: 88
     christian_population: 125102
     christian_percentage: 0.14
+    gcr_notes: 'rank highest; 15 countries fall in the “extreme” category." } }, {
+      "@type": "Question", "name": "How many Christians are persecuted globally each
+      year?", "acceptedAnswer": { "@type": "Answer", "text": "About 388 million Christians
+      face high levels of persecution globally, roughly one in seven worldwide and
+      one in five in Africa." } }, { "@type": "Question", "name": "What are the main
+      causes of modern Christian persecution?", "acceptedAnswer": { "@type": "Answer",
+      "text": "Islamic extremism, auth'
     mec_articles: 8
     mec_samples:
     - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
@@ -2593,6 +2916,25 @@ countries:
         The post Release International partner speaks on Iran appeared first on Release
         International .
       source: Release International
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom conditions in Iran are particularly severe. The government
+      invokes its own interpretation of Islam to deny religious freedom to citizens
+      who dissent through peaceful protest, including women and girls who oppose mandatory
+      hijab policies. It also systematically targets religious minorities - including
+      Baha’is, Christians, Jews, and Sunni Muslims - and it has intensified its religious
+      crackdown amid ongoing internal strife and regional conflicts.
+    uscirf_url: https://www.uscirf.gov/countries/iran
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/iran/
+    state_dept_executive_summary: The constitution defines the country as an Islamic
+      republic and specifies Twelver Ja’afari Shia Islam as the official state religion.
+      It states all laws and regulations must be based on “Islamic criteria” and an
+      official interpretation of sharia. The constitution states citizens shall enjoy
+      human, political, economic, and other rights, “in conformity with Islamic criteria.”
+      The penal code provides for h u dud punishments (those mandated by sharia),
+      including amputation, flogging, and stoning. It specifies the death penalty
+      for moharebeh (“enmity against God”) and sabb al-nabi (“insulting the P
+    state_dept_christian_mentions: true
     recent_incidents:
     - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
       url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
@@ -2704,6 +3046,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023iraq
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -2778,8 +3123,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023iraq
+    - statedepartment2023
     sources:
-    - &id017
+    - &id021
       title: USCIRF 2023 Annual Report - Iraq
       url: https://www.uscirf.gov/countries/iraq
       date: '2023'
@@ -2787,6 +3135,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - &id065
+      title: U.S. State Department IRF Report 2023 - Iraq
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/iraq/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
     freedom_house_cl: 6
@@ -2794,6 +3148,32 @@ countries:
     opendoors_score: 81
     christian_population: 157929
     christian_percentage: 0.37
+    gcr_notes: June2023-PrintingPresses-DSC01894-PRINT-7008-x-4672-Uncropped-1.png"
+      /> Give the gift of God's word A Bible for Every Believer Your support helps
+      provide Bibles to believers and seekers across the Middle East and around the
+      world, allowing God’s Word to reach people in their own languages and transform
+      their daily lives. Send Bibles and support to your persecuted brothers and sisters
+      today. learn more Copy Link <a href="https://twitter.com/share?text=Christian+Persecution+by+the+Numbers%3A+2026+
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Iraq’s religious communities face ongoing challenges 11 years after the Islamic
+      State of Iraq and Syria (ISIS) waged genocide against religious and ethnic minorities.
+      Iraq has improved some FoRB conditions while falling short in others, such as
+      blasphemy laws and changes to personal status legislation. The widespread failure
+      to curb the growing power of Iran-affiliated militias and other malign actors
+      remains a persistent threat to the security and existence of various religious
+      communities.
+    uscirf_url: https://www.uscirf.gov/countries/iraq
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/iraq/
+    state_dept_executive_summary: The constitution establishes Islam as the official
+      religion and states that no law may be enacted contradicting the “established
+      provisions of Islam.” It provides for freedom of religious belief and practice
+      for all individuals, including Muslims, Christians, Yezidis, and Sabean-Mandeans,
+      but it does not explicitly mention followers of other religions or atheists.
+      Restrictions on freedom of religion remained widespread outside the Iraqi Kurdistan
+      Region (IKR). Activities that promote the normalization of relations with Israel
+      have long been illegal, with penalties as severe as life in prison a
+    state_dept_christian_mentions: true
 - title: Laos
   slug: laos
   iso3: LAO
@@ -2824,6 +3204,8 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023laos
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -2912,8 +3294,10 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023laos
+    - statedepartment2023
     sources:
-    - &id018
+    - &id022
       title: USCIRF 2023 Annual Report - Laos
       url: https://www.uscirf.gov/countries/laos
       date: '2023'
@@ -2921,6 +3305,11 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id066
+      title: U.S. State Department IRF Report 2023 - Laos
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/laos/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -2928,6 +3317,23 @@ countries:
     opendoors_score: 65
     christian_population: 113096
     christian_percentage: 1.54
+    uscirf_designation: none
+    uscirf_key_findings:
+    - Religious freedom conditions in Laos remain poor. The government uses Decree
+      315 to deprive the religious freedom of minority religious communities. Central
+      and local governments use administrative regulations to hinder joining Buddhist
+      religious orders and to prevent the construction of minority houses or worship.
+    uscirf_url: https://www.uscirf.gov/countries/laos
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/laos/
+    state_dept_executive_summary: 'The constitution provides citizens with “the right
+      and freedom to believe or not to believe in religion.” The government officially
+      recognizes four religions: Buddhism, Christianity, Islam, and the Baha’i Faith,
+      with Buddhism paramount. Decree 315, rather than codified law, sets forth rules
+      for religious practice and minimum land requirements for building houses of
+      worship and defines the government as the final arbiter of permissible religious
+      activities. Religious leaders continued to state that while authorities in urban
+      areas and in some districts had a strong understanding of laws governi'
+    state_dept_christian_mentions: true
 - title: Mexico
   slug: mexico
   iso3: MEX
@@ -2959,6 +3365,8 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023mexico
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -3313,8 +3721,10 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023mexico
+    - statedepartment2023
     sources:
-    - &id019
+    - &id023
       title: USCIRF 2023 Annual Report - Mexico
       url: https://www.uscirf.gov/countries/mexico
       date: '2023'
@@ -3322,6 +3732,11 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id067
+      title: U.S. State Department IRF Report 2023 - Mexico
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mexico/
+      date: '2023'
+    - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -3329,6 +3744,16 @@ countries:
     opendoors_score: 67
     christian_population: 113070626
     christian_percentage: 89.17
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mexico/
+    state_dept_executive_summary: The constitution provides all persons the right
+      to religious freedom, including the right to engage in religious ceremonies
+      and acts of worship. The constitution declares the country a secular state.
+      Under the constitution, Indigenous communities enjoy a protected legal structure,
+      allowing them some measure of self-governance to practice their own particular
+      “uses and customs,” with the provision that the law must be applied in line
+      with human rights guarantees in the constitution and in the international conventions
+      to which the country is a party. The General Directorate for Religious Affair
+    state_dept_christian_mentions: true
 - title: Nicaragua
   slug: nicaragua
   iso3: NIC
@@ -3360,6 +3785,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gdelt2025
+    - statedepartment2023nicaragua
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -3478,8 +3906,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gdelt2025
+    - statedepartment2023nicaragua
+    - statedepartment2023
     sources:
-    - &id020
+    - &id024
       title: USCIRF 2023 Annual Report - Nicaragua
       url: https://www.uscirf.gov/countries/nicaragua
       date: '2023'
@@ -3487,6 +3918,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id008
+    - &id068
+      title: U.S. State Department IRF Report 2023 - Nicaragua
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nicaragua/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -3494,6 +3931,68 @@ countries:
     opendoors_score: 59
     christian_population: 5567748
     christian_percentage: 84.81
+    gdelt_articles: 3
+    gdelt_samples:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    - title: 80 - year - old Catholic bishop detained in Nicaragua amid crackdown
+      url: https://www.christianpost.com/news/80-year-old-catholic-bishop-detained-in-nicaragua-amid-crackdown.html
+      date: '2026-07-07'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 3
+    gdelt_sample_urls:
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.christianpost.com/news/80-year-old-catholic-bishop-detained-in-nicaragua-amid-crackdown.html
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - The Nicaraguan regime continues to enforce a total crackdown on religious organizations.
+      The government wrongfully detains worshipers, arbitrarily dissolves religious
+      organizations and seizes their property, and expels religious leaders from the
+      country. Clergy and lay leaders are imprisoned for their religious activity
+      or religious freedom advocacy have died in custody, and the government has escalated
+      its use of transnational repression against Nicaraguan religious leaders and
+      worshippers abroad.
+    uscirf_url: https://www.uscirf.gov/countries/nicaragua
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nicaragua/
+    state_dept_executive_summary: 'The constitution prohibits discrimination based
+      on religion; provides for freedom of belief, religion, and worship; and states
+      no one “shall be obligated by coercive measures to declare his or her ideology
+      or beliefs.” According to multiple media reports, nongovernmental organizations
+      (NGOs), and international organizations, the government accelerated its attacks
+      on the Roman Catholic Church and evangelical Christian (also known as evangelicals)
+      groups, the two most observed faith traditions in the country. Throughout the
+      year, police arrested 27 Catholic priests and two Catholic seminarians, '
+    state_dept_christian_mentions: true
+    recent_incidents:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    - title: 80 - year - old Catholic bishop detained in Nicaragua amid crackdown
+      url: https://www.christianpost.com/news/80-year-old-catholic-bishop-detained-in-nicaragua-amid-crackdown.html
+      date: '2026-07-07'
+      description: ''
+      source: GDELT
 - title: Nigeria
   slug: nigeria
   iso3: NGA
@@ -3526,7 +4025,12 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - morningstarnews2026
+    - icc2026
+    - gdelt2025
+    - statedepartment2023nigeria
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -3657,9 +4161,14 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - morningstarnews2026
+    - icc2026
+    - gdelt2025
+    - statedepartment2023nigeria
+    - statedepartment2023
     sources:
-    - &id021
+    - &id025
       title: USCIRF 2023 Annual Report - Nigeria
       url: https://www.uscirf.gov/countries/nigeria
       date: '2023'
@@ -3667,6 +4176,17 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - *id009
+    - &id010
+      title: International Christian Concern - Global Persecution Reports
+      url: https://www.persecution.org/
+      date: '2026'
+    - *id008
+    - &id069
+      title: U.S. State Department IRF Report 2023 - Nigeria
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nigeria/
+      date: '2023'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -3675,6 +4195,13 @@ countries:
     opendoors_score: 92
     christian_population: 92770287
     christian_percentage: 43.35
+    gcr_notes: ', Pakistan, Libya, and Iran rank highest; 15 countries fall in the
+      “extreme” category." } }, { "@type": "Question", "name": "How many Christians
+      are persecuted globally each year?", "acceptedAnswer": { "@type": "Answer",
+      "text": "About 388 million Christians face high levels of persecution globally,
+      roughly one in seven worldwide and one in five in Africa." } }, { "@type": "Question",
+      "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
+      { "@type": "Answer", "tex'
     morningstarnews_articles: 1
     morningstarnews_samples:
     - title: Christian Campus Group Leaders in Nigeria Remain Missing
@@ -3686,7 +4213,130 @@ countries:
         remain missing, according to reports. Gunmen abducted Uwem Cosmos and the
         seven
       source: Morning Star News
+    icc_articles: 4
+    icc_samples:
+    - title: Extremists Abduct Pastor s Wife, 3 Children in Nigeria
+      url: https://persecution.org/2026/07/22/extremists-abduct-pastors-wife-3-children-in-nigeria
+      date: '2026-07-22'
+      description: 'Islamic terrorists, suspected to be Boko Haram or the Islamic
+        State of West Africa Province (ISWAP), abducted the wife of a pastor and their
+        three children on Saturday, July 18, along the Maiduguri-Damasak highway in
+        Northeast Nigeria. The family of Pastor Moses Guguma was on its way to join
+        him in '
+      source: International Christian Concern
+    - title: Fulani Extremists Kill 25 Christians After Nigerian Army Ignores Early
+        Warnings
+      url: https://persecution.org/2026/07/15/fulani-extremists-kill-25-christians-after-nigerian-army-ignores-early-warnings
+      date: '2026-07-15'
+      description: At least 25 Christians, including a 2-month-old, were killed in
+        separate attacks during the weekend in Nigeria’s Middle Belt region. The first
+        attack occurred on Saturday night, July 11, in the Kum and Wereng-Comp communities
+        of Ryom County in Plateau state. Residents told International Christian Co
+      source: International Christian Concern
+    - title: Report Confirms Fulani Militias Responsible for Majority of Deaths in
+        Nigeria
+      url: https://persecution.org/2026/07/10/report-confirms-fulani-militias-responsible-for-majority-of-deaths-in-nigeria
+      date: '2026-07-10'
+      description: According to a six-year study conducted by the Observatory for
+        Religious Freedom in Africa (ORFA), Islamic Fulani militias are by far the
+        deadliest persecutors of Christians in Nigeria. The network of militias is
+        responsible for four times more civilian deaths than the two prominent Islamic
+        terror o
+      source: International Christian Concern
+    gdelt_articles: 3
+    gdelt_samples:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    - title: World News | Nigeria Unveils Memorial to Christians Killed in Persecution
+      url: https://www.christianitydaily.com:443/news/nigeria-unveils-memorial-to-christians-killed-in-persecution.html
+      date: '2026-06-25'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 3
+    gdelt_sample_urls:
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.christianitydaily.com:443/news/nigeria-unveils-memorial-to-christians-killed-in-persecution.html
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom conditions in Nigeria are particularly severe as the government
+      continues to tolerate, inadequately respond, or fail to hold FoRB violators
+      accountable. Multiple nonstate actors regularly kill, kidnap, and attack Christians,
+      Muslims, and traditionalists. Schools, missions, and houses of worship are targets
+      for Entities of Particular Concern and other non-state actors. Twelve northern
+      states enforce blasphemy laws against atheists and others.
+    uscirf_url: https://www.uscirf.gov/countries/nigeria
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nigeria/
+    state_dept_executive_summary: 'The constitution bars the federal and state governments
+      from adopting a state religion, prohibits religious discrimination, and provides
+      for individuals’ freedom to choose, practice, propagate, or change their religion.
+      The constitution provides for states to establish courts based on sharia or
+      customary (traditional) law in addition to common law civil courts, although
+      civil courts have preeminence over all other courts. Sentences may be appealed
+      from sharia and customary courts to civil courts. In addition to civil courts,
+      sharia courts function in 12 northern states and the Federal Capital '
+    state_dept_christian_mentions: true
     recent_incidents:
+    - title: Extremists Abduct Pastor s Wife, 3 Children in Nigeria
+      url: https://persecution.org/2026/07/22/extremists-abduct-pastors-wife-3-children-in-nigeria
+      date: '2026-07-22'
+      description: 'Islamic terrorists, suspected to be Boko Haram or the Islamic
+        State of West Africa Province (ISWAP), abducted the wife of a pastor and their
+        three children on Saturday, July 18, along the Maiduguri-Damasak highway in
+        Northeast Nigeria. The family of Pastor Moses Guguma was on its way to join
+        him in '
+      source: International Christian Concern
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    - title: Fulani Extremists Kill 25 Christians After Nigerian Army Ignores Early
+        Warnings
+      url: https://persecution.org/2026/07/15/fulani-extremists-kill-25-christians-after-nigerian-army-ignores-early-warnings
+      date: '2026-07-15'
+      description: At least 25 Christians, including a 2-month-old, were killed in
+        separate attacks during the weekend in Nigeria’s Middle Belt region. The first
+        attack occurred on Saturday night, July 11, in the Kum and Wereng-Comp communities
+        of Ryom County in Plateau state. Residents told International Christian Co
+      source: International Christian Concern
+    - title: Report Confirms Fulani Militias Responsible for Majority of Deaths in
+        Nigeria
+      url: https://persecution.org/2026/07/10/report-confirms-fulani-militias-responsible-for-majority-of-deaths-in-nigeria
+      date: '2026-07-10'
+      description: According to a six-year study conducted by the Observatory for
+        Religious Freedom in Africa (ORFA), Islamic Fulani militias are by far the
+        deadliest persecutors of Christians in Nigeria. The network of militias is
+        responsible for four times more civilian deaths than the two prominent Islamic
+        terror o
+      source: International Christian Concern
+    - title: Community Appeals to U.S. Government After Fulani Militias Kill Christian
+        Worker, 3 Others
+      url: https://persecution.org/2026/07/08/community-appeals-to-u-s-government-after-fulani-militias-kill-christian-worker-3-others
+      date: '2026-07-08'
+      description: Community leaders in Plateau state, Nigeria, are appealing for
+        international attention after the killing of a Christian church worker and
+        community leader, John Telle Danjuma, and the separate killing of three people
+        at a mining site in a nearby community. Danjuma was killed on June 24, near
+        Gyu, al
+      source: International Christian Concern
     - title: Christian Campus Group Leaders in Nigeria Remain Missing
       url: https://morningstarnews.org/2026/07/christian-campus-group-leaders-in-nigeria-remain-missing
       date: '2026-07-06'
@@ -3696,6 +4346,11 @@ countries:
         remain missing, according to reports. Gunmen abducted Uwem Cosmos and the
         seven
       source: Morning Star News
+    - title: World News | Nigeria Unveils Memorial to Christians Killed in Persecution
+      url: https://www.christianitydaily.com:443/news/nigeria-unveils-memorial-to-christians-killed-in-persecution.html
+      date: '2026-06-25'
+      description: ''
+      source: GDELT
 - title: North Korea
   slug: north-korea
   iso3: PRK
@@ -3726,6 +4381,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023northkorea
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -3836,8 +4494,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023northkorea
+    - statedepartment2023
     sources:
-    - &id022
+    - &id026
       title: USCIRF 2023 Annual Report - North Korea
       url: https://www.uscirf.gov/countries/north-korea
       date: '2023'
@@ -3845,6 +4506,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - &id070
+      title: U.S. State Department IRF Report 2023 - North Korea
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/north-korea/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -3852,6 +4519,33 @@ countries:
     opendoors_score: 98
     christian_population: 100372
     christian_percentage: 0.38
+    gcr_notes: ', Somalia, Yemen, Sudan, Eritrea, Syria, Nigeria, Pakistan, Libya,
+      and Iran rank highest; 15 countries fall in the “extreme” category." } }, {
+      "@type": "Question", "name": "How many Christians are persecuted globally each
+      year?", "acceptedAnswer": { "@type": "Answer", "text": "About 388 million Christians
+      face high levels of persecution globally, roughly one in seven worldwide and
+      one in five in Africa." } }, { "@type": "Question", "name": "What are the main
+      causes of modern Christian persecutio'
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - North Korea’s ruling ideology, Kimilsungism-Kimjongilism, treats religion as
+      an existential threat. Punishments for defying draconian religious restrictions
+      include forced labor, prison, torture, and execution. North Korean refugees
+      in China face severe punishment upon repatriation if they engage in religious
+      activities, including contact with Christian missionaries and NGOs. Authorities
+      harshly punish traditional shamanistic practices and youth caught engaging in
+      religious activities.
+    uscirf_url: https://www.uscirf.gov/countries/north-korea
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/north-korea/
+    state_dept_executive_summary: The constitution provides for freedom of religious
+      belief, with the stipulation that “religion must not be used as a pretext for
+      drawing in foreign forces or for harming the State or social order.” In 2022,
+      the UN Secretary-General reported that “the right to freedom of thought, conscience,
+      and religion [in the DPRK] also continues to be denied, with no alternative
+      belief systems tolerated by the authorities.” Multiple sources indicated the
+      situation had not fundamentally changed since publication of the 2014 UN Commission
+      of Inquiry (COI) report on human rights in the DPRK, which found that a
+    state_dept_christian_mentions: true
 - title: Pakistan
   slug: pakistan
   iso3: PAK
@@ -3884,7 +4578,12 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - morningstarnews2026
+    - icc2026
+    - gdelt2025
+    - statedepartment2023pakistan
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -4031,9 +4730,14 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - morningstarnews2026
+    - icc2026
+    - gdelt2025
+    - statedepartment2023pakistan
+    - statedepartment2023
     sources:
-    - &id023
+    - &id027
       title: USCIRF 2023 Annual Report - Pakistan
       url: https://www.uscirf.gov/countries/pakistan
       date: '2023'
@@ -4041,6 +4745,14 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - *id009
+    - *id010
+    - *id008
+    - &id071
+      title: U.S. State Department IRF Report 2023 - Pakistan
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/pakistan/
+      date: '2023'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -4049,6 +4761,13 @@ countries:
     opendoors_score: 91
     christian_population: 2988865
     christian_percentage: 1.27
+    gcr_notes: ', Libya, and Iran rank highest; 15 countries fall in the “extreme”
+      category." } }, { "@type": "Question", "name": "How many Christians are persecuted
+      globally each year?", "acceptedAnswer": { "@type": "Answer", "text": "About
+      388 million Christians face high levels of persecution globally, roughly one
+      in seven worldwide and one in five in Africa." } }, { "@type": "Question", "name":
+      "What are the main causes of modern Christian persecution?", "acceptedAnswer":
+      { "@type": "Answer", "text": "Islam'
     morningstarnews_articles: 6
     morningstarnews_samples:
     - title: Court in Pakistan to Consider Hearing Case of Abducted Christian Girl
@@ -4077,6 +4796,63 @@ countries:
         four provinces were fabricated, according to media reports. The fabricated
         case
       source: Morning Star News
+    icc_articles: 3
+    icc_samples:
+    - title: Christian Brick Kiln Worker Killed for Drinking from a Muslim s Cooler
+      url: https://persecution.org/2026/07/20/christian-brick-kiln-worker-killed-for-drinking-from-a-muslims-cooler
+      date: '2026-07-20'
+      description: Overcome by thirst after working under the sweltering summer heat
+        in Pattoki, Pakistan, a Christian brick kiln worker reached for the closest
+        water cooler and took a sip. Doing so cost him his life. The worker, a 39-year-old
+        man named Sadique, had just finished stacking bricks before he took the dri
+      source: International Christian Concern
+    - title: European Parliament Stands with Pakistani Girl Fighting for Justice
+      url: https://persecution.org/2026/07/17/european-parliament-stands-with-pakistani-girl-fighting-for-justice
+      date: '2026-07-17'
+      description: 'The European Parliament condemned Pakistan on July 7 for its violation
+        of human rights, citing a 13-year-old Christian Pakistani girl who is still
+        fighting for her freedom from the 30-year-old Muslim man who abducted her.
+        Maria Shahbaz was kidnapped in July 2025 by Shehryar Ahmad, who forced her
+        to '
+      source: International Christian Concern
+    - title: Lahore Court Acquits Blind Christian Man in Falsified Blasphemy Case
+      url: https://persecution.org/2026/07/08/lahore-court-acquits-blind-christian-man-in-falsified-blasphemy-case
+      date: '2026-07-08'
+      description: Nadeem Masih, a visually impaired Christian accused of blasphemy,
+        has been acquitted by a court in Lahore, Pakistan, after spending 10 distressing
+        months in prison. Lahore Additional Sessions Judge Saad Salman Khan ordered
+        Masih’s acquittal due to the prosecution’s failure to provide sufficient evid
+      source: International Christian Concern
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Pakistani court issues prison sentence over anti - Christian riots
+      url: https://www.christianpost.com/news/pakistani-court-issues-prison-sentence-over-anti-christian-riots.html
+      date: '2026-07-15'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christianpost.com/news/pakistani-court-issues-prison-sentence-over-anti-christian-riots.html
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - The Pakistani government’s systematic enforcement of blasphemy laws severely
+      restricts freedom of religion or belief for all citizens, particularly targeting
+      Ahmadiyya Muslims. Authorities’ failure to address mob violence associated with
+      blasphemy accusations, as well as the forced conversions to Islam of individuals
+      from religious minorities—including Christians, Hindus, and Sikhs—continues
+      to reinforce a climate of fear and religious discrimination.
+    uscirf_url: https://www.uscirf.gov/countries/pakistan
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/pakistan/
+    state_dept_executive_summary: The constitution establishes Islam as the state
+      religion and requires all provisions of the law to be consistent with Islam.
+      The constitution states, “Subject to law, public order, and morality, every
+      citizen shall have the right to profess, practice, and propagate his religion.”
+      The penal code sets punishments for blasphemy that range from 10 years in prison
+      to the death penalty, although the government has never executed anyone for
+      blasphemy. It also states, “A person of the Qadiani group or the Lahori group
+      (who call themselves Ahmadis) is a non-Muslim.” The constitution and penal code
+      proh
+    state_dept_christian_mentions: true
     recent_incidents:
     - title: Court in Pakistan to Consider Hearing Case of Abducted Christian Girl
       url: https://morningstarnews.org/2026/07/court-in-pakistan-to-consider-hearing-case-of-abducted-christian-girl
@@ -4087,6 +4863,23 @@ countries:
         hoping Pakistan’s highest constitutional court will revisit a controversial
         ruling that '
       source: Morning Star News
+    - title: Christian Brick Kiln Worker Killed for Drinking from a Muslim s Cooler
+      url: https://persecution.org/2026/07/20/christian-brick-kiln-worker-killed-for-drinking-from-a-muslims-cooler
+      date: '2026-07-20'
+      description: Overcome by thirst after working under the sweltering summer heat
+        in Pattoki, Pakistan, a Christian brick kiln worker reached for the closest
+        water cooler and took a sip. Doing so cost him his life. The worker, a 39-year-old
+        man named Sadique, had just finished stacking bricks before he took the dri
+      source: International Christian Concern
+    - title: European Parliament Stands with Pakistani Girl Fighting for Justice
+      url: https://persecution.org/2026/07/17/european-parliament-stands-with-pakistani-girl-fighting-for-justice
+      date: '2026-07-17'
+      description: 'The European Parliament condemned Pakistan on July 7 for its violation
+        of human rights, citing a 13-year-old Christian Pakistani girl who is still
+        fighting for her freedom from the 30-year-old Muslim man who abducted her.
+        Maria Shahbaz was kidnapped in July 2025 by Shehryar Ahmad, who forced her
+        to '
+      source: International Christian Concern
     - title: Court Acquits Men Convicted of Killing Christian Couple in Pakistan
       url: https://morningstarnews.org/2026/07/court-acquits-men-convicted-of-killing-christian-couple-in-pakistan
       date: '2026-07-15'
@@ -4095,6 +4888,11 @@ countries:
         of the remaining three men convicted in the 2014 lynching of a Christian couple
         burned alive after being falsely accused of blasphemy, sources said. Christian '
       source: Morning Star News
+    - title: Pakistani court issues prison sentence over anti - Christian riots
+      url: https://www.christianpost.com/news/pakistani-court-issues-prison-sentence-over-anti-christian-riots.html
+      date: '2026-07-15'
+      description: ''
+      source: GDELT
     - title: Majority of Blasphemy Cases in Pakistan ‘Fabricated,’ Officials Say
       url: https://morningstarnews.org/2026/07/majority-of-blasphemy-cases-in-pakistan-fabricated-officials-say
       date: '2026-07-13'
@@ -4113,6 +4911,14 @@ countries:
         shopkeeper along with photographs of a Christian and his mother, sources said.
         A
       source: Morning Star News
+    - title: Lahore Court Acquits Blind Christian Man in Falsified Blasphemy Case
+      url: https://persecution.org/2026/07/08/lahore-court-acquits-blind-christian-man-in-falsified-blasphemy-case
+      date: '2026-07-08'
+      description: Nadeem Masih, a visually impaired Christian accused of blasphemy,
+        has been acquitted by a court in Lahore, Pakistan, after spending 10 distressing
+        months in prison. Lahore Additional Sessions Judge Saad Salman Khan ordered
+        Masih’s acquittal due to the prosecution’s failure to provide sufficient evid
+      source: International Christian Concern
     - title: Tensions Inflamed by Blasphemy Accusation in Pakistan
       url: https://morningstarnews.org/2026/07/tensions-inflamed-by-blasphemy-accusation-in-pakistan
       date: '2026-07-07'
@@ -4162,6 +4968,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023saudiarabia
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -4328,8 +5137,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023saudiarabia
+    - statedepartment2023
     sources:
-    - &id024
+    - &id028
       title: USCIRF 2023 Annual Report - Saudi Arabia
       url: https://www.uscirf.gov/countries/saudi-arabia
       date: '2023'
@@ -4337,6 +5149,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - &id072
+      title: U.S. State Department IRF Report 2023 - Saudi Arabia
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/saudi-arabia/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -4344,6 +5162,34 @@ countries:
     opendoors_score: 77
     christian_population: 1356705
     christian_percentage: 4.38
+    gcr_killed: 4849
+    gcr_notes: — No. 13 Myanmar — No. 14 Mali — No. 15 Christian Persecution in Nigeria
+      Nigeria remains the deadliest country in the world for Christians and it's not
+      even close. Of the 4,849 believers killed for their faith globally during the
+      reporting period, 3,490 of those deaths happened in Nigeria. That's roughly
+      72% of the worldwide total. Multiple armed groups drive this violence. Boko
+      Haram, the Islamic State West Africa Province (ISWAP), Fulani ethnic militias,
+      and a newer group called Mahmuda all ta
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom conditions in Saudi Arabia are particularly severe, as the
+      government prohibits the public practice of any religion other than Islam and
+      forbids all non-Muslim houses of worship. Judicial authorities penalize religious
+      dissenters with arbitrary and egregiously long prison sentences, and they have
+      executed hundreds of Shi’a Muslims for protesting religious freedom restrictions.
+      State textbooks also continue to promote intolerance directed at different religious
+      beliefs.
+    uscirf_url: https://www.uscirf.gov/countries/saudi-arabia
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/saudi-arabia/
+    state_dept_executive_summary: According to the 1992 Basic Law of Governance, the
+      country’s official religion is Islam, and the constitution is the Quran and
+      Sunna (traditions and practices based on the life of the Prophet Muhammad).
+      The legal system is based largely on sharia as interpreted by the Hanbali school
+      of Sunni Islamic jurisprudence. Freedom of religion is not provided for under
+      the law. The law criminalizes “anyone who challenges, either directly or indirectly,
+      the religion or justice of the King or Crown Prince.” The law prohibits “the
+      promotion of atheistic ideologies in any form,” “any attempt to cast doubt o
+    state_dept_christian_mentions: true
 - title: Somalia
   slug: somalia
   iso3: SOM
@@ -4376,7 +5222,10 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - morningstarnews2026
+    - statedepartment2023somalia
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -4465,9 +5314,12 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     - morningstarnews2026
+    - statedepartment2023somalia
+    - statedepartment2023
     sources:
-    - &id025
+    - &id029
       title: USCIRF 2023 Annual Report - Somalia
       url: https://www.uscirf.gov/countries/somalia
       date: '2023'
@@ -4475,6 +5327,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - *id009
+    - &id073
+      title: U.S. State Department IRF Report 2023 - Somalia
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/somalia/
+      date: '2023'
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -4483,6 +5341,13 @@ countries:
     opendoors_score: 96
     christian_population: 4367
     christian_percentage: 0.03
+    gcr_notes: ', Yemen, Sudan, Eritrea, Syria, Nigeria, Pakistan, Libya, and Iran
+      rank highest; 15 countries fall in the “extreme” category." } }, { "@type":
+      "Question", "name": "How many Christians are persecuted globally each year?",
+      "acceptedAnswer": { "@type": "Answer", "text": "About 388 million Christians
+      face high levels of persecution globally, roughly one in seven worldwide and
+      one in five in Africa." } }, { "@type": "Question", "name": "What are the main
+      causes of modern Christian persecution?", "acc'
     morningstarnews_articles: 1
     morningstarnews_samples:
     - title: Christian in Somaliland Poisoned to Death after Secret Conversion
@@ -4494,6 +5359,16 @@ countries:
         in April in an undisclosed town in Somaliland, a partially recognized state
         border
       source: Morning Star News
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/somalia/
+    state_dept_executive_summary: The provisional federal constitution (PFC) provides
+      for the right of individuals to practice their religion, makes Islam the state
+      religion, prohibits the propagation of any religion other than Islam, and stipulates
+      all laws must comply with the general principles of sharia. Much of the country
+      beyond greater Mogadishu remains outside federal government control. Federal
+      member state (FMS) administrations, including Puntland, Jubaland, South West
+      State, Hirshabelle, Galmudug, and self-declared independent Somaliland, govern
+      their respective jurisdictions through local legislation but do not ful
+    state_dept_christian_mentions: true
     recent_incidents:
     - title: Christian in Somaliland Poisoned to Death after Secret Conversion
       url: https://morningstarnews.org/2026/07/christian-in-somaliland-poisoned-to-death-after-secret-conversion
@@ -4535,6 +5410,10 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - gdelt2025
+    - statedepartment2023syria
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -4603,8 +5482,12 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - gdelt2025
+    - statedepartment2023syria
+    - statedepartment2023
     sources:
-    - &id026
+    - &id030
       title: USCIRF 2023 Annual Report - Syria
       url: https://www.uscirf.gov/countries/syria
       date: '2023'
@@ -4612,6 +5495,13 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - *id008
+    - &id074
+      title: U.S. State Department IRF Report 2023 - Syria
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/syria/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -4619,6 +5509,63 @@ countries:
     opendoors_score: 78
     christian_population: 808455
     christian_percentage: 3.84
+    gcr_notes: ', Nigeria, Pakistan, Libya, and Iran rank highest; 15 countries fall
+      in the “extreme” category." } }, { "@type": "Question", "name": "How many Christians
+      are persecuted globally each year?", "acceptedAnswer": { "@type": "Answer",
+      "text": "About 388 million Christians face high levels of persecution globally,
+      roughly one in seven worldwide and one in five in Africa." } }, { "@type": "Question",
+      "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
+      { "@type": "Answ'
+    gdelt_articles: 2
+    gdelt_samples:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
+    gdelt_sample_urls:
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Although President Bashar al-Assad’s government fell in December 2024, ending
+      that regime’s years of religious freedom and broader human rights violations,
+      Syria’s diverse religious communities face other threats. Both the interim authorities
+      in Damascus—led by U.S.-designated terrorists and longstanding FoRB violator
+      Hay’at Tahrir al-Sham (HTS)—and Turkish-backed Islamist militias in the north
+      and east pose threats to FoRB and to the future stability of the country.
+    uscirf_url: https://www.uscirf.gov/countries/syria
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/syria/
+    state_dept_executive_summary: The constitution declares the state shall respect
+      all religions and shall ensure the freedom to perform religious rituals as long
+      as these “do not disturb the public order.” There is no official state religion,
+      although the constitution states, “Islam is the religion of the President of
+      the republic.” The constitution states Islamic jurisprudence shall be a major
+      source of legislation, and the law prohibits conversion from Islam. Membership
+      in the Muslim Brotherhood or “Salafist” organizations remains illegal and punishable
+      with imprisonment or death. Sectarian violence continued during the ye
+    state_dept_christian_mentions: true
+    recent_incidents:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
 - title: Vietnam
   slug: vietnam
   iso3: VNM
@@ -4650,6 +5597,8 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023vietnam
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -4752,8 +5701,10 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023vietnam
+    - statedepartment2023
     sources:
-    - &id027
+    - &id031
       title: USCIRF 2023 Annual Report - Vietnam
       url: https://www.uscirf.gov/countries/vietnam
       date: '2023'
@@ -4761,6 +5712,11 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id075
+      title: U.S. State Department IRF Report 2023 - Vietnam
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/vietnam/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -4768,6 +5724,26 @@ countries:
     opendoors_score: 70
     christian_population: 8170016
     christian_percentage: 8.33
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom in Vietnam remains poor as the government regulates and controls
+      religious affairs through state-sponsored organizations. Authorities routinely
+      detain, arrest, imprison, and torture religious freedom advocates and members
+      of unrecognized religious groups that seek to operate independent of state control.
+      Various independent religious groups such as Cao Dai, Hoa Hao Buddhists, Khmer
+      Krom Buddhists, and Hmong and Montagnard Christians continue to suffer under
+      this persecution.
+    uscirf_url: https://www.uscirf.gov/countries/vietnam
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/vietnam/
+    state_dept_executive_summary: 'The constitution states that all individuals have
+      the right to freedom of belief and religion. The law provides for significant
+      government control over religious practices and includes vague provisions that
+      permit restrictions on religious freedom in the stated interest of national
+      security and social unity and enable local officials to make arbitrary decisions
+      on registration and recognition of new religious groups or places of worship.
+      The Law on Belief and Religion (LBR) maintains a multistage registration and
+      recognition process for religious groups requiring such decisions at each stage. '
+    state_dept_christian_mentions: true
 - title: Yemen
   slug: yemen
   iso3: YEM
@@ -4798,6 +5774,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023yemen
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -4900,8 +5879,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023yemen
+    - statedepartment2023
     sources:
-    - &id028
+    - &id032
       title: USCIRF 2023 Annual Report - Yemen
       url: https://www.uscirf.gov/countries/yemen
       date: '2023'
@@ -4909,6 +5891,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - &id076
+      title: U.S. State Department IRF Report 2023 - Yemen
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/yemen/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -4916,6 +5904,23 @@ countries:
     opendoors_score: 95
     christian_population: 20138
     christian_percentage: 0.06
+    gcr_notes: ', Sudan, Eritrea, Syria, Nigeria, Pakistan, Libya, and Iran rank highest;
+      15 countries fall in the “extreme” category." } }, { "@type": "Question", "name":
+      "How many Christians are persecuted globally each year?", "acceptedAnswer":
+      { "@type": "Answer", "text": "About 388 million Christians face high levels
+      of persecution globally, roughly one in seven worldwide and one in five in Africa."
+      } }, { "@type": "Question", "name": "What are the main causes of modern Christian
+      persecution?", "acceptedAn'
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/yemen/
+    state_dept_executive_summary: The constitution declares Islam the state religion.
+      It provides for freedom of thought and expression “within the limits of the
+      law” but does not mention freedom of religion, belief, or conscience. The constitution
+      states sharia is the source of all legislation, although it coexists with secular
+      common law and civil code models of law in a hybrid legal system. The law prohibits
+      denunciation of Islam, conversion from Islam to another religion, and proselytizing
+      directed at Muslims. Apostasy is a capital offense, and blasphemy is punishable
+      by fines or imprisonment. The conflict that began in 20
+    state_dept_christian_mentions: true
 - title: United States
   slug: united-states
   iso3: USA
@@ -4946,6 +5951,7 @@ countries:
     - pew2023america
     - freedomhouse2024
     - owid2024
+    - gcr2026
     - morningstarnews2026
     - forum18
     - mec
@@ -5856,31 +6862,40 @@ countries:
     - pew2023america
     - freedomhouse2024
     - owid2024
+    - gcr2026
     - morningstarnews2026
     - forum18
     - mec
     sources:
-    - &id029
+    - &id033
       title: USCIRF 2023 Annual Report - United States
       url: https://www.uscirf.gov/countries/united-states
       date: '2023'
-    - &id031
+    - &id035
       title: Pew Research - Religion in America
       url: https://www.pewresearch.org/religion/religious-landscape-study/
       date: '2023'
     - *id002
     - *id004
-    - *id006
-    - &id008
+    - *id005
+    - *id009
+    - &id012
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id007
+    - *id011
     freedom_house_status: Free
     freedom_house_pr: 2
     freedom_house_cl: 2
     christian_population: 217273083
     christian_percentage: 64.01
+    gcr_notes: reflects the severity, but the situation on the ground hasn't improved.
+      Christian Persecution in Syria Syria's jump in the 2026 rankings is one of the
+      most dramatic shifts in the World Watch List's history. The country vaulted
+      from No. 18 to No. 6 after the fall of the Assad regime in December 2024 and
+      the takeover by jihadist group Hay'at Tahrir al-Sham (HTS). Syria's violence
+      score surged from 7 to 16.1 out of a possible 16.7, and its overall persecution
+      score jumped 12 points to 90. The worst
     morningstarnews_articles: 1
     morningstarnews_samples:
     - title: Tensions Inflamed by Blasphemy Accusation in Pakistan
@@ -5969,6 +6984,8 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023brazil
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -6387,15 +7404,32 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023brazil
+    - statedepartment2023
     sources:
     - *id001
     - *id002
     - *id004
+    - &id077
+      title: U.S. State Department IRF Report 2023 - Brazil
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/brazil/
+      date: '2023'
+    - *id006
     freedom_house_status: Free
     freedom_house_pr: 2
     freedom_house_cl: 3
     christian_population: 168295544
     christian_percentage: 80.66
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/brazil/
+    state_dept_executive_summary: The constitution states freedom of conscience and
+      belief is inviolable, provides for the free exercise of religious beliefs, and
+      prohibits federal, state, and local governments from either supporting or hindering
+      any religion. The law contains penalties for acts of religious intolerance and
+      discrimination. Religious groups must register with the government to obtain
+      tax-exempt status. Public schools are required by law to offer religious instruction,
+      and all schools must teach Afro-Brazilian religion, history, and culture. In
+      July, religious representatives from Santa Catarina’s Afro-Brazilian
+    state_dept_christian_mentions: true
 - title: Uganda
   slug: uganda
   iso3: UGA
@@ -6421,6 +7455,8 @@ countries:
     - uscirf2023uganda
     - freedomhouse2024
     - owid2024
+    - statedepartment2023uganda
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -6489,18 +7525,35 @@ countries:
     - uscirf2023uganda
     - freedomhouse2024
     - owid2024
+    - statedepartment2023uganda
+    - statedepartment2023
     sources:
-    - &id030
+    - &id034
       title: USCIRF 2023 Annual Report - Uganda
       url: https://www.uscirf.gov/countries/uganda
       date: '2023'
     - *id002
     - *id004
+    - &id078
+      title: U.S. State Department IRF Report 2023 - Uganda
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/uganda/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
     christian_population: 39008617
     christian_percentage: 87.74
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/uganda/
+    state_dept_executive_summary: 'The constitution prohibits religious discrimination
+      and stipulates there shall be no state religion. It provides for freedom of
+      belief, the right to practice and promote any religion, and the right to belong
+      to and participate in the practices of any religious organization in a manner
+      consistent with the constitution. The government requires religious groups to
+      register. The Computer Misuse Amendment Act criminalizes as hate speech forms
+      of expression that “ridicule, degrade, or demean” individuals based on their
+      religion. In June, security agents forced their way into the residence of Muslim '
+    state_dept_christian_mentions: true
 - title: Algeria
   slug: algeria
   iso3: DZA
@@ -6524,6 +7577,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023algeria
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -6662,8 +7718,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023algeria
+    - statedepartment2023
     sources:
-    - &id032
+    - &id036
       title: USCIRF 2023 Annual Report - Algeria
       url: https://www.uscirf.gov/countries/algeria
       date: '2023'
@@ -6671,6 +7730,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - &id079
+      title: U.S. State Department IRF Report 2023 - Algeria
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/algeria/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -6678,6 +7743,32 @@ countries:
     opendoors_score: 74
     christian_population: 129920
     christian_percentage: 0.29
+    gcr_notes: ', all Protestant churches have been forced to close, which drives
+      the violence score down while pushing Christians into total isolation. Kidnappings:
+      3,302 Christians were abducted, with Nigeria, Sudan, and Mozambique the most
+      dangerous for this category. Frequently Asked Questions Which countries have
+      the highest levels of Christian persecution in 2026? The top 10 countries on
+      the 2026 World Watch List are North Korea, Somalia, Yemen, Sudan, Eritrea, Syria,
+      Nigeria, Pakistan, Libya, and Iran. A'
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Algeria engages in systematic repression of religious minority communities.
+      Authorities have persisted in their crackdown on Evangelical Protestant Christians,
+      shuttering and denying legal registration to churches—including their two largest
+      congregations in the country—and detaining members. The government also punishes
+      atheists and discriminates against Muslim communities that diverge from the
+      state-approved interpretation of Sunni Islam, including Shi’a and Ahmadi Muslims.
+    uscirf_url: https://www.uscirf.gov/countries/algeria
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/algeria/
+    state_dept_executive_summary: The constitution declares Islam to be the state
+      religion and prohibits state institutions from behaving in a manner that infringes
+      on Islamic morals. The law grants all individuals the right to practice their
+      religion if they respect public order and regulations. “Offending or insulting”
+      any religion is a criminal offense. The law criminalizes blasphemy but not apostasy.
+      Proselytizing to Muslims by non-Muslims is a crime. At the end of the year,
+      Ahmadi Muslim community leaders said 33 Ahmadi Muslims faced charges ranging
+      from blasphemy to illegal fundraising. In November, a court sentenced fiv
+    state_dept_christian_mentions: true
 - title: Bangladesh
   slug: bangladesh
   iso3: BGD
@@ -6701,6 +7792,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - icc2026
+    - statedepartment2023bangladesh
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -6787,8 +7881,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - icc2026
+    - statedepartment2023bangladesh
+    - statedepartment2023
     sources:
-    - &id033
+    - &id037
       title: USCIRF 2023 Annual Report - Bangladesh
       url: https://www.uscirf.gov/countries/bangladesh
       date: '2023'
@@ -6796,6 +7893,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id010
+    - &id080
+      title: U.S. State Department IRF Report 2023 - Bangladesh
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bangladesh/
+      date: '2023'
+    - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 4
@@ -6803,6 +7906,37 @@ countries:
     opendoors_score: 75
     christian_population: 499044
     christian_percentage: 0.3
+    icc_articles: 1
+    icc_samples:
+    - title: Christians in Bangladesh Hold Onto Fragile Stability Following Elections
+      url: https://persecution.org/2026/07/17/christians-in-bangladesh-hold-onto-fragile-stability-following-elections
+      date: '2026-07-17'
+      description: Following the August 2024 ousting of Bangladesh’s longtime leader
+        Sheikh Hasina, the country fell into a power vacuum. Amid the ensuing upheaval,
+        some people in this nation of 175 million (91% Muslim, 8% Hindu, and about
+        half of 1% Christian) seized the opportunity to attack religious minorities.
+        “C
+      source: International Christian Concern
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bangladesh/
+    state_dept_executive_summary: The constitution designates Islam as the state religion
+      but upholds the principle of secularism. It prohibits religious discrimination
+      and provides for equality for all religions. Family law, enforced in secular
+      courts, contains separate provisions for different religious groups. In March,
+      Ahmadi Muslim leaders said law enforcement and government officials stood by
+      as hundreds of persons attacked the Ahmadi community during its annual convention
+      in Ahmednagar. The violence resulted in two deaths, dozens of injuries, and
+      the looting and destruction of hundreds of Ahmadi houses, one Ahmadi mosqu
+    state_dept_christian_mentions: true
+    recent_incidents:
+    - title: Christians in Bangladesh Hold Onto Fragile Stability Following Elections
+      url: https://persecution.org/2026/07/17/christians-in-bangladesh-hold-onto-fragile-stability-following-elections
+      date: '2026-07-17'
+      description: Following the August 2024 ousting of Bangladesh’s longtime leader
+        Sheikh Hasina, the country fell into a power vacuum. Amid the ensuing upheaval,
+        some people in this nation of 175 million (91% Muslim, 8% Hindu, and about
+        half of 1% Christian) seized the opportunity to attack religious minorities.
+        “C
+      source: International Christian Concern
 - title: Central African Republic
   slug: central-african-republic
   iso3: CAF
@@ -6825,6 +7959,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - uscirf2026centralafricanrepublic
+    - statedepartment2023centralafricanrepublic
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -6963,8 +8100,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - uscirf2026centralafricanrepublic
+    - statedepartment2023centralafricanrepublic
+    - statedepartment2023
     sources:
-    - &id034
+    - &id038
       title: USCIRF 2023 Annual Report - Central African Republic
       url: https://www.uscirf.gov/countries/central-african-republic
       date: '2023'
@@ -6972,6 +8112,15 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id081
+      title: USCIRF Annual Report - Central African Republic
+      url: https://www.uscirf.gov/countries/central-african-republic
+      date: '2026'
+    - &id082
+      title: U.S. State Department IRF Report 2023 - Central African Republic
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/central-african-republic/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -6979,6 +8128,27 @@ countries:
     opendoors_score: 58
     christian_population: 4557904
     christian_percentage: 90.68
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom conditions in the Central African Republic (CAR) have not
+      significantly improved, despite the government and 14 nonstate armed groups
+      signing a new Political Agreement for Peace and Reconciliation (also referred
+      to as the “Khartoum Agreement”). Thousands of Central Africans have been displaced
+      over the past eight years, as militias organized, in part, along religious lines,
+      target entire communities for violence and persecution based on their religious
+      beliefs.
+    uscirf_url: https://www.uscirf.gov/countries/central-african-republic
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/central-african-republic/
+    state_dept_executive_summary: 'A new constitution went into effect in August.
+      Both the previous constitution and the new constitution establish the country
+      as a secular state. The new constitution provides for the right to manifest
+      one’s religion, “subject to respect for the law, public order, good morals,
+      and the rights of others.” Religious groups other than animists are required
+      to register, and registration may be denied to groups deemed morally offensive
+      or subversive. The head of state must take an oath to fulfill duties of the
+      office without consideration of religion. The UN Multidimensional Integrated
+      Stabilization '
+    state_dept_christian_mentions: true
 - title: Egypt
   slug: egypt
   iso3: EGY
@@ -7001,6 +8171,8 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023egypt
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -7103,8 +8275,10 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023egypt
+    - statedepartment2023
     sources:
-    - &id035
+    - &id039
       title: USCIRF 2023 Annual Report - Egypt
       url: https://www.uscirf.gov/countries/egypt
       date: '2023'
@@ -7112,6 +8286,11 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id083
+      title: U.S. State Department IRF Report 2023 - Egypt
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/egypt/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 6
@@ -7119,6 +8298,25 @@ countries:
     opendoors_score: 56
     christian_population: 5270537
     christian_percentage: 4.82
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Religious freedom conditions in Egypt are poor. Baha'is, Jehovah’s Witnesses,
+      and other religious minorities are unable to gain official recognition, impairing
+      their ability to participate in civic life. Coptic Christians, Jews, nonbelievers,
+      and other religious minorities remain subject to various forms of discrimination
+      from the government and society. State enforcement of blasphemy and cybercrimes
+      laws also remain key tools of systematic FoRB repression.
+    uscirf_url: https://www.uscirf.gov/countries/egypt
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/egypt/
+    state_dept_executive_summary: The constitution states that “freedom of belief
+      is absolute” and “the freedom of practicing religious rituals and establishing
+      worship places for the followers of “divine religions” [i.e., the three Abrahamic
+      faiths, Islam, Christianity, and Judaism] is a right regulated by law.” The
+      constitution states citizens “are equal before the law” and criminalizes discrimination
+      and “incitement to hatred” based upon religion. The constitution specifies Islam
+      as the state religion and the principles of sharia as the main source of legislation
+      but stipulates the canonical laws of Jews and Christians form
+    state_dept_christian_mentions: true
 - title: Haiti
   slug: haiti
   iso3: HTI
@@ -7140,6 +8338,8 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023haiti
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -7195,19 +8395,36 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023haiti
+    - statedepartment2023
     sources:
-    - &id036
+    - &id040
       title: USCIRF 2023 Annual Report - Haiti
       url: https://www.uscirf.gov/countries/haiti
       date: '2023'
     - *id001
     - *id002
     - *id004
+    - &id084
+      title: U.S. State Department IRF Report 2023 - Haiti
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
     christian_population: 9975391
     christian_percentage: 88.72
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
+    state_dept_executive_summary: The 1987 constitution provides for the free exercise
+      of all religions. Any religious group seeking official recognition must obtain
+      it through a multistep registration process with the Bureau of Worship (BOW),
+      a unit within the Ministry of Foreign Affairs. The government has a special
+      relationship with the Roman Catholic Church originating from a concordat between
+      the government and the Holy See that affords the Catholic Church certain privileges.
+      The concordat also accords the government the right of consent over the appointment
+      of Catholic archbishops and bishops, although the government has
+    state_dept_christian_mentions: true
 - title: Libya
   slug: libya
   iso3: LBY
@@ -7230,6 +8447,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023libya
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -7356,8 +8576,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023libya
+    - statedepartment2023
     sources:
-    - &id037
+    - &id041
       title: USCIRF 2023 Annual Report - Libya
       url: https://www.uscirf.gov/countries/libya
       date: '2023'
@@ -7365,6 +8588,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - &id085
+      title: U.S. State Department IRF Report 2023 - Libya
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/libya/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -7372,6 +8601,33 @@ countries:
     opendoors_score: 93
     christian_population: 36961
     christian_percentage: 0.52
+    gcr_notes: ', and Iran rank highest; 15 countries fall in the “extreme” category."
+      } }, { "@type": "Question", "name": "How many Christians are persecuted globally
+      each year?", "acceptedAnswer": { "@type": "Answer", "text": "About 388 million
+      Christians face high levels of persecution globally, roughly one in seven worldwide
+      and one in five in Africa." } }, { "@type": "Question", "name": "What are the
+      main causes of modern Christian persecution?", "acceptedAnswer": { "@type":
+      "Answer", "text": "Islamic extr'
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom conditions in Libya have significantly deteriorated amid the
+      country’s political fragmentation, as the Tripoli-based government detains and
+      prosecutes those it suspects of atheism, apostasy from Islam, and proselytization
+      for Christianity. Government-linked and independent militias operate across
+      the country, kidnapping and detaining Christian migrants and suspected converts
+      and harassing members of disfavored Muslim communities, such as Sufi and Ibadi
+      Muslims.
+    uscirf_url: https://www.uscirf.gov/countries/libya
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/libya/
+    state_dept_executive_summary: The 2011 Constitutional Declaration functions as
+      the interim constitution and states Islam is the state religion and sharia the
+      principal source of legislation. Proselytizing and the distribution or publication
+      of information aimed at changing the country’s “social structure” is illegal,
+      and the circulation of non-Islamic religious materials, missionary activity,
+      or speech considered “offensive to Muslims” is banned. The criminal code effectively
+      prohibits conversion from Islam. The Government of National Unity (GNU) exerted
+      limited control outside Tripoli and relied heavily on armed groups to
+    state_dept_christian_mentions: true
 - title: Malaysia
   slug: malaysia
   iso3: MYS
@@ -7393,6 +8649,8 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023malaysia
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -7530,19 +8788,46 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023malaysia
+    - statedepartment2023
     sources:
-    - &id038
+    - &id042
       title: USCIRF 2023 Annual Report - Malaysia
       url: https://www.uscirf.gov/countries/malaysia
       date: '2023'
     - *id001
     - *id002
     - *id004
+    - &id086
+      title: U.S. State Department IRF Report 2023 - Malaysia
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/malaysia/
+      date: '2023'
+    - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
     freedom_house_cl: 4
     christian_population: 3101974
     christian_percentage: 9.15
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Religious freedom conditions in Malaysia are poor amid a troubling rise in religious
+      polarization and restrictions. The country’s dual legal system of Shari’a and
+      civil courts privilege Islamic law, according to the Shaf’i school of Sunni
+      jurisprudence. The legal system further limits dissenting interpretations of
+      its principles through fatwas, legal action, and intrusive monitoring. The state
+      discriminates against Muslim groups that it views as representing “deviant”
+      versions of Islam.
+    uscirf_url: https://www.uscirf.gov/countries/malaysia
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/malaysia/
+    state_dept_executive_summary: The constitution states, “Islam is the religion
+      of the Federation; but other religions may be practiced in peace and harmony.”
+      Federal and state governments have the power to mandate doctrine for Muslims
+      and promote Sunni Islam above all other religious groups. The government continued
+      to maintain restrictions on religious assembly and practices by Islamic religious
+      groups that were not Sunni. Sedition laws criminalize speech that “promotes
+      ill will, hostility, or hatred on the grounds of religion.” The government maintains
+      a parallel legal system with certain civil matters for Muslims covered
+    state_dept_christian_mentions: true
 - title: Myanmar
   slug: myanmar
   iso3: MMR
@@ -7565,6 +8850,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023myanmar
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -7719,8 +9007,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023myanmar
+    - statedepartment2023
     sources:
-    - &id039
+    - &id043
       title: USCIRF 2023 Annual Report - Myanmar
       url: https://www.uscirf.gov/countries/myanmar
       date: '2023'
@@ -7728,6 +9019,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - &id087
+      title: U.S. State Department IRF Report 2023 - Myanmar
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/burma/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -7735,6 +9032,34 @@ countries:
     opendoors_score: 84
     christian_population: 3252951
     christian_percentage: 6.14
+    gcr_killed: 4849
+    gcr_notes: — No. 14 Mali — No. 15 Christian Persecution in Nigeria Nigeria remains
+      the deadliest country in the world for Christians and it's not even close. Of
+      the 4,849 believers killed for their faith globally during the reporting period,
+      3,490 of those deaths happened in Nigeria. That's roughly 72% of the worldwide
+      total. Multiple armed groups drive this violence. Boko Haram, the Islamic State
+      West Africa Province (ISWAP), Fulani ethnic militias, and a newer group called
+      Mahmuda all target Christian co
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom conditions in Burma have deteriorated amid the country’s ongoing
+      civil war. Burma’s military (the Tatmadaw) has displaced over 2.5 million people
+      since the 2021 coup, carrying out violence against minorities, particularly
+      Christians in Chin and Kachin States and Muslims in Rakhine State. The Tatmadaw
+      has further targeted religious communities by destroying hundreds of religious
+      sites and arresting and killing religious leaders.
+    uscirf_url: https://www.uscirf.gov/countries/burma
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/burma/
+    state_dept_executive_summary: The 2008 constitution was drafted by a previous
+      military regime and, according to the SAC, remains in force following the military
+      coup. The constitution guarantees every citizen “the right to freely profess
+      and practice religion subject to public order, morality, or health and to the
+      other provisions of this constitution.” The constitution prohibits speech or
+      acts insulting or defaming any religion or religious beliefs. As was the case
+      in previous years, it was sometimes difficult to categorize incidents as being
+      based solely on religious identity due to the close linkage between religion
+      and
+    state_dept_christian_mentions: true
 - title: Sudan
   slug: sudan
   iso3: SDN
@@ -7757,6 +9082,9 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023sudan
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -7933,8 +9261,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
+    - statedepartment2023sudan
+    - statedepartment2023
     sources:
-    - &id040
+    - &id044
       title: USCIRF 2023 Annual Report - Sudan
       url: https://www.uscirf.gov/countries/sudan
       date: '2023'
@@ -7942,6 +9273,12 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id005
+    - &id088
+      title: U.S. State Department IRF Report 2023 - Sudan
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/sudan/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -7949,6 +9286,30 @@ countries:
     opendoors_score: 90
     christian_population: 228321
     christian_percentage: 0.49
+    gcr_notes: ', Eritrea, Syria, Nigeria, Pakistan, Libya, and Iran rank highest;
+      15 countries fall in the “extreme” category." } }, { "@type": "Question", "name":
+      "How many Christians are persecuted globally each year?", "acceptedAnswer":
+      { "@type": "Answer", "text": "About 388 million Christians face high levels
+      of persecution globally, roughly one in seven worldwide and one in five in Africa."
+      } }, { "@type": "Question", "name": "What are the main causes of modern Christian
+      persecution?", "acceptedAnswer": '
+    uscirf_designation: none
+    uscirf_key_findings:
+    - Religious freedom conditions in Sudan have improved significantly, although
+      serious challenges remain. Within the first several months of assuming power,
+      the transitional government, under the leadership of Prime Minister Abdalla
+      Hamdok, has made concrete moves to improve religious freedom.
+    uscirf_url: https://www.uscirf.gov/countries/sudan
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/sudan/
+    state_dept_executive_summary: The 2019 constitutional declaration includes several
+      provisions protecting the right to freedom of religious belief and worship “in
+      accordance with the requirements of the law and public order.” As stipulated
+      in the declaration, existing laws and institutions governing religion are to
+      remain in effect while the government works to amend and restructure them. The
+      2020 Juba Peace Agreement (JPA), which was integrated into the 2019 constitutional
+      declaration, includes provisions to respect and promote religious freedom and
+      an agreement to establish a National Commission for Religious Freedom. Whi
+    state_dept_christian_mentions: true
 - title: Turkey
   slug: turkey
   iso3: TUR
@@ -7971,6 +9332,8 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023turkey
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -8121,8 +9484,10 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - statedepartment2023turkey
+    - statedepartment2023
     sources:
-    - &id041
+    - &id045
       title: USCIRF 2023 Annual Report - Turkey
       url: https://www.uscirf.gov/countries/turkey
       date: '2023'
@@ -8130,6 +9495,11 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id089
+      title: U.S. State Department IRF Report 2023 - Turkey
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/turkey/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
     freedom_house_cl: 6
@@ -8137,6 +9507,26 @@ countries:
     opendoors_score: 73
     christian_population: 117069
     christian_percentage: 0.14
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Religious freedom remains under threat in Turkey, as authorities continue to
+      prosecute theological dissenters for perceived insults to Islam; exert undue
+      administrative control over religious groups’ classification and registration;
+      and impede some communities’ access to houses of worship and clergy—including
+      expelling foreign Christian pastors under false pretenses of national security
+      risks. Some refugees face unlawful deportation to countries where they face
+      severe religious persecution.
+    uscirf_url: https://www.uscirf.gov/countries/turkey
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/turkey/
+    state_dept_executive_summary: The constitution defines the country as a secular
+      state. It provides for freedom of conscience, religious belief, conviction,
+      expression, and worship and prohibits discrimination based on religious grounds.
+      The Presidency of Religious Affairs (Diyanet), a state institution, governs
+      and coordinates religious matters related to Islam; its mandate is to enable
+      the practice of Islam, provide religious education, and manage religious institutions.
+      The penal code prohibits blasphemy and provides punishment for “inciting hatred
+      and enmity,” including showing public disrespect for religious beliefs, a
+    state_dept_christian_mentions: true
 - title: Venezuela
   slug: venezuela
   iso3: VEN
@@ -8158,6 +9548,8 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023venezuela
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -8355,19 +9747,37 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023venezuela
+    - statedepartment2023
     sources:
-    - &id042
+    - &id046
       title: USCIRF 2023 Annual Report - Venezuela
       url: https://www.uscirf.gov/countries/venezuela
       date: '2023'
     - *id001
     - *id002
     - *id004
+    - &id090
+      title: U.S. State Department IRF Report 2023 - Venezuela
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/venezuela/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
     christian_population: 25063617
     christian_percentage: 88.12
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/venezuela/
+    state_dept_executive_summary: The constitution provides for freedom of religion
+      on the condition its practice does not violate public morality, decency, or
+      public order. A 1964 concordat governs relations between Venezuela and the Holy
+      See and provides for state funding for Catholic Church-run schools. An antihate
+      law criminalizes political party activities promoting “fascism, intolerance,
+      or hatred.” Religious groups said they generally enjoyed freedom of religion
+      or belief so long as they refrained from criticizing Nicolas Maduro-aligned
+      figures or policies. Representatives of the conference of Roman Catholic bishops
+      (th
+    state_dept_christian_mentions: true
 - title: Zimbabwe
   slug: zimbabwe
   iso3: ZWE
@@ -8389,6 +9799,8 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023zimbabwe
+    - statedepartment2023
   pew_slug: ''
   metadata:
     shape_geo:
@@ -8476,19 +9888,36 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - statedepartment2023zimbabwe
+    - statedepartment2023
     sources:
-    - &id043
+    - &id047
       title: USCIRF 2023 Annual Report - Zimbabwe
       url: https://www.uscirf.gov/countries/zimbabwe
       date: '2023'
     - *id001
     - *id002
     - *id004
+    - &id091
+      title: U.S. State Department IRF Report 2023 - Zimbabwe
+      url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/zimbabwe/
+      date: '2023'
+    - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
     christian_population: 13539476
     christian_percentage: 87.2
+    state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/zimbabwe/
+    state_dept_executive_summary: The constitution prohibits religious discrimination
+      and provides for freedom of religion, including the freedom to practice, propagate,
+      and give expression to one’s religion, in public or in private and alone or
+      with others. The criminal code prohibits statements that are “insulting” or
+      “grossly provocative” and that cause offense to persons of a particular race,
+      tribe, place of origin, color, creed, or religion, or intend to cause such offense.
+      In September, the government enacted the Marriages Act that prohibits marriage
+      under the age of 18. The act also explicitly recognizes the roles of fa
+    state_dept_christian_mentions: true
 - title: Mali
   slug: mali
   iso3: MLI
@@ -8510,6 +9939,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
   pew_slug: ''
   metadata:
     shape_geo:
@@ -8675,11 +10105,13 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     sources:
     - *id001
     - *id002
     - *id003
     - *id004
+    - *id005
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -8687,6 +10119,13 @@ countries:
     opendoors_score: 83
     christian_population: 558426
     christian_percentage: 2.57
+    gcr_notes: 'a, Yemen, Sudan, Eritrea, Syria, Nigeria, Pakistan, Libya, and Iran
+      rank highest; 15 countries fall in the “extreme” category." } }, { "@type":
+      "Question", "name": "How many Christians are persecuted globally each year?",
+      "acceptedAnswer": { "@type": "Answer", "text": "About 388 million Christians
+      face high levels of persecution globally, roughly one in seven worldwide and
+      one in five in Africa." } }, { "@type": "Question", "name": "What are the main
+      causes of modern Christian persecution?", "ac'
 - title: Burkina Faso
   slug: burkina-faso
   iso3: BFA
@@ -9174,6 +10613,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - uscirf2025uzbekistan
   pew_slug: ''
   metadata:
     shape_geo:
@@ -9295,11 +10735,16 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - uscirf2025uzbekistan
     sources:
     - *id001
     - *id002
     - *id003
     - *id004
+    - &id054
+      title: USCIRF 2025 Annual Report - Uzbekistan
+      url: https://www.uscirf.gov/countries/uzbekistan
+      date: '2025'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -9307,6 +10752,15 @@ countries:
     opendoors_score: 62
     christian_population: 932125
     christian_percentage: 2.78
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Religious freedom conditions in Uzbekistan continue to deteriorate as the government
+      retreats from previous reforms. Authorities have increasingly invoked an expanding
+      and restrictive legal framework to target Muslims who deviate from the state’s
+      preferred interpretation of Islam as well as members of other religious groups.
+      The state routinely penalizes peaceful activities, including religious expression
+      and education, through detention, fines, and prison sentences.
+    uscirf_url: https://www.uscirf.gov/countries/uzbekistan
 - title: Niger
   slug: niger
   iso3: NER
@@ -9329,6 +10783,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
   pew_slug: ''
   metadata:
     shape_geo:
@@ -9458,11 +10913,13 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     sources:
     - *id001
     - *id002
     - *id003
     - *id004
+    - *id005
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 5
@@ -9470,6 +10927,13 @@ countries:
     opendoors_score: 82
     christian_population: 131926
     christian_percentage: 0.56
+    gcr_notes: 'ia, Pakistan, Libya, and Iran rank highest; 15 countries fall in the
+      “extreme” category." } }, { "@type": "Question", "name": "How many Christians
+      are persecuted globally each year?", "acceptedAnswer": { "@type": "Answer",
+      "text": "About 388 million Christians face high levels of persecution globally,
+      roughly one in seven worldwide and one in five in Africa." } }, { "@type": "Question",
+      "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
+      { "@type": "Answer", "t'
 - title: Turkmenistan
   slug: turkmenistan
   iso3: TKM
@@ -9492,6 +10956,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025turkmenistan
   pew_slug: ''
   metadata:
     shape_geo:
@@ -9612,15 +11077,29 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025turkmenistan
     sources:
     - *id001
     - *id002
     - *id004
+    - &id053
+      title: USCIRF 2025 Annual Report - Turkmenistan
+      url: https://www.uscirf.gov/countries/turkmenistan
+      date: '2025'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
     christian_population: 390253
     christian_percentage: 5.62
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom conditions in Turkmenistan remain terrible as the government
+      holds tight control over the religious sphere, criminalizing and viewing all
+      independent religious activity with profound suspicion and backing that distrust
+      with a large surveillance apparatus that monitors the religious activities of
+      all communities within the country and abroad. Religious groups must navigate
+      a restrictive legal framework, including intrusive registration criteria.
+    uscirf_url: https://www.uscirf.gov/countries/turkmenistan
 - title: Oman
   slug: oman
   iso3: OMN
@@ -9642,6 +11121,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
   pew_slug: ''
   metadata:
     shape_geo:
@@ -9749,11 +11229,13 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     sources:
     - *id001
     - *id002
     - *id003
     - *id004
+    - *id005
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -9761,6 +11243,8 @@ countries:
     opendoors_score: 63
     christian_population: 365012
     christian_percentage: 8.07
+    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
+      content="@GC_
 - title: Ethiopia
   slug: ethiopia
   iso3: ETH
@@ -10406,6 +11890,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - gcr2026
   pew_slug: ''
   metadata:
     shape_geo:
@@ -10576,15 +12061,24 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - gcr2026
     sources:
     - *id001
     - *id002
     - *id004
+    - *id005
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 4
     christian_population: 18882699
     christian_percentage: 61.34
+    gcr_notes: the most dangerous for this category. Frequently Asked Questions Which
+      countries have the highest levels of Christian persecution in 2026? The top
+      10 countries on the 2026 World Watch List are North Korea, Somalia, Yemen, Sudan,
+      Eritrea, Syria, Nigeria, Pakistan, Libya, and Iran. All 15 countries in the
+      "extreme" category scored between 85 and 97 out of 100 on Open Doors' persecution
+      measurement scale. How many Christians are persecuted globally each year? According
+      to the 2026 World Watch List,
 - title: Kazakhstan
   slug: kazakhstan
   iso3: KAZ
@@ -10605,6 +12099,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025kazakhstan
   pew_slug: ''
   metadata:
     shape_geo:
@@ -10841,15 +12336,29 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025kazakhstan
     sources:
     - *id001
     - *id002
     - *id004
+    - &id051
+      title: USCIRF 2025 Annual Report - Kazakhstan
+      url: https://www.uscirf.gov/countries/kazakhstan
+      date: '2025'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 5
     christian_population: 3758462
     christian_percentage: 19.29
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Religious freedom conditions in Kazakhstan are poor for all religious communities,
+      particularly Muslims who deviate from the state’s preferred interpretation of
+      Islam. Authorities arbitrarily enforce vague and often onerous provisions of
+      the 2011 religion law and the 2005 extremism law to penalize peaceful religious
+      activities. The government heavily promotes and invests in interfaith engagement
+      to distract from its ongoing religious freedom violations.
+    uscirf_url: https://www.uscirf.gov/countries/kazakhstan
 - title: Tajikistan
   slug: tajikistan
   iso3: TJK
@@ -10870,6 +12379,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025tajikistan
   pew_slug: ''
   metadata:
     shape_geo:
@@ -10964,15 +12474,29 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025tajikistan
     sources:
     - *id001
     - *id002
     - *id004
+    - &id055
+      title: USCIRF 2025 Annual Report - Tajikistan
+      url: https://www.uscirf.gov/countries/tajikistan
+      date: '2025'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
     christian_population: 97515
     christian_percentage: 1.0
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - The regime of President Emomali Rahmon tightly controls nearly all aspects of
+      religious life in Tajikistan. The government consistently uses arbitrary extremism
+      charges against religious minorities, particularly targeting Muslims who deviate
+      from the state’s preferred interpretation of Islam. Such disfavored communities
+      include ethnic Pamiri Ismaili Shi’a Muslims and individuals accused of affiliating
+      with banned religious groups.
+    uscirf_url: https://www.uscirf.gov/countries/tajikistan
 - title: Qatar
   slug: qatar
   iso3: QAT
@@ -10994,6 +12518,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - uscirf2026qatar
   pew_slug: ''
   metadata:
     shape_geo:
@@ -11025,11 +12550,16 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - uscirf2026qatar
     sources:
     - *id001
     - *id002
     - *id003
     - *id004
+    - &id092
+      title: USCIRF Annual Report - Qatar
+      url: https://www.uscirf.gov/countries/qatar
+      date: '2026'
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -11037,6 +12567,16 @@ countries:
     opendoors_score: 71
     christian_population: 351778
     christian_percentage: 12.55
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - The Qatari government systematically represses unregistered religious groups,
+      including Baha’is, Buddhists, and Hindus. It limits and monitors worship practices
+      for select Shi’a and Sunni Muslims and a few Chrisian denominations. It denies
+      Baha’is residency permits, prosecutes members of the community, and refuses
+      to issue marriage certificates or allocate burial grounds to them. Official
+      curriculum promotes and endorses discrimination against Christians, Jews, nonbelievers,
+      and Shi’a Muslims.
+    uscirf_url: https://www.uscirf.gov/countries/qatar
 - title: Comoros
   slug: comoros
   iso3: COM
@@ -11097,6 +12637,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
   pew_slug: ''
   metadata:
     shape_geo:
@@ -11232,11 +12773,13 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gcr2026
     sources:
     - *id001
     - *id002
     - *id003
     - *id004
+    - *id005
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 6
@@ -11244,6 +12787,13 @@ countries:
     opendoors_score: 52
     christian_population: 18303865
     christian_percentage: 69.83
+    gcr_notes: 'saw the highest numbers. Physical and mental abuse: 67,843 cases of
+      beatings, death threats, and other abuse for faith-related reasons, up from
+      54,780 the year before. Sexual violence and forced marriages: Cases jumped from
+      3,944 to 5,202. Church attacks: Dropped from 7,679 to 3,632, though this doesn''t
+      necessarily signal improvement. In Algeria, all Protestant churches have been
+      forced to close, which drives the violence score down while pushing Christians
+      into total isolation. Kidnappings: 3,3'
 - title: Brunei
   slug: brunei
   iso3: BRN
@@ -11327,6 +12877,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - forum18
+    - uscirf2025kyrgyzstan
   pew_slug: ''
   metadata:
     shape_geo:
@@ -11410,11 +12961,16 @@ countries:
     - freedomhouse2024
     - owid2024
     - forum18
+    - uscirf2025kyrgyzstan
     sources:
     - *id001
     - *id002
     - *id004
-    - *id008
+    - *id012
+    - &id052
+      title: USCIRF 2025 Annual Report - Kyrgyzstan
+      url: https://www.uscirf.gov/countries/kyrgyzstan
+      date: '2025'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 5
@@ -11430,6 +12986,15 @@ countries:
         for two months. The three men and two women face criminal charges of "Production
         and distribution of extremist materials". If convicted as a group, ea
       source: Forum 18
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Religious freedom conditions in Kyrgyzstan are severely restricted. A 2025 religion
+      law and related amendments have further undermined FoRB, including by imposing
+      stricter registration requirements on groups to engage in any religious activity.
+      Under this new framework, the government has increasingly targeted independent
+      Muslims who deviate from the state-imposed interpretation of Hanafi Sunni Islam
+      and members of other non-Islamic or “non-traditional” religious groups.
+    uscirf_url: https://www.uscirf.gov/countries/kyrgyzstan
     recent_incidents:
     - title: 'KYRGYZSTAN: Five Reform Adventists in 2-month pre-trial detention'
       url: https://www.forum18.org/archive.php?article_id=3054
@@ -11545,6 +13110,7 @@ countries:
     - odwwl2026
     - owid2024
     - forum18
+    - uscirf2025russia
   pew_slug: ''
   metadata:
     shape_geo:
@@ -12809,12 +14375,17 @@ countries:
     - odwwl2026
     - owid2024
     - forum18
+    - uscirf2025russia
     sources:
     - *id001
     - *id002
     - *id003
     - *id004
-    - *id008
+    - *id012
+    - &id048
+      title: USCIRF 2025 Annual Report - Russia
+      url: https://www.uscirf.gov/countries/russia
+      date: '2025'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -12834,6 +14405,16 @@ countries:
         for this amid inspections and searches and launching of a criminal case. The
         FSB raid
       source: Forum 18
+    uscirf_designation: CPC
+    uscirf_key_findings:
+    - Religious freedom conditions in Russia are particularly severe as the government
+      criminalizes the activities of multiple peaceful religious groups, including
+      Jehovah’s Witnesses, often labeling such organizations as “terrorist,” “extremist,”
+      or “undesirable.” Russia frequently persecutes religious leaders for expressing
+      religiously-based opposition to the Russian invasion of Ukraine and enforces
+      its legal framework on the religious activity on the Ukrainian territory it
+      illegally occupies.
+    uscirf_url: https://www.uscirf.gov/countries/russia
     recent_incidents:
     - title: 'RUSSIA: "Without any investigation, they''re already presuming us guilty",
         says pastor'
@@ -12865,6 +14446,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025azerbaijan
   pew_slug: ''
   metadata:
     shape_geo:
@@ -12965,15 +14547,30 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025azerbaijan
     sources:
     - *id001
     - *id002
     - *id004
+    - &id049
+      title: USCIRF 2025 Annual Report - Azerbaijan
+      url: https://www.uscirf.gov/countries/azerbaijan
+      date: '2025'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
     christian_population: 42730
     christian_percentage: 0.42
+    uscirf_designation: SWL
+    uscirf_key_findings:
+    - Religious freedom conditions in Azerbaijan are poor. Authorities detain Shi’a
+      Muslims whose religious practice falls outside the government's preferred interpretation
+      of Islam, and they reportedly subject detainees to mistreatment. Azerbaijan’s
+      religion law mandates strict state oversight of religious practice. Ongoing
+      repression of independent civil society limits reporting on religious freedom
+      violations, and historic Armenian religious sites in Nagorno-Karabakh remain
+      at risk of destruction.
+    uscirf_url: https://www.uscirf.gov/countries/azerbaijan
 - title: Sri Lanka
   slug: sri-lanka
   iso3: LKA
@@ -12994,6 +14591,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025srilanka
   pew_slug: ''
   metadata:
     shape_geo:
@@ -13026,15 +14624,29 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - uscirf2025srilanka
     sources:
     - *id001
     - *id002
     - *id004
+    - &id050
+      title: USCIRF 2025 Annual Report - Sri Lanka
+      url: https://www.uscirf.gov/countries/sri-lanka
+      date: '2025'
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
     christian_population: 1261286
     christian_percentage: 5.59
+    uscirf_designation: none
+    uscirf_key_findings:
+    - Religious freedom conditions in Sri Lanka are concerning. The government enforces
+      discriminatory legislation such as the Prevention of Terrorism Act (PTA) and
+      the International Covenant on Civil and Political Rights (ICCPR) Act to arbitrarily
+      detain religious minorities. Additionally, the government has coordinated with
+      Buddhist clergy to identify and expropriate land from Hindus and Muslims in
+      the North and East for the construction of Buddhist sites.
+    uscirf_url: https://www.uscirf.gov/countries/sri-lanka
 - title: Philippines
   slug: philippines
   iso3: PHL
@@ -13499,6 +15111,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - uscirf2026bahrain
   pew_slug: ''
   metadata:
     shape_geo: null
@@ -13510,11 +15123,16 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - uscirf2026bahrain
     sources:
     - *id001
     - *id002
     - *id003
     - *id004
+    - &id093
+      title: USCIRF Annual Report - Bahrain
+      url: https://www.uscirf.gov/countries/bahrain
+      date: '2026'
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 6
@@ -13522,6 +15140,16 @@ countries:
     opendoors_score: 50
     christian_population: 202789
     christian_percentage: 13.67
+    uscirf_designation: none
+    uscirf_key_findings:
+    - Religious freedom conditions in Bahrain are mostly stable, trending positive
+      in some areas but remaining the same in others. The government generally allows
+      freedom of worship for religious minorities, but continues its ongoing and systematic
+      discrimination against some Shi’a Muslims. While they are generally free to
+      worship, Shi’a Bahrainis have long faced difficulties in such areas as employment,
+      political representation, freedom of expression, promotion within the military
+      and mosque construction.
+    uscirf_url: https://www.uscirf.gov/countries/bahrain
 - title: Kenya
   slug: kenya
   iso3: KEN
@@ -13546,7 +15174,7 @@ countries:
   pew_slug: ''
   metadata:
     stub: true
-    auto_created_at: '2026-07-22T04:26:48.198578+00:00'
+    auto_created_at: '2026-07-22T04:38:04.707566+00:00'
     shape_geo:
       type: Polygon
       coordinates:
@@ -13633,7 +15261,7 @@ countries:
     - odwwl2026
     - owid2024
     sources:
-    - *id006
+    - *id009
     - *id002
     - *id003
     - *id004
@@ -13676,105 +15304,72 @@ sources:
       Faith 2022-24 / Report on Christian persecution
     url: https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/
     date: '2024'
-  uscirf2023afghanistan: *id009
+  uscirf2023afghanistan: *id013
   bbc2021:
     title: BBC News - Afghanistan Christians 2021
     url: https://www.bbc.com/news/world-asia-58293018
     date: '2021'
-  uscirf2023china: *id010
+  uscirf2023china: *id014
   pew2023china:
     title: Pew Research - Religion in China
     url: https://www.pewresearch.org/religion/2023/08/30/religion-in-china/
     date: '2023'
-  uscirf2023colombia: *id011
-  uscirf2023cuba: *id012
-  uscirf2023eritrea: *id013
-  uscirf2023india: *id014
-  uscirf2023indonesia: *id015
-  uscirf2023iran: *id016
-  uscirf2023iraq: *id017
-  uscirf2023laos: *id018
-  uscirf2023mexico: *id019
-  uscirf2023nicaragua: *id020
-  uscirf2023nigeria: *id021
-  uscirf2023northkorea: *id022
-  uscirf2023pakistan: *id023
-  uscirf2023saudiarabia: *id024
-  uscirf2023somalia: *id025
-  uscirf2023syria: *id026
-  uscirf2023vietnam: *id027
-  uscirf2023yemen: *id028
-  uscirf2023unitedstates: *id029
-  uscirf2023uganda: *id030
-  pew2023america: *id031
-  uscirf2023algeria: *id032
-  uscirf2023bangladesh: *id033
-  uscirf2023car: *id034
-  uscirf2023egypt: *id035
-  uscirf2023haiti: *id036
-  uscirf2023libya: *id037
-  uscirf2023malaysia: *id038
-  uscirf2023myanmar: *id039
-  uscirf2023sudan: *id040
-  uscirf2023turkey: *id041
-  uscirf2023venezuela: *id042
-  uscirf2023zimbabwe: *id043
+  uscirf2023colombia: *id015
+  uscirf2023cuba: *id016
+  uscirf2023eritrea: *id017
+  uscirf2023india: *id018
+  uscirf2023indonesia: *id019
+  uscirf2023iran: *id020
+  uscirf2023iraq: *id021
+  uscirf2023laos: *id022
+  uscirf2023mexico: *id023
+  uscirf2023nicaragua: *id024
+  uscirf2023nigeria: *id025
+  uscirf2023northkorea: *id026
+  uscirf2023pakistan: *id027
+  uscirf2023saudiarabia: *id028
+  uscirf2023somalia: *id029
+  uscirf2023syria: *id030
+  uscirf2023vietnam: *id031
+  uscirf2023yemen: *id032
+  uscirf2023unitedstates: *id033
+  uscirf2023uganda: *id034
+  pew2023america: *id035
+  uscirf2023algeria: *id036
+  uscirf2023bangladesh: *id037
+  uscirf2023car: *id038
+  uscirf2023egypt: *id039
+  uscirf2023haiti: *id040
+  uscirf2023libya: *id041
+  uscirf2023malaysia: *id042
+  uscirf2023myanmar: *id043
+  uscirf2023sudan: *id044
+  uscirf2023turkey: *id045
+  uscirf2023venezuela: *id046
+  uscirf2023zimbabwe: *id047
   freedomhouse2024: *id002
-  statedepartment2023:
-    title: U.S. State Department International Religious Freedom Report 2023
-    url: https://www.state.gov/international-religious-freedom-reports/
-    date: '2023'
+  statedepartment2023: *id006
   ohchr2024:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025:
-    title: GDELT Global Database of Events, Language, and Tone
-    url: https://www.gdeltproject.org/
-    date: '2025'
+  gdelt2025: *id008
   owid2024: *id004
   odwwl2026: *id003
-  uscirf2025russia:
-    title: USCIRF 2025 Annual Report - Russia
-    url: https://www.uscirf.gov/countries/russia
-    date: '2025'
-  uscirf2025azerbaijan:
-    title: USCIRF 2025 Annual Report - Azerbaijan
-    url: https://www.uscirf.gov/countries/azerbaijan
-    date: '2025'
-  uscirf2025srilanka:
-    title: USCIRF 2025 Annual Report - Sri Lanka
-    url: https://www.uscirf.gov/countries/sri-lanka
-    date: '2025'
-  uscirf2025kazakhstan:
-    title: USCIRF 2025 Annual Report - Kazakhstan
-    url: https://www.uscirf.gov/countries/kazakhstan
-    date: '2025'
-  uscirf2025kyrgyzstan:
-    title: USCIRF 2025 Annual Report - Kyrgyzstan
-    url: https://www.uscirf.gov/countries/kyrgyzstan
-    date: '2025'
-  uscirf2025turkmenistan:
-    title: USCIRF 2025 Annual Report - Turkmenistan
-    url: https://www.uscirf.gov/countries/turkmenistan
-    date: '2025'
-  uscirf2025uzbekistan:
-    title: USCIRF 2025 Annual Report - Uzbekistan
-    url: https://www.uscirf.gov/countries/uzbekistan
-    date: '2025'
-  uscirf2025tajikistan:
-    title: USCIRF 2025 Annual Report - Tajikistan
-    url: https://www.uscirf.gov/countries/tajikistan
-    date: '2025'
-  morningstarnews2026: *id006
+  uscirf2025russia: *id048
+  uscirf2025azerbaijan: *id049
+  uscirf2025srilanka: *id050
+  uscirf2025kazakhstan: *id051
+  uscirf2025kyrgyzstan: *id052
+  uscirf2025turkmenistan: *id053
+  uscirf2025uzbekistan: *id054
+  uscirf2025tajikistan: *id055
+  morningstarnews2026: *id009
   vid2026:
     title: Violent Incidents Database (IIRF/GCR)
     url: https://violentincidents.plataformac.org/
     date: '2026'
-  gcr2026:
-    title: Global Christian Relief - Persecution Statistics 2026
-    url: https://globalchristianrelief.org/stories/christian-persecution-statistics
-    date: '2026'
+  gcr2026: *id005
   acn2025:
     title: Aid to the Church in Need - Religious Freedom Report 2025
     url: https://acninternational.org/religiousfreedomreport/
@@ -13783,47 +15378,129 @@ sources:
     title: Christian Solidarity Worldwide - Persecution Reports
     url: https://www.csw.org.uk/
     date: '2026'
-  icc2026:
-    title: International Christian Concern - Global Persecution Reports
-    url: https://www.persecution.org/
-    date: '2026'
-  forum18: *id008
-  mec: *id007
-  bitterwinter: *id044
-  releaseintl: *id005
+  icc2026: *id010
+  forum18: *id012
+  mec: *id011
+  bitterwinter: *id056
+  releaseintl: *id007
+  statedepartment2023afghanistan: *id057
+  statedepartment2023china: *id058
+  statedepartment2023colombia: *id059
+  statedepartment2023cuba: *id060
+  statedepartment2023eritrea: *id061
+  statedepartment2023india: *id062
+  statedepartment2023indonesia: *id063
+  statedepartment2023iran: *id064
+  statedepartment2023iraq: *id065
+  statedepartment2023laos: *id066
+  statedepartment2023mexico: *id067
+  statedepartment2023nicaragua: *id068
+  statedepartment2023nigeria: *id069
+  statedepartment2023northkorea: *id070
+  statedepartment2023pakistan: *id071
+  statedepartment2023saudiarabia: *id072
+  statedepartment2023somalia: *id073
+  statedepartment2023syria: *id074
+  statedepartment2023vietnam: *id075
+  statedepartment2023yemen: *id076
+  statedepartment2023brazil: *id077
+  statedepartment2023uganda: *id078
+  statedepartment2023algeria: *id079
+  statedepartment2023bangladesh: *id080
+  uscirf2026centralafricanrepublic: *id081
+  statedepartment2023centralafricanrepublic: *id082
+  statedepartment2023egypt: *id083
+  statedepartment2023haiti: *id084
+  statedepartment2023libya: *id085
+  statedepartment2023malaysia: *id086
+  statedepartment2023myanmar: *id087
+  statedepartment2023sudan: *id088
+  statedepartment2023turkey: *id089
+  statedepartment2023venezuela: *id090
+  statedepartment2023zimbabwe: *id091
+  uscirf2026qatar: *id092
+  uscirf2026bahrain: *id093
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-07-22 04:26 UTC
+  generated_at: 2026-07-22 04:38 UTC
   source_statuses:
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-07-22T04:26:42.674846+00:00'
+    fetched_at: '2026-07-22T04:38:04.053213+00:00'
     message: null
   - name: wikipedia
     status: skipped
-    fetched_at: '2026-07-22T04:26:48.281822+00:00'
+    fetched_at: '2026-07-22T04:38:04.717323+00:00'
     message: ok=0 partial=0 failed=0
+  - name: acn
+    status: ok
+    fetched_at: '2026-07-22T04:37:54.462491+00:00'
+    message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-07-22T04:26:24.362082+00:00'
+    fetched_at: '2026-07-22T04:37:58.024615+00:00'
+    message: null
+  - name: csw
+    status: ok
+    fetched_at: '2026-07-22T04:37:55.352096+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-07-22T04:26:22.871580+00:00'
+    fetched_at: '2026-07-22T04:37:56.523611+00:00'
+    message: null
+  - name: freedomhouse
+    status: ok
+    fetched_at: '2026-07-22T04:35:25.908443+00:00'
+    message: null
+  - name: gcr
+    status: ok
+    fetched_at: '2026-07-22T04:37:53.570493+00:00'
+    message: null
+  - name: gdelt
+    status: partial
+    fetched_at: '2026-07-22T04:36:15.371490+00:00'
+    message: 3 of 4 queries failed
+  - name: icc
+    status: ok
+    fetched_at: '2026-07-22T04:37:55.685445+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-07-22T04:26:23.561556+00:00'
+    fetched_at: '2026-07-22T04:37:57.253514+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-07-22T04:26:22.379091+00:00'
+    fetched_at: '2026-07-22T04:37:50.701167+00:00'
+    message: null
+  - name: ohchr
+    status: failed
+    fetched_at: '2026-07-22T04:37:49.802107+00:00'
+    message: api unavailable, no cache
+  - name: opendoors
+    status: partial
+    fetched_at: '2026-07-22T04:35:25.061518+00:00'
+    message: static fallback used
+  - name: owid
+    status: ok
+    fetched_at: '2026-07-22T04:35:26.453808+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-07-22T04:26:21.707152+00:00'
+    fetched_at: '2026-07-22T04:37:59.134786+00:00'
     message: null
+  - name: statedepartment
+    status: partial
+    fetched_at: '2026-07-22T04:37:49.107239+00:00'
+    message: 1 of 35 failed
+  - name: uscirf
+    status: partial
+    fetched_at: '2026-07-22T04:36:54.227982+00:00'
+    message: 1 of 35 failed
+  - name: vid
+    status: failed
+    fetched_at: '2026-07-22T04:37:51.999053+00:00'
+    message: unavailable, no cache
   data_sources:
     freedom_house: data/fetched/freedom_house.json
     opendoors: data/fetched/opendoors.json
