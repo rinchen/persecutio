@@ -36,7 +36,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id003
+    - &id002
       title: USCIRF 2023 Annual Report - Afghanistan
       url: https://www.uscirf.gov/countries/afghanistan
       date: '2023'
@@ -228,7 +228,7 @@ countries:
   pew_slug: china
   metadata:
     sources:
-    - &id004
+    - &id003
       title: USCIRF 2023 Annual Report - China
       url: https://www.uscirf.gov/countries/china
       date: '2023'
@@ -755,7 +755,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id005
+    - &id004
       title: USCIRF 2023 Annual Report - Colombia
       url: https://www.uscirf.gov/countries/colombia
       date: '2023'
@@ -1000,7 +1000,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id006
+    - &id005
       title: USCIRF 2023 Annual Report - Cuba
       url: https://www.uscirf.gov/countries/cuba
       date: '2023'
@@ -1130,7 +1130,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id007
+    - &id006
       title: USCIRF 2023 Annual Report - Eritrea
       url: https://www.uscirf.gov/countries/eritrea
       date: '2023'
@@ -1231,7 +1231,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id008
+    - &id007
       title: USCIRF 2023 Annual Report - India
       url: https://www.uscirf.gov/countries/india
       date: '2023'
@@ -1549,7 +1549,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id009
+    - &id008
       title: USCIRF 2023 Annual Report - Indonesia
       url: https://www.uscirf.gov/countries/indonesia
       date: '2023'
@@ -2094,7 +2094,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id010
+    - &id009
       title: USCIRF 2023 Annual Report - Iran
       url: https://www.uscirf.gov/countries/iran
       date: '2023'
@@ -2292,7 +2292,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id011
+    - &id010
       title: USCIRF 2023 Annual Report - Iraq
       url: https://www.uscirf.gov/countries/iraq
       date: '2023'
@@ -2396,7 +2396,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id012
+    - &id011
       title: USCIRF 2023 Annual Report - Laos
       url: https://www.uscirf.gov/countries/laos
       date: '2023'
@@ -2515,7 +2515,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id013
+    - &id012
       title: USCIRF 2023 Annual Report - Mexico
       url: https://www.uscirf.gov/countries/mexico
       date: '2023'
@@ -2900,7 +2900,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id014
+    - &id013
       title: USCIRF 2023 Annual Report - Nicaragua
       url: https://www.uscirf.gov/countries/nicaragua
       date: '2023'
@@ -3050,7 +3050,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id015
+    - &id014
       title: USCIRF 2023 Annual Report - Nigeria
       url: https://www.uscirf.gov/countries/nigeria
       date: '2023'
@@ -3210,7 +3210,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id016
+    - &id015
       title: USCIRF 2023 Annual Report - North Korea
       url: https://www.uscirf.gov/countries/north-korea
       date: '2023'
@@ -3352,7 +3352,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id017
+    - &id016
       title: USCIRF 2023 Annual Report - Pakistan
       url: https://www.uscirf.gov/countries/pakistan
       date: '2023'
@@ -3529,7 +3529,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id018
+    - &id017
       title: USCIRF 2023 Annual Report - Saudi Arabia
       url: https://www.uscirf.gov/countries/saudi-arabia
       date: '2023'
@@ -3727,7 +3727,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id019
+    - &id018
       title: USCIRF 2023 Annual Report - Somalia
       url: https://www.uscirf.gov/countries/somalia
       date: '2023'
@@ -3846,7 +3846,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id020
+    - &id019
       title: USCIRF 2023 Annual Report - Syria
       url: https://www.uscirf.gov/countries/syria
       date: '2023'
@@ -3945,7 +3945,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id021
+    - &id020
       title: USCIRF 2023 Annual Report - Vietnam
       url: https://www.uscirf.gov/countries/vietnam
       date: '2023'
@@ -4077,7 +4077,7 @@ countries:
   pew_slug: ''
   metadata:
     sources:
-    - &id022
+    - &id021
       title: USCIRF 2023 Annual Report - Yemen
       url: https://www.uscirf.gov/countries/yemen
       date: '2023'
@@ -4204,31 +4204,23 @@ countries:
   source_ids:
     historical:
     - pew2023america
-    - acn2024
     modern:
     - uscirf2023unitedstates
     - pew2023america
-    - acn2024
   pew_slug: america
   metadata:
     sources:
-    - &id023
+    - &id022
       title: USCIRF 2023 Annual Report - United States
       url: https://www.uscirf.gov/countries/united-states
       date: '2023'
-    - &id025
+    - &id024
       title: Pew Research - Religion in America
       url: https://www.pewresearch.org/religion/religious-landscape-study/
       date: '2023'
-    - &id002
-      title: ACN Persecuted and Forgotten? ACN report on Christians oppressed for
-        their Faith 2022-24 / Report on Christian persecution
-      url: https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/
-      date: '2024'
     source_ids:
     - uscirf2023unitedstates
     - pew2023america
-    - acn2024
     shape_geo:
       type: MultiPolygon
       coordinates:
@@ -5591,21 +5583,17 @@ countries:
   source_ids:
     historical:
     - uscirf2023uganda
-    - acn2024
     modern:
     - uscirf2023uganda
-    - acn2024
   pew_slug: ''
   metadata:
     sources:
-    - &id024
+    - &id023
       title: USCIRF 2023 Annual Report - Uganda
       url: https://www.uscirf.gov/countries/uganda
       date: '2023'
-    - *id002
     source_ids:
     - uscirf2023uganda
-    - acn2024
     shape_geo:
       type: Polygon
       coordinates:
@@ -5691,8 +5679,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id025
+      title: USCIRF 2023 Annual Report - Algeria
+      url: https://www.uscirf.gov/countries/algeria
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023algeria
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -5847,8 +5840,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id026
+      title: USCIRF 2023 Annual Report - Bangladesh
+      url: https://www.uscirf.gov/countries/bangladesh
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023bangladesh
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -5950,8 +5948,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id027
+      title: USCIRF 2023 Annual Report - Central African Republic
+      url: https://www.uscirf.gov/countries/central-african-republic
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023car
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -6105,8 +6108,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id028
+      title: USCIRF 2023 Annual Report - Egypt
+      url: https://www.uscirf.gov/countries/egypt
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023egypt
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -6224,8 +6232,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id029
+      title: USCIRF 2023 Annual Report - Haiti
+      url: https://www.uscirf.gov/countries/haiti
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023haiti
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -6297,8 +6310,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id030
+      title: USCIRF 2023 Annual Report - Libya
+      url: https://www.uscirf.gov/countries/libya
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023libya
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -6440,8 +6458,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id031
+      title: USCIRF 2023 Annual Report - Malaysia
+      url: https://www.uscirf.gov/countries/malaysia
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023malaysia
     - odwwl2024
     shape_geo:
       type: MultiPolygon
@@ -6595,8 +6618,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id032
+      title: USCIRF 2023 Annual Report - Myanmar
+      url: https://www.uscirf.gov/countries/myanmar
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023myanmar
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -6755,7 +6783,7 @@ countries:
     Mountains and Blue Nile and periodic militia threats still imperil Christian communities,
     schools, and churches.
   historical: Christianity in Sudan traces back to ancient Nubian kingdoms and continued
-    under centuries of Islamic sultanates. late-20th-century missionary activity expanded
+    under centuries of Islamic sultanates. Late-20th-century missionary activity expanded
     churches in the south and among displaced communities.
   source_ids:
     historical:
@@ -6766,8 +6794,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id033
+      title: USCIRF 2023 Annual Report - Sudan
+      url: https://www.uscirf.gov/countries/sudan
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023sudan
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -6959,8 +6992,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id034
+      title: USCIRF 2023 Annual Report - Turkey
+      url: https://www.uscirf.gov/countries/turkey
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023turkey
     - odwwl2024
     shape_geo:
       type: MultiPolygon
@@ -7126,8 +7164,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id035
+      title: USCIRF 2023 Annual Report - Venezuela
+      url: https://www.uscirf.gov/countries/venezuela
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023venezuela
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -7341,8 +7384,13 @@ countries:
   pew_slug: ''
   metadata:
     sources:
+    - &id036
+      title: USCIRF 2023 Annual Report - Zimbabwe
+      url: https://www.uscirf.gov/countries/zimbabwe
+      date: '2023'
     - *id001
     source_ids:
+    - uscirf2023zimbabwe
     - odwwl2024
     shape_geo:
       type: Polygon
@@ -7426,38 +7474,60 @@ countries:
     country_polygon: true
 sources:
   odwwl2024: *id001
-  acn2024: *id002
-  uscirf2023afghanistan: *id003
+  acn2024:
+    title: ACN Persecuted and Forgotten? ACN report on Christians oppressed for their
+      Faith 2022-24 / Report on Christian persecution
+    url: https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/
+    date: '2024'
+  uscirf2023afghanistan: *id002
   bbc2021:
     title: BBC News - Afghanistan Christians 2021
     url: https://www.bbc.com/news/world-asia-58293018
     date: '2021'
-  uscirf2023china: *id004
+  uscirf2023china: *id003
   pew2023china:
     title: Pew Research - Religion in China
     url: https://www.pewresearch.org/religion/2023/08/30/religion-in-china/
     date: '2023'
-  uscirf2023colombia: *id005
-  uscirf2023cuba: *id006
-  uscirf2023eritrea: *id007
-  uscirf2023india: *id008
-  uscirf2023indonesia: *id009
-  uscirf2023iran: *id010
-  uscirf2023iraq: *id011
-  uscirf2023laos: *id012
-  uscirf2023mexico: *id013
-  uscirf2023nicaragua: *id014
-  uscirf2023nigeria: *id015
-  uscirf2023northkorea: *id016
-  uscirf2023pakistan: *id017
-  uscirf2023saudiarabia: *id018
-  uscirf2023somalia: *id019
-  uscirf2023syria: *id020
-  uscirf2023vietnam: *id021
-  uscirf2023yemen: *id022
-  uscirf2023unitedstates: *id023
-  uscirf2023uganda: *id024
-  pew2023america: *id025
+  uscirf2023colombia: *id004
+  uscirf2023cuba: *id005
+  uscirf2023eritrea: *id006
+  uscirf2023india: *id007
+  uscirf2023indonesia: *id008
+  uscirf2023iran: *id009
+  uscirf2023iraq: *id010
+  uscirf2023laos: *id011
+  uscirf2023mexico: *id012
+  uscirf2023nicaragua: *id013
+  uscirf2023nigeria: *id014
+  uscirf2023northkorea: *id015
+  uscirf2023pakistan: *id016
+  uscirf2023saudiarabia: *id017
+  uscirf2023somalia: *id018
+  uscirf2023syria: *id019
+  uscirf2023vietnam: *id020
+  uscirf2023yemen: *id021
+  uscirf2023unitedstates: *id022
+  uscirf2023uganda: *id023
+  pew2023america: *id024
+  uscirf2023algeria: *id025
+  uscirf2023bangladesh: *id026
+  uscirf2023car: *id027
+  uscirf2023egypt: *id028
+  uscirf2023haiti: *id029
+  uscirf2023libya: *id030
+  uscirf2023malaysia: *id031
+  uscirf2023myanmar: *id032
+  uscirf2023sudan: *id033
+  uscirf2023turkey: *id034
+  uscirf2023venezuela: *id035
+  uscirf2023zimbabwe: *id036
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-07-22 02:16 UTC
+  generated_at: 2026-07-22 02:19 UTC
+  source_statuses:
+  - name: natural_earth_110m
+    url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
+    status: ok
+    fetched_at: '2026-07-22T02:19:39.519868+00:00'
+    message: null

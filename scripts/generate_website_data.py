@@ -16,6 +16,46 @@ countries = data.get("countries")
 if not countries:
     raise SystemExit("data/countries.yml is missing or has no 'countries' list")
 
+source_statuses = data.get("fetched", {}).get("source_statuses") or []
+
+
+def format_source_status(statuses):
+    if not statuses:
+        return "no source pull data"
+    ok = []
+    failed = []
+    cached = []
+    partial = []
+    unknown = []
+    for s in statuses:
+        name = s.get("name") if isinstance(s, dict) else None
+        state = ((s or {}).get("status") or "unknown")
+        stamp = ((s or {}).get("fetched_at") or "")
+        label = name or "source"
+        if state == "ok":
+            ok.append(f"{label} fetched {stamp}")
+        elif state == "cached":
+            cached.append(f"{label} cached {stamp}")
+        elif state == "partial":
+            partial.append(f"{label} partial")
+        elif state == "failed":
+            failed.append(f"{label} failed")
+        else:
+            unknown.append(f"{label} {state}")
+    parts = []
+    if ok:
+        parts.append("; ".join(sorted(ok)[:2]))
+    if partial:
+        parts.append("partial: " + ", ".join(sorted(partial)[:2]))
+    if cached:
+        parts.append("cached: " + ", ".join(sorted(cached)[:2]))
+    if failed or unknown:
+        parts.append("failed/unknown: " + ", ".join(sorted(failed + unknown)[:2]))
+    return "last pull: " + ("; ".join(parts) if parts else "unknown")
+
+
+last_pull_text = format_source_status(source_statuses)
+
 PAGE = """\
 <!DOCTYPE html>
 <html lang="en">
@@ -92,6 +132,10 @@ footer a {{ color:#334155; text-decoration: underline; }}
 <footer>
   <div class="wrap" style="padding:14px 16px;">
     <div style="margin-top:6px">Data updated automatically via GitHub Actions. Last generated: {generated_at}</div>
+    <div class="footer-status-line">
+      <strong>Source status:</strong>
+      {last_pull_text}
+    </div>
   </div>
 </footer>
 </body>
@@ -178,6 +222,7 @@ for c in countries:
         status_label=label,
         status_color=color,
         generated_at=generated_at,
+        last_pull_text=last_pull_text,
     )
     (COUNTRIES / f"{slug}.html").write_text(page_html, encoding="utf-8")
     print("wrote", slug)
