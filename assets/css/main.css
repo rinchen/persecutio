@@ -195,11 +195,10 @@ footer {
   color: #64748b;
   background: #fff;
 }
-
-.footer-sources {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+footer .wrap {
+  display: block;
+  max-width: 1400px;
+  padding: 10px 16px;
 }
 
 .source-chips-head {
