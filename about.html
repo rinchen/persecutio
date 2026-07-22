@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How it works | Christian Persecution World Map</title>
+  <title>About | Christian Persecution World Map</title>
+  <link rel="icon" href="assets/img/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif; background: #f8fafc; color: #0f172a; }
     .wrap { max-width: 1100px; margin: 0 auto; padding: 16px; }
-    header, footer { background: #fff; }
-    header a, footer a { color: inherit; text-decoration: none; }
-    header a:hover, footer a:hover { text-decoration: underline; }
-    nav a { color: #334155; }
-    nav a:hover { color: #0f172a; }
+    header { background: #0b132b; color: #fff; }
+    header a { color: inherit; text-decoration: none; }
+    header a:hover { text-decoration: underline; }
+    nav a { color: #cbd5e1; }
+    nav a:hover { color: #fff; }
     main { padding: 24px 16px; }
-    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
-    .card header { padding: 16px; border-bottom: 1px solid #e5e7eb; }
-    .card header h1 { margin: 0; font-size: 22px; }
-    .card .content { padding: 16px; }
     .post { max-width: 780px; margin: 0 auto; padding: 20px 16px 28px; }
     .post h1 { font-size: 22px; margin: 0 0 8px; }
     .post h2 { font-size: 16px; margin: 18px 0 6px; color: #0b132b; }
@@ -26,22 +24,23 @@
     .post p + p { margin-top: 10px; }
     .post ul, .post ol { margin: 8px 0; padding-left: 22px; color: #1e293b; }
     .post li + li { margin-top: 5px; }
-    .post code { background: #f1f5f9; border: 1px solid #e5e7eb; border-radius: 6px; padding: 2px 5px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .post a { color: #2563eb; word-break: break-word; }
+    .post a:hover { color: #1d4ed8; }
     .back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: #334155; text-decoration: none; border: 1px solid #e5e7eb; background: #fff; padding: 6px 10px; border-radius: 10px; }
     .back:hover { color: #0f172a; border-color: #cbd5e1; }
-    .prose { max-width: 780px; margin: 0 auto; padding: 22px 16px 28px; }
-    .prose h1 { font-size: 22px; margin: 0 0 8px; }
-    .prose h2 { font-size: 16px; margin: 18px 0 6px; color: #0b132b; }
-    .prose p { margin: 0; line-height: 1.6; color: #1e293b; }
-    .prose p + p { margin-top: 10px; }
-    .prose ul, .prose ol { margin: 8px 0; padding-left: 22px; color: #1e293b; }
-    .prose li + li { margin-top: 5px; }
-    .prose code { background: #f1f5f9; border: 1px solid #e5e7eb; border-radius: 6px; padding: 2px 5px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .prose a { color: #2563eb; word-break: break-word; }
-    .prose a:hover { color: #1d4ed8; }
-    .foot { border-top: 1px solid #e5e7eb; padding: 14px 16px; font-size: 13px; color: #64748b; background: #fff; }
-    .foot a { color: #334155; text-decoration: underline; }
     .callout { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 14px; color: #334155; font-size: 14px; line-height: 1.5; }
+    .sources-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px; }
+    .sources-table th { text-align: left; padding: 6px 10px; border-bottom: 2px solid #e5e7eb; color: #0b132b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .sources-table td { padding: 6px 10px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+    .sources-table tr:last-child td { border-bottom: none; }
+    .abbr-badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 11px; font-weight: 600; background: #e2e8f0; color: #334155; }
+    .status-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 13px; color: #475569; }
+    .status-legend span { display: inline-flex; align-items: center; gap: 4px; }
+    .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+    .swatch--ok { background: #dcfce7; box-shadow: inset 0 0 0 1px #166534; }
+    .swatch--partial { background: #fef3c7; box-shadow: inset 0 0 0 1px #92400e; }
+    .swatch--error { background: #fee2e2; box-shadow: inset 0 0 0 1px #991b1b; }
+    .swatch--skipped { background: #e2e8f0; box-shadow: inset 0 0 0 1px #475569; }
   </style>
 </head>
 <body>
@@ -50,21 +49,67 @@
       <a href="index.html" style="font-weight:600">Christian Persecution World Map</a>
       <nav style="display:flex;gap:14px;font-size:14px">
         <a href="index.html">Map</a>
-        <a href="about.html">How it works</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
   </header>
 
   <main>
     <div class="post">
-      <h1>How this site works</h1>
+      <h1>About this site</h1>
       <p>This is a static site hosted on GitHub Pages. There is no application server. Country pages and index data are generated from structured source records and updated automatically via GitHub Actions.</p>
 
       <h2>What the map shows</h2>
       <p>The map uses color-coded markers to reflect country-level persecution severity: red for Extreme/Very High, orange for High, yellow for Moderate, and blue for Low. Clicking a country opens a page with context, documented incidents, and linked sources.</p>
 
       <h2>Data sources</h2>
-      <p>This project relies on publicly available reports. Core sources include the <a href="https://www.opendoorsusa.org/christian-persecution/world-watch-list/" target="_blank" rel="noopener">Open Doors World Watch List</a>, <a href="https://www.uscirf.gov/" target="_blank" rel="noopener">USCIRF country reports</a>, <a href="https://www.pewresearch.org/religion/" target="_blank" rel="noopener">Pew Research</a> religion studies, and documented news reporting. Country pages reference the specific reports used for that entry.</p>
+      <p>This project relies on publicly available reports. Country pages reference the specific reports used for each entry. The table below lists the organizations whose data feeds into this site.</p>
+
+      <table class="sources-table">
+        <thead>
+          <tr><th>Abbr</th><th>Source</th><th>What it covers</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="abbr-badge">OD</span></td>
+            <td><a href="https://www.opendoorsusa.org/christian-persecution/world-watch-list/" target="_blank" rel="noopener">Open Doors World Watch List</a></td>
+            <td>Annual ranking of countries where Christians face the most persecution</td>
+          </tr>
+          <tr>
+            <td><span class="abbr-badge">UC</span></td>
+            <td><a href="https://www.uscirf.gov/" target="_blank" rel="noopener">USCIRF Annual Reports</a></td>
+            <td>U.S. Commission on International Religious Freedom country reports</td>
+          </tr>
+          <tr>
+            <td><span class="abbr-badge">ACN</span></td>
+            <td><a href="https://acninternational.org/" target="_blank" rel="noopener">Aid to the Church in Need</a></td>
+            <td>Persecuted and Forgotten? report on Christians oppressed for their faith</td>
+          </tr>
+          <tr>
+            <td><span class="abbr-badge">Pew</span></td>
+            <td><a href="https://www.pewresearch.org/religion/" target="_blank" rel="noopener">Pew Research Center</a></td>
+            <td>Religious landscape and restriction studies</td>
+          </tr>
+          <tr>
+            <td><span class="abbr-badge">BBC</span></td>
+            <td><a href="https://www.bbc.com/news" target="_blank" rel="noopener">BBC News</a></td>
+            <td>Documented news reporting on persecution events</td>
+          </tr>
+          <tr>
+            <td><span class="abbr-badge">NE</span></td>
+            <td><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a></td>
+            <td>Public domain map boundaries for the interactive map</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:12px"><strong>Source status key</strong> (shown on the map footer):</p>
+      <div class="status-legend">
+        <span><span class="swatch swatch--ok"></span> OK — source fetched successfully</span>
+        <span><span class="swatch swatch--partial"></span> Partial — partial data retrieved</span>
+        <span><span class="swatch swatch--error"></span> Error — fetch failed</span>
+        <span><span class="swatch swatch--skipped"></span> Skipped — not yet fetched</span>
+      </div>
 
       <h2>Update workflow</h2>
       <p>A scheduled GitHub Actions workflow regenerates the site data from source records. When data changes are committed, the workflow rebuilds country pages, search assets, and map data files, then publishes the updated site.</p>
@@ -76,28 +121,14 @@
         <strong>Attribution note:</strong> This project is unaffiliated with any government, NGO, or religious organization listed as a source. Source information remains the property of each provider and is subject to their terms and attribution requirements.
       </div>
 
+      <h2>About the creator</h2>
+      <p>This site was created by <a href="https://fishy.best/~jjs/" target="_blank" rel="noopener">Joey</a> as a companion tool for <a href="https://www.trinitari.org/sit/" target="_blank" rel="noopener">SIT &mdash; Solidarietà Internazionale Trinitaria</a>, the Trinitarian Order&rsquo;s international solidarity ministry supporting persecuted Christians worldwide. SIT works to raise awareness and provide concrete aid to Christians facing persecution because of their faith.</p>
+
       <h2>Contributing</h2>
       <p>Edits are tracked in the repository as structured data. If you want to suggest a source, correction, or new country entry, open an issue or pull request in the project repository.</p>
 
       <p style="margin-top:18px"><a class="back" href="index.html">&larr; Back to map</a></p>
     </div>
   </main>
-
-  <footer>
-    <div class="wrap">
-      <div style="font-size:13px;color:#64748b;line-height:1.5">
-        <strong>Sources and attribution</strong><br />
-        <a href="https://www.opendoorsusa.org/christian-persecution/world-watch-list/" target="_blank" rel="noopener">Open Doors World Watch List</a>
-        &nbsp;·&nbsp;
-        <a href="https://www.uscirf.gov/" target="_blank" rel="noopener">USCIRF Annual Reports</a>
-        &nbsp;·&nbsp;
-        <a href="https://www.pewresearch.org/religion/" target="_blank" rel="noopener">Pew Research Center</a>
-        &nbsp;·&nbsp;
-        <a href="https://www.bbc.com/news" target="_blank" rel="noopener">BBC News</a>
-        <br />
-        Map tiles by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors. Map library: <a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a>.
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
