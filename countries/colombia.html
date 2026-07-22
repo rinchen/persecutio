@@ -31,6 +31,10 @@ a { color:#2563eb; word-break:break-word; }
 .section-sources strong { color:#0f172a; }
 footer { margin-top:24px; padding:14px 16px; border-top:1px solid #e5e7eb; font-size:13px; color:#64748b; background:#fff; }
 footer a { color:#334155; text-decoration: underline; }
+.data-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin-top:14px; }
+.data-item { background:#f1f5f9; border-radius:8px; padding:10px 12px; font-size:13px; }
+.data-item .label { color:#64748b; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; }
+.data-item .value { color:#0f172a; font-weight:600; font-size:15px; margin-top:2px; }
 </style>
 </head>
 <body>
@@ -52,6 +56,12 @@ footer a { color:#334155; text-decoration: underline; }
       <span class="pct" style="background:#f97316"></span>
       <span>Moderate · Warning</span>
     </div>
+    <div class="data-grid"><div class="data-item"><div class="label">Open Doors Score</div><div class="value">66/100</div></div>
+      <div class="data-item"><div class="label">WWL Ranking</div><div class="value">#31</div></div>
+      <div class="data-item"><div class="label">Freedom House</div><div class="value">Free</div></div>
+      <div class="data-item"><div class="label">PR / CL Score</div><div class="value">2 / 3</div></div>
+      <div class="data-item"><div class="label">Christian Population</div><div class="value">43,666,834 (86.2%)</div></div>
+    </div>
     <section>
       <h2>Historical Background</h2>
       <p>Catholicism arrived with 16th-century Spanish colonization and shaped civic and cultural life for centuries. Political violence between Liberals and Conservatives in the 19th and 20th centuries sometimes targeted churches and their leaders, and church-state conflict recurred through constitutional and agrarian disputes.</p>
@@ -60,13 +70,13 @@ footer a { color:#334155; text-decoration: underline; }
     <section>
       <h2>Modern-Day Situation</h2>
       <p>Catholic clergy, Protestant pastors, and Christian human rights defenders continue to be targeted by guerrillas, paramilitaries, and criminal gangs, especially in Caqueta, Narino, and Norte de Santander. Killings and threats persist despite the 2016 peace agreement, and indigenous and Afro-Colombian Christian communities are especially vulnerable.</p>
-      <div class="section-sources"><strong>Sources:</strong> <a href="https://www.uscirf.gov/countries/colombia">(2023) USCIRF 2023 Annual Report — Colombia</a>; <a href="https://www.opendoorsusa.org/christian-persecution/world-watch-list/">(2024) Open Doors World Watch List 2024</a></div>
+      <div class="section-sources"><strong>Sources:</strong> <a href="https://www.uscirf.gov/countries/colombia">(2023) USCIRF 2023 Annual Report - Colombia</a>; <a href="https://www.opendoorsusa.org/christian-persecution/world-watch-list/">(2024) Open Doors World Watch List 2024</a></div>
     </section>
     <section>
       <h2>All References</h2>
       <ul>
         <li><a href="https://www.opendoorsusa.org/christian-persecution/world-watch-list/">Open Doors World Watch List 2024</a> (2024)</li>
-        <li><a href="https://www.uscirf.gov/countries/colombia">USCIRF 2023 Annual Report — Colombia</a> (2023)</li>
+        <li><a href="https://www.uscirf.gov/countries/colombia">USCIRF 2023 Annual Report - Colombia</a> (2023)</li>
       </ul>
     </section>
   </div>
@@ -75,7 +85,7 @@ footer a { color:#334155; text-decoration: underline; }
   <div class="wrap" style="padding:14px 16px;">
     <div class="footer-status-line">
       <strong>Source status:</strong>
-      last pull: natural_earth_110m fetched 2026-07-22T02:35:31.273768+00:00
+      last pull: natural_earth_110m fetched 2026-07-22T03:03:24.180194+00:00
     </div>
   </div>
 </footer>

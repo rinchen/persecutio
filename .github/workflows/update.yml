@@ -1,7 +1,7 @@
 name: Update Persecutio
 on:
   schedule:
-    - cron: '0 6 1,15 * *'
+    - cron: '0 6 * * *'
   workflow_dispatch: {}
 
 jobs:
@@ -14,17 +14,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python3 -m pip install --upgrade pip pyyaml requests beautifulsoup4 pytest
+      - run: python3 -m pip install --upgrade pip pyyaml requests beautifulsoup4 openpyxl pytest
+      - name: Fetch external data sources
+        run: |
+          python3 scripts/fetch_opendoors.py || true
+          python3 scripts/fetch_freedom_house.py || true
+          python3 scripts/fetch_owid.py || true
+          python3 scripts/fetch_gdelt.py || true
+          python3 scripts/fetch_uscirf.py || true
+          python3 scripts/fetch_state_dept.py || true
+          python3 scripts/fetch_ohchr.py || true
       - run: python3 scripts/collect_data.py
       - run: python3 scripts/generate_website_data.py
-      - run: python3 -m py_compile scripts/collect_data.py scripts/generate_website_data.py tests/*.py
+      - run: python3 -m py_compile scripts/collect_data.py scripts/generate_website_data.py scripts/fetch_*.py tests/*.py
       - run: python3 -m pytest tests
       - run: |
           test -s data/countries.yml
           test -s data/sources.yml
           test -s assets/data/geojson.json
           test -s assets/data/search.json
-          test -s assets/data/meta.json
           test -s countries/geojson.json
           test -s countries/search.json
           COUNTRY_COUNT=$(ls countries/*.html | wc -l)

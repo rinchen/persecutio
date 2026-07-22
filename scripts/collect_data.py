@@ -928,6 +928,632 @@ COUNTRIES_DATA = [
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023zimbabwe", "odwwl2024"]},
         "pew_slug": ""
     },
+    {
+        "title": "Mali",
+        "slug": "mali",
+        "iso3": "MLI",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": 17.57,
+        "lng": -4.00,
+        "modern": (
+            "Jihadist groups including JNIM and ISIS-Sahel target Christian "
+            "communities in northern and central Mali, carrying out church "
+            "attacks, kidnappings, and forced displacement. Converts from Islam "
+            "face death threats and social ostracism."
+        ),
+        "historical": (
+            "Christianity arrived through French colonization in the 19th century. "
+            "Mali's Christian minority remains small, concentrated in southern "
+            "regions. Since 2012, jihadist insurgency has devastated Christian "
+            "communities in the north."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Burkina Faso",
+        "slug": "burkina-faso",
+        "iso3": "BFA",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": 12.37,
+        "lng": -1.52,
+        "modern": (
+            "Islamic militant groups attack churches and Christian villages "
+            "across northern and eastern Burkina Faso. Hundreds of Christians "
+            "have been killed, and thousands displaced. Church leaders receive "
+            "death threats and some have been assassinated."
+        ),
+        "historical": (
+            "Catholic and Protestant missions expanded during the colonial period. "
+            "Christians remain a minority in a predominantly Muslim country. "
+            "Since 2015, jihadist violence has escalated dramatically."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Maldives",
+        "slug": "maldives",
+        "iso3": "MDV",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": 3.20,
+        "lng": 73.22,
+        "modern": (
+            "Conversion from Islam is illegal and can be punished by death. "
+            "The few Christian converts practice in extreme secrecy. No church "
+            "buildings exist, and Christian worship is entirely underground. "
+            "Tourism workers face surveillance for religious activity."
+        ),
+        "historical": (
+            "The Maldives has been Muslim since the 12th century. Portuguese "
+            "colonial rule in the 16th century briefly reintroduced Christianity, "
+            "but it was quickly suppressed. Modern Christianity exists only among "
+            "secret converts and foreign workers."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Mauritania",
+        "slug": "mauritania",
+        "iso3": "MRT",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": 21.01,
+        "lng": -10.94,
+        "modern": (
+            "Apostasy from Islam carries the death penalty under Mauritanian law. "
+            "Christian converts live in extreme secrecy. No churches are permitted, "
+            "and any Christian activity is closely monitored by authorities."
+        ),
+        "historical": (
+            "Mauritania has been exclusively Muslim since its founding. Christian "
+            "presence has always been minimal, limited to a handful of foreign "
+            "workers and secret converts."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Morocco",
+        "slug": "morocco",
+        "iso3": "MAR",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": 31.79,
+        "lng": -7.09,
+        "modern": (
+            "Proselytizing Muslims is illegal and can result in imprisonment. "
+            "Christian converts face family pressure, surveillance, and social "
+            "ostracism. House churches operate with caution, and foreign "
+            "Christians are monitored for religious activity."
+        ),
+        "historical": (
+            "Morocco was once home to vibrant Christian communities during the "
+            "Roman and Vandal periods. Islam arrived in the 7th century, and "
+            "Christianity gradually disappeared. Modern Christian presence dates "
+            "to French and Spanish colonization."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Uzbekistan",
+        "slug": "uzbekistan",
+        "iso3": "UZB",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": 41.38,
+        "lng": 64.59,
+        "modern": (
+            "Religious activity requires state registration, and unregistered "
+            "groups face raids and fines. Church leaders are detained, religious "
+            "materials confiscated, and children under 16 banned from services. "
+            "Evangelism is effectively criminalized."
+        ),
+        "historical": (
+            "Christianity existed in Central Asia from early centuries. Russian "
+            "Orthodox and Protestant missions expanded under 19th-century "
+            "imperial rule. Soviet atheism suppressed all religion; post-independence "
+            "Uzbekistan maintained tight controls."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Niger",
+        "slug": "niger",
+        "iso3": "NER",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": 17.61,
+        "lng": 8.08,
+        "modern": (
+            "Islamic militant groups attack Christian communities and churches "
+            "in border regions. Converts from Islam face severe family and "
+            "community pressure. Proselytizing is legally restricted, and "
+            "security conditions limit Christian activity in many areas."
+        ),
+        "historical": (
+            "Christianity arrived through French colonization. The Christian "
+            "minority remains small, concentrated in southern and western regions. "
+            "Since 2015, jihadist violence from Nigeria and Mali has spread into "
+            "Niger's border areas."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Turkmenistan",
+        "slug": "turkmenistan",
+        "iso3": "TKM",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": 38.97,
+        "lng": 59.56,
+        "modern": (
+            "The government tightly controls all religious activity. Unregistered "
+            "churches face raids, fines, and detention of leaders. Religious "
+            "literature import is restricted, and foreign worship services are "
+            "monitored. Underground churches operate under constant threat."
+        ),
+        "historical": (
+            "Russian Orthodox and Protestant missions operated during imperial "
+            "and Soviet eras. Turkmenistan's 1991 independence brought a nominally "
+            "secular state with heavy restrictions on minority religions, "
+            "continuing Soviet-era patterns of control."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Oman",
+        "slug": "oman",
+        "iso3": "OMN",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 21.47,
+        "lng": 55.98,
+        "modern": (
+            "Non-Muslim worship is permitted only in private or designated areas. "
+            "Proselytizing Muslims is illegal. Christian expatriates worship "
+            "quietly, but any public display or outreach is prohibited. Convert "
+            "families face social pressure."
+        ),
+        "historical": (
+            "Ancient Christianity existed in Oman through the Church of the East. "
+            "Islam became dominant from the 7th century. Modern Christian presence "
+            "is largely due to expatriate workers from South Asia and the West."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Ethiopia",
+        "slug": "ethiopia",
+        "iso3": "ETH",
+        "status": "warning",
+        "persecution_level": "Moderate/High",
+        "lat": 9.15,
+        "lng": 40.49,
+        "modern": (
+            "Ethiopia has ancient Christian roots but faces growing tensions. "
+            "Orthodox, Protestant, and Catholic communities experience periodic "
+            "violence, especially in Oromia and Amhara regions. Religious "
+            "restrictions have increased under the current government."
+        ),
+        "historical": (
+            "Ethiopia is one of the oldest Christian nations, with traditions "
+            "dating to the 4th century. The Ethiopian Orthodox Tewahedo Church "
+            "has shaped national identity for centuries. Political and ethnic "
+            "conflicts sometimes take on religious dimensions."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Tunisia",
+        "slug": "tunisia",
+        "iso3": "TUN",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 33.89,
+        "lng": 9.54,
+        "modern": (
+            "Christian converts face social ostracism and family pressure. "
+            "Proselytizing is illegal, and church activities are monitored. "
+            "The small Christian community exercises caution in worship and "
+            "public religious expression."
+        ),
+        "historical": (
+            "Tunisia was a major center of early Christianity. Vandal and Byzantine "
+            "rule maintained Christian communities until the Arab conquest. Modern "
+            "Christianity is mostly limited to foreign workers and a few converts."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Democratic Republic of Congo",
+        "slug": "democratic-republic-of-congo",
+        "iso3": "COD",
+        "status": "persecution",
+        "persecution_level": "High",
+        "lat": -4.04,
+        "lng": 21.76,
+        "modern": (
+            "The Allied Democratic Forces (ADF) and other armed groups attack "
+            "Christian communities in eastern Congo, destroying churches and "
+            "displacing thousands. Church leaders are targeted for peacebuilding "
+            "efforts, and religious institutions face extortion."
+        ),
+        "historical": (
+            "Catholic and Protestant missions played central roles in education "
+            "and healthcare during the colonial period. Churches remain influential "
+            "in Congolese society, and religious leaders have historically been "
+            "voices for peace and democracy."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Bhutan",
+        "slug": "bhutan",
+        "iso3": "BTN",
+        "status": "restricted",
+        "persecution_level": "Moderate/High",
+        "lat": 27.51,
+        "lng": 90.43,
+        "modern": (
+            "Proselytizing is illegal under Bhutanese law. Christians face "
+            "social pressure from the Buddhist majority and restrictions on "
+            "worship. The small Christian community practices privately, and "
+            "religious education for children is prohibited."
+        ),
+        "historical": (
+            "Bhutan has been predominantly Buddhist for centuries. Christianity "
+            "arrived through Tibetan and Indian influences in the 20th century. "
+            "The government promotes Buddhism as the national religion and "
+            "restricts other faiths."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Mozambique",
+        "slug": "mozambique",
+        "iso3": "MOZ",
+        "status": "persecution",
+        "persecution_level": "High",
+        "lat": -18.67,
+        "lng": 35.53,
+        "modern": (
+            "ISIS-affiliated insurgents in Cabo Delgado province attack Christian "
+            "villages, churches, and humanitarian workers. Thousands have been "
+            "killed or displaced since 2017. Church buildings are targeted and "
+            "religious leaders face threats."
+        ),
+        "historical": (
+            "Catholic and Protestant missions expanded during Portuguese colonial "
+            "rule. Christianity grew significantly in the 20th century. The "
+            "insurgency in the north has created a humanitarian crisis affecting "
+            "Christian communities."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Kazakhstan",
+        "slug": "kazakhstan",
+        "iso3": "KAZ",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 48.02,
+        "lng": 66.92,
+        "modern": (
+            "Religious registration requirements restrict unregistered churches. "
+            "Police raids on worship services occur, and religious literature "
+            "imports are controlled. Evangelism and proselytizing face legal "
+            "limitations."
+        ),
+        "historical": (
+            "Russian Orthodox and Soviet-era atheism shaped Kazakhstan's religious "
+            "landscape. Post-independence, Islam and Orthodox Christianity coexist "
+            "under state regulation. Protestant and Catholic communities remain "
+            "small."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Tajikistan",
+        "slug": "tajikistan",
+        "iso3": "TJK",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": 38.86,
+        "lng": 71.28,
+        "modern": (
+            "The government restricts all religious activity outside state-approved "
+            "bodies. Unregistered churches face fines and closure. Children under "
+            "18 are banned from religious services, and religious education is "
+            "heavily regulated."
+        ),
+        "historical": (
+            "Tajikistan's religious landscape reflects Soviet-era atheism and "
+            "traditional Sunni Islam. Small Orthodox and Protestant communities "
+            "exist, but post-independence laws have tightened religious control."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Qatar",
+        "slug": "qatar",
+        "iso3": "QAT",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 25.35,
+        "lng": 51.18,
+        "modern": (
+            "Proselytizing Muslims is illegal. Non-Muslim worship is permitted "
+            "only in designated areas. Christian expatriates worship with caution, "
+            "and convert families face social and legal pressure."
+        ),
+        "historical": (
+            "Qatar has been Muslim since the 7th century. Modern Christian "
+            "presence is largely due to expatriate workers. The government "
+            "allows limited non-Muslim worship but restricts public expression."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Comoros",
+        "slug": "comoros",
+        "iso3": "COM",
+        "status": "severe",
+        "persecution_level": "Very High",
+        "lat": -11.65,
+        "lng": 43.33,
+        "modern": (
+            "Christianity is virtually illegal. Conversion from Islam can result "
+            "in loss of citizenship. No churches exist, and any Christian "
+            "activity is conducted in extreme secrecy. Social pressure against "
+            "converts is intense."
+        ),
+        "historical": (
+            "Comoros has been Muslim since the 15th century. Portuguese colonizers "
+            "briefly introduced Christianity, but it was quickly suppressed. "
+            "Modern Christianity exists only among a handful of secret converts."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Cameroon",
+        "slug": "cameroon",
+        "iso3": "CMR",
+        "status": "persecution",
+        "persecution_level": "High",
+        "lat": 7.37,
+        "lng": 12.35,
+        "modern": (
+            "Boko Haram and ISWAP attacks in the Far North target Christian "
+            "villages and churches. The Anglophone crisis in the Northwest "
+            "and Southwest has displaced thousands of Christians, and church "
+            "leaders are caught in the crossfire."
+        ),
+        "historical": (
+            "Catholic and Protestant missions expanded during German, British, "
+            "and French colonial rule. Christianity is a major religion in "
+            "Cameroon, but regional conflicts have created new vulnerabilities."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Brunei",
+        "slug": "brunei",
+        "iso3": "BRN",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 4.54,
+        "lng": 114.73,
+        "modern": (
+            "Brunei's implementation of Sharia law restricts non-Muslim worship. "
+            "Proselytizing is illegal, and Christian communities worship "
+            "privately. Public religious displays by non-Muslims are limited."
+        ),
+        "historical": (
+            "Brunei has been Muslim since the 15th century. Christianity arrived "
+            "through British colonization and modern expatriate communities. "
+            "Sharia implementation in 2019 increased restrictions on non-Muslim "
+            "religious expression."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Kyrgyzstan",
+        "slug": "kyrgyzstan",
+        "iso3": "KGZ",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 41.20,
+        "lng": 74.77,
+        "modern": (
+            "Anti-cult laws restrict religious minorities. Unregistered churches "
+            "face pressure, and religious education for minors is limited. "
+            "Social pressure from the Muslim majority affects Christian converts."
+        ),
+        "historical": (
+            "Russian Orthodox and Soviet-era atheism shaped Kyrgyzstan's "
+            "religious landscape. Post-independence, Islam has resurged, and "
+            "Protestant and Catholic communities remain small and sometimes "
+            "face social hostility."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Jordan",
+        "slug": "jordan",
+        "iso3": "JOR",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 30.59,
+        "lng": 36.24,
+        "modern": (
+            "Conversion from Islam is restricted and socially dangerous. Christian "
+            "worship is generally permitted, but proselytizing Muslims is illegal. "
+            "Convert families face honor-related threats, and churches avoid "
+            "public outreach."
+        ),
+        "historical": (
+            "Jordan has ancient Christian roots from the early church. Arab "
+            "Christian communities have existed for centuries. Modern Jordan "
+            "maintains relative tolerance, but legal and social restrictions "
+            "affect converts from Islam."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Russia",
+        "slug": "russia",
+        "iso3": "RUS",
+        "status": "warning",
+        "persecution_level": "Moderate/High",
+        "lat": 61.52,
+        "lng": 105.32,
+        "modern": (
+            "Anti-evangelism laws restrict religious activity outside registered "
+            "sites. Protestant and Catholic communities face raids, fines, and "
+            "denial of registration. Jehovah's Witnesses are banned, and foreign "
+            "religious workers are expelled."
+        ),
+        "historical": (
+            "Russian Orthodoxy dominated for centuries. Soviet atheism suppressed "
+            "all religion; post-Soviet revival favored Orthodoxy. Recent laws "
+            "restricting proselytization and foreign religious ties have increased "
+            "pressure on minority faiths."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Azerbaijan",
+        "slug": "azerbaijan",
+        "iso3": "AZE",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 40.14,
+        "lng": 47.58,
+        "modern": (
+            "Religious activity requires registration. Unregistered groups face "
+            "raids and fines. Non-Muslim worship is restricted, and foreign "
+            "religious workers are monitored. Christian converts from Islam "
+            "face family and community pressure."
+        ),
+        "historical": (
+            "Azerbaijan has been Muslim since the medieval period. Small Orthodox "
+            "and Protestant communities exist, but post-independence laws "
+            "tightened religious control."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Sri Lanka",
+        "slug": "sri-lanka",
+        "iso3": "LKA",
+        "status": "warning",
+        "persecution_level": "Moderate/High",
+        "lat": 7.87,
+        "lng": 80.77,
+        "modern": (
+            "Buddhist nationalist groups attack churches and Christian "
+            "converts. Anti-conversion laws are proposed or enforced in some "
+            "areas. Church construction faces opposition, and pastors receive "
+            "threats."
+        ),
+        "historical": (
+            "Catholicism arrived with Portuguese colonization in the 16th century. "
+            "Dutch and British rule added Protestant missions. Post-independence "
+            "Buddhist nationalism has periodically targeted Christian minorities."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Philippines",
+        "slug": "philippines",
+        "iso3": "PHL",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 12.88,
+        "lng": 121.77,
+        "modern": (
+            "Muslim separatist groups in Mindanao target Christian communities. "
+            "Churches and pastors are caught in the conflict between government "
+            "forces and insurgents. Kidnappings and attacks on Christian workers "
+            "occur periodically."
+        ),
+        "historical": (
+            "Catholicism arrived with Spanish colonization in the 16th century. "
+            "The Philippines is predominantly Catholic, but Muslim communities "
+            "in the south have long sought autonomy, creating regional tensions."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Guinea",
+        "slug": "guinea",
+        "iso3": "GIN",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 9.95,
+        "lng": -11.86,
+        "modern": (
+            "Christian converts from Islam face family pressure and social "
+            "ostracism. Proselytizing is restricted, and church activities are "
+            "monitored. The small Christian community exercises caution."
+        ),
+        "historical": (
+            "French colonization introduced Catholicism and Protestantism. "
+            "Christians remain a minority in a predominantly Muslim country. "
+            "Post-independence governments have generally maintained religious "
+            "tolerance, but social pressure on converts persists."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
+    {
+        "title": "Bahrain",
+        "slug": "bahrain",
+        "iso3": "BHR",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 26.07,
+        "lng": 50.55,
+        "modern": (
+            "Christian worship is permitted in designated areas but proselytizing "
+            "Muslims is illegal. Expatriate Christians worship freely, but "
+            "converts from Islam face social and legal pressure."
+        ),
+        "historical": (
+            "Bahrain has ancient Christian communities from the Church of the East. "
+            "Islam became dominant from the 7th century. Modern Christian presence "
+            "is largely due to expatriate workers."
+        ),
+        "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
+        "pew_slug": ""
+    },
 ]
 
 sources = {
@@ -970,6 +1596,20 @@ sources = {
     "uscirf2023turkey": {"title": "USCIRF 2023 Annual Report - Turkey", "url": "https://www.uscirf.gov/countries/turkey", "date": "2023"},
     "uscirf2023venezuela": {"title": "USCIRF 2023 Annual Report - Venezuela", "url": "https://www.uscirf.gov/countries/venezuela", "date": "2023"},
     "uscirf2023zimbabwe": {"title": "USCIRF 2023 Annual Report - Zimbabwe", "url": "https://www.uscirf.gov/countries/zimbabwe", "date": "2023"},
+    "freedomhouse2024": {"title": "Freedom House Freedom in the World 2024", "url": "https://freedomhouse.org/report/freedom-world", "date": "2024"},
+    "statedepartment2023": {"title": "U.S. State Department International Religious Freedom Report 2023", "url": "https://www.state.gov/international-religious-freedom-reports/", "date": "2023"},
+    "ohchr2024": {"title": "OHCHR Universal Human Rights Index", "url": "https://uhri.ohchr.org/", "date": "2024"},
+    "gdelt2025": {"title": "GDELT Global Database of Events, Language, and Tone", "url": "https://www.gdeltproject.org/", "date": "2025"},
+    "owid2024": {"title": "Our World in Data - Religious Composition (Pew Research)", "url": "https://ourworldindata.org/grapher/religious-composition", "date": "2024"},
+    "odwwl2026": {"title": "Open Doors World Watch List 2026", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2026"},
+    "uscirf2025russia": {"title": "USCIRF 2025 Annual Report - Russia", "url": "https://www.uscirf.gov/countries/russia", "date": "2025"},
+    "uscirf2025azerbaijan": {"title": "USCIRF 2025 Annual Report - Azerbaijan", "url": "https://www.uscirf.gov/countries/azerbaijan", "date": "2025"},
+    "uscirf2025srilanka": {"title": "USCIRF 2025 Annual Report - Sri Lanka", "url": "https://www.uscirf.gov/countries/sri-lanka", "date": "2025"},
+    "uscirf2025kazakhstan": {"title": "USCIRF 2025 Annual Report - Kazakhstan", "url": "https://www.uscirf.gov/countries/kazakhstan", "date": "2025"},
+    "uscirf2025kyrgyzstan": {"title": "USCIRF 2025 Annual Report - Kyrgyzstan", "url": "https://www.uscirf.gov/countries/kyrgyzstan", "date": "2025"},
+    "uscirf2025turkmenistan": {"title": "USCIRF 2025 Annual Report - Turkmenistan", "url": "https://www.uscirf.gov/countries/turkmenistan", "date": "2025"},
+    "uscirf2025uzbekistan": {"title": "USCIRF 2025 Annual Report - Uzbekistan", "url": "https://www.uscirf.gov/countries/uzbekistan", "date": "2025"},
+    "uscirf2025tajikistan": {"title": "USCIRF 2025 Annual Report - Tajikistan", "url": "https://www.uscirf.gov/countries/tajikistan", "date": "2025"},
 }
 
 
@@ -1004,13 +1644,30 @@ def wikipedia_summary(title: str):
     return data, status
 
 
+def load_fetched_json(filename):
+    path = FETCHED / filename
+    if path.exists():
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    return {}
+
+
+freedom_house = load_fetched_json("freedom_house.json")
+opendoors_data = load_fetched_json("opendoors.json")
+gdelt_data = load_fetched_json("gdelt.json")
+owid_data = load_fetched_json("owid_religion.json")
+
+
 for c in COUNTRIES_DATA:
     iso = str(c.get("iso3", "")).upper()
+    title = c.get("title", "")
     resolved = []
     for sid in c.get("source_ids", {}).get("modern", []):
         if sid in sources and sid not in resolved:
             resolved.append(sid)
-    wiki, wiki_status = wikipedia_summary(c.get("title", ""))
+    wiki, wiki_status = wikipedia_summary(title)
     c.setdefault("metadata", {})
     c["metadata"]["sources"] = [sources[sid] for sid in resolved]
     c["metadata"]["source_ids"] = resolved
@@ -1018,6 +1675,31 @@ for c in COUNTRIES_DATA:
     c["metadata"]["wiki_url"] = wiki.get("content_urls", {}).get("desktop", {}).get("page") if isinstance(wiki, dict) else None
     c["metadata"]["wiki_extract"] = wiki.get("extract") if isinstance(wiki, dict) else None
     c["metadata"]["country_polygon"] = bool(iso in country_polygons)
+
+    fh_countries = freedom_house.get("countries", {}) if isinstance(freedom_house, dict) else {}
+    fh = fh_countries.get(title, {})
+    if fh:
+        c["metadata"]["freedom_house_status"] = fh.get("status")
+        c["metadata"]["freedom_house_pr"] = fh.get("pr_score")
+        c["metadata"]["freedom_house_cl"] = fh.get("cl_score")
+
+    od_countries = opendoors_data.get("countries", {}) if isinstance(opendoors_data, dict) else {}
+    od = od_countries.get(title, {})
+    if od:
+        c["metadata"]["opendoors_ranking"] = od.get("ranking")
+        c["metadata"]["opendoors_score"] = od.get("score")
+
+    gdelt_countries = gdelt_data.get("countries", {}) if isinstance(gdelt_data, dict) else {}
+    gdelt_articles = gdelt_countries.get(title, [])
+    if gdelt_articles:
+        c["metadata"]["gdelt_recent_articles"] = len(gdelt_articles)
+        c["metadata"]["gdelt_sample_urls"] = [a.get("url", "") for a in gdelt_articles[:3]]
+
+    owid_countries = owid_data.get("countries", {}) if isinstance(owid_data, dict) else {}
+    owid = owid_countries.get(title, {})
+    if owid:
+        c["metadata"]["christian_population"] = owid.get("christian_population")
+        c["metadata"]["christian_percentage"] = owid.get("christian_percentage")
 
 source_statuses = [natural_earth_status]
 
@@ -1028,10 +1710,20 @@ countries_data = {
         "natural_earth_geojson": "data/fetched/natural_earth_110m.geojson",
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "source_statuses": source_statuses,
+        "data_sources": {
+            "freedom_house": "data/fetched/freedom_house.json",
+            "opendoors": "data/fetched/opendoors.json",
+            "gdelt": "data/fetched/gdelt.json",
+            "owid_religion": "data/fetched/owid_religion.json",
+        },
     },
 }
 (DATA / "countries.yml").write_text(
     yaml.safe_dump(countries_data, allow_unicode=True, sort_keys=False),
+    encoding="utf-8",
+)
+(DATA / "sources.yml").write_text(
+    yaml.safe_dump({"sources": sources}, allow_unicode=True, sort_keys=False),
     encoding="utf-8",
 )
 

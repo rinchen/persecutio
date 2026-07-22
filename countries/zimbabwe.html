@@ -31,6 +31,10 @@ a { color:#2563eb; word-break:break-word; }
 .section-sources strong { color:#0f172a; }
 footer { margin-top:24px; padding:14px 16px; border-top:1px solid #e5e7eb; font-size:13px; color:#64748b; background:#fff; }
 footer a { color:#334155; text-decoration: underline; }
+.data-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin-top:14px; }
+.data-item { background:#f1f5f9; border-radius:8px; padding:10px 12px; font-size:13px; }
+.data-item .label { color:#64748b; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; }
+.data-item .value { color:#0f172a; font-weight:600; font-size:15px; margin-top:2px; }
 </style>
 </head>
 <body>
@@ -51,6 +55,10 @@ footer a { color:#334155; text-decoration: underline; }
     <div class="status-pill">
       <span class="pct" style="background:#3b82f6"></span>
       <span>Low · Open</span>
+    </div>
+    <div class="data-grid"><div class="data-item"><div class="label">Freedom House</div><div class="value">Not Free</div></div>
+      <div class="data-item"><div class="label">PR / CL Score</div><div class="value">6 / 5</div></div>
+      <div class="data-item"><div class="label">Christian Population</div><div class="value">13,539,476 (87.2%)</div></div>
     </div>
     <section>
       <h2>Historical Background</h2>
@@ -75,7 +83,7 @@ footer a { color:#334155; text-decoration: underline; }
   <div class="wrap" style="padding:14px 16px;">
     <div class="footer-status-line">
       <strong>Source status:</strong>
-      last pull: natural_earth_110m fetched 2026-07-22T02:35:31.273768+00:00
+      last pull: natural_earth_110m fetched 2026-07-22T03:03:24.180194+00:00
     </div>
   </div>
 </footer>

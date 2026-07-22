@@ -90,6 +90,10 @@ a {{ color:#2563eb; word-break:break-word; }}
 .section-sources strong {{ color:#0f172a; }}
 footer {{ margin-top:24px; padding:14px 16px; border-top:1px solid #e5e7eb; font-size:13px; color:#64748b; background:#fff; }}
 footer a {{ color:#334155; text-decoration: underline; }}
+.data-grid {{ display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin-top:14px; }}
+.data-item {{ background:#f1f5f9; border-radius:8px; padding:10px 12px; font-size:13px; }}
+.data-item .label {{ color:#64748b; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; }}
+.data-item .value {{ color:#0f172a; font-weight:600; font-size:15px; margin-top:2px; }}
 </style>
 </head>
 <body>
@@ -111,6 +115,7 @@ footer a {{ color:#334155; text-decoration: underline; }}
       <span class="pct" style="background:{status_color}"></span>
       <span>{persecution_level} · {status_label}</span>
     </div>
+    {data_fields}
     <section>
       <h2>Historical Background</h2>
       <p>{historical}</p>
@@ -172,6 +177,36 @@ def render_sources(source_ids: list[str], all_sources_lookup: dict) -> str:
         prefix = f"({date}) " if date else ""
         items.append(f'<a href="{url}">{prefix}{label}</a>')
     return "; ".join(items) if items else "Sources will be listed here."
+
+
+def render_data_fields(country: dict) -> str:
+    meta = country.get("metadata", {})
+    items = []
+    od_score = meta.get("opendoors_score")
+    od_rank = meta.get("opendoors_ranking")
+    if od_score is not None:
+        items.append(f'<div class="data-item"><div class="label">Open Doors Score</div><div class="value">{od_score}/100</div></div>')
+    if od_rank is not None:
+        items.append(f'<div class="data-item"><div class="label">WWL Ranking</div><div class="value">#{od_rank}</div></div>')
+    fh_status = meta.get("freedom_house_status")
+    if fh_status:
+        items.append(f'<div class="data-item"><div class="label">Freedom House</div><div class="value">{fh_status}</div></div>')
+    fh_pr = meta.get("freedom_house_pr")
+    fh_cl = meta.get("freedom_house_cl")
+    if fh_pr is not None and fh_cl is not None:
+        items.append(f'<div class="data-item"><div class="label">PR / CL Score</div><div class="value">{fh_pr} / {fh_cl}</div></div>')
+    christ_pop = meta.get("christian_population")
+    christ_pct = meta.get("christian_percentage")
+    if christ_pop is not None:
+        pop_str = f"{christ_pop:,}" if isinstance(christ_pop, (int, float)) else str(christ_pop)
+        pct_str = f" ({christ_pct:.1f}%)" if christ_pct else ""
+        items.append(f'<div class="data-item"><div class="label">Christian Population</div><div class="value">{pop_str}{pct_str}</div></div>')
+    gdelt_count = meta.get("gdelt_recent_articles")
+    if gdelt_count is not None:
+        items.append(f'<div class="data-item"><div class="label">Recent News Events</div><div class="value">{gdelt_count}</div></div>')
+    if not items:
+        return ""
+    return '<div class="data-grid">' + "\n      ".join(items) + "\n    </div>"
 
 
 all_sources_lookup = {}
@@ -287,6 +322,7 @@ for c in countries:
         status_color=color,
         generated_at=generated_at,
         last_pull_text=last_pull_text,
+        data_fields=render_data_fields(c),
     )
     (COUNTRIES / f"{slug}.html").write_text(page_html, encoding="utf-8")
     print("wrote", slug)
