@@ -9,6 +9,7 @@ from typing import Any
 from christian_persecution import is_christian_persecution
 from country_registry import (
     attach_citation,
+    countries_for_article,
     ensure_source,
     geo_for,
     resolve_country_name,
@@ -138,6 +139,10 @@ def build_recent_incidents(country_title: str, news_blobs: dict[str, dict]) -> l
         for a in arts:
             title = a.get("title") or ""
             desc = a.get("description") or ""
+            # Drop stale/mis-bucketed articles (pronoun aliases, bureau datelines, etc.)
+            detected = countries_for_article(title, desc, a.get("categories") or [])
+            if country_title not in detected:
+                continue
             # GDELT/others may already be filtered at fetch; re-check for safety
             if key in ("forum18", "bitterwinter", "gdelt"):
                 if not is_christian_persecution(title=title, description=desc):

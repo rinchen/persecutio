@@ -64,14 +64,14 @@ class TestBuildRecentIncidents(unittest.TestCase):
                 "countries": {
                     "Nigeria": [
                         {
-                            "title": "Older church attack",
+                            "title": "Older church attack in Nigeria",
                             "url": "https://example.com/old",
                             "date": "2024-01-01",
                             "description": "Christians attacked",
                             "source": "Morning Star News",
                         },
                         {
-                            "title": "Newer church attack",
+                            "title": "Newer church attack in Nigeria",
                             "url": "https://example.com/new",
                             "date": "2025-06-01",
                             "description": "Christians attacked",
@@ -84,7 +84,7 @@ class TestBuildRecentIncidents(unittest.TestCase):
         # Pad with unique URLs past the display cap
         for i in range(INCIDENT_DISPLAY_CAP + 5):
             news["morningstarnews"]["countries"]["Nigeria"].append({
-                "title": f"Incident {i}",
+                "title": f"Incident {i} in Nigeria",
                 "url": f"https://example.com/i{i}",
                 "date": f"2024-02-{(i % 28) + 1:02d}",
                 "description": "Church destroyed",
@@ -92,7 +92,29 @@ class TestBuildRecentIncidents(unittest.TestCase):
             })
         incidents = build_recent_incidents("Nigeria", news)
         self.assertLessEqual(len(incidents), INCIDENT_DISPLAY_CAP)
-        self.assertEqual(incidents[0]["title"], "Newer church attack")
+        self.assertEqual(incidents[0]["title"], "Newer church attack in Nigeria")
+
+    def test_drops_misbucketed_articles(self):
+        news = {
+            "forum18": {
+                "countries": {
+                    "United States": [
+                        {
+                            "title": (
+                                'RUSSIA: "Without any investigation, they\'re already '
+                                'presuming us guilty", says pastor'
+                            ),
+                            "url": "https://example.com/ru",
+                            "date": "2026-01-01",
+                            "description": "Prosecutions in Bryansk",
+                            "source": "Forum 18",
+                        }
+                    ]
+                }
+            }
+        }
+        incidents = build_recent_incidents("United States", news)
+        self.assertEqual(incidents, [])
 
 
 class TestCreateStubCountries(unittest.TestCase):

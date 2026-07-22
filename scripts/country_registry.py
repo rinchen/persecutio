@@ -35,6 +35,7 @@ COUNTRY_ALIASES: dict[str, str | None] = {
     "u.s.a.": "United States",
     "uae": "United Arab Emirates",
     "emirates": "United Arab Emirates",
+    "somaliland": "Somalia",
     "palestine": None,
     "gaza": None,
     "israel": None,
@@ -214,6 +215,22 @@ def detect_countries(text: str) -> list[str]:
     return sorted(found)
 
 
+def _strip_description_noise(description: str) -> str:
+    """Drop WP footers and news-bureau datelines that are not story geography."""
+    desc = description or ""
+    desc = re.split(r"\s+The post\s+", desc, maxsplit=1)[0]
+    desc = re.split(r"\s+appeared first on\s+", desc, maxsplit=1)[0]
+    # "NAIROBI, Kenya (Morning Star News) – ..." / "LAHORE, Pakistan — ..."
+    desc = re.sub(
+        r"^[A-Z][A-Za-z .'-]{1,40},\s*[A-Za-z][A-Za-z -]{1,40}"
+        r"(?:\s*\([^)]{0,80}\))?\s*[–—-]\s*",
+        "",
+        desc,
+        count=1,
+    )
+    return desc
+
+
 def countries_for_article(
     title: str,
     description: str,
@@ -235,10 +252,7 @@ def countries_for_article(
             found.append(resolved)
     if found:
         return found
-    desc = description or ""
-    # Drop common WP footer / related-post noise
-    desc = re.split(r"\s+The post\s+", desc, maxsplit=1)[0]
-    desc = re.split(r"\s+appeared first on\s+", desc, maxsplit=1)[0]
+    desc = _strip_description_noise(description or "")
     for name in detect_countries(desc):
         if name not in found:
             found.append(name)

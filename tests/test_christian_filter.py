@@ -129,7 +129,7 @@ class TestCountriesForArticle(unittest.TestCase):
         self.assertEqual(countries, ["Russia"])
         self.assertNotIn("United States", countries)
 
-    def test_excluded_israel_does_not_fall_through_to_pronoun_us(self):
+    def test_ignores_excluded_israel_does_not_fall_through_to_pronoun_us(self):
         countries = countries_for_article(
             "Israel: Catholic nun comments on her attack in Jerusalem",
             "comments that make us complicit in the conflict",
@@ -137,6 +137,16 @@ class TestCountriesForArticle(unittest.TestCase):
         )
         self.assertEqual(countries, [])
         self.assertNotIn("United States", countries)
+
+    def test_somaliland_maps_to_somalia_not_kenya_dateline(self):
+        countries = countries_for_article(
+            "Christian in Somaliland Poisoned to Death after Secret Conversion",
+            "NAIROBI, Kenya (Morning Star News) – Muslim relatives of a father of five "
+            "in Somaliland who recently became a Christian poisoned him to death",
+            [],
+        )
+        self.assertEqual(countries, ["Somalia"])
+        self.assertNotIn("Kenya", countries)
 
 
 if __name__ == "__main__":
