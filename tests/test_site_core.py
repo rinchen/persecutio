@@ -41,6 +41,29 @@ class TestSiteCore(unittest.TestCase):
         self.assertEqual(len(search), len(slugs))
         self.assertEqual({d['slug'] for d in search}, set(slugs))
 
+    def test_meta_sources_are_grouped(self):
+        meta = json.loads((ASSETS / 'meta.json').read_text(encoding='utf-8'))
+        sources = meta.get('sources') or []
+        self.assertTrue(sources)
+        # Grouped by type (USCIRF/OD/Pew/etc), not one chip per source id
+        self.assertLessEqual(len(sources), 20)
+        self.assertGreaterEqual(len(sources), 8)
+
+        by_id = {s['id']: s for s in sources}
+        for expected in ('uscirf', 'opendoors', 'pew', 'natural_earth', 'acn', 'bbc'):
+            self.assertIn(expected, by_id, f'missing grouped source {expected}')
+            self.assertIn(by_id[expected].get('label'), {'UC', 'OD', 'Pew', 'NE', 'ACN', 'BBC'})
+
+        # Per-country USCIRF entries must not appear as individual chips
+        for sid in by_id:
+            self.assertFalse(sid.startswith('uscirf20'), f'ungrouped uscirf id: {sid}')
+            self.assertFalse(sid.startswith('odwwl'), f'ungrouped opendoors id: {sid}')
+            self.assertFalse(sid.startswith('pew20'), f'ungrouped pew id: {sid}')
+
+        ne = by_id['natural_earth']
+        self.assertEqual(ne.get('status'), 'ok')
+        self.assertTrue(ne.get('fetchedAt'))
+
     def test_generated_pages_have_sections(self):
         pages = sorted(COUNTRIES.glob('*.html'))
         self.assertTrue(pages)

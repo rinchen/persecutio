@@ -496,37 +496,35 @@ all_sources_lookup = loaded.get("sources") or {}
 if not all_sources_lookup:
     raise SystemExit("data/sources.yml is missing or has no 'sources' mapping")
 
-SOURCE_LABELS = {
-    "natural_earth_110m": "NE",
-    "odwwl2024": "OD",
-    "acn2024": "ACN",
-    "pew2023america": "Pew",
-    "pew2023china": "Pew",
-    "bbc2021": "BBC",
-}
-SOURCE_TITLES = {
-    "natural_earth_110m": "Natural Earth map boundaries",
-    "odwwl2024": "Open Doors World Watch List 2024",
-    "acn2024": "ACN Persecuted and Forgotten 2024",
-    "pew2023america": "Pew Research — Religion in America",
-    "pew2023china": "Pew Research — Religion in China",
-    "bbc2021": "BBC News — Afghanistan Christians 2021",
+SOURCE_GROUP_DEFS = {
+    "uscirf": {"prefixes": ("uscirf",), "label": "UC", "title": "USCIRF Annual Reports"},
+    "opendoors": {"prefixes": ("odwwl",), "label": "OD", "title": "Open Doors World Watch List"},
+    "pew": {"prefixes": ("pew",), "label": "Pew", "title": "Pew Research"},
+    "natural_earth": {"prefixes": ("natural_earth",), "label": "NE", "title": "Natural Earth map boundaries"},
+    "freedomhouse": {"prefixes": ("freedomhouse",), "label": "FH", "title": "Freedom House Freedom in the World"},
+    "statedepartment": {"prefixes": ("statedepartment",), "label": "SD", "title": "U.S. State Dept IRF Reports"},
+    "ohchr": {"prefixes": ("ohchr",), "label": "OHCHR", "title": "OHCHR Universal Human Rights Index"},
+    "gdelt": {"prefixes": ("gdelt",), "label": "GDELT", "title": "GDELT Global Database of Events"},
+    "owid": {"prefixes": ("owid",), "label": "OWID", "title": "Our World in Data - Religious Composition"},
+    "acn": {"prefixes": ("acn",), "label": "ACN", "title": "ACN Persecuted and Forgotten"},
+    "bbc": {"prefixes": ("bbc",), "label": "BBC", "title": "BBC News"},
+    "morningstarnews": {"prefixes": ("morningstarnews",), "label": "MSN", "title": "Morning Star News"},
+    "vid": {"prefixes": ("vid",), "label": "VID", "title": "Violent Incidents Database"},
+    "gcr": {"prefixes": ("gcr",), "label": "GCR", "title": "Global Christian Relief"},
+    "csw": {"prefixes": ("csw",), "label": "CSW", "title": "Christian Solidarity Worldwide"},
+    "icc": {"prefixes": ("icc",), "label": "ICC", "title": "International Christian Concern"},
 }
 
-def _source_label(sid):
-    if sid in SOURCE_LABELS:
-        return SOURCE_LABELS[sid]
-    if sid.startswith("uscirf"):
-        return "UC"
-    return sid[:6].upper()
+STATUS_PRIORITY = {"error": 0, "failed": 0, "partial": 1, "skipped": 2, "ok": 3, "cached": 4}
 
-def _source_title(sid):
-    if sid in SOURCE_TITLES:
-        return SOURCE_TITLES[sid]
-    s = all_sources_lookup.get(sid)
-    if s and s.get("title"):
-        return s["title"]
-    return sid
+
+def _assign_source_group(sid):
+    for group_key, defn in SOURCE_GROUP_DEFS.items():
+        for prefix in defn["prefixes"]:
+            if sid.startswith(prefix):
+                return group_key
+    return sid[:8]
+
 
 fetched_statuses = data.get("fetched", {}).get("source_statuses") or []
 status_map = {}
@@ -534,24 +532,52 @@ for s in fetched_statuses:
     if isinstance(s, dict) and s.get("name"):
         status_map[s["name"]] = s
 
-meta_sources = []
+source_groups = {}
 for sid in all_sources_lookup:
-    fs = status_map.get(sid)
+    group_key = _assign_source_group(sid)
+    if group_key not in source_groups:
+        source_groups[group_key] = []
+    source_groups[group_key].append(sid)
+
+STATUS_KEY_MAP = {
+    "uscirf": "uscirf",
+    "opendoors": "opendoors",
+    "pew": None,
+    "natural_earth": "natural_earth_110m",
+    "freedomhouse": "freedomhouse",
+    "statedepartment": "statedepartment",
+    "ohchr": "ohchr",
+    "gdelt": "gdelt",
+    "owid": "owid",
+}
+
+# Chip CSS uses --error; fetch scripts report "failed". Map for display.
+STATUS_DISPLAY = {"failed": "error"}
+
+
+meta_sources = []
+for group_key, sids in source_groups.items():
+    defn = SOURCE_GROUP_DEFS.get(group_key, {"label": group_key[:6].upper(), "title": group_key})
+    worst_status = None
+    worst_ts = None
+    for sid in sids:
+        status_key = STATUS_KEY_MAP.get(group_key, sid)
+        fs = status_map.get(status_key) if status_key else None
+        if not fs:
+            fs = status_map.get(sid)
+        if fs:
+            st = fs.get("status", "skipped")
+            if worst_status is None or STATUS_PRIORITY.get(st, 99) < STATUS_PRIORITY.get(worst_status, 99):
+                worst_status = st
+                worst_ts = fs.get("fetched_at")
+    if worst_status is None:
+        worst_status = "skipped"
     meta_sources.append({
-        "id": sid,
-        "label": _source_label(sid),
-        "title": _source_title(sid),
-        "status": fs.get("status", "skipped") if fs else "skipped",
-        "fetchedAt": fs.get("fetched_at") if fs else None,
-    })
-fs_ne = status_map.get("natural_earth_110m")
-if fs_ne:
-    meta_sources.append({
-        "id": "natural_earth_110m",
-        "label": "NE",
-        "title": "Natural Earth map boundaries",
-        "status": fs_ne.get("status", "ok"),
-        "fetchedAt": fs_ne.get("fetched_at"),
+        "id": group_key,
+        "label": defn["label"],
+        "title": defn["title"],
+        "status": STATUS_DISPLAY.get(worst_status, worst_status),
+        "fetchedAt": worst_ts,
     })
 
 meta = {

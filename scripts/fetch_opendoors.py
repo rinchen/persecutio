@@ -11,6 +11,7 @@ FETCHED.mkdir(parents=True, exist_ok=True)
 
 WWL_URL = "https://www.opendoors.org/en-US/persecution/countries/"
 CACHE_PATH = FETCHED / "opendoors.json"
+STATUS_PATH = FETCHED / "opendoors_status.json"
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -70,6 +71,18 @@ def load_cache():
 def save_cache(data):
     CACHE_PATH.write_text(
         json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+
+
+def write_status(status, message=None):
+    STATUS_PATH.write_text(
+        json.dumps({
+            "name": "opendoors",
+            "status": status,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "message": message,
+        }, indent=2),
+        encoding="utf-8",
     )
 
 
@@ -528,18 +541,21 @@ def main():
                 live_status,
             )
             save_cache(result)
+            write_status("ok")
             print_summary(result)
             return
         print("  Live data format not recognized, using static fallback")
 
     if cached:
         print(f"Using cached data from {cached.get('fetched_at', 'unknown')}")
+        write_status("cached")
         print_summary(cached)
         return
 
     print("Using static WWL 2025 fallback data")
     result = build_result(STATIC_WWL_2025, live_status)
     save_cache(result)
+    write_status("partial", "static fallback used")
     print_summary(result)
 
 

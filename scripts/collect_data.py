@@ -1557,6 +1557,7 @@ COUNTRIES_DATA = [
 ]
 
 sources = {
+    "natural_earth_110m": {"title": "Natural Earth map boundaries", "url": "https://www.naturalearthdata.com/", "date": "2024"},
     "odwwl2024": {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
     "acn2024": {"title": "ACN Persecuted and Forgotten? ACN report on Christians oppressed for their Faith 2022-24 / Report on Christian persecution", "url": "https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/", "date": "2024"},
     "uscirf2023afghanistan": {"title": "USCIRF 2023 Annual Report - Afghanistan", "url": "https://www.uscirf.gov/countries/afghanistan", "date": "2023"},
@@ -1764,7 +1765,21 @@ for c in COUNTRIES_DATA:
             for a in icc_articles[:3]
         ]
 
-source_statuses = [natural_earth_status]
+def load_fetch_statuses():
+    statuses = []
+    if not FETCHED.exists():
+        return statuses
+    for p in sorted(FETCHED.glob("*_status.json")):
+        try:
+            s = json.loads(p.read_text(encoding="utf-8"))
+            if isinstance(s, dict) and s.get("name"):
+                statuses.append(s)
+        except Exception:
+            pass
+    return statuses
+
+
+source_statuses = [natural_earth_status] + load_fetch_statuses()
 
 countries_data = {
     "countries": COUNTRIES_DATA,

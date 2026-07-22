@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 FETCHED = DATA / "fetched"
 FETCHED.mkdir(parents=True, exist_ok=True)
+STATUS_PATH = FETCHED / "gdelt_status.json"
 
 GDELT_BASE = "https://api.gdeltproject.org/api/v2/doc/doc"
 
@@ -19,6 +20,18 @@ QUERIES = [
 ]
 
 ARTICLE_KEYS = {"title", "url", "source", "date"}
+
+
+def write_status(status, message=None):
+    STATUS_PATH.write_text(
+        json.dumps({
+            "name": "gdelt",
+            "status": status,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "message": message,
+        }, indent=2),
+        encoding="utf-8",
+    )
 
 
 def fetch_gdelt(query):
@@ -120,6 +133,14 @@ def main():
     out_path = FETCHED / "gdelt.json"
     out_path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\nsaved to {out_path}")
+
+    failed_queries = [s for s in statuses if s["status"] == "failed"]
+    if len(failed_queries) == len(statuses):
+        write_status("failed", "all queries failed")
+    elif failed_queries:
+        write_status("partial", f"{len(failed_queries)} of {len(statuses)} queries failed")
+    else:
+        write_status("ok")
 
 
 if __name__ == "__main__":

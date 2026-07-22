@@ -26,6 +26,7 @@ META_URL = (
 
 CACHE_CSV = FETCHED / "owid_religion.csv"
 CACHE_JSON = FETCHED / "owid_religion.json"
+STATUS_PATH = FETCHED / "owid_status.json"
 
 SKIP_COUNTRIES = {
     "OWID_WRL", "OWID_AFR", "OWID_ASI", "OWID_EUR",
@@ -33,6 +34,18 @@ SKIP_COUNTRIES = {
     "PEW_APA", "PEW_EUR", "PEW_LAC", "PEW_MENA",
     "PEW_NAM", "PEW_SSA",
 }
+
+
+def write_status(status, message=None):
+    STATUS_PATH.write_text(
+        json.dumps({
+            "name": "owid",
+            "status": status,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "message": message,
+        }, indent=2),
+        encoding="utf-8",
+    )
 
 
 def fetch_url(url, label):
@@ -192,6 +205,7 @@ def main():
             print(f"  {len(countries)} countries restored from cache")
         else:
             print("  no cache available, exiting")
+            write_status("failed", "no data available")
             return
 
     status = {
@@ -201,6 +215,16 @@ def main():
         "countries": len(countries),
     }
     print(json.dumps(status, indent=2))
+
+    used_cache = bool((share_err or count_err) and countries)
+    if share_err and count_err and not countries:
+        write_status("failed", "both share and count CSVs failed")
+    elif share_err and count_err and used_cache:
+        write_status("cached", "both CSVs failed, restored from cache")
+    elif share_err or count_err:
+        write_status("partial", f"share={'ok' if not share_err else 'failed'}, count={'ok' if not count_err else 'failed'}")
+    else:
+        write_status("ok")
     print("done")
 
 

@@ -10,6 +10,7 @@ DATA = ROOT / "data"
 FETCHED = DATA / "fetched"
 STATE_DEPT = FETCHED / "state_dept"
 STATE_DEPT.mkdir(parents=True, exist_ok=True)
+STATUS_PATH = FETCHED / "state_dept_status.json"
 
 REPORT_YEAR = 2023
 BASE_URL = f"https://www.state.gov/reports/{REPORT_YEAR}-report-on-international-religious-freedom"
@@ -19,6 +20,18 @@ USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 )
+
+
+def write_status(status, message=None):
+    STATUS_PATH.write_text(
+        json.dumps({
+            "name": "statedepartment",
+            "status": status,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "message": message,
+        }, indent=2),
+        encoding="utf-8",
+    )
 
 # Some country slugs differ between our project and state.gov URLs
 SLUG_MAP = {
@@ -345,6 +358,13 @@ def main():
     print()
     print(f"Done: {succeeded} fetched, {cached} cached, {failed} failed")
     print(f"Index written to: {index_path}")
+
+    if failed == len(TARGET_COUNTRIES):
+        write_status("failed", "all countries failed")
+    elif failed > 0:
+        write_status("partial", f"{failed} of {len(TARGET_COUNTRIES)} failed")
+    else:
+        write_status("ok")
 
 
 if __name__ == "__main__":

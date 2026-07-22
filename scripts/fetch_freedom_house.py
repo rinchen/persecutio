@@ -11,6 +11,7 @@ FETCHED.mkdir(parents=True, exist_ok=True)
 
 CACHE_XLSX = FETCHED / "freedom_house.xlsx"
 OUTPUT_JSON = FETCHED / "freedom_house.json"
+STATUS_PATH = FETCHED / "freedom_house_status.json"
 
 URLS = [
     "https://freedomhouse.org/sites/default/files/2025-02/All_data_FIW_2013-2024.xlsx",
@@ -27,6 +28,18 @@ def download_xlsx(url: str) -> bytes | None:
     except Exception as e:
         print(f"  failed: {url} -- {e}")
         return None
+
+
+def write_status(status, message=None):
+    STATUS_PATH.write_text(
+        json.dumps({
+            "name": "freedomhouse",
+            "status": status,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "message": message,
+        }, indent=2),
+        encoding="utf-8",
+    )
 
 
 def parse_with_openpyxl(raw: bytes) -> dict | None:
@@ -260,11 +273,15 @@ def main():
     if raw is None and CACHE_XLSX.exists():
         print(f"\nAll downloads failed, using cached: {CACHE_XLSX.relative_to(ROOT)}")
         raw = CACHE_XLSX.read_bytes()
+        fetch_status = "cached"
     elif raw is None:
         print("\nNo data available and no cache found.")
         result = {"countries": {}, "fetched_at": None, "error": "no data available"}
         OUTPUT_JSON.write_text(json.dumps(result, indent=2), encoding="utf-8")
+        write_status("failed", "no data available")
         return
+    else:
+        fetch_status = "ok"
 
     print("\nParsing with openpyxl...")
     countries = parse_with_openpyxl(raw)
@@ -277,6 +294,7 @@ def main():
         print("  all parsers failed.")
         result = {"countries": {}, "fetched_at": None, "error": "parse failed"}
         OUTPUT_JSON.write_text(json.dumps(result, indent=2), encoding="utf-8")
+        write_status("failed", "parse failed")
         return
 
     result = {
@@ -286,6 +304,7 @@ def main():
         "total_countries": len(countries),
     }
     OUTPUT_JSON.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    write_status(fetch_status)
 
     print(f"\n{'=' * 50}")
     print(f"Total countries: {len(countries)}")

@@ -9,6 +9,7 @@ DATA = ROOT / "data"
 FETCHED = DATA / "fetched"
 OHCHR_DIR = FETCHED / "ohchr"
 OHCHR_DIR.mkdir(parents=True, exist_ok=True)
+STATUS_PATH = FETCHED / "ohchr_status.json"
 
 API_BASE = "https://uhri.ohchr.org/api/v1"
 RECOMMENDATIONS_URL = f"{API_BASE}/measure-recommendations"
@@ -33,6 +34,18 @@ RELIGION_KEYWORDS = [
     "proselyt",
     "conversion",
 ]
+
+
+def write_status(status, message=None):
+    STATUS_PATH.write_text(
+        json.dumps({
+            "name": "ohchr",
+            "status": status,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "message": message,
+        }, indent=2),
+        encoding="utf-8",
+    )
 
 
 def fetch_json(url, path, name, skip=False):
@@ -132,6 +145,7 @@ def main():
                 index_path.write_text(
                     json.dumps(cached, indent=2, ensure_ascii=False), encoding="utf-8"
                 )
+                write_status("cached")
                 print(f"ohchr used cache: {index_path}")
                 return
             except Exception:
@@ -140,6 +154,7 @@ def main():
         index_path.write_text(
             json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8"
         )
+        write_status("failed", "api unavailable, no cache")
         print(f"ohchr wrote empty index: {index_path}")
         return
 
@@ -163,6 +178,7 @@ def main():
     index_path.write_text(
         json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8"
     )
+    write_status(status["status"])
     print(f"ohchr wrote {len(countries)} countries to {index_path}")
 
 

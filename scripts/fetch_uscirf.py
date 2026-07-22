@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 FETCHED = DATA / "fetched" / "uscirf"
 FETCHED.mkdir(parents=True, exist_ok=True)
+STATUS_PATH = DATA / "fetched" / "uscirf_status.json"
 
 BASE_URL = "https://www.uscirf.gov"
 RECOMMENDATIONS_URL = f"{BASE_URL}/countries/2026-recommendations"
@@ -18,6 +19,18 @@ USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 )
+
+
+def write_status(status, message=None):
+    STATUS_PATH.write_text(
+        json.dumps({
+            "name": "uscirf",
+            "status": status,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "message": message,
+        }, indent=2),
+        encoding="utf-8",
+    )
 
 
 COUNTRIES = [
@@ -364,6 +377,13 @@ def main():
     swl_found = [r for r in results if r["designation"] == "SWL"]
     none_found = [r for r in results if r["designation"] == "none"]
     print(f"Designations: {len(cpc_found)} CPC, {len(swl_found)} SWL, {len(none_found)} none")
+
+    if failed == len(unique_countries):
+        write_status("failed", "all countries failed")
+    elif failed > 0:
+        write_status("partial", f"{failed} of {len(unique_countries)} failed")
+    else:
+        write_status("ok")
 
 
 if __name__ == "__main__":

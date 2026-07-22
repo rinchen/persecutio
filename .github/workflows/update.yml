@@ -16,14 +16,20 @@ jobs:
           python-version: '3.12'
       - run: python3 -m pip install --upgrade pip pyyaml requests beautifulsoup4 openpyxl pytest
       - name: Fetch external data sources
+        id: fetch
         run: |
-          python3 scripts/fetch_opendoors.py || true
-          python3 scripts/fetch_freedom_house.py || true
-          python3 scripts/fetch_owid.py || true
-          python3 scripts/fetch_gdelt.py || true
-          python3 scripts/fetch_uscirf.py || true
-          python3 scripts/fetch_state_dept.py || true
-          python3 scripts/fetch_ohchr.py || true
+          FAIL=0
+          python3 scripts/fetch_opendoors.py || FAIL=1
+          python3 scripts/fetch_freedom_house.py || FAIL=1
+          python3 scripts/fetch_owid.py || FAIL=1
+          python3 scripts/fetch_gdelt.py || FAIL=1
+          python3 scripts/fetch_uscirf.py || FAIL=1
+          python3 scripts/fetch_state_dept.py || FAIL=1
+          python3 scripts/fetch_ohchr.py || FAIL=1
+          echo "fetch_failed=$FAIL" >> "$GITHUB_OUTPUT"
+          if [ "$FAIL" -ne 0 ]; then
+            echo "::warning::One or more data source fetches failed — see individual status files"
+          fi
           python3 scripts/fetch_morningstarnews.py || true
           python3 scripts/fetch_vid.py || true
           python3 scripts/fetch_gcr_stats.py || true
@@ -92,3 +98,8 @@ jobs:
             git commit -m "chore: update persecution data and site [skip ci]"
             git push origin HEAD:main
           fi
+      - name: Flag failed fetches
+        if: steps.fetch.outputs.fetch_failed == '1'
+        run: |
+          echo "::error::One or more data source fetches failed — check status files in data/fetched/*_status.json"
+          exit 1
