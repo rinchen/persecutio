@@ -14,78 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <style>
-    .callout {
-      background: var(--color-surface-2);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      padding: 12px 14px;
-      color: var(--color-text);
-      font-size: 0.875rem;
-      line-height: 1.5;
-    }
-    .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin-top: 10px;
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-    }
-    .sources-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.875rem;
-      min-width: 500px;
-    }
-    .sources-table th {
-      text-align: left;
-      padding: 8px 12px;
-      border-bottom: 2px solid var(--color-border);
-      color: var(--color-text);
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      background: var(--color-surface-2);
-    }
-    .sources-table td {
-      padding: 8px 12px;
-      border-bottom: 1px solid var(--color-surface-2);
-      vertical-align: top;
-    }
-    .sources-table tr:last-child td { border-bottom: none; }
-    .abbr-badge {
-      display: inline-block;
-      padding: 2px 7px;
-      border-radius: 4px;
-      font-size: 0.68rem;
-      font-weight: 600;
-      background: var(--color-surface-2);
-      color: var(--color-text);
-    }
-    .status-legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-      font-size: 0.8125rem;
-      color: var(--color-text-muted);
-    }
-    .status-legend span {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .swatch {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 2px;
-    }
-    .swatch--ok { background: #dcfce7; box-shadow: inset 0 0 0 1px #166534; }
-    .swatch--partial { background: #fef3c7; box-shadow: inset 0 0 0 1px #92400e; }
-    .swatch--error { background: #fee2e2; box-shadow: inset 0 0 0 1px #991b1b; }
-    .swatch--skipped { background: var(--color-surface-2); box-shadow: inset 0 0 0 1px var(--color-text-muted); }
-  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
@@ -102,7 +30,7 @@
 
   <main id="main-content" tabindex="-1">
     <div class="card">
-      <div class="post">
+      <article class="post">
         <h1>About this site</h1>
         <p>This is a static site hosted on GitHub Pages. There is no application server. Country pages and index data are generated from structured source records and updated automatically via GitHub Actions.</p>
 
@@ -115,7 +43,11 @@
         <div class="table-wrap">
           <table class="sources-table">
             <thead>
-              <tr><th>Abbr</th><th>Source</th><th>What it covers</th></tr>
+              <tr>
+                <th scope="col">Abbr</th>
+                <th scope="col">Source</th>
+                <th scope="col">What it covers</th>
+              </tr>
             </thead>
             <tbody>
               <tr>
@@ -227,27 +159,27 @@
           </table>
         </div>
 
+        <p><strong>Source status key</strong> (shown on the site footer):</p>
+        <div class="status-legend">
+          <span><span class="swatch swatch--ok" aria-hidden="true"></span> OK &mdash; source fetched successfully</span>
+          <span><span class="swatch swatch--partial" aria-hidden="true"></span> Partial &mdash; partial data retrieved</span>
+          <span><span class="swatch swatch--error" aria-hidden="true"></span> Error &mdash; fetch failed</span>
+          <span><span class="swatch swatch--skipped" aria-hidden="true"></span> Skipped &mdash; not yet fetched</span>
+        </div>
+
         <h2>Archived research materials</h2>
         <p>A one-time archive under <code>data/archives/</code> stores legally redistributable research used to enrich country pages:</p>
         <ul>
           <li><strong>U.S. State Department IRF</strong> country chapters (U.S. government works)</li>
           <li><strong>USCIRF</strong> annual report PDF and country pages (U.S. government works)</li>
-          <li><strong>Open Doors World Watch Research</strong> persecution-dynamics dossiers (free use/distribution with © Open Doors International attribution)</li>
+          <li><strong>Open Doors World Watch Research</strong> persecution-dynamics dossiers (free use/distribution with &copy; Open Doors International attribution)</li>
           <li><strong>V-Dem</strong> FoRB indicator subset (CC BY-SA)</li>
         </ul>
         <p>See <code>data/archives/NOTICE</code> for license details. Country pages cite these sources and may show short excerpts; they do not republish full report bodies.</p>
 
-        <p style="margin-top: 14px"><strong>Source status key</strong> (shown on the site footer):</p>
-        <div class="status-legend">
-          <span><span class="swatch swatch--ok"></span> OK &mdash; source fetched successfully</span>
-          <span><span class="swatch swatch--partial"></span> Partial &mdash; partial data retrieved</span>
-          <span><span class="swatch swatch--error"></span> Error &mdash; fetch failed</span>
-          <span><span class="swatch swatch--skipped"></span> Skipped &mdash; not yet fetched</span>
-        </div>
-
         <h2>Update workflow</h2>
         <p>A GitHub Actions workflow runs <strong>daily</strong> (and on manual dispatch). It fetches external sources, regenerates country pages and JSON assets, runs tests, and deploys to GitHub Pages. On scheduled runs <strong>and</strong> manual dispatch, data changes are committed back to the repository.</p>
-        <p><strong>Primary</strong> sources (Open Doors, Freedom House, OWID, GDELT, USCIRF, State Dept) gate the job: if any fail, generate/deploy abort. <strong>Secondary</strong> sources (OHCHR, MSN, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International) enrich when available and never abort deploy. Only public site files are uploaded to Pages — not scrape caches under <code>data/fetched/</code>.</p>
+        <p><strong>Primary</strong> sources (Open Doors, Freedom House, OWID, GDELT, USCIRF, State Dept) gate the job: if any fail, generate/deploy abort. <strong>Secondary</strong> sources (OHCHR, MSN, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International) enrich when available and never abort deploy. Only public site files are uploaded to Pages &mdash; not scrape caches under <code>data/fetched/</code>.</p>
 
         <h2>Privacy and access</h2>
         <p>This site does not collect personal data. Map tiles come from CARTO/OpenStreetMap; Leaflet and Lunr are self-hosted under <code>assets/vendor/</code>. If you use an ad blocker, map tiles may still be affected.</p>
@@ -257,13 +189,13 @@
         </div>
 
         <h2>About the creator</h2>
-        <p>This site was created by <a href="https://fishy.best/~jjs/" target="_blank" rel="noopener">Joey</a> as a companion tool for <a href="https://www.trinitari.org/sit/" target="_blank" rel="noopener">SIT &mdash; Solidarietà Internazionale Trinitaria</a>, the Trinitarian Order&rsquo;s international solidarity ministry supporting persecuted Christians worldwide. SIT works to raise awareness and provide concrete aid to Christians facing persecution because of their faith.</p>
+        <p>This site was created by <a href="https://fishy.best/~jjs/" target="_blank" rel="noopener">Joey</a> as a companion tool for <a href="https://www.trinitari.org/sit/" target="_blank" rel="noopener">SIT &mdash; Solidariet&agrave; Internazionale Trinitaria</a>, the Trinitarian Order&rsquo;s international solidarity ministry supporting persecuted Christians worldwide. SIT works to raise awareness and provide concrete aid to Christians facing persecution because of their faith.</p>
 
         <h2>Contributing</h2>
-        <p>Edits are tracked in the repository as structured data. To suggest a source, correction, or new country entry, open an issue or pull request. See the README for the fetch → collect → generate → pytest workflow.</p>
+        <p>Edits are tracked in the repository as structured data. To suggest a source, correction, or new country entry, open an issue or pull request. See the README for the fetch &rarr; collect &rarr; generate &rarr; pytest workflow.</p>
 
         <a class="back-link" href="index.html">&larr; Back to map</a>
-      </div>
+      </article>
     </div>
   </main>
 

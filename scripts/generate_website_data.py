@@ -20,71 +20,70 @@ PAGE = """\
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#0b132b" />
-<title>{title} | Christian Persecution World Map</title>
-<link rel="icon" href="/persecutio/assets/img/favicon.svg" type="image/svg+xml" />
-<link rel="icon" href="/persecutio/assets/img/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="stylesheet" href="../assets/css/main.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'" />
-<meta http-equiv="X-Content-Type-Options" content="nosniff" />
-<meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b132b" />
+  <title>{title} | Christian Persecution World Map</title>
+  <link rel="icon" href="/persecutio/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/persecutio/assets/img/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to content</a>
-<header>
-  <div class="wrap">
-    <a class="brand" href="/persecutio/index.html">Christian Persecution World Map</a>
-    <nav>
-      <a href="/persecutio/index.html">Map</a>
-      <a href="/persecutio/about.html">About</a>
-    </nav>
-  </div>
-</header>
-<main id="main-content" tabindex="-1">
-  <div class="card">
-    <div class="country-hero" data-status="{status_key}">
-      <div class="top">
-        <h1>{title}</h1>
-      </div>
-      <div class="status-pill">
-        <span class="pct" style="background:{status_color}"></span>
-        <span>{persecution_level} · {status_label}</span>
-      </div>
-      {stub_note}
-      {data_fields}
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="/persecutio/index.html">Christian Persecution World Map</a>
+      <nav>
+        <a href="/persecutio/index.html">Map</a>
+        <a href="/persecutio/about.html">About</a>
+      </nav>
     </div>
-    <section>
-      <h2>Historical Background</h2>
-      <p>{historical}</p>
-      <div class="section-sources"><strong>Sources:</strong> {historical_sources}</div>
-    </section>
-    <section>
-      <h2>Modern-Day Situation</h2>
-      <p>{modern}</p>
-      <div class="section-sources"><strong>Sources:</strong> {modern_sources}</div>
-    </section>
-    {archive_notes}
-    {recent_incidents}
-    <section>
-      <h2>All References</h2>
-      <ul>
-        {all_sources}
-      </ul>
-    </section>
-  </div>
-</main>
-<footer class="site-footer">
-  <p id="data-updated">Loading data freshness…</p>
-  <div id="data-sources" class="site-footer__sources" hidden></div>
-</footer>
-<button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
-<script src="../assets/js/sources.js" defer data-meta="../assets/data/meta.json"></script>
-<script src="../assets/js/back-to-top.js" defer></script>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <div class="card">
+      <div class="country-hero" data-status="{status_key}">
+        <div class="top">
+          <h1>{title}</h1>
+        </div>
+        <div class="status-pill">
+          <span class="pct" style="background:{status_color}"></span>
+          <span>{persecution_level} · {status_label}</span>
+        </div>{stub_note}
+        {data_fields}
+      </div>
+      <section>
+        <h2>Historical Background</h2>
+        <p>{historical}</p>
+        <div class="section-sources"><strong>Sources:</strong> {historical_sources}</div>
+      </section>
+      <section>
+        <h2>Modern-Day Situation</h2>
+        <p>{modern}</p>
+        <div class="section-sources"><strong>Sources:</strong> {modern_sources}</div>
+      </section>
+      {archive_notes}
+      {recent_incidents}
+      <section>
+        <h2>All References</h2>
+        <ul>
+          {all_sources}
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p id="data-updated">Loading data freshness…</p>
+    <div id="data-sources" class="site-footer__sources" hidden></div>
+  </footer>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+  <script src="../assets/js/sources.js" defer data-meta="../assets/data/meta.json"></script>
+  <script src="../assets/js/back-to-top.js" defer></script>
 </body>
 </html>
 """
@@ -160,6 +159,15 @@ STATUS_DISPLAY = {"failed": "error"}
 
 def esc(value) -> str:
     return html.escape(str(value if value is not None else ""), quote=True)
+
+
+def clip_text(text: str, limit: int) -> str:
+    """Truncate at a word boundary so excerpts do not end mid-word."""
+    text = (text or "").strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(" ,;:-")
+    return (cut or text[:limit]).rstrip() + "…"
 
 
 def safe_url(url: str | None, fallback: str = "#") -> str:
@@ -309,7 +317,8 @@ def render_data_fields(country: dict) -> str:
         )
     if not items:
         return ""
-    return '<div class="data-grid">' + "\n      ".join(items) + "\n    </div>"
+    joined = "\n          ".join(items)
+    return f'<div class="data-grid">\n          {joined}\n        </div>'
 
 
 def render_archive_notes(country: dict) -> str:
@@ -322,38 +331,39 @@ def render_archive_notes(country: dict) -> str:
     if od_brief and od_brief[:80] not in modern:
         bits.append(
             "<p><strong>Open Doors research note:</strong> "
-            f"{esc(od_brief[:600])}"
+            f"{esc(clip_text(od_brief, 600))}"
             ' <span class="archive-attr">(© Open Doors International)</span></p>'
         )
     sd = (meta.get("state_dept_executive_summary") or "").strip()
     if sd and sd[:80] not in modern and len(bits) < 2:
         bits.append(
             "<p><strong>U.S. State Department IRF excerpt:</strong> "
-            f"{esc(sd[:500])}</p>"
+            f"{esc(clip_text(sd, 500))}</p>"
         )
     findings = meta.get("uscirf_key_findings") or []
     if findings and len(bits) < 2:
         first = str(findings[0]).strip()
         if first and first[:80] not in modern:
             bits.append(
-                f"<p><strong>USCIRF finding:</strong> {esc(first[:500])}</p>"
+                f"<p><strong>USCIRF finding:</strong> {esc(clip_text(first, 500))}</p>"
             )
     if not bits:
         return ""
+    body = "\n        ".join(bits)
     return (
         '<section class="archive-notes">\n'
-        "      <h2>From archived reports</h2>\n"
-        "      "
-        + "\n      ".join(bits)
-        + "\n    </section>"
+        "        <h2>From archived reports</h2>\n"
+        f"        {body}\n"
+        "      </section>"
     )
+
 
 def render_stub_note(country: dict) -> str:
     meta = country.get("metadata") or {}
     if not meta.get("stub"):
         return ""
     return (
-        '<p class="stub-note"><em>Auto-tracked</em> — this country page was created from '
+        '\n        <p class="stub-note"><em>Auto-tracked</em> — this country page was created from '
         "nightly Christian persecution feeds. Editorial narrative is pending; "
         "indicators and incident links reflect ingested sources.</p>"
     )
@@ -389,17 +399,18 @@ def render_recent_incidents(country: dict) -> str:
         src = esc(a.get("source", ""))
         date = esc(a.get("date", ""))
         rows.append(
-            f'<div class="incident-item"><span class="incident-source">{src}</span> '
+            f'<div class="incident-item">'
+            f'<span class="incident-source">{src}</span> '
             f'<a href="{href}" target="_blank" rel="noopener">{title}</a> '
-            f'<span class="incident-date">{date}</span></div>'
+            f'<span class="incident-date">{date}</span>'
+            f"</div>"
         )
+    joined = "\n          ".join(rows)
     return (
         "<section>\n"
-        "      <h2>Recent Incidents</h2>\n"
-        '<div class="incidents-list">'
-        + "\n    ".join(rows)
-        + "\n    </div>\n"
-        "    </section>"
+        "        <h2>Recent Incidents</h2>\n"
+        f'        <div class="incidents-list">\n          {joined}\n        </div>\n'
+        "      </section>"
     )
 
 
@@ -518,7 +529,7 @@ def main():
             modern=esc(c.get("modern", "")),
             historical_sources=historical_sources,
             modern_sources=modern_sources,
-            all_sources="\n        ".join(all_sources_items),
+            all_sources="\n          ".join(all_sources_items),
             persecution_level=esc(c.get("persecution_level", "")),
             status_key=esc(status or "unknown"),
             status_label=esc(label),
