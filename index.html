@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b132b" />
   <title>Christian Persecution World Map</title>
   <link rel="icon" href="assets/img/favicon-32x32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<body class="min-h-screen bg-slate-50">
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
   <header>
     <div class="wrap">
       <a class="brand" href="index.html">Christian Persecution World Map</a>
@@ -18,19 +24,20 @@
       </nav>
     </div>
   </header>
-  <main>
+
+  <main id="main-content" tabindex="-1">
     <div class="card">
       <header>
         <h1>Christian Persecution Around the World</h1>
         <p>Search a country or click the map to view historical and modern persecution data.</p>
       </header>
-      <div class="px-4 pt-3">
+      <div style="margin-top: 12px">
         <div class="search">
-          <input id="country-search" type="search" placeholder="Search country..." autocomplete="off" />
-          <div id="search-results" class="hidden"></div>
+          <input id="country-search" type="search" placeholder="Search a country..." autocomplete="off" aria-label="Search countries" />
+          <div id="search-results" class="hidden" role="listbox"></div>
         </div>
       </div>
-      <div id="map" class="mt-2"></div>
+      <div id="map"></div>
       <div class="legend">
         <div><span class="dot" style="background:#dc2626"></span>Extreme / Very High</div>
         <div><span class="dot" style="background:#f97316"></span>High</div>
@@ -39,16 +46,23 @@
       </div>
     </div>
   </main>
+
   <footer>
     <div class="wrap">
       <div id="data-updated">Loading data status...</div>
       <div id="data-sources"></div>
     </div>
   </footer>
+
+  <div id="status-announcer" aria-live="polite" class="sr-only"></div>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
   <script src="assets/js/map.js" defer></script>
   <script src="assets/js/search-ui.js" defer></script>
   <script src="assets/js/sources.js" defer></script>
+  <script src="assets/js/back-to-top.js" defer></script>
 </body>
 </html>

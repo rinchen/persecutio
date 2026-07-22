@@ -2,47 +2,281 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0b132b" />
 <title>Uganda | Christian Persecution World Map</title>
 <link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after { box-sizing: border-box; }
-body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Arial,sans-serif; background:#f8fafc; color:#0f172a; }
-header { background:#0b132b; color:#fff; }
-header a { text-decoration:none; color:inherit; }
-.wrap { max-width:1100px; margin:0 auto; padding:16px; display:flex; align-items:center; justify-content:space-between; }
-.brand { font-weight:700; letter-spacing:0.3px; }
-nav a { color:#cbd5e1; }
-nav a:hover { color:#fff; }
-main { padding:24px 16px; }
-.card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.03); padding:16px; }
-.top { display:flex; align-items:center; justify-content:space-between; gap:12px; }
-.top h1 { margin:0; font-size:22px; }
-.top a { font-size:13px; color:#2563eb; text-decoration:underline; }
-section + section { margin-top:18px; }
-h2 { margin:0 0 6px; font-size:16px; color:#0b132b; }
-p { margin:0; line-height:1.6; color:#1e293b; }
-ul { margin:0; padding-left:18px; }
-li + li { margin-top:6px; }
-a { color:#2563eb; word-break:break-word; }
-.status-pill { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; font-size:12px; border:1px solid #e5e7eb; background:#f8fafc; }
-.status-pill .pct { width:8px; height:8px; border-radius:999px; display:inline-block; }
-.section-sources { margin-top:8px; font-size:13px; color:#475569; }
-.section-sources strong { color:#0f172a; }
-footer { margin-top:24px; padding:14px 16px; border-top:1px solid #e5e7eb; font-size:13px; color:#64748b; background:#fff; }
-footer a { color:#334155; text-decoration: underline; }
-.data-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin-top:14px; }
-.data-item { background:#f1f5f9; border-radius:8px; padding:10px 12px; font-size:13px; }
-.data-item .label { color:#64748b; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; }
-.data-item .value { color:#0f172a; font-weight:600; font-size:15px; margin-top:2px; }
-.incidents-list { margin-top:10px; }
-.incident-item { padding:8px 0; border-bottom:1px solid #e5e7eb; font-size:13px; }
-.incident-item:last-child { border-bottom:none; }
-.incident-source { display:inline-block; background:#fee2e2; color:#991b1b; font-size:11px; font-weight:600; padding:2px 6px; border-radius:4px; margin-right:6px; }
-.incident-date { color:#94a3b8; font-size:12px; margin-left:6px; }
+body {
+  margin: 0;
+  font-family: 'Outfit', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  background: linear-gradient(180deg, #dbeafe 0%, #f4f8fb 28%, #f4f8fb 100%);
+  color: #1a2b3c;
+  line-height: 1.55;
+  min-height: 100dvh;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 9999;
+  padding: 8px 16px;
+  background: #0369a1;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 10px 10px;
+  text-decoration: none;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 16px;
+  top: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  z-index: 10000;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+header {
+  background: rgb(255 255 255 / 94%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgb(197 214 227 / 90%);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: #1a2b3c;
+}
+header a { text-decoration: none; color: inherit; }
+.wrap {
+  max-width: min(92rem, 100%);
+  margin: 0 auto;
+  padding: 0 clamp(0.75rem, 2.8vw, 2.5rem);
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.brand {
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+nav { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+nav a { color: #4a5f73; font-size: 0.875rem; }
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover { color: #0369a1; }
+}
+main {
+  padding: clamp(0.75rem, 2.5vw, 1.5rem) clamp(0.75rem, 2.8vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+.card {
+  background: rgb(255 255 255 / 94%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgb(197 214 227 / 90%);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgb(26 43 60 / 8%), 0 4px 16px rgb(26 43 60 / 6%);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  max-width: min(92rem, 100%);
+  margin: 0 auto;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.top h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.top a {
+  font-size: 0.8125rem;
+  color: #0369a1;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .top a:hover { color: #075985; }
+}
+section + section { margin-top: 18px; }
+h2 {
+  margin: 0 0 6px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  color: #1a2b3c;
+}
+p { margin: 0; line-height: 1.55; color: #1a2b3c; }
+p + p { margin-top: 10px; }
+ul { margin: 0; padding-left: 18px; }
+li + li { margin-top: 6px; }
+a { color: #0369a1; word-break: break-word; }
+@media (hover: hover) and (pointer: fine) {
+  a:hover { color: #075985; }
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  border: 1px solid #c5d6e3;
+  background: #ffffff;
+  margin-top: 8px;
+}
+.status-pill .pct {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.section-sources {
+  margin-top: 8px;
+  font-size: 0.8125rem;
+  color: #4a5f73;
+}
+.section-sources strong { color: #1a2b3c; }
+footer {
+  margin-top: 6px;
+  border-top: 1px solid rgb(197 214 227 / 90%);
+  background: rgb(255 255 255 / 82%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.75rem;
+  color: #4a5f73;
+}
+footer .wrap {
+  display: block;
+  max-width: min(92rem, 100%);
+  padding: 10px clamp(0.75rem, 2.8vw, 2.5rem);
+  height: auto;
+}
+.footer-status-line { font-size: 0.75rem; }
+.footer-status-line a { color: #334155; text-decoration: underline; }
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.data-item {
+  background: #e8f1f8;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.8125rem;
+}
+.data-item .label {
+  color: #4a5f73;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.data-item .value {
+  color: #1a2b3c;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+.incidents-list { margin-top: 10px; }
+.incident-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #c5d6e3;
+  font-size: 0.8125rem;
+}
+.incident-item:last-child { border-bottom: none; }
+.incident-source {
+  display: inline-block;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+.incident-date { color: #94a3b8; font-size: 0.75rem; margin-left: 6px; }
+@media (max-width: 520px) {
+  .brand { font-size: 0.875rem; }
+  nav { gap: 10px; }
+  nav a { font-size: 0.8125rem; }
+}
+:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 2px;
+}
+.back-to-top {
+  position: fixed;
+  bottom: max(1.5rem, env(safe-area-inset-bottom));
+  right: max(1.5rem, env(safe-area-inset-right));
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 94%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgb(197 214 227 / 90%);
+  box-shadow: 0 1px 3px rgb(26 43 60 / 8%), 0 4px 16px rgb(26 43 60 / 6%);
+  color: #1a2b3c;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  z-index: 90;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to content</a>
 <header>
   <div class="wrap">
     <a class="brand" href="/persecutio/index.html">Christian Persecution World Map</a>
@@ -51,7 +285,7 @@ footer a { color:#334155; text-decoration: underline; }
     </nav>
   </div>
 </header>
-<main>
+<main id="main-content" tabindex="-1">
   <div class="card">
     <div class="top">
       <h1>Uganda</h1>
@@ -85,12 +319,14 @@ footer a { color:#334155; text-decoration: underline; }
   </div>
 </main>
 <footer>
-  <div class="wrap" style="padding:14px 16px;">
+  <div class="wrap">
     <div class="footer-status-line">
       <strong>Source status:</strong>
-      last pull: natural_earth_110m fetched 2026-07-22T03:30:12.790060+00:00
+      last pull: natural_earth_110m fetched 2026-07-22T03:38:17.717921+00:00
     </div>
   </div>
 </footer>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+<script src="../assets/js/back-to-top.js" defer></script>
 </body>
 </html>
