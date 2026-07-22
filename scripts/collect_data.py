@@ -648,7 +648,7 @@ COUNTRIES_DATA = [
       {"title": "USCIRF 2023 Annual Report - United States", "url": "https://www.uscirf.gov/countries/united-states", "date": "2023"},
       {"title": "Pew Research - Religion in America", "url": "https://www.pewresearch.org/religion/religious-landscape-study/", "date": "2023"}
     ],
-    "source_ids": {"historical": ["pew2023america"], "modern": ["uscirf2023unitedstates", "pew2023america"]},
+    "source_ids": {"historical": ["pew2023america","acn2024"], "modern": ["uscirf2023unitedstates","pew2023america","acn2024"]},
     "pew_slug": "america"
   },
   {
@@ -697,7 +697,7 @@ COUNTRIES_DATA = [
     "sources": [
       {"title": "USCIRF 2023 Annual Report - Uganda", "url": "https://www.uscirf.gov/countries/uganda", "date": "2023"}
     ],
-    "source_ids": {"historical": ["uscirf2023uganda"], "modern": ["uscirf2023uganda"]},
+    "source_ids": {"historical": ["uscirf2023uganda","acn2024"], "modern": ["uscirf2023uganda","acn2024"]},
     "pew_slug": ""
   }
 ]
