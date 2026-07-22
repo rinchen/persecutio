@@ -131,7 +131,6 @@ footer a {{ color:#334155; text-decoration: underline; }}
 </main>
 <footer>
   <div class="wrap" style="padding:14px 16px;">
-    <div style="margin-top:6px">Data updated automatically via GitHub Actions. Last generated: {generated_at}</div>
     <div class="footer-status-line">
       <strong>Source status:</strong>
       {last_pull_text}
