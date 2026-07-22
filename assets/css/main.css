@@ -548,16 +548,12 @@ footer .wrap {
   height: auto;
 }
 
-/* Source chips — label in col 1; legend + chips share col 2 so OK aligns with first chip */
+/* Source chips — label above; legend + chips share left edge so OK aligns with first chip */
 #data-sources {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 12px;
-  row-gap: 4px;
-  align-items: center;
-}
-.source-chips-head {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 .source-chips-label {
   font-size: 0.68rem;
@@ -595,7 +591,6 @@ footer .wrap {
   display: flex;
   flex-wrap: wrap;
   gap: 3px;
-  grid-column: 2;
   margin: 0;
   padding: 0;
 }

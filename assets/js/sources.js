@@ -36,15 +36,13 @@
     }).join('');
 
     sourcesEl.innerHTML =
-      '<div class="source-chips-head">' +
-        '<span class="source-chips-label">Sources</span>' +
-        '<ul class="source-legend">' +
-          '<li class="source-legend__item"><span class="source-legend__swatch source-chip--ok"></span>OK</li>' +
-          '<li class="source-legend__item"><span class="source-legend__swatch source-chip--partial"></span>Partial</li>' +
-          '<li class="source-legend__item"><span class="source-legend__swatch source-chip--error"></span>Error</li>' +
-          '<li class="source-legend__item"><span class="source-legend__swatch source-chip--skipped"></span>Skipped</li>' +
-        '</ul>' +
-      '</div>' +
+      '<span class="source-chips-label">Sources</span>' +
+      '<ul class="source-legend">' +
+        '<li class="source-legend__item"><span class="source-legend__swatch source-chip--ok"></span>OK</li>' +
+        '<li class="source-legend__item"><span class="source-legend__swatch source-chip--partial"></span>Partial</li>' +
+        '<li class="source-legend__item"><span class="source-legend__swatch source-chip--error"></span>Error</li>' +
+        '<li class="source-legend__item"><span class="source-legend__swatch source-chip--skipped"></span>Skipped</li>' +
+      '</ul>' +
       '<ul class="source-chips">' + chipsHtml + '</ul>';
     sourcesEl.hidden = false;
   }
