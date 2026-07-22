@@ -305,7 +305,7 @@ def render_data_fields(country: dict) -> str:
         )
     if meta.get("state_dept_url"):
         items.append(
-            f'<div class="data-item"><div class="label">State Dept IRF</div>'
+            f'<div class="data-item"><div class="label">U.S. State Dept IRF</div>'
             f'<div class="value"><a href="{safe_url(meta.get("state_dept_url"))}" '
             f'target="_blank" rel="noopener">Report</a></div></div>'
         )

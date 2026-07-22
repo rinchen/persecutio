@@ -97,9 +97,9 @@ COUNTRIES_DATA = [
             "converts. Post-2021 Taliban rule reversed what little space had opened."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Afghanistan", "url": "https://www.uscirf.gov/countries/afghanistan", "date": "2023"},
-            {"title": "BBC News - Afghanistan Christians 2021", "url": "https://www.bbc.com/news/world-asia-58293018", "date": "2021"}
+            {"title": "BBC News - Taliban tortured and massacred Hazara men 2021", "url": "https://www.bbc.com/news/world-asia-58277463", "date": "2021"}
         ],
         "source_ids": {
             "historical": ["bbc2021", "odwwl2024"],
@@ -130,9 +130,9 @@ COUNTRIES_DATA = [
             "from the 2010s onward."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - China", "url": "https://www.uscirf.gov/countries/china", "date": "2023"},
-            {"title": "Pew Research - Religion in China", "url": "https://www.pewresearch.org/religion/2023/08/30/religion-in-china/", "date": "2023"}
+            {"title": "Pew Research - Measuring Religion in China", "url": "https://www.pewresearch.org/religion/2023/08/30/measuring-religion-in-china/", "date": "2023"}
         ],
         "source_ids": {
             "historical": ["pew2023china", "odwwl2024"],
@@ -161,8 +161,8 @@ COUNTRIES_DATA = [
             "recurred through constitutional and agrarian disputes."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-            {"title": "USCIRF 2023 Annual Report - Colombia", "url": "https://www.uscirf.gov/countries/colombia", "date": "2023"}
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
+            {"title": "USCIRF 2023 Annual Report - Colombia", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023colombia", "odwwl2024"]},
         "pew_slug": ""
@@ -188,7 +188,7 @@ COUNTRIES_DATA = [
             "1980s and 1990s, allowing greater religious expression."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Cuba", "url": "https://www.uscirf.gov/countries/cuba", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023cuba", "odwwl2024"]},
@@ -214,7 +214,7 @@ COUNTRIES_DATA = [
             "independence, restrictive religious policy has increased state oversight of worship."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Eritrea", "url": "https://www.uscirf.gov/countries/eritrea", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023eritrea", "odwwl2024"]},
@@ -241,7 +241,7 @@ COUNTRIES_DATA = [
             "post-independence eras."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - India", "url": "https://www.uscirf.gov/countries/india", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023india", "odwwl2024"]},
@@ -268,7 +268,7 @@ COUNTRIES_DATA = [
             "religious expressions and generated periodic communal conflict."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Indonesia", "url": "https://www.uscirf.gov/countries/indonesia", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023indonesia", "odwwl2024"]},
@@ -295,7 +295,7 @@ COUNTRIES_DATA = [
             "2000s."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Iran", "url": "https://www.uscirf.gov/countries/iran", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023iran", "odwwl2024"]},
@@ -321,7 +321,7 @@ COUNTRIES_DATA = [
             "century from jihadist violence and mass displacement."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Iraq", "url": "https://www.uscirf.gov/countries/iraq", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023iraq", "odwwl2024"]},
@@ -346,7 +346,7 @@ COUNTRIES_DATA = [
             "state-sanctioned bodies and drove many churches underground."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Laos", "url": "https://www.uscirf.gov/countries/laos", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023laos", "odwwl2024"]},
@@ -371,8 +371,8 @@ COUNTRIES_DATA = [
             "Religious freedom was restored through late-20th-century legal reforms."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-            {"title": "USCIRF 2023 Annual Report - Mexico", "url": "https://www.uscirf.gov/countries/mexico", "date": "2023"}
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
+            {"title": "USCIRF 2023 Annual Report - Mexico", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023mexico", "odwwl2024"]},
         "pew_slug": ""
@@ -398,7 +398,7 @@ COUNTRIES_DATA = [
             "being again targeted in the 2020s."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Nicaragua", "url": "https://www.uscirf.gov/countries/nicaragua", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023nicaragua", "odwwl2024"]},
@@ -425,7 +425,7 @@ COUNTRIES_DATA = [
             "the Sahel created fertile ground for present-day violence."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Nigeria", "url": "https://www.uscirf.gov/countries/nigeria", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023nigeria", "odwwl2024"]},
@@ -450,7 +450,7 @@ COUNTRIES_DATA = [
             "activity survived through refugees and defectors."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - North Korea", "url": "https://www.uscirf.gov/countries/north-korea", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023northkorea", "odwwl2024"]},
@@ -476,7 +476,7 @@ COUNTRIES_DATA = [
             "since then legal and societal pressures have increased."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Pakistan", "url": "https://www.uscirf.gov/countries/pakistan", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023pakistan", "odwwl2024"]},
@@ -501,7 +501,7 @@ COUNTRIES_DATA = [
             "administration, but eventually all organized Christian community activity was restricted."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Saudi Arabia", "url": "https://www.uscirf.gov/countries/saudi-arabia", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023saudiarabia", "odwwl2024"]},
@@ -527,8 +527,8 @@ COUNTRIES_DATA = [
             "Civil war destroyed remaining institutions in the 1990s."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-            {"title": "USCIRF 2023 Annual Report - Somalia", "url": "https://www.uscirf.gov/countries/somalia", "date": "2023"}
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
+            {"title": "USCIRF 2023 Annual Report - Somalia", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023somalia", "odwwl2024"]},
         "pew_slug": ""
@@ -552,7 +552,7 @@ COUNTRIES_DATA = [
             "secularism, communal power and religious courts were progressively restricted."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Syria", "url": "https://www.uscirf.gov/countries/syria", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023syria", "odwwl2024"]},
@@ -577,7 +577,7 @@ COUNTRIES_DATA = [
             "reform in the 1980s allowed some reopening, but controls remain."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
             {"title": "USCIRF 2023 Annual Report - Vietnam", "url": "https://www.uscirf.gov/countries/vietnam", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023vietnam", "odwwl2024"]},
@@ -603,8 +603,8 @@ COUNTRIES_DATA = [
             "conflicts."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
-            {"title": "USCIRF 2023 Annual Report - Yemen", "url": "https://www.uscirf.gov/countries/yemen", "date": "2023"}
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
+            {"title": "USCIRF 2023 Annual Report - Yemen", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023yemen", "odwwl2024"]},
         "pew_slug": ""
@@ -629,8 +629,8 @@ COUNTRIES_DATA = [
             "Catholics and new immigrant churches."
         ),
         "sources": [
-            {"title": "USCIRF 2023 Annual Report - United States", "url": "https://www.uscirf.gov/countries/united-states", "date": "2023"},
-            {"title": "Pew Research - Religion in America", "url": "https://www.pewresearch.org/religion/religious-landscape-study/", "date": "2023"}
+            {"title": "USCIRF 2023 Annual Report - United States", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
+            {"title": "Pew Research - Religion in America", "url": "https://www.pewresearch.org/collections/religious-landscape-study/", "date": "2023"}
         ],
         "source_ids": {"historical": ["pew2023america"], "modern": ["uscirf2023unitedstates", "pew2023america"]},
         "pew_slug": "america"
@@ -654,7 +654,7 @@ COUNTRIES_DATA = [
             "among indigenous communities and in favelas, but these have not reached systematic persecution."
         ),
         "sources": [
-            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"}
+            {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"}
         ],
         "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
         "pew_slug": ""
@@ -679,7 +679,7 @@ COUNTRIES_DATA = [
             "influential through colonialism and independence."
         ),
         "sources": [
-            {"title": "USCIRF 2023 Annual Report - Uganda", "url": "https://www.uscirf.gov/countries/uganda", "date": "2023"}
+            {"title": "USCIRF 2023 Annual Report - Uganda", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"}
         ],
         "source_ids": {"historical": ["uscirf2023uganda"], "modern": ["uscirf2023uganda"]},
         "pew_slug": ""
@@ -1568,13 +1568,13 @@ COUNTRIES_DATA = [
 
 sources = {
     "natural_earth_110m": {"title": "Natural Earth map boundaries", "url": "https://www.naturalearthdata.com/", "date": "2024"},
-    "odwwl2024": {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+    "odwwl2024": {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoors.org/en-US/persecution/countries/", "date": "2024"},
     "acn2024": {"title": "ACN Persecuted and Forgotten? ACN report on Christians oppressed for their Faith 2022-24 / Report on Christian persecution", "url": "https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/", "date": "2024"},
     "uscirf2023afghanistan": {"title": "USCIRF 2023 Annual Report - Afghanistan", "url": "https://www.uscirf.gov/countries/afghanistan", "date": "2023"},
-    "bbc2021": {"title": "BBC News - Afghanistan Christians 2021", "url": "https://www.bbc.com/news/world-asia-58293018", "date": "2021"},
+    "bbc2021": {"title": "BBC News - Taliban tortured and massacred Hazara men 2021", "url": "https://www.bbc.com/news/world-asia-58277463", "date": "2021"},
     "uscirf2023china": {"title": "USCIRF 2023 Annual Report - China", "url": "https://www.uscirf.gov/countries/china", "date": "2023"},
-    "pew2023china": {"title": "Pew Research - Religion in China", "url": "https://www.pewresearch.org/religion/2023/08/30/religion-in-china/", "date": "2023"},
-    "uscirf2023colombia": {"title": "USCIRF 2023 Annual Report - Colombia", "url": "https://www.uscirf.gov/countries/colombia", "date": "2023"},
+    "pew2023china": {"title": "Pew Research - Measuring Religion in China", "url": "https://www.pewresearch.org/religion/2023/08/30/measuring-religion-in-china/", "date": "2023"},
+    "uscirf2023colombia": {"title": "USCIRF 2023 Annual Report - Colombia", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
     "uscirf2023cuba": {"title": "USCIRF 2023 Annual Report - Cuba", "url": "https://www.uscirf.gov/countries/cuba", "date": "2023"},
     "uscirf2023eritrea": {"title": "USCIRF 2023 Annual Report - Eritrea", "url": "https://www.uscirf.gov/countries/eritrea", "date": "2023"},
     "uscirf2023india": {"title": "USCIRF 2023 Annual Report - India", "url": "https://www.uscirf.gov/countries/india", "date": "2023"},
@@ -1582,31 +1582,31 @@ sources = {
     "uscirf2023iran": {"title": "USCIRF 2023 Annual Report - Iran", "url": "https://www.uscirf.gov/countries/iran", "date": "2023"},
     "uscirf2023iraq": {"title": "USCIRF 2023 Annual Report - Iraq", "url": "https://www.uscirf.gov/countries/iraq", "date": "2023"},
     "uscirf2023laos": {"title": "USCIRF 2023 Annual Report - Laos", "url": "https://www.uscirf.gov/countries/laos", "date": "2023"},
-    "uscirf2023mexico": {"title": "USCIRF 2023 Annual Report - Mexico", "url": "https://www.uscirf.gov/countries/mexico", "date": "2023"},
+    "uscirf2023mexico": {"title": "USCIRF 2023 Annual Report - Mexico", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
     "uscirf2023nicaragua": {"title": "USCIRF 2023 Annual Report - Nicaragua", "url": "https://www.uscirf.gov/countries/nicaragua", "date": "2023"},
     "uscirf2023nigeria": {"title": "USCIRF 2023 Annual Report - Nigeria", "url": "https://www.uscirf.gov/countries/nigeria", "date": "2023"},
     "uscirf2023northkorea": {"title": "USCIRF 2023 Annual Report - North Korea", "url": "https://www.uscirf.gov/countries/north-korea", "date": "2023"},
     "uscirf2023pakistan": {"title": "USCIRF 2023 Annual Report - Pakistan", "url": "https://www.uscirf.gov/countries/pakistan", "date": "2023"},
     "uscirf2023saudiarabia": {"title": "USCIRF 2023 Annual Report - Saudi Arabia", "url": "https://www.uscirf.gov/countries/saudi-arabia", "date": "2023"},
-    "uscirf2023somalia": {"title": "USCIRF 2023 Annual Report - Somalia", "url": "https://www.uscirf.gov/countries/somalia", "date": "2023"},
+    "uscirf2023somalia": {"title": "USCIRF 2023 Annual Report - Somalia", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
     "uscirf2023syria": {"title": "USCIRF 2023 Annual Report - Syria", "url": "https://www.uscirf.gov/countries/syria", "date": "2023"},
     "uscirf2023vietnam": {"title": "USCIRF 2023 Annual Report - Vietnam", "url": "https://www.uscirf.gov/countries/vietnam", "date": "2023"},
-    "uscirf2023yemen": {"title": "USCIRF 2023 Annual Report - Yemen", "url": "https://www.uscirf.gov/countries/yemen", "date": "2023"},
-    "uscirf2023unitedstates": {"title": "USCIRF 2023 Annual Report - United States", "url": "https://www.uscirf.gov/countries/united-states", "date": "2023"},
-    "uscirf2023uganda": {"title": "USCIRF 2023 Annual Report - Uganda", "url": "https://www.uscirf.gov/countries/uganda", "date": "2023"},
-    "pew2023america": {"title": "Pew Research - Religion in America", "url": "https://www.pewresearch.org/religion/religious-landscape-study/", "date": "2023"},
+    "uscirf2023yemen": {"title": "USCIRF 2023 Annual Report - Yemen", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
+    "uscirf2023unitedstates": {"title": "USCIRF 2023 Annual Report - United States", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
+    "uscirf2023uganda": {"title": "USCIRF 2023 Annual Report - Uganda", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
+    "pew2023america": {"title": "Pew Research - Religion in America", "url": "https://www.pewresearch.org/collections/religious-landscape-study/", "date": "2023"},
     "uscirf2023algeria": {"title": "USCIRF 2023 Annual Report - Algeria", "url": "https://www.uscirf.gov/countries/algeria", "date": "2023"},
-    "uscirf2023bangladesh": {"title": "USCIRF 2023 Annual Report - Bangladesh", "url": "https://www.uscirf.gov/countries/bangladesh", "date": "2023"},
+    "uscirf2023bangladesh": {"title": "USCIRF 2023 Annual Report - Bangladesh", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
     "uscirf2023car": {"title": "USCIRF 2023 Annual Report - Central African Republic", "url": "https://www.uscirf.gov/countries/central-african-republic", "date": "2023"},
     "uscirf2023egypt": {"title": "USCIRF 2023 Annual Report - Egypt", "url": "https://www.uscirf.gov/countries/egypt", "date": "2023"},
-    "uscirf2023haiti": {"title": "USCIRF 2023 Annual Report - Haiti", "url": "https://www.uscirf.gov/countries/haiti", "date": "2023"},
+    "uscirf2023haiti": {"title": "USCIRF 2023 Annual Report - Haiti", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
     "uscirf2023libya": {"title": "USCIRF 2023 Annual Report - Libya", "url": "https://www.uscirf.gov/countries/libya", "date": "2023"},
     "uscirf2023malaysia": {"title": "USCIRF 2023 Annual Report - Malaysia", "url": "https://www.uscirf.gov/countries/malaysia", "date": "2023"},
-    "uscirf2023myanmar": {"title": "USCIRF 2023 Annual Report - Myanmar", "url": "https://www.uscirf.gov/countries/myanmar", "date": "2023"},
+    "uscirf2023myanmar": {"title": "USCIRF 2023 Annual Report - Myanmar", "url": "https://www.uscirf.gov/countries/burma", "date": "2023"},
     "uscirf2023sudan": {"title": "USCIRF 2023 Annual Report - Sudan", "url": "https://www.uscirf.gov/countries/sudan", "date": "2023"},
     "uscirf2023turkey": {"title": "USCIRF 2023 Annual Report - Turkey", "url": "https://www.uscirf.gov/countries/turkey", "date": "2023"},
-    "uscirf2023venezuela": {"title": "USCIRF 2023 Annual Report - Venezuela", "url": "https://www.uscirf.gov/countries/venezuela", "date": "2023"},
-    "uscirf2023zimbabwe": {"title": "USCIRF 2023 Annual Report - Zimbabwe", "url": "https://www.uscirf.gov/countries/zimbabwe", "date": "2023"},
+    "uscirf2023venezuela": {"title": "USCIRF 2023 Annual Report - Venezuela", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
+    "uscirf2023zimbabwe": {"title": "USCIRF 2023 Annual Report - Zimbabwe", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
     "freedomhouse2024": {"title": "Freedom House Freedom in the World 2024", "url": "https://freedomhouse.org/report/freedom-world", "date": "2024"},
     "statedepartment2023": {"title": "U.S. State Department International Religious Freedom Report 2023", "url": "https://www.state.gov/international-religious-freedom-reports/", "date": "2023"},
     "ohchr2024": {"title": "OHCHR Universal Human Rights Index", "url": "https://uhri.ohchr.org/", "date": "2024"},
@@ -1622,7 +1622,7 @@ sources = {
     "uscirf2025uzbekistan": {"title": "USCIRF 2025 Annual Report - Uzbekistan", "url": "https://www.uscirf.gov/countries/uzbekistan", "date": "2025"},
     "uscirf2025tajikistan": {"title": "USCIRF 2025 Annual Report - Tajikistan", "url": "https://www.uscirf.gov/countries/tajikistan", "date": "2025"},
     "morningstarnews2026": {"title": "Morning Star News - Christian Persecution Reports", "url": "https://morningstarnews.org/", "date": "2026"},
-    "vid2026": {"title": "Violent Incidents Database (IIRF/GCR)", "url": "https://violentincidents.plataformac.org/", "date": "2026"},
+    "vid2026": {"title": "Violent Incidents Database (IIRF/GCR)", "url": "https://iirf.global/vid/", "date": "2026"},
     "gcr2026": {"title": "Global Christian Relief - Persecution Statistics 2026", "url": "https://globalchristianrelief.org/stories/christian-persecution-statistics", "date": "2026"},
     "acn2025": {"title": "Aid to the Church in Need - Religious Freedom Report 2025", "url": "https://acninternational.org/religiousfreedomreport/", "date": "2025"},
     "csw2026": {"title": "Christian Solidarity Worldwide - Persecution Reports", "url": "https://www.csw.org.uk/", "date": "2026"},

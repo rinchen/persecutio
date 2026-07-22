@@ -253,6 +253,14 @@ def enrich_country(
                     existing = cand
                     break
         if existing:
+            if url:
+                ensure_source(
+                    sources,
+                    existing,
+                    sources[existing].get("title") or f"USCIRF Annual Report - {title}",
+                    url,
+                    sources[existing].get("date") or year,
+                )
             attach_citation(c, existing, sources)
         else:
             ensure_source(

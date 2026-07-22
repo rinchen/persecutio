@@ -26,17 +26,15 @@ from fetch_common import (
 
 ensure_fetched_dir()
 
-VID_URL = "https://violentincidents.plataformac.org/web/search/search"
+VID_URL = "https://iirf.global/vid/"
 OUTPUT = FETCHED / "vid.json"
 
 
 def try_api_endpoints():
     """Try various API endpoints the VID might expose."""
     api_urls = [
-        "https://violentincidents.plataformac.org/api/incidents?religion=Christianity&format=json",
-        "https://violentincidents.plataformac.org/web/api/search?religion=Christianity",
-        "https://violentincidents.plataformac.org/api/v1/incidents?religion=christianity",
-        "https://violentincidents.plataformac.org/web/search/search.json?lang=en",
+        "https://iirf.global/vid/",
+        "https://violentincidents.com/",
     ]
     for url in api_urls:
         text, err = fetch_text(url, timeout=15, user_agent=USER_AGENT)

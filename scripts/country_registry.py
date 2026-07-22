@@ -198,6 +198,12 @@ def ensure_source(
 ) -> str:
     if sid not in sources:
         sources[sid] = {"title": title, "url": url, "date": str(date)}
+    elif url and sources[sid].get("url") != url:
+        sources[sid]["url"] = url
+        if title:
+            sources[sid]["title"] = title
+        if date:
+            sources[sid]["date"] = str(date)
     return sid
 
 
