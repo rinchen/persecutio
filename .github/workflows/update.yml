@@ -1,0 +1,21 @@
+name: Update Persecutio
+on:
+  schedule:
+    - cron: '0 6 1,15 * *'
+  workflow_dispatch: {}
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {token: \${{ secrets.GITHUB_TOKEN }}}
+      - run: sudo apt-get update -y && sudo apt-get install -y python3 python3-pip
+      - run: python3 -m pip install --upgrade pip && python3 -m pip install pyyaml requests beautifulsoup4
+      - run: python3 scripts/collect_data.py
+      - run: python3 scripts/generate_website_data.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: update persecution data and site [skip ci]"
+          git push origin main
