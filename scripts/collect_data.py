@@ -701,9 +701,270 @@ COUNTRIES_DATA = [
     "pew_slug": ""
   }
 ]
+# --- generated country additions ---
+NEW_COUNTRIES = [
+  {
+    "title": "Algeria",
+    "slug": "algeria",
+    "iso3": "DZA",
+    "status": "warning",
+    "persecution_level": "Moderate",
+    "lat": 28.03,
+    "lng": 1.66,
+    "modern": (
+      "Authorities have closed Protestant churches, detained Christian leaders, "
+      "and pressured house churches under restrictive worship laws. Evangelical "
+      "Christians especially report fear of arrest and surveillance."
+    ),
+    "historical": (
+      "Christianity survived in North Africa through late antiquity, then receded "
+      "after Arab conquest and Ottoman rule. Modern Catholic and Protestant "
+      "missions expanded in colonial Algeria before post-independence restrictions "
+      "limited organized Christian presence."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023algeria", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Bangladesh",
+    "slug": "bangladesh",
+    "iso3": "BGD",
+    "status": "severe",
+    "persecution_level": "Very High",
+    "lat": 23.68,
+    "lng": 90.35,
+    "modern": (
+      "Christians, especially converts and tribal communities, face violence, "
+      "kidnapping, and pressure from Islamist actors. Anti-conversion narratives "
+      "and blasphemy-related tensions put churches and leaders at risk."
+    ),
+    "historical": (
+      "Catholic and Protestant missions operated largely among tribal and remote "
+      "communities and later expanded urban ministries. Communal violence and "
+      "new legal restrictions in the late 20th and early 21st centuries "
+      "increasingly targeted Christian minorities."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023bangladesh", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Central African Republic",
+    "slug": "central-african-republic",
+    "iso3": "CAF",
+    "status": "persecution",
+    "persecution_level": "High",
+    "lat": 6.61,
+    "lng": 20.93,
+    "modern": (
+      "Armed groups attack churches, kill clergy, and displace Christian villages, "
+      "while religious leaders are sometimes targeted for mobilizing peacebuilding. "
+      "Militia violence and communal tensions remain acute."
+    ),
+    "historical": (
+      "Catholic and Protestant missions expanded in the late 19th and 20th "
+      "centuries, but decades of coups, rebellions, and foreign intervention "
+      "have repeatedly destabilized Christian communities and displaced populations."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023car", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Egypt",
+    "slug": "egypt",
+    "iso3": "EGY",
+    "status": "severe",
+    "persecution_level": "Very High",
+    "lat": 26.82,
+    "lng": 30.01,
+    "modern": (
+      "Egyptian Christians, especially Coptic Orthodox and evangelical communities, "
+      "face sectarian violence, discrimination in church licensing, and periodic "
+      "suicide bombings and shootings by jihadist groups."
+    ),
+    "historical": (
+      "Egypt is the cradle of early monastic Christianity. Coptic tradition traces "
+      "its origins to St. Mark; centuries of Islamic rule brought fluctuating "
+      "protection, persecution, and coexistence before modern nationalist changes."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023egypt", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Haiti",
+    "slug": "haiti",
+    "iso3": "HTI",
+    "status": "persecution",
+    "persecution_level": "High",
+    "lat": 18.97,
+    "lng": -72.28,
+    "modern": (
+      "Gang violence and kidnapping target clergy, church workers, and congregations, "
+      "while humanitarian collapse hampers worship, education, and relief. Priests "
+      "and religious sisters have been abducted or killed."
+    ),
+    "historical": (
+      "Catholicism arrived with French colonization, followed by Protestant and "
+      "independent missions. Haitian Vodou blended African and Catholic elements, "
+      "while 20th and 21st-century instability undermined church life and safety."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023haiti", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Libya",
+    "slug": "libya",
+    "iso3": "LBY",
+    "status": "warning",
+    "persecution_level": "Moderate",
+    "lat": 26.34,
+    "lng": 17.22,
+    "modern": (
+      "Instability, Islamist armed groups, and fragmented governance expose "
+      "Christians to detention, violence, and forced displacement. Foreign "
+      "Christian migrants and converts face especially high risks."
+    ),
+    "historical": (
+      "Libya preserves ancient Christian sites from the Roman and Byzantine eras, "
+      "but communities shrank after Arab invasions and Ottoman rule. Modern "
+      "mission activity ended as restrictive regimes centralized religious control."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023libya", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Malaysia",
+    "slug": "malaysia",
+    "iso3": "MYS",
+    "status": "warning",
+    "persecution_level": "Moderate",
+    "lat": 4.21,
+    "lng": 101.97,
+    "modern": (
+      "Christians face local restrictions on church construction, religious education, "
+      "and proselytization while societal tensions sometimes turn violent on "
+      "the Malay peninsula and in East Malaysian states."
+    ),
+    "historical": (
+      "Christian missions operated among indigenous peoples in Sabah, Sarawak, "
+      "and the peninsula from the 19th century onward. Modern pluralism coexists "
+      "with Islamic legal frameworks limiting public Christian witness."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023malaysia", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Myanmar",
+    "slug": "myanmar",
+    "iso3": "MMR",
+    "status": "persecution",
+    "persecution_level": "High",
+    "lat": 21.91,
+    "lng": 95.95,
+    "modern": (
+      "Both military rule and ethnic armed conflict expose Christians, especially "
+      "Chin and Kachin communities, to village destruction, forced displacement, "
+      "and conscription. Junta-era pressure intensified after the 2021 coup."
+    ),
+    "historical": (
+      "Baptist, Catholic, and other missions expanded Christian education and "
+      "health services in hill and border areas during the colonial period, with "
+      "conversion later used to justify ethnic and political discrimination."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023myanmar", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Sudan",
+    "slug": "sudan",
+    "iso3": "SDN",
+    "status": "warning",
+    "persecution_level": "Moderate",
+    "lat": 12.86,
+    "lng": 30.21,
+    "modern": (
+      "Post-Bashiri transition eased some restrictions, but violence in the Nuba "
+      "Mountains and Blue Nile and periodic militia threats still imperil Christian "
+      "communities, schools, and churches."
+    ),
+    "historical": (
+      "Christianity in Sudan traces back to ancient Nubian kingdoms and continued "
+      "under centuries of Islamic sultanates. late-20th-century missionary activity "
+      "expanded churches in the south and among displaced communities."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023sudan", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Turkey",
+    "slug": "turkey",
+    "iso3": "TUR",
+    "status": "warning",
+    "persecution_level": "Moderate",
+    "lat": 38.96,
+    "lng": 35.24,
+    "modern": (
+      "Christians experience state restrictions on worship, property, and clergy, "
+      "including closures of churches and detentions, alongside occasional societal "
+      "harassment and hostility across the countryside and major cities."
+    ),
+    "historical": (
+      "Ancient Christian communities in Anatolia produced ecumenical councils and "
+      "monastic movements, then declined through Byzantine-Muslim frontier raiding, "
+      "the Ottoman millet system, and the Republic's secular nationalism."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023turkey", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Venezuela",
+    "slug": "venezuela",
+    "iso3": "VEN",
+    "status": "warning",
+    "persecution_level": "Moderate",
+    "lat": 6.42,
+    "lng": -66.58,
+    "modern": (
+      "Economic collapse, state hostility, and armed groups constrain church "
+      "operations, while clergy defending social services face harassment. "
+      "Catholic aid networks provide vital relief and remain under political pressure."
+    ),
+    "historical": (
+      "Catholic missions accompanied Spanish colonization, with independence-era "
+      "tensions and 20th-century secularism shaping church-state relations, while "
+      "recent authoritarian pressure has revived clerical confrontation."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023venezuela", "odwwl2024"]},
+    "pew_slug": ""
+  },
+  {
+    "title": "Zimbabwe",
+    "slug": "zimbabwe",
+    "iso3": "ZWE",
+    "status": "open",
+    "persecution_level": "Low",
+    "lat": -19.01,
+    "lng": 29.15,
+    "modern": (
+      "Christians generally worship freely in Zimbabwe, but occasional threats "
+      "and land disputes target apostolic and marginalized groups, and some "
+      "churches face pressure when leaders speak out on political issues."
+    ),
+    "historical": (
+      "Protestant and Catholic missions expanded education and health services "
+      "during the colonial era, while post-independence politics sometimes clashed "
+      "with outspoken bishops and missions aligned with labor and rights movements."
+    ),
+    "source_ids": {"historical": ["odwwl2024"], "modern": ["uscirf2023zimbabwe", "odwwl2024"]},
+    "pew_slug": ""
+  }
+]
+COUNTRIES_DATA.extend(NEW_COUNTRIES)
+
+
 
 sources = {
   "odwwl2024": {"title": "Open Doors World Watch List 2024", "url": "https://www.opendoorsusa.org/christian-persecution/world-watch-list/", "date": "2024"},
+  "acn2024": {"title": "ACN Persecuted and Forgotten? ACN report on Christians oppressed for their Faith 2022-24 / Report on Christian persecution", "url": "https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/", "date": "2024"},
   "uscirf2023afghanistan": {"title": "USCIRF 2023 Annual Report - Afghanistan", "url": "https://www.uscirf.gov/countries/afghanistan", "date": "2023"},
   "bbc2021": {"title": "BBC News - Afghanistan Christians 2021", "url": "https://www.bbc.com/news/world-asia-58293018", "date": "2021"},
   "uscirf2023china": {"title": "USCIRF 2023 Annual Report - China", "url": "https://www.uscirf.gov/countries/china", "date": "2023"},
