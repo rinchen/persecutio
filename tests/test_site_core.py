@@ -121,6 +121,8 @@ class TestSiteCore(unittest.TestCase):
         self.assertTrue(pages)
         for page in pages:
             text = page.read_text(encoding="utf-8")
+            self.assertIn('class="country-hero"', text)
+            self.assertIn('data-status="', text)
             self.assertIn("Historical Background", text)
             self.assertIn("Modern-Day Situation", text)
             self.assertIn("All References</h2>", text)
@@ -128,9 +130,11 @@ class TestSiteCore(unittest.TestCase):
             self.assertNotIn("<style>", text)
             self.assertIn('href="../assets/css/main.css"', text)
 
+            hero = text.index('class="country-hero"')
             hist = text.index("<h2>Historical Background</h2>")
             modern = text.index("<h2>Modern-Day Situation</h2>")
             refs = text.index("<h2>All References</h2>")
+            self.assertLess(hero, hist, f"{page.name}: hero should precede Historical")
             self.assertLess(hist, modern, f"{page.name}: Historical should precede Modern")
             self.assertLess(modern, refs, f"{page.name}: Modern should precede References")
             if "<h2>Recent Incidents</h2>" in text:

@@ -45,16 +45,18 @@ PAGE = """\
 </header>
 <main id="main-content" tabindex="-1">
   <div class="card">
-    <div class="top">
-      <h1>{title}</h1>
-      <a href="/persecutio/index.html">Back to map</a>
+    <div class="country-hero" data-status="{status_key}">
+      <div class="top">
+        <h1>{title}</h1>
+        <a href="/persecutio/index.html">Back to map</a>
+      </div>
+      <div class="status-pill">
+        <span class="pct" style="background:{status_color}"></span>
+        <span>{persecution_level} · {status_label}</span>
+      </div>
+      {stub_note}
+      {data_fields}
     </div>
-    <div class="status-pill">
-      <span class="pct" style="background:{status_color}"></span>
-      <span>{persecution_level} · {status_label}</span>
-    </div>
-    {stub_note}
-    {data_fields}
     <section>
       <h2>Historical Background</h2>
       <p>{historical}</p>
@@ -494,6 +496,7 @@ def main():
             modern_sources=modern_sources,
             all_sources="\n        ".join(all_sources_items),
             persecution_level=esc(c.get("persecution_level", "")),
+            status_key=esc(status or "unknown"),
             status_label=esc(label),
             status_color=esc(color),
             generated_at=esc(generated_at),

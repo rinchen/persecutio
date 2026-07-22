@@ -350,6 +350,77 @@ section + section { margin-top: 18px; }
   display: inline-block;
 }
 
+/* Country summary glass header */
+.country-hero {
+  --hero-accent: #94a3b8;
+  position: relative;
+  margin: 0 0 1.25rem;
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--hero-accent) 14%, transparent) 0%,
+      transparent 48%
+    ),
+    var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 2px rgb(26 43 60 / 5%), 0 8px 24px rgb(26 43 60 / 6%);
+  overflow: hidden;
+}
+.country-hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--hero-accent);
+  opacity: 0.85;
+}
+.country-hero[data-status="severe"] { --hero-accent: #dc2626; }
+.country-hero[data-status="warning"] { --hero-accent: #f97316; }
+.country-hero[data-status="restricted"] { --hero-accent: #facc15; }
+.country-hero[data-status="open"] { --hero-accent: #3b82f6; }
+.country-hero[data-status="persecution"] { --hero-accent: #ef4444; }
+
+.country-hero .status-pill {
+  margin-top: 12px;
+  padding: 8px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: rgb(255 255 255 / 72%);
+  border-color: color-mix(in srgb, var(--hero-accent) 28%, var(--color-border));
+  box-shadow: 0 1px 2px rgb(26 43 60 / 4%);
+}
+.country-hero .status-pill .pct {
+  width: 10px;
+  height: 10px;
+}
+.country-hero .data-grid {
+  margin-top: 16px;
+  gap: 12px;
+}
+.country-hero .data-item {
+  background: rgb(255 255 255 / 55%);
+  border: 1px solid rgb(197 214 227 / 55%);
+  border-radius: 10px;
+  padding: 12px 14px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.country-hero .data-item .value {
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+.country-hero .stub-note {
+  margin-top: 12px;
+  margin-bottom: 0;
+  background: rgb(255 255 255 / 50%);
+}
+
 /* Section sources */
 .section-sources {
   margin-top: 8px;
@@ -632,4 +703,15 @@ button:focus-visible {
   header, footer, .back-to-top, .legend, #search-results { display: none; }
   body { background: #fff; }
   .card { box-shadow: none; border: 1px solid #ccc; backdrop-filter: none; }
+  .country-hero {
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #f8fafc;
+  }
+  .country-hero .data-item {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #fff;
+  }
 }
