@@ -39,6 +39,7 @@ PAGE = """\
     <a class="brand" href="/persecutio/index.html">Christian Persecution World Map</a>
     <nav>
       <a href="/persecutio/index.html">Map</a>
+      <a href="/persecutio/about.html">About</a>
     </nav>
   </div>
 </header>
@@ -47,7 +48,6 @@ PAGE = """\
     <div class="country-hero" data-status="{status_key}">
       <div class="top">
         <h1>{title}</h1>
-        <a href="/persecutio/index.html">Back to map</a>
       </div>
       <div class="status-pill">
         <span class="pct" style="background:{status_color}"></span>
