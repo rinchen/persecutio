@@ -195,18 +195,24 @@ main {
   border: none;
   position: static;
   color: inherit;
-  max-width: 46rem;
 }
-.card > header h1,
-.card > header p {
-  color: inherit;
+.card > header.map-intro {
+  margin-bottom: 1.15rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--glass-border);
 }
-.card > header p {
+.card > header.map-intro h1 {
+  max-width: 18.5em;
+  line-height: 1.22;
+  margin-bottom: 0.75rem;
+}
+.map-intro__body {
+  max-width: 40rem;
+  display: grid;
+  gap: 0.7rem;
+}
+.map-intro__body p {
   color: var(--color-text-muted);
-}
-.card > header p:last-child {
-  color: var(--color-text);
-  margin-top: 12px;
 }
 
 /* Headings */
@@ -215,7 +221,7 @@ h1, h2 {
   color: var(--color-text);
 }
 h1 {
-  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-size: clamp(1.4rem, 2.6vw, 1.7rem);
   letter-spacing: -0.02em;
   font-weight: 700;
 }
@@ -272,7 +278,12 @@ section + section { margin-top: 1.35rem; }
 
 /* Map page toolbar */
 .map-toolbar {
-  margin-top: 12px;
+  margin-top: 0;
+}
+.map-lead {
+  margin: 0 0 0.55rem;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
 }
 
 /* Search */
