@@ -1,16 +1,14 @@
 """Generic RSS news fetcher for Christian persecution feeds."""
 from __future__ import annotations
 
-import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Callable
 
 from christian_persecution import is_christian_persecution
-from country_registry import resolve_country_name
+from country_registry import countries_for_article
 from fetch_common import (
     build_news_result,
-    detect_countries,
     exit_for_status,
     fetch_text,
     load_json_cache,
@@ -19,31 +17,6 @@ from fetch_common import (
     write_json,
     write_status,
 )
-
-
-def countries_for_article(title: str, description: str, categories: list[str] | None = None) -> list[str]:
-    """Prefer title + category tags; only fall back to description body.
-
-    WordPress feeds often append unrelated 'related post' blurbs in descriptions.
-    """
-    found: list[str] = []
-    for name in detect_countries(title or ""):
-        if name not in found:
-            found.append(name)
-    for cat in categories or []:
-        resolved = resolve_country_name(cat)
-        if resolved and resolved not in found:
-            found.append(resolved)
-    if found:
-        return found
-    desc = description or ""
-    # Drop common WP footer / related-post noise
-    desc = re.split(r"\s+The post\s+", desc, maxsplit=1)[0]
-    desc = re.split(r"\s+appeared first on\s+", desc, maxsplit=1)[0]
-    for name in detect_countries(desc):
-        if name not in found:
-            found.append(name)
-    return found
 
 
 def parse_rss_items(

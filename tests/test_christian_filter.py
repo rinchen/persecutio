@@ -96,6 +96,9 @@ class TestCitations(unittest.TestCase):
     def test_resolve_country(self):
         self.assertEqual(resolve_country_name("burma"), "Myanmar")
         self.assertIsNone(resolve_country_name("israel"))
+        self.assertEqual(resolve_country_name("us"), "United States")
+        self.assertEqual(resolve_country_name("US"), "United States")
+        self.assertEqual(resolve_country_name("car"), "Central African Republic")
 
 
 class TestCountriesForArticle(unittest.TestCase):
@@ -107,6 +110,33 @@ class TestCountriesForArticle(unittest.TestCase):
         )
         self.assertEqual(countries, ["India"])
         self.assertNotIn("China", countries)
+
+    def test_ignores_secondary_us_mention_in_description(self):
+        countries = countries_for_article(
+            "Tensions Inflamed by Blasphemy Accusation in Pakistan",
+            "allegations of blasphemy against a pastor living in the United States triggered fears",
+            ["Pakistan", "blasphemy"],
+        )
+        self.assertEqual(countries, ["Pakistan"])
+        self.assertNotIn("United States", countries)
+
+    def test_ignores_pronoun_us_in_title(self):
+        countries = countries_for_article(
+            'RUSSIA: "Without any investigation, they\'re already presuming us guilty", says pastor',
+            "Prosecutions for religious organisations in Bryansk",
+            [],
+        )
+        self.assertEqual(countries, ["Russia"])
+        self.assertNotIn("United States", countries)
+
+    def test_excluded_israel_does_not_fall_through_to_pronoun_us(self):
+        countries = countries_for_article(
+            "Israel: Catholic nun comments on her attack in Jerusalem",
+            "comments that make us complicit in the conflict",
+            ["Israel"],
+        )
+        self.assertEqual(countries, [])
+        self.assertNotIn("United States", countries)
 
 
 if __name__ == "__main__":

@@ -27,6 +27,42 @@ class TestFetchCommon(unittest.TestCase):
         self.assertIn("Nigeria", found)
         self.assertIn("India", found)
 
+    def test_detect_countries_ignores_pronoun_us(self):
+        self.assertNotIn(
+            "United States",
+            detect_countries(
+                'RUSSIA: "Without any investigation, they\'re already presuming us guilty"'
+            ),
+        )
+        self.assertNotIn(
+            "United States",
+            detect_countries("attacks make us complicit in the violence"),
+        )
+        self.assertNotIn("United States", detect_countries("Please contact us for help"))
+
+    def test_detect_countries_matches_us_country_codes(self):
+        self.assertIn("United States", detect_countries("Christians attacked in the US"))
+        self.assertIn("United States", detect_countries("church burned in USA"))
+        self.assertIn("United States", detect_countries("U.S. State Department report"))
+        self.assertIn(
+            "United States",
+            detect_countries("Pastor living in the United States faces pressure"),
+        )
+
+    def test_detect_countries_ignores_english_car(self):
+        self.assertNotIn(
+            "Central African Republic",
+            detect_countries("a car bomb kills Christians near the church"),
+        )
+        self.assertIn(
+            "Central African Republic",
+            detect_countries("militia attacks church in CAR"),
+        )
+        self.assertIn(
+            "Central African Republic",
+            detect_countries("violence in Central African Republic"),
+        )
+
     def test_is_persecution_article(self):
         self.assertTrue(is_persecution_article("Christian church attacked and burned"))
         self.assertFalse(is_persecution_article("Sports scores from yesterday"))

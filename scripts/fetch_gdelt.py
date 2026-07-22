@@ -11,7 +11,7 @@ from fetch_common import (
     FETCHED,
     USER_AGENT,
     build_news_result,
-    detect_countries,
+    countries_for_article,
     ensure_fetched_dir,
     exit_for_status,
     fetch_text,
@@ -63,7 +63,7 @@ def extract_articles(data: dict) -> list[dict]:
             continue
         if not is_christian_persecution(title=title, description=""):
             continue
-        countries = detect_countries(title)
+        countries = countries_for_article(title, "")
         articles.append({
             "title": title,
             "url": url,

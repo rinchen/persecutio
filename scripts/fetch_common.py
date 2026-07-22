@@ -14,6 +14,7 @@ from christian_persecution import is_christian_persecution, is_persecution_artic
 from country_registry import (
     COUNTRY_ALIASES,
     KNOWN_COUNTRIES,
+    countries_for_article,
     detect_countries,
     resolve_country_name,
 )
@@ -50,6 +51,7 @@ __all__ = [
     "atomic_write_text",
     "strip_html",
     "detect_countries",
+    "countries_for_article",
     "resolve_country_name",
     "is_persecution_article",
     "is_christian_persecution",
@@ -410,9 +412,14 @@ def merge_articles(
 def group_articles_by_country(articles: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
     by_country: dict[str, list[dict[str, Any]]] = {}
     for a in articles:
-        countries = a.get("countries") or []
-        if not countries and a.get("title"):
-            countries = detect_countries(f"{a.get('title', '')} {a.get('description', '')}")
+        # Always re-detect so stale pronoun/alias false positives are not kept,
+        # and secondary description mentions do not override title/category.
+        countries = countries_for_article(
+            a.get("title") or "",
+            a.get("description") or "",
+            a.get("categories") or [],
+        )
+        a["countries"] = countries
         for country in countries:
             canonical = resolve_country_name(country) or country
             entry = {
@@ -500,7 +507,7 @@ def parse_html_news_listing(
         if not is_christian_persecution(title=title, description=excerpt):
             continue
 
-        countries = detect_countries(f"{title} {excerpt}")
+        countries = countries_for_article(title, excerpt)
         articles.append({
             "title": title,
             "url": url,
@@ -521,7 +528,7 @@ def parse_html_news_listing(
         if not is_christian_persecution(title=title, description=""):
             continue
         url = raw_url if raw_url.startswith("http") else f"{link_base}{raw_url}"
-        countries = detect_countries(title)
+        countries = countries_for_article(title, "")
         articles.append({
             "title": title,
             "url": url,

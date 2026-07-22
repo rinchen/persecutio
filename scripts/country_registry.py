@@ -21,18 +21,17 @@ KNOWN_COUNTRIES = [
     "Uzbekistan", "Venezuela", "Vietnam", "Yemen", "Zimbabwe",
 ]
 
-# alias (lowercase) -> canonical title, or None to ignore
+# alias (lowercase) -> canonical title, or None to ignore.
+# Short forms that collide with English words (us, car) are NOT scanned in
+# free text — see EXACT_ALIASES and CASE_SENSITIVE_ALIASES.
 COUNTRY_ALIASES: dict[str, str | None] = {
     "dr congo": "Democratic Republic of Congo",
     "drc": "Democratic Republic of Congo",
     "congo": "Democratic Republic of Congo",
     "democratic republic of the congo": "Democratic Republic of Congo",
-    "car": "Central African Republic",
     "burma": "Myanmar",
     "dprk": "North Korea",
     "usa": "United States",
-    "us": "United States",
-    "u.s.": "United States",
     "u.s.a.": "United States",
     "uae": "United Arab Emirates",
     "emirates": "United Arab Emirates",
@@ -48,6 +47,22 @@ COUNTRY_ALIASES: dict[str, str | None] = {
     "egyptian": "Egypt",
     "palestinian": None,
     "israeli": None,
+}
+
+# Whole-string aliases for categories / resolve_country_name only (not free text).
+EXACT_ALIASES: dict[str, str | None] = {
+    "us": "United States",
+    "u.s.": "United States",
+    "car": "Central African Republic",
+}
+
+# Matched case-sensitively in original text so "us"/"car" pronouns/nouns
+# are not treated as United States / Central African Republic.
+CASE_SENSITIVE_ALIASES: dict[str, str] = {
+    "US": "United States",
+    "U.S.": "United States",
+    "U.S.A.": "United States",
+    "CAR": "Central African Republic",
 }
 
 # title -> (iso3, lat, lng)
@@ -141,6 +156,8 @@ def resolve_country_name(name: str) -> str | None:
     lower = raw.lower()
     if lower in COUNTRY_ALIASES:
         return COUNTRY_ALIASES[lower]
+    if lower in EXACT_ALIASES:
+        return EXACT_ALIASES[lower]
     for title in KNOWN_COUNTRIES:
         if title.lower() == lower:
             return title
@@ -148,16 +165,38 @@ def resolve_country_name(name: str) -> str | None:
     spaced = lower.replace("-", " ").replace("_", " ")
     if spaced in COUNTRY_ALIASES:
         return COUNTRY_ALIASES[spaced]
+    if spaced in EXACT_ALIASES:
+        return EXACT_ALIASES[spaced]
     for title in KNOWN_COUNTRIES:
         if title.lower() == spaced:
             return title
     return None
 
 
+def _alias_in_text(alias: str, text: str, *, ignore_case: bool = True) -> bool:
+    """Word-boundary match; trailing-period aliases use a non-word lookahead."""
+    flags = re.IGNORECASE if ignore_case else 0
+    if alias.endswith("."):
+        pattern = r"(?<!\w)" + re.escape(alias) + r"(?!\w)"
+    else:
+        pattern = r"\b" + re.escape(alias) + r"\b"
+    return re.search(pattern, text or "", flags) is not None
+
+
 def detect_countries(text: str) -> list[str]:
-    """Detect canonical country names mentioned in text."""
+    """Detect canonical country names mentioned in text.
+
+    Ambiguous short tokens (us, car) are ignored unless they appear as
+    case-sensitive country codes (US, U.S., CAR) so English pronouns/nouns
+    do not falsely tag United States or Central African Republic.
+    """
     found: set[str] = set()
-    text_lower = (text or "").lower()
+    raw = text or ""
+    text_lower = raw.lower()
+
+    for alias, canonical in CASE_SENSITIVE_ALIASES.items():
+        if _alias_in_text(alias, raw, ignore_case=False):
+            found.add(canonical)
 
     # Longer aliases first to prefer specific matches
     alias_items = sorted(
@@ -165,14 +204,45 @@ def detect_countries(text: str) -> list[str]:
         key=lambda x: -len(x[0]),
     )
     for alias, canonical in alias_items:
-        if re.search(r"\b" + re.escape(alias) + r"\b", text_lower):
+        if _alias_in_text(alias, text_lower, ignore_case=False):
             found.add(canonical)
 
     for title in KNOWN_COUNTRIES:
-        if re.search(r"\b" + re.escape(title.lower()) + r"\b", text_lower):
+        if _alias_in_text(title.lower(), text_lower, ignore_case=False):
             found.add(title)
 
     return sorted(found)
+
+
+def countries_for_article(
+    title: str,
+    description: str,
+    categories: list[str] | None = None,
+) -> list[str]:
+    """Prefer title + category tags; only fall back to description body.
+
+    WordPress feeds often append unrelated 'related post' blurbs in descriptions.
+    Secondary mentions (e.g. 'pastor living in the United States' in a Pakistan
+    story) must not pull the article onto that country's page.
+    """
+    found: list[str] = []
+    for name in detect_countries(title or ""):
+        if name not in found:
+            found.append(name)
+    for cat in categories or []:
+        resolved = resolve_country_name(cat)
+        if resolved and resolved not in found:
+            found.append(resolved)
+    if found:
+        return found
+    desc = description or ""
+    # Drop common WP footer / related-post noise
+    desc = re.split(r"\s+The post\s+", desc, maxsplit=1)[0]
+    desc = re.split(r"\s+appeared first on\s+", desc, maxsplit=1)[0]
+    for name in detect_countries(desc):
+        if name not in found:
+            found.append(name)
+    return found
 
 
 def geo_for(title: str) -> dict[str, Any] | None:

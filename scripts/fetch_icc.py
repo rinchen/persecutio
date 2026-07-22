@@ -10,7 +10,7 @@ from fetch_common import (
     FETCHED,
     USER_AGENT,
     build_news_result,
-    detect_countries,
+    countries_for_article,
     ensure_fetched_dir,
     exit_for_status,
     fetch_text,
@@ -57,7 +57,7 @@ def parse_wp_json(payload: str) -> tuple[list[dict], str | None]:
         excerpt = strip_html((post.get("excerpt") or {}).get("rendered") or "")
         if not is_christian_persecution(title=title, description=excerpt):
             continue
-        countries = detect_countries(f"{title} {excerpt}")
+        countries = countries_for_article(title, excerpt)
         articles.append({
             "title": title,
             "url": url,
