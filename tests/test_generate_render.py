@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from generate_website_data import (  # noqa: E402
+    PAGE,
     STATUS_DISPLAY,
     build_meta_sources,
     esc,
@@ -75,7 +76,8 @@ class TestRenderIncidents(unittest.TestCase):
             }
         }
         html = render_recent_incidents(country)
-        self.assertIn("Recent Incidents", html)
+        self.assertIn("<h2>Recent Incidents</h2>", html)
+        self.assertIn("<section>", html)
         self.assertNotIn("<script>", html)
         self.assertIn("&lt;script&gt;", html)
         self.assertIn('href="#"', html)
@@ -101,6 +103,19 @@ class TestRenderDataFields(unittest.TestCase):
 
     def test_empty(self):
         self.assertEqual(render_data_fields({"metadata": {}}), "")
+
+
+class TestPageSectionOrder(unittest.TestCase):
+    def test_page_template_section_order(self):
+        hist = PAGE.index("Historical Background")
+        modern = PAGE.index("Modern-Day Situation")
+        incidents = PAGE.index("{recent_incidents}")
+        refs = PAGE.index("All References")
+        data = PAGE.index("{data_fields}")
+        self.assertLess(data, hist)
+        self.assertLess(hist, modern)
+        self.assertLess(modern, incidents)
+        self.assertLess(incidents, refs)
 
 
 class TestMetaStatusMapping(unittest.TestCase):

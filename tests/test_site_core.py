@@ -128,6 +128,16 @@ class TestSiteCore(unittest.TestCase):
             self.assertNotIn("<style>", text)
             self.assertIn('href="../assets/css/main.css"', text)
 
+            hist = text.index("<h2>Historical Background</h2>")
+            modern = text.index("<h2>Modern-Day Situation</h2>")
+            refs = text.index("<h2>All References</h2>")
+            self.assertLess(hist, modern, f"{page.name}: Historical should precede Modern")
+            self.assertLess(modern, refs, f"{page.name}: Modern should precede References")
+            if "<h2>Recent Incidents</h2>" in text:
+                incidents = text.index("<h2>Recent Incidents</h2>")
+                self.assertLess(modern, incidents, f"{page.name}: Modern should precede Incidents")
+                self.assertLess(incidents, refs, f"{page.name}: Incidents should precede References")
+
 
 if __name__ == "__main__":
     unittest.main()

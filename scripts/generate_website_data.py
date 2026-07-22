@@ -55,7 +55,6 @@ PAGE = """\
     </div>
     {stub_note}
     {data_fields}
-    {recent_incidents}
     <section>
       <h2>Historical Background</h2>
       <p>{historical}</p>
@@ -66,6 +65,7 @@ PAGE = """\
       <p>{modern}</p>
       <div class="section-sources"><strong>Sources:</strong> {modern_sources}</div>
     </section>
+    {recent_incidents}
     <section>
       <h2>All References</h2>
       <ul>
@@ -365,7 +365,14 @@ def render_recent_incidents(country: dict) -> str:
             f'<a href="{href}" target="_blank" rel="noopener">{title}</a> '
             f'<span class="incident-date">{date}</span></div>'
         )
-    return '<h3>Recent Incidents</h3>\n<div class="incidents-list">' + "\n    ".join(rows) + "\n    </div>"
+    return (
+        "<section>\n"
+        "      <h2>Recent Incidents</h2>\n"
+        '<div class="incidents-list">'
+        + "\n    ".join(rows)
+        + "\n    </div>\n"
+        "    </section>"
+    )
 
 
 def assign_source_group(sid: str) -> str:
