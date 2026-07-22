@@ -189,20 +189,31 @@ def render_sources(source_ids: list[str], all_sources_lookup: dict) -> str:
     return "; ".join(items) if items else "Sources will be listed here."
 
 
+def linked_data_value(text: str, url: str | None) -> str:
+    """Wrap header data in a source link only when a direct http(s) URL exists."""
+    href = safe_url(url, fallback="")
+    if not href:
+        return text
+    return f'<a href="{href}" target="_blank" rel="noopener">{text}</a>'
+
+
 def render_data_fields(country: dict) -> str:
     meta = country.get("metadata", {})
     items = []
+    # Direct country-specific source URLs only (leave fields unlinked when absent).
+    od_url = meta.get("archive_od_url")
+    uscirf_url = meta.get("uscirf_url")
     od_score = meta.get("opendoors_score")
     od_rank = meta.get("opendoors_ranking")
     if od_score is not None:
         items.append(
             f'<div class="data-item"><div class="label">Open Doors Score</div>'
-            f'<div class="value">{esc(od_score)}/100</div></div>'
+            f'<div class="value">{linked_data_value(f"{esc(od_score)}/100", od_url)}</div></div>'
         )
     if od_rank is not None:
         items.append(
             f'<div class="data-item"><div class="label">WWL Ranking</div>'
-            f'<div class="value">#{esc(od_rank)}</div></div>'
+            f'<div class="value">{linked_data_value(f"#{esc(od_rank)}", od_url)}</div></div>'
         )
     fh_status = meta.get("freedom_house_status")
     if fh_status:
@@ -266,7 +277,7 @@ def render_data_fields(country: dict) -> str:
     if uscirf_des:
         items.append(
             f'<div class="data-item"><div class="label">USCIRF Designation</div>'
-            f'<div class="value">{esc(uscirf_des)}</div></div>'
+            f'<div class="value">{linked_data_value(esc(uscirf_des), uscirf_url)}</div></div>'
         )
     if meta.get("state_dept_url"):
         items.append(

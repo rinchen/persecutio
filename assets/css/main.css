@@ -455,6 +455,16 @@ section + section { margin-top: 18px; }
   margin-top: 2px;
   font-variant-numeric: tabular-nums;
 }
+.data-item .value a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  text-underline-offset: 0.12em;
+}
+.data-item .value a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
 
 /* Recent incidents (country pages) */
 .incidents-list { margin-top: 10px; }

@@ -127,6 +127,33 @@ class TestRenderDataFields(unittest.TestCase):
         self.assertIn("&lt;b&gt;Not Free&lt;/b&gt;", html)
         self.assertIn("88/100", html)
         self.assertIn("#1", html)
+        # No direct source URL → leave values unlinked
+        self.assertNotIn("<a ", html)
+
+    def test_links_direct_sources_when_available(self):
+        country = {
+            "metadata": {
+                "opendoors_score": 89,
+                "opendoors_ranking": 9,
+                "archive_od_url": "https://www.opendoors.org/persecution/reports/Afghanistan-Full_Country_Dossier-ODI-2025.pdf",
+                "uscirf_designation": "CPC",
+                "uscirf_url": "https://www.uscirf.gov/countries/afghanistan",
+                "freedom_house_status": "Not Free",
+                "state_dept_url": "https://www.state.gov/reports/2023-report-on-international-religious-freedom/afghanistan/",
+            }
+        }
+        html = render_data_fields(country)
+        self.assertIn(
+            'href="https://www.opendoors.org/persecution/reports/Afghanistan-Full_Country_Dossier-ODI-2025.pdf"',
+            html,
+        )
+        self.assertIn('href="https://www.uscirf.gov/countries/afghanistan"', html)
+        self.assertIn(
+            'href="https://www.state.gov/reports/2023-report-on-international-religious-freedom/afghanistan/"',
+            html,
+        )
+        # Freedom House has no country-specific URL in metadata → stay plain text
+        self.assertIn('<div class="value">Not Free</div>', html)
 
     def test_empty(self):
         self.assertEqual(render_data_fields({"metadata": {}}), "")
