@@ -151,6 +151,24 @@ nav a:focus-visible {
   border-radius: 2px;
 }
 
+.site-nav-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  line-height: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  nav a.site-nav-github:hover { color: var(--color-text); }
+}
+nav a.site-nav-github:focus-visible {
+  color: var(--color-text);
+}
+.site-nav-github-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
 /* Main */
 main {
   padding: clamp(0.75rem, 2.5vw, 1.5rem) var(--page-gutter) clamp(1.5rem, 4vw, 2.5rem);
