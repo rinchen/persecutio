@@ -195,10 +195,18 @@ main {
   border: none;
   position: static;
   color: inherit;
+  max-width: 46rem;
 }
 .card > header h1,
 .card > header p {
   color: inherit;
+}
+.card > header p {
+  color: var(--color-text-muted);
+}
+.card > header p:last-child {
+  color: var(--color-text);
+  margin-top: 12px;
 }
 
 /* Headings */
