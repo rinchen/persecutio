@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -29,7 +29,10 @@ NEWS_SOURCES = [
     ("gdelt", "GDELT", "gdelt2025"),
 ]
 
-INCIDENT_DISPLAY_CAP = 12
+LATEST_NEWS_CAP = 20
+NEWS_MAX_AGE_YEARS = 5
+# Back-compat alias for older tests/imports
+INCIDENT_DISPLAY_CAP = LATEST_NEWS_CAP
 ARCHIVES_EXTRACTED = (
     Path(__file__).resolve().parents[1] / "data" / "archives" / "extracted" / "countries.json"
 )
@@ -131,7 +134,62 @@ def _article_samples(articles: list[dict], limit: int = 3) -> list[dict]:
     ]
 
 
-def build_recent_incidents(country_title: str, news_blobs: dict[str, dict]) -> list[dict]:
+def _parse_article_date(raw: Any) -> date | None:
+    d = normalize_date(raw) or ""
+    if len(d) < 10:
+        return None
+    try:
+        y, m, day = (int(x) for x in d[:10].split("-", 2))
+        return date(y, m, day)
+    except (ValueError, TypeError):
+        return None
+
+
+def _is_fresh_article(article: dict, *, cutoff: date) -> bool:
+    """Undated articles are latest-eligible; dated ones must be on/after cutoff."""
+    parsed = _parse_article_date(article.get("date"))
+    if parsed is None:
+        return True
+    return parsed >= cutoff
+
+
+def split_country_news(
+    articles: list[dict],
+    *,
+    today: date | None = None,
+    latest_cap: int = LATEST_NEWS_CAP,
+    max_age_years: int = NEWS_MAX_AGE_YEARS,
+) -> tuple[list[dict], list[dict]]:
+    """Retain all fresh (≤max_age_years) articles, pad to latest_cap with older ones.
+
+    Latest News: fresh only, max latest_cap. Historical: everything else retained.
+    """
+    today = today or datetime.now(timezone.utc).date()
+    try:
+        cutoff = today.replace(year=today.year - max_age_years)
+    except ValueError:
+        # Feb 29 → Feb 28 on non-leap target years
+        cutoff = today.replace(year=today.year - max_age_years, day=28)
+
+    fresh = [a for a in articles if _is_fresh_article(a, cutoff=cutoff)]
+    stale = [a for a in articles if not _is_fresh_article(a, cutoff=cutoff)]
+    retained = list(fresh)
+    if len(retained) < latest_cap:
+        retained.extend(stale[: latest_cap - len(retained)])
+
+    latest: list[dict] = []
+    historical: list[dict] = []
+    for a in retained:
+        if _is_fresh_article(a, cutoff=cutoff) and len(latest) < latest_cap:
+            latest.append(a)
+        else:
+            historical.append(a)
+    return latest, historical
+
+
+def build_country_news(
+    country_title: str, news_blobs: dict[str, dict]
+) -> tuple[list[dict], list[dict]]:
     combined: list[dict] = []
     for key, label, _sid in NEWS_SOURCES:
         blob = news_blobs.get(key) or {}
@@ -156,7 +214,13 @@ def build_recent_incidents(country_title: str, news_blobs: dict[str, dict]) -> l
                 "source": a.get("source") or label,
             })
     merged = merge_articles([], combined)
-    return merged[:INCIDENT_DISPLAY_CAP]
+    return split_country_news(merged)
+
+
+def build_recent_incidents(country_title: str, news_blobs: dict[str, dict]) -> list[dict]:
+    """Back-compat: return only the Latest News slice."""
+    latest, _historical = build_country_news(country_title, news_blobs)
+    return latest
 
 
 def _apply_archive_prose(c: dict, arch: dict) -> None:
@@ -450,9 +514,15 @@ def enrich_country(
                 meta["ohchr_samples"] = samples[:2]
             attach_citation(c, "ohchr2024", sources)
 
-    incidents = build_recent_incidents(title, news_blobs)
-    if incidents:
-        meta["recent_incidents"] = incidents
+    latest, historical = build_country_news(title, news_blobs)
+    if latest:
+        meta["recent_incidents"] = latest
+    else:
+        meta.pop("recent_incidents", None)
+    if historical:
+        meta["historical_incidents"] = historical
+    else:
+        meta.pop("historical_incidents", None)
 
     # One-time legal archives (IRF / USCIRF / OD dossiers / V-Dem subset)
     apply_archive_enrichment(c, sources, archive_by_slug or {})
@@ -551,7 +621,7 @@ def create_stub_countries(
             "lng": geo["lng"],
             "historical": (
                 f"Auto-tracked country page for {title}. Historical narrative has not "
-                f"been curated yet; see Recent Incidents and referenced sources for "
+                f"been curated yet; see Latest News and referenced sources for "
                 f"current Christian persecution reporting."
             ),
             "modern": (

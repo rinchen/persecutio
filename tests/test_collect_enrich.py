@@ -2,17 +2,20 @@
 import sys
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from collect_enrich import (  # noqa: E402
-    INCIDENT_DISPLAY_CAP,
+    LATEST_NEWS_CAP,
+    build_country_news,
     build_recent_incidents,
     create_stub_countries,
     derive_status_from_signals,
     load_uscirf_index,
+    split_country_news,
 )
 
 
@@ -57,6 +60,68 @@ class TestDeriveStatus(unittest.TestCase):
         )
 
 
+class TestSplitCountryNews(unittest.TestCase):
+    def test_fresh_overflow_goes_to_historical(self):
+        today = date(2026, 7, 23)
+        articles = [
+            {
+                "title": f"Fresh {i}",
+                "url": f"https://example.com/f{i}",
+                "date": f"2025-{(i % 12) + 1:02d}-01",
+            }
+            for i in range(25)
+        ]
+        # Newest-first as merge_articles would return
+        articles.sort(key=lambda a: a["date"], reverse=True)
+        latest, historical = split_country_news(articles, today=today)
+        self.assertEqual(len(latest), LATEST_NEWS_CAP)
+        self.assertEqual(len(historical), 5)
+        self.assertTrue(all(a["date"] >= "2021-07-23" for a in latest))
+        self.assertLess(latest[0]["date"], "2027-01-01")
+
+    def test_pads_with_stale_into_historical(self):
+        today = date(2026, 7, 23)
+        fresh = [
+            {"title": f"Fresh {i}", "url": f"https://example.com/n{i}", "date": f"2025-0{i+1}-01"}
+            for i in range(5)
+        ]
+        stale = [
+            {
+                "title": f"Stale {i}",
+                "url": f"https://example.com/s{i}",
+                "date": f"2018-{(i % 12) + 1:02d}-01",
+            }
+            for i in range(10)
+        ]
+        articles = sorted(fresh + stale, key=lambda a: a["date"], reverse=True)
+        latest, historical = split_country_news(articles, today=today)
+        self.assertEqual(len(latest), 5)
+        self.assertEqual(len(historical), 10)
+        self.assertTrue(all("Fresh" in a["title"] for a in latest))
+        self.assertTrue(all("Stale" in a["title"] for a in historical))
+
+    def test_few_fresh_no_stale_has_no_historical(self):
+        today = date(2026, 7, 23)
+        articles = [
+            {"title": f"Fresh {i}", "url": f"https://example.com/x{i}", "date": f"2024-0{i+1}-01"}
+            for i in range(3)
+        ]
+        latest, historical = split_country_news(articles, today=today)
+        self.assertEqual(len(latest), 3)
+        self.assertEqual(historical, [])
+
+    def test_undated_counts_as_fresh(self):
+        today = date(2026, 7, 23)
+        articles = [
+            {"title": "No date", "url": "https://example.com/u", "date": ""},
+            {"title": "Old", "url": "https://example.com/o", "date": "2015-01-01"},
+        ]
+        latest, historical = split_country_news(articles, today=today)
+        self.assertEqual(len(latest), 1)
+        self.assertEqual(latest[0]["title"], "No date")
+        self.assertEqual(len(historical), 1)
+
+
 class TestBuildRecentIncidents(unittest.TestCase):
     def test_cap_and_newest_first(self):
         news = {
@@ -81,8 +146,7 @@ class TestBuildRecentIncidents(unittest.TestCase):
                 }
             }
         }
-        # Pad with unique URLs past the display cap
-        for i in range(INCIDENT_DISPLAY_CAP + 5):
+        for i in range(LATEST_NEWS_CAP + 5):
             news["morningstarnews"]["countries"]["Nigeria"].append({
                 "title": f"Incident {i} in Nigeria",
                 "url": f"https://example.com/i{i}",
@@ -90,9 +154,13 @@ class TestBuildRecentIncidents(unittest.TestCase):
                 "description": "Church destroyed",
                 "source": "Morning Star News",
             })
-        incidents = build_recent_incidents("Nigeria", news)
-        self.assertLessEqual(len(incidents), INCIDENT_DISPLAY_CAP)
-        self.assertEqual(incidents[0]["title"], "Newer church attack in Nigeria")
+        latest, historical = build_country_news("Nigeria", news)
+        self.assertEqual(len(latest), LATEST_NEWS_CAP)
+        self.assertEqual(latest[0]["title"], "Newer church attack in Nigeria")
+        self.assertEqual(len(latest) + len(historical), LATEST_NEWS_CAP + 7)
+        self.assertEqual(len(historical), 7)
+        # Back-compat wrapper returns latest only
+        self.assertEqual(build_recent_incidents("Nigeria", news), latest)
 
     def test_drops_misbucketed_articles(self):
         news = {
@@ -159,9 +227,9 @@ class TestLoadUscirfIndex(unittest.TestCase):
     def test_corrupt_index_returns_empty(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            path = root / "uscirf" / "index.json"
-            path.parent.mkdir(parents=True)
-            path.write_text("{not json", encoding="utf-8")
+            uscirf = root / "uscirf"
+            uscirf.mkdir()
+            (uscirf / "index.json").write_text("{not-json", encoding="utf-8")
             self.assertEqual(load_uscirf_index(root), {})
 
 

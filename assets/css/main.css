@@ -531,7 +531,7 @@ section + section { margin-top: 1.35rem; }
   text-decoration-color: var(--color-accent);
 }
 
-/* Recent incidents (country pages) */
+/* Country news (latest + historical) */
 .incidents-list { margin-top: 10px; }
 .incident-item {
   padding: 8px 0;
@@ -553,6 +553,34 @@ section + section { margin-top: 1.35rem; }
   color: #94a3b8;
   font-size: 0.75rem;
   margin-left: 6px;
+}
+.historical-news {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  border: none;
+}
+.historical-news > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+.historical-news > summary::-webkit-details-marker {
+  display: none;
+}
+.historical-news > summary::before {
+  content: "▸ ";
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+}
+.historical-news[open] > summary::before {
+  content: "▾ ";
+}
+.historical-news .incidents-list {
+  margin-top: 0.75rem;
 }
 .stub-note {
   margin: 0.75rem 0 1rem;
