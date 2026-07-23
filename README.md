@@ -84,4 +84,4 @@ Prefer `python3 -m pytest tests` over the legacy `scripts/verify.py` helper.
 
 [`.github/workflows/update.yml`](.github/workflows/update.yml) runs **daily** at 06:00 UTC (`cron: '0 6 * * *'`) and on `workflow_dispatch`. It fetches sources, collects, generates, tests, deploys GitHub Pages, and on schedule **or** manual dispatch commits data updates to `main`.
 
-Only **primary** fetch failures abort before generate/deploy. Secondary fetches use `|| true` and never block the job. The Pages artifact is staged from public site files only (`index.html`, `about.html`, `countries/`, `assets/`) — not `data/fetched/` scrape caches.
+Only **primary** fetch failures abort before generate/deploy. Secondary fetches use `|| true` and never block the job. The Pages artifact is staged from public site files only (`index.html`, `about.html`, `faq.html`, `countries/`, `assets/`) — not `data/fetched/` scrape caches.

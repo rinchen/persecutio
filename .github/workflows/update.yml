@@ -140,6 +140,7 @@ jobs:
             countries/ \
             index.html \
             about.html \
+            faq.html \
             assets/css/ \
             assets/js/ \
             assets/img/ || true
@@ -152,7 +153,7 @@ jobs:
       - name: Stage public site for Pages
         run: |
           mkdir -p _site
-          cp index.html about.html LICENSE _site/
+          cp index.html about.html faq.html LICENSE _site/
           cp -R countries assets _site/
           # Do not publish scrape caches, scripts, tests, or local backups
           find _site/assets -name '*.bak-*' -delete 2>/dev/null || true
