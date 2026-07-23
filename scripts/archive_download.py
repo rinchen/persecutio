@@ -286,6 +286,8 @@ def pdf_to_text(data: bytes, max_pages: int = 12) -> str:
 
 
 def parse_od_fields(plain: str) -> dict:
+    from archive_text import clean_archive_text, is_usable_archive_excerpt
+
     # Drop TOC-style dotted leaders
     lines = []
     for line in (plain or "").splitlines():
@@ -299,17 +301,35 @@ def parse_od_fields(plain: str) -> dict:
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     compact = re.sub(r"\s+", " ", cleaned)
 
+    def _score_brief(cand: str) -> int:
+        """Prefer real prose paragraphs over TOC/copyright leftovers."""
+        if not cand or "...." in cand:
+            return -1
+        cand = clean_archive_text(cand)
+        if not is_usable_archive_excerpt(cand, min_len=80):
+            return -1
+        score = len(cand)
+        if "christian" in cand.lower():
+            score += 500
+        if cand[0].isupper() or cand[0] in '"“':
+            score += 100
+        # Penalize page-header fragments
+        if re.search(r"Persecution Dynamics\s*[–—-]", cand) and len(cand) < 160:
+            score -= 400
+        return score
+
     brief = ""
+    best_score = -1
     for pat in (
         r"Brief description of the persecution situation\s*(.{80,1200}?)(?:Summary of|Position on the World Watch List|Persecution engines|Dominant persecution|Specific examples|$)",
         r"Brief description of the persecution situation\s*(.{80,1200})",
     ):
-        m = re.search(pat, compact, re.IGNORECASE | re.DOTALL)
-        if m:
-            cand = re.sub(r"\s+", " ", m.group(1)).strip()
-            if "...." not in cand and len(cand) > 80:
-                brief = cand[:1200]
-                break
+        for m in re.finditer(pat, compact, re.IGNORECASE | re.DOTALL):
+            cand = re.sub(r"\s+", " ", m.group(1)).strip()[:1200]
+            sc = _score_brief(cand)
+            if sc > best_score:
+                best_score = sc
+                brief = clean_archive_text(cand)[:1200]
 
     engines = ""
     m = re.search(
@@ -320,14 +340,14 @@ def parse_od_fields(plain: str) -> dict:
     if m:
         cand = re.sub(r"\s+", " ", m.group(1)).strip()
         if "...." not in cand:
-            engines = cand[:800]
+            engines = clean_archive_text(cand)[:800]
 
     if not brief:
         for sent in re.split(r"(?<=[.!?])\s+", compact):
-            s = sent.strip()
+            s = clean_archive_text(sent.strip())
             if "...." in s:
                 continue
-            if "christian" in s.lower() and 90 < len(s) < 450:
+            if "christian" in s.lower() and is_usable_archive_excerpt(s, min_len=90) and len(s) < 450:
                 brief = s
                 break
 

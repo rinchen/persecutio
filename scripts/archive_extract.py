@@ -80,7 +80,9 @@ def load_json(path: Path) -> dict | None:
 
 
 def first_sentences(text: str, max_chars: int = 520) -> str:
-    text = re.sub(r"\s+", " ", (text or "")).strip()
+    from archive_text import clean_archive_text, clip_at_sentence
+
+    text = clean_archive_text(re.sub(r"\s+", " ", (text or "")).strip())
     if not text:
         return ""
     parts = re.split(r"(?<=[.!?])\s+", text)
@@ -95,7 +97,8 @@ def first_sentences(text: str, max_chars: int = 520) -> str:
             break
     joined = " ".join(out).strip()
     if len(joined) > max_chars:
-        joined = joined[: max_chars - 1].rsplit(" ", 1)[0] + "…"
+        joined, _ = clip_at_sentence(joined, max_chars)
+        joined = joined.rstrip("…").rstrip()
     return joined
 
 

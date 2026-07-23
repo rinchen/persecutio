@@ -16,6 +16,7 @@ from country_registry import (
     slugify,
 )
 from fetch_common import merge_articles, normalize_date
+from archive_text import clean_archive_text, is_usable_archive_excerpt, store_summary
 
 NEWS_SOURCES = [
     ("morningstarnews", "Morning Star News", "morningstarnews2026"),
@@ -262,7 +263,13 @@ def apply_archive_enrichment(c: dict, sources: dict, archive_by_slug: dict[str, 
 
     od = arch.get("opendoors") or {}
     if od:
-        meta["archive_od_brief"] = od.get("brief_situation") or ""
+        brief = clean_archive_text(od.get("brief_situation") or "")
+        if is_usable_archive_excerpt(brief):
+            meta["archive_od_brief"] = brief
+        elif "archive_od_brief" in meta and not is_usable_archive_excerpt(
+            str(meta.get("archive_od_brief") or "")
+        ):
+            meta.pop("archive_od_brief", None)
         if od.get("ranking") is not None and meta.get("opendoors_ranking") is None:
             meta["opendoors_ranking"] = od.get("ranking")
         if od.get("score") is not None and meta.get("opendoors_score") is None:
@@ -272,8 +279,16 @@ def apply_archive_enrichment(c: dict, sources: dict, archive_by_slug: dict[str, 
 
     sd = arch.get("state_dept") or {}
     if sd:
-        if sd.get("executive_summary") and not meta.get("state_dept_executive_summary"):
-            meta["state_dept_executive_summary"] = sd["executive_summary"][:600]
+        if sd.get("executive_summary"):
+            cleaned = store_summary(sd["executive_summary"])
+            # Prefer cleaned archive prose over older mid-word YAML cuts
+            existing = str(meta.get("state_dept_executive_summary") or "")
+            if cleaned and (
+                not existing
+                or len(cleaned) > len(existing) + 40
+                or existing.rstrip()[-1:].isalnum()
+            ):
+                meta["state_dept_executive_summary"] = cleaned
         if sd.get("url") and not meta.get("state_dept_url"):
             meta["state_dept_url"] = sd["url"]
         if sd.get("christian_mention_count") is not None:
@@ -284,7 +299,9 @@ def apply_archive_enrichment(c: dict, sources: dict, archive_by_slug: dict[str, 
         if uc.get("designation") and not meta.get("uscirf_designation"):
             meta["uscirf_designation"] = uc["designation"]
         if uc.get("key_findings") and not meta.get("uscirf_key_findings"):
-            meta["uscirf_key_findings"] = uc["key_findings"][:2]
+            meta["uscirf_key_findings"] = [
+                clean_archive_text(str(f)) for f in uc["key_findings"][:2]
+            ]
         if uc.get("url") and not meta.get("uscirf_url"):
             meta["uscirf_url"] = uc["url"]
 
@@ -456,7 +473,7 @@ def enrich_country(
     sd = state_dept_by_title.get(title)
     if sd and sd.get("has_report"):
         meta["state_dept_url"] = sd.get("url") or ""
-        summary = (sd.get("executive_summary") or "")[:600]
+        summary = store_summary(sd.get("executive_summary") or "")
         if summary:
             meta["state_dept_executive_summary"] = summary
         mentions = sd.get("christian_mentions")

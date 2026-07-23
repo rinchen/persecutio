@@ -10,11 +10,17 @@ from generate_website_data import (  # noqa: E402
     STATUS_DISPLAY,
     build_meta_sources,
     esc,
+    render_archive_notes,
     render_data_fields,
     render_recent_incidents,
     render_sources,
     safe_url,
     valid_slug,
+)
+from archive_text import (  # noqa: E402
+    clean_archive_text,
+    clip_at_sentence,
+    is_usable_archive_excerpt,
 )
 
 
@@ -238,6 +244,118 @@ class TestMetaStatusMapping(unittest.TestCase):
         self.assertEqual(by_id["acn"]["status"], STATUS_DISPLAY["failed"])
         self.assertEqual(by_id["morningstarnews"]["status"], "ok")
         self.assertEqual(by_id["csw"]["status"], "partial")
+
+
+class TestArchiveTextCleanup(unittest.TestCase):
+    def test_clean_spaced_letters_and_hyphens(self):
+        self.assertEqual(clean_archive_text("h u dud punishments"), "hudud punishments")
+        self.assertEqual(
+            clean_archive_text("as a n attempt by Western"),
+            "as an attempt by Western",
+        )
+        self.assertEqual(clean_archive_text("faith i n public"), "faith in public")
+        self.assertEqual(
+            clean_archive_text("pressure them t o renounce"),
+            "pressure them to renounce",
+        )
+        self.assertEqual(
+            clean_archive_text("linked t o the Islamic"),
+            "linked to the Islamic",
+        )
+        self.assertEqual(clean_archive_text("non -Muslim worship"), "non-Muslim worship")
+
+    def test_rejects_garbage_fragments(self):
+        self.assertFalse(
+            is_usable_archive_excerpt(
+                ") and actually lead to implementation. Pakistan – Persecution Dynamics – December 2024"
+            )
+        )
+        self.assertTrue(
+            is_usable_archive_excerpt(
+                "Christians make up less than 2% of the population of Pakistan, while over 95% are Muslim."
+            )
+        )
+
+    def test_clip_at_sentence_boundary(self):
+        text = (
+            "First sentence ends here. Second sentence continues with more detail "
+            "about the situation and should not be cut mid-word when limited."
+        )
+        excerpt, truncated = clip_at_sentence(text, 80)
+        self.assertTrue(truncated)
+        self.assertTrue(excerpt.endswith("."))
+        self.assertEqual(excerpt, "First sentence ends here.")
+        self.assertNotIn("…", excerpt)
+
+    def test_clip_skips_false_sentence_ends(self):
+        text = (
+            "The U.S. government supports religious freedom. Authorities continued "
+            "investigations after the attack in October e. Following the school attack "
+            "near the border, many fled."
+        )
+        excerpt, truncated = clip_at_sentence(text, 120)
+        self.assertTrue(truncated)
+        self.assertEqual(excerpt, "The U.S. government supports religious freedom.")
+
+
+class TestRenderArchiveNotes(unittest.TestCase):
+    def test_sentence_clip_and_read_more_links(self):
+        od = (
+            "Christianity in Iran is divided between constitutionally recognized and "
+            "unrecognized Christians: Recognized communities are protected by the state "
+            "but treated as second-class citizens. Christians from these historical "
+            "communities that have supported converts, have received prison sentences. "
+            "Unrecognized converts from Islam bear the brunt of religious freedom violations "
+            "carried out by the government in particular."
+        )
+        sd = (
+            "The constitution defines the country as an Islamic republic. The penal code "
+            "provides for h u dud punishments (those mandated by sharia), including "
+            "amputation, flogging, and stoning. It specifies the death penalty for apostasy "
+            "and other offenses under prevailing fatwas across the country today."
+        )
+        country = {
+            "modern": "Short modern note.",
+            "metadata": {
+                "archive_od_brief": od,
+                "archive_od_url": "https://www.opendoors.org/persecution/reports/Iran-Full_Country_Dossier-ODI-2025.pdf",
+                "state_dept_executive_summary": sd,
+                "state_dept_url": "https://www.state.gov/reports/2023-report-on-international-religious-freedom/iran/",
+            },
+        }
+        html = render_archive_notes(country)
+        self.assertIn("From archived reports", html)
+        self.assertIn("have received prison sentences.", html)
+        self.assertNotIn("have received…", html)
+        self.assertIn("hudud punishments", html)
+        self.assertNotIn("h u dud", html)
+        self.assertIn("Read full Open Doors dossier", html)
+        self.assertIn("Read full IRF report", html)
+        self.assertIn(
+            'href="https://www.opendoors.org/persecution/reports/Iran-Full_Country_Dossier-ODI-2025.pdf"',
+            html,
+        )
+        self.assertIn(
+            'href="https://www.state.gov/reports/2023-report-on-international-religious-freedom/iran/"',
+            html,
+        )
+
+    def test_skips_broken_od_brief(self):
+        country = {
+            "modern": "",
+            "metadata": {
+                "archive_od_brief": ") and actually lead to implementation. Pakistan – Persecution Dynamics – December 2024",
+                "archive_od_url": "https://www.opendoors.org/example.pdf",
+                "uscirf_key_findings": [
+                    "The Pakistani government’s systematic enforcement of blasphemy laws severely restricts freedom of religion or belief for all citizens."
+                ],
+                "uscirf_url": "https://www.uscirf.gov/countries/pakistan",
+            },
+        }
+        html = render_archive_notes(country)
+        self.assertNotIn("and actually lead to implementation", html)
+        self.assertIn("USCIRF finding:", html)
+        self.assertIn("Read USCIRF country page", html)
 
 
 if __name__ == "__main__":

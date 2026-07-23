@@ -6,6 +6,15 @@ from urllib.parse import urlparse
 
 import yaml
 
+from archive_text import (
+    DEFAULT_IRF_LIMIT,
+    DEFAULT_OD_LIMIT,
+    DEFAULT_USCIRF_LIMIT,
+    clean_archive_text,
+    clip_at_sentence,
+    is_usable_archive_excerpt,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 COUNTRIES = ROOT / "countries"
@@ -183,13 +192,75 @@ def esc(value) -> str:
     return html.escape(str(value if value is not None else ""), quote=True)
 
 
-def clip_text(text: str, limit: int) -> str:
-    """Truncate at a word boundary so excerpts do not end mid-word."""
-    text = (text or "").strip()
-    if len(text) <= limit:
-        return text
-    cut = text[:limit].rsplit(" ", 1)[0].rstrip(" ,;:-")
-    return (cut or text[:limit]).rstrip() + "…"
+def clip_text(text: str, limit: int) -> tuple[str, bool]:
+    """Truncate at a sentence boundary; fall back to a word boundary + ellipsis."""
+    return clip_at_sentence(text, limit)
+
+
+def render_archive_more(url: str | None, label: str) -> str:
+    href = safe_url(url, fallback="")
+    if not href:
+        return ""
+    return (
+        f' <a class="archive-more" href="{href}" target="_blank" rel="noopener">'
+        f"{esc(label)}</a>"
+    )
+
+
+def render_archive_notes(country: dict) -> str:
+    """Short excerpts from archived IRF/OD/USCIRF reports (not full republication)."""
+    meta = country.get("metadata") or {}
+    bits = []
+    modern = country.get("modern") or ""
+
+    od_brief = clean_archive_text(meta.get("archive_od_brief") or "")
+    if od_brief and is_usable_archive_excerpt(od_brief) and od_brief[:80] not in modern:
+        excerpt, truncated = clip_text(od_brief, DEFAULT_OD_LIMIT)
+        more = ""
+        if truncated or meta.get("archive_od_url"):
+            more = render_archive_more(
+                meta.get("archive_od_url"), "Read full Open Doors dossier"
+            )
+        bits.append(
+            "<p><strong>Open Doors research note:</strong> "
+            f"{esc(excerpt)}"
+            f"{more}"
+            ' <span class="archive-attr">(© Open Doors International)</span></p>'
+        )
+
+    sd = clean_archive_text(meta.get("state_dept_executive_summary") or "")
+    if sd and is_usable_archive_excerpt(sd) and sd[:80] not in modern and len(bits) < 2:
+        excerpt, truncated = clip_text(sd, DEFAULT_IRF_LIMIT)
+        more = ""
+        if truncated or meta.get("state_dept_url"):
+            more = render_archive_more(meta.get("state_dept_url"), "Read full IRF report")
+        bits.append(
+            "<p><strong>U.S. State Department IRF excerpt:</strong> "
+            f"{esc(excerpt)}{more}</p>"
+        )
+
+    findings = meta.get("uscirf_key_findings") or []
+    if findings and len(bits) < 2:
+        first = clean_archive_text(str(findings[0]))
+        if first and is_usable_archive_excerpt(first) and first[:80] not in modern:
+            excerpt, truncated = clip_text(first, DEFAULT_USCIRF_LIMIT)
+            more = ""
+            if truncated or meta.get("uscirf_url"):
+                more = render_archive_more(
+                    meta.get("uscirf_url"), "Read USCIRF country page"
+                )
+            bits.append(
+                f"<p><strong>USCIRF finding:</strong> {esc(excerpt)}{more}</p>"
+            )
+    if not bits:
+        return ""
+    body = "\n        ".join(bits)
+    return (
+        '<section class="archive-notes">\n'
+        "        <h2>From archived reports</h2>\n"
+        f"        {body}\n"
+        "      </section>"
+    )
 
 
 def safe_url(url: str | None, fallback: str = "#") -> str:
@@ -341,43 +412,6 @@ def render_data_fields(country: dict) -> str:
         return ""
     joined = "\n          ".join(items)
     return f'<div class="data-grid">\n          {joined}\n        </div>'
-
-
-def render_archive_notes(country: dict) -> str:
-    """Short excerpts from archived IRF/OD/USCIRF reports (not full republication)."""
-    meta = country.get("metadata") or {}
-    bits = []
-    od_brief = (meta.get("archive_od_brief") or "").strip()
-    # Avoid duplicating text already merged into modern
-    modern = (country.get("modern") or "")
-    if od_brief and od_brief[:80] not in modern:
-        bits.append(
-            "<p><strong>Open Doors research note:</strong> "
-            f"{esc(clip_text(od_brief, 600))}"
-            ' <span class="archive-attr">(© Open Doors International)</span></p>'
-        )
-    sd = (meta.get("state_dept_executive_summary") or "").strip()
-    if sd and sd[:80] not in modern and len(bits) < 2:
-        bits.append(
-            "<p><strong>U.S. State Department IRF excerpt:</strong> "
-            f"{esc(clip_text(sd, 500))}</p>"
-        )
-    findings = meta.get("uscirf_key_findings") or []
-    if findings and len(bits) < 2:
-        first = str(findings[0]).strip()
-        if first and first[:80] not in modern:
-            bits.append(
-                f"<p><strong>USCIRF finding:</strong> {esc(clip_text(first, 500))}</p>"
-            )
-    if not bits:
-        return ""
-    body = "\n        ".join(bits)
-    return (
-        '<section class="archive-notes">\n'
-        "        <h2>From archived reports</h2>\n"
-        f"        {body}\n"
-        "      </section>"
-    )
 
 
 def render_stub_note(country: dict) -> str:
