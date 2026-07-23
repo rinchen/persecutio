@@ -106,10 +106,25 @@ def main():
 
     failed_queries = [s for s in statuses if s["status"] == "failed"]
     if statuses and len(failed_queries) == len(statuses):
-        final_status = "failed"
-        result["status"] = "failed"
-        write_json(OUTPUT, result)
-        write_status("gdelt", final_status, "all queries failed")
+        # Doc API is flaky from CI; keep prior articles when every live query fails.
+        if cached and (cached.get("articles") or cached.get("total_articles")):
+            result = dict(cached)
+            result["status"] = "cached"
+            result["queries"] = statuses
+            result["fetched_at"] = result.get("fetched_at") or ""
+            final_status = "cached"
+            write_json(OUTPUT, result)
+            write_status(
+                "gdelt",
+                final_status,
+                "all queries failed; using cached articles",
+            )
+            print("all live queries failed; kept cached gdelt.json")
+        else:
+            final_status = "failed"
+            result["status"] = "failed"
+            write_json(OUTPUT, result)
+            write_status("gdelt", final_status, "all queries failed")
     elif failed_queries:
         final_status = "partial"
         result["status"] = "partial"
@@ -120,7 +135,7 @@ def main():
         write_json(OUTPUT, result)
         write_status("gdelt", final_status)
 
-    print(f"\ntotal accumulated: {result['total_articles']}")
+    print(f"\ntotal accumulated: {result.get('total_articles', 0)}")
     print(f"saved to {OUTPUT}")
     exit_for_status(final_status)
 

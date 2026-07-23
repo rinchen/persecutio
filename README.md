@@ -29,9 +29,9 @@ Curated country narratives live in `scripts/collect_data.py`. Fetch scripts enri
 
 Pipeline sources (status chips on the map footer):
 
-**Primary** (fetch failure aborts generate/deploy): Open Doors (OD), Freedom House (FH), Our World in Data (OWID), GDELT, USCIRF (UC), U.S. State Dept IRF (SD).
+**Primary** (fetch failure aborts generate/deploy): Open Doors (OD), Freedom House (FH), Our World in Data (OWID), USCIRF (UC), U.S. State Dept IRF (SD).
 
-**Secondary** (enrich when available; never abort deploy): OHCHR, Morning Star News (MSN), Violent Incidents Database (VID), Global Christian Relief (GCR), Aid to the Church in Need (ACN), Christian Solidarity Worldwide (CSW), International Christian Concern (ICC), Forum 18 (F18), Middle East Concern (MEC), Bitter Winter (BW), Release International (RI).
+**Secondary** (enrich when available; never abort deploy): GDELT, OHCHR, Morning Star News (MSN), Violent Incidents Database (VID), Global Christian Relief (GCR), Aid to the Church in Need (ACN), Christian Solidarity Worldwide (CSW), International Christian Concern (ICC), Forum 18 (F18), Middle East Concern (MEC), Bitter Winter (BW), Release International (RI).
 
 Also cited on pages / chips: Pew, BBC, Natural Earth (NE). Wikipedia summaries are fetched during collect for enrichment.
 
