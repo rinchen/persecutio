@@ -430,7 +430,7 @@ def render_recent_incidents(country: dict) -> str:
     joined = "\n          ".join(rows)
     return (
         "<section>\n"
-        "        <h2>Recent Incidents</h2>\n"
+        "        <h2>Latest News</h2>\n"
         f'        <div class="incidents-list">\n          {joined}\n        </div>\n'
         "      </section>"
     )

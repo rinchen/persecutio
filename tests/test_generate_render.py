@@ -76,7 +76,7 @@ class TestRenderIncidents(unittest.TestCase):
             }
         }
         html = render_recent_incidents(country)
-        self.assertIn("<h2>Recent Incidents</h2>", html)
+        self.assertIn("<h2>Latest News</h2>", html)
         self.assertIn("<section>", html)
         self.assertNotIn("<script>", html)
         self.assertIn("&lt;script&gt;", html)
@@ -103,7 +103,7 @@ class TestRenderIncidents(unittest.TestCase):
             }
         }
         html = render_recent_incidents(country)
-        self.assertIn("<h2>Recent Incidents</h2>", html)
+        self.assertIn("<h2>Latest News</h2>", html)
         self.assertIn("&lt;b&gt;Attack&lt;/b&gt;", html)
         self.assertIn('href="#"', html)
         self.assertIn('href="https://morningstarnews.org/burned"', html)

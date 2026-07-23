@@ -534,7 +534,7 @@ def create_stub_countries(
             "lng": geo["lng"],
             "historical": (
                 f"Auto-tracked country page for {title}. Historical narrative has not "
-                f"been curated yet; see Recent Incidents and referenced sources for "
+                f"been curated yet; see Latest News and referenced sources for "
                 f"current Christian persecution reporting."
             ),
             "modern": (

@@ -137,10 +137,10 @@ class TestSiteCore(unittest.TestCase):
             self.assertLess(hero, hist, f"{page.name}: hero should precede Historical")
             self.assertLess(hist, modern, f"{page.name}: Historical should precede Modern")
             self.assertLess(modern, refs, f"{page.name}: Modern should precede References")
-            if "<h2>Recent Incidents</h2>" in text:
-                incidents = text.index("<h2>Recent Incidents</h2>")
-                self.assertLess(modern, incidents, f"{page.name}: Modern should precede Incidents")
-                self.assertLess(incidents, refs, f"{page.name}: Incidents should precede References")
+            if "<h2>Latest News</h2>" in text:
+                incidents = text.index("<h2>Latest News</h2>")
+                self.assertLess(modern, incidents, f"{page.name}: Modern should precede Latest News")
+                self.assertLess(incidents, refs, f"{page.name}: Latest News should precede References")
 
 
 if __name__ == "__main__":
