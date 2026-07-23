@@ -110,6 +110,55 @@ class TestRenderIncidents(unittest.TestCase):
         # Preserves enrich order (newest-first from build_recent_incidents)
         self.assertLess(html.index("Church burned"), html.index("Attack"))
 
+    def test_historical_news_collapsed_details(self):
+        country = {
+            "metadata": {
+                "recent_incidents": [
+                    {
+                        "title": "Recent attack",
+                        "url": "https://morningstarnews.org/recent",
+                        "date": "2026-01-01",
+                        "source": "MSN",
+                    },
+                ],
+                "historical_incidents": [
+                    {
+                        "title": "Older attack",
+                        "url": "https://morningstarnews.org/old",
+                        "date": "2018-01-01",
+                        "source": "ICC",
+                    },
+                ],
+            }
+        }
+        html = render_recent_incidents(country)
+        self.assertIn("<h2>Latest News</h2>", html)
+        self.assertIn('<details class="historical-news">', html)
+        self.assertIn("<summary>Historical News</summary>", html)
+        self.assertNotIn(" open", html.split("historical-news")[1][:40])
+        self.assertIn("Recent attack", html)
+        self.assertIn("Older attack", html)
+        self.assertLess(html.index("Latest News"), html.index("Historical News"))
+        self.assertLess(html.index("Recent attack"), html.index("Older attack"))
+
+    def test_historical_only_without_latest(self):
+        country = {
+            "metadata": {
+                "historical_incidents": [
+                    {
+                        "title": "Archive only",
+                        "url": "https://example.com/a",
+                        "date": "2015-01-01",
+                        "source": "CSW",
+                    }
+                ]
+            }
+        }
+        html = render_recent_incidents(country)
+        self.assertNotIn("<h2>Latest News</h2>", html)
+        self.assertIn("<summary>Historical News</summary>", html)
+        self.assertIn("Archive only", html)
+
     def test_empty(self):
         self.assertEqual(render_recent_incidents({"metadata": {}}), "")
 

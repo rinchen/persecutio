@@ -391,9 +391,27 @@ def render_stub_note(country: dict) -> str:
     )
 
 
+def _incident_rows(articles: list[dict]) -> str:
+    rows = []
+    for a in articles:
+        href = safe_url(a.get("url"))
+        title = esc(a.get("title") or "Report")
+        src = esc(a.get("source", ""))
+        date = esc(a.get("date", ""))
+        rows.append(
+            f'<div class="incident-item">'
+            f'<span class="incident-source">{src}</span> '
+            f'<a href="{href}" target="_blank" rel="noopener">{title}</a> '
+            f'<span class="incident-date">{date}</span>'
+            f"</div>"
+        )
+    return "\n          ".join(rows)
+
+
 def render_recent_incidents(country: dict) -> str:
     meta = country.get("metadata", {})
     articles = list(meta.get("recent_incidents") or [])
+    historical = list(meta.get("historical_incidents") or [])
     if not articles:
         # Legacy fallback for older YAML
         for sample_key, label in [
@@ -412,28 +430,27 @@ def render_recent_incidents(country: dict) -> str:
                     "url": a.get("url", ""),
                     "date": a.get("date", ""),
                 })
-    if not articles:
+    if not articles and not historical:
         return ""
-    rows = []
-    for a in articles[:12]:
-        href = safe_url(a.get("url"))
-        title = esc(a.get("title") or "Report")
-        src = esc(a.get("source", ""))
-        date = esc(a.get("date", ""))
-        rows.append(
-            f'<div class="incident-item">'
-            f'<span class="incident-source">{src}</span> '
-            f'<a href="{href}" target="_blank" rel="noopener">{title}</a> '
-            f'<span class="incident-date">{date}</span>'
-            f"</div>"
+
+    parts: list[str] = []
+    if articles:
+        joined = _incident_rows(articles)
+        parts.append(
+            "<section>\n"
+            "        <h2>Latest News</h2>\n"
+            f'        <div class="incidents-list">\n          {joined}\n        </div>\n'
+            "      </section>"
         )
-    joined = "\n          ".join(rows)
-    return (
-        "<section>\n"
-        "        <h2>Latest News</h2>\n"
-        f'        <div class="incidents-list">\n          {joined}\n        </div>\n'
-        "      </section>"
-    )
+    if historical:
+        joined = _incident_rows(historical)
+        parts.append(
+            '<details class="historical-news">\n'
+            "        <summary>Historical News</summary>\n"
+            f'        <div class="incidents-list">\n          {joined}\n        </div>\n'
+            "      </details>"
+        )
+    return "\n      ".join(parts)
 
 
 def assign_source_group(sid: str) -> str:

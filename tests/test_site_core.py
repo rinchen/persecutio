@@ -109,6 +109,14 @@ class TestSiteCore(unittest.TestCase):
             dated = [i for i in incidents if i.get("date") and len(str(i.get("date"))) >= 10]
             dates = [str(i["date"])[:10] for i in dated]
             self.assertEqual(dates, sorted(dates, reverse=True), f"{country.get('title')} incidents not newest-first")
+            historical = meta.get("historical_incidents") or []
+            hist_dated = [i for i in historical if i.get("date") and len(str(i.get("date"))) >= 10]
+            hist_dates = [str(i["date"])[:10] for i in hist_dated]
+            self.assertEqual(
+                hist_dates,
+                sorted(hist_dates, reverse=True),
+                f"{country.get('title')} historical incidents not newest-first",
+            )
             if meta.get("stub"):
                 self.assertTrue(country.get("historical"))
                 self.assertTrue(country.get("modern"))
@@ -141,6 +149,18 @@ class TestSiteCore(unittest.TestCase):
                 incidents = text.index("<h2>Latest News</h2>")
                 self.assertLess(modern, incidents, f"{page.name}: Modern should precede Latest News")
                 self.assertLess(incidents, refs, f"{page.name}: Latest News should precede References")
+                if '<details class="historical-news">' in text:
+                    hist_news = text.index('<details class="historical-news">')
+                    self.assertLess(
+                        incidents,
+                        hist_news,
+                        f"{page.name}: Latest News should precede Historical News",
+                    )
+                    self.assertLess(
+                        hist_news,
+                        refs,
+                        f"{page.name}: Historical News should precede References",
+                    )
 
 
 if __name__ == "__main__":
