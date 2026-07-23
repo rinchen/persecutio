@@ -41,6 +41,7 @@ PAGE = """\
       <a class="brand" href="/persecutio/index.html">Christian Persecution World Map</a>
       <nav>
         <a href="/persecutio/index.html">Map</a>
+        <a href="/persecutio/faq.html">FAQ</a>
         <a href="/persecutio/about.html">About</a>
         <a
           class="site-nav-github"
