@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b132b" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>About | Christian Persecution World Map</title>
+  <link rel="icon" href="/persecutio/pr-preview/pr-6/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/persecutio/pr-preview/pr-6/assets/img/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="index.html">Christian Persecution World Map</a>
+      <nav>
+        <a href="index.html">Map</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a
+          class="site-nav-github"
+          href="https://github.com/rinchen/persecutio"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Persecutio on GitHub (opens in new tab)"
+        >
+          <svg
+            class="site-nav-github-icon"
+            viewBox="0 0 16 16"
+            width="18"
+            height="18"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+            />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <div class="card">
+      <article class="post">
+        <h1>About this site</h1>
+        <p>This is a static site hosted on GitHub Pages. There is no application server. Country pages and index data are generated from structured source records and updated automatically via GitHub Actions.</p>
+
+        <h2>What the map shows</h2>
+        <p>The map uses color-coded markers to reflect country-level persecution severity: red for Extreme/Very High, orange for High, yellow for Moderate, and blue for Low. Clicking a country opens a page with historical background, modern context, data fields (scores and statistics when available), recent incident samples, and linked sources.</p>
+
+        <h2>Data sources</h2>
+        <p>This project relies on publicly available reports and feeds. Country pages reference the specific reports used for each entry. The table below matches the source chips shown on the site footer.</p>
+
+        <div class="table-wrap">
+          <table class="sources-table">
+            <thead>
+              <tr>
+                <th scope="col">Abbr</th>
+                <th scope="col">Source</th>
+                <th scope="col">What it covers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="abbr-badge">OD</span></td>
+                <td><a href="https://www.opendoors.org/en-US/persecution/countries/" target="_blank" rel="noopener">Open Doors World Watch List</a></td>
+                <td>Annual ranking of countries where Christians face the most persecution</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">UC</span></td>
+                <td><a href="https://www.uscirf.gov/" target="_blank" rel="noopener">USCIRF Annual Reports</a></td>
+                <td>U.S. Commission on International Religious Freedom country reports</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">FH</span></td>
+                <td><a href="https://freedomhouse.org/report/freedom-world" target="_blank" rel="noopener">Freedom House Freedom in the World</a></td>
+                <td>Political rights and civil liberties ratings</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">SD</span></td>
+                <td><a href="https://www.state.gov/international-religious-freedom-reports/" target="_blank" rel="noopener">U.S. State Dept IRF Reports</a></td>
+                <td>International Religious Freedom country reports</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">OHCHR</span></td>
+                <td><a href="https://uhri.ohchr.org/" target="_blank" rel="noopener">OHCHR Universal Human Rights Index</a></td>
+                <td>UN human rights recommendations related to religion</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">GDELT</span></td>
+                <td><a href="https://www.gdeltproject.org/" target="_blank" rel="noopener">GDELT</a></td>
+                <td>Recent news events mentioning Christian persecution</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">OWID</span></td>
+                <td><a href="https://ourworldindata.org/grapher/religious-composition" target="_blank" rel="noopener">Our World in Data</a></td>
+                <td>Christian population share and counts (Pew-based)</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">MSN</span></td>
+                <td><a href="https://morningstarnews.org/" target="_blank" rel="noopener">Morning Star News</a></td>
+                <td>Incident reporting focused on Christian persecution</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">VID</span></td>
+                <td><a href="https://iirf.global/vid/" target="_blank" rel="noopener">Violent Incidents Database</a></td>
+                <td>Aggregated violence statistics against Christians</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">GCR</span></td>
+                <td><a href="https://globalchristianrelief.org/" target="_blank" rel="noopener">Global Christian Relief</a></td>
+                <td>Persecution statistics and advocacy reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">ACN</span></td>
+                <td><a href="https://acninternational.org/" target="_blank" rel="noopener">Aid to the Church in Need</a></td>
+                <td>Religious freedom and Persecuted and Forgotten reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">CSW</span></td>
+                <td><a href="https://www.csw.org.uk/" target="_blank" rel="noopener">Christian Solidarity Worldwide</a></td>
+                <td>Freedom of religion or belief advocacy and incident reports</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">ICC</span></td>
+                <td><a href="https://www.persecution.org/" target="_blank" rel="noopener">International Christian Concern</a></td>
+                <td>Global persecution news and Global Persecution Index</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">F18</span></td>
+                <td><a href="https://www.forum18.org/" target="_blank" rel="noopener">Forum 18</a></td>
+                <td>Freedom of religion or belief news, focused on former Soviet and related regions</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">MEC</span></td>
+                <td><a href="https://www.meconcern.org/" target="_blank" rel="noopener">Middle East Concern</a></td>
+                <td>FoRB advocacy and incident reporting for the Middle East and North Africa</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">BW</span></td>
+                <td><a href="https://bitterwinter.org/" target="_blank" rel="noopener">Bitter Winter</a></td>
+                <td>FoRB news with coverage of China and related repression</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">RI</span></td>
+                <td><a href="https://www.releaseinternational.org/" target="_blank" rel="noopener">Release International</a></td>
+                <td>Advocacy and news for persecuted Christians worldwide</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">Pew</span></td>
+                <td><a href="https://www.pewresearch.org/religion/" target="_blank" rel="noopener">Pew Research Center</a></td>
+                <td>Religious landscape and restriction studies</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">BBC</span></td>
+                <td><a href="https://www.bbc.com/news" target="_blank" rel="noopener">BBC News</a></td>
+                <td>Documented news reporting on persecution events</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">NE</span></td>
+                <td><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a></td>
+                <td>Public domain map boundaries for the interactive map</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">VD</span></td>
+                <td><a href="https://www.v-dem.net/data/the-v-dem-dataset/" target="_blank" rel="noopener">V-Dem (Varieties of Democracy)</a></td>
+                <td>FoRB indicators (CC BY-SA); country subset archived under <code>data/archives/vdem/</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Source status key</strong> (shown on the site footer):</p>
+        <div class="status-legend">
+          <span><span class="swatch swatch--ok" aria-hidden="true"></span> OK &mdash; source fetched successfully</span>
+          <span><span class="swatch swatch--partial" aria-hidden="true"></span> Partial &mdash; partial data retrieved</span>
+          <span><span class="swatch swatch--error" aria-hidden="true"></span> Error &mdash; fetch failed</span>
+          <span><span class="swatch swatch--skipped" aria-hidden="true"></span> Skipped &mdash; not yet fetched</span>
+        </div>
+
+        <h2>Archived research materials</h2>
+        <p>A one-time archive under <code>data/archives/</code> stores legally redistributable research used to enrich country pages:</p>
+        <ul>
+          <li><strong>U.S. State Department IRF</strong> country chapters (U.S. government works)</li>
+          <li><strong>USCIRF</strong> annual report PDF and country pages (U.S. government works)</li>
+          <li><strong>Open Doors World Watch Research</strong> persecution-dynamics dossiers (free use/distribution with &copy; Open Doors International attribution)</li>
+          <li><strong>V-Dem</strong> FoRB indicator subset (CC BY-SA)</li>
+        </ul>
+        <p>See <code>data/archives/NOTICE</code> for license details. Country pages cite these sources and may show short excerpts; they do not republish full report bodies.</p>
+
+        <h2>Update workflow</h2>
+        <p>A GitHub Actions workflow runs <strong>daily</strong> (and on manual dispatch). It fetches external sources, regenerates country pages and JSON assets, runs tests, commits data updates, and deploys the public site to the <code>gh-pages</code> branch. Same-repo pull requests get a sticky preview link under <code>/pr-preview/pr-N/</code>.</p>
+        <p><strong>Primary</strong> sources (Open Doors, Freedom House, OWID, USCIRF, State Dept) gate the job: if any fail, generate/deploy abort. <strong>Secondary</strong> sources (GDELT, OHCHR, MSN, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International) enrich when available and never abort deploy. Only public site files are uploaded to Pages &mdash; not scrape caches under <code>data/fetched/</code> (runtime-only; not tracked in git).</p>
+
+        <h2>Privacy and access</h2>
+        <p>This site does not collect personal data. Map tiles come from CARTO/OpenStreetMap; Leaflet and Lunr are self-hosted under <code>assets/vendor/</code>. If you use an ad blocker, map tiles may still be affected.</p>
+
+        <div class="callout">
+          <strong>Attribution note:</strong> This project is unaffiliated with any government, NGO, or religious organization listed as a source. Source information remains the property of each provider and is subject to their terms and attribution requirements.
+        </div>
+
+        <h2>About the creator</h2>
+        <p>This site was created by <a href="https://fishy.best/~jjs/" target="_blank" rel="noopener">Joey</a> as a companion tool for <a href="https://www.trinitari.org/sit/" target="_blank" rel="noopener">SIT &mdash; Solidariet&agrave; Internazionale Trinitaria</a>, the Trinitarian Order&rsquo;s international solidarity ministry supporting persecuted Christians worldwide. SIT works to raise awareness and provide concrete aid to Christians facing persecution because of their faith.</p>
+
+        <h2>Contributing</h2>
+        <p>Edits are tracked in the repository as structured data. To suggest a source, correction, or new country entry, open an issue or pull request. See the README for the fetch &rarr; collect &rarr; generate &rarr; pytest workflow.</p>
+
+        <a class="back-link" href="index.html">&larr; Back to map</a>
+      </article>
+    </div>
+  </main>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+  <script src="assets/js/back-to-top.js" defer></script>
+</body>
+</html>
