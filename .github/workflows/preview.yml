@@ -1,0 +1,75 @@
+name: Deploy PR previews
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+# Share with pages.yml / update.yml writers to gh-pages.
+# Do not cancel in-progress deploys — a cancelled mid-push can leave
+# gh-pages inconsistent and pile up GitHub Pages builds.
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  deploy-preview:
+    # Same-repo PRs only — fork PRs must not write to gh-pages.
+    # Preview URLs share the production github.io origin; treat them as untrusted.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Stage public site
+        if: github.event.action != 'closed'
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp index.html about.html faq.html LICENSE _site/
+          cp -R countries assets _site/
+          touch _site/.nojekyll
+          find _site/assets -name '*.bak-*' -delete 2>/dev/null || true
+          rm -rf _site/assets/data/fetched 2>/dev/null || true
+
+      # Absolute /persecutio/… nav/favicon links must target the preview subpath.
+      - name: Rewrite base path for preview
+        if: github.event.action != 'closed'
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          n = os.environ["PR_NUMBER"]
+          old = "/persecutio/"
+          new = f"/persecutio/pr-preview/pr-{n}/"
+          root = Path("_site")
+          exts = {".html", ".js", ".css", ".svg", ".json", ".xml", ".txt"}
+          for path in root.rglob("*"):
+              if not path.is_file() or path.suffix.lower() not in exts:
+                  continue
+              text = path.read_text(encoding="utf-8")
+              if old not in text:
+                  continue
+              path.write_text(text.replace(old, new), encoding="utf-8")
+              print(f"rewrote {path}")
+          PY
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
+        with:
+          source-dir: _site
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
+          qr-code: true

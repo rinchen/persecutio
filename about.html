@@ -200,7 +200,7 @@
         <p>See <code>data/archives/NOTICE</code> for license details. Country pages cite these sources and may show short excerpts; they do not republish full report bodies.</p>
 
         <h2>Update workflow</h2>
-        <p>A GitHub Actions workflow runs <strong>daily</strong> (and on manual dispatch). It fetches external sources, regenerates country pages and JSON assets, runs tests, and deploys to GitHub Pages. On scheduled runs <strong>and</strong> manual dispatch, data changes are committed back to the repository.</p>
+        <p>A GitHub Actions workflow runs <strong>daily</strong> (and on manual dispatch). It fetches external sources, regenerates country pages and JSON assets, runs tests, commits data updates, and deploys the public site to the <code>gh-pages</code> branch. Same-repo pull requests get a sticky preview link under <code>/pr-preview/pr-N/</code>.</p>
         <p><strong>Primary</strong> sources (Open Doors, Freedom House, OWID, USCIRF, State Dept) gate the job: if any fail, generate/deploy abort. <strong>Secondary</strong> sources (GDELT, OHCHR, MSN, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International) enrich when available and never abort deploy. Only public site files are uploaded to Pages &mdash; not scrape caches under <code>data/fetched/</code> (runtime-only; not tracked in git).</p>
 
         <h2>Privacy and access</h2>
