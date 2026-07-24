@@ -376,6 +376,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - icc2026
     - bitterwinter
     - releaseintl
     - statedepartment2023china
@@ -887,6 +888,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - icc2026
     - bitterwinter
     - releaseintl
     - statedepartment2023china
@@ -905,6 +907,10 @@ countries:
     - *id003
     - *id004
     - *id005
+    - &id010
+      title: International Christian Concern - Global Persecution Reports
+      url: https://www.persecution.org/
+      date: '2026'
     - &id056
       title: Bitter Winter - Religious Liberty and Human Rights
       url: https://bitterwinter.org/
@@ -945,6 +951,17 @@ countries:
       Beijing house church pastor Jin Mingri and 17 other leaders on November 18,
       2025, drew international condemnation. The charges were "illegally using information
       networks," a vague offense punish
+    icc_articles: 1
+    icc_samples:
+    - title: Pastor Describes Experience in Chinese Prison
+      url: https://persecution.org/2026/07/23/pastor-describes-experience-in-chinese-prison
+      date: '2026-07-23'
+      description: Pastor Ezra Jin Mingri, 56, reunited with his family on July 3
+        after spending 266 days in a Chinese prison. In an op-ed published by the
+        Wall Street Journal on July 8, Jin detailed his experience behind bars, which
+        he endured alongside 28 other leaders of the underground Zion Church. He described
+        hi
+      source: International Christian Concern
     bitterwinter_articles: 1
     bitterwinter_samples:
     - title: “Brainwashing” Accusations and the Persecution of The Church of Almighty
@@ -1002,6 +1019,15 @@ countries:
       in most religious activities or receiving religious education.'
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Pastor Describes Experience in Chinese Prison
+      url: https://persecution.org/2026/07/23/pastor-describes-experience-in-chinese-prison
+      date: '2026-07-23'
+      description: Pastor Ezra Jin Mingri, 56, reunited with his family on July 3
+        after spending 266 days in a Chinese prison. In an op-ed published by the
+        Wall Street Journal on July 8, Jin detailed his experience behind bars, which
+        he endured alongside 28 other leaders of the underground Zion Church. He described
+        hi
+      source: International Christian Concern
     - title: “Brainwashing” Accusations and the Persecution of The Church of Almighty
         God
       url: https://bitterwinter.org/brainwashing-accusations-and-the-persecution-of-the-church-of-almighty-god
@@ -1932,6 +1958,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - morningstarnews2026
     - releaseintl
     - statedepartment2023india
     - statedepartment2023
@@ -2234,6 +2261,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - morningstarnews2026
     - releaseintl
     - statedepartment2023india
     - statedepartment2023
@@ -2251,6 +2279,10 @@ countries:
     - *id003
     - *id004
     - *id005
+    - &id009
+      title: Morning Star News - Christian Persecution Reports
+      url: https://morningstarnews.org/
+      date: '2026'
     - *id008
     - &id076
       title: U.S. State Department IRF Report 2023 - India
@@ -2285,6 +2317,16 @@ countries:
       Nigeria. That's roughly 72% of the worldwide total. Multiple armed groups drive
       this violence. Boko Haram, the Islamic State West Africa Province (ISWAP), Fulani
       ethnic militias, and a newer group
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Christians Imprisoned under India’s ‘Anti-Conversion’ Law
+      url: https://morningstarnews.org/2026/07/christians-imprisoned-under-indias-anti-conversion-law
+      date: '2026-07-23'
+      description: NEW DELHI (Morning Star News) – Six pastors and another Christian
+        in India have begun serving their five-year prison sentences under an “anti-conversion”
+        law, two years after they were falsely accused at a child’s birthday party,
+        sources said. The Christians were convicted on June 12 of “promoting e
+      source: Morning Star News
     releaseintl_articles: 3
     releaseintl_samples:
     - title: Threat of ‘draconian’ regulations in India
@@ -2349,6 +2391,14 @@ countries:
       exploit a woman, including for marriage.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Christians Imprisoned under India’s ‘Anti-Conversion’ Law
+      url: https://morningstarnews.org/2026/07/christians-imprisoned-under-indias-anti-conversion-law
+      date: '2026-07-23'
+      description: NEW DELHI (Morning Star News) – Six pastors and another Christian
+        in India have begun serving their five-year prison sentences under an “anti-conversion”
+        law, two years after they were falsely accused at a child’s birthday party,
+        sources said. The Christians were convicted on June 12 of “promoting e
+      source: Morning Star News
     - title: Threat of ‘draconian’ regulations in India
       url: https://releaseinternational.org/podcast-india
       date: '2026-06-04'
@@ -2975,10 +3025,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id009
-      title: Morning Star News - Christian Persecution Reports
-      url: https://morningstarnews.org/
-      date: '2026'
+    - *id009
     - &id080
       title: U.S. State Department IRF Report 2023 - Indonesia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/indonesia/
@@ -3004,7 +3051,7 @@ countries:
     opendoors_score: 49
     christian_population: 28202346
     christian_percentage: 10.26
-    morningstarnews_articles: 2
+    morningstarnews_articles: 1
     morningstarnews_samples:
     - title: Muslims Protest Construction of Church Building in Indonesia
       url: https://morningstarnews.org/2026/07/muslims-protest-construction-of-church-building-in-indonesia
@@ -3013,14 +3060,6 @@ countries:
         on July 7 protested construction of a church building in South Sulawesi Province,
         falsely claiming it had not fulfilled legal requirements, sources said. The
         Muslims also baselessly accused the church of manipulating supporting documents
-      source: Morning Star News
-    - title: Muslims Protest Presence of Church in Indonesia
-      url: https://morningstarnews.org/2026/07/muslims-protest-presence-of-church-in-indonesia
-      date: '2026-07-03'
-      description: SURABAYA, Indonesia (Morning Star News) – Islamists in June demonstrated
-        against the presence of a church in one city in West Java Province, Indonesia
-        and prevented a funeral Mass in another, local sources reported. Dozens of
-        Muslims demonstrated against the church in the Hegarmanah Indah housing co
       source: Morning Star News
     uscirf_designation: SWL
     uscirf_key_findings:
@@ -3066,14 +3105,6 @@ countries:
         on July 7 protested construction of a church building in South Sulawesi Province,
         falsely claiming it had not fulfilled legal requirements, sources said. The
         Muslims also baselessly accused the church of manipulating supporting documents
-      source: Morning Star News
-    - title: Muslims Protest Presence of Church in Indonesia
-      url: https://morningstarnews.org/2026/07/muslims-protest-presence-of-church-in-indonesia
-      date: '2026-07-03'
-      description: SURABAYA, Indonesia (Morning Star News) – Islamists in June demonstrated
-        against the presence of a church in one city in West Java Province, Indonesia
-        and prevented a funeral Mass in another, local sources reported. Dozens of
-        Muslims demonstrated against the church in the Hegarmanah Indah housing co
       source: Morning Star News
     archive_modern_excerpt: The constitution provides a guarantee of freedom of religion
       and the right to worship according to one’s own beliefs, but it states that
@@ -5002,10 +5033,7 @@ countries:
     - *id004
     - *id005
     - *id009
-    - &id010
-      title: International Christian Concern - Global Persecution Reports
-      url: https://www.persecution.org/
-      date: '2026'
+    - *id010
     - &id103
       title: U.S. State Department IRF Report 2023 - Nigeria
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nigeria/
@@ -6635,8 +6663,15 @@ countries:
           - 32.312938
         - - 35.719918
           - 32.709192
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Syria
+    wiki_extract: Syria, officially the Syrian Arab Republic, is a country in West
+      Asia located in the Eastern Mediterranean and the Levant. It borders the Mediterranean
+      Sea to the west, Turkey to the north and northwest, Iraq to the east and southeast,
+      Jordan to the south, and Israel and Lebanon to the southwest. It is a republic
+      under a provisional government and comprises 14 governorates. Damascus is the
+      capital and largest city. With a population of 26 million across an area of
+      185,180 square kilometres (71,500 sq mi), it is the 56th-most populous and 87th-largest
+      country.
     country_polygon: true
     source_ids:
     - uscirf2023syria
@@ -7171,8 +7206,16 @@ countries:
           - 18.616668
         - - 52.00001
           - 19.000003
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Yemen
+    wiki_extract: Yemen, officially the Republic of Yemen, is a country in the southern
+      part of West Asia. Including the Socotra Archipelago, mainland Yemen is located
+      in southern Arabia; bordering Saudi Arabia to the north, Oman to the northeast,
+      the south-eastern part of the Arabian Sea to the east, the Gulf of Aden to the
+      south, and the Red Sea to the west, sharing maritime borders with Djibouti,
+      Eritrea, Somaliland and Somalia across the Horn of Africa. Covering roughly
+      455,503 square kilometres, with a coastline of approximately 2,000 kilometres,
+      Yemen is the second largest country on the Arabian Peninsula by area, and the
+      second-largest by population.
     country_polygon: true
     source_ids:
     - uscirf2023yemen
@@ -8738,8 +8781,14 @@ countries:
           - -33.196578
         - - -53.373662
           - -33.768378
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Brazil
+    wiki_extract: Brazil, officially the Federative Republic of Brazil, is the largest
+      country in South America. It is also the world's fifth-largest country by area
+      and the seventh-largest by population, with over 213 million people. Brazil
+      is a federation composed of 26 states and a Federal District, which hosts the
+      capital, Brasília. Its most populous city is São Paulo, followed by Rio de Janeiro.
+      Brazil has the largest Lusophone population in the world and is the only Portuguese-speaking
+      country in the Americas, where it is the official language.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -8900,8 +8949,15 @@ countries:
           - 0.109814
         - - 33.903711
           - -0.95
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Uganda
+    wiki_extract: Uganda, officially the Republic of Uganda, is a landlocked country
+      in East Africa. It is bordered to the east by Kenya, to the north by South Sudan,
+      to the west by the Democratic Republic of the Congo, to the south-west by Rwanda,
+      and to the south by Tanzania. The southern part includes a substantial portion
+      of Lake Victoria, shared with Kenya and Tanzania. Uganda is in the African Great
+      Lakes region, lies within the Nile basin, and has a varied equatorial climate.
+      As of 2024, it had a population of 45.9 million, of whom 1.8 million live in
+      the capital and largest city, Kampala.
     country_polygon: true
     source_ids:
     - uscirf2023uganda
@@ -9399,8 +9455,17 @@ countries:
           - 23.627499
         - - 92.672721
           - 22.041239
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Bangladesh
+    wiki_extract: Bangladesh, officially the People's Republic of Bangladesh, is a
+      country in South Asia. It is the eighth-most populous country in the world and
+      among the most densely populated with a population of almost 176 million within
+      an area of 148,461 square kilometres (57,321 sq mi). Bangladesh shares land
+      borders with India to the north, west, and east, and Myanmar to the southeast.
+      It has a coastline along the Bay of Bengal to its south and is separated from
+      Bhutan and Nepal by the Siliguri Corridor, and from China by the Indian state
+      of Sikkim to its north. Dhaka, the capital and largest city, is the nation's
+      political, financial, and cultural centre. Chittagong is the second-largest
+      city and the busiest port of the country.
     country_polygon: true
     source_ids:
     - uscirf2023bangladesh
@@ -9968,17 +10033,8 @@ countries:
           - 22.20485
         - - 36.86623
           - 22
-    wiki_url: https://en.wikipedia.org/wiki/Egypt
-    wiki_extract: Egypt, officially the Arab Republic of Egypt, is a country spanning
-      the northeast corner of Africa and southwest corner of Asia via the Sinai Peninsula.
-      It is bordered by the Mediterranean Sea to the north, Palestine and Israel to
-      the northeast, the Red Sea to the east, Sudan and the Sahara to the south, and
-      Libya to the west. The Gulf of Aqaba in the northeast separates Egypt from Jordan
-      and Saudi Arabia. Cairo is the capital, largest city, and leading cultural centre,
-      while Alexandria is the second-largest city and an important hub of industry
-      and tourism. With over 107 million inhabitants, Egypt is the most populous country
-      in the Arab world, third-most populous country in Africa, and 15th-most populated
-      in the world.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - uscirf2023egypt
@@ -10169,8 +10225,13 @@ countries:
           - 19.871501
         - - -71.712361
           - 19.714456
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Haiti
+    wiki_extract: Haiti, officially the Republic of Haiti, is a country in the Caribbean
+      on the island of Hispaniola in the Caribbean Sea, east of Cuba and Jamaica and
+      south of The Bahamas. It occupies the western side of the island, which it shares
+      with the Dominican Republic. Haiti is the third largest country in the Caribbean
+      by area, and with an estimated population of 11.4 million, it is the most populous
+      Caribbean country. The capital and largest city is Port-au-Prince.
     country_polygon: true
     source_ids:
     - uscirf2023haiti
@@ -10402,8 +10463,16 @@ countries:
           - 25.6825
         - - 25
           - 22
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Libya
+    wiki_extract: Libya, officially the State of Libya, is a country in the Maghreb
+      region of North Africa. It borders the Mediterranean Sea to the north, Egypt
+      to the east, Sudan to the southeast, Chad to the south, Niger to the southwest,
+      Algeria to the west, and Tunisia to the northwest. With an area of almost 1.8 million km2
+      (700,000 sq mi), Libya is the fourth-largest country in Africa and the Arab
+      world, and the 16th-largest in the world. The country claims 32,000 square kilometres
+      of southeastern Algeria, south of the Libyan town of Ghat. The capital and largest
+      city is Tripoli, located in the northwest and containing over a million of Libya's
+      seven million people.
     country_polygon: true
     source_ids:
     - uscirf2023libya
@@ -10970,8 +11039,14 @@ countries:
           - 20.786122
         - - 100.115988
           - 20.41785
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Myanmar
+    wiki_extract: Myanmar, officially the Republic of the Union of Myanmar and also
+      referred to as Burma, is a country in northwest Southeast Asia. It is the largest
+      country by area in Mainland Southeast Asia and has a population of about 55
+      million. It is bordered by India and Bangladesh to the northwest, China to the
+      northeast, Laos and Thailand to the east and southeast, and the Andaman Sea
+      and the Bay of Bengal to the south and southwest. The country's capital city
+      is Naypyidaw, while its largest city is Yangon.
     country_polygon: true
     source_ids:
     - uscirf2023myanmar
@@ -11633,8 +11708,16 @@ countries:
             - 41.562115
           - - 26.117042
             - 41.826905
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Turkey
+    wiki_extract: Turkey, officially the Republic of Türkiye, is a country mainly
+      located in Anatolia in West Asia, with a smaller part called East Thrace in
+      Southeast Europe. It borders the Black Sea to the north; Georgia, Armenia, Azerbaijan,
+      and Iran to the east; Iraq, Syria, and the Mediterranean Sea to the south; and
+      the Aegean Sea, Greece, and Bulgaria to the west. Turkey is home to over 86
+      million people; most are ethnic Turks, while Kurds are the largest ethnic minority.
+      Officially a secular state, Turkey has a Muslim-majority population. Ankara
+      is Turkey's capital and second-largest city. Istanbul is its largest city and
+      economic center. Other major cities include İzmir, Bursa, and Antalya.
     country_polygon: true
     source_ids:
     - uscirf2023turkey
@@ -12168,12 +12251,8 @@ countries:
           - -21.116489
         - - 31.191409
           - -22.25151
-    wiki_url: https://en.wikipedia.org/wiki/Zimbabwe
-    wiki_extract: Zimbabwe, officially the Republic of Zimbabwe, is a landlocked country
-      in Southeast Africa, between the Zambezi and Limpopo River, bordered by South
-      Africa to the south, Botswana to the southwest, Zambia to the north, and Mozambique
-      to the east. The capital and largest city is Harare, and the second largest
-      is Bulawayo.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - uscirf2023zimbabwe
@@ -12639,8 +12718,14 @@ countries:
           - 10.152714
         - - -5.404342
           - 10.370737
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Burkina_Faso
+    wiki_extract: Burkina Faso is a landlocked country in West Africa. It is bordered
+      by Mali to the northwest, Niger to the northeast, Benin to the southeast, Togo
+      and Ghana to the south, and Ivory Coast to the southwest. It covers an area
+      of 274,223 km2. In 2024, the country had an estimated population of approximately
+      23,286,000. After independence it was called the Republic of Upper Volta from
+      1958 to 1984. It was renamed Burkina Faso by then-president Thomas Sankara.
+      Its citizens are known as Burkinabes, and its capital and largest city is Ouagadougou.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -12752,8 +12837,13 @@ countries:
   pew_slug: ''
   metadata:
     shape_geo: null
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Maldives
+    wiki_extract: The Maldives, officially the Republic of Maldives, and historically
+      known as the Maldive Islands, is an archipelagic country in South Asia, located
+      in the Indian Ocean, near the southeastern boundary of the Arabian Sea. The
+      Maldives is located southwest of India and Sri Lanka, about 750 kilometres from
+      the Asian continent's mainland. The Maldives' chain of 26 atolls stretches across
+      the equator from Ihavandhippolhu Atoll in the north to Addu Atoll in the south.
     country_polygon: false
     source_ids:
     - odwwl2024
@@ -14099,8 +14189,16 @@ countries:
             - 25.895991
           - - 56.261042
             - 25.714606
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Oman
+    wiki_extract: Oman, officially the Sultanate of Oman, is a country in the southeastern
+      Arabian Peninsula in West Asia. It shares land borders with Saudi Arabia, the
+      United Arab Emirates, and Yemen, while also sharing maritime borders with Iran
+      and Pakistan. Oman's coastline faces the Arabian Sea to the southeast and the
+      Gulf of Oman on the northeast. The exclaves of Madha and Musandam are surrounded
+      by the United Arab Emirates on their land borders, while Musandam's coastal
+      boundaries are formed by the Strait of Hormuz and the Gulf of Oman. It has a
+      population of approximately 5.46 million and an area of 315,331 km2. Muscat
+      is the capital and largest city and Islam is the state religion.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -14133,9 +14231,8 @@ countries:
     opendoors_score: 63
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
-      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/c07feb74b0c9b660446d93aa147c040e"},"headline":"Christian
-      Persecution by the Numbers: 2026 Global Tre'
+    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
+      content="@GC_
     archive_modern_excerpt: Omani citizens who convert to Christianity are put under
       pressure from the government, family and society to recant their faith. They
       can be expelled from the family home and from their jobs and face problems over
@@ -15036,8 +15133,15 @@ countries:
           - 28.040614
         - - 91.696657
           - 27.771742
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Bhutan
+    wiki_extract: Bhutan, officially the Kingdom of Bhutan, is a landlocked country
+      in South Asia, located in the Eastern Himalayas, bordering China to the north
+      and northwest and India to the south and southeast. With a population of over
+      800,000 (800,871) and a territory of 38,394 square kilometres (14,824 sq mi),
+      Bhutan ranks 133rd in land area and 160th in population. It is a democratic
+      constitutional monarchy with a King as the head of state and a prime minister
+      as the head of government. The Je Khenpo is the head of the state religion,
+      Vajrayana Buddhism.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -18255,15 +18359,8 @@ countries:
             - 45.851569
           - - 33.435988
             - 45.971917
-    wiki_url: https://en.wikipedia.org/wiki/Russia
-    wiki_extract: Russia, or the Russian Federation, is a country in Eastern Europe
-      and North Asia. It is the largest country in the world, spanning eleven time
-      zones and sharing land borders with fourteen countries. With a population of
-      over 140 million, Russia is the most populous country in Europe and the ninth-most
-      populous in the world. It is a highly urbanised country, with sixteen of its
-      urban areas having more than 1 million inhabitants. Moscow, the most populous
-      metropolitan area in Europe, is the capital and largest city of Russia, while
-      Saint Petersburg is its second-largest city and a major cultural centre.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -19168,15 +19265,8 @@ countries:
           - 12.247186
         - - -13.700476
           - 12.586183
-    wiki_url: https://en.wikipedia.org/wiki/Guinea
-    wiki_extract: Guinea, officially the Republic of Guinea, is a coastal country
-      located in West Africa. It borders the Atlantic Ocean to the west, Guinea-Bissau
-      to the northwest, Senegal to the north, Mali to the northeast, Ivory Coast to
-      the southeast, and Sierra Leone and Liberia to the south. It is sometimes referred
-      to as Guinea-Conakry, after its capital Conakry, to distinguish it from other
-      territories in the eponymous region, such as Guinea-Bissau and Equatorial Guinea.
-      At the census held on 1 July 2025, Guinea had a population of over 17.5 million
-      and an area of 245,857 square kilometres (94,926 sq mi).
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -19635,85 +19725,85 @@ sources:
   uscirf2025archivebahrain: *id248
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-07-23 12:20 UTC
+  generated_at: 2026-07-24 08:40 UTC
   source_statuses:
   - name: acn
     status: failed
-    fetched_at: '2026-07-23T12:19:59.655742+00:00'
+    fetched_at: '2026-07-24T08:39:40.820488+00:00'
     message: parse yielded no countries
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-07-23T12:20:05.921981+00:00'
+    fetched_at: '2026-07-24T08:39:46.075818+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-07-23T12:20:00.596490+00:00'
+    fetched_at: '2026-07-24T08:39:41.852902+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-07-23T12:20:02.004019+00:00'
+    fetched_at: '2026-07-24T08:39:43.103341+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-07-23T12:17:14.719572+00:00'
+    fetched_at: '2026-07-24T08:36:55.433749+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-07-23T12:19:58.405286+00:00'
+    fetched_at: '2026-07-24T08:39:39.502131+00:00'
     message: null
   - name: gdelt
-    status: failed
-    fetched_at: '2026-07-23T12:19:48.353701+00:00'
-    message: all queries failed
+    status: partial
+    fetched_at: '2026-07-24T08:39:28.925517+00:00'
+    message: 3 of 4 queries failed
   - name: icc
     status: ok
-    fetched_at: '2026-07-23T12:20:01.057358+00:00'
+    fetched_at: '2026-07-24T08:39:42.333043+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-07-23T12:20:05.274470+00:00'
+    fetched_at: '2026-07-24T08:39:45.452949+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-07-23T12:19:50.780563+00:00'
+    fetched_at: '2026-07-24T08:39:31.165936+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-07-23T12:20:19.155215+00:00'
+    fetched_at: '2026-07-24T08:39:56.813070+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-07-23T12:19:49.719906+00:00'
+    fetched_at: '2026-07-24T08:39:30.300078+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: partial
-    fetched_at: '2026-07-23T12:17:13.694019+00:00'
+    fetched_at: '2026-07-24T08:36:54.617648+00:00'
     message: static fallback used
   - name: owid
     status: ok
-    fetched_at: '2026-07-23T12:17:17.344739+00:00'
+    fetched_at: '2026-07-24T08:36:58.013678+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-07-23T12:20:07.618735+00:00'
+    fetched_at: '2026-07-24T08:39:47.496272+00:00'
     message: null
   - name: statedepartment
     status: partial
-    fetched_at: '2026-07-23T12:19:01.960825+00:00'
+    fetched_at: '2026-07-24T08:38:38.963333+00:00'
     message: 1 of 35 failed
   - name: uscirf
     status: partial
-    fetched_at: '2026-07-23T12:18:05.282734+00:00'
+    fetched_at: '2026-07-24T08:37:44.730442+00:00'
     message: 1 of 35 failed
   - name: vid
     status: partial
-    fetched_at: '2026-07-23T12:19:57.017116+00:00'
+    fetched_at: '2026-07-24T08:39:37.822505+00:00'
     message: parse_limited
   - name: wikipedia
     status: ok
-    fetched_at: '2026-07-23T12:20:24.444373+00:00'
-    message: ok=30 partial=0 failed=0
+    fetched_at: '2026-07-24T08:39:59.429470+00:00'
+    message: ok=39 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
     opendoors: data/fetched/opendoors.json
