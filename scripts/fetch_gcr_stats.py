@@ -21,6 +21,7 @@ from fetch_common import (
     fetch_text,
     load_json_cache,
     strip_html,
+    write_empty_result,
     write_status,
 )
 
@@ -126,8 +127,7 @@ def _write_empty(status):
         "countries": {},
         "total_countries_with_data": 0,
     }
-    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  wrote empty output to {OUTPUT}")
+    write_empty_result(OUTPUT, result)
 
 
 def main():

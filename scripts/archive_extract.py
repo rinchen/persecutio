@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from country_registry import COUNTRY_GEO, KNOWN_COUNTRIES  # noqa: E402
+from country_registry import COUNTRY_GEO, KNOWN_COUNTRIES, slugify  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVES = ROOT / "data" / "archives"
@@ -21,12 +21,6 @@ OUT_DIR = ARCHIVES / "extracted"
 OUT_PATH = OUT_DIR / "countries.json"
 
 THIN_MODERN_CHARS = 280
-
-
-def slugify(title: str) -> str:
-    s = title.lower().strip()
-    s = re.sub(r"[^a-z0-9]+", "-", s)
-    return s.strip("-")
 
 
 def site_countries() -> list[dict]:
@@ -75,7 +69,8 @@ def load_json(path: Path) -> dict | None:
         return None
     try:
         return json.loads(path.read_text(encoding="utf-8"))
-    except Exception:  # noqa: BLE001
+    except Exception as e:  # noqa: BLE001
+        print(f"warning: could not load JSON {path}: {type(e).__name__}: {e}")
         return None
 
 

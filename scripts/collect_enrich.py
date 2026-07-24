@@ -141,7 +141,8 @@ def _parse_article_date(raw: Any) -> date | None:
     try:
         y, m, day = (int(x) for x in d[:10].split("-", 2))
         return date(y, m, day)
-    except (ValueError, TypeError):
+    except (ValueError, TypeError) as e:
+        print(f"warning: could not parse article date {raw!r}: {type(e).__name__}")
         return None
 
 

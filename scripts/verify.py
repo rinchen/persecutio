@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Legacy ad-hoc checker. Prefer `python3 -m pytest tests` (what CI runs)."""
+"""Legacy ad-hoc checker. Prefer `python3 -m pytest tests` (what CI runs).
+
+Deprecation: this script re-runs collect+generate. New structural checks live in
+`tests/test_data_integrity.py`. The collect success check no longer requires
+exact stdout ``collect ok`` — exit code 0 is enough.
+"""
 
 from pathlib import Path
 import subprocess, sys, json, yaml
@@ -14,8 +19,23 @@ def check(cond, msg):
 
 
 def main():
-    out = subprocess.check_output(['python3', 'scripts/collect_data.py'], cwd=ROOT, text=True)
-    check(out.strip() == 'collect ok', 'collect_data.py ran successfully')
+    print('NOTE: prefer `python3 -m pytest tests` — this is a legacy smoke runner.')
+    proc = subprocess.run(
+        ['python3', 'scripts/collect_data.py'],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if proc.returncode != 0:
+        err = (proc.stderr or proc.stdout or '').strip()
+        if err:
+            print(err, file=sys.stderr)
+    check(proc.returncode == 0, 'collect_data.py exited 0')
+    out = (proc.stdout or '').strip()
+    if 'collect ok' in out:
+        print('OK: collect_data.py printed collect ok')
+    else:
+        print('OK: collect_data.py completed (stdout may include extra lines)')
 
     data = yaml.safe_load((ROOT / 'data' / 'countries.yml').read_text(encoding='utf-8'))
     sources = data.get('sources', {})

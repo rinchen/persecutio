@@ -2,7 +2,6 @@ import html
 import json
 import re
 from pathlib import Path
-from urllib.parse import urlparse
 
 import yaml
 
@@ -264,14 +263,10 @@ def render_archive_notes(country: dict) -> str:
 
 
 def safe_url(url: str | None, fallback: str = "#") -> str:
-    """Allow only http(s) URLs; reject javascript:/data:/etc."""
-    if not url or not isinstance(url, str):
-        return fallback
-    url = url.strip()
-    parsed = urlparse(url)
-    if parsed.scheme in ("http", "https") and parsed.netloc:
-        return esc(url)
-    return fallback
+    """Allow only http(s) URLs; reject javascript:/data:/etc. HTML-escaped for attributes."""
+    from urls import safe_url as _safe
+
+    return esc(_safe(url, fallback))
 
 
 def valid_slug(slug: str) -> bool:

@@ -14,7 +14,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from country_registry import COUNTRY_GEO, KNOWN_COUNTRIES  # noqa: E402
+from country_registry import COUNTRY_GEO, KNOWN_COUNTRIES, slugify  # noqa: E402
 from fetch_common import USER_AGENT, strip_html  # noqa: E402
 from fetch_state_dept import (  # noqa: E402
     REPORT_YEAR as IRF_YEAR,
@@ -68,12 +68,6 @@ VDEM_ZIP_URL = "https://www.v-dem.net/media/datasets/V-Dem-CY-Core-v16_csv.zip"
 USCIRF_SLUG_MAP = {
     "myanmar": "burma",
 }
-
-
-def slugify(title: str) -> str:
-    s = title.lower().strip()
-    s = re.sub(r"[^a-z0-9]+", "-", s)
-    return s.strip("-")
 
 
 def site_countries() -> list[dict]:

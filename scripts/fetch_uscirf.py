@@ -15,6 +15,7 @@ from fetch_common import (
     fetch_text,
     write_status,
 )
+from urls import http_url
 
 ensure_fetched_dir()
 FETCHED = FETCHED_ROOT / "uscirf"
@@ -72,69 +73,88 @@ def fetch_url(url, timeout=20):
     return text
 
 
-class ContentExtractor(HTMLParser):
-    def __init__(self):
+class ClassScopedTextCollector(HTMLParser):
+    """Collect text from tags inside an element whose class contains ``scope_class``.
+
+    Used for USCIRF full-content paragraphs and hero titles.
+    """
+
+    def __init__(
+        self,
+        *,
+        scope_tag: str,
+        scope_class: str,
+        collect_tag: str | None = None,
+        collect_as_paragraphs: bool = True,
+    ):
         super().__init__()
-        self._in_full_content = False
+        self.scope_tag = scope_tag
+        self.scope_class = scope_class
+        self.collect_tag = collect_tag
+        self.collect_as_paragraphs = collect_as_paragraphs
+        self._in_scope = False
         self._depth = 0
-        self._in_p = False
-        self._paragraphs = []
-        self._current = []
+        self._in_collect = False
+        self._paragraphs: list[str] = []
+        self._current: list[str] = []
+        self._flat: list[str] = []
 
     def handle_starttag(self, tag, attrs):
         attrs_dict = dict(attrs)
         cls = attrs_dict.get("class", "")
-        if tag == "div" and "full-content" in cls:
-            self._in_full_content = True
+        if tag == self.scope_tag and self.scope_class in cls:
+            self._in_scope = True
             self._depth = 0
-        if self._in_full_content and tag == "div":
+        if self._in_scope and tag == self.scope_tag:
             self._depth += 1
-        if self._in_full_content and tag == "p":
-            self._in_p = True
+        if self._in_scope and self.collect_tag and tag == self.collect_tag:
+            self._in_collect = True
             self._current = []
+        elif self._in_scope and not self.collect_tag:
+            # Title-style: collect all text in scope
+            pass
 
     def handle_endtag(self, tag):
-        if self._in_full_content and tag == "p" and self._in_p:
-            self._in_p = False
+        if self._in_collect and self.collect_tag and tag == self.collect_tag:
+            self._in_collect = False
             text = " ".join("".join(self._current).split()).strip()
             if text:
                 self._paragraphs.append(text)
             self._current = []
-        if self._in_full_content and tag == "div":
+        if self._in_scope and tag == self.scope_tag:
             self._depth -= 1
             if self._depth <= 0:
-                self._in_full_content = False
+                self._in_scope = False
 
     def handle_data(self, data):
-        if self._in_p:
+        if self._in_collect:
             self._current.append(data)
+        elif self._in_scope and not self.collect_tag:
+            self._flat.append(data.strip())
 
     def get_paragraphs(self):
         return self._paragraphs
 
-
-class TitleExtractor(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self._in_hero_title = False
-        self._text = []
-
-    def handle_starttag(self, tag, attrs):
-        attrs_dict = dict(attrs)
-        cls = attrs_dict.get("class", "")
-        if tag == "h1" and "internal-hero-title" in cls:
-            self._in_hero_title = True
-
-    def handle_endtag(self, tag):
-        if tag == "h1" and self._in_hero_title:
-            self._in_hero_title = False
-
-    def handle_data(self, data):
-        if self._in_hero_title:
-            self._text.append(data.strip())
-
     def get_title(self):
-        return " ".join(self._text).strip()
+        return " ".join(t for t in self._flat if t).strip()
+
+
+def ContentExtractor():
+    return ClassScopedTextCollector(
+        scope_tag="div",
+        scope_class="full-content",
+        collect_tag="p",
+        collect_as_paragraphs=True,
+    )
+
+
+def TitleExtractor():
+    return ClassScopedTextCollector(
+        scope_tag="h1",
+        scope_class="internal-hero-title",
+        collect_tag=None,
+        collect_as_paragraphs=False,
+    )
 
 
 class RecommendationParser(HTMLParser):
@@ -249,13 +269,16 @@ def fetch_country(country):
     slug = country["slug"]
     title = country["title"]
     cache_path = FETCHED / f"{slug}.json"
-    url = f"{BASE_URL}/countries/{slug}"
+    url = http_url(BASE_URL, "countries", slug)
+    if not url:
+        return None, f"unsafe USCIRF URL for slug={slug!r}"
 
     cached = None
     if cache_path.exists():
         try:
             cached = json.loads(cache_path.read_text(encoding="utf-8"))
-        except Exception:
+        except Exception as e:
+            print(f"  warning: corrupt USCIRF cache {cache_path.name}: {type(e).__name__}: {e}")
             cached = None
 
     try:
@@ -273,8 +296,8 @@ def fetch_country(country):
         return result, None
     except Exception as e:
         if cached:
-            return cached, f"fallback to cache: {e}"
-        return None, str(e)
+            return cached, f"fallback to cache: {type(e).__name__}: {e}"
+        return None, f"{type(e).__name__}: {e}"
 
 
 def main():

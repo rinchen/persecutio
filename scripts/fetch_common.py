@@ -2,13 +2,16 @@
 from __future__ import annotations
 
 import json
+import random
 import re
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 from christian_persecution import is_christian_persecution, is_persecution_article
 from country_registry import (
@@ -17,11 +20,14 @@ from country_registry import (
     countries_for_article,
     detect_countries,
     resolve_country_name,
+    slugify,
 )
+from urls import is_safe_url, safe_url
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 FETCHED = DATA / "fetched"
+SCRIPTS = Path(__file__).resolve().parent
 
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -32,31 +38,38 @@ DEFAULT_MAX_BYTES = 20 * 1024 * 1024  # 20 MiB
 DEFAULT_ARTICLE_CAP = 500
 # 0 disables age pruning; count cap alone bounds growth.
 DEFAULT_ARTICLE_MAX_AGE_DAYS = 0
+DEFAULT_FETCH_RETRIES = 3
+DEFAULT_RETRY_BACKOFF = 0.75
 
 __all__ = [
     "ROOT",
     "DATA",
     "FETCHED",
+    "SCRIPTS",
     "USER_AGENT",
     "KNOWN_COUNTRIES",
     "COUNTRY_ALIASES",
     "DEFAULT_ARTICLE_CAP",
     "DEFAULT_ARTICLE_MAX_AGE_DAYS",
+    "ensure_scripts_on_path",
     "ensure_fetched_dir",
     "write_status",
     "exit_for_status",
     "fetch_bytes",
     "fetch_text",
+    "fetch_json",
     "fetch_json_to_path",
     "atomic_write_text",
     "strip_html",
     "detect_countries",
     "countries_for_article",
     "resolve_country_name",
+    "slugify",
     "is_persecution_article",
     "is_christian_persecution",
     "load_json_cache",
     "write_json",
+    "write_empty_result",
     "normalize_date",
     "canonical_url",
     "merge_articles",
@@ -64,12 +77,41 @@ __all__ = [
     "build_news_result",
     "fetch_or_use_cache",
     "parse_html_news_listing",
+    "contained_path",
+    "wiki_cache_key",
+    "is_safe_url",
+    "safe_url",
 ]
+
+
+def ensure_scripts_on_path() -> Path:
+    """Insert scripts/ on sys.path once so fetch_* entrypoints can import siblings."""
+    s = str(SCRIPTS)
+    if s not in sys.path:
+        sys.path.insert(0, s)
+    return SCRIPTS
 
 
 def ensure_fetched_dir() -> Path:
     FETCHED.mkdir(parents=True, exist_ok=True)
     return FETCHED
+
+
+def contained_path(base: Path, *parts: str) -> Path:
+    """Resolve path under base; raise ValueError if it escapes base."""
+    base_resolved = base.resolve()
+    candidate = (base_resolved.joinpath(*parts)).resolve()
+    try:
+        candidate.relative_to(base_resolved)
+    except ValueError as e:
+        raise ValueError(f"path escapes base directory: {candidate}") from e
+    return candidate
+
+
+def wiki_cache_key(title: str) -> str:
+    """Conservative cache key for Wikipedia titles (no path separators)."""
+    raw = (title or "").strip().replace(" ", "_")
+    return quote(raw, safe="._-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
 
 
 def write_status(name: str, status: str, message: str | None = None, path: Path | None = None) -> Path:
@@ -92,37 +134,68 @@ def exit_for_status(status: str) -> None:
     sys.exit(0)
 
 
+def _is_retryable_error(err: str | None) -> bool:
+    if not err:
+        return False
+    lower = err.lower()
+    markers = (
+        "timeout",
+        "timed out",
+        "temporarily unavailable",
+        "connection reset",
+        "connection aborted",
+        "503",
+        "502",
+        "504",
+        "429",
+        "urlerror",
+        "httperror: 5",
+    )
+    return any(m in lower for m in markers)
+
+
 def fetch_bytes(
     url: str,
     *,
     timeout: int = 30,
     max_bytes: int = DEFAULT_MAX_BYTES,
     user_agent: str = USER_AGENT,
+    retries: int = DEFAULT_FETCH_RETRIES,
+    backoff: float = DEFAULT_RETRY_BACKOFF,
 ) -> tuple[bytes | None, str | None]:
-    """Fetch URL body with size cap. Returns (data, error)."""
-    req = urllib.request.Request(url, headers={"User-Agent": user_agent})
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            length = resp.headers.get("Content-Length")
-            if length is not None:
-                try:
-                    if int(length) > max_bytes:
-                        return None, f"content-length {length} exceeds max {max_bytes}"
-                except ValueError:
-                    pass
-            chunks: list[bytes] = []
-            total = 0
-            while True:
-                chunk = resp.read(64 * 1024)
-                if not chunk:
-                    break
-                total += len(chunk)
-                if total > max_bytes:
-                    return None, f"response exceeded max {max_bytes} bytes"
-                chunks.append(chunk)
-            return b"".join(chunks), None
-    except Exception as e:
-        return None, f"{type(e).__name__}: {e}"
+    """Fetch URL body with size cap and retry/backoff. Returns (data, error)."""
+    last_err: str | None = None
+    attempts = max(1, retries)
+    for attempt in range(attempts):
+        req = urllib.request.Request(url, headers={"User-Agent": user_agent})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                length = resp.headers.get("Content-Length")
+                if length is not None:
+                    try:
+                        if int(length) > max_bytes:
+                            return None, f"content-length {length} exceeds max {max_bytes}"
+                    except ValueError as e:
+                        print(f"  warning: unparseable Content-Length {length!r}: {e}")
+                chunks: list[bytes] = []
+                total = 0
+                while True:
+                    chunk = resp.read(64 * 1024)
+                    if not chunk:
+                        break
+                    total += len(chunk)
+                    if total > max_bytes:
+                        return None, f"response exceeded max {max_bytes} bytes"
+                    chunks.append(chunk)
+                return b"".join(chunks), None
+        except Exception as e:
+            last_err = f"{type(e).__name__}: {e}"
+            if attempt + 1 >= attempts or not _is_retryable_error(last_err):
+                break
+            delay = backoff * (2 ** attempt) + random.uniform(0, 0.25)
+            print(f"  retry {attempt + 1}/{attempts - 1} after {last_err} (sleep {delay:.2f}s)")
+            time.sleep(delay)
+    return None, last_err
 
 
 def fetch_text(
@@ -131,8 +204,11 @@ def fetch_text(
     timeout: int = 30,
     max_bytes: int = DEFAULT_MAX_BYTES,
     user_agent: str = USER_AGENT,
+    retries: int = DEFAULT_FETCH_RETRIES,
 ) -> tuple[str | None, str | None]:
-    data, err = fetch_bytes(url, timeout=timeout, max_bytes=max_bytes, user_agent=user_agent)
+    data, err = fetch_bytes(
+        url, timeout=timeout, max_bytes=max_bytes, user_agent=user_agent, retries=retries
+    )
     if err:
         print(f"  fetch error: {err}")
         return None, err
@@ -148,6 +224,14 @@ def atomic_write_text(path: Path, text: str, encoding: str = "utf-8") -> None:
     tmp.replace(path)
 
 
+def _shape_ok(data: Any, required_keys: tuple[str, ...] | None) -> bool:
+    if not isinstance(data, dict):
+        return False
+    if not required_keys:
+        return True
+    return all(k in data for k in required_keys)
+
+
 def fetch_json_to_path(
     url: str,
     path: Path,
@@ -156,10 +240,12 @@ def fetch_json_to_path(
     skip: bool = False,
     timeout: int = 30,
     user_agent: str = USER_AGENT,
+    required_keys: tuple[str, ...] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Fetch JSON with size cap; parse before writing so bad bodies cannot poison cache.
 
-    Returns (data, status_dict) where status_dict has name/url/status/fetched_at/message.
+    Returns (data, status_dict). On live-fetch failure with a usable cache, status is
+    ``partial`` and message notes stale cache was used.
     """
     status: dict[str, Any] = {
         "name": name,
@@ -171,14 +257,20 @@ def fetch_json_to_path(
     if path.exists() and skip:
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
+            if not _shape_ok(data, required_keys):
+                status["status"] = "failed"
+                status["message"] = "corrupt cache: missing required keys or not an object"
+                print(f"  warning: {status['message']} ({path.name})")
+                return {}, status
             status["status"] = "cached"
             status["fetched_at"] = datetime.fromtimestamp(
                 path.stat().st_mtime, tz=timezone.utc
             ).isoformat()
-            return (data if isinstance(data, dict) else {}), status
+            return data, status
         except Exception as e:
             status["status"] = "failed"
             status["message"] = f"corrupt cache: {type(e).__name__}: {e}"
+            print(f"  warning: {status['message']} ({path.name})")
             return {}, status
 
     text, err = fetch_text(url, timeout=timeout, user_agent=user_agent)
@@ -188,11 +280,16 @@ def fetch_json_to_path(
         if path.exists():
             try:
                 data = json.loads(path.read_text(encoding="utf-8"))
-                status["status"] = "partial"
-                status["fetched_at"] = datetime.fromtimestamp(
-                    path.stat().st_mtime, tz=timezone.utc
-                ).isoformat()
-                return (data if isinstance(data, dict) else {}), status
+                if _shape_ok(data, required_keys):
+                    status["status"] = "partial"
+                    status["fetched_at"] = datetime.fromtimestamp(
+                        path.stat().st_mtime, tz=timezone.utc
+                    ).isoformat()
+                    status["message"] = f"stale cache used after fetch failure: {err}"
+                    print(f"  warning: {status['message']} ({path.name})")
+                    return data, status
+                print(f"  warning: corrupt cache shape {path.name}")
+                status["message"] = f"{err}; corrupt cache shape"
             except Exception as e2:
                 print(f"  warning: corrupt cache {path.name}: {type(e2).__name__}: {e2}")
                 status["message"] = f"{err}; corrupt cache: {type(e2).__name__}"
@@ -205,8 +302,10 @@ def fetch_json_to_path(
         if path.exists():
             try:
                 data = json.loads(path.read_text(encoding="utf-8"))
-                status["status"] = "partial"
-                return (data if isinstance(data, dict) else {}), status
+                if _shape_ok(data, required_keys):
+                    status["status"] = "partial"
+                    status["message"] = "stale cache used: response is not JSON"
+                    return data, status
             except Exception as e2:
                 print(f"  warning: corrupt cache {path.name}: {type(e2).__name__}: {e2}")
         return {}, status
@@ -216,21 +315,54 @@ def fetch_json_to_path(
     except json.JSONDecodeError as e:
         status["status"] = "failed"
         status["message"] = f"JSONDecodeError: {e}"
+        print(f"  warning: JSON parse failed for {name}: {e}")
         if path.exists():
             try:
                 data = json.loads(path.read_text(encoding="utf-8"))
-                status["status"] = "partial"
-                return (data if isinstance(data, dict) else {}), status
+                if _shape_ok(data, required_keys):
+                    status["status"] = "partial"
+                    status["message"] = f"stale cache used after JSONDecodeError: {e}"
+                    return data, status
             except Exception as e2:
                 print(f"  warning: corrupt cache {path.name}: {type(e2).__name__}: {e2}")
         return {}, status
 
-    atomic_write_text(path, json.dumps(parsed, indent=2, ensure_ascii=False) + "\n")
-    status["fetched_at"] = datetime.now(timezone.utc).isoformat()
     if isinstance(parsed, dict):
+        if required_keys and not _shape_ok(parsed, required_keys):
+            status["status"] = "failed"
+            status["message"] = f"JSON missing required keys: {required_keys}"
+            print(f"  warning: {status['message']} ({name})")
+            return {}, status
+        atomic_write_text(path, json.dumps(parsed, indent=2, ensure_ascii=False) + "\n")
+        status["fetched_at"] = datetime.now(timezone.utc).isoformat()
         return parsed, status
-    # Some endpoints return a top-level list; wrap for callers expecting a dict.
-    return {"_list": parsed}, status
+
+    wrapped = {"_list": parsed}
+    atomic_write_text(path, json.dumps(wrapped, indent=2, ensure_ascii=False) + "\n")
+    status["fetched_at"] = datetime.now(timezone.utc).isoformat()
+    return wrapped, status
+
+
+def fetch_json(
+    url: str,
+    path: Path,
+    name: str,
+    *,
+    skip: bool = False,
+    timeout: int = 30,
+    user_agent: str = USER_AGENT,
+    required_keys: tuple[str, ...] | None = None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Alias for fetch_json_to_path (shared by collect_data / fetch_ohchr)."""
+    return fetch_json_to_path(
+        url,
+        path,
+        name,
+        skip=skip,
+        timeout=timeout,
+        user_agent=user_agent,
+        required_keys=required_keys,
+    )
 
 
 def fetch_or_use_cache(
@@ -241,19 +373,16 @@ def fetch_or_use_cache(
     user_agent: str = USER_AGENT,
     timeout: int = 30,
 ) -> tuple[str | None, dict[str, Any], str | None]:
-    """Fetch text or fall back to cached JSON. Returns (text, cached, fatal_status).
-
-    If fatal_status is set, caller should exit with that status (cache already rewritten).
-    """
+    """Fetch text or fall back to cached JSON. Returns (text, cached, fatal_status)."""
     cached = load_json_cache(output)
     text, err = fetch_text(url, timeout=timeout, user_agent=user_agent)
     if text is not None:
         return text, cached, None
     if cached:
-        print("  fetch failed, using cached data")
+        print(f"  fetch failed, using cached data: {err}")
         cached["status"] = "cached"
         write_json(output, cached)
-        write_status(name, "cached", f"fetch failed, using cache: {err}")
+        write_status(name, "cached", f"stale cache used after fetch failure: {err}")
         return None, cached, "cached"
     write_status(name, "failed", f"fetch failed: {err}")
     return None, cached, "failed"
@@ -273,7 +402,7 @@ def load_json_cache(path: Path) -> dict[str, Any]:
         data = json.loads(path.read_text(encoding="utf-8"))
         return data if isinstance(data, dict) else {}
     except Exception as e:
-        print(f"  warning: corrupt cache {path.name}: {type(e).__name__}")
+        print(f"  warning: corrupt cache {path.name}: {type(e).__name__}: {e}")
         return {}
 
 
@@ -282,11 +411,16 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     atomic_write_text(path, json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
 
 
+def write_empty_result(path: Path, payload: dict[str, Any]) -> None:
+    """Write a stub/empty fetch payload and log the path."""
+    write_json(path, payload)
+    print(f"  wrote empty output to {path}")
+
+
 def canonical_url(url: str | None) -> str:
     if not url:
         return ""
     u = url.strip()
-    # Drop common tracking fragments
     u = u.split("#")[0]
     if u.endswith("/"):
         u = u[:-1]
@@ -300,11 +434,9 @@ def normalize_date(value: str | None) -> str:
     raw = value.strip()
     if not raw:
         return ""
-    # Already ISO-ish
     m = re.match(r"^(\d{4}-\d{2}-\d{2})", raw)
     if m:
         return m.group(1)
-    # GDELT seendate: 20260115T120000Z
     m = re.match(r"^(\d{4})(\d{2})(\d{2})", raw)
     if m and len(raw) >= 8 and raw[:8].isdigit():
         return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
@@ -314,7 +446,6 @@ def normalize_date(value: str | None) -> str:
             return dt.date().isoformat()
     except Exception:
         pass
-    # Month Day, Year
     m = re.search(
         r"(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|"
         r"Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|"
