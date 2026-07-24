@@ -82,6 +82,19 @@ Prefer `python3 -m pytest tests` over the legacy `scripts/verify.py` helper.
 
 ## Workflow
 
-[`.github/workflows/update.yml`](.github/workflows/update.yml) runs **daily** at 06:00 UTC (`cron: '0 6 * * *'`) and on `workflow_dispatch`. It fetches sources, collects, generates, tests, deploys GitHub Pages, and on schedule **or** manual dispatch commits data updates to `main`.
+[`.github/workflows/update.yml`](.github/workflows/update.yml) runs **daily** at 06:00 UTC (`cron: '0 6 * * *'`) and on `workflow_dispatch`. It fetches sources, collects, generates, tests, commits data updates to `main` (schedule/dispatch), and deploys the public site to the `gh-pages` branch.
+
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) redeploys committed public files to `gh-pages` on pushes to `main` that touch site paths (so HTML/docs merges go live without waiting for the daily fetch).
 
 Only **primary** fetch failures abort before generate/deploy. Secondary fetches use `|| true` and never block the job. The Pages artifact is staged from public site files only (`index.html`, `about.html`, `faq.html`, `countries/`, `assets/`) — not `data/fetched/` scrape caches.
+
+**Live site:** https://rinchen.github.io/persecutio/
+
+### PR previews
+
+Same-repo pull requests get a sticky comment with a live preview URL under `/pr-preview/pr-{N}/` (see [`.github/workflows/preview.yml`](.github/workflows/preview.yml)). Previews stage the PR’s public site files, rewrite absolute `/persecutio/…` links for the preview subpath, and are removed when the PR closes. Fork PRs do not get automatic previews — serve locally with `python3 -m http.server`. Preview URLs share the production GitHub Pages origin — treat them as **untrusted** until you review the PR.
+
+**One-time setup** (after the first `gh-pages` deploy succeeds):
+
+1. **Settings → Pages → Build and deployment → Source:** Deploy from a branch → `gh-pages` / `/` (not “GitHub Actions”, and not `main`).
+2. **Settings → Actions → General → Workflow permissions:** Read and write permissions.

@@ -1,0 +1,48 @@
+name: Deploy Pages
+
+# Deploys committed public site files to gh-pages (no fetch/collect).
+# Scheduled data refreshes deploy from update.yml. GITHUB_TOKEN bot pushes
+# to main do not re-trigger this workflow (GitHub recursion guard).
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'about.html'
+      - 'faq.html'
+      - 'countries/**'
+      - 'assets/**'
+      - 'LICENSE'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Stage public site
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp index.html about.html faq.html LICENSE _site/
+          cp -R countries assets _site/
+          touch _site/.nojekyll
+          find _site/assets -name '*.bak-*' -delete 2>/dev/null || true
+          rm -rf _site/assets/data/fetched 2>/dev/null || true
+
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
+        with:
+          branch: gh-pages
+          folder: _site
+          clean: true
+          clean-exclude: pr-preview

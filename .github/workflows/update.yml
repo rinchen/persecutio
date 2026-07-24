@@ -5,20 +5,16 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: update-persecutio
-  cancel-in-progress: true
+  # Serialize with preview.yml / pages.yml writers to gh-pages.
+  group: gh-pages
+  cancel-in-progress: false
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -155,16 +151,14 @@ jobs:
           mkdir -p _site
           cp index.html about.html faq.html LICENSE _site/
           cp -R countries assets _site/
+          touch _site/.nojekyll
           # Do not publish scrape caches, scripts, tests, or local backups
           find _site/assets -name '*.bak-*' -delete 2>/dev/null || true
           rm -rf _site/assets/data/fetched 2>/dev/null || true
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v6
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
         with:
-          path: _site
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+          branch: gh-pages
+          folder: _site
+          clean: true
+          clean-exclude: pr-preview
