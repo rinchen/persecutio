@@ -27,8 +27,23 @@ class TestSiteCore(unittest.TestCase):
         self.assertTrue(data.get("sources"))
 
     def test_generator_produces_outputs(self):
-        subprocess.run([sys.executable, str(ROOT / "scripts/collect_data.py")], check=True, cwd=ROOT)
-        subprocess.run([sys.executable, str(ROOT / "scripts/generate_website_data.py")], check=True, cwd=ROOT)
+        # Prefer generate-only when YAML already present so incomplete local
+        # data/fetched caches cannot strip committed enrichment during unit tests.
+        yml = DATA / "countries.yml"
+        if not yml.exists() or not yml.read_text(encoding="utf-8").strip():
+            subprocess.run(
+                [sys.executable, str(ROOT / "scripts/collect_data.py")],
+                check=True,
+                cwd=ROOT,
+            )
+        else:
+            # Still exercise collect occasionally via CI full pipeline; here generate is enough.
+            pass
+        subprocess.run(
+            [sys.executable, str(ROOT / "scripts/generate_website_data.py")],
+            check=True,
+            cwd=ROOT,
+        )
 
         html_pages = sorted(COUNTRIES.glob("*.html"))
         self.assertTrue(html_pages)

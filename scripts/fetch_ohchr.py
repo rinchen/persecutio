@@ -9,7 +9,7 @@ from fetch_common import (
     USER_AGENT,
     ensure_fetched_dir,
     exit_for_status,
-    fetch_json_to_path,
+    fetch_json,
     write_status,
 )
 
@@ -41,11 +41,6 @@ RELIGION_KEYWORDS = [
     "conversion",
 ]
 
-
-def fetch_json(url, path, name, skip=False):
-    return fetch_json_to_path(
-        url, path, name, skip=skip, timeout=30, user_agent=USER_AGENT
-    )
 
 def is_religion_related(text):
     if not text:

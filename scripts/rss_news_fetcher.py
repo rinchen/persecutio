@@ -132,14 +132,55 @@ def parse_rss_items(
     return articles, None
 
 
+RSS_FEEDS = {
+    "bitterwinter": {
+        "source_label": "Bitter Winter",
+        "rss_url": "https://bitterwinter.org/feed/",
+        "high_trust": False,
+    },
+    "forum18": {
+        "source_label": "Forum 18",
+        "rss_url": "https://www.forum18.org/syndication/forum18.xml",
+        "high_trust": False,
+    },
+    "mec": {
+        "source_label": "Middle East Concern",
+        "rss_url": "https://www.meconcern.org/feed/",
+        "high_trust": True,
+    },
+    "morningstarnews": {
+        "source_label": "Morning Star News",
+        "rss_url": "https://morningstarnews.org/feed/",
+        "high_trust": True,
+    },
+    "releaseintl": {
+        "source_label": "Release International",
+        "rss_url": "https://releaseinternational.org/feed/",
+        "high_trust": True,
+    },
+}
+
+
 def run_rss_fetcher(
     *,
     name: str,
-    source_label: str,
-    rss_url: str,
-    output: Path,
-    high_trust: bool = False,
+    source_label: str | None = None,
+    rss_url: str | None = None,
+    output: Path | None = None,
+    high_trust: bool | None = None,
 ) -> None:
+    from fetch_common import FETCHED, ensure_fetched_dir
+
+    ensure_fetched_dir()
+    cfg = RSS_FEEDS.get(name, {})
+    source_label = source_label or cfg.get("source_label") or name
+    rss_url = rss_url or cfg.get("rss_url")
+    if not rss_url:
+        raise ValueError(f"No RSS URL configured for {name}")
+    if high_trust is None:
+        high_trust = bool(cfg.get("high_trust", False))
+    output = output or (FETCHED / f"{name}.json")
+
     print(f"Fetching {source_label} RSS...")
     cached = load_json_cache(output)
     xml_text, err = fetch_text(rss_url)
@@ -192,3 +233,12 @@ def run_rss_fetcher(
     print(f"  wrote {output} ({result['total_articles']} accumulated)")
     write_status(name, "ok")
     exit_for_status("ok")
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Fetch a configured RSS news feed")
+    parser.add_argument("name", choices=sorted(RSS_FEEDS))
+    args = parser.parse_args()
+    run_rss_fetcher(name=args.name)

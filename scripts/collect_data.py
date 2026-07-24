@@ -31,12 +31,31 @@ DATA.mkdir(parents=True, exist_ok=True)
 COUNTRIES.mkdir(parents=True, exist_ok=True)
 
 
+BAK_KEEP = 5
+
+
+def _prune_backups(path: Path, keep: int = BAK_KEEP) -> None:
+    """Keep the newest `keep` sibling `.bak-*` files for path; delete older ones."""
+    parent = path.parent
+    # e.g. countries.yml -> countries.bak-*.yml ; geojson.json -> geojson.bak-*.json
+    stem = path.stem
+    suffix = path.suffix
+    pattern = f"{stem}.bak-*{suffix}"
+    bak_files = sorted(parent.glob(pattern), key=lambda p: p.stat().st_mtime, reverse=True)
+    for old in bak_files[keep:]:
+        try:
+            old.unlink()
+        except OSError as e:
+            print(f"warning: could not prune backup {old.name}: {type(e).__name__}: {e}")
+
+
 def backup(path: Path):
     if not path.exists():
         return path
     ts = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
     dest = path.with_suffix(f".bak-{ts}{path.suffix}")
     shutil.copy2(path, dest)
+    _prune_backups(path)
     return dest
 
 
@@ -58,9 +77,9 @@ def merge_source_statuses(fresh: list, prior: list) -> list:
 
 
 def fetch_json(url: str, path: Path, name: str, skip: bool = False):
-    from fetch_common import USER_AGENT, fetch_json_to_path
+    from fetch_common import USER_AGENT, fetch_json as _fetch_json
 
-    return fetch_json_to_path(
+    return _fetch_json(
         url, path, name, skip=skip, timeout=20, user_agent=USER_AGENT
     )
 
@@ -1654,11 +1673,20 @@ def main():
 
 
     def wikipedia_summary(title: str):
-        key = title.replace(" ", "_").replace("/", "_")
-        cached = FETCHED / "wiki" / f"{quote(key, safe='')}.json"
-        cached.parent.mkdir(parents=True, exist_ok=True)
+        from fetch_common import contained_path, wiki_cache_key
+
+        key = wiki_cache_key(title)
+        wiki_dir = FETCHED / "wiki"
+        wiki_dir.mkdir(parents=True, exist_ok=True)
+        try:
+            cached = contained_path(wiki_dir, f"{key}.json")
+        except ValueError as e:
+            print(f"warning: wiki cache path rejected for {title!r}: {e}")
+            return {}, {"name": f"wikipedia:{key}", "status": "failed", "message": str(e)}
         url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{quote(key, safe='')}"
         data, status = fetch_json(url, cached, f"wikipedia:{key}", skip=False)
+        if status.get("status") in ("failed", "partial") and status.get("message"):
+            print(f"warning: wiki {title}: {status['status']} — {status['message']}")
         return data, status
 
     register_org_sources(sources)
@@ -1781,8 +1809,9 @@ def main():
         for p in wiki_dir.glob("*.json"):
             try:
                 data = json.loads(p.read_text(encoding="utf-8"))
-            except Exception:
+            except Exception as e:
                 counts["failed"] += 1
+                print(f"warning: corrupt wiki cache {p.name}: {type(e).__name__}: {e}")
                 continue
             if isinstance(data, dict) and data.get("extract"):
                 counts["ok"] += 1
@@ -1790,6 +1819,7 @@ def main():
                 counts["partial"] += 1
             else:
                 counts["failed"] += 1
+                print(f"warning: wiki cache {p.name}: empty or non-object payload")
         total = sum(counts.values())
         if total == 0:
             status = "skipped"
