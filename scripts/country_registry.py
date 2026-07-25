@@ -291,16 +291,27 @@ def ensure_source(
     return sid
 
 
-def attach_citation(country: dict, sid: str, sources: dict[str, dict]) -> None:
-    """Attach a citation id to country source_ids.modern and refresh metadata lists."""
+def attach_citation(
+    country: dict, sid: str, sources: dict[str, dict], section: str = "modern"
+) -> None:
+    """Attach a citation id to a country's source_ids section and refresh metadata.
+
+    section defaults to "modern" so existing callers are unchanged. Pass "historical"
+    to cite a background/structural source. Metadata lists reflect every cited source
+    across both sections in a stable order.
+    """
     if sid not in sources:
         return
     country.setdefault("source_ids", {})
-    modern = list(country["source_ids"].get("modern") or [])
-    if sid not in modern:
-        modern.append(sid)
-    country["source_ids"]["modern"] = modern
+    ids = list(country["source_ids"].get(section) or [])
+    if sid not in ids:
+        ids.append(sid)
+    country["source_ids"][section] = ids
     country.setdefault("metadata", {})
-    resolved = [s for s in modern if s in sources]
+    resolved: list[str] = []
+    for sec in ("historical", "modern"):
+        for s in country["source_ids"].get(sec) or []:
+            if s in sources and s not in resolved:
+                resolved.append(s)
     country["metadata"]["source_ids"] = resolved
     country["metadata"]["sources"] = [sources[s] for s in resolved]

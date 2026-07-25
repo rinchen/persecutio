@@ -576,6 +576,39 @@ def collect_feed_titles(news_blobs: dict[str, dict], score_blobs: list[dict]) ->
     return titles
 
 
+def stub_indicator_source_ids(
+    title: str,
+    *,
+    sources: dict,
+    opendoors_data: dict,
+    acn_data: dict,
+    freedom_house: dict,
+    owid_data: dict,
+    state_dept_by_title: dict,
+) -> list[str]:
+    """Stable citation ids implied by structural indicator data for a stub country.
+
+    Mirrors the ids enrich_country attaches for these signals so that a stub which was
+    discovered purely from score/report data (not news) still seeds a real background
+    source instead of leaving source_ids.historical empty (which the renderer rejects).
+    """
+    ids: list[str] = []
+    if (opendoors_data.get("countries") or {}).get(title):
+        ids.append("odwwl2026" if "odwwl2026" in sources else "odwwl2024")
+    if (freedom_house.get("countries") or {}).get(title):
+        ids.append("freedomhouse2024")
+    if (owid_data.get("countries") or {}).get(title):
+        ids.append("owid2024")
+    if (acn_data.get("countries") or {}).get(title):
+        ids.append("acn2025" if "acn2025" in sources else "acn2024")
+    sd = state_dept_by_title.get(title)
+    if sd and sd.get("has_report"):
+        year = sd.get("_report_year") or "2023"
+        ids.append(f"statedepartment{year}{slugify(title).replace('-', '')}")
+        ids.append("statedepartment2023")
+    return list(dict.fromkeys(ids))
+
+
 def create_stub_countries(
     existing: list[dict],
     *,
@@ -612,6 +645,18 @@ def create_stub_countries(
             arts = ((news_blobs.get(key) or {}).get("countries") or {}).get(title) or []
             if arts:
                 discovering.append(sid)
+        discovering.extend(
+            stub_indicator_source_ids(
+                title,
+                sources=sources,
+                opendoors_data=opendoors_data,
+                acn_data=acn_data,
+                freedom_house=freedom_house,
+                owid_data=owid_data,
+                state_dept_by_title=state_dept_by_title,
+            )
+        )
+        discovering = list(dict.fromkeys(discovering))
         stub = {
             "title": geo["title"],
             "slug": geo["slug"],
@@ -657,6 +702,16 @@ def create_stub_countries(
             news_blobs=news_blobs,
             archive_by_slug=archive_by_slug,
         )
+        # enrich_country only rewrites source_ids.modern; make sure the auto-generated
+        # historical narrative is backed by real sources too. Fall back to the enriched
+        # modern list so a stub never renders with an empty (cite-everything) section.
+        stub.setdefault("source_ids", {})
+        modern_ids = [s for s in (stub["source_ids"].get("modern") or []) if s in sources]
+        hist_ids = [s for s in (stub["source_ids"].get("historical") or []) if s in sources]
+        if not hist_ids:
+            hist_ids = list(modern_ids)
+        stub["source_ids"]["modern"] = modern_ids
+        stub["source_ids"]["historical"] = hist_ids
         # Ensure stub flag survives enrich
         stub["metadata"]["stub"] = True
         stub["metadata"]["auto_created_at"] = now

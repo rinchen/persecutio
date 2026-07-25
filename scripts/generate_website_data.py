@@ -273,6 +273,24 @@ def valid_slug(slug: str) -> bool:
     return bool(slug) and bool(SLUG_RE.fullmatch(slug))
 
 
+def resolve_page_source_ids(slug: str, source_ids: dict) -> tuple[list[str], list[str]]:
+    """Return (historical, modern) citation ids for a page, or fail the build.
+
+    A country with an empty section used to fall back to citing every source in the
+    repository, producing pages that listed hundreds of unrelated references. Each page
+    must carry its own sources instead, so an empty section is a hard error.
+    """
+    hist_ids = source_ids.get("historical", []) or []
+    mod_ids = source_ids.get("modern", []) or []
+    if not hist_ids or not mod_ids:
+        raise SystemExit(
+            f"Country {slug!r} has empty source_ids "
+            f"(historical={len(hist_ids)}, modern={len(mod_ids)}); "
+            "every page must cite its own sources"
+        )
+    return hist_ids, mod_ids
+
+
 def render_sources(source_ids: list[str], all_sources_lookup: dict) -> str:
     items = []
     for sid in source_ids:
@@ -568,13 +586,7 @@ def main():
         color = COLORS.get(status, "#94a3b8")
         label = LABELS.get(status, status.title() if status else "Unknown")
         source_ids = c.get("source_ids") or {}
-
-        hist_ids = source_ids.get("historical", []) or []
-        mod_ids = source_ids.get("modern", []) or []
-        if not hist_ids:
-            hist_ids = list(all_sources_lookup.keys())
-        if not mod_ids:
-            mod_ids = list(all_sources_lookup.keys())
+        hist_ids, mod_ids = resolve_page_source_ids(slug, source_ids)
 
         historical_sources = render_sources(hist_ids, all_sources_lookup)
         modern_sources = render_sources(mod_ids, all_sources_lookup)

@@ -222,6 +222,43 @@ class TestCreateStubCountries(unittest.TestCase):
         self.assertEqual(kenya["slug"], "kenya")
         self.assertIn("Auto-tracked", kenya["historical"])
 
+    def test_score_only_stub_has_nonempty_sections(self):
+        """A stub discovered from score data alone (no news) must still cite sources
+        in both historical and modern, never leaving a section empty."""
+        sources = {
+            "odwwl2024": {
+                "title": "Open Doors World Watch List 2024",
+                "url": "https://www.opendoors.org/en-US/persecution/countries/",
+                "date": "2024",
+            }
+        }
+        stubs = create_stub_countries(
+            existing=[],
+            sources=sources,
+            feed_titles={"Kenya"},
+            opendoors_data={"countries": {"Kenya": {"ranking": 40, "score": 55}}},
+            uscirf_by_title={},
+            acn_data={},
+            news_blobs={},
+            freedom_house={},
+            owid_data={},
+            vid_data={},
+            gcr_data={},
+            state_dept_by_title={},
+            ohchr_by_title={},
+            country_polygons={},
+        )
+        kenya = next(s for s in stubs if s["title"] == "Kenya")
+        hist = kenya["source_ids"]["historical"]
+        mod = kenya["source_ids"]["modern"]
+        self.assertTrue(hist, "historical must not be empty")
+        self.assertTrue(mod, "modern must not be empty")
+        self.assertIn("odwwl2024", hist)
+        self.assertIn("odwwl2024", mod)
+        # Every seeded id must resolve to a real source (no cite-everything fallback).
+        self.assertTrue(all(sid in sources for sid in hist))
+        self.assertTrue(all(sid in sources for sid in mod))
+
 
 class TestLoadUscirfIndex(unittest.TestCase):
     def test_corrupt_index_returns_empty(self):

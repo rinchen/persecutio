@@ -14,6 +14,7 @@ from generate_website_data import (  # noqa: E402
     render_data_fields,
     render_recent_incidents,
     render_sources,
+    resolve_page_source_ids,
     safe_url,
     valid_slug,
 )
@@ -61,6 +62,28 @@ class TestRenderSources(unittest.TestCase):
 
     def test_missing_ids(self):
         self.assertEqual(render_sources(["missing"], {}), "Sources will be listed here.")
+
+
+class TestResolvePageSourceIds(unittest.TestCase):
+    def test_returns_both_sections_when_populated(self):
+        hist, mod = resolve_page_source_ids(
+            "nigeria", {"historical": ["a"], "modern": ["b", "c"]}
+        )
+        self.assertEqual(hist, ["a"])
+        self.assertEqual(mod, ["b", "c"])
+
+    def test_empty_historical_fails_build(self):
+        with self.assertRaises(SystemExit) as ctx:
+            resolve_page_source_ids("kenya", {"historical": [], "modern": ["b"]})
+        self.assertIn("kenya", str(ctx.exception))
+
+    def test_empty_modern_fails_build(self):
+        with self.assertRaises(SystemExit):
+            resolve_page_source_ids("kenya", {"historical": ["a"], "modern": []})
+
+    def test_missing_sections_fail_build(self):
+        with self.assertRaises(SystemExit):
+            resolve_page_source_ids("kenya", {})
 
 
 class TestRenderIncidents(unittest.TestCase):
