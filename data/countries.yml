@@ -909,7 +909,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id011
+    - &id008
       title: International Christian Concern - Global Persecution Reports
       url: https://www.persecution.org/
       date: '2026'
@@ -917,11 +917,11 @@ countries:
       title: Bitter Winter - Religious Liberty and Human Rights
       url: https://bitterwinter.org/
       date: '2026'
-    - &id008
+    - &id009
       title: Release International - Serving the Persecuted Church
       url: https://releaseinternational.org/
       date: '2026'
-    - &id009
+    - &id010
       title: GDELT Global Database of Events, Language, and Tone
       url: https://www.gdeltproject.org/
       date: '2025'
@@ -1982,6 +1982,7 @@ countries:
     - owid2024
     - gcr2026
     - morningstarnews2026
+    - icc2026
     - releaseintl
     - gdelt2025
     - statedepartment2023india
@@ -2268,15 +2269,16 @@ countries:
         - - 97.327114
           - 28.261583
     wiki_url: https://en.wikipedia.org/wiki/India
-    wiki_extract: India, officially the Republic of India, is a country in South Asia.
-      It is the seventh-largest country by area, the most populous country in the
-      world and, since its independence in 1947, the world's most populous democracy.
+    wiki_extract: 'India, officially the Republic of India, is a country in South
+      Asia. It is the seventh-largest country by area, the most populous country in
+      the world and, since its independence in 1947, the world''s most populous democracy.
+
       Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,
       and the Bay of Bengal on the southeast, it shares land borders with Pakistan
       to the west; China, Nepal and Bhutan to the north; and Bangladesh and Myanmar
       to the east. In the Indian Ocean, India is near Sri Lanka and the Maldives.
       Its Andaman and Nicobar Islands share a maritime border with Myanmar, Thailand
-      and Indonesia.
+      and Indonesia.'
     country_polygon: true
     source_ids:
     - uscirf2023india
@@ -2286,6 +2288,7 @@ countries:
     - owid2024
     - gcr2026
     - morningstarnews2026
+    - icc2026
     - releaseintl
     - gdelt2025
     - statedepartment2023india
@@ -2304,12 +2307,13 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id010
+    - &id011
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
     - *id008
     - *id009
+    - *id010
     - &id077
       title: U.S. State Department IRF Report 2023 - India
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/india/
@@ -2353,6 +2357,16 @@ countries:
         law, two years after they were falsely accused at a child’s birthday party,
         sources said. The Christians were convicted on June 12 of “promoting e
       source: Morning Star News
+    icc_articles: 1
+    icc_samples:
+    - title: Petition Highlights Vigilante Violence
+      url: https://persecution.org/2026/07/24/petition-highlights-vigilante-violence
+      date: '2026-07-24'
+      description: The Supreme Court of India, on July 15, heard a petition that highlights
+        the rising hate speech against Christians, especially vigilante violence during
+        Christian festivals. Commonly known as the “Violence Petition,” the petition
+        originated in 2022 due to rising localized intimidation and a systemic
+      source: International Christian Concern
     releaseintl_articles: 3
     releaseintl_samples:
     - title: Threat of ‘draconian’ regulations in India
@@ -2441,6 +2455,14 @@ countries:
       exploit a woman, including for marriage.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Petition Highlights Vigilante Violence
+      url: https://persecution.org/2026/07/24/petition-highlights-vigilante-violence
+      date: '2026-07-24'
+      description: The Supreme Court of India, on July 15, heard a petition that highlights
+        the rising hate speech against Christians, especially vigilante violence during
+        Christian festivals. Commonly known as the “Violence Petition,” the petition
+        originated in 2022 due to rising localized intimidation and a systemic
+      source: International Christian Concern
     - title: Christians Imprisoned under India’s ‘Anti-Conversion’ Law
       url: https://morningstarnews.org/2026/07/christians-imprisoned-under-indias-anti-conversion-law
       date: '2026-07-23'
@@ -3092,7 +3114,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id010
+    - *id011
     - &id081
       title: U.S. State Department IRF Report 2023 - Indonesia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/indonesia/
@@ -3424,7 +3446,7 @@ countries:
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
-    - *id008
+    - *id009
     - &id085
       title: U.S. State Department IRF Report 2023 - Iran
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/iran/
@@ -4783,7 +4805,7 @@ countries:
     wiki_url: https://en.wikipedia.org/wiki/Nicaragua
     wiki_extract: Nicaragua, officially the Republic of Nicaragua, is a country in
       Central America, comprising 130,370 square kilometers (50,340 sq mi). With a
-      population of 7,142,529 as of 2024, it is the third-most populous country in
+      population of 7,097,329 as of 2026, it is the third-most populous country in
       Central America after Guatemala and Honduras, and the largest by area in all
       of Central America.
     country_polygon: true
@@ -4809,7 +4831,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id009
+    - *id010
     - &id100
       title: U.S. State Department IRF Report 2023 - Nicaragua
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nicaragua/
@@ -4978,7 +5000,6 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - morningstarnews2026
     - icc2026
     - gdelt2025
     - statedepartment2023nigeria
@@ -5127,7 +5148,6 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - morningstarnews2026
     - icc2026
     - gdelt2025
     - statedepartment2023nigeria
@@ -5146,9 +5166,8 @@ countries:
     - *id003
     - *id004
     - *id005
+    - *id008
     - *id010
-    - *id011
-    - *id009
     - &id104
       title: U.S. State Department IRF Report 2023 - Nigeria
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nigeria/
@@ -5181,16 +5200,6 @@ countries:
       roughly one in seven worldwide and one in five in Africa." } }, { "@type": "Question",
       "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "tex'
-    morningstarnews_articles: 1
-    morningstarnews_samples:
-    - title: Christian Campus Group Leaders in Nigeria Remain Missing
-      url: https://morningstarnews.org/2026/07/christian-campus-group-leaders-in-nigeria-remain-missing
-      date: '2026-07-06'
-      description: ABUJA, Nigeria (Christian Daily International Morning Star News)
-        – Three weeks after the kidnapping of Scripture Union Nigeria’s national general
-        director in southeast Nigeria, he and seven other fellowship leaders remain
-        missing, according to reports. Gunmen abducted Uwem Cosmos and the seven other
-      source: Morning Star News
     icc_articles: 3
     icc_samples:
     - title: Extremists Abduct Pastor s Wife, 3 Children in Nigeria
@@ -5221,7 +5230,7 @@ countries:
         responsible for four times more civilian deaths than the two prominent Islamic
         terror o
       source: International Christian Concern
-    gdelt_articles: 6
+    gdelt_articles: 5
     gdelt_samples:
     - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
         persecution
@@ -5240,7 +5249,7 @@ countries:
       date: '2026-06-29'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 6
+    gdelt_recent_articles: 5
     gdelt_sample_urls:
     - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
     - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
@@ -5320,14 +5329,6 @@ countries:
         responsible for four times more civilian deaths than the two prominent Islamic
         terror o
       source: International Christian Concern
-    - title: Christian Campus Group Leaders in Nigeria Remain Missing
-      url: https://morningstarnews.org/2026/07/christian-campus-group-leaders-in-nigeria-remain-missing
-      date: '2026-07-06'
-      description: ABUJA, Nigeria (Christian Daily International Morning Star News)
-        – Three weeks after the kidnapping of Scripture Union Nigeria’s national general
-        director in southeast Nigeria, he and seven other fellowship leaders remain
-        missing, according to reports. Gunmen abducted Uwem Cosmos and the seven other
-      source: Morning Star News
     - title: Muslims Massacre 22 More Christians in Nigeria , Including a Pastor
       url: https://cbn.com/news/world/muslims-massacre-22-more-christians-nigeria-including-pastor
       date: '2026-06-29'
@@ -5342,11 +5343,6 @@ countries:
     - title: Trump claims US strikes in Nigeria curbed killings of Christians
       url: https://pmnewsnigeria.com/2026/06/27/trump-claims-us-strikes-in-nigeria-curbed-killings-of-christians
       date: '2026-06-27'
-      description: ''
-      source: GDELT
-    - title: World News | Nigeria Unveils Memorial to Christians Killed in Persecution
-      url: https://www.christianitydaily.com:443/news/nigeria-unveils-memorial-to-christians-killed-in-persecution.html
-      date: '2026-06-25'
       description: ''
       source: GDELT
     archive_modern_excerpt: In terms of Persecution engines, Christians suffer from
@@ -5884,9 +5880,9 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id010
     - *id011
-    - *id009
+    - *id008
+    - *id010
     - &id112
       title: U.S. State Department IRF Report 2023 - Pakistan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/pakistan/
@@ -5921,6 +5917,15 @@ countries:
       { "@type": "Answer", "text": "Islam'
     morningstarnews_articles: 6
     morningstarnews_samples:
+    - title: Muslim Woman Gains Custody of Christian Girl in Pakistan
+      url: https://morningstarnews.org/2026/07/muslim-woman-gains-custody-of-christian-girl-in-pakistan
+      date: '2026-07-24'
+      description: LAHORE, Pakistan (Christian Daily International Morning Star News)
+        – A court in Pakistan has handed custody of a 16-year-old Christian girl to
+        an unrelated Muslim woman after the minor was recovered from a Muslim accused
+        of abducting, forcibly converting and marrying her, her family’s attorney
+        said.
+      source: Morning Star News
     - title: Court in Pakistan to Consider Hearing Case of Abducted Christian Girl
       url: https://morningstarnews.org/2026/07/court-in-pakistan-to-consider-hearing-case-of-abducted-christian-girl
       date: '2026-07-21'
@@ -5937,17 +5942,18 @@ countries:
         remaining three men convicted in the 2014 lynching of a Christian couple burned
         alive after being falsely accused of blasphemy, sources said. Christian attorn
       source: Morning Star News
-    - title: Majority of Blasphemy Cases in Pakistan ‘Fabricated,’ Officials Say
-      url: https://morningstarnews.org/2026/07/majority-of-blasphemy-cases-in-pakistan-fabricated-officials-say
-      date: '2026-07-13'
-      description: LAHORE, Pakistan (Christian Daily International Morning Star News)
-        – Officials in Pakistan last week reported to a parliamentary committee that
-        a majority of 333 blasphemy cases registered in the past five years in four
-        provinces were fabricated, according to media reports. The fabricated cases
-        incl
-      source: Morning Star News
     icc_articles: 3
     icc_samples:
+    - title: Pakistan Supreme Court Acquits All Suspects in 2014 Brick Kiln Murder
+        Case
+      url: https://persecution.org/2026/07/24/pakistan-supreme-court-acquits-all-suspects-in-2014-brick-kiln-murder-case
+      date: '2026-07-24'
+      description: The Supreme Court of Pakistan has ordered the release of the final
+        three men on death row in the 2014 murder case of a Christian couple, Shahzad
+        Masih and his pregnant wife, Shama Bibi. With this decision, along with the
+        dismissal of a state appeal against the acquittal of 102 other suspects, no
+        one
+      source: International Christian Concern
     - title: Christian Brick Kiln Worker Killed for Drinking from a Muslim s Cooler
       url: https://persecution.org/2026/07/20/christian-brick-kiln-worker-killed-for-drinking-from-a-muslims-cooler
       date: '2026-07-20'
@@ -5964,14 +5970,6 @@ countries:
         fighting for her freedom from the 30-year-old Muslim man who abducted her.
         Maria Shahbaz was kidnapped in July 2025 by Shehryar Ahmad, who forced her
         to '
-      source: International Christian Concern
-    - title: Lahore Court Acquits Blind Christian Man in Falsified Blasphemy Case
-      url: https://persecution.org/2026/07/08/lahore-court-acquits-blind-christian-man-in-falsified-blasphemy-case
-      date: '2026-07-08'
-      description: Nadeem Masih, a visually impaired Christian accused of blasphemy,
-        has been acquitted by a court in Lahore, Pakistan, after spending 10 distressing
-        months in prison. Lahore Additional Sessions Judge Saad Salman Khan ordered
-        Masih’s acquittal due to the prosecution’s failure to provide sufficient evid
       source: International Christian Concern
     gdelt_articles: 1
     gdelt_samples:
@@ -6021,6 +6019,25 @@ countries:
       to be precise.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Muslim Woman Gains Custody of Christian Girl in Pakistan
+      url: https://morningstarnews.org/2026/07/muslim-woman-gains-custody-of-christian-girl-in-pakistan
+      date: '2026-07-24'
+      description: LAHORE, Pakistan (Christian Daily International Morning Star News)
+        – A court in Pakistan has handed custody of a 16-year-old Christian girl to
+        an unrelated Muslim woman after the minor was recovered from a Muslim accused
+        of abducting, forcibly converting and marrying her, her family’s attorney
+        said.
+      source: Morning Star News
+    - title: Pakistan Supreme Court Acquits All Suspects in 2014 Brick Kiln Murder
+        Case
+      url: https://persecution.org/2026/07/24/pakistan-supreme-court-acquits-all-suspects-in-2014-brick-kiln-murder-case
+      date: '2026-07-24'
+      description: The Supreme Court of Pakistan has ordered the release of the final
+        three men on death row in the 2014 murder case of a Christian couple, Shahzad
+        Masih and his pregnant wife, Shama Bibi. With this decision, along with the
+        dismissal of a state appeal against the acquittal of 102 other suspects, no
+        one
+      source: International Christian Concern
     - title: Court in Pakistan to Consider Hearing Case of Abducted Christian Girl
       url: https://morningstarnews.org/2026/07/court-in-pakistan-to-consider-hearing-case-of-abducted-christian-girl
       date: '2026-07-21'
@@ -6076,14 +6093,6 @@ countries:
         unidentified persons mailed a desecrated page of the Quran to a Muslim shopkeeper
         along with photographs of a Christian and his mother, sources said. Asif Ba
       source: Morning Star News
-    - title: Lahore Court Acquits Blind Christian Man in Falsified Blasphemy Case
-      url: https://persecution.org/2026/07/08/lahore-court-acquits-blind-christian-man-in-falsified-blasphemy-case
-      date: '2026-07-08'
-      description: Nadeem Masih, a visually impaired Christian accused of blasphemy,
-        has been acquitted by a court in Lahore, Pakistan, after spending 10 distressing
-        months in prison. Lahore Additional Sessions Judge Saad Salman Khan ordered
-        Masih’s acquittal due to the prosecution’s failure to provide sufficient evid
-      source: International Christian Concern
     - title: Tensions Inflamed by Blasphemy Accusation in Pakistan
       url: https://morningstarnews.org/2026/07/tensions-inflamed-by-blasphemy-accusation-in-pakistan
       date: '2026-07-07'
@@ -6092,14 +6101,6 @@ countries:
         Pakistan last week after allegations of blasphemy against a pastor living
         in the United States triggered fears of mob violence, sources said. Joseph
         Nayyar, '
-      source: Morning Star News
-    - title: Christian in Pakistan Acquitted of Blasphemy Charge
-      url: https://morningstarnews.org/2026/07/christian-in-pakistan-acquitted-of-blasphemy-charge
-      date: '2026-07-06'
-      description: LAHORE, Pakistan (Christian Daily International Morning Star News)
-        – A court in Pakistan on Monday (July 6) acquitted a Catholic accused of blasphemy,
-        his lawyer said. Attorney Asad Jamal of the Lahore High Court said Lahore
-        Additional Sessions Judge Abdul Ghaffar acquitted 37-year-old Dennis Albert
       source: Morning Star News
     archive_modern_excerpt: Christians make up less than 2% of the population of Pakistan,
       while over 95% are Muslim in what, since independence in 1947, is a Muslim state.
@@ -6643,7 +6644,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id010
+    - *id011
     - &id120
       title: U.S. State Department IRF Report 2023 - Somalia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/somalia/
@@ -6888,7 +6889,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id009
+    - *id010
     - &id123
       title: U.S. State Department IRF Report 2023 - Syria
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/syria/
@@ -7587,7 +7588,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - gcr2026
-    - icc2026
     - gdelt2025
     - vdem2025forb
   pew_slug: america
@@ -8506,7 +8506,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - gcr2026
-    - icc2026
     - gdelt2025
     - vdem2025forb
     sources:
@@ -8521,8 +8520,7 @@ countries:
     - *id002
     - *id004
     - *id005
-    - *id011
-    - *id009
+    - *id010
     - *id007
     freedom_house_status: Free
     freedom_house_pr: 2
@@ -8536,18 +8534,6 @@ countries:
       the takeover by jihadist group Hay'at Tahrir al-Sham (HTS). Syria's violence
       score surged from 7 to 16.1 out of a possible 16.7, and its overall persecution
       score jumped 12 points to 90. The worst
-    icc_articles: 1
-    icc_samples:
-    - title: Community Appeals to U.S. Government After Fulani Militias Kill Christian
-        Worker, 3 Others
-      url: https://persecution.org/2026/07/08/community-appeals-to-u-s-government-after-fulani-militias-kill-christian-worker-3-others
-      date: '2026-07-08'
-      description: Community leaders in Plateau state, Nigeria, are appealing for
-        international attention after the killing of a Christian church worker and
-        community leader, John Telle Danjuma, and the separate killing of three people
-        at a mining site in a nearby community. Danjuma was killed on June 24, near
-        Gyu, al
-      source: International Christian Concern
     gdelt_articles: 3
     gdelt_samples:
     - title: Violence against Christians alarming  - US reacts to killing of Dachomo
@@ -8579,16 +8565,6 @@ countries:
       date: '2026-07-24'
       description: ''
       source: GDELT
-    - title: Community Appeals to U.S. Government After Fulani Militias Kill Christian
-        Worker, 3 Others
-      url: https://persecution.org/2026/07/08/community-appeals-to-u-s-government-after-fulani-militias-kill-christian-worker-3-others
-      date: '2026-07-08'
-      description: Community leaders in Plateau state, Nigeria, are appealing for
-        international attention after the killing of a Christian church worker and
-        community leader, John Telle Danjuma, and the separate killing of three people
-        at a mining site in a nearby community. Danjuma was killed on June 24, near
-        Gyu, al
-      source: International Christian Concern
     - title: 'Trump : US Military Action Ended Killings of Christians in Nigeria –
         THISDAYLIVE'
       url: https://www.thisdaylive.com/2026/06/28/trump-us-military-action-ended-killings-of-christians-in-nigeria
@@ -9151,6 +9127,7 @@ countries:
     - uscirf2023uganda
     - freedomhouse2024
     - owid2024
+    - morningstarnews2026
     - statedepartment2023uganda
     - statedepartment2023
     - odwwl2025archiveuganda
@@ -9231,6 +9208,7 @@ countries:
     - uscirf2023uganda
     - freedomhouse2024
     - owid2024
+    - morningstarnews2026
     - statedepartment2023uganda
     - statedepartment2023
     - odwwl2025archiveuganda
@@ -9243,6 +9221,7 @@ countries:
       date: '2023'
     - *id002
     - *id004
+    - *id011
     - &id136
       title: U.S. State Department IRF Report 2023 - Uganda
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/uganda/
@@ -9262,6 +9241,17 @@ countries:
     freedom_house_cl: 5
     christian_population: 39008617
     christian_percentage: 87.74
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Young Pastor Killed after Religious Debate in Uganda
+      url: https://morningstarnews.org/2026/07/young-pastor-killed-after-religious-debate-in-uganda
+      date: '2026-07-24'
+      description: NAIROBI, Kenya (Morning Star News) – An imam who debated a pastor
+        at an interfaith dialogue in Uganda is a suspect in the killing of the church
+        leader after the event on Saturday (July 18), sources said. Bernard Mulongo,
+        a 25-year-old pastor at New Restoration Church of Christ in Butebo District,
+        wa
+      source: Morning Star News
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/uganda/
     state_dept_executive_summary: The constitution prohibits religious discrimination
       and stipulates there shall be no state religion. It provides for freedom of
@@ -9285,6 +9275,16 @@ countries:
       and relatives of alleged ADF members, although the arrested individuals and
       community members denied the linkage.
     state_dept_christian_mentions: true
+    recent_incidents:
+    - title: Young Pastor Killed after Religious Debate in Uganda
+      url: https://morningstarnews.org/2026/07/young-pastor-killed-after-religious-debate-in-uganda
+      date: '2026-07-24'
+      description: NAIROBI, Kenya (Morning Star News) – An imam who debated a pastor
+        at an interfaith dialogue in Uganda is a suspect in the killing of the church
+        leader after the event on Saturday (July 18), sources said. Bernard Mulongo,
+        a 25-year-old pastor at New Restoration Church of Christ in Butebo District,
+        wa
+      source: Morning Star News
     archive_modern_excerpt: The constitution prohibits religious discrimination and
       stipulates there shall be no state religion. It provides for freedom of belief,
       the right to practice and promote any religion, and the right to belong to and
@@ -9756,7 +9756,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id011
+    - *id008
     - &id143
       title: U.S. State Department IRF Report 2023 - Bangladesh
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bangladesh/
@@ -10028,11 +10028,11 @@ countries:
         - - 27.374226
           - 5.233944
     wiki_url: https://en.wikipedia.org/wiki/Central_African_Republic
-    wiki_extract: The Central African Republic (CAR) is a landlocked country located
-      in Central Africa. It is bordered by Chad to the north, Sudan to the northeast,
-      South Sudan to the east, the Democratic Republic of the Congo to the south,
-      the Republic of the Congo to the southwest, and Cameroon to the west. The Central
-      African Republic covers a land area of about 620,000 square kilometres (240,000 sq mi).
+    wiki_extract: The Central African Republic (CAR) is a landlocked country in Central
+      Africa. It is bordered by Chad to the north, Sudan to the northeast, South Sudan
+      to the east, the Democratic Republic of the Congo to the south, the Republic
+      of the Congo to the southwest, and Cameroon to the west. The Central African
+      Republic covers a land area of about 620,000 square kilometres (240,000 sq mi).
       As of 2024, it has a population of 5,357,744, consisting of about 80 ethnic
       groups. Having been a French colony under the name Ubangi-Shari, French is its
       official language, with Sango, a Ngbandi-based creole language, as the national
@@ -10062,7 +10062,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id011
+    - *id008
     - &id146
       title: USCIRF Annual Report - Central African Republic
       url: https://www.uscirf.gov/countries/central-african-republic
@@ -11708,7 +11708,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id011
+    - *id008
     - &id169
       title: U.S. State Department IRF Report 2023 - Sudan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/sudan/
@@ -12552,8 +12552,12 @@ countries:
           - -21.116489
         - - 31.191409
           - -22.25151
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Zimbabwe
+    wiki_extract: Zimbabwe, officially the Republic of Zimbabwe, is a landlocked country
+      in Southeast Africa, between the Zambezi and Limpopo River, bordered by South
+      Africa to the south, Botswana to the southwest, Zambia to the north, and Mozambique
+      to the east. The capital and largest city is Harare, and the second largest
+      is Bulawayo.
     country_polygon: true
     source_ids:
     - uscirf2023zimbabwe
@@ -12818,8 +12822,10 @@ countries:
           - 12.076834
         - - -11.513943
           - 12.442988
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Mali
+    wiki_extract: Mali, officially the Republic of Mali, is a landlocked country in
+      West Africa. It is the eighth-largest country in Africa and the 23rd largest
+      country in the world, with an area of 1,240,192 square kilometres (478,841 sq mi).
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -13138,8 +13144,13 @@ countries:
   pew_slug: ''
   metadata:
     shape_geo: null
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Maldives
+    wiki_extract: The Maldives, officially the Republic of Maldives, and historically
+      known as the Maldive Islands, is an archipelagic country in South Asia, located
+      in the Indian Ocean, near the southeastern boundary of the Arabian Sea. The
+      Maldives is located southwest of India and Sri Lanka, about 750 kilometres from
+      the Asian continent's mainland. The Maldives' chain of 26 atolls stretches across
+      the equator from Ihavandhippolhu Atoll in the north to Addu Atoll in the south.
     country_polygon: false
     source_ids:
     - odwwl2024
@@ -13802,8 +13813,19 @@ countries:
           - 41.32231
         - - 55.968191
           - 41.308642
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Uzbekistan
+    wiki_extract: Uzbekistan, officially the Republic of Uzbekistan, is a sovereign,
+      doubly landlocked country located in Central Asia. It is bordered by Kazakhstan
+      to the north, Kyrgyzstan to the northeast, Tajikistan to the southeast, Afghanistan
+      to the south, and Turkmenistan to the south-west. It is one of only two doubly
+      landlocked countries in the world, the other being Liechtenstein. The country
+      has a population of more than 39 million, making it the most populous Republic
+      in Central Asia. Uzbekistan is a member of the Organisation of Turkic States.
+      Uzbek, spoken by the Uzbek people who form more than 89% of the population,
+      is the official language of the country. Russian and Tajik are significant minority
+      languages, with Russian serving as a lingua franca. Tajik is primarily spoken
+      by Tajiks living in the southern parts of the country, such as Samarkand and
+      Bukhara.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -14284,8 +14306,15 @@ countries:
           - 41.135371
         - - 52.50246
           - 41.783316
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Turkmenistan
+    wiki_extract: Turkmenistan officially the Republic of Turkmenistan is a landlocked
+      country located in Central Asia, it is bordered by Kazakhstan and Uzbekistan
+      to the north, Afghanistan to the southeast, Iran to the south and southwest,
+      and the Caspian Sea to the west. It is one of six independent Turkic states.
+      Ashgabat is the capital and largest city. With over 7 million people, Turkmenistan
+      is the 35th most-populous country in Asia and has the lowest population of the
+      Central Asian republics while being one of the most sparsely populated nations
+      located on the Asian continent.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -14544,9 +14573,8 @@ countries:
     opendoors_score: 63
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
-      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/c07feb74b0c9b660446d93aa147c040e"},"headline":"Christian
-      Persecution by the Numbers: 2026 Global Tre'
+    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
+      content="@GC_
     archive_modern_excerpt: Omani citizens who convert to Christianity are put under
       pressure from the government, family and society to recant their faith. They
       can be expelled from the family home and from their jobs and face problems over
@@ -14770,7 +14798,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id011
+    - *id008
     - &id202
       title: Open Doors WWL 2025 Persecution Dynamics — Ethiopia
       url: https://www.opendoors.org/persecution/reports/Ethiopia-Full_Country_Dossier-ODI-2025.pdf
@@ -14949,24 +14977,8 @@ countries:
           - 30.539325
         - - 9.48214
           - 30.307556
-    wiki_url: https://en.wikipedia.org/wiki/Tunisia
-    wiki_extract: Tunisia, officially the Republic of Tunisia, is a country in the
-      Maghreb region of North Africa. It is bordered by Algeria to the west and southwest,
-      Libya to the southeast, and the Mediterranean Sea to the north and east. Tunisia
-      also shares maritime borders with Italy through the islands of Sicily and Sardinia
-      to the north and Malta to the east. It features the archaeological sites of
-      Carthage dating back to the 9th century BC, as well as the Great Mosque of Kairouan.
-      Known for its ancient architecture, souks, and blue coasts, it covers 163,610 km2
-      (63,170 sq mi), and has a population of 12.1 million. It contains the eastern
-      end of the Atlas Mountains and the northern reaches of the Sahara desert; much
-      of its remaining territory is arable land. Its 1,300 km (810 mi) of coastline
-      includes the African conjunction of the western and eastern parts of the Mediterranean
-      Basin. Tunisia is home to Africa's northernmost point, Cape Angela. Located
-      on the northeastern coast, Tunis is the capital of the country, which is itself
-      named after Tunis. The official language of Tunisia is Arabic. The vast majority
-      of Tunisia's population is Arab and Muslim. Vernacular Tunisian Arabic is the
-      most spoken language, and French serves as an administrative and educational
-      language in some contexts, but has no official status.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -19791,8 +19803,17 @@ countries:
   pew_slug: ''
   metadata:
     shape_geo: null
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Bahrain
+    wiki_extract: Bahrain, officially the Kingdom of Bahrain, is an island country
+      in the eastern part of Arabian Peninsula in West Asia. Situated near the western
+      shore of the Persian Gulf, the country comprises a small archipelago of 33 natural
+      islands and an additional 50 artificial islands, centered on Bahrain Island,
+      which makes up around 80 percent of the country's landmass. Bahrain is situated
+      between Qatar and the northeastern coast of Saudi Arabia, to which it is connected
+      by the King Fahd Causeway. The population is 1,588,670 as of 2024, of whom 739,736
+      are Bahraini nationals, and 848,934 are expatriates. Bahrain spans some 760
+      square kilometres (290 sq mi) and is the third-smallest nation in Asia after
+      Maldives and Singapore. The capital and largest city is Manama.
     country_polygon: false
     source_ids:
     - odwwl2024
@@ -19931,7 +19952,7 @@ sources:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id009
+  gdelt2025: *id010
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id048
@@ -19942,7 +19963,7 @@ sources:
   uscirf2025turkmenistan: *id053
   uscirf2025uzbekistan: *id054
   uscirf2025tajikistan: *id055
-  morningstarnews2026: *id010
+  morningstarnews2026: *id011
   vid2026:
     title: Violent Incidents Database (IIRF/GCR)
     url: https://iirf.global/vid/
@@ -19956,11 +19977,11 @@ sources:
     title: Christian Solidarity Worldwide - Persecution Reports
     url: https://www.csw.org.uk/
     date: '2026'
-  icc2026: *id011
+  icc2026: *id008
   forum18: *id012
   mec: *id056
   bitterwinter: *id057
-  releaseintl: *id008
+  releaseintl: *id009
   statedepartment2023afghanistan: *id058
   odwwl2025archiveafghanistan: *id059
   statedepartment2023archiveafghanistan: *id060
@@ -20156,85 +20177,85 @@ sources:
   uscirf2025archivebahrain: *id249
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-07-24 16:25 UTC
+  generated_at: 2026-07-25 08:21 UTC
   source_statuses:
   - name: acn
     status: failed
-    fetched_at: '2026-07-24T16:24:29.479665+00:00'
+    fetched_at: '2026-07-25T08:20:47.022096+00:00'
     message: parse yielded no countries
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-07-24T16:24:36.705331+00:00'
+    fetched_at: '2026-07-25T08:20:51.386025+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-07-24T16:24:30.669017+00:00'
+    fetched_at: '2026-07-25T08:20:47.652346+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-07-24T16:24:32.613404+00:00'
+    fetched_at: '2026-07-25T08:20:49.147951+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-07-24T16:20:54.798577+00:00'
+    fetched_at: '2026-07-25T08:17:39.339270+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-07-24T16:24:28.352037+00:00'
+    fetched_at: '2026-07-25T08:20:46.007921+00:00'
     message: null
   - name: gdelt
-    status: ok
-    fetched_at: '2026-07-24T16:24:18.585635+00:00'
-    message: null
+    status: partial
+    fetched_at: '2026-07-25T08:20:36.858005+00:00'
+    message: 1 of 4 queries failed
   - name: icc
     status: ok
-    fetched_at: '2026-07-24T16:24:31.805591+00:00'
+    fetched_at: '2026-07-25T08:20:48.230902+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-07-24T16:24:35.620193+00:00'
+    fetched_at: '2026-07-25T08:20:50.647841+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-07-24T16:24:20.756936+00:00'
+    fetched_at: '2026-07-25T08:20:39.077272+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-07-24T16:24:38.528860+00:00'
+    fetched_at: '2026-07-25T08:20:52.829343+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-07-24T16:24:19.537850+00:00'
+    fetched_at: '2026-07-25T08:20:38.025421+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: partial
-    fetched_at: '2026-07-24T16:20:53.814872+00:00'
+    fetched_at: '2026-07-25T08:17:38.311225+00:00'
     message: static fallback used
   - name: owid
     status: ok
-    fetched_at: '2026-07-24T16:20:57.172163+00:00'
+    fetched_at: '2026-07-25T08:17:41.151048+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-07-24T16:24:38.102457+00:00'
+    fetched_at: '2026-07-25T08:20:52.487027+00:00'
     message: null
   - name: statedepartment
     status: partial
-    fetched_at: '2026-07-24T16:22:41.722056+00:00'
+    fetched_at: '2026-07-25T08:19:16.888268+00:00'
     message: 1 of 35 failed
   - name: uscirf
     status: partial
-    fetched_at: '2026-07-24T16:21:38.247968+00:00'
+    fetched_at: '2026-07-25T08:18:21.034416+00:00'
     message: 1 of 35 failed
   - name: vid
     status: partial
-    fetched_at: '2026-07-24T16:24:26.681202+00:00'
+    fetched_at: '2026-07-25T08:20:44.436362+00:00'
     message: parse_limited
   - name: wikipedia
     status: ok
-    fetched_at: '2026-07-24T16:25:04.097001+00:00'
-    message: ok=56 partial=0 failed=0
+    fetched_at: '2026-07-25T08:21:01.394708+00:00'
+    message: ok=61 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
     opendoors: data/fetched/opendoors.json
