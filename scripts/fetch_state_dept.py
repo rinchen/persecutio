@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from country_registry import COUNTRY_GEO, slugify
 from fetch_common import (
     FETCHED,
     USER_AGENT,
@@ -30,15 +31,11 @@ SLUG_MAP = {
     "democratic-republic-of-congo": "democratic-republic-of-the-congo",
 }
 
-TARGET_COUNTRIES = [
-    "afghanistan", "algeria", "bangladesh", "central-african-republic",
-    "china", "colombia", "cuba", "egypt", "eritrea", "haiti",
-    "india", "indonesia", "iran", "iraq", "laos", "libya",
-    "malaysia", "mexico", "myanmar", "nicaragua", "nigeria",
-    "north-korea", "pakistan", "saudi-arabia", "somalia", "sudan",
-    "syria", "turkey", "venezuela", "vietnam", "yemen",
-    "united-states", "brazil", "uganda", "zimbabwe",
-]
+# Cover the full known-country registry rather than a hand-maintained subset, so the
+# fetch list can never drift behind the countries the site actually publishes. The IRF
+# report covers ~199 countries, so all of these resolve; fetch_country_report degrades
+# to a non-fatal "partial" for any slug that 404s.
+TARGET_COUNTRIES = sorted(slugify(title) for title in COUNTRY_GEO)
 
 
 def fetch_url(url, timeout=20):

@@ -1575,6 +1575,214 @@ COUNTRIES_DATA = [
         "source_ids": {"historical": ["odwwl2024"], "modern": ["odwwl2024"]},
         "pew_slug": ""
     },
+    {
+        "title": "Kenya",
+        "slug": "kenya",
+        "iso3": "KEN",
+        "status": "warning",
+        "persecution_level": "High",
+        "lat": -0.02,
+        "lng": 37.91,
+        "modern": (
+            "Kenya's Christian majority worships freely under a constitution that bars a "
+            "state religion, but Christians in the north and along the coast face deadly "
+            "attacks by the Somalia-based militant group al-Shabaab, which has burned "
+            "churches and killed Christians in Lamu and border counties. The 2023 "
+            "Shakahola forest starvation deaths linked to a fringe pastor prompted new "
+            "government scrutiny of religious organizations and the deregistration of "
+            "several churches, raising concerns about oversight and overreach alike."
+        ),
+        "historical": (
+            "Christianity arrived with 19th-century European missionaries and grew "
+            "rapidly after independence in 1963 to become the majority faith. Muslim "
+            "communities predominate on the coast and in the northeast, where qadi "
+            "courts adjudicate Islamic family law. Interreligious relations have been "
+            "largely peaceful, but the rise of al-Shabaab after 2011 brought sustained "
+            "violence against Christians in the border regions."
+        ),
+        "source_ids": {
+            "historical": ["statedepartment2023kenya", "odwwl2026"],
+            "modern": ["statedepartment2023kenya", "odwwl2026", "freedomhouse2024"],
+        },
+        "pew_slug": ""
+    },
+    {
+        "title": "Tanzania",
+        "slug": "tanzania",
+        "iso3": "TZA",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": -6.37,
+        "lng": 34.89,
+        "modern": (
+            "The mainland and semiautonomous Zanzibar both guarantee religious freedom, "
+            "and Christians, roughly half the population, worship freely on the "
+            "mainland. On Muslim-majority Zanzibar, Christian converts and churches "
+            "report social pressure and occasional harassment, and religiously tinged "
+            "political tensions periodically flare. Catholic, Lutheran, and other church "
+            "councils remain influential voices in national life."
+        ),
+        "historical": (
+            "Coastal Tanganyika and Zanzibar were shaped by centuries of Indian Ocean "
+            "Islam before Christian missionaries arrived in the 19th century. After "
+            "independence and the 1964 union, the state maintained official secularism "
+            "and a balance between large Christian and Muslim populations, though "
+            "Zanzibar's Islamic identity has periodically strained relations with its "
+            "Christian minority."
+        ),
+        "source_ids": {
+            "historical": ["statedepartment2023tanzania", "odwwl2026"],
+            "modern": ["statedepartment2023tanzania", "odwwl2026", "freedomhouse2024"],
+        },
+        "pew_slug": ""
+    },
+    {
+        "title": "Kuwait",
+        "slug": "kuwait",
+        "iso3": "KWT",
+        "status": "restricted",
+        "persecution_level": "Moderate",
+        "lat": 29.31,
+        "lng": 47.48,
+        "modern": (
+            "Islam is the state religion and sharia a main source of law. Expatriate "
+            "Christians, the large majority of the country's Christians, worship at a "
+            "limited number of licensed churches, but proselytizing Muslims is "
+            "prohibited and defaming Islam is criminalized. Kuwaiti citizens who convert "
+            "from Islam face loss of legal and family status, and permission to build "
+            "new churches is tightly constrained."
+        ),
+        "historical": (
+            "The Arabian Peninsula held scattered Christian communities before Islam "
+            "spread in the 7th century. Kuwait's modern Christian presence dates largely "
+            "to 20th-century expatriate workers and an American Protestant mission "
+            "hospital. A small number of citizens are recognized as Christian, but the "
+            "faith remains overwhelmingly foreign."
+        ),
+        "source_ids": {
+            "historical": ["statedepartment2023kuwait"],
+            "modern": ["statedepartment2023kuwait", "freedomhouse2024"],
+        },
+        "pew_slug": ""
+    },
+    {
+        "title": "United Arab Emirates",
+        "slug": "united-arab-emirates",
+        "iso3": "ARE",
+        "status": "restricted",
+        "persecution_level": "Moderate",
+        "lat": 23.42,
+        "lng": 53.85,
+        "modern": (
+            "The constitution makes Islam the official religion and sharia the principal "
+            "source of legislation. Expatriate Christians worship at recognized churches "
+            "and on designated compounds, and the state promotes an image of tolerance, "
+            "but a federal law that took effect in late 2023 prohibits all forms of "
+            "proselytization and broadens blasphemy provisions. Conversion from Islam is "
+            "not recognized, and Emirati Christians are effectively absent from public "
+            "life."
+        ),
+        "historical": (
+            "Christian communities of the Church of the East once existed along the "
+            "Gulf, evidenced by the pre-Islamic monastery ruins on Sir Bani Yas island "
+            "that predate Islam's 7th-century spread. The contemporary church is a "
+            "product of 20th- and 21st-century labor migration, worshiping under state "
+            "licensing arrangements."
+        ),
+        "source_ids": {
+            "historical": ["statedepartment2023unitedarabemirates"],
+            "modern": ["statedepartment2023unitedarabemirates", "freedomhouse2024"],
+        },
+        "pew_slug": ""
+    },
+    {
+        "title": "Lebanon",
+        "slug": "lebanon",
+        "iso3": "LBN",
+        "status": "restricted",
+        "persecution_level": "Moderate",
+        "lat": 33.85,
+        "lng": 35.86,
+        "modern": (
+            "Lebanon's confessional system guarantees Christians proportional political "
+            "representation and broad freedom of worship, making it unusual in the "
+            "region. Yet decades of emigration, the economic collapse that began in "
+            "2019, and the armed dominance of Hezbollah have eroded Christian "
+            "demographic and political weight, and periodic sectarian tension threatens "
+            "the community's long-term security."
+        ),
+        "historical": (
+            "Lebanon is home to some of the world's oldest Christian communities, "
+            "notably the Maronite Church, with a Christian presence continuous since "
+            "antiquity. The 1943 National Pact and the 1989 Taif Agreement that ended "
+            "the 1975-1990 civil war entrenched power-sharing between Christians and "
+            "Muslims, shaping a state built around confessional balance."
+        ),
+        "source_ids": {
+            "historical": ["statedepartment2023lebanon"],
+            "modern": ["statedepartment2023lebanon", "freedomhouse2024"],
+        },
+        "pew_slug": ""
+    },
+    {
+        "title": "Nepal",
+        "slug": "nepal",
+        "iso3": "NPL",
+        "status": "warning",
+        "persecution_level": "High",
+        "lat": 28.39,
+        "lng": 84.12,
+        "modern": (
+            "Nepal's constitution declares the country secular but prohibits religious "
+            "conversion, and the criminal code bans both proselytism and 'hurting "
+            "religious sentiment.' Pastors and Christian converts have been arrested and "
+            "prosecuted; documented cases include a pastor jailed over cow slaughter and "
+            "preachers charged for evangelism, leaving the fast-growing but small "
+            "Christian minority legally vulnerable."
+        ),
+        "historical": (
+            "Christianity had almost no foothold in the Hindu kingdom of Nepal until the "
+            "country opened up in the mid-20th century, and proselytism was long a "
+            "criminal offense. The end of the Hindu monarchy and the 2015 secular "
+            "constitution coincided with rapid church growth, but anti-conversion "
+            "provisions carried over and continue to constrain Christians."
+        ),
+        "source_ids": {
+            "historical": ["statedepartment2023nepal", "odwwl2026"],
+            "modern": ["statedepartment2023nepal", "odwwl2026", "freedomhouse2024"],
+        },
+        "pew_slug": ""
+    },
+    {
+        "title": "South Sudan",
+        "slug": "south-sudan",
+        "iso3": "SSD",
+        "status": "warning",
+        "persecution_level": "Moderate",
+        "lat": 6.88,
+        "lng": 31.31,
+        "modern": (
+            "South Sudan is majority Christian, and the transitional constitution "
+            "provides for freedom of worship, so religious identity is rarely the direct "
+            "cause of persecution. Instead, churches and clergy are caught up in the "
+            "country's armed conflict: soldiers have looted and occupied churches and "
+            "detained religious leaders, and pastors have been imprisoned, as documented "
+            "in Central Equatoria and elsewhere."
+        ),
+        "historical": (
+            "Christianity spread in southern Sudan through 19th- and 20th-century "
+            "missions and became a marker of southern identity during the long civil "
+            "wars against the Islamist government in Khartoum. Independence in 2011 "
+            "created the world's newest country with a Christian majority, but the "
+            "internal conflict that erupted from 2013 onward has repeatedly endangered "
+            "church communities."
+        ),
+        "source_ids": {
+            "historical": ["statedepartment2023southsudan"],
+            "modern": ["statedepartment2023southsudan", "freedomhouse2024"],
+        },
+        "pew_slug": ""
+    },
 ]
 
 sources = {
@@ -1620,6 +1828,13 @@ sources = {
     "uscirf2023zimbabwe": {"title": "USCIRF 2023 Annual Report - Zimbabwe", "url": "https://www.uscirf.gov/annual-reports", "date": "2023"},
     "freedomhouse2024": {"title": "Freedom House Freedom in the World 2024", "url": "https://freedomhouse.org/report/freedom-world", "date": "2024"},
     "statedepartment2023": {"title": "U.S. State Department International Religious Freedom Report 2023", "url": "https://www.state.gov/international-religious-freedom-reports/", "date": "2023"},
+    "statedepartment2023kenya": {"title": "U.S. State Department IRF Report 2023 - Kenya", "url": "https://www.state.gov/reports/2023-report-on-international-religious-freedom/kenya/", "date": "2023"},
+    "statedepartment2023tanzania": {"title": "U.S. State Department IRF Report 2023 - Tanzania", "url": "https://www.state.gov/reports/2023-report-on-international-religious-freedom/tanzania/", "date": "2023"},
+    "statedepartment2023kuwait": {"title": "U.S. State Department IRF Report 2023 - Kuwait", "url": "https://www.state.gov/reports/2023-report-on-international-religious-freedom/kuwait/", "date": "2023"},
+    "statedepartment2023unitedarabemirates": {"title": "U.S. State Department IRF Report 2023 - United Arab Emirates", "url": "https://www.state.gov/reports/2023-report-on-international-religious-freedom/united-arab-emirates/", "date": "2023"},
+    "statedepartment2023lebanon": {"title": "U.S. State Department IRF Report 2023 - Lebanon", "url": "https://www.state.gov/reports/2023-report-on-international-religious-freedom/lebanon/", "date": "2023"},
+    "statedepartment2023nepal": {"title": "U.S. State Department IRF Report 2023 - Nepal", "url": "https://www.state.gov/reports/2023-report-on-international-religious-freedom/nepal/", "date": "2023"},
+    "statedepartment2023southsudan": {"title": "U.S. State Department IRF Report 2023 - South Sudan", "url": "https://www.state.gov/reports/2023-report-on-international-religious-freedom/south-sudan/", "date": "2023"},
     "ohchr2024": {"title": "OHCHR Universal Human Rights Index", "url": "https://uhri.ohchr.org/", "date": "2024"},
     "gdelt2025": {"title": "GDELT Global Database of Events, Language, and Tone", "url": "https://www.gdeltproject.org/", "date": "2025"},
     "owid2024": {"title": "Our World in Data - Religious Composition (Pew Research)", "url": "https://ourworldindata.org/grapher/religious-composition", "date": "2024"},
