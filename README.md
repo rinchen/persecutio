@@ -5,7 +5,9 @@ Static site documenting Christian persecution by country, served via GitHub Page
 ## Architecture
 
 ```
-scripts/fetch_*.py  →  data/fetched/
+scripts/fetch_*.py           →  data/fetched/            (recurring feeds, gitignored)
+scripts/archive_download.py  →  data/archives/           (one-time report snapshot)
+scripts/archive_extract.py   →  data/archives/extracted/countries.json
         ↓
 scripts/collect_data.py (+ collect_enrich.py, country_registry.py)
         →  data/countries.yml, data/sources.yml
@@ -15,15 +17,20 @@ scripts/generate_website_data.py  →  countries/*.html, assets/data/{geojson,se
 GitHub Pages (public HTML/CSS/JS only — scrape caches are not published)
 ```
 
-Curated country narratives live in `scripts/collect_data.py`. Fetch scripts enrich metadata (scores, incidents, news). Helpers in `collect_enrich.py`, `rss_news_fetcher.py`, and `christian_persecution.py` merge feeds, filter articles, and auto-create stub country pages when feeds mention countries not yet curated. The generator builds HTML pages and JSON for the map/search UI.
+`scripts/country_registry.py` is the canonical list of tracked countries: display titles, aliases used to match free text, ISO3 codes, and map coordinates. Fetchers derive their target lists from it (for example `fetch_state_dept.py`) instead of keeping hand-maintained subsets.
+
+Curated country narratives live in `scripts/collect_data.py` (`COUNTRIES_DATA`, currently one entry per registry country). Fetch scripts enrich metadata (scores, incidents, news). Helpers in `collect_enrich.py`, `rss_news_fetcher.py`, and `christian_persecution.py` merge feeds, filter articles, and auto-create stub country pages when feeds mention a registry country without a curated entry. `scripts/urls.py` allowlists http(s) URLs for both fetch construction and HTML rendering. The generator builds HTML pages and JSON for the map/search UI.
 
 ## Data outputs
 
 - `data/countries.yml` / `data/sources.yml` — structured country and source records
+- `data/archives/extracted/countries.json` — excerpts and indicators derived from archived reports
 - `assets/data/geojson.json` — map markers
 - `assets/data/search.json` — Lunr search index input
 - `assets/data/meta.json` — source status chips for the map footer
-- `countries/*.html` — per-country pages (~63 curated + auto-tracked stubs)
+- `countries/*.html` — per-country pages (70, one per registry country)
+
+Collect and generate keep the five most recent `.bak-*` snapshots of `data/countries.yml` and the `assets/data/*.json` files. They are gitignored and stripped from the published site.
 
 ## Sources
 
@@ -33,14 +40,35 @@ Pipeline sources (status chips on the map footer):
 
 **Secondary** (enrich when available; never abort deploy): GDELT, OHCHR, Morning Star News (MSN), Violent Incidents Database (VID), Global Christian Relief (GCR), Aid to the Church in Need (ACN), Christian Solidarity Worldwide (CSW), International Christian Concern (ICC), Forum 18 (F18), Middle East Concern (MEC), Bitter Winter (BW), Release International (RI).
 
+**Archived** (snapshotted once, not fetched by the daily job): V-Dem FoRB indicators (VD), plus State Dept IRF, USCIRF, and Open Doors report text under `data/archives/`.
+
 Also cited on pages / chips: Pew, BBC, Natural Earth (NE). Wikipedia summaries are fetched during collect for enrichment.
+
+## Archived reports
+
+`data/archives/` holds a one-time snapshot of legally redistributable source material. `collect_enrich.py` reads `extracted/countries.json` from it to fill thin or stub narratives with short excerpts and to attach V-Dem freedom-of-religion indicators.
+
+Large binaries (report PDFs, HTML mirrors, the V-Dem zip) are gitignored. Committed artifacts are `NOTICE`, `manifest.json`, per-country JSON extracts, `extracted/countries.json`, and the V-Dem FoRB CSV/JSON subset. Rebuild the ignored inputs with:
+
+```bash
+python3 scripts/archive_download.py
+python3 scripts/archive_extract.py
+```
+
+Per-source redistribution terms are recorded in [`data/archives/NOTICE`](data/archives/NOTICE).
 
 ## Requirements
 
-Python **3.12+**. Install deps:
+Python **3.12+** (CI runs 3.12). Dependencies are pinned in `requirements.txt`: `pyyaml`, `openpyxl` (Freedom House workbooks), `pypdf` (archived report PDFs), and `pytest`.
 
 ```bash
 python3 -m pip install -r requirements.txt
+```
+
+Or create/refresh a local virtualenv at `.venv`:
+
+```bash
+./scripts/update_deps.sh
 ```
 
 ## Local development
@@ -73,10 +101,11 @@ Or symlink: `mkdir -p /tmp/site && ln -sfn "$PWD" /tmp/site/persecutio && python
 
 ## Contributing
 
-1. Add or edit a country in `scripts/collect_data.py` (`COUNTRIES_DATA`), including `source_ids`. Feeds can also create auto-tracked stub pages when a known country appears in incident data without a curated entry.
-2. Add a source entry in the `sources` dict in the same file (or extend a `scripts/fetch_*.py` / `rss_news_fetcher` wrapper). Enrichment logic lives in `scripts/collect_enrich.py`.
-3. Run collect → generate → pytest.
-4. Open a PR with the regenerated YAML/HTML/JSON when appropriate.
+1. Register the country in `scripts/country_registry.py` (`KNOWN_COUNTRIES`, aliases, `COUNTRY_GEO`) if it is not already tracked. Fetch targets and name resolution both key off this list.
+2. Add or edit the country in `scripts/collect_data.py` (`COUNTRIES_DATA`), including `source_ids`. Feeds can also create auto-tracked stub pages when a registry country appears in incident data without a curated entry.
+3. Add a source entry in the `sources` dict in the same file (or extend a `scripts/fetch_*.py` / `rss_news_fetcher` wrapper). Enrichment logic lives in `scripts/collect_enrich.py`.
+4. Run collect → generate → pytest.
+5. Open a PR with the regenerated YAML/HTML/JSON when appropriate.
 
 Prefer `python3 -m pytest tests` over the legacy `scripts/verify.py` helper.
 
@@ -86,7 +115,7 @@ Prefer `python3 -m pytest tests` over the legacy `scripts/verify.py` helper.
 
 [`.github/workflows/pages.yml`](.github/workflows/pages.yml) redeploys committed public files to `gh-pages` on pushes to `main` that touch site paths (so HTML/docs merges go live without waiting for the daily fetch).
 
-Only **primary** fetch failures abort before generate/deploy. Secondary fetches use `|| true` and never block the job. The Pages artifact is staged from public site files only (`index.html`, `about.html`, `faq.html`, `countries/`, `assets/`) — not `data/fetched/` scrape caches.
+Only **primary** fetch failures abort before generate/deploy. Secondary fetches use `|| true` and never block the job. After generate, the job also enforces structural checks: the country page count must equal the geojson feature count, and every page must carry Historical Background, Modern-Day Situation, an All References section, and at least one source link. The Pages artifact is staged from public site files only (`index.html`, `about.html`, `faq.html`, `LICENSE`, `countries/`, `assets/`) — not `data/fetched/` scrape caches or `.bak-*` snapshots.
 
 **Live site:** https://rinchen.github.io/persecutio/
 
