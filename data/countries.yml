@@ -7572,7 +7572,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - gcr2026
-    - gdelt2025
     - vdem2025forb
   pew_slug: america
   metadata:
@@ -8490,7 +8489,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - gcr2026
-    - gdelt2025
     - vdem2025forb
     sources:
     - &id037
@@ -8504,7 +8502,6 @@ countries:
     - *id002
     - *id004
     - *id005
-    - *id010
     - *id007
     freedom_house_status: Free
     freedom_house_pr: 2
@@ -8518,24 +8515,6 @@ countries:
       the takeover by jihadist group Hay'at Tahrir al-Sham (HTS). Syria's violence
       score surged from 7 to 16.1 out of a possible 16.7, and its overall persecution
       score jumped 12 points to 90. The worst
-    gdelt_articles: 1
-    gdelt_samples:
-    - title: Violence against Christians alarming  - US reacts to killing of Dachomo
-        family members
-      url: https://dailypost.ng/2026/07/24/violence-against-christians-alarming-us-reacts-to-killing-of-dachomos-family-members
-      date: '2026-07-24'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 1
-    gdelt_sample_urls:
-    - https://dailypost.ng/2026/07/24/violence-against-christians-alarming-us-reacts-to-killing-of-dachomos-family-members
-    recent_incidents:
-    - title: Violence against Christians alarming  - US reacts to killing of Dachomo
-        family members
-      url: https://dailypost.ng/2026/07/24/violence-against-christians-alarming-us-reacts-to-killing-of-dachomos-family-members
-      date: '2026-07-24'
-      description: ''
-      source: GDELT
     vdem_year: 2025.0
     vdem_freedom_of_religion: 0.953
     vdem_freedom_of_religion_ord: 3.0
@@ -11965,16 +11944,8 @@ countries:
             - 41.562115
           - - 26.117042
             - 41.826905
-    wiki_url: https://en.wikipedia.org/wiki/Turkey
-    wiki_extract: Turkey, officially the Republic of Türkiye, is a country mainly
-      located in Anatolia in West Asia, with a smaller part called East Thrace in
-      Southeast Europe. It borders the Black Sea to the north; Georgia, Armenia, Azerbaijan,
-      and Iran to the east; Iraq, Syria, and the Mediterranean Sea to the south; and
-      the Aegean Sea, Greece, and Bulgaria to the west. Turkey is home to over 86
-      million people; most are ethnic Turks, while Kurds are the largest ethnic minority.
-      Officially a secular state, Turkey has a Muslim-majority population. Ankara
-      is Turkey's capital and second-largest city. Istanbul is its largest city and
-      economic center. Other major cities include İzmir, Bursa, and Antalya.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -12512,12 +12483,8 @@ countries:
           - -21.116489
         - - 31.191409
           - -22.25151
-    wiki_url: https://en.wikipedia.org/wiki/Zimbabwe
-    wiki_extract: Zimbabwe, officially the Republic of Zimbabwe, is a landlocked country
-      in Southeast Africa, between the Zambezi and Limpopo River, bordered by South
-      Africa to the south, Botswana to the southwest, Zambia to the north, and Mozambique
-      to the east. The capital and largest city is Harare, and the second largest
-      is Bulawayo.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -13154,13 +13121,8 @@ countries:
   pew_slug: ''
   metadata:
     shape_geo: null
-    wiki_url: https://en.wikipedia.org/wiki/Maldives
-    wiki_extract: The Maldives, officially the Republic of Maldives, and historically
-      known as the Maldive Islands, is an archipelagic country in South Asia, located
-      in the Indian Ocean, near the southeastern boundary of the Arabian Sea. The
-      Maldives is located southwest of India and Sri Lanka, about 750 kilometres from
-      the Asian continent's mainland. The Maldives' chain of 26 atolls stretches across
-      the equator from Ihavandhippolhu Atoll in the north to Addu Atoll in the south.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: false
     source_ids:
     - odwwl2024
@@ -13380,8 +13342,16 @@ countries:
           - 20.567866
         - - -17.063423
           - 20.999752
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Mauritania
+    wiki_extract: Mauritania, officially the Islamic Republic of Mauritania, is a
+      country in the Maghreb region of West Africa. It is bordered by the Atlantic
+      Ocean to the west, Western Sahara to the north and northwest, Algeria to the
+      northeast, Mali to the east and southeast, and Senegal to the southwest. By
+      land area Mauritania is the 11th-largest country in Africa and the 28th-largest
+      in the world; 90% of its territory is in the Sahara desert. Most of its population
+      of 4.3 million live in the temperate south of the country; roughly a third of
+      the population is concentrated in the capital and largest city, Nouakchott,
+      on the Atlantic coast.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -13889,8 +13859,19 @@ countries:
           - 41.32231
         - - 55.968191
           - 41.308642
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Uzbekistan
+    wiki_extract: Uzbekistan, officially the Republic of Uzbekistan, is a sovereign,
+      doubly landlocked country located in Central Asia. It is bordered by Kazakhstan
+      to the north, Kyrgyzstan to the northeast, Tajikistan to the southeast, Afghanistan
+      to the south, and Turkmenistan to the south-west. It is one of only two doubly
+      landlocked countries in the world, the other being Liechtenstein. The country
+      has a population of more than 39 million, making it the most populous Republic
+      in Central Asia. Uzbekistan is a member of the Organisation of Turkic States.
+      Uzbek, spoken by the Uzbek people who form more than 89% of the population,
+      is the official language of the country. Russian and Tajik are significant minority
+      languages, with Russian serving as a lingua franca. Tajik is primarily spoken
+      by Tajiks living in the southern parts of the country, such as Samarkand and
+      Bukhara.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -14409,14 +14390,8 @@ countries:
           - 41.135371
         - - 52.50246
           - 41.783316
-    wiki_url: https://en.wikipedia.org/wiki/Turkmenistan
-    wiki_extract: Turkmenistan is a landlocked country in Central Asia, bordered by
-      Kazakhstan and Uzbekistan to the north, Afghanistan to the southeast, Iran to
-      the south and southwest, and the Caspian Sea to the west. It is one of six independent
-      Turkic states. Ashgabat is the capital and largest city. With over 7 million
-      people, Turkmenistan is the 35th most-populous country in Asia and has the lowest
-      population of the Central Asian republics while being one of the most sparsely
-      populated nations located on the Asian continent.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -14655,8 +14630,18 @@ countries:
             - 25.895991
           - - 56.261042
             - 25.714606
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Oman
+    wiki_extract: Oman, officially the Sultanate of Oman, is a country in the southeastern
+      Arabian Peninsula in West Asia. It shares land borders with Saudi Arabia, the
+      United Arab Emirates, and Yemen, while also sharing maritime borders with Iran
+      and Pakistan. Oman's coastline faces the Arabian Sea to the southeast and the
+      Gulf of Oman on the northeast. The exclaves of Madha and Musandam are surrounded
+      by the United Arab Emirates on their land borders, while Musandam's coastal
+      boundaries are formed by the strategic Strait of Hormuz and the Gulf of Oman.
+      It has a population of approximately 5.46 million and an area of 315,331 km2,
+      making it the third-largest country on the Arabian Peninsula. Muscat is the
+      capital and largest city, Islam is the state religion, and Arabic is the official
+      language.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -14696,9 +14681,8 @@ countries:
     opendoors_score: 63
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
-      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/c07feb74b0c9b660446d93aa147c040e"},"headline":"Christian
-      Persecution by the Numbers: 2026 Global Tre'
+    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
+      content="@GC_
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
     state_dept_executive_summary: The Basic Law declares Islam to be the state religion
       and declares sharia is the basis for legislation. It protects the right of individuals
@@ -15688,15 +15672,8 @@ countries:
           - 28.040614
         - - 91.696657
           - 27.771742
-    wiki_url: https://en.wikipedia.org/wiki/Bhutan
-    wiki_extract: Bhutan, officially the Kingdom of Bhutan, is a landlocked country
-      in South Asia, located in the Eastern Himalayas, bordering China to the north
-      and northwest and India to the south and southeast. With a population of over
-      800,000 (800,871) and a territory of 38,394 square kilometres (14,824 sq mi),
-      Bhutan ranks 133rd in land area and 160th in population. It is a democratic
-      constitutional monarchy with a King as the head of state and a prime minister
-      as the head of government. The Je Khenpo is the head of the state religion,
-      Vajrayana Buddhism.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -15983,8 +15960,13 @@ countries:
           - -12.280025
         - - 34.559989
           - -11.52002
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Mozambique
+    wiki_extract: Mozambique, officially the Republic of Mozambique, is a country
+      in Southeast Africa bordered by the Indian Ocean to the east, Tanzania to the
+      north, Malawi and Zambia to the northwest, Zimbabwe to the west, and Eswatini
+      and South Africa to the south and southwest. The sovereign state is separated
+      from the Comoros, Mayotte, and Madagascar through the Mozambique Channel to
+      the east. The capital and largest city is Maputo.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -16349,8 +16331,14 @@ countries:
           - 49.826675
         - - 87.35997
           - 49.214981
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Kazakhstan
+    wiki_extract: Kazakhstan, officially the Republic of Kazakhstan, is a landlocked
+      country situated primarily in Central Asia, with a portion of its territory
+      extending into Eastern Europe. It borders Russia to the north and west, China
+      to the east, Kyrgyzstan to the southeast, Uzbekistan to the south, and Turkmenistan
+      to the southwest, and it has a coastline along the Caspian Sea. The capital
+      is Astana, the country's largest city and principal cultural and economic center
+      is Almaty, which served as the capital until 1997.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -16583,8 +16571,13 @@ countries:
           - 37.023115
         - - 67.83
           - 37.144994
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Tajikistan
+    wiki_extract: Tajikistan, officially the Republic of Tajikistan, is a landlocked
+      country located in Central Asia. Dushanbe is the capital and largest city of
+      the country, with a population of over 1.2 million. Tajikistan borders Afghanistan
+      to the south, Uzbekistan to the west, Kyrgyzstan to the north, and China to
+      the east; it is narrowly separated from Pakistan by Afghanistan's Wakhan Corridor.
+      Its total population exceeds 11 million.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -16753,8 +16746,14 @@ countries:
           - 24.556331
         - - 50.810108
           - 24.754743
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Qatar
+    wiki_extract: Qatar, officially the State of Qatar, is a country in West Asia.
+      It occupies the Qatar Peninsula on the northeastern coast of the Arabian Peninsula
+      in the Middle East; it shares its sole land border with Saudi Arabia to the
+      south, with the rest of its territory surrounded by the Persian Gulf. The Gulf
+      of Bahrain, an inlet of the Persian Gulf, separates Qatar from nearby Bahrain.
+      The capital is Doha, home to over 80% of the country's inhabitants. Most of
+      the land area is made up of flat, low-lying desert.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -17172,8 +17171,17 @@ countries:
           - 12.802035
         - - 14.495787
           - 12.859396
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Cameroon
+    wiki_extract: Cameroon, officially the Republic of Cameroon, is a country in Central
+      Africa. It shares boundaries with Nigeria to the west and north, Chad to the
+      northeast, the Central African Republic to the east, and Equatorial Guinea,
+      Gabon, and the Republic of the Congo to the south. Its coastline lies on the
+      Bight of Biafra, part of the Gulf of Guinea, and the Atlantic Ocean. Due to
+      its strategic position at the crossroads between West Africa and Central Africa,
+      it has been categorized as being in both geostrategic locations. Cameroon's
+      population of nearly 31 million people speak 250 native languages, in addition
+      to the national tongues of English and French. The capital city of the country
+      is Yaoundé.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -17758,15 +17766,8 @@ countries:
           - 31.782505
         - - 35.545665
           - 32.393992
-    wiki_url: https://en.wikipedia.org/wiki/Jordan
-    wiki_extract: Jordan, officially the Hashemite Kingdom of Jordan, is a country
-      in the Southern Levant region of West Asia. Jordan is bordered by Syria to the
-      north, Iraq to the east, Saudi Arabia to the south, and both Israel and Palestine
-      to the west. The Jordan River, flowing into the Dead Sea, is located along the
-      country's western border within the Jordan Rift Valley. Jordan has a small coastline
-      along the Red Sea in its southwest, separated by the Gulf of Aqaba from Egypt.
-      Amman is the country's capital and largest city, as well as the most populous
-      city in the Levant.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -19437,13 +19438,8 @@ countries:
             - 39.319719
           - - 46.143623
             - 38.741201
-    wiki_url: https://en.wikipedia.org/wiki/Azerbaijan
-    wiki_extract: Azerbaijan, officially the Republic of Azerbaijan, is a transcontinental
-      landlocked country at the boundary of Western Asia and Eastern Europe. It is
-      a part of the South Caucasus region and is bounded by the Caspian Sea to the
-      east, Russia's republic of Dagestan to the north, Georgia to the northwest,
-      Turkey and Armenia to the west, and Iran to the south. Baku is the capital and
-      largest city.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -19592,20 +19588,8 @@ countries:
           - 8.564206
         - - 81.787959
           - 7.523055
-    wiki_url: https://en.wikipedia.org/wiki/Sri_Lanka
-    wiki_extract: Sri Lanka, officially the Democratic Socialist Republic of Sri Lanka,
-      formerly known as Ceylon, is an island country in South Asia. It is located
-      in the Indian Ocean, southwest of the Bay of Bengal, and is separated from India
-      by the Gulf of Mannar and the Palk Strait. Sri Lanka shares a maritime border
-      with the Maldives to the southwest and India to the northwest, and lies across
-      the Bay of Bengal from Bangladesh and Myanmar to the northeast and the Andaman
-      and Nicobar Islands of India to the east. Its executive and judicial capital
-      is Colombo, which is also its largest city and the political, financial and
-      cultural centre of the country; neighboring Sri Jayawardenepura Kotte is the
-      legislative capital. Sri Lanka's population is 22 million. About 74% of the
-      population are Sinhalese, who speak the Sinhala language, and about 15% are
-      Tamils who speak the Tamil language. Other long-established ethnic groups include
-      the Moors, Indian Tamils, Burghers, Malays, Chinese, and Vedda.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -20985,17 +20969,8 @@ countries:
           - 24.014219
         - - 51.579519
           - 24.245497
-    wiki_url: https://en.wikipedia.org/wiki/United_Arab_Emirates
-    wiki_extract: The United Arab Emirates (UAE), also known simply as the Emirates,
-      is a country in West Asia, situated at the eastern end of the Arabian Peninsula.
-      It is a federal semi-constitutional monarchy made up of seven emirates, with
-      Abu Dhabi serving as its national capital. The UAE borders Oman to the east
-      and northeast, and Saudi Arabia to the south and southwest. It shares maritime
-      borders with Saudi Arabia, Qatar, and Iran in the Persian Gulf, and with Oman
-      in the Gulf of Oman. In 2024, the UAE had an estimated population of over 11
-      million. Dubai is the country's largest city. Islam is the state religion. Arabic
-      is the official language while English remains the most spoken language and
-      the language of business.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - statedepartment2023unitedarabemirates
@@ -21094,14 +21069,8 @@ countries:
           - 33.824912
         - - 35.821101
           - 33.277426
-    wiki_url: https://en.wikipedia.org/wiki/Lebanon
-    wiki_extract: Lebanon, officially the Lebanese Republic, is a country in the Levant
-      region of West Asia. Situated at the crossroads of the Mediterranean Basin and
-      the Arabian Peninsula, it is bordered by Syria to the north and east, Israel
-      to the south, and the Mediterranean Sea to the west; Cyprus lies a short distance
-      from the coastline. Lebanon has a population of more than five million and an
-      area of 10,452 square kilometres (4,036 sq mi). Beirut is the country's capital
-      and largest city.
+    wiki_url: null
+    wiki_extract: null
     country_polygon: true
     source_ids:
     - statedepartment2023lebanon
@@ -21227,8 +21196,18 @@ countries:
           - 27.974262
         - - 88.120441
           - 27.876542
-    wiki_url: null
-    wiki_extract: null
+    wiki_url: https://en.wikipedia.org/wiki/Nepal
+    wiki_extract: Nepal, officially the Federal Democratic Republic of Nepal, is a
+      landlocked country in South Asia. It is mainly situated in the Himalayas, but
+      also includes parts of the Indo-Gangetic Plain. It borders the Tibet Autonomous
+      Region of China to the north, and India to the south, east, and west, while
+      it is narrowly separated from Bangladesh by the Siliguri Corridor, and from
+      Bhutan by the Indian state of Sikkim. Nepal has a diverse geography, including
+      fertile plains, subalpine forested hills, and eight of the world's ten highest
+      mountains, including Mount Everest, the highest point above mean sea level on
+      Earth. Kathmandu is the nation's capital and its largest city. Nepal is a multi-ethnic,
+      multi-lingual, multi-religious, and multi-cultural sovereign state, with Nepali
+      as the official language.
     country_polygon: true
     source_ids:
     - statedepartment2023nepal
@@ -21805,85 +21784,85 @@ sources:
   uscirf2025archivebahrain: *id286
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-07-26 08:41 UTC
+  generated_at: 2026-07-27 10:10 UTC
   source_statuses:
   - name: acn
     status: failed
-    fetched_at: '2026-07-26T08:40:59.147265+00:00'
+    fetched_at: '2026-07-27T10:09:58.415464+00:00'
     message: parse yielded no countries
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-07-26T08:41:04.757421+00:00'
+    fetched_at: '2026-07-27T10:10:07.885039+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-07-26T08:41:00.082701+00:00'
+    fetched_at: '2026-07-27T10:09:59.439457+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-07-26T08:41:01.716177+00:00'
+    fetched_at: '2026-07-27T10:10:00.925219+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-07-26T08:36:09.189801+00:00'
+    fetched_at: '2026-07-27T10:04:26.561849+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-07-26T08:40:58.111216+00:00'
+    fetched_at: '2026-07-27T10:09:57.168603+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-07-26T08:40:48.859959+00:00'
-    message: 2 of 4 queries failed
+    fetched_at: '2026-07-27T10:09:46.892105+00:00'
+    message: 3 of 4 queries failed
   - name: icc
     status: ok
-    fetched_at: '2026-07-26T08:41:00.867277+00:00'
+    fetched_at: '2026-07-27T10:10:00.038650+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-07-26T08:41:04.069342+00:00'
+    fetched_at: '2026-07-27T10:10:06.741291+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-07-26T08:40:50.768591+00:00'
+    fetched_at: '2026-07-27T10:09:49.089037+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-07-26T08:41:06.563240+00:00'
+    fetched_at: '2026-07-27T10:10:09.828560+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-07-26T08:40:49.980991+00:00'
+    fetched_at: '2026-07-27T10:09:48.049266+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: partial
-    fetched_at: '2026-07-26T08:36:08.296348+00:00'
+    fetched_at: '2026-07-27T10:04:25.719285+00:00'
     message: static fallback used
   - name: owid
     status: ok
-    fetched_at: '2026-07-26T08:36:10.966408+00:00'
+    fetched_at: '2026-07-27T10:04:29.800031+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-07-26T08:41:06.112873+00:00'
+    fetched_at: '2026-07-27T10:10:09.389397+00:00'
     message: null
   - name: statedepartment
     status: partial
-    fetched_at: '2026-07-26T08:38:49.647245+00:00'
+    fetched_at: '2026-07-27T10:07:17.342741+00:00'
     message: 1 of 70 failed
   - name: uscirf
     status: partial
-    fetched_at: '2026-07-26T08:36:51.065000+00:00'
+    fetched_at: '2026-07-27T10:05:14.902363+00:00'
     message: 1 of 35 failed
   - name: vid
     status: partial
-    fetched_at: '2026-07-26T08:40:56.451274+00:00'
+    fetched_at: '2026-07-27T10:09:55.612081+00:00'
     message: parse_limited
   - name: wikipedia
     status: ok
-    fetched_at: '2026-07-26T08:41:50.430414+00:00'
-    message: ok=55 partial=0 failed=0
+    fetched_at: '2026-07-27T10:10:53.613912+00:00'
+    message: ok=54 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
     opendoors: data/fetched/opendoors.json
