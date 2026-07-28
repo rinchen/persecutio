@@ -1,9 +1,10 @@
 """Generic RSS news fetcher for Christian persecution feeds."""
 from __future__ import annotations
 
-import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Callable
+
+import defusedxml.ElementTree as ET
 
 from christian_persecution import is_christian_persecution
 from country_registry import countries_for_article
@@ -17,6 +18,9 @@ from fetch_common import (
     write_json,
     write_status,
 )
+from source_registry import rss_feeds
+
+RSS_FEEDS = rss_feeds()
 
 
 def parse_rss_items(
@@ -131,142 +135,6 @@ def parse_rss_items(
 
     return articles, None
 
-
-RSS_FEEDS = {
-    "bitterwinter": {
-        "source_label": "Bitter Winter",
-        "rss_url": "https://bitterwinter.org/feed/",
-        "high_trust": False,
-    },
-    "forum18": {
-        "source_label": "Forum 18",
-        "rss_url": "https://www.forum18.org/syndication/forum18.xml",
-        "high_trust": False,
-    },
-    "mec": {
-        "source_label": "Middle East Concern",
-        "rss_url": "https://www.meconcern.org/feed/",
-        "high_trust": True,
-    },
-    "morningstarnews": {
-        "source_label": "Morning Star News",
-        "rss_url": "https://morningstarnews.org/feed/",
-        "high_trust": True,
-    },
-    "releaseintl": {
-        "source_label": "Release International",
-        "rss_url": "https://releaseinternational.org/feed/",
-        "high_trust": True,
-    },
-    "vom": {
-        "source_label": "Voice of the Martyrs",
-        "rss_url": "https://www.persecution.com/stories/feed/",
-        "high_trust": True,
-    },
-    "chinaaid": {
-        "source_label": "ChinaAid",
-        "rss_url": "https://www.chinaaid.org/feeds/posts/default",
-        "high_trust": True,
-    },
-    "infochretienne": {
-        "source_label": "Info Chrétienne",
-        "rss_url": "https://www.infochretienne.com/flux-rss.rss",
-        "high_trust": True,
-    },
-    "csi": {
-        "source_label": "Christian Solidarity International",
-        "rss_url": "https://csi-usa.org/feed/",
-        "high_trust": True,
-    },
-    "cna": {
-        "source_label": "Catholic News Agency",
-        "rss_url": "https://www.catholicnewsagency.com/rss/news.xml",
-        "high_trust": False,
-    },
-    "fides": {
-        "source_label": "Agenzia Fides",
-        "rss_url": "https://www.fides.org/en/news/rss",
-        "high_trust": True,
-    },
-    "aciprensa": {
-        "source_label": "ACI Prensa",
-        "rss_url": "https://www.aciprensa.com/rss/news",
-        "high_trust": False,
-    },
-    "hrw": {
-        "source_label": "Human Rights Watch",
-        "rss_url": "https://www.hrw.org/rss",
-        "high_trust": True,
-        "require_any": [
-            "religion",
-            "religious",
-            "christian",
-            "church",
-            "blasphemy",
-            "apostasy",
-            "faith",
-            "worship",
-            "forb",
-        ],
-    },
-    "amnesty": {
-        "source_label": "Amnesty International",
-        "rss_url": "https://www.amnesty.org/en/latest/rss/",
-        "high_trust": True,
-        "require_any": [
-            "religion",
-            "religious",
-            "christian",
-            "church",
-            "blasphemy",
-            "apostasy",
-            "faith",
-            "worship",
-            "forb",
-        ],
-    },
-    "hrwf": {
-        "source_label": "Human Rights Without Frontiers",
-        "rss_url": "https://hrwf.eu/feed/",
-        "high_trust": True,
-    },
-    "wea": {
-        "source_label": "WEA Religious Liberty Commission",
-        "rss_url": "https://worldea.org/feed/",
-        "high_trust": True,
-    },
-    "adf": {
-        "source_label": "ADF International",
-        "rss_url": "https://www.adfinternational.org/feed/",
-        "high_trust": True,
-    },
-    "jubilee": {
-        "source_label": "Jubilee Campaign",
-        "rss_url": "https://jubileecampaign.org/feed/",
-        "high_trust": True,
-    },
-    "ippforb": {
-        "source_label": "IPPFoRB",
-        "rss_url": "https://ippforb.com/feed/",
-        "high_trust": True,
-    },
-    "unsrforb": {
-        "source_label": "UN Special Rapporteur on FoRB",
-        "rss_url": "https://www.ohchr.org/en/rss.xml",
-        "high_trust": True,
-        "require_any": [
-            "religion",
-            "belief",
-            "forb",
-            "christian",
-            "church",
-            "blasphemy",
-            "apostasy",
-            "religious",
-            "special rapporteur",
-        ],
-    },
-}
 
 
 def run_rss_fetcher(

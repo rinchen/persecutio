@@ -206,7 +206,7 @@ def main():
         else:
             print("  no cache available, exiting")
             write_status("owid", "failed", "no data available")
-            exit_for_status("failed")
+            exit_for_status("failed", strict=True)
 
     status = {
         "fetched_at": datetime.now(timezone.utc).isoformat(),
@@ -234,7 +234,7 @@ def main():
         final_status = "ok"
         write_status("owid", final_status)
     print("done")
-    exit_for_status(final_status)
+    exit_for_status(final_status, strict=True)
 
 
 if __name__ == "__main__":

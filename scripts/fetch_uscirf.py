@@ -306,7 +306,7 @@ def main():
     if rec is None:
         print("  ERROR: CPC/SWL recommendations unavailable — aborting")
         write_status("uscirf", "failed", "recommendations page unavailable or empty CPC/SWL")
-        exit_for_status("failed")
+        exit_for_status("failed", strict=True)
     cpc_names, swl_names = rec
     print(f"  CPC countries ({len(cpc_names)}): {', '.join(cpc_names)}")
     print(f"  SWL countries ({len(swl_names)}): {', '.join(swl_names)}")
@@ -420,7 +420,7 @@ def main():
     else:
         final_status = "ok"
         write_status("uscirf", final_status)
-    exit_for_status(final_status)
+    exit_for_status(final_status, strict=True)
 
 
 if __name__ == "__main__":

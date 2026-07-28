@@ -104,8 +104,8 @@ def main():
                 write_status("ohchr", "cached")
                 print(f"ohchr used cache: {index_path}")
                 exit_for_status("cached")
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"  warning: corrupt ohchr cache ({type(e).__name__}: {e})")
         output = build_empty_output()
         index_path.write_text(
             json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8"
@@ -120,6 +120,13 @@ def main():
             if key in data and isinstance(data[key], list):
                 recommendations = data[key]
                 break
+        else:
+            print("  warning: ohchr response missing list payload; treating as empty")
+            recommendations = []
+
+    if not isinstance(recommendations, list):
+        print(f"  warning: ohchr recommendations not a list ({type(recommendations).__name__})")
+        recommendations = []
 
     countries = extract_country_data(recommendations)
 

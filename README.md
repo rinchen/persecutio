@@ -38,11 +38,13 @@ Pipeline sources (status chips on the map footer):
 
 **Primary** (fetch failure aborts generate/deploy): Open Doors (OD), Freedom House (FH), Our World in Data (OWID), USCIRF (UC), U.S. State Dept IRF (SD).
 
-**Secondary** (enrich when available; never abort deploy): GDELT, OHCHR, Morning Star News (MSN), Violent Incidents Database (VID), Global Christian Relief (GCR), Aid to the Church in Need (ACN), Christian Solidarity Worldwide (CSW), International Christian Concern (ICC), Forum 18 (F18), Middle East Concern (MEC), Bitter Winter (BW), Release International (RI).
+**Secondary** (enrich when available; never abort deploy): Morning Star News, GDELT, OHCHR, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International, VOM, ChinaAid, Info Chrétienne, OSCE/ODIHR, UNSR FoRB, HRW, Amnesty, Barnabas Aid, CSI, CNA, Fides, ACI Prensa, HRWF, ADF, WEA, Jubilee Campaign, IPPFoRB. Full quality tiers and links: [about.html](about.html).
 
 **Archived** (snapshotted once, not fetched by the daily job): V-Dem FoRB indicators (VD), plus State Dept IRF, USCIRF, and Open Doors report text under `data/archives/`.
 
 Also cited on pages / chips: Pew, BBC, Natural Earth (NE). Wikipedia summaries are fetched during collect for enrichment.
+
+Quality tiers (A / B / C / Infra / X) are defined in [AGENTS.md](AGENTS.md) and on the About page.
 
 ## Archived reports
 
@@ -59,7 +61,7 @@ Per-source redistribution terms are recorded in [`data/archives/NOTICE`](data/ar
 
 ## Requirements
 
-Python **3.12+** (CI runs 3.12). Dependencies are pinned in `requirements.txt`: `pyyaml`, `openpyxl` (Freedom House workbooks), `pypdf` (archived report PDFs), and `pytest`.
+Python **3.12+** (CI runs 3.12). Dependencies are pinned in `requirements.txt`: `pyyaml`, `openpyxl` (Freedom House workbooks), `pypdf` (archived report PDFs), `defusedxml` (RSS), and `pytest`.
 
 ```bash
 python3 -m pip install -r requirements.txt
@@ -71,6 +73,7 @@ Or create/refresh a local virtualenv at `.venv`:
 ./scripts/update_deps.sh
 ```
 
+Vendored Leaflet/Lunr versions: [`assets/vendor/VERSIONS`](assets/vendor/VERSIONS).
 ## Local development
 
 ```bash
@@ -101,13 +104,16 @@ Or symlink: `mkdir -p /tmp/site && ln -sfn "$PWD" /tmp/site/persecutio && python
 
 ## Contributing
 
-1. Register the country in `scripts/country_registry.py` (`KNOWN_COUNTRIES`, aliases, `COUNTRY_GEO`) if it is not already tracked. Fetch targets and name resolution both key off this list.
-2. Add or edit the country in `scripts/collect_data.py` (`COUNTRIES_DATA`), including `source_ids`. Feeds can also create auto-tracked stub pages when a registry country appears in incident data without a curated entry.
-3. Add a source entry in the `sources` dict in the same file (or extend a `scripts/fetch_*.py` / `rss_news_fetcher` wrapper). Enrichment logic lives in `scripts/collect_enrich.py`.
-4. Run collect → generate → pytest.
-5. Open a PR with the regenerated YAML/HTML/JSON when appropriate.
+1. Register the country in `scripts/country_registry.py` (`KNOWN_COUNTRIES`, aliases, `COUNTRY_GEO`) if it is not already tracked.
+2. Add or edit the country in `scripts/collect_data.py` (`COUNTRIES_DATA`), including `source_ids`.
+3. Add the source to `scripts/source_registry.py` (fetch script, RSS, footer chip, quality tier, primary/secondary). Wire the fetcher under `scripts/fetch_*.py` if it is not a thin RSS wrapper.
+4. Update `.github/workflows/update.yml` fetch list if the registry does not yet drive CI steps, and add an About used/unused row (keep Quality in sync).
+5. Run collect → generate → pytest. Note: `data/sources.yml` is **generated** by collect (not hand-edited).
+6. Open a PR with the regenerated YAML/HTML/JSON when appropriate.
 
-Prefer `python3 -m pytest tests` over the legacy `scripts/verify.py` helper.
+See [AGENTS.md](AGENTS.md) for the full source-evaluation checklist.
+
+Prefer `python3 -m pytest tests` (also runs on pull requests via `.github/workflows/test.yml`).
 
 ## Workflow
 

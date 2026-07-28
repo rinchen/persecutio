@@ -58,3 +58,14 @@ gitignored and can be re-fetched with:
 
 Committed artifacts are NOTICE, manifest.json, per-country JSON extracts,
 extracted/countries.json, and the V-Dem FoRB CSV/JSON subset.
+
+Coverage notes
+--------------
+Committed extracts do not cover every registry country for every source.
+Approximate current coverage vs the 70 tracked countries:
+  - USCIRF country pages: ~34 (USCIRF does not publish a page for every state)
+  - Open Doors dossiers: ~60
+  - State Dept IRF chapters: ~69 (united-states typically omitted)
+Missing slugs are expected; enrichment simply skips those countries.
+USCIRF JSON text_excerpt fields are scrubbed of site chrome (nav/mega-menu);
+rebuild with archive_download.py + archive_extract.py after scraper changes.

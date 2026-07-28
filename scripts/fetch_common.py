@@ -1,17 +1,20 @@
 """Shared helpers for scripts/fetch_*.py."""
 from __future__ import annotations
 
+import ipaddress
 import json
 import random
 import re
+import socket
 import sys
 import time
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 from christian_persecution import is_christian_persecution, is_persecution_article
 from country_registry import (
@@ -30,8 +33,8 @@ FETCHED = DATA / "fetched"
 SCRIPTS = Path(__file__).resolve().parent
 
 USER_AGENT = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    "PersecutioBot/1.0 (+https://github.com/joeyism/persecutio; "
+    "Mozilla/5.0 compatible research fetcher)"
 )
 DEFAULT_MAX_BYTES = 20 * 1024 * 1024  # 20 MiB
 # Cap accumulated news articles per source (daily merges otherwise grow forever).
@@ -40,6 +43,12 @@ DEFAULT_ARTICLE_CAP = 500
 DEFAULT_ARTICLE_MAX_AGE_DAYS = 0
 DEFAULT_FETCH_RETRIES = 3
 DEFAULT_RETRY_BACKOFF = 0.75
+DEFAULT_MAX_REDIRECTS = 5
+DEFAULT_INTER_REQUEST_DELAY = 0.35
+_LAST_FETCH_AT = 0.0
+
+# Status names that count as degraded (not a clean live success).
+DEGRADED_STATUSES = frozenset({"partial", "cached"})
 
 __all__ = [
     "ROOT",
@@ -77,10 +86,13 @@ __all__ = [
     "build_news_result",
     "fetch_or_use_cache",
     "parse_html_news_listing",
+    "parse_html_link_listing",
+    "run_news_fetch",
     "contained_path",
     "wiki_cache_key",
     "is_safe_url",
     "safe_url",
+    "DEFAULT_MAX_BYTES",
 ]
 
 
@@ -114,6 +126,14 @@ def wiki_cache_key(title: str) -> str:
     return quote(raw, safe="._-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
 
 
+def atomic_write_text(path: Path, text: str, encoding: str = "utf-8") -> None:
+    """Write text via a sibling temp file then replace (avoids truncated caches)."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(text, encoding=encoding)
+    tmp.replace(path)
+
+
 def write_status(name: str, status: str, message: str | None = None, path: Path | None = None) -> Path:
     ensure_fetched_dir()
     status_path = path or (FETCHED / f"{name}_status.json")
@@ -123,15 +143,92 @@ def write_status(name: str, status: str, message: str | None = None, path: Path 
         "fetched_at": datetime.now(timezone.utc).isoformat(),
         "message": message,
     }
-    status_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    atomic_write_text(status_path, json.dumps(payload, indent=2) + "\n")
     return status_path
 
 
-def exit_for_status(status: str) -> None:
-    """Exit non-zero when the fetch logically failed."""
+def exit_for_status(status: str, *, strict: bool = False) -> None:
+    """Exit non-zero when the fetch logically failed.
+
+    When ``strict`` is True (primary sources), ``partial`` and ``cached`` also
+    exit 1 so CI cannot treat degraded core data as success.
+    """
     if status == "failed":
         sys.exit(1)
+    if strict and status in DEGRADED_STATUSES:
+        sys.exit(1)
     sys.exit(0)
+
+
+def _host_is_public(hostname: str) -> bool:
+    """Return False for loopback/private/link-local/metadata-style targets."""
+    host = (hostname or "").strip().lower().rstrip(".")
+    if not host or host == "localhost":
+        return False
+    try:
+        infos = socket.getaddrinfo(host, None)
+    except socket.gaierror:
+        return False
+    for info in infos:
+        ip_str = info[4][0]
+        try:
+            ip = ipaddress.ip_address(ip_str)
+        except ValueError:
+            continue
+        if (
+            ip.is_private
+            or ip.is_loopback
+            or ip.is_link_local
+            or ip.is_reserved
+            or ip.is_multicast
+            or ip.is_unspecified
+        ):
+            return False
+        # Cloud metadata well-known address
+        if ip_str in ("169.254.169.254", "fd00:ec2::254"):
+            return False
+    return True
+
+
+def assert_fetch_url_allowed(url: str) -> None:
+    """Raise ValueError if URL is not a safe public http(s) fetch target."""
+    if not is_safe_url(url):
+        raise ValueError(f"blocked URL scheme or form: {url!r}")
+    parsed = urlparse(url)
+    if parsed.scheme not in ("http", "https"):
+        raise ValueError(f"unsupported URL scheme: {parsed.scheme!r}")
+    if not parsed.hostname:
+        raise ValueError(f"URL missing hostname: {url!r}")
+    if not _host_is_public(parsed.hostname):
+        raise ValueError(f"blocked non-public host: {parsed.hostname!r}")
+
+
+class _LimitedRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Cap redirects and re-validate each hop against the public-URL policy."""
+
+    def __init__(self, max_redirects: int = DEFAULT_MAX_REDIRECTS):
+        self.max_redirects = max_redirects
+        self._redirects = 0
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        self._redirects += 1
+        if self._redirects > self.max_redirects:
+            raise urllib.error.HTTPError(
+                req.full_url, code, f"too many redirects (>{self.max_redirects})", headers, fp
+            )
+        assert_fetch_url_allowed(newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def _polite_pause(delay: float = DEFAULT_INTER_REQUEST_DELAY) -> None:
+    global _LAST_FETCH_AT
+    if delay <= 0:
+        return
+    now = time.monotonic()
+    wait = delay - (now - _LAST_FETCH_AT)
+    if wait > 0:
+        time.sleep(wait)
+    _LAST_FETCH_AT = time.monotonic()
 
 
 def _is_retryable_error(err: str | None) -> bool:
@@ -162,14 +259,28 @@ def fetch_bytes(
     user_agent: str = USER_AGENT,
     retries: int = DEFAULT_FETCH_RETRIES,
     backoff: float = DEFAULT_RETRY_BACKOFF,
+    max_redirects: int = DEFAULT_MAX_REDIRECTS,
+    polite_delay: float = DEFAULT_INTER_REQUEST_DELAY,
 ) -> tuple[bytes | None, str | None]:
-    """Fetch URL body with size cap and retry/backoff. Returns (data, error)."""
+    """Fetch URL body with size cap, SSRF checks, and retry/backoff. Returns (data, error)."""
+    try:
+        assert_fetch_url_allowed(url)
+    except ValueError as e:
+        return None, str(e)
+
     last_err: str | None = None
     attempts = max(1, retries)
+    opener = urllib.request.build_opener(_LimitedRedirectHandler(max_redirects))
     for attempt in range(attempts):
+        _polite_pause(polite_delay)
         req = urllib.request.Request(url, headers={"User-Agent": user_agent})
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
+            with opener.open(req, timeout=timeout) as resp:
+                final_url = resp.geturl() if hasattr(resp, "geturl") else url
+                try:
+                    assert_fetch_url_allowed(final_url)
+                except ValueError as e:
+                    return None, str(e)
                 length = resp.headers.get("Content-Length")
                 if length is not None:
                     try:
@@ -214,14 +325,6 @@ def fetch_text(
         return None, err
     assert data is not None
     return data.decode("utf-8", errors="replace"), None
-
-
-def atomic_write_text(path: Path, text: str, encoding: str = "utf-8") -> None:
-    """Write text via a sibling temp file then replace (avoids truncated caches)."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(text, encoding=encoding)
-    tmp.replace(path)
 
 
 def _shape_ok(data: Any, required_keys: tuple[str, ...] | None) -> bool:
@@ -479,7 +582,12 @@ def merge_articles(
     for art in list(existing or []) + list(new_articles or []):
         if not isinstance(art, dict):
             continue
-        url = canonical_url(art.get("url"))
+        raw_url = (art.get("url") or "").strip()
+        if raw_url and not is_safe_url(raw_url):
+            continue
+        url = canonical_url(raw_url) if raw_url else ""
+        if url and not is_safe_url(url):
+            continue
         if not url:
             # Keep undated URL-less items keyed by title
             key = f"title:{(art.get('title') or '').strip().lower()}"
@@ -489,7 +597,7 @@ def merge_articles(
             key = url
         prev = by_url.get(key)
         normalized = dict(art)
-        normalized["url"] = url or art.get("url") or ""
+        normalized["url"] = url or ""
         normalized["date"] = normalize_date(art.get("date")) or art.get("date") or ""
         if prev is None:
             by_url[key] = normalized
@@ -669,3 +777,126 @@ def parse_html_news_listing(
             "source": source_label,
         })
     return articles
+
+
+def parse_html_link_listing(
+    html: str,
+    *,
+    link_re: re.Pattern[str] | str,
+    source_label: str,
+    base_url: str | None = None,
+    skip_urls: Any = None,
+    extra_ok: Any = None,
+    min_title_len: int = 16,
+    high_trust: bool = False,
+    limit: int | None = None,
+) -> list[dict[str, Any]]:
+    """Shared href-regex article parser (Barnabas / OSCE / UNSR FoRB style).
+
+    ``link_re`` must capture URL in group 1 and link text in group 2.
+    ``skip_urls`` may be a set/frozenset of URLs or a callable ``(url) -> bool``.
+    ``extra_ok`` is an optional ``(title, url) -> bool`` used when the default
+    persecution filter rejects an item (keyword/path overrides).
+    """
+    pattern = re.compile(link_re) if isinstance(link_re, str) else link_re
+    skip_set: set[str] | None = None
+    skip_fn = None
+    if callable(skip_urls):
+        skip_fn = skip_urls
+    elif skip_urls:
+        skip_set = {canonical_url(u) for u in skip_urls}
+
+    articles: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for match in pattern.finditer(html or ""):
+        raw = (match.group(1) or "").split("#")[0].strip()
+        if not raw:
+            continue
+        if raw.startswith("http"):
+            url = raw
+        elif base_url:
+            url = f"{base_url.rstrip('/')}{raw if raw.startswith('/') else '/' + raw}"
+        else:
+            url = raw
+        url_key = canonical_url(url)
+        if url_key in seen:
+            continue
+        if skip_fn and skip_fn(url):
+            continue
+        if skip_set is not None and url_key in skip_set:
+            continue
+
+        title = strip_html(match.group(2) or "").strip()
+        if len(title) < min_title_len:
+            continue
+
+        ok = is_christian_persecution(
+            title=title, description="", high_trust_source=high_trust
+        )
+        if not ok and extra_ok is not None:
+            ok = bool(extra_ok(title, url))
+        if not ok:
+            continue
+
+        seen.add(url_key)
+        articles.append({
+            "title": title,
+            "url": url,
+            "date": None,
+            "description": "",
+            "countries": countries_for_article(title, ""),
+            "source": source_label,
+        })
+        if limit is not None and len(articles) >= limit:
+            break
+    return articles
+
+
+def run_news_fetch(
+    name: str,
+    source_url: str,
+    fetch_articles_fn: Any,
+    *,
+    source_label: str | None = None,
+    output: Path | None = None,
+    found_label: str = "items",
+) -> None:
+    """Load cache, fetch HTML, parse via ``fetch_articles_fn``, write result, exit.
+
+    ``fetch_articles_fn(html) -> list[dict]`` returns article dicts for one page.
+    """
+    ensure_fetched_dir()
+    label = source_label or name
+    out = output or (FETCHED / f"{name}.json")
+    print(f"Fetching {label}...")
+    cached = load_json_cache(out)
+    html, err = fetch_text(source_url, user_agent=USER_AGENT)
+    if html is None:
+        if cached:
+            cached["status"] = "cached"
+            write_json(out, cached)
+            write_status(name, "cached", "fetch failed, using cache")
+            exit_for_status("cached")
+        result = build_news_result(
+            source=label,
+            source_url=source_url,
+            status="fetch_failed",
+            articles=[],
+        )
+        write_json(out, result)
+        write_status(name, "failed", f"fetch failed: {err}")
+        exit_for_status("failed")
+
+    articles = list(fetch_articles_fn(html) or [])
+    print(f"  found {len(articles)} {found_label}")
+    result = build_news_result(
+        source=label,
+        source_url=source_url,
+        status="ok",
+        articles=articles,
+        previous=cached,
+    )
+    write_json(out, result)
+    print(f"  wrote {out} ({result['total_articles']} accumulated)")
+    write_status(name, "ok")
+    exit_for_status("ok")

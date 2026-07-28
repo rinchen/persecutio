@@ -259,7 +259,7 @@ def main():
         result = {"countries": {}, "fetched_at": None, "error": "no data available"}
         OUTPUT_JSON.write_text(json.dumps(result, indent=2), encoding="utf-8")
         write_status("freedomhouse", "failed", "no data available")
-        exit_for_status("failed")
+        exit_for_status("failed", strict=True)
     else:
         fetch_status = "ok"
 
@@ -275,7 +275,7 @@ def main():
         result = {"countries": {}, "fetched_at": None, "error": "parse failed"}
         OUTPUT_JSON.write_text(json.dumps(result, indent=2), encoding="utf-8")
         write_status("freedomhouse", "failed", "parse failed")
-        exit_for_status("failed")
+        exit_for_status("failed", strict=True)
 
     result = {
         "countries": countries,
@@ -302,7 +302,7 @@ def main():
 
     print(f"\nOutput: {OUTPUT_JSON.relative_to(ROOT)}")
     print("\nDone.")
-    exit_for_status(fetch_status)
+    exit_for_status(fetch_status, strict=True)
 
 
 if __name__ == "__main__":

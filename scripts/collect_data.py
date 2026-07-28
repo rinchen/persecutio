@@ -61,18 +61,32 @@ def backup(path: Path):
 
 
 def merge_source_statuses(fresh: list, prior: list) -> list:
-    """Prefer freshly loaded statuses; keep prior entries when a status file is missing.
+    """Prefer freshly loaded statuses; keep prior when no fetch ran this session.
 
-    Local collect/generate often runs without data/fetched/*_status.json (gitignored),
-    which would otherwise wipe footer chips back to \"skipped\".
+    When any fresh status files exist (a fetch pass ran), prior-only entries that
+    still claim ok/partial/cached are demoted to ``stale`` so footer chips do not
+    stay green after a fetcher crashed before write_status().
+    Local collect without data/fetched/* keeps prior chips intact.
     """
     by_name: dict[str, dict] = {}
     for s in prior or []:
         if isinstance(s, dict) and s.get("name"):
-            by_name[s["name"]] = s
+            by_name[s["name"]] = dict(s)
+    fresh_names: set[str] = set()
     for s in fresh or []:
         if isinstance(s, dict) and s.get("name"):
-            by_name[s["name"]] = s
+            by_name[s["name"]] = dict(s)
+            fresh_names.add(s["name"])
+    if fresh_names:
+        for name, s in list(by_name.items()):
+            if name in fresh_names:
+                continue
+            if s.get("status") in ("ok", "partial", "cached"):
+                by_name[name] = {
+                    **s,
+                    "status": "stale",
+                    "message": s.get("message") or "no fresh status file this run",
+                }
     return sorted(by_name.values(), key=lambda s: s["name"])
 
 
