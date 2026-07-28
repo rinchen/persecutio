@@ -56,6 +56,8 @@ jobs:
           python3 scripts/fetch_barnabas.py || true
           python3 scripts/fetch_csi.py || true
           python3 scripts/fetch_cna.py || true
+          python3 scripts/fetch_fides.py || true
+          python3 scripts/fetch_aciprensa.py || true
           python3 scripts/fetch_hrwf.py || true
           python3 scripts/fetch_adf.py || true
           python3 scripts/fetch_wea.py || true
