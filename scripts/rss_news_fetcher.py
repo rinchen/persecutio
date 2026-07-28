@@ -183,6 +183,16 @@ RSS_FEEDS = {
         "rss_url": "https://www.catholicnewsagency.com/rss/news.xml",
         "high_trust": False,
     },
+    "fides": {
+        "source_label": "Agenzia Fides",
+        "rss_url": "https://www.fides.org/en/news/rss",
+        "high_trust": True,
+    },
+    "aciprensa": {
+        "source_label": "ACI Prensa",
+        "rss_url": "https://www.aciprensa.com/rss/news",
+        "high_trust": False,
+    },
     "hrw": {
         "source_label": "Human Rights Watch",
         "rss_url": "https://www.hrw.org/rss",

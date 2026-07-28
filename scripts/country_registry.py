@@ -326,6 +326,8 @@ GLOBAL_INDICATOR_SOURCE_IDS = frozenset(
         "barnabas",
         "csi",
         "cna",
+        "fides",
+        "aciprensa",
         "hrwf",
         "adf",
         "wea",
