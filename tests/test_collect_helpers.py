@@ -107,8 +107,18 @@ class TestMergeSourceStatuses(unittest.TestCase):
         merged = cd.merge_source_statuses(fresh, prior)
         by_name = {s["name"]: s for s in merged}
         self.assertEqual(set(by_name), {"natural_earth_110m", "morningstarnews", "opendoors", "freedomhouse"})
-        self.assertEqual(by_name["opendoors"]["fetched_at"], "nightly")
+        # Prior-only ok/partial/cached become stale when any fresh statuses exist
+        self.assertEqual(by_name["opendoors"]["status"], "stale")
+        self.assertEqual(by_name["freedomhouse"]["status"], "stale")
         self.assertEqual(by_name["morningstarnews"]["fetched_at"], "local")
+
+    def test_keep_all_prior_when_no_fresh(self):
+        prior = [
+            {"name": "opendoors", "status": "ok", "fetched_at": "nightly"},
+        ]
+        merged = cd.merge_source_statuses([], prior)
+        self.assertEqual(merged[0]["status"], "ok")
+        self.assertEqual(merged[0]["fetched_at"], "nightly")
 
     def test_ignores_malformed_entries(self):
         merged = cd.merge_source_statuses(

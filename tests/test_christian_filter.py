@@ -29,6 +29,31 @@ class TestChristianFilter(unittest.TestCase):
             )
         )
 
+    def test_french_markers(self):
+        self.assertTrue(
+            is_christian_persecution(
+                title="Un pasteur arrêté après une attaque contre une église",
+                description="Persécution des chrétiens en Égypte",
+            )
+        )
+
+    def test_spanish_markers(self):
+        self.assertTrue(
+            is_christian_persecution(
+                title="Pastor detenido tras ataque a una iglesia",
+                description="Persecución de cristianos en Nicaragua",
+            )
+        )
+
+    def test_high_trust_harm_without_christian_word(self):
+        self.assertTrue(
+            is_christian_persecution(
+                title="Blasphemy sentence upheld; converts face prison",
+                description="Freedom of religion or belief violations continue",
+                high_trust_source=True,
+            )
+        )
+
     def test_rejects_other_faith_only(self):
         self.assertFalse(
             is_christian_persecution(

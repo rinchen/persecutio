@@ -16,8 +16,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.12'
       - name: Install dependencies
@@ -34,63 +34,53 @@ jobs:
           python3 scripts/fetch_state_dept.py || FAIL=1
 
           # Secondary / flaky sources — enrich when available; never abort deploy
-          python3 scripts/fetch_gdelt.py || true
-          python3 scripts/fetch_ohchr.py || true
-          python3 scripts/fetch_morningstarnews.py || true
-          python3 scripts/fetch_vid.py || true
-          python3 scripts/fetch_gcr_stats.py || true
-          python3 scripts/fetch_acn.py || true
-          python3 scripts/fetch_csw.py || true
-          python3 scripts/fetch_icc.py || true
-          python3 scripts/fetch_forum18.py || true
-          python3 scripts/fetch_mec.py || true
-          python3 scripts/fetch_bitterwinter.py || true
-          python3 scripts/fetch_releaseintl.py || true
-          python3 scripts/fetch_vom.py || true
-          python3 scripts/fetch_chinaaid.py || true
-          python3 scripts/fetch_infochretienne.py || true
-          python3 scripts/fetch_osce.py || true
-          python3 scripts/fetch_unsrforb.py || true
-          python3 scripts/fetch_hrw.py || true
-          python3 scripts/fetch_amnesty.py || true
-          python3 scripts/fetch_barnabas.py || true
-          python3 scripts/fetch_csi.py || true
-          python3 scripts/fetch_cna.py || true
-          python3 scripts/fetch_fides.py || true
-          python3 scripts/fetch_aciprensa.py || true
-          python3 scripts/fetch_hrwf.py || true
-          python3 scripts/fetch_adf.py || true
-          python3 scripts/fetch_wea.py || true
-          python3 scripts/fetch_jubilee.py || true
-          python3 scripts/fetch_ippforb.py || true
-
-          # Gate on primary status JSON only
-          python3 - <<'PY'
-          import json, sys
-          from pathlib import Path
-          PRIMARY = {
-              "opendoors", "freedomhouse", "owid",
-              "uscirf", "statedepartment",
+          SEC_FAIL=0
+          SEC_FAILED=""
+          run_sec() {
+            if ! python3 "scripts/$1"; then
+              SEC_FAIL=$((SEC_FAIL + 1))
+              SEC_FAILED="${SEC_FAILED} $1"
+            fi
           }
-          failed = []
-          for p in sorted(Path("data/fetched").glob("*_status.json")):
-              try:
-                  s = json.loads(p.read_text(encoding="utf-8"))
-              except Exception as e:
-                  name = p.stem.replace("_status", "")
-                  if name in PRIMARY:
-                      failed.append(f"{p.name}: corrupt ({type(e).__name__})")
-                  continue
-              name = s.get("name") or p.stem.replace("_status", "")
-              if name in PRIMARY and s.get("status") == "failed":
-                  failed.append(f"{name}: {s.get('message') or 'failed'}")
-          if failed:
-              print("Failed primary sources:")
-              for f in failed:
-                  print(f"  - {f}")
-              sys.exit(1)
-          print("Primary source status files ok or partial/cached")
-          PY
+          run_sec fetch_gdelt.py
+          run_sec fetch_ohchr.py
+          run_sec fetch_morningstarnews.py
+          run_sec fetch_vid.py
+          run_sec fetch_gcr_stats.py
+          run_sec fetch_acn.py
+          run_sec fetch_csw.py
+          run_sec fetch_icc.py
+          run_sec fetch_forum18.py
+          run_sec fetch_mec.py
+          run_sec fetch_bitterwinter.py
+          run_sec fetch_releaseintl.py
+          run_sec fetch_vom.py
+          run_sec fetch_chinaaid.py
+          run_sec fetch_infochretienne.py
+          run_sec fetch_osce.py
+          run_sec fetch_unsrforb.py
+          run_sec fetch_hrw.py
+          run_sec fetch_amnesty.py
+          run_sec fetch_barnabas.py
+          run_sec fetch_csi.py
+          run_sec fetch_cna.py
+          run_sec fetch_fides.py
+          run_sec fetch_aciprensa.py
+          run_sec fetch_hrwf.py
+          run_sec fetch_adf.py
+          run_sec fetch_wea.py
+          run_sec fetch_jubilee.py
+          run_sec fetch_ippforb.py
+
+          if [ "$SEC_FAIL" -gt 0 ]; then
+            echo "::warning::Secondary fetch failures ($SEC_FAIL):$SEC_FAILED"
+            echo "Secondary fetch failures ($SEC_FAIL):$SEC_FAILED"
+          else
+            echo "All secondary fetches succeeded"
+          fi
+
+          # Gate on primary status JSON (ok only — partial/cached abort)
+          python3 scripts/check_primary_status.py
           STATUS_FAIL=$?
           if [ "$STATUS_FAIL" -ne 0 ]; then
             FAIL=1
@@ -103,7 +93,7 @@ jobs:
           fi
       - run: python3 scripts/collect_data.py
       - run: python3 scripts/generate_website_data.py
-      - run: python3 -m py_compile scripts/collect_data.py scripts/generate_website_data.py scripts/fetch_common.py scripts/fetch_*.py tests/*.py
+      - run: python3 -m py_compile scripts/collect_data.py scripts/generate_website_data.py scripts/fetch_common.py scripts/check_primary_status.py scripts/source_registry.py scripts/fetch_*.py tests/*.py
       - run: python3 -m pytest tests
       - run: |
           test -s data/countries.yml

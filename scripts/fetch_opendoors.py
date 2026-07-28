@@ -527,21 +527,21 @@ def main():
             save_cache(result)
             write_status("opendoors", "ok")
             print_summary(result)
-            exit_for_status("ok")
+            exit_for_status("ok", strict=True)
         print("  Live data format not recognized, using static fallback")
 
     if cached:
         print(f"Using cached data from {cached.get('fetched_at', 'unknown')}")
         write_status("opendoors", "cached")
         print_summary(cached)
-        exit_for_status("cached")
+        exit_for_status("cached", strict=True)
 
     print("Using static WWL 2025 fallback data")
     result = build_result(STATIC_WWL_2025, live_status)
     save_cache(result)
     write_status("opendoors", "partial", "static fallback used")
     print_summary(result)
-    exit_for_status("partial")
+    exit_for_status("partial", strict=True)
 
 
 if __name__ == "__main__":

@@ -11,11 +11,16 @@ import time
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from archive_text import clean_archive_text  # noqa: E402
 from country_registry import COUNTRY_GEO, KNOWN_COUNTRIES, slugify  # noqa: E402
-from fetch_common import USER_AGENT, strip_html  # noqa: E402
+from fetch_common import (  # noqa: E402
+    DEFAULT_MAX_BYTES,
+    fetch_bytes as _fc_fetch_bytes,
+    fetch_text as _fc_fetch_text,
+    strip_html,
+)
 from fetch_state_dept import (  # noqa: E402
     REPORT_YEAR as IRF_YEAR,
     extract_christian_mentions,
@@ -98,14 +103,131 @@ def site_countries() -> list[dict]:
     return out
 
 
+# Large PDFs / V-Dem zip need headroom above the default news-fetch cap.
+_ARCHIVE_MAX_BYTES = max(DEFAULT_MAX_BYTES, 50 * 1024 * 1024)
+
+
 def fetch_bytes(url: str, timeout: int = 60) -> bytes:
-    req = Request(url, headers={"User-Agent": USER_AGENT})
-    with urlopen(req, timeout=timeout) as resp:
-        return resp.read()
+    """Thin raise-on-error wrapper around fetch_common.fetch_bytes."""
+    data, err = _fc_fetch_bytes(url, timeout=timeout, max_bytes=_ARCHIVE_MAX_BYTES)
+    if data is None:
+        raise RuntimeError(err or "fetch failed")
+    return data
 
 
 def fetch_text(url: str, timeout: int = 45) -> str:
-    return fetch_bytes(url, timeout=timeout).decode("utf-8", errors="ignore")
+    """Thin raise-on-error wrapper around fetch_common.fetch_text."""
+    text, err = _fc_fetch_text(url, timeout=timeout, max_bytes=_ARCHIVE_MAX_BYTES)
+    if text is None:
+        raise RuntimeError(err or "fetch failed")
+    return text
+
+
+_USCIRF_NOISE_BLOCKS = re.compile(
+    r"<(script|style|nav|header|footer|noscript)\b[^>]*>.*?</\1\s*>",
+    re.IGNORECASE | re.DOTALL,
+)
+_USCIRF_MAIN_PATTERNS = (
+    re.compile(r"<main\b[^>]*>(.*?)</main\s*>", re.IGNORECASE | re.DOTALL),
+    re.compile(
+        r"<(?:div|section|article)\b[^>]*\brole=['\"]main['\"][^>]*>(.*?)</(?:div|section|article)\s*>",
+        re.IGNORECASE | re.DOTALL,
+    ),
+    re.compile(
+        r"<(?:div|section|article)\b[^>]*\bid=['\"](?:content|main)['\"][^>]*>(.*?)</(?:div|section|article)\s*>",
+        re.IGNORECASE | re.DOTALL,
+    ),
+    re.compile(
+        r"<(?:div|section|article)\b[^>]*\bclass=['\"][^'\"]*\b(?:region-content|main-content|full-content|country-page)\b[^'\"]*['\"][^>]*>(.*?)</(?:div|section|article)\s*>",
+        re.IGNORECASE | re.DOTALL,
+    ),
+)
+_USCIRF_CHROME = re.compile(
+    r"Skip to main content|User account menu",
+    re.IGNORECASE,
+)
+_USCIRF_PROSE = re.compile(
+    r"(?:"
+    r"Advising Government\s+"
+    r"|Religious communities\b"
+    r"|USCIRF\s+(?:recommends?|finds?|reports?|notes?|monitors?)\b"
+    r"|Key Findings?\b"
+    r"|Country of Particular Concern\b"
+    r"|Special Watch List\b"
+    r"|Entity of Particular Concern\b"
+    r"|\b(?:faces?|faced|facing)\s+(?:severe\s+)?(?:religious\s+)?persecution\b"
+    r"|\bviolations of (?:the right to )?religious freedom\b"
+    r")",
+    re.IGNORECASE,
+)
+
+
+def _extract_uscirf_main_html(html: str) -> str:
+    """Prefer main content regions when present; otherwise return cleaned full HTML."""
+    cleaned = _USCIRF_NOISE_BLOCKS.sub(" ", html or "")
+    best = ""
+    for pat in _USCIRF_MAIN_PATTERNS:
+        for match in pat.finditer(cleaned):
+            chunk = (match.group(1) or "").strip()
+            if len(chunk) > len(best):
+                best = chunk
+    return best or cleaned
+
+
+def _scrub_uscirf_chrome(text: str) -> str:
+    """Drop leading nav/mega-menu chrome before real country-report prose."""
+    t = (text or "").strip()
+    if not t:
+        return ""
+
+    # Prefer cutting after the in-page "Advising Government" jump target label.
+    adv = re.search(r"Advising Government\s+", t, re.IGNORECASE)
+    if adv:
+        rest = t[adv.end() :].strip()
+        if len(rest) >= 60:
+            return rest
+
+    head = t[:3500]
+    has_chrome = bool(_USCIRF_CHROME.search(head))
+    # Mega-menu: dense run of short country-ish tokens early in the page.
+    early_tokens = re.findall(r"\b[A-Z][a-zA-Z]{2,}\b", head[:1200])
+    mega_menu = len(early_tokens) >= 25 and "Afghanistan" in head[:1500] and "Vietnam" in head[:1500]
+
+    if not (has_chrome or mega_menu or t.lower().startswith("religious freedom conditions")):
+        return t
+
+    m = _USCIRF_PROSE.search(t)
+    if not m:
+        return t
+    # Prefer the start of the sentence containing the match.
+    start = m.start()
+    prev = max(t.rfind(". ", 0, start), t.rfind("? ", 0, start), t.rfind("! ", 0, start))
+    if prev >= 0 and start - prev < 400:
+        start = prev + 2
+    return t[start:].strip()
+
+
+def uscirf_page_to_excerpt(html: str) -> str:
+    """Extract a cleaned plain-text excerpt from a USCIRF country page."""
+    region = _extract_uscirf_main_html(html)
+    plain = strip_html(region)
+    plain = clean_archive_text(plain)
+    plain = _scrub_uscirf_chrome(plain)
+    return clean_archive_text(plain)
+
+
+def _safe_zip_member(name: str) -> bool:
+    """Reject zip members with path traversal or absolute paths."""
+    if not name or name.endswith("/"):
+        return False
+    if ".." in name:
+        return False
+    if Path(name).is_absolute():
+        return False
+    # Windows-style absolute (C:...) even on POSIX Path parsers
+    if re.match(r"^[A-Za-z]:[/\\]", name):
+        return False
+    return True
 
 
 def write_text(path: Path, text: str) -> None:
@@ -213,7 +335,7 @@ def download_uscirf(countries: list[dict], manifest: dict) -> None:
             if "page not found" in lower or "404" in html[:400].lower():
                 raise RuntimeError("not found")
             write_text(out_html, html)
-            plain = strip_html(html)
+            plain = uscirf_page_to_excerpt(html)
             # Do not invent CPC/SWL/EPC from boilerplate page chrome; leave unset
             # unless an explicit country-status phrase appears near the title area.
             designation = None
@@ -539,12 +661,18 @@ def download_vdem(countries: list[dict], manifest: dict) -> None:
         else:
             print("  using cached zip")
         with zipfile.ZipFile(zip_path) as zf:
-            names = [n for n in zf.namelist() if n.lower().endswith(".csv")]
+            names = [
+                n
+                for n in zf.namelist()
+                if n.lower().endswith(".csv") and _safe_zip_member(n)
+            ]
             if not names:
                 raise RuntimeError("no CSV in zip")
             # Prefer the main country-year file
             names.sort(key=lambda n: (0 if "V-Dem-CY-Core" in n or "vdem" in n.lower() else 1, len(n)))
             csv_name = names[0]
+            if not _safe_zip_member(csv_name):
+                raise RuntimeError(f"refusing unsafe zip member: {csv_name}")
             print(f"  reading {csv_name}")
             raw = zf.read(csv_name)
         # Detect columns

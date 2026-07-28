@@ -20,34 +20,9 @@ from country_registry import (
 )
 from fetch_common import merge_articles, normalize_date
 from archive_text import clean_archive_text, is_usable_archive_excerpt, store_summary
+from source_registry import news_sources
 
-NEWS_SOURCES = [
-    ("morningstarnews", "Morning Star News", "morningstarnews2026"),
-    ("csw", "CSW", "csw2026"),
-    ("icc", "ICC", "icc2026"),
-    ("forum18", "Forum 18", "forum18"),
-    ("mec", "Middle East Concern", "mec"),
-    ("bitterwinter", "Bitter Winter", "bitterwinter"),
-    ("releaseintl", "Release International", "releaseintl"),
-    ("vom", "Voice of the Martyrs", "vom2026"),
-    ("chinaaid", "ChinaAid", "chinaaid"),
-    ("infochretienne", "Info Chrétienne", "infochretienne"),
-    ("osce", "OSCE / ODIHR", "osce"),
-    ("unsrforb", "UN Special Rapporteur on FoRB", "unsrforb"),
-    ("hrw", "Human Rights Watch", "hrw"),
-    ("amnesty", "Amnesty International", "amnesty"),
-    ("barnabas", "Barnabas Aid", "barnabas"),
-    ("csi", "Christian Solidarity International", "csi"),
-    ("cna", "Catholic News Agency", "cna"),
-    ("fides", "Agenzia Fides", "fides"),
-    ("aciprensa", "ACI Prensa", "aciprensa"),
-    ("hrwf", "Human Rights Without Frontiers", "hrwf"),
-    ("adf", "ADF International", "adf"),
-    ("wea", "WEA Religious Liberty Commission", "wea"),
-    ("jubilee", "Jubilee Campaign", "jubilee"),
-    ("ippforb", "IPPFoRB", "ippforb"),
-    ("gdelt", "GDELT", "gdelt2025"),
-]
+NEWS_SOURCES = news_sources()
 
 LATEST_NEWS_CAP = 20
 NEWS_MAX_AGE_YEARS = 5

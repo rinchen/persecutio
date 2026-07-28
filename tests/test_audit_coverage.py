@@ -129,6 +129,10 @@ class TestFetchRetry(unittest.TestCase):
 
             def __init__(self):
                 self._sent = False
+                self.headers = {}
+
+            def geturl(self):
+                return "https://example.com/x"
 
             def read(self, _n):
                 if self._sent:
@@ -148,9 +152,19 @@ class TestFetchRetry(unittest.TestCase):
                 raise URLError("timed out")
             return FakeResp()
 
-        with mock.patch("fetch_common.urllib.request.urlopen", side_effect=fake_urlopen):
+        class FakeOpener:
+            def open(self, req, timeout=30):
+                return fake_urlopen(req, timeout=timeout)
+
+        with mock.patch("fetch_common.urllib.request.build_opener", return_value=FakeOpener()):
             with mock.patch("fetch_common.time.sleep"):
-                data, err = fetch_bytes("https://example.com/x", retries=3, backoff=0.01)
+                with mock.patch("fetch_common._host_is_public", return_value=True):
+                    data, err = fetch_bytes(
+                        "https://example.com/x",
+                        retries=3,
+                        backoff=0.01,
+                        polite_delay=0,
+                    )
         self.assertIsNone(err)
         self.assertEqual(data, b"ok")
         self.assertGreaterEqual(calls["n"], 2)

@@ -38,13 +38,15 @@ Public definitions also appear on [about.html](about.html). Keep About’s Quali
 3. **Fetch surface** — RSS, Atom, HTML listing, or API? Prefer `scripts/rss_news_fetcher.py` or `parse_html_news_listing` patterns under `scripts/fetch_*.py`.
 4. **Filter** — Reuse `is_christian_persecution` / high-trust flags so non-FoRB noise stays out.
 5. **Citation bucket** — Org-index and news-org homepage ids go in `source_ids.indicators` via `GLOBAL_INDICATOR_SOURCE_IDS` (never the Modern-Day Situation Sources line unless empty-modern fallback). Country dossiers stay in `modern`.
-6. **Wire** — `data/sources.yml`, `NEWS_SOURCES` / enrich, `SOURCE_GROUP_DEFS` + status map in `generate_website_data.py`, soft-fail line in `.github/workflows/update.yml`, About used row + Quality cell, footer chip group.
+6. **Wire** — Add the source to [`scripts/source_registry.py`](scripts/source_registry.py) (fetch script, RSS, footer chip, quality, tier). Keep `.github/workflows/update.yml` fetch steps and the About used/unused Quality row in sync (registry sync tests cover the Python-side maps). `data/sources.yml` is **generated** by collect — do not hand-edit it as an input.
 7. **Populate** — Run the new fetcher(s) + collect/enrich + generate and **commit** `data/countries.yml` / `countries/*.html` / `data/sources.yml` before calling the work done. `data/fetched/` is gitignored.
 8. **Unused** — If rejected or not wireable, add an About unused row with Quality (**X** for legal/mission/permanent ops block; **A/B/C** when content fits but fetch is impossible for now) and reason; no fetcher until a surface exists.
 
 ## Pointers
 
+- Source registry: [scripts/source_registry.py](scripts/source_registry.py)
 - Archive terms: [data/archives/NOTICE](data/archives/NOTICE)
 - Used / unused tables: [about.html](about.html)
 - Fetch scripts: [scripts/fetch_*.py](scripts/), [scripts/rss_news_fetcher.py](scripts/rss_news_fetcher.py)
 - Citation buckets: [scripts/country_registry.py](scripts/country_registry.py) (`attach_citation`, `reconcile_citation_buckets`)
+- Primary CI gate: [scripts/check_primary_status.py](scripts/check_primary_status.py)

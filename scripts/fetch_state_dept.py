@@ -221,8 +221,8 @@ def fetch_country_report(slug, skip=False):
             data = json.loads(cache_path.read_text(encoding="utf-8"))
             data["_cached"] = True
             return data
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"  warning: corrupt state dept cache {cache_path.name}: {type(e).__name__}: {e}")
 
     urls_to_try = [
         f"{BASE_URL}/{state_slug}/",
@@ -236,7 +236,8 @@ def fetch_country_report(slug, skip=False):
             html = fetch_url(url)
             final_url = url
             break
-        except Exception:
+        except Exception as e:
+            print(f"  warning: state dept fetch {url}: {type(e).__name__}: {e}")
             continue
 
     if html is None:
@@ -246,8 +247,8 @@ def fetch_country_report(slug, skip=False):
                 data["_cached"] = True
                 data["_error"] = "fetch_failed_using_cache"
                 return data
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"  warning: corrupt state dept cache {cache_path.name}: {type(e).__name__}: {e}")
         return {
             "slug": slug,
             "has_report": False,
@@ -358,7 +359,7 @@ def main():
     else:
         final_status = "ok"
         write_status("statedepartment", final_status)
-    exit_for_status(final_status)
+    exit_for_status(final_status, strict=True)
 
 
 if __name__ == "__main__":

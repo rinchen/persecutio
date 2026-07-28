@@ -14,6 +14,7 @@ from archive_text import (
     is_usable_archive_excerpt,
 )
 from country_registry import dedupe_source_ids_by_url
+from source_registry import footer_groups, status_key_map
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -137,91 +138,14 @@ LABELS = {
     "persecution": "Active Persecution",
 }
 
-SOURCE_GROUP_DEFS = {
-    "uscirf": {"prefixes": ("uscirf",), "label": "UC", "title": "USCIRF Annual Reports"},
-    "opendoors": {"prefixes": ("odwwl",), "label": "OD", "title": "Open Doors World Watch List"},
-    "pew": {"prefixes": ("pew",), "label": "Pew", "title": "Pew Research"},
-    "natural_earth": {"prefixes": ("natural_earth",), "label": "NE", "title": "Natural Earth map boundaries"},
-    "freedomhouse": {"prefixes": ("freedomhouse",), "label": "FH", "title": "Freedom House Freedom in the World"},
-    "statedepartment": {"prefixes": ("statedepartment",), "label": "SD", "title": "U.S. State Dept IRF Reports"},
-    "ohchr": {"prefixes": ("ohchr",), "label": "OHCHR", "title": "OHCHR Universal Human Rights Index"},
-    "vdem": {"prefixes": ("vdem",), "label": "VD", "title": "V-Dem FoRB Indicators"},
-    "gdelt": {"prefixes": ("gdelt",), "label": "GDELT", "title": "GDELT Global Database of Events"},
-    "owid": {"prefixes": ("owid",), "label": "OWID", "title": "Our World in Data - Religious Composition"},
-    "acn": {"prefixes": ("acn",), "label": "ACN", "title": "ACN Persecuted and Forgotten"},
-    "bbc": {"prefixes": ("bbc",), "label": "BBC", "title": "BBC News"},
-    "morningstarnews": {"prefixes": ("morningstarnews",), "label": "MSN", "title": "Morning Star News"},
-    "vid": {"prefixes": ("vid",), "label": "VID", "title": "Violent Incidents Database"},
-    "gcr": {"prefixes": ("gcr",), "label": "GCR", "title": "Global Christian Relief"},
-    "csw": {"prefixes": ("csw",), "label": "CSW", "title": "Christian Solidarity Worldwide"},
-    "icc": {"prefixes": ("icc",), "label": "ICC", "title": "International Christian Concern"},
-    "forum18": {"prefixes": ("forum18",), "label": "F18", "title": "Forum 18"},
-    "mec": {"prefixes": ("mec",), "label": "MEC", "title": "Middle East Concern"},
-    "bitterwinter": {"prefixes": ("bitterwinter",), "label": "BW", "title": "Bitter Winter"},
-    "releaseintl": {"prefixes": ("releaseintl",), "label": "RI", "title": "Release International"},
-    "vom": {"prefixes": ("vom",), "label": "VOM", "title": "Voice of the Martyrs"},
-    "chinaaid": {"prefixes": ("chinaaid",), "label": "CA", "title": "ChinaAid"},
-    "infochretienne": {"prefixes": ("infochretienne",), "label": "IC", "title": "Info Chrétienne"},
-    "osce": {"prefixes": ("osce",), "label": "OSCE", "title": "OSCE / ODIHR FoRB"},
-    "unsrforb": {"prefixes": ("unsrforb",), "label": "SR", "title": "UN Special Rapporteur on FoRB"},
-    "hrw": {"prefixes": ("hrw",), "label": "HRW", "title": "Human Rights Watch"},
-    "amnesty": {"prefixes": ("amnesty",), "label": "AI", "title": "Amnesty International"},
-    "barnabas": {"prefixes": ("barnabas",), "label": "BA", "title": "Barnabas Aid"},
-    "csi": {"prefixes": ("csi",), "label": "CSI", "title": "Christian Solidarity International"},
-    "cna": {"prefixes": ("cna",), "label": "CNA", "title": "Catholic News Agency"},
-    "fides": {"prefixes": ("fides",), "label": "Fides", "title": "Agenzia Fides"},
-    "aciprensa": {"prefixes": ("aciprensa",), "label": "ACI", "title": "ACI Prensa"},
-    "hrwf": {"prefixes": ("hrwf",), "label": "HRWF", "title": "Human Rights Without Frontiers"},
-    "adf": {"prefixes": ("adf",), "label": "ADF", "title": "ADF International"},
-    "wea": {"prefixes": ("wea",), "label": "WEA", "title": "WEA Religious Liberty Commission"},
-    "jubilee": {"prefixes": ("jubilee",), "label": "JC", "title": "Jubilee Campaign"},
-    "ippforb": {"prefixes": ("ippforb",), "label": "IPP", "title": "IPPFoRB"},
-}
+SOURCE_GROUP_DEFS = footer_groups()
 
-STATUS_PRIORITY = {"error": 0, "failed": 0, "partial": 1, "skipped": 2, "ok": 3, "cached": 4}
+STATUS_PRIORITY = {"error": 0, "failed": 0, "stale": 0, "partial": 1, "skipped": 2, "ok": 3, "cached": 4}
 
-STATUS_KEY_MAP = {
-    "uscirf": "uscirf",
-    "opendoors": "opendoors",
-    "pew": None,
-    "natural_earth": "natural_earth_110m",
-    "freedomhouse": "freedomhouse",
-    "statedepartment": "statedepartment",
-    "ohchr": "ohchr",
-    "gdelt": "gdelt",
-    "owid": "owid",
-    "acn": "acn",
-    "morningstarnews": "morningstarnews",
-    "vid": "vid",
-    "gcr": "gcr",
-    "csw": "csw",
-    "icc": "icc",
-    "forum18": "forum18",
-    "mec": "mec",
-    "bitterwinter": "bitterwinter",
-    "releaseintl": "releaseintl",
-    "vom": "vom",
-    "chinaaid": "chinaaid",
-    "infochretienne": "infochretienne",
-    "osce": "osce",
-    "unsrforb": "unsrforb",
-    "hrw": "hrw",
-    "amnesty": "amnesty",
-    "barnabas": "barnabas",
-    "csi": "csi",
-    "cna": "cna",
-    "fides": "fides",
-    "aciprensa": "aciprensa",
-    "hrwf": "hrwf",
-    "adf": "adf",
-    "wea": "wea",
-    "jubilee": "jubilee",
-    "ippforb": "ippforb",
-    "bbc": None,
-}
+STATUS_KEY_MAP = status_key_map()
 
 # Chip CSS uses --error; fetch scripts report "failed". Map for display.
-STATUS_DISPLAY = {"failed": "error"}
+STATUS_DISPLAY = {"failed": "error", "stale": "error"}
 
 
 def esc(value) -> str:
