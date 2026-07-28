@@ -63,7 +63,11 @@ HARM_MARKERS = (
     "blasphemy",
     "apostasy",
     "forced conversion",
-    "forced marriage",
+    "anti-conversion",
+    "anticonversion",
+    "religious minority",
+    "religious minorities",
+    "forb",
     "church closure",
     "church closed",
     "church demolition",
@@ -153,6 +157,12 @@ def is_christian_persecution(
     if has_christian and has_harm:
         return True
 
+    # High-trust FoRB / persecution specialist outlets: accept clear FoRB-harm
+    # language even when the headline does not name Christians explicitly
+    # (e.g. anti-conversion laws, freedom of religion rulings).
+    if high_trust_source and has_harm:
+        return True
+
     if high_trust_source and categories:
         cat_blob = " ".join(categories).lower()
         persecution_cats = (
@@ -167,10 +177,10 @@ def is_christian_persecution(
             "imprisonment",
             "kidnapping",
             "church closure",
+            "freedom of religion",
+            "forb",
         )
-        if any(c in cat_blob for c in persecution_cats) and (
-            has_christian or "christian" in cat_blob or "church" in cat_blob
-        ):
+        if any(c in cat_blob for c in persecution_cats):
             return True
 
     return False

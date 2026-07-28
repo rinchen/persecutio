@@ -90,7 +90,9 @@ class TestCitations(unittest.TestCase):
         ensure_source(sources, "odwwl2024", "Open Doors", "https://example.com", "2024")
         country = {"title": "Nigeria", "source_ids": {"modern": []}, "metadata": {}}
         attach_citation(country, "odwwl2024", sources)
-        self.assertIn("odwwl2024", country["source_ids"]["modern"])
+        # Global WWL index ids route to indicators, not the Modern-Day Sources line.
+        self.assertNotIn("odwwl2024", country["source_ids"].get("modern") or [])
+        self.assertIn("odwwl2024", country["source_ids"]["indicators"])
         self.assertEqual(country["metadata"]["source_ids"], ["odwwl2024"])
 
     def test_resolve_country(self):

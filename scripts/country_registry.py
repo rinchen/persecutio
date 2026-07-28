@@ -296,6 +296,20 @@ GLOBAL_INDICATOR_SOURCE_IDS = frozenset(
         "gdelt2025",
         "ohchr2024",
         "statedepartment2023",
+        "vom2026",
+        "chinaaid",
+        "osce",
+        "unsrforb",
+        "hrw",
+        "amnesty",
+        "barnabas",
+        "csi",
+        "cna",
+        "hrwf",
+        "adf",
+        "wea",
+        "jubilee",
+        "ippforb",
     }
 )
 
@@ -369,12 +383,15 @@ def attach_citation(
 ) -> None:
     """Attach a citation id to a country's source_ids section and refresh metadata.
 
-    section defaults to "modern" so existing callers are unchanged. Pass "historical"
-    or "indicators" for background/structural cites. Metadata lists reflect every
-    cited source across all sections in a stable order.
+    section defaults to "modern". Global indicator/org-index ids are always routed
+    through citation_section_for into "indicators" so callers cannot accidentally
+    put Freedom House / WWL indexes / news org homepages on the Modern-Day Sources
+    line. Pass section="historical" for background cites. Metadata lists reflect
+    every cited source across all sections in a stable order.
     """
     if sid not in sources:
         return
+    section = citation_section_for(sid, section)
     country.setdefault("source_ids", {})
     ids = list(country["source_ids"].get(section) or [])
     if sid not in ids:
