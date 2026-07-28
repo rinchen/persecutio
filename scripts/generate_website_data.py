@@ -13,6 +13,7 @@ from archive_text import (
     clip_at_sentence,
     is_usable_archive_excerpt,
 )
+from country_registry import dedupe_source_ids_by_url
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -279,6 +280,7 @@ def resolve_page_source_ids(slug: str, source_ids: dict) -> tuple[list[str], lis
     A country with an empty section used to fall back to citing every source in the
     repository, producing pages that listed hundreds of unrelated references. Each page
     must carry its own sources instead, so an empty section is a hard error.
+    Indicator/org-index cites live in source_ids.indicators and are not required here.
     """
     hist_ids = source_ids.get("historical", []) or []
     mod_ids = source_ids.get("modern", []) or []
@@ -293,7 +295,7 @@ def resolve_page_source_ids(slug: str, source_ids: dict) -> tuple[list[str], lis
 
 def render_sources(source_ids: list[str], all_sources_lookup: dict) -> str:
     items = []
-    for sid in source_ids:
+    for sid in dedupe_source_ids_by_url(list(source_ids), all_sources_lookup):
         s = all_sources_lookup.get(sid)
         if not s:
             continue
@@ -303,6 +305,16 @@ def render_sources(source_ids: list[str], all_sources_lookup: dict) -> str:
         prefix = f"({esc(date)}) " if date else ""
         items.append(f'<a href="{url}">{prefix}{label}</a>')
     return "; ".join(items) if items else "Sources will be listed here."
+
+
+def collect_all_reference_ids(source_ids: dict) -> list[str]:
+    """Union of historical, modern, and indicators citation ids (order preserved)."""
+    out: list[str] = []
+    for bucket in ("historical", "modern", "indicators"):
+        for sid in source_ids.get(bucket) or []:
+            if sid not in out:
+                out.append(sid)
+    return out
 
 
 def linked_data_value(text: str, url: str | None) -> str:
@@ -590,11 +602,14 @@ def main():
 
         historical_sources = render_sources(hist_ids, all_sources_lookup)
         modern_sources = render_sources(mod_ids, all_sources_lookup)
+        all_ref_ids = dedupe_source_ids_by_url(
+            collect_all_reference_ids(source_ids), all_sources_lookup
+        )
         all_sources_items = []
-        for s in all_sources_lookup.keys():
-            if s not in {*hist_ids, *mod_ids}:
+        for s in all_ref_ids:
+            src = all_sources_lookup.get(s)
+            if not src:
                 continue
-            src = all_sources_lookup[s]
             href = safe_url(src.get("url"))
             src_title = esc(src.get("title", s))
             date = src.get("date", "")
