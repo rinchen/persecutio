@@ -78,6 +78,7 @@ PAGE = """\
   </header>
   <main id="main-content" tabindex="-1">
     <div class="card">
+      <a class="back-link back-link--top" href="/persecutio/index.html">&larr; Back to map</a>
       <div class="country-hero" data-status="{status_key}">
         <div class="top">
           <h1>{title}</h1>
@@ -90,12 +91,12 @@ PAGE = """\
       </div>
       <section>
         <h2>Historical Background</h2>
-        <p>{historical}</p>
+        <div class="prose"><p>{historical}</p></div>
         <div class="section-sources"><strong>Sources:</strong> {historical_sources}</div>
       </section>
       <section>
         <h2>Modern-Day Situation</h2>
-        <p>{modern}</p>
+        <div class="prose"><p>{modern}</p></div>
         <div class="section-sources"><strong>Sources:</strong> {modern_sources}</div>
       </section>
       {archive_notes}
@@ -353,118 +354,243 @@ def linked_data_value(text: str, url: str | None) -> str:
     return f'<a href="{href}" target="_blank" rel="noopener">{text}</a>'
 
 
+def _lucide_svg(inner: str) -> str:
+    return (
+        '<svg class="lucide-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" '
+        'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" '
+        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
+        f"{inner}</svg>"
+    )
+
+
+# Lucide path markup (inline; no JS dependency). Keys match field roles.
+ICON_SVGS = {
+    "opendoors_score": _lucide_svg(
+        '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 '
+        '1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>'
+    ),
+    "opendoors_ranking": _lucide_svg(
+        '<path d="M10 6h11"/><path d="M10 12h11"/><path d="M10 18h11"/>'
+        '<path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/>'
+    ),
+    "freedom_house": _lucide_svg(
+        '<path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.805a1 1 0 0 1 .01 1.794L12.9 10.2a2 2 0 0 1-1.8 0L3.234 7.803a1 1 0 0 1 .01-1.794z"/>'
+        '<path d="M14 18v-7"/><path d="M6 18v-5"/><path d="M18 18v-5"/><path d="M2 22h20"/>'
+    ),
+    "pr_cl": _lucide_svg(
+        '<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>'
+        '<path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>'
+        '<path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>'
+    ),
+    "christian_population": _lucide_svg(
+        '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>'
+        '<path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
+    ),
+    "acn": _lucide_svg(
+        '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>'
+        '<line x1="4" x2="4" y1="22" y2="15"/>'
+    ),
+    "vid_incidents": _lucide_svg(
+        '<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 '
+        '0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>'
+    ),
+    "vid_killings": _lucide_svg(
+        '<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 '
+        '0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>'
+    ),
+    "gcr_killed": _lucide_svg(
+        '<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 '
+        '0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>'
+    ),
+    "gcr_score": _lucide_svg(
+        '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>'
+        '<path d="M12 8v4"/><path d="M12 16h.01"/>'
+    ),
+    "uscirf": _lucide_svg(
+        '<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 '
+        '4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>'
+        '<path d="m9 12 2 2 4-4"/>'
+    ),
+    "state_dept": _lucide_svg(
+        '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>'
+        '<path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>'
+    ),
+    "ohchr": _lucide_svg(
+        '<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 '
+        '4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>'
+    ),
+    "vdem_religion": _lucide_svg(
+        '<path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>'
+    ),
+    "vdem_repression": _lucide_svg(
+        '<circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/>'
+    ),
+    "news_events": _lucide_svg(
+        '<path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>'
+        '<path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/>'
+    ),
+}
+
+HIGH_SEVERITY_STATUSES = frozenset({"severe", "warning", "persecution"})
+
+
+def _od_score_bar(score) -> str:
+    try:
+        pct = max(0.0, min(100.0, float(score)))
+    except (TypeError, ValueError):
+        return ""
+    width = int(round(pct))
+    return f'<div class="score-bar" role="presentation"><span style="width:{width}%"></span></div>'
+
+
+def _data_item(icon_key: str, label_html: str, value_html: str, extra: str = "") -> str:
+    icon = ICON_SVGS.get(icon_key, "")
+    return (
+        f'<div class="data-item">'
+        f'<div class="label">{icon}{label_html}</div>'
+        f'<div class="value">{value_html}</div>'
+        f"{extra}"
+        f"</div>"
+    )
+
+
+def _data_group(title: str, items: list[str]) -> str:
+    if not items:
+        return ""
+    joined = "\n            ".join(items)
+    return (
+        f'<div class="data-group">\n'
+        f'          <div class="data-group-label">{esc(title)}</div>\n'
+        f'          <div class="data-grid">\n            {joined}\n          </div>\n'
+        f"        </div>"
+    )
+
+
 def render_data_fields(country: dict) -> str:
     meta = country.get("metadata", {})
-    items = []
     # Direct country-specific source URLs only (leave fields unlinked when absent).
     od_url = meta.get("archive_od_url")
     uscirf_url = meta.get("uscirf_url")
+
+    severity: list[str] = []
+    liberties: list[str] = []
+    demographics: list[str] = []
+    incidents: list[str] = []
+
     od_score = meta.get("opendoors_score")
     od_rank = meta.get("opendoors_ranking")
     if od_score is not None:
-        items.append(
-            f'<div class="data-item"><div class="label">Open Doors Score</div>'
-            f'<div class="value">{linked_data_value(f"{esc(od_score)}/100", od_url)}</div></div>'
+        severity.append(
+            _data_item(
+                "opendoors_score",
+                "Open Doors Score",
+                linked_data_value(f"{esc(od_score)}/100", od_url),
+                _od_score_bar(od_score),
+            )
         )
     if od_rank is not None:
-        items.append(
-            f'<div class="data-item"><div class="label">WWL Ranking</div>'
-            f'<div class="value">{linked_data_value(f"#{esc(od_rank)}", od_url)}</div></div>'
-        )
-    fh_status = meta.get("freedom_house_status")
-    if fh_status:
-        items.append(
-            f'<div class="data-item"><div class="label">Freedom House</div>'
-            f'<div class="value">{esc(fh_status)}</div></div>'
-        )
-    fh_pr = meta.get("freedom_house_pr")
-    fh_cl = meta.get("freedom_house_cl")
-    if fh_pr is not None and fh_cl is not None:
-        items.append(
-            f'<div class="data-item"><div class="label">PR / CL Score</div>'
-            f'<div class="value">{esc(fh_pr)} / {esc(fh_cl)}</div></div>'
-        )
-    christ_pop = meta.get("christian_population")
-    christ_pct = meta.get("christian_percentage")
-    if christ_pop is not None:
-        pop_str = f"{christ_pop:,}" if isinstance(christ_pop, (int, float)) else str(christ_pop)
-        pct_str = f" ({christ_pct:.1f}%)" if isinstance(christ_pct, (int, float)) else ""
-        items.append(
-            f'<div class="data-item"><div class="label">Christian Population</div>'
-            f'<div class="value">{esc(pop_str)}{esc(pct_str)}</div></div>'
-        )
-    gdelt_count = meta.get("gdelt_recent_articles")
-    if gdelt_count is not None:
-        items.append(
-            f'<div class="data-item"><div class="label">Recent News Events</div>'
-            f'<div class="value">{esc(gdelt_count)}</div></div>'
-        )
-    acn_class = meta.get("acn_classification")
-    if acn_class:
-        items.append(
-            f'<div class="data-item"><div class="label">ACN Classification</div>'
-            f'<div class="value">{esc(acn_class)}</div></div>'
-        )
-    vid_total = meta.get("vid_incidents_total")
-    if vid_total is not None:
-        items.append(
-            f'<div class="data-item"><div class="label">VID Incidents</div>'
-            f'<div class="value">{esc(vid_total)}</div></div>'
-        )
-    vid_killings = meta.get("vid_killings")
-    if vid_killings is not None:
-        items.append(
-            f'<div class="data-item"><div class="label">VID Killings</div>'
-            f'<div class="value">{esc(vid_killings)}</div></div>'
-        )
-    gcr_killed = meta.get("gcr_killed")
-    if gcr_killed:
-        items.append(
-            f'<div class="data-item"><div class="label">GCR Killed</div>'
-            f'<div class="value">{esc(gcr_killed)}</div></div>'
+        severity.append(
+            _data_item(
+                "opendoors_ranking",
+                "WWL Ranking",
+                linked_data_value(f"#{esc(od_rank)}", od_url),
+            )
         )
     gcr_score = meta.get("gcr_persecution_score")
     if gcr_score:
-        items.append(
-            f'<div class="data-item"><div class="label">GCR Persecution Score</div>'
-            f'<div class="value">{esc(gcr_score)}</div></div>'
-        )
+        severity.append(_data_item("gcr_score", "GCR Persecution Score", esc(gcr_score)))
+    acn_class = meta.get("acn_classification")
+    if acn_class:
+        severity.append(_data_item("acn", "ACN Classification", esc(acn_class)))
     uscirf_des = meta.get("uscirf_designation")
     if uscirf_des:
-        items.append(
-            f'<div class="data-item"><div class="label">USCIRF Designation</div>'
-            f'<div class="value">{linked_data_value(esc(uscirf_des), uscirf_url)}</div></div>'
+        severity.append(
+            _data_item(
+                "uscirf",
+                "USCIRF Designation",
+                linked_data_value(esc(uscirf_des), uscirf_url),
+            )
         )
-    if meta.get("state_dept_url"):
-        items.append(
-            f'<div class="data-item"><div class="label">U.S. State Dept IRF</div>'
-            f'<div class="value"><a href="{safe_url(meta.get("state_dept_url"))}" '
-            f'target="_blank" rel="noopener">Report</a></div></div>'
-        )
-    ohchr_count = meta.get("ohchr_recommendation_count")
-    if ohchr_count is not None:
-        items.append(
-            f'<div class="data-item"><div class="label">OHCHR Recommendations</div>'
-            f'<div class="value">{esc(ohchr_count)}</div></div>'
+
+    fh_status = meta.get("freedom_house_status")
+    if fh_status:
+        liberties.append(_data_item("freedom_house", "Freedom House", esc(fh_status)))
+    fh_pr = meta.get("freedom_house_pr")
+    fh_cl = meta.get("freedom_house_cl")
+    if fh_pr is not None and fh_cl is not None:
+        liberties.append(
+            _data_item("pr_cl", "PR / CL Score", f"{esc(fh_pr)} / {esc(fh_cl)}")
         )
     vdem_relig = meta.get("vdem_freedom_of_religion")
     if vdem_relig is not None:
         year = meta.get("vdem_year")
         year_s = f" ({int(year)})" if isinstance(year, (int, float)) else ""
-        items.append(
-            f'<div class="data-item"><div class="label">V-Dem Freedom of Religion{esc(year_s)}</div>'
-            f'<div class="value">{esc(vdem_relig)}</div></div>'
+        liberties.append(
+            _data_item(
+                "vdem_religion",
+                f"V-Dem Freedom of Religion{esc(year_s)}",
+                esc(vdem_relig),
+            )
         )
     vdem_repr = meta.get("vdem_religious_org_repression")
     if vdem_repr is not None:
-        items.append(
-            f'<div class="data-item"><div class="label">V-Dem Rel. Org. Repression</div>'
-            f'<div class="value">{esc(vdem_repr)}</div></div>'
+        liberties.append(
+            _data_item("vdem_repression", "V-Dem Rel. Org. Repression", esc(vdem_repr))
         )
-    if not items:
+    ohchr_count = meta.get("ohchr_recommendation_count")
+    if ohchr_count is not None:
+        liberties.append(
+            _data_item("ohchr", "OHCHR Recommendations", esc(ohchr_count))
+        )
+    if meta.get("state_dept_url"):
+        liberties.append(
+            _data_item(
+                "state_dept",
+                "U.S. State Dept IRF",
+                f'<a href="{safe_url(meta.get("state_dept_url"))}" '
+                f'target="_blank" rel="noopener">Report</a>',
+            )
+        )
+
+    christ_pop = meta.get("christian_population")
+    christ_pct = meta.get("christian_percentage")
+    if christ_pop is not None:
+        pop_str = f"{christ_pop:,}" if isinstance(christ_pop, (int, float)) else str(christ_pop)
+        pct_str = f" ({christ_pct:.1f}%)" if isinstance(christ_pct, (int, float)) else ""
+        demographics.append(
+            _data_item(
+                "christian_population",
+                "Christian Population",
+                f"{esc(pop_str)}{esc(pct_str)}",
+            )
+        )
+
+    vid_total = meta.get("vid_incidents_total")
+    if vid_total is not None:
+        incidents.append(_data_item("vid_incidents", "VID Incidents", esc(vid_total)))
+    vid_killings = meta.get("vid_killings")
+    if vid_killings is not None:
+        incidents.append(_data_item("vid_killings", "VID Killings", esc(vid_killings)))
+    gcr_killed = meta.get("gcr_killed")
+    if gcr_killed:
+        incidents.append(_data_item("gcr_killed", "GCR Killed", esc(gcr_killed)))
+    gdelt_count = meta.get("gdelt_recent_articles")
+    if gdelt_count is not None:
+        incidents.append(
+            _data_item("news_events", "Recent News Events", esc(gdelt_count))
+        )
+
+    groups = [
+        _data_group("Persecution severity", severity),
+        _data_group("Civil liberties", liberties),
+        _data_group("Demographics", demographics),
+        _data_group("Incidents", incidents),
+    ]
+    groups = [g for g in groups if g]
+    if not groups:
         return ""
-    joined = "\n          ".join(items)
-    return f'<div class="data-grid">\n          {joined}\n        </div>'
+    joined = "\n        ".join(groups)
+    return f'<div class="data-groups">\n        {joined}\n        </div>'
 
 
 def render_stub_note(country: dict) -> str:
@@ -493,6 +619,18 @@ def _incident_rows(articles: list[dict]) -> str:
             f"</div>"
         )
     return "\n          ".join(rows)
+
+
+def _dated_incident_count(articles: list[dict]) -> int:
+    return sum(1 for a in articles if str(a.get("date") or "").strip())
+
+
+def _incidents_list_html(articles: list[dict]) -> str:
+    joined = _incident_rows(articles)
+    classes = "incidents-list"
+    if _dated_incident_count(articles) >= 2:
+        classes += " timeline"
+    return f'<div class="{classes}">\n          {joined}\n        </div>'
 
 
 def render_recent_incidents(country: dict) -> str:
@@ -536,19 +674,17 @@ def render_recent_incidents(country: dict) -> str:
 
     parts: list[str] = []
     if articles:
-        joined = _incident_rows(articles)
         parts.append(
             "<section>\n"
             "        <h2>Latest News</h2>\n"
-            f'        <div class="incidents-list">\n          {joined}\n        </div>\n'
+            f"        {_incidents_list_html(articles)}\n"
             "      </section>"
         )
     if historical:
-        joined = _incident_rows(historical)
         parts.append(
             '<details class="historical-news">\n'
             "        <summary>Historical News</summary>\n"
-            f'        <div class="incidents-list">\n          {joined}\n        </div>\n'
+            f"        {_incidents_list_html(historical)}\n"
             "      </details>"
         )
     return "\n      ".join(parts)
@@ -616,9 +752,14 @@ def main():
         raise SystemExit("data/sources.yml is missing or has no 'sources' mapping")
 
     meta_sources = build_meta_sources(all_sources_lookup, source_statuses)
+    high_severity = sum(
+        1 for c in countries if isinstance(c, dict) and c.get("status") in HIGH_SEVERITY_STATUSES
+    )
     meta = {
         "generatedAt": data.get("fetched", {}).get("generated_at"),
         "sources": meta_sources,
+        "countryCount": len(countries),
+        "highSeverityCount": high_severity,
     }
     (ASSETS / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -681,21 +822,26 @@ def main():
 
     geo = {
         "type": "FeatureCollection",
-        "features": [
+        "features": [],
+    }
+    for c in countries:
+        props = {
+            "title": c["title"],
+            "slug": c["slug"],
+            "iso3": (c.get("iso3") or "").upper(),
+            "status": c.get("status", ""),
+            "level": c.get("persecution_level", ""),
+        }
+        od_score = (c.get("metadata") or {}).get("opendoors_score")
+        if od_score is not None:
+            props["opendoors_score"] = od_score
+        geo["features"].append(
             {
                 "type": "Feature",
                 "geometry": {"type": "Point", "coordinates": [c["lng"], c["lat"]]},
-                "properties": {
-                    "title": c["title"],
-                    "slug": c["slug"],
-                    "iso3": (c.get("iso3") or "").upper(),
-                    "status": c.get("status", ""),
-                    "level": c.get("persecution_level", ""),
-                },
+                "properties": props,
             }
-            for c in countries
-        ],
-    }
+        )
     (ASSETS / "geojson.json").write_text(json.dumps(geo, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (ASSETS / "search.json").write_text(
         json.dumps(
