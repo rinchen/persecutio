@@ -168,6 +168,11 @@ RSS_FEEDS = {
         "rss_url": "https://www.chinaaid.org/feeds/posts/default",
         "high_trust": True,
     },
+    "infochretienne": {
+        "source_label": "Info Chrétienne",
+        "rss_url": "https://www.infochretienne.com/flux-rss.rss",
+        "high_trust": True,
+    },
     "csi": {
         "source_label": "Christian Solidarity International",
         "rss_url": "https://csi-usa.org/feed/",

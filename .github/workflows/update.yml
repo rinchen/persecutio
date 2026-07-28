@@ -48,6 +48,7 @@ jobs:
           python3 scripts/fetch_releaseintl.py || true
           python3 scripts/fetch_vom.py || true
           python3 scripts/fetch_chinaaid.py || true
+          python3 scripts/fetch_infochretienne.py || true
           python3 scripts/fetch_osce.py || true
           python3 scripts/fetch_unsrforb.py || true
           python3 scripts/fetch_hrw.py || true

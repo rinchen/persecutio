@@ -31,6 +31,7 @@ NEWS_SOURCES = [
     ("releaseintl", "Release International", "releaseintl"),
     ("vom", "Voice of the Martyrs", "vom2026"),
     ("chinaaid", "ChinaAid", "chinaaid"),
+    ("infochretienne", "Info Chrétienne", "infochretienne"),
     ("osce", "OSCE / ODIHR", "osce"),
     ("unsrforb", "UN Special Rapporteur on FoRB", "unsrforb"),
     ("hrw", "Human Rights Watch", "hrw"),
@@ -786,6 +787,7 @@ def register_org_sources(sources: dict) -> None:
     for sid, title, url in (
         ("vom2026", "Voice of the Martyrs - Stories", "https://www.persecution.com/"),
         ("chinaaid", "ChinaAid - Persecution Monitoring", "https://www.chinaaid.org/"),
+        ("infochretienne", "Info Chrétienne - Actualités chrétiennes", "https://www.infochretienne.com/"),
         ("osce", "OSCE / ODIHR - Freedom of Religion or Belief", "https://www.osce.org/odihr/freedom-of-religion-or-belief"),
         ("unsrforb", "UN Special Rapporteur on Freedom of Religion or Belief", "https://www.ohchr.org/en/special-procedures/sr-religion-or-belief"),
         ("hrw", "Human Rights Watch", "https://www.hrw.org/"),
