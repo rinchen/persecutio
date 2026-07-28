@@ -1,6 +1,7 @@
 (function () {
   var updatedEl = document.getElementById('data-updated');
   var sourcesEl = document.getElementById('data-sources');
+  var statsEl = document.getElementById('map-stats');
   var script = document.querySelector('script[src*="sources.js"]');
   var metaUrl = (script && script.getAttribute('data-meta')) || 'assets/data/meta.json';
 
@@ -41,7 +42,18 @@
     );
   }
 
+  function renderStats(data) {
+    if (!statsEl || typeof data.countryCount !== 'number') return;
+    var text = data.countryCount + ' countries tracked';
+    if (typeof data.highSeverityCount === 'number') {
+      text += ' · ' + data.highSeverityCount + ' at high or extreme severity';
+    }
+    statsEl.textContent = text;
+    statsEl.hidden = false;
+  }
+
   function render(data) {
+    renderStats(data);
     if (updatedEl) {
       updatedEl.textContent = data.generatedAt
         ? 'Data updated ' + data.generatedAt
