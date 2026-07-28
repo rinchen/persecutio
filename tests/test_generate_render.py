@@ -9,6 +9,7 @@ from generate_website_data import (  # noqa: E402
     PAGE,
     STATUS_DISPLAY,
     build_meta_sources,
+    collect_all_reference_ids,
     esc,
     render_archive_notes,
     render_data_fields,
@@ -62,6 +63,49 @@ class TestRenderSources(unittest.TestCase):
 
     def test_missing_ids(self):
         self.assertEqual(render_sources(["missing"], {}), "Sources will be listed here.")
+
+    def test_dedupes_identical_urls(self):
+        lookup = {
+            "live": {
+                "title": "State Dept IRF - Brunei",
+                "url": "https://www.state.gov/reports/brunei/",
+                "date": "2023",
+            },
+            "archive": {
+                "title": "State Dept IRF — Brunei (archive)",
+                "url": "https://www.state.gov/reports/brunei/",
+                "date": "2023",
+            },
+        }
+        html = render_sources(["live", "archive"], lookup)
+        self.assertEqual(html.count("https://www.state.gov/reports/brunei/"), 1)
+        self.assertIn("State Dept IRF - Brunei", html)
+        self.assertNotIn("archive", html)
+
+
+class TestCollectAllReferenceIds(unittest.TestCase):
+    def test_unions_indicators_with_section_buckets(self):
+        ids = collect_all_reference_ids(
+            {
+                "historical": ["h1"],
+                "modern": ["m1", "h1"],
+                "indicators": ["i1", "m1"],
+            }
+        )
+        self.assertEqual(ids, ["h1", "m1", "i1"])
+
+    def test_modern_line_excludes_globals_when_country_specific_present(self):
+        """Document expected data shape: modern holds country cites; indicators hold globals."""
+        source_ids = {
+            "historical": ["statedepartment2023brunei"],
+            "modern": ["statedepartment2023brunei", "odwwl2025archivebrunei"],
+            "indicators": ["freedomhouse2024", "owid2024", "odwwl2026"],
+        }
+        _hist, mod = resolve_page_source_ids("brunei", source_ids)
+        self.assertNotIn("freedomhouse2024", mod)
+        self.assertNotIn("owid2024", mod)
+        self.assertIn("freedomhouse2024", collect_all_reference_ids(source_ids))
+        self.assertIn("odwwl2025archivebrunei", mod)
 
 
 class TestResolvePageSourceIds(unittest.TestCase):

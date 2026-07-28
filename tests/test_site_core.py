@@ -105,19 +105,21 @@ class TestSiteCore(unittest.TestCase):
         ]
         for country in data.get("countries") or []:
             meta = country.get("metadata") or {}
-            modern = set((country.get("source_ids") or {}).get("modern") or [])
-            modern |= set(meta.get("source_ids") or [])
+            cited = set()
+            for bucket in ("historical", "modern", "indicators"):
+                cited |= set((country.get("source_ids") or {}).get(bucket) or [])
+            cited |= set(meta.get("source_ids") or [])
             for key, sids in meta_to_sid:
                 if meta.get(key) is None:
                     continue
                 if sids is None:
                     self.assertTrue(
-                        any(s.startswith("uscirf") for s in modern),
+                        any(s.startswith("uscirf") for s in cited),
                         f"{country.get('title')} missing uscirf citation for {key}",
                     )
                     continue
                 self.assertTrue(
-                    any(s in modern for s in sids),
+                    any(s in cited for s in sids),
                     f"{country.get('title')} missing citation {sids} for {key}",
                 )
             incidents = meta.get("recent_incidents") or []
@@ -136,7 +138,7 @@ class TestSiteCore(unittest.TestCase):
                 self.assertTrue(country.get("historical"))
                 self.assertTrue(country.get("modern"))
                 self.assertTrue(country.get("iso3"))
-            for sid in modern:
+            for sid in cited:
                 self.assertIn(sid, sources, f"missing source registry entry {sid}")
 
     def test_generated_pages_have_sections(self):

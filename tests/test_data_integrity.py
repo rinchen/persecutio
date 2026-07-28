@@ -47,7 +47,7 @@ class TestCitationCoverage(unittest.TestCase):
     def test_no_duplicate_source_ids_within_bucket(self):
         for c in self.countries:
             ids = c.get("source_ids") or {}
-            for bucket in ("modern", "historical"):
+            for bucket in ("modern", "historical", "indicators"):
                 vals = ids.get(bucket) or []
                 self.assertEqual(
                     len(vals),

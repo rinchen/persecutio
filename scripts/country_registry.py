@@ -273,6 +273,35 @@ def geo_for(title: str) -> dict[str, Any] | None:
     }
 
 
+# Org-index / dataset cites that belong in source_ids.indicators, not the
+# Modern-Day Situation prose Sources line (unless used as empty-modern fallback).
+GLOBAL_INDICATOR_SOURCE_IDS = frozenset(
+    {
+        "freedomhouse2024",
+        "owid2024",
+        "odwwl2024",
+        "odwwl2026",
+        "vdem2025forb",
+        "gcr2026",
+        "vid2026",
+        "acn2024",
+        "acn2025",
+        "morningstarnews2026",
+        "csw2026",
+        "icc2026",
+        "forum18",
+        "mec",
+        "bitterwinter",
+        "releaseintl",
+        "gdelt2025",
+        "ohchr2024",
+        "statedepartment2023",
+    }
+)
+
+SOURCE_ID_SECTIONS = ("historical", "modern", "indicators")
+
+
 def ensure_source(
     sources: dict[str, dict],
     sid: str,
@@ -291,14 +320,58 @@ def ensure_source(
     return sid
 
 
+def citation_section_for(sid: str, default: str = "modern") -> str:
+    """Route global indicator/org-index ids to the indicators bucket."""
+    if sid in GLOBAL_INDICATOR_SOURCE_IDS:
+        return "indicators"
+    return default
+
+
+def _normalize_source_url(url: str | None) -> str:
+    return (url or "").rstrip("/").lower()
+
+
+def dedupe_source_ids_by_url(
+    source_ids: list[str], sources: dict[str, dict]
+) -> list[str]:
+    """Drop later ids that share a URL; prefer non-archive ids when both exist."""
+    preferred = [s for s in source_ids if "archive" not in s]
+    archives = [s for s in source_ids if "archive" in s]
+    seen: set[str] = set()
+    out: list[str] = []
+    for sid in preferred + archives:
+        if sid not in sources or sid in out:
+            continue
+        url = _normalize_source_url(sources[sid].get("url"))
+        key = url or f"id:{sid}"
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(sid)
+    # Preserve original relative order among winners
+    winners = set(out)
+    return [s for s in source_ids if s in winners]
+
+
+def refresh_citation_metadata(country: dict, sources: dict[str, dict]) -> None:
+    country.setdefault("metadata", {})
+    resolved: list[str] = []
+    for sec in SOURCE_ID_SECTIONS:
+        for s in country.get("source_ids", {}).get(sec) or []:
+            if s in sources and s not in resolved:
+                resolved.append(s)
+    country["metadata"]["source_ids"] = resolved
+    country["metadata"]["sources"] = [sources[s] for s in resolved]
+
+
 def attach_citation(
     country: dict, sid: str, sources: dict[str, dict], section: str = "modern"
 ) -> None:
     """Attach a citation id to a country's source_ids section and refresh metadata.
 
     section defaults to "modern" so existing callers are unchanged. Pass "historical"
-    to cite a background/structural source. Metadata lists reflect every cited source
-    across both sections in a stable order.
+    or "indicators" for background/structural cites. Metadata lists reflect every
+    cited source across all sections in a stable order.
     """
     if sid not in sources:
         return
@@ -307,11 +380,47 @@ def attach_citation(
     if sid not in ids:
         ids.append(sid)
     country["source_ids"][section] = ids
-    country.setdefault("metadata", {})
-    resolved: list[str] = []
-    for sec in ("historical", "modern"):
-        for s in country["source_ids"].get(sec) or []:
-            if s in sources and s not in resolved:
-                resolved.append(s)
-    country["metadata"]["source_ids"] = resolved
-    country["metadata"]["sources"] = [sources[s] for s in resolved]
+    refresh_citation_metadata(country, sources)
+
+
+def reconcile_citation_buckets(country: dict, sources: dict[str, dict]) -> None:
+    """Move global indexes out of modern, drop URL-duplicate twins, keep modern non-empty."""
+    country.setdefault("source_ids", {})
+    ids = country["source_ids"]
+    modern = [s for s in (ids.get("modern") or []) if s in sources]
+    indicators = [s for s in (ids.get("indicators") or []) if s in sources]
+    historical = [s for s in (ids.get("historical") or []) if s in sources]
+
+    kept_modern: list[str] = []
+    for sid in modern:
+        if sid in GLOBAL_INDICATOR_SOURCE_IDS:
+            if sid not in indicators:
+                indicators.append(sid)
+        else:
+            kept_modern.append(sid)
+
+    # Prefer a single Open Doors WWL index year when both are present
+    if "odwwl2026" in indicators and "odwwl2024" in indicators:
+        indicators = [s for s in indicators if s != "odwwl2024"]
+
+    all_cited = {*kept_modern, *indicators, *historical}
+    has_country_sd = any(
+        s.startswith("statedepartment") and s != "statedepartment2023" for s in all_cited
+    )
+    if has_country_sd:
+        indicators = [s for s in indicators if s != "statedepartment2023"]
+
+    kept_modern = dedupe_source_ids_by_url(kept_modern, sources)
+    indicators = dedupe_source_ids_by_url(indicators, sources)
+
+    if not kept_modern:
+        fallback_pool = [s for s in indicators if s in sources] or [
+            s for s in historical if s in sources
+        ]
+        if fallback_pool:
+            kept_modern = [fallback_pool[0]]
+
+    ids["modern"] = kept_modern
+    ids["indicators"] = indicators
+    ids["historical"] = historical
+    refresh_citation_metadata(country, sources)

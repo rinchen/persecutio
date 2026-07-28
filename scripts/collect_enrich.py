@@ -8,10 +8,13 @@ from typing import Any
 
 from christian_persecution import is_christian_persecution
 from country_registry import (
+    GLOBAL_INDICATOR_SOURCE_IDS,
     attach_citation,
+    citation_section_for,
     countries_for_article,
     ensure_source,
     geo_for,
+    reconcile_citation_buckets,
     resolve_country_name,
     slugify,
 )
@@ -329,7 +332,7 @@ def apply_archive_enrichment(c: dict, sources: dict, archive_by_slug: dict[str, 
             entry.get("url") or "",
             entry.get("date") or "",
         )
-        attach_citation(c, sid, sources)
+        attach_citation(c, sid, sources, section=citation_section_for(sid))
 
 
 def enrich_country(
@@ -355,6 +358,8 @@ def enrich_country(
     c.setdefault("source_ids", {})
     modern = list(c["source_ids"].get("modern") or [])
     c["source_ids"]["modern"] = [sid for sid in modern if sid in sources]
+    indicators = list(c["source_ids"].get("indicators") or [])
+    c["source_ids"]["indicators"] = [sid for sid in indicators if sid in sources]
 
     c.setdefault("metadata", {})
     meta = c["metadata"]
@@ -367,30 +372,32 @@ def enrich_country(
     meta["wiki_extract"] = wiki.get("extract") if isinstance(wiki, dict) else None
     meta["country_polygon"] = bool(iso in country_polygons)
 
-    # Re-sync citations from handwritten ids first
+    # Re-sync citations from handwritten ids first (globals land in indicators)
     for sid in list(c["source_ids"].get("modern") or []):
-        attach_citation(c, sid, sources)
+        attach_citation(c, sid, sources, section=citation_section_for(sid))
+    for sid in list(c["source_ids"].get("indicators") or []):
+        attach_citation(c, sid, sources, section=citation_section_for(sid, "indicators"))
 
     fh = (freedom_house.get("countries") or {}).get(title, {})
     if fh:
         meta["freedom_house_status"] = fh.get("status")
         meta["freedom_house_pr"] = fh.get("pr_score")
         meta["freedom_house_cl"] = fh.get("cl_score")
-        attach_citation(c, "freedomhouse2024", sources)
+        attach_citation(c, "freedomhouse2024", sources, section="indicators")
 
     od = (opendoors_data.get("countries") or {}).get(title, {})
     if od:
         meta["opendoors_ranking"] = od.get("ranking")
         meta["opendoors_score"] = od.get("score")
-        # Prefer newer WWL citation when present
+        # Prefer newer WWL citation when present; org index belongs in indicators
         od_sid = "odwwl2026" if "odwwl2026" in sources else "odwwl2024"
-        attach_citation(c, od_sid, sources)
+        attach_citation(c, od_sid, sources, section="indicators")
 
     owid = (owid_data.get("countries") or {}).get(title, {})
     if owid:
         meta["christian_population"] = owid.get("christian_population")
         meta["christian_percentage"] = owid.get("christian_percentage")
-        attach_citation(c, "owid2024", sources)
+        attach_citation(c, "owid2024", sources, section="indicators")
 
     vid_entry = (vid_data.get("countries") or {}).get(title, {})
     if vid_entry:
@@ -399,7 +406,7 @@ def enrich_country(
         meta["vid_breakdown"] = {
             k: v for k, v in vid_entry.items() if k != "total_incidents" and v
         }
-        attach_citation(c, "vid2026", sources)
+        attach_citation(c, "vid2026", sources, section="indicators")
 
     gcr_entry = (gcr_data.get("countries") or {}).get(title, {})
     if gcr_entry:
@@ -409,16 +416,21 @@ def enrich_country(
             meta["gcr_persecution_score"] = gcr_entry["persecution_score"]
         if gcr_entry.get("notes"):
             meta["gcr_notes"] = gcr_entry["notes"]
-        attach_citation(c, "gcr2026", sources)
+        attach_citation(c, "gcr2026", sources, section="indicators")
 
     acn_entry = (acn_data.get("countries") or {}).get(title, {})
     if acn_entry:
         meta["acn_classification"] = acn_entry.get("classification")
         if acn_entry.get("key_findings"):
             meta["acn_key_findings"] = acn_entry["key_findings"][:2]
-        attach_citation(c, "acn2025" if "acn2025" in sources else "acn2024", sources)
+        attach_citation(
+            c,
+            "acn2025" if "acn2025" in sources else "acn2024",
+            sources,
+            section="indicators",
+        )
 
-    # News feeds
+    # News feeds → indicators (org homepages, not country dossiers)
     for key, _label, sid in NEWS_SOURCES:
         blob = news_blobs.get(key) or {}
         arts = (blob.get("countries") or {}).get(title) or []
@@ -429,9 +441,9 @@ def enrich_country(
         if key == "gdelt":
             meta["gdelt_recent_articles"] = len(arts)
             meta["gdelt_sample_urls"] = [a.get("url", "") for a in arts[:3]]
-        attach_citation(c, sid, sources)
+        attach_citation(c, sid, sources, section="indicators")
 
-    # USCIRF
+    # USCIRF — country-specific → modern
     uscirf = uscirf_by_title.get(title)
     if uscirf and uscirf.get("status") in ("ok", "cached"):
         meta["uscirf_designation"] = uscirf.get("designation")
@@ -459,7 +471,7 @@ def enrich_country(
                     url,
                     sources[existing].get("date") or year,
                 )
-            attach_citation(c, existing, sources)
+            attach_citation(c, existing, sources, section="modern")
         else:
             ensure_source(
                 sources,
@@ -468,9 +480,9 @@ def enrich_country(
                 url or f"https://www.uscirf.gov/countries/{slug}",
                 year,
             )
-            attach_citation(c, sid, sources)
+            attach_citation(c, sid, sources, section="modern")
 
-    # State Dept IRF
+    # State Dept IRF — country report in modern; skip redundant global index
     sd = state_dept_by_title.get(title)
     if sd and sd.get("has_report"):
         meta["state_dept_url"] = sd.get("url") or ""
@@ -494,8 +506,7 @@ def enrich_country(
             sd.get("url") or "https://www.state.gov/international-religious-freedom-reports/",
             year,
         )
-        attach_citation(c, sid, sources)
-        attach_citation(c, "statedepartment2023", sources)
+        attach_citation(c, sid, sources, section="modern")
 
     # OHCHR
     ohchr = ohchr_by_title.get(title)
@@ -513,7 +524,7 @@ def enrich_country(
             meta["ohchr_recommendation_count"] = count
             if samples:
                 meta["ohchr_samples"] = samples[:2]
-            attach_citation(c, "ohchr2024", sources)
+            attach_citation(c, "ohchr2024", sources, section="indicators")
 
     latest, historical = build_country_news(title, news_blobs)
     if latest:
@@ -527,6 +538,7 @@ def enrich_country(
 
     # One-time legal archives (IRF / USCIRF / OD dossiers / V-Dem subset)
     apply_archive_enrichment(c, sources, archive_by_slug or {})
+    reconcile_citation_buckets(c, sources)
 
 
 def derive_status_from_signals(
@@ -591,6 +603,7 @@ def stub_indicator_source_ids(
     Mirrors the ids enrich_country attaches for these signals so that a stub which was
     discovered purely from score/report data (not news) still seeds a real background
     source instead of leaving source_ids.historical empty (which the renderer rejects).
+    Country-specific State Dept ids are included; the global IRF index is not.
     """
     ids: list[str] = []
     if (opendoors_data.get("countries") or {}).get(title):
@@ -605,7 +618,6 @@ def stub_indicator_source_ids(
     if sd and sd.get("has_report"):
         year = sd.get("_report_year") or "2023"
         ids.append(f"statedepartment{year}{slugify(title).replace('-', '')}")
-        ids.append("statedepartment2023")
     return list(dict.fromkeys(ids))
 
 
@@ -657,6 +669,10 @@ def create_stub_countries(
             )
         )
         discovering = list(dict.fromkeys(discovering))
+        modern_seed = [
+            s for s in discovering if s not in GLOBAL_INDICATOR_SOURCE_IDS
+        ] or list(discovering)
+        indicator_seed = [s for s in discovering if s in GLOBAL_INDICATOR_SOURCE_IDS]
         stub = {
             "title": geo["title"],
             "slug": geo["slug"],
@@ -677,7 +693,8 @@ def create_stub_countries(
             ),
             "source_ids": {
                 "historical": list(dict.fromkeys(discovering)),
-                "modern": list(dict.fromkeys(discovering)),
+                "modern": list(dict.fromkeys(modern_seed)),
+                "indicators": list(dict.fromkeys(indicator_seed)),
             },
             "pew_slug": "",
             "metadata": {
@@ -702,16 +719,20 @@ def create_stub_countries(
             news_blobs=news_blobs,
             archive_by_slug=archive_by_slug,
         )
-        # enrich_country only rewrites source_ids.modern; make sure the auto-generated
-        # historical narrative is backed by real sources too. Fall back to the enriched
-        # modern list so a stub never renders with an empty (cite-everything) section.
+        # enrich_country rewrites modern/indicators; make sure the auto-generated
+        # historical narrative is backed by real sources too. Fall back to modern
+        # then indicators so a stub never renders with an empty section.
         stub.setdefault("source_ids", {})
         modern_ids = [s for s in (stub["source_ids"].get("modern") or []) if s in sources]
+        indicator_ids = [
+            s for s in (stub["source_ids"].get("indicators") or []) if s in sources
+        ]
         hist_ids = [s for s in (stub["source_ids"].get("historical") or []) if s in sources]
         if not hist_ids:
-            hist_ids = list(modern_ids)
+            hist_ids = list(modern_ids) or list(indicator_ids)
         stub["source_ids"]["modern"] = modern_ids
         stub["source_ids"]["historical"] = hist_ids
+        stub["source_ids"]["indicators"] = indicator_ids
         # Ensure stub flag survives enrich
         stub["metadata"]["stub"] = True
         stub["metadata"]["auto_created_at"] = now

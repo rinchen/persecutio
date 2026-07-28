@@ -14,9 +14,11 @@ from collect_enrich import (  # noqa: E402
     build_recent_incidents,
     create_stub_countries,
     derive_status_from_signals,
+    enrich_country,
     load_uscirf_index,
     split_country_news,
 )
+from country_registry import reconcile_citation_buckets  # noqa: E402
 
 
 class TestDeriveStatus(unittest.TestCase):
@@ -251,13 +253,137 @@ class TestCreateStubCountries(unittest.TestCase):
         kenya = next(s for s in stubs if s["title"] == "Kenya")
         hist = kenya["source_ids"]["historical"]
         mod = kenya["source_ids"]["modern"]
+        indicators = kenya["source_ids"].get("indicators") or []
         self.assertTrue(hist, "historical must not be empty")
         self.assertTrue(mod, "modern must not be empty")
         self.assertIn("odwwl2024", hist)
+        # Generic OD index is an indicator cite; thin stubs may also keep it as a
+        # modern fallback so the section Sources line is never empty.
         self.assertIn("odwwl2024", mod)
+        self.assertTrue(
+            "odwwl2024" in indicators or "odwwl2024" in mod,
+            "odwwl2024 should be cited in indicators and/or modern fallback",
+        )
         # Every seeded id must resolve to a real source (no cite-everything fallback).
         self.assertTrue(all(sid in sources for sid in hist))
         self.assertTrue(all(sid in sources for sid in mod))
+        self.assertTrue(all(sid in sources for sid in indicators))
+
+
+class TestReconcileCitationBuckets(unittest.TestCase):
+    def test_moves_globals_to_indicators_and_drops_url_twins(self):
+        sources = {
+            "freedomhouse2024": {
+                "title": "Freedom House",
+                "url": "https://freedomhouse.org/report/freedom-world",
+                "date": "2024",
+            },
+            "statedepartment2023brunei": {
+                "title": "IRF Brunei",
+                "url": "https://www.state.gov/reports/brunei/",
+                "date": "2023",
+            },
+            "statedepartment2023archivebrunei": {
+                "title": "IRF Brunei archive",
+                "url": "https://www.state.gov/reports/brunei/",
+                "date": "2023",
+            },
+            "statedepartment2023": {
+                "title": "IRF index",
+                "url": "https://www.state.gov/international-religious-freedom-reports/",
+                "date": "2023",
+            },
+            "odwwl2025archivebrunei": {
+                "title": "OD Brunei",
+                "url": "https://www.opendoors.org/brunei.pdf",
+                "date": "2025",
+            },
+        }
+        country = {
+            "source_ids": {
+                "historical": ["statedepartment2023brunei"],
+                "modern": [
+                    "freedomhouse2024",
+                    "statedepartment2023brunei",
+                    "statedepartment2023archivebrunei",
+                    "statedepartment2023",
+                    "odwwl2025archivebrunei",
+                ],
+                "indicators": [],
+            },
+            "metadata": {},
+        }
+        reconcile_citation_buckets(country, sources)
+        modern = country["source_ids"]["modern"]
+        indicators = country["source_ids"]["indicators"]
+        self.assertNotIn("freedomhouse2024", modern)
+        self.assertIn("freedomhouse2024", indicators)
+        self.assertIn("statedepartment2023brunei", modern)
+        self.assertNotIn("statedepartment2023archivebrunei", modern)
+        self.assertNotIn("statedepartment2023", modern)
+        self.assertNotIn("statedepartment2023", indicators)
+        self.assertIn("odwwl2025archivebrunei", modern)
+
+    def test_enrich_routes_indicators_away_from_modern(self):
+        sources = {
+            "freedomhouse2024": {
+                "title": "Freedom House",
+                "url": "https://freedomhouse.org/report/freedom-world",
+                "date": "2024",
+            },
+            "owid2024": {
+                "title": "OWID",
+                "url": "https://ourworldindata.org/grapher/religious-composition",
+                "date": "2024",
+            },
+            "odwwl2026": {
+                "title": "OD WWL",
+                "url": "https://www.opendoors.org/en-US/persecution/countries/",
+                "date": "2026",
+            },
+            "statedepartment2023": {
+                "title": "IRF index",
+                "url": "https://www.state.gov/international-religious-freedom-reports/",
+                "date": "2023",
+            },
+        }
+        country = {
+            "title": "Kenya",
+            "slug": "kenya",
+            "iso3": "KEN",
+            "source_ids": {"historical": ["odwwl2026"], "modern": ["odwwl2026"]},
+            "metadata": {},
+        }
+        enrich_country(
+            country,
+            sources=sources,
+            country_polygons={},
+            wiki=None,
+            freedom_house={"countries": {"Kenya": {"status": "Partly Free", "pr_score": 4, "cl_score": 4}}},
+            opendoors_data={"countries": {"Kenya": {"ranking": 40, "score": 55}}},
+            owid_data={"countries": {"Kenya": {"christian_population": 1, "christian_percentage": 80}}},
+            vid_data={},
+            gcr_data={},
+            acn_data={},
+            uscirf_by_title={},
+            state_dept_by_title={
+                "Kenya": {
+                    "has_report": True,
+                    "url": "https://www.state.gov/reports/kenya/",
+                    "_report_year": "2023",
+                    "executive_summary": "Summary.",
+                }
+            },
+            ohchr_by_title={},
+            news_blobs={},
+        )
+        modern = country["source_ids"]["modern"]
+        indicators = country["source_ids"]["indicators"]
+        self.assertIn("statedepartment2023kenya", modern)
+        self.assertNotIn("freedomhouse2024", modern)
+        self.assertIn("freedomhouse2024", indicators)
+        self.assertIn("owid2024", indicators)
+        self.assertNotIn("statedepartment2023", indicators)
 
 
 class TestLoadUscirfIndex(unittest.TestCase):
