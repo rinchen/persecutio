@@ -26,6 +26,7 @@ Public definitions also appear on [about.html](about.html). Keep About’s Quali
 | **C** | Supplementary / noisier (general news, wide aggregators, sparse feeds); still lawful to cite | Wire last; skip only if fetch impossible |
 | **Infra** | Not FoRB content (e.g. map boundaries) | Keep; not a content-quality score |
 | **X** | Do not use — legal block, defunct/no feed, proprietary data ban, or mission-unfit | About “unused” only; no fetcher |
+| **A/B/C on unused** | Content could fit, but not wired (e.g. bot-blocked / no nightly surface) | About “unused” with A/B/C Quality + ops reason; revisit if a feed appears |
 
 **Score on:** mission fit, license gate, fetchability, provenance, coverage usefulness, ops risk.  
 **Do not** down-tier to X for overlap alone.
@@ -39,7 +40,7 @@ Public definitions also appear on [about.html](about.html). Keep About’s Quali
 5. **Citation bucket** — Org-index and news-org homepage ids go in `source_ids.indicators` via `GLOBAL_INDICATOR_SOURCE_IDS` (never the Modern-Day Situation Sources line unless empty-modern fallback). Country dossiers stay in `modern`.
 6. **Wire** — `data/sources.yml`, `NEWS_SOURCES` / enrich, `SOURCE_GROUP_DEFS` + status map in `generate_website_data.py`, soft-fail line in `.github/workflows/update.yml`, About used row + Quality cell, footer chip group.
 7. **Populate** — Run the new fetcher(s) + collect/enrich + generate and **commit** `data/countries.yml` / `countries/*.html` / `data/sources.yml` before calling the work done. `data/fetched/` is gitignored.
-8. **Unused** — If tier X, add About unused row with reason; no fetcher.
+8. **Unused** — If rejected or not wireable, add an About unused row with Quality (**X** for legal/mission/permanent ops block; **A/B/C** when content fits but fetch is impossible for now) and reason; no fetcher until a surface exists.
 
 ## Pointers
 
