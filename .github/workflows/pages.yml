@@ -10,6 +10,7 @@ on:
       - 'index.html'
       - 'about.html'
       - 'faq.html'
+      - 'act.html'
       - 'countries/**'
       - 'assets/**'
       - 'LICENSE'
@@ -33,7 +34,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          cp index.html about.html faq.html LICENSE _site/
+          cp index.html about.html faq.html act.html LICENSE _site/
           cp -R countries assets _site/
           touch _site/.nojekyll
           find _site/assets -name '*.bak-*' -delete 2>/dev/null || true
