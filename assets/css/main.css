@@ -283,6 +283,11 @@ section + section { margin-top: 1.35rem; }
   font-size: 0.9375rem;
   color: var(--color-text-muted);
 }
+.map-stats {
+  margin: 0.55rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
 
 /* Search */
 .search { position: relative; }
@@ -465,8 +470,14 @@ section + section { margin-top: 1.35rem; }
   height: 10px;
 }
 .country-hero .data-grid {
-  margin-top: 16px;
+  margin-top: 0;
   gap: 12px;
+}
+.country-hero .data-groups {
+  margin-top: 16px;
+}
+.country-hero .data-group + .data-group {
+  margin-top: 14px;
 }
 .country-hero .data-item {
   background: rgb(255 255 255 / 55%);
@@ -495,11 +506,25 @@ section + section { margin-top: 1.35rem; }
 .section-sources strong { color: var(--color-text); }
 
 /* Data grid (country pages) */
+.data-groups {
+  margin-top: 14px;
+}
+.data-group + .data-group {
+  margin-top: 12px;
+}
+.data-group-label {
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
 .data-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
   gap: 10px;
-  margin-top: 14px;
+  margin-top: 0;
 }
 .data-item {
   background: var(--color-surface-2);
@@ -512,6 +537,20 @@ section + section { margin-top: 1.35rem; }
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+}
+.data-item .lucide-icon {
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+  stroke-width: 1.5;
+}
+@media (hover: hover) and (pointer: fine) {
+  .data-item:hover .lucide-icon {
+    stroke: var(--color-accent);
+  }
 }
 .data-item .value {
   color: var(--color-text);
@@ -530,6 +569,27 @@ section + section { margin-top: 1.35rem; }
   color: var(--color-accent);
   text-decoration-color: var(--color-accent);
 }
+.score-bar {
+  margin-top: 8px;
+  height: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-border) 80%, transparent);
+  overflow: hidden;
+}
+.score-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--hero-accent, var(--color-accent));
+  min-width: 0;
+}
+
+.card .prose {
+  max-width: 70ch;
+}
+.card .prose p {
+  margin: 0;
+}
 
 /* Country news (latest + historical) */
 .incidents-list { margin-top: 10px; }
@@ -539,6 +599,29 @@ section + section { margin-top: 1.35rem; }
   font-size: 0.8125rem;
 }
 .incident-item:last-child { border-bottom: none; }
+.incidents-list.timeline {
+  position: relative;
+  padding-left: 1.15rem;
+  border-left: 2px solid color-mix(in srgb, var(--color-border) 85%, transparent);
+}
+.incidents-list.timeline .incident-item {
+  position: relative;
+  padding-left: 0.35rem;
+  border-bottom: none;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+.incidents-list.timeline .incident-item::before {
+  content: "";
+  position: absolute;
+  left: -1.28rem;
+  top: 1rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-surface);
+}
 .incident-source {
   display: inline-block;
   background: #fee2e2;
@@ -722,6 +805,10 @@ section + section { margin-top: 1.35rem; }
   padding: 8px 14px;
   border-radius: var(--radius);
   margin-top: 1.75rem;
+}
+.back-link--top {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 @media (hover: hover) and (pointer: fine) {
   .back-link:hover { background: var(--color-accent-soft); border-color: var(--color-accent); }

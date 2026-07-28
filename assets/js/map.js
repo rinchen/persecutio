@@ -87,9 +87,13 @@
           });
           var title = f.properties && f.properties.title ? String(f.properties.title) : '';
           var level = f.properties && f.properties.level ? String(f.properties.level) : '';
+          var score = f.properties && f.properties.opendoors_score;
           var label = escapeHtml(title);
           if (level) {
             label += ' \u2014 ' + escapeHtml(level);
+          }
+          if (score != null && score !== '') {
+            label += ' \u00b7 OD ' + escapeHtml(String(score));
           }
           l.bindTooltip(label, {
             sticky: true,
