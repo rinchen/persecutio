@@ -305,7 +305,7 @@
         </div>
 
         <h3>Sources evaluated but not used</h3>
-        <p>Candidates below are quality tier <strong>X</strong>: reviewed against this project&rsquo;s needs (Christian-persecution / FoRB focus, redistributable or link-friendly terms, and fit for country-page documentation) and not used in the pipeline or country narratives. Overlap with another source alone is not a reason for rejection.</p>
+        <p>Candidates below were reviewed and are <strong>not</strong> used in the pipeline or country narratives. The Quality column is the same A/B/C/Infra/X scale as above: <strong>X</strong> means legal, mission, or permanent ops block; <strong>A/B/C</strong> means the content could fit but we are not wiring it yet (usually no workable nightly feed). Overlap with another source alone is not a reason for rejection.</p>
         <div class="table-wrap">
           <table class="sources-table">
             <thead>
@@ -350,6 +350,21 @@
                 <td><a href="https://www.baylor.edu/library/" target="_blank" rel="noopener">Keston Center (Baylor)</a></td>
                 <td>X</td>
                 <td>Archival research collection; reproduction generally requires written permission; no public incident feed.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.asianews.it/" target="_blank" rel="noopener">AsiaNews (PIME)</a></td>
+                <td>B</td>
+                <td>Strong Asia religious-freedom wire and citation-friendly for link + excerpt, but live site/RSS returned bot blocks (HTTP 403) with no workable nightly fetch surface after evaluation.</td>
+              </tr>
+              <tr>
+                <td><a href="https://stefanus.no/" target="_blank" rel="noopener">Stefanus Alliance</a></td>
+                <td>C</td>
+                <td>Norwegian FoRB mission reporting that could corroborate incidents, but no reliable public RSS/HTML listing found for automated nightly ingest.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.ijm.org/" target="_blank" rel="noopener">International Justice Mission</a></td>
+                <td>C</td>
+                <td>Some FoRB overlap with anti-violence casework; site feeds returned bot blocks (HTTP 403) and FoRB signal is thinner than specialist persecution outlets, so not wired.</td>
               </tr>
             </tbody>
           </table>
