@@ -46,6 +46,20 @@ jobs:
           python3 scripts/fetch_mec.py || true
           python3 scripts/fetch_bitterwinter.py || true
           python3 scripts/fetch_releaseintl.py || true
+          python3 scripts/fetch_vom.py || true
+          python3 scripts/fetch_chinaaid.py || true
+          python3 scripts/fetch_osce.py || true
+          python3 scripts/fetch_unsrforb.py || true
+          python3 scripts/fetch_hrw.py || true
+          python3 scripts/fetch_amnesty.py || true
+          python3 scripts/fetch_barnabas.py || true
+          python3 scripts/fetch_csi.py || true
+          python3 scripts/fetch_cna.py || true
+          python3 scripts/fetch_hrwf.py || true
+          python3 scripts/fetch_adf.py || true
+          python3 scripts/fetch_wea.py || true
+          python3 scripts/fetch_jubilee.py || true
+          python3 scripts/fetch_ippforb.py || true
 
           # Gate on primary status JSON only
           python3 - <<'PY'

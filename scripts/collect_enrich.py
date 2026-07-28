@@ -29,6 +29,20 @@ NEWS_SOURCES = [
     ("mec", "Middle East Concern", "mec"),
     ("bitterwinter", "Bitter Winter", "bitterwinter"),
     ("releaseintl", "Release International", "releaseintl"),
+    ("vom", "Voice of the Martyrs", "vom2026"),
+    ("chinaaid", "ChinaAid", "chinaaid"),
+    ("osce", "OSCE / ODIHR", "osce"),
+    ("unsrforb", "UN Special Rapporteur on FoRB", "unsrforb"),
+    ("hrw", "Human Rights Watch", "hrw"),
+    ("amnesty", "Amnesty International", "amnesty"),
+    ("barnabas", "Barnabas Aid", "barnabas"),
+    ("csi", "Christian Solidarity International", "csi"),
+    ("cna", "Catholic News Agency", "cna"),
+    ("hrwf", "Human Rights Without Frontiers", "hrwf"),
+    ("adf", "ADF International", "adf"),
+    ("wea", "WEA Religious Liberty Commission", "wea"),
+    ("jubilee", "Jubilee Campaign", "jubilee"),
+    ("ippforb", "IPPFoRB", "ippforb"),
     ("gdelt", "GDELT", "gdelt2025"),
 ]
 
@@ -769,3 +783,20 @@ def register_org_sources(sources: dict) -> None:
         "https://releaseinternational.org/",
         "2026",
     )
+    for sid, title, url in (
+        ("vom2026", "Voice of the Martyrs - Stories", "https://www.persecution.com/"),
+        ("chinaaid", "ChinaAid - Persecution Monitoring", "https://www.chinaaid.org/"),
+        ("osce", "OSCE / ODIHR - Freedom of Religion or Belief", "https://www.osce.org/odihr/freedom-of-religion-or-belief"),
+        ("unsrforb", "UN Special Rapporteur on Freedom of Religion or Belief", "https://www.ohchr.org/en/special-procedures/sr-religion-or-belief"),
+        ("hrw", "Human Rights Watch", "https://www.hrw.org/"),
+        ("amnesty", "Amnesty International", "https://www.amnesty.org/"),
+        ("barnabas", "Barnabas Aid - Persecuted Church News", "https://www.barnabasaid.org/"),
+        ("csi", "Christian Solidarity International", "https://www.csi-int.org/"),
+        ("cna", "Catholic News Agency", "https://www.catholicnewsagency.com/"),
+        ("hrwf", "Human Rights Without Frontiers", "https://hrwf.eu/"),
+        ("adf", "ADF International", "https://adfinternational.org/"),
+        ("wea", "World Evangelical Alliance - Religious Liberty", "https://worldea.org/"),
+        ("jubilee", "Jubilee Campaign", "https://jubileecampaign.org/"),
+        ("ippforb", "IPPFoRB - Parliamentarians for FoRB", "https://ippforb.com/"),
+    ):
+        ensure_source(sources, sid, title, url, "2026")

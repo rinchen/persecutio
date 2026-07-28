@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from collect_enrich import (  # noqa: E402
+    NEWS_SOURCES,
     collect_feed_titles,
     create_stub_countries,
     enrich_country,
@@ -1913,14 +1914,7 @@ def main():
     gcr_data = load_fetched_json(FETCHED, "gcr_stats.json")
     acn_data = load_fetched_json(FETCHED, "acn_report.json")
     news_blobs = {
-        "morningstarnews": load_fetched_json(FETCHED, "morningstarnews.json"),
-        "csw": load_fetched_json(FETCHED, "csw.json"),
-        "icc": load_fetched_json(FETCHED, "icc.json"),
-        "forum18": load_fetched_json(FETCHED, "forum18.json"),
-        "mec": load_fetched_json(FETCHED, "mec.json"),
-        "bitterwinter": load_fetched_json(FETCHED, "bitterwinter.json"),
-        "releaseintl": load_fetched_json(FETCHED, "releaseintl.json"),
-        "gdelt": load_fetched_json(FETCHED, "gdelt.json"),
+        key: load_fetched_json(FETCHED, f"{key}.json") for key, _label, _sid in NEWS_SOURCES
     }
     uscirf_by_title = load_uscirf_index(FETCHED)
     state_dept_by_title = load_state_dept_index(FETCHED)
@@ -2088,6 +2082,20 @@ def main():
                 "mec": "data/fetched/mec.json",
                 "bitterwinter": "data/fetched/bitterwinter.json",
                 "releaseintl": "data/fetched/releaseintl.json",
+                "vom": "data/fetched/vom.json",
+                "chinaaid": "data/fetched/chinaaid.json",
+                "osce": "data/fetched/osce.json",
+                "unsrforb": "data/fetched/unsrforb.json",
+                "hrw": "data/fetched/hrw.json",
+                "amnesty": "data/fetched/amnesty.json",
+                "barnabas": "data/fetched/barnabas.json",
+                "csi": "data/fetched/csi.json",
+                "cna": "data/fetched/cna.json",
+                "hrwf": "data/fetched/hrwf.json",
+                "adf": "data/fetched/adf.json",
+                "wea": "data/fetched/wea.json",
+                "jubilee": "data/fetched/jubilee.json",
+                "ippforb": "data/fetched/ippforb.json",
                 "uscirf": "data/fetched/uscirf/index.json",
                 "state_dept": "data/fetched/state_dept/index.json",
                 "ohchr": "data/fetched/ohchr/index.json",

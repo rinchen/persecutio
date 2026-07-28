@@ -158,6 +158,99 @@ RSS_FEEDS = {
         "rss_url": "https://releaseinternational.org/feed/",
         "high_trust": True,
     },
+    "vom": {
+        "source_label": "Voice of the Martyrs",
+        "rss_url": "https://www.persecution.com/stories/feed/",
+        "high_trust": True,
+    },
+    "chinaaid": {
+        "source_label": "ChinaAid",
+        "rss_url": "https://www.chinaaid.org/feeds/posts/default",
+        "high_trust": True,
+    },
+    "csi": {
+        "source_label": "Christian Solidarity International",
+        "rss_url": "https://csi-usa.org/feed/",
+        "high_trust": True,
+    },
+    "cna": {
+        "source_label": "Catholic News Agency",
+        "rss_url": "https://www.catholicnewsagency.com/rss/news.xml",
+        "high_trust": False,
+    },
+    "hrw": {
+        "source_label": "Human Rights Watch",
+        "rss_url": "https://www.hrw.org/rss",
+        "high_trust": True,
+        "require_any": [
+            "religion",
+            "religious",
+            "christian",
+            "church",
+            "blasphemy",
+            "apostasy",
+            "faith",
+            "worship",
+            "forb",
+        ],
+    },
+    "amnesty": {
+        "source_label": "Amnesty International",
+        "rss_url": "https://www.amnesty.org/en/latest/rss/",
+        "high_trust": True,
+        "require_any": [
+            "religion",
+            "religious",
+            "christian",
+            "church",
+            "blasphemy",
+            "apostasy",
+            "faith",
+            "worship",
+            "forb",
+        ],
+    },
+    "hrwf": {
+        "source_label": "Human Rights Without Frontiers",
+        "rss_url": "https://hrwf.eu/feed/",
+        "high_trust": True,
+    },
+    "wea": {
+        "source_label": "WEA Religious Liberty Commission",
+        "rss_url": "https://worldea.org/feed/",
+        "high_trust": True,
+    },
+    "adf": {
+        "source_label": "ADF International",
+        "rss_url": "https://www.adfinternational.org/feed/",
+        "high_trust": True,
+    },
+    "jubilee": {
+        "source_label": "Jubilee Campaign",
+        "rss_url": "https://jubileecampaign.org/feed/",
+        "high_trust": True,
+    },
+    "ippforb": {
+        "source_label": "IPPFoRB",
+        "rss_url": "https://ippforb.com/feed/",
+        "high_trust": True,
+    },
+    "unsrforb": {
+        "source_label": "UN Special Rapporteur on FoRB",
+        "rss_url": "https://www.ohchr.org/en/rss.xml",
+        "high_trust": True,
+        "require_any": [
+            "religion",
+            "belief",
+            "forb",
+            "christian",
+            "church",
+            "blasphemy",
+            "apostasy",
+            "religious",
+            "special rapporteur",
+        ],
+    },
 }
 
 
@@ -180,6 +273,13 @@ def run_rss_fetcher(
     if high_trust is None:
         high_trust = bool(cfg.get("high_trust", False))
     output = output or (FETCHED / f"{name}.json")
+    require_any = [str(x).lower() for x in (cfg.get("require_any") or [])]
+
+    def extra_filter(title: str, desc: str, cats: list[str]) -> bool:
+        if not require_any:
+            return True
+        blob = f"{title} {desc} {' '.join(cats)}".lower()
+        return any(token in blob for token in require_any)
 
     print(f"Fetching {source_label} RSS...")
     cached = load_json_cache(output)
@@ -202,7 +302,10 @@ def run_rss_fetcher(
         exit_for_status("failed")
 
     articles, parse_err = parse_rss_items(
-        xml_text, source_label=source_label, high_trust=high_trust
+        xml_text,
+        source_label=source_label,
+        high_trust=high_trust,
+        extra_filter=extra_filter if require_any else None,
     )
     if parse_err:
         if cached:

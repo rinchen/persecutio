@@ -64,7 +64,7 @@ class TestSiteCore(unittest.TestCase):
         meta = json.loads((ASSETS / "meta.json").read_text(encoding="utf-8"))
         sources = meta.get("sources") or []
         self.assertTrue(sources)
-        self.assertLessEqual(len(sources), 30)
+        self.assertLessEqual(len(sources), 50)
         self.assertGreaterEqual(len(sources), 8)
 
         by_id = {s["id"]: s for s in sources}
@@ -72,7 +72,21 @@ class TestSiteCore(unittest.TestCase):
             self.assertIn(expected, by_id, f"missing grouped source {expected}")
             self.assertIn(by_id[expected].get("label"), {"UC", "OD", "Pew", "NE", "ACN", "BBC"})
 
-        for optional in ("morningstarnews", "vid", "gcr", "csw", "icc", "freedomhouse", "gdelt", "owid"):
+        for optional in (
+            "morningstarnews",
+            "vid",
+            "gcr",
+            "csw",
+            "icc",
+            "freedomhouse",
+            "gdelt",
+            "owid",
+            "vom",
+            "chinaaid",
+            "hrw",
+            "amnesty",
+            "barnabas",
+        ):
             if optional in by_id:
                 self.assertIn(by_id[optional].get("status"), {"ok", "partial", "error", "skipped", "cached"})
 
