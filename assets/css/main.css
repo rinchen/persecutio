@@ -1053,3 +1053,68 @@ button:focus-visible {
   white-space: nowrap;
   font-size: 0.95em;
 }
+
+/* Act page */
+.post .action-points {
+  margin: 0.65rem 0 1rem;
+}
+.post .region-panel {
+  margin: 0.65rem 0;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+  padding: 0.15rem 0.85rem 0.35rem;
+}
+.post .region-panel > summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.65rem 0;
+  list-style: none;
+}
+.post .region-panel > summary::-webkit-details-marker {
+  display: none;
+}
+.post .region-panel > summary::before {
+  content: "▸ ";
+  color: var(--color-text-muted);
+}
+.post .region-panel[open] > summary::before {
+  content: "▾ ";
+}
+.post .rep-list {
+  margin: 0 0 0.85rem;
+  padding-left: 1.15rem;
+}
+.post .org-cards {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1rem 0 0.5rem;
+}
+.post .org-card {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  background: var(--color-surface-2);
+}
+.post .org-card--primary {
+  border-color: color-mix(in srgb, var(--color-accent) 45%, var(--glass-border));
+  background: color-mix(in srgb, var(--color-accent-soft) 55%, var(--color-surface-2));
+}
+.post .org-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  border: none;
+  padding: 0;
+}
+.post .org-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.post .cite-list {
+  font-size: 0.875rem;
+}
+.post .cite-list li + li {
+  margin-top: 0.35rem;
+}
+

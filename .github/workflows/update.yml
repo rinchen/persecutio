@@ -154,6 +154,7 @@ jobs:
             index.html \
             about.html \
             faq.html \
+            act.html \
             assets/css/ \
             assets/js/ \
             assets/img/ || true
@@ -166,7 +167,7 @@ jobs:
       - name: Stage public site for Pages
         run: |
           mkdir -p _site
-          cp index.html about.html faq.html LICENSE _site/
+          cp index.html about.html faq.html act.html LICENSE _site/
           cp -R countries assets _site/
           touch _site/.nojekyll
           # Do not publish scrape caches, scripts, tests, or local backups
