@@ -55,7 +55,7 @@
     <div class="card">
       <article class="post">
         <h1>About this site</h1>
-        <p>This is a static site hosted on GitHub Pages, with a Nostr/nsite mirror for censorship-resistant access. There is no application server. Country pages and index data are generated from structured source records and updated automatically via GitHub Actions.</p>
+        <p>This is a static site hosted on GitHub Pages, with a Nostr/nsite mirror for <a href="#censorship-resistant-access">censorship-resistant access</a>. There is no application server. Country pages and index data are generated from structured source records and updated automatically via GitHub Actions.</p>
 
         <h2>What the map shows</h2>
         <p>The map uses color-coded markers to reflect country-level persecution severity: red for Extreme/Very High, orange for High, yellow for Moderate, and blue for Low. Clicking a country opens a page with historical background, modern context, data fields (scores and statistics when available), recent incident samples, and linked sources.</p>
@@ -661,7 +661,7 @@
         <p>A GitHub Actions workflow runs <strong>daily</strong> (and on manual dispatch). It fetches external sources, regenerates country pages and JSON assets, runs tests, commits data updates, and deploys the public site to the <code>gh-pages</code> branch. After a successful Pages deploy, the same public files are republished to Nostr via nsite. Same-repo pull requests get a sticky preview link under <code>/pr-preview/pr-N/</code>.</p>
         <p><strong>Primary</strong> sources (Open Doors, Freedom House, OWID, USCIRF, State Dept) gate the job: only a clean <code>ok</code> status proceeds; <code>failed</code>, <code>partial</code>, and <code>cached</code> abort generate/deploy. <strong>Secondary</strong> sources (see the used-sources table above — MSN, GDELT, OHCHR, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International, VOM, ChinaAid, Info Chrétienne, OSCE, UNSR FoRB, HRW, Amnesty, Barnabas, CSI, CNA, Fides, ACI Prensa, HRWF, ADF, WEA, Jubilee, IPPFoRB, and others) enrich when available and never abort deploy; failures are summarized as warnings. Only public site files are uploaded to Pages &mdash; not scrape caches under <code>data/fetched/</code> (runtime-only; not tracked in git).</p>
 
-        <h2>Censorship-resistant access</h2>
+        <h2 id="censorship-resistant-access">Censorship-resistant access</h2>
         <p>The site is also published on Nostr via nsite (same content as GitHub Pages; republished automatically after successful deploys). Use either:</p>
         <ul>
           <li><strong>Gateway (browser):</strong> <a href="https://2vu4veopeh8g2tkli0pmbu2gtrmcicht56a5k9edx63jy6l7tcpersecutio.nsite.lol/" target="_blank" rel="noopener">https://2vu4veopeh8g2tkli0pmbu2gtrmcicht56a5k9edx63jy6l7tcpersecutio.nsite.lol/</a></li>
