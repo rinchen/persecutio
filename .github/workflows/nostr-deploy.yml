@@ -1,0 +1,29 @@
+name: Deploy to Nostr
+
+on:
+  workflow_run:
+    workflows: ["Deploy Pages", "Update Persecutio"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - name: Deploy to Nostr/Blossom
+        uses: sandwichfarm/nsite-action@v0.5.1
+        with:
+          nbunksec: ${{ secrets.NBUNK_SECRET }}
+          directory: '.'
+          name: 'persecutio'
+          relays: |
+            wss://relay.nsite.lol
+            wss://nos.lol
+            wss://relay.nostr.band
+            wss://relay.primal.net
+          servers: |
+            https://cdn.hzrd149.com
