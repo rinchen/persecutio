@@ -72,6 +72,63 @@ class TestChristianFilter(unittest.TestCase):
             )
         )
 
+    def test_accepts_christian_girls_trafficked(self):
+        self.assertTrue(
+            is_christian_persecution(
+                title="Christian girls trafficked for forced marriage in Pakistan",
+                description="",
+            )
+        )
+
+    def test_accepts_nun_enslaved(self):
+        self.assertTrue(
+            is_christian_persecution(
+                title="Nun enslaved in scam compound in Myanmar",
+                description="",
+            )
+        )
+
+    def test_accepts_pastor_family_bonded_labor(self):
+        self.assertTrue(
+            is_christian_persecution(
+                title="Pastor's family sold into bonded labor in India",
+                description="",
+            )
+        )
+
+    def test_rejects_talitha_kum_advocacy(self):
+        self.assertFalse(
+            is_christian_persecution(
+                title="Catholic sisters release human trafficking annual report",
+                description="Talitha Kum International outlines anti-trafficking work",
+            )
+        )
+
+    def test_rejects_ilo_trafficking_no_christian(self):
+        self.assertFalse(
+            is_christian_persecution(
+                title="ILO human trafficking report",
+                description="Modern slavery affects 50 million people worldwide",
+            )
+        )
+
+    def test_rejects_church_teaches_against_trafficking(self):
+        self.assertFalse(
+            is_christian_persecution(
+                title="Church teaches against human trafficking",
+                description="World Day Against Trafficking in Persons message",
+            )
+        )
+
+    def test_high_trust_rejects_trafficking_alone(self):
+        self.assertFalse(
+            is_christian_persecution(
+                title="Human trafficking rising in Asia",
+                description="",
+                high_trust_source=True,
+            )
+        )
+
 
 class TestMergeOrder(unittest.TestCase):
     def test_normalize_date(self):
