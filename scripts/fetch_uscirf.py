@@ -54,7 +54,7 @@ COUNTRIES = [
     # New countries to add (USCIRF has pages for these)
     {"title": "Azerbaijan", "slug": "azerbaijan", "project_slug": "azerbaijan"},
     {"title": "Bahrain", "slug": "bahrain", "project_slug": "bahrain"},
-    {"title": "Bangladesh", "slug": "bangladesh", "project_slug": "bangladesh"},
+    # Bangladesh country page removed from uscirf.gov (2026) — was 404 in nightly.
     {"title": "Kazakhstan", "slug": "kazakhstan", "project_slug": "kazakhstan"},
     {"title": "Kyrgyzstan", "slug": "kyrgyzstan", "project_slug": "kyrgyzstan"},
     {"title": "Qatar", "slug": "qatar", "project_slug": "qatar"},
@@ -322,6 +322,7 @@ def main():
     results = []
     ok = 0
     failed = 0
+    skipped = 0
     cached_count = 0
     parse_issues = 0
 
@@ -332,17 +333,32 @@ def main():
 
         data, err = fetch_country(country)
         if data is None:
-            print(f"FAILED: {err}")
-            failed += 1
-            results.append({
-                "title": title,
-                "slug": slug,
-                "project_slug": country["project_slug"],
-                "status": "failed",
-                "error": err,
-                "designation": "unknown",
-                "key_findings": [],
-            })
+            # Country pages USCIRF removes between annual cycles return 404; skip them
+            # so nightly is not aborted for an obsolete hardcoded slug.
+            if err and ("404" in err or "Not Found" in err):
+                print(f"skipped (no page): {err}")
+                skipped += 1
+                results.append({
+                    "title": title,
+                    "slug": slug,
+                    "project_slug": country["project_slug"],
+                    "status": "skipped",
+                    "error": err,
+                    "designation": "unknown",
+                    "key_findings": [],
+                })
+            else:
+                print(f"FAILED: {err}")
+                failed += 1
+                results.append({
+                    "title": title,
+                    "slug": slug,
+                    "project_slug": country["project_slug"],
+                    "status": "failed",
+                    "error": err,
+                    "designation": "unknown",
+                    "key_findings": [],
+                })
             continue
 
         if err:
@@ -381,6 +397,7 @@ def main():
             "ok": ok,
             "cached": cached_count,
             "failed": failed,
+            "skipped": skipped,
             "parse_issues": parse_issues,
             "cpc_count": len(cpc_names),
             "swl_count": len(swl_names),
@@ -396,7 +413,7 @@ def main():
     )
 
     print()
-    print(f"Done. {ok} ok, {cached_count} cached, {failed} failed.")
+    print(f"Done. {ok} ok, {cached_count} cached, {skipped} skipped, {failed} failed.")
     print(f"Index written to {index_path}")
 
     cpc_found = [r for r in results if r["designation"] == "CPC"]
@@ -405,15 +422,18 @@ def main():
     print(f"Designations: {len(cpc_found)} CPC, {len(swl_found)} SWL, {len(none_found)} none")
     if parse_issues:
         print(f"Parse issues: {parse_issues}")
+    if skipped:
+        print(f"Skipped missing country pages: {skipped}")
 
-    if failed == len(unique_countries):
+    attempted = len(unique_countries) - skipped
+    if attempted == 0 or failed == attempted:
         final_status = "failed"
         write_status("uscirf", final_status, "all countries failed")
     elif failed > 0 or parse_issues > 0:
         final_status = "partial"
         parts = []
         if failed > 0:
-            parts.append(f"{failed} of {len(unique_countries)} failed")
+            parts.append(f"{failed} of {attempted} failed")
         if parse_issues > 0:
             parts.append(f"{parse_issues} parse issues")
         write_status("uscirf", final_status, "; ".join(parts))
