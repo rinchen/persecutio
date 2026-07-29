@@ -1,3 +1,4 @@
+import io
 import json
 import re
 import sys
@@ -5,11 +6,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from country_registry import resolve_country_name
 from fetch_common import (
     FETCHED,
     USER_AGENT,
     ensure_fetched_dir,
     exit_for_status,
+    fetch_bytes,
     fetch_text,
     load_json_cache,
     write_status,
@@ -18,7 +21,20 @@ from fetch_common import (
 ensure_fetched_dir()
 
 WWL_URL = "https://www.opendoors.org/en-US/persecution/countries/"
+# Official scores/ranks table (HTML country map is JS-only on opendoors.org).
+WWL_SCORES_PDF_URL = (
+    "https://www.opendoors.org/research-reports/wwl-documentation/"
+    "WWL2026-Table-of-Scores-and-Ranks-50-points-v2.pdf"
+)
+WWL_UK_URL = "https://www.opendoorsuk.org/persecution/world-watch-list/"
 CACHE_PATH = FETCHED / "opendoors.json"
+
+# Rank + six sphere scores + total + prior rank/score + delta.
+_WWL_ROW_RE = re.compile(
+    r"(?<!\d)(\d{1,3})\s+([A-Za-z][A-Za-z .'\-]*(?:\([^)]+\))?)\s+"
+    r"(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)\s+"
+    r"(\d+)\s+(\d+)\s+(\d+)\s+([+-]?\d+\.?\d*)"
+)
 
 
 def fetch_url(url, timeout=20):
@@ -26,6 +42,19 @@ def fetch_url(url, timeout=20):
     if err:
         raise RuntimeError(err)
     return text
+
+
+def normalize_wwl_country_name(raw: str) -> str:
+    """Map Open Doors table labels onto project canonical titles when possible."""
+    name = re.sub(r"\s+", " ", (raw or "").strip())
+    name = re.sub(r"\s*\(DRC\)\s*", " ", name, flags=re.I).strip()
+    resolved = resolve_country_name(name)
+    if resolved:
+        return resolved
+    # PDF uses "Congo DR" / "Congo DR (DRC)" before alias cleanup.
+    if re.search(r"\bcongo\b", name, re.I) and re.search(r"\bdr\b", name, re.I):
+        return "Democratic Republic of Congo"
+    return name
 
 
 def parse_json_from_html(html):
@@ -44,18 +73,154 @@ def parse_json_from_html(html):
     return None
 
 
+def parse_wwl_scores_text(text: str) -> dict | None:
+    """Parse Open Doors WWL Table-of-Scores PDF text into ``{countries, year}``."""
+    if not text or not text.strip():
+        return None
+    year = 2026
+    ym = re.search(r"World Watch List\s+(20\d{2})", text, re.I)
+    if ym:
+        year = int(ym.group(1))
+
+    collapsed = re.sub(r"\s+", " ", text)
+    by_rank: dict[int, tuple[str, int]] = {}
+    for m in _WWL_ROW_RE.finditer(collapsed):
+        rank = int(m.group(1))
+        name = normalize_wwl_country_name(m.group(2))
+        score = int(m.group(9))
+        by_rank.setdefault(rank, (name, score))
+
+    # Require a full published top-50; PDF also lists 50+ countries beyond rank 50.
+    if any(r not in by_rank for r in range(1, 51)):
+        missing = [r for r in range(1, 51) if r not in by_rank]
+        print(f"  WWL PDF parse incomplete; missing ranks: {missing[:8]}")
+        return None
+
+    countries = {}
+    for rank in range(1, 51):
+        name, score = by_rank[rank]
+        countries[name] = {"ranking": rank, "score": score}
+    return {"year": year, "countries": countries}
+
+
+def parse_wwl_scores_pdf(data: bytes) -> dict | None:
+    try:
+        from pypdf import PdfReader
+    except ImportError as exc:
+        print(f"  pypdf unavailable: {exc}")
+        return None
+    try:
+        reader = PdfReader(io.BytesIO(data))
+        text = "\n".join((page.extract_text() or "") for page in reader.pages)
+    except Exception as e:
+        print(f"  WWL PDF extract failed: {type(e).__name__}: {e}")
+        return None
+    return parse_wwl_scores_text(text)
+
+
+def parse_uk_wwl_rankings(html: str) -> dict | None:
+    """Parse Open Doors UK HTML ordered top-50 list (ranks; scores usually absent)."""
+    if not html:
+        return None
+    year = 2026
+    ym = re.search(r"World Watch List\s+(20\d{2})", html, re.I)
+    if ym:
+        year = int(ym.group(1))
+
+    names: list[str] = []
+    for m in re.finditer(
+        r'wwl__rankings-list[^>]*>(.*?)</ul>', html, re.S | re.I
+    ):
+        block = m.group(1)
+        items = re.findall(r"<li[^>]*>(.*?)</li>", block, re.S | re.I)
+        texts = [
+            re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", item)).strip()
+            for item in items
+        ]
+        texts = [
+            t
+            for t in texts
+            if t
+            and not t.startswith("&nbsp")
+            and "Extreme" not in t
+            and "Very High" not in t
+        ]
+        if len(texts) >= 45:
+            names = texts
+            break
+
+    if len(names) < 45:
+        # Map SVG fallback: data-country / data-rank attributes.
+        by_rank: dict[int, str] = {}
+        for m in re.finditer(
+            r'data-country="([^"]+)"[^>]*?data-rank="(\d+)"',
+            html,
+            re.S | re.I,
+        ):
+            name, rank_s = m.group(1), m.group(2)
+            if not name or not rank_s:
+                continue
+            by_rank[int(rank_s)] = normalize_wwl_country_name(name)
+        if len(by_rank) >= 45:
+            names = [by_rank[r] for r in sorted(by_rank) if r <= 50]
+
+    if len(names) < 45:
+        return None
+
+    countries = {}
+    for i, raw in enumerate(names[:50], start=1):
+        name = normalize_wwl_country_name(raw)
+        countries[name] = {"ranking": i}
+    return {"year": year, "countries": countries}
+
+
 def try_fetch_live():
+    """Return ``{"year", "countries", "source"}`` from a live Open Doors surface."""
     print("Fetching WWL main page...")
     try:
         html = fetch_url(WWL_URL)
+        parsed = parse_json_from_html(html)
+        if parsed and isinstance(parsed, dict) and "countries" in parsed:
+            print("  Found embedded data in HTML")
+            return {
+                "year": int(parsed.get("year") or 2026),
+                "countries": parsed["countries"],
+                "source": "Open Doors WWL (embedded HTML)",
+            }
+        print("  No structured data found in HTML (JS-rendered site)")
     except Exception as e:
         print(f"  Failed to fetch main page: {e}")
-        return None
-    parsed = parse_json_from_html(html)
-    if parsed:
-        print("  Found embedded data in HTML")
-        return parsed
-    print("  No structured data found in HTML (JS-rendered site)")
+
+    print("Fetching WWL scores PDF...")
+    data, err = fetch_bytes(WWL_SCORES_PDF_URL, timeout=60, user_agent=USER_AGENT)
+    if data:
+        parsed = parse_wwl_scores_pdf(data)
+        if parsed and len(parsed.get("countries") or {}) >= 45:
+            print(f"  Parsed {len(parsed['countries'])} countries from scores PDF")
+            return {
+                "year": parsed["year"],
+                "countries": parsed["countries"],
+                "source": f"Open Doors WWL {parsed['year']} scores PDF",
+            }
+        print("  Scores PDF present but could not parse top-50 rows")
+    else:
+        print(f"  Scores PDF fetch failed: {err}")
+
+    print("Fetching Open Doors UK WWL rankings page...")
+    try:
+        uk_html = fetch_url(WWL_UK_URL, timeout=30)
+        parsed = parse_uk_wwl_rankings(uk_html)
+        if parsed and len(parsed.get("countries") or {}) >= 45:
+            print(f"  Parsed {len(parsed['countries'])} rankings from UK page")
+            return {
+                "year": parsed["year"],
+                "countries": parsed["countries"],
+                "source": f"Open Doors UK WWL {parsed['year']} rankings",
+            }
+        print("  UK rankings page present but could not parse top-50 list")
+    except Exception as e:
+        print(f"  UK rankings fetch failed: {e}")
+
     return None
 
 
@@ -503,11 +668,10 @@ def print_summary(result):
     top10 = sorted(countries.items(), key=lambda x: x[1]["ranking"])[:10]
     print("Top 10:")
     for name, info in top10:
-        print(
-            f"  {info['ranking']:>2}. {name:<20s} "
-            f"Score: {info['score']:>2}  "
-            f"{info['persecution_source']}"
-        )
+        score = info.get("score")
+        score_s = f"{score:>2}" if score is not None else "—"
+        extra = info.get("persecution_source") or ""
+        print(f"  {info['ranking']:>2}. {name:<28s} Score: {score_s}  {extra}".rstrip())
     print(f"\n{'='*60}")
 
 
@@ -516,19 +680,25 @@ def main():
     live_status = "static_fallback"
 
     live_data = try_fetch_live()
-    if live_data:
+    if live_data and isinstance(live_data, dict) and live_data.get("countries"):
         live_status = "live_fetch_ok"
-        print("  Parsing live data...")
-        if isinstance(live_data, dict) and "countries" in live_data:
-            result = build_result(
-                {"year": 2025, "source": "Open Doors WWL 2025 (live)", "countries": live_data["countries"]},
-                live_status,
-            )
-            save_cache(result)
-            write_status("opendoors", "ok")
-            print_summary(result)
-            exit_for_status("ok", strict=True)
-        print("  Live data format not recognized, using static fallback")
+        year = int(live_data.get("year") or 2026)
+        source = live_data.get("source") or f"Open Doors WWL {year} (live)"
+        print("  Building live WWL result...")
+        result = build_result(
+            {
+                "year": year,
+                "source": source,
+                "countries": live_data["countries"],
+            },
+            live_status,
+        )
+        save_cache(result)
+        write_status("opendoors", "ok")
+        print_summary(result)
+        exit_for_status("ok", strict=True)
+
+    print("  Live WWL fetch unavailable, using fallback")
 
     if cached:
         print(f"Using cached data from {cached.get('fetched_at', 'unknown')}")
