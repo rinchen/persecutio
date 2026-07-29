@@ -1,6 +1,6 @@
 # Persecutio
 
-Static site documenting Christian persecution by country, served via GitHub Pages and updated automatically by GitHub Actions.
+Static site documenting Christian persecution by country, served via GitHub Pages (and mirrored on Nostr via nsite) and updated automatically by GitHub Actions.
 
 ## Architecture
 
@@ -15,6 +15,8 @@ scripts/collect_data.py (+ collect_enrich.py, country_registry.py)
 scripts/generate_website_data.py  →  countries/*.html, assets/data/{geojson,search,meta}.json
         ↓
 GitHub Pages (public HTML/CSS/JS only — scrape caches are not published)
+        ↓
+Nostr / nsite (same public files, after successful Pages deploy)
 ```
 
 `scripts/country_registry.py` is the canonical list of tracked countries: display titles, aliases used to match free text, ISO3 codes, and map coordinates. Fetchers derive their target lists from it (for example `fetch_state_dept.py`) instead of keeping hand-maintained subsets.
@@ -124,6 +126,11 @@ Prefer `python3 -m pytest tests` (also runs on pull requests via `.github/workfl
 Only **primary** fetch failures abort before generate/deploy. Secondary fetches use `|| true` and never block the job. After generate, the job also enforces structural checks: the country page count must equal the geojson feature count, and every page must carry Historical Background, Modern-Day Situation, an All References section, and at least one source link. The Pages artifact is staged from public site files only (`index.html`, `about.html`, `faq.html`, `LICENSE`, `countries/`, `assets/`) — not `data/fetched/` scrape caches or `.bak-*` snapshots.
 
 **Live site:** https://rinchen.github.io/persecutio/
+
+**Nostr / nsite mirror** (same content; republished after successful Pages deploys via [`.github/workflows/nostr-deploy.yml`](.github/workflows/nostr-deploy.yml)):
+
+- Gateway: https://2vu4veopeh8g2tkli0pmbu2gtrmcicht56a5k9edx63jy6l7tcpersecutio.nsite.lol/
+- NIP-05A address (clients with nsite support): `naddr1qvzqqqyf8qpzqua6pgsfdufl97frsalzalnedutx94revzz4m47pgd2qtq28txxsqq98qetjwdjkxat5d9hs2c44ed`
 
 ### PR previews
 
