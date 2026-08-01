@@ -206,7 +206,7 @@ countries:
     - gcr2026
     - vdem2025forb
     sources:
-    - &id020
+    - &id021
       title: BBC News - Taliban tortured and massacred Hazara men 2021
       url: https://www.bbc.com/news/world-asia-58277463
       date: '2021'
@@ -214,7 +214,7 @@ countries:
       title: Open Doors World Watch List 2024
       url: https://www.opendoors.org/en-US/persecution/countries/
       date: '2024'
-    - &id019
+    - &id020
       title: USCIRF 2023 Annual Report - Afghanistan
       url: https://www.uscirf.gov/countries/afghanistan
       date: '2023'
@@ -261,7 +261,7 @@ countries:
       deaths happened in Nigeria. That's roughly 72% of the worldwide total. Multiple
       armed groups drive this violence. Boko Haram, the Islamic State West Africa
       Province (ISWAP), Fulani ethnic militias, an
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Afghanistan are dire as the Taliban enforces
       a strict interpretation of Sunni Islam. Authorities use religious edicts to
@@ -875,12 +875,12 @@ countries:
     - fides
     - vdem2025forb
     sources:
-    - &id022
+    - &id023
       title: Pew Research - Measuring Religion in China
       url: https://www.pewresearch.org/religion/2023/08/30/measuring-religion-in-china/
       date: '2023'
     - *id001
-    - &id021
+    - &id022
       title: USCIRF 2023 Annual Report - China
       url: https://www.uscirf.gov/countries/china
       date: '2023'
@@ -900,7 +900,7 @@ countries:
       title: International Christian Concern - Global Persecution Reports
       url: https://www.persecution.org/
       date: '2026'
-    - &id073
+    - &id074
       title: Bitter Winter - Religious Liberty and Human Rights
       url: https://bitterwinter.org/
       date: '2026'
@@ -912,7 +912,7 @@ countries:
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
-    - &id074
+    - &id075
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
@@ -1040,7 +1040,7 @@ countries:
         more than to dedicate my whole life and all my strength to giving thanks for
         this gift by serving Our Lord and others with fidelity and love." These were '
       source: Agenzia Fides
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious communities in China face persecution when they refuse to submit to
       the government’s all-encompassing control over religious affairs. Authorities
@@ -1492,7 +1492,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id023
+    - &id024
       title: USCIRF 2023 Annual Report - Colombia
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -1710,7 +1710,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id024
+    - &id025
       title: USCIRF 2023 Annual Report - Cuba
       url: https://www.uscirf.gov/countries/cuba
       date: '2023'
@@ -1742,7 +1742,7 @@ countries:
       date: '2026-07-06'
       description: ''
       source: Info Chrétienne
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - The Cuban government’s legal framework for controlling religious activity extends
       state authority over virtually all worship and practice, and religious leaders
@@ -1920,7 +1920,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id025
+    - &id026
       title: USCIRF 2023 Annual Report - Eritrea
       url: https://www.uscirf.gov/countries/eritrea
       date: '2023'
@@ -1951,7 +1951,7 @@ countries:
       globally, roughly one in seven worldwide and one in five in Africa." } }, {
       "@type": "Question", "name": "What are the main causes of modern Christian persecution?",
       "acceptedAnswer": { "@type"'
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - The government in Eritrea systematically persecutes individuals for their faith
       and only permits four recognized religions to register. The government continues
@@ -2354,7 +2354,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id026
+    - &id027
       title: USCIRF 2023 Annual Report - India
       url: https://www.uscirf.gov/countries/india
       date: '2023'
@@ -2482,8 +2482,17 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    fides_articles: 1
+    fides_articles: 2
     fides_samples:
+    - title: ASIA - “Choral compassion” to stop migrant tragedies in the “Mediterranean
+        of Asia”
+      url: https://www.fides.org/en/news/78003-ASIA_Choral_compassion_to_stop_migrant_tragedies_in_the_Mediterranean_of_Asia
+      date: '2026-07-31'
+      description: Jakarta – Forced migration and human trafficking, two deeply interconnected
+        phenomena, are among the most serious crises affecting the Asian continent.
+        In the face of the ongoing maritime tragedies in the Bay of Bengal, Catholic
+        communities in South and Southeast Asia—particularly in Bangladesh, Ind
+      source: Agenzia Fides
     - title: 'ASIA/INDIA - Announcing the Gospel in Asia with Saint Francis of Assisi:
         First Franciscan Missionary Symposium begins'
       url: https://www.fides.org/en/news/77995-ASIA_INDIA_Announcing_the_Gospel_in_Asia_with_Saint_Francis_of_Assisi_First_Franciscan_Missionary_Symposium_begins
@@ -2494,7 +2503,7 @@ countries:
         in the hearts of fellow travelers? And what contribution can the Franciscan
         Family off
       source: Agenzia Fides
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - The Indian government tolerates and perpetrates widespread harassment and violence
       against religious minorities at the national and state level. The BJP-led government
@@ -2651,6 +2660,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - morningstarnews2026
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -3176,10 +3186,11 @@ countries:
     - freedomhouse2024
     - owid2024
     - morningstarnews2026
+    - fides
     - vdem2025forb
     sources:
     - *id001
-    - &id027
+    - &id028
       title: USCIRF 2023 Annual Report - Indonesia
       url: https://www.uscirf.gov/countries/indonesia
       date: '2023'
@@ -3194,6 +3205,7 @@ countries:
     - *id002
     - *id004
     - *id013
+    - *id012
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -3210,7 +3222,18 @@ countries:
         falsely claiming it had not fulfilled legal requirements, sources said. The
         Muslims also baselessly accused the church of manipulating supporting documents
       source: Morning Star News
-    uscirf_designation: none
+    fides_articles: 1
+    fides_samples:
+    - title: ASIA - “Choral compassion” to stop migrant tragedies in the “Mediterranean
+        of Asia”
+      url: https://www.fides.org/en/news/78003-ASIA_Choral_compassion_to_stop_migrant_tragedies_in_the_Mediterranean_of_Asia
+      date: '2026-07-31'
+      description: Jakarta – Forced migration and human trafficking, two deeply interconnected
+        phenomena, are among the most serious crises affecting the Asian continent.
+        In the face of the ongoing maritime tragedies in the Bay of Bengal, Catholic
+        communities in South and Southeast Asia—particularly in Bangladesh, Ind
+      source: Agenzia Fides
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Indonesia’s religious freedom conditions are poor. Despite constitutional FoRB
       protections, the Criminal Code and other laws restrict worship, targeting religious
@@ -3479,7 +3502,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id028
+    - &id029
       title: USCIRF 2023 Annual Report - Iran
       url: https://www.uscirf.gov/countries/iran
       date: '2023'
@@ -3495,7 +3518,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id072
+    - &id073
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
@@ -3586,7 +3609,7 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Iran are particularly severe. The government
       invokes its own interpretation of Islam to deny religious freedom to citizens
@@ -3881,7 +3904,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id029
+    - &id030
       title: USCIRF 2023 Annual Report - Iraq
       url: https://www.uscirf.gov/countries/iraq
       date: '2023'
@@ -3927,7 +3950,7 @@ countries:
         east of Mosul has once again brought the long-standing issue of land seizures,
         Chri'
       source: Human Rights Without Frontiers
-    uscirf_designation: none
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Iraq’s religious communities face ongoing challenges 11 years after the Islamic
       State of Iraq and Syria (ISIS) waged genocide against religious and ethnic minorities.
@@ -4141,7 +4164,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id030
+    - &id031
       title: USCIRF 2023 Annual Report - Laos
       url: https://www.uscirf.gov/countries/laos
       date: '2023'
@@ -4259,6 +4282,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - cna
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -4625,10 +4649,11 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - cna
     - vdem2025forb
     sources:
     - *id001
-    - &id031
+    - &id032
       title: USCIRF 2023 Annual Report - Mexico
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -4643,6 +4668,10 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id017
+      title: Catholic News Agency
+      url: https://www.catholicnewsagency.com/
+      date: '2026'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -4651,7 +4680,24 @@ countries:
     opendoors_score: 71
     christian_population: 113070626
     christian_percentage: 89.17
+    cna_articles: 1
+    cna_samples:
+    - title: '‘He presented a gun’: Dispute over Islamic mosque turns violent at New
+        Mexico Catholic parish'
+      url: https://www.ewtnnews.com/world/us/he-presented-a-gun-dispute-over-islamic-mosque-turns-violent-at-new-mexico-catholic-parish
+      date: '2026-07-31'
+      description: A weekslong quarrel involving a local resident in Albuquerque ended
+        with a suspect arrested on two felony charges, according to a local priest.
+      source: Catholic News Agency
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mexico/
+    recent_incidents:
+    - title: '‘He presented a gun’: Dispute over Islamic mosque turns violent at New
+        Mexico Catholic parish'
+      url: https://www.ewtnnews.com/world/us/he-presented-a-gun-dispute-over-islamic-mosque-turns-violent-at-new-mexico-catholic-parish
+      date: '2026-07-31'
+      description: A weekslong quarrel involving a local resident in Albuquerque ended
+        with a suspect arrested on two felony charges, according to a local priest.
+      source: Catholic News Agency
     archive_modern_excerpt: The increased presence of several criminal groups and
       their struggle for territorial control has caused Christians and church leaders
       living in affected areas to face the constant risk of being targeted. This occurs
@@ -4855,7 +4901,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id032
+    - &id033
       title: USCIRF 2023 Annual Report - Nicaragua
       url: https://www.uscirf.gov/countries/nicaragua
       date: '2023'
@@ -4897,7 +4943,7 @@ countries:
         Post (07.07.2026) An 80-year-old Roman Catholic bishop and three other Catholic
         leaders were detained in Nicaragua last week amid an ongoing crackdown aga'
       source: Human Rights Without Frontiers
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - The Nicaraguan regime continues to enforce a total crackdown on religious organizations.
       The government wrongfully detains worshipers, arbitrarily dissolves religious
@@ -5161,7 +5207,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id033
+    - &id034
       title: USCIRF 2023 Annual Report - Nigeria
       url: https://www.uscirf.gov/countries/nigeria
       date: '2023'
@@ -5189,7 +5235,7 @@ countries:
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
-    - &id063
+    - &id064
       title: GDELT Global Database of Events, Language, and Tone
       url: https://www.gdeltproject.org/
       date: '2025'
@@ -5208,7 +5254,7 @@ countries:
       roughly one in seven worldwide and one in five in Africa." } }, { "@type": "Question",
       "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "tex'
-    icc_articles: 3
+    icc_articles: 2
     icc_samples:
     - title: Islamic Extremists Kill 30 Christians in Nigerian Village
       url: https://persecution.org/2026/07/28/islamic-extremists-kill-30-christians-in-nigerian-village
@@ -5227,16 +5273,7 @@ countries:
         Northeast Nigeria. The family of Pastor Moses Guguma was on its way to join
         him in '
       source: International Christian Concern
-    - title: Fulani Extremists Kill 25 Christians After Nigerian Army Ignores Early
-        Warnings
-      url: https://persecution.org/2026/07/15/fulani-extremists-kill-25-christians-after-nigerian-army-ignores-early-warnings
-      date: '2026-07-15'
-      description: At least 25 Christians, including a 2-month-old, were killed in
-        separate attacks during the weekend in Nigeria’s Middle Belt region. The first
-        attack occurred on Saturday night, July 11, in the Kum and Wereng-Comp communities
-        of Ryom County in Plateau state. Residents told International Christian Co
-      source: International Christian Concern
-    infochretienne_articles: 4
+    infochretienne_articles: 3
     infochretienne_samples:
     - title: 'Nigeria : un nouveau massacre de chrétiens fait 30 morts, dont huit
         enfants'
@@ -5316,7 +5353,7 @@ countries:
     gdelt_recent_articles: 1
     gdelt_sample_urls:
     - https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
       continues to tolerate, inadequately respond, or fail to hold FoRB violators
@@ -5385,20 +5422,6 @@ countries:
         son mari tué'
       url: https://www.infochretienne.com/articles/nigeria-une-chretienne-de-22-ans-enceinte-fuit-un-hopital-attaque-son-mari-tue
       date: '2026-07-17'
-      description: ''
-      source: Info Chrétienne
-    - title: Fulani Extremists Kill 25 Christians After Nigerian Army Ignores Early
-        Warnings
-      url: https://persecution.org/2026/07/15/fulani-extremists-kill-25-christians-after-nigerian-army-ignores-early-warnings
-      date: '2026-07-15'
-      description: At least 25 Christians, including a 2-month-old, were killed in
-        separate attacks during the weekend in Nigeria’s Middle Belt region. The first
-        attack occurred on Saturday night, July 11, in the Kum and Wereng-Comp communities
-        of Ryom County in Plateau state. Residents told International Christian Co
-      source: International Christian Concern
-    - title: 'Nigeria : deux chrétiens tués et sept autres enlevés lors d’une attaque'
-      url: https://www.infochretienne.com/articles/nigeria-deux-chretiens-tues-et-sept-autres-enleves-lors-dune-attaque
-      date: '2026-07-01'
       description: ''
       source: Info Chrétienne
     - title: At Least 30 Killed in Attack on Christian Village in Kaduna State, Nigeria
@@ -5634,7 +5657,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id034
+    - &id035
       title: USCIRF 2023 Annual Report - North Korea
       url: https://www.uscirf.gov/countries/north-korea
       date: '2023'
@@ -5665,7 +5688,7 @@ countries:
       face high levels of persecution globally, roughly one in seven worldwide and
       one in five in Africa." } }, { "@type": "Question", "name": "What are the main
       causes of modern Christian persecutio'
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - North Korea’s ruling ideology, Kimilsungism-Kimjongilism, treats religion as
       an existential threat. Punishments for defying draconian religious restrictions
@@ -5940,7 +5963,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id035
+    - &id036
       title: USCIRF 2023 Annual Report - Pakistan
       url: https://www.uscirf.gov/countries/pakistan
       date: '2023'
@@ -6097,7 +6120,7 @@ countries:
         from Faisalabad, to the abductor who forcibly converted and coerced her into
         marriage. Human rights defenders strongly condemn a Pakistani court’s decisio
       source: Jubilee Campaign
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - The Pakistani government’s systematic enforcement of blasphemy laws severely
       restricts freedom of religion or belief for all citizens, particularly targeting
@@ -6495,7 +6518,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id036
+    - &id037
       title: USCIRF 2023 Annual Report - Saudi Arabia
       url: https://www.uscirf.gov/countries/saudi-arabia
       date: '2023'
@@ -6511,7 +6534,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id017
+    - &id018
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
@@ -6541,7 +6564,7 @@ countries:
         Saudi Arabia, on August 23, 2023 on the outskirts of Sana''a, Yemen. © 2023
         Mohammed Hamoud/Getty Images (Beirut) – Saudi authorities executed five Ethiopian '
       source: Human Rights Watch
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Saudi Arabia are particularly severe, as the
       government prohibits the public practice of any religion other than Islam and
@@ -6758,7 +6781,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id037
+    - &id038
       title: USCIRF 2023 Annual Report - Somalia
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -6994,7 +7017,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id038
+    - &id039
       title: USCIRF 2023 Annual Report - Syria
       url: https://www.uscirf.gov/countries/syria
       date: '2023'
@@ -7053,7 +7076,7 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Although President Bashar al-Assad’s government fell in December 2024, ending
       that regime’s years of religious freedom and broader human rights violations,
@@ -7283,7 +7306,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id039
+    - &id040
       title: USCIRF 2023 Annual Report - Vietnam
       url: https://www.uscirf.gov/countries/vietnam
       date: '2023'
@@ -7303,7 +7326,7 @@ countries:
     freedom_house_cl: 6
     christian_population: 8170016
     christian_percentage: 8.33
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom in Vietnam remains poor as the government regulates and controls
       religious affairs through state-sponsored organizations. Authorities routinely
@@ -7516,7 +7539,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id040
+    - &id041
       title: USCIRF 2023 Annual Report - Yemen
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -8552,11 +8575,11 @@ countries:
     - icc2026
     - vdem2025forb
     sources:
-    - &id043
+    - &id044
       title: Pew Research - Religion in America
       url: https://www.pewresearch.org/collections/religious-landscape-study/
       date: '2023'
-    - &id041
+    - &id042
       title: USCIRF 2023 Annual Report - United States
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -9218,7 +9241,7 @@ countries:
     - cna
     - vdem2025forb
     sources:
-    - &id042
+    - &id043
       title: USCIRF 2023 Annual Report - Uganda
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -9233,10 +9256,7 @@ countries:
     - *id002
     - *id004
     - *id013
-    - &id075
-      title: Catholic News Agency
-      url: https://www.catholicnewsagency.com/
-      date: '2026'
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9499,7 +9519,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id044
+    - &id045
       title: USCIRF 2023 Annual Report - Algeria
       url: https://www.uscirf.gov/countries/algeria
       date: '2023'
@@ -9530,7 +9550,7 @@ countries:
       the highest levels of Christian persecution in 2026? The top 10 countries on
       the 2026 World Watch List are North Korea, Somalia, Yemen, Sudan, Eritrea, Syria,
       Nigeria, Pakistan, Libya, and Iran. A'
-    uscirf_designation: none
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Algeria engages in systematic repression of religious minority communities.
       Authorities have persisted in their crackdown on Evangelical Protestant Christians,
@@ -9729,7 +9749,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id045
+    - &id046
       title: USCIRF 2023 Annual Report - Bangladesh
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -9745,7 +9765,7 @@ countries:
     - *id003
     - *id004
     - *id008
-    - *id017
+    - *id018
     - *id012
     - *id006
     freedom_house_status: Partly Free
@@ -9778,18 +9798,26 @@ countries:
       source: Human Rights Watch
     fides_articles: 1
     fides_samples:
-    - title: ASIA/BANGLADESH - Church communities accommodate and welcome "climate-displaced
-        persons" in Khulna
-      url: https://www.fides.org/en/news/77979-ASIA_BANGLADESH_Church_communities_accommodate_and_welcome_climate_displaced_persons_in_Khulna
-      date: '2026-07-28'
-      description: 'Khulna – Following the recent floods, Catholic communities across
-        the Diocese of Khulna have opened church facilities to accommodate people
-        displaced by rising waters, offering temporary shelter until floodwaters recede
-        from the streets of Khulna and their homes: this was reported to Fides by
-        Msgr. '
+    - title: ASIA - “Choral compassion” to stop migrant tragedies in the “Mediterranean
+        of Asia”
+      url: https://www.fides.org/en/news/78003-ASIA_Choral_compassion_to_stop_migrant_tragedies_in_the_Mediterranean_of_Asia
+      date: '2026-07-31'
+      description: Jakarta – Forced migration and human trafficking, two deeply interconnected
+        phenomena, are among the most serious crises affecting the Asian continent.
+        In the face of the ongoing maritime tragedies in the Bay of Bengal, Catholic
+        communities in South and Southeast Asia—particularly in Bangladesh, Ind
       source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bangladesh/
     recent_incidents:
+    - title: ASIA - “Choral compassion” to stop migrant tragedies in the “Mediterranean
+        of Asia”
+      url: https://www.fides.org/en/news/78003-ASIA_Choral_compassion_to_stop_migrant_tragedies_in_the_Mediterranean_of_Asia
+      date: '2026-07-31'
+      description: Jakarta – Forced migration and human trafficking, two deeply interconnected
+        phenomena, are among the most serious crises affecting the Asian continent.
+        In the face of the ongoing maritime tragedies in the Bay of Bengal, Catholic
+        communities in South and Southeast Asia—particularly in Bangladesh, Ind
+      source: Agenzia Fides
     - title: 'Bangladesh: Fair Trial Concerns at Tribunal'
       url: https://www.hrw.org/news/2026/07/28/bangladesh-fair-trial-concerns-at-tribunal
       date: '2026-07-28'
@@ -9798,16 +9826,6 @@ countries:
         Rashid/NurPhoto via AP Photo (London) – Bangladesh authorities are failing
         to uphold international legal standards at the country’s International Crim
       source: Human Rights Watch
-    - title: ASIA/BANGLADESH - Church communities accommodate and welcome "climate-displaced
-        persons" in Khulna
-      url: https://www.fides.org/en/news/77979-ASIA_BANGLADESH_Church_communities_accommodate_and_welcome_climate_displaced_persons_in_Khulna
-      date: '2026-07-28'
-      description: 'Khulna – Following the recent floods, Catholic communities across
-        the Diocese of Khulna have opened church facilities to accommodate people
-        displaced by rising waters, offering temporary shelter until floodwaters recede
-        from the streets of Khulna and their homes: this was reported to Fides by
-        Msgr. '
-      source: Agenzia Fides
     - title: Christians in Bangladesh Hold Onto Fragile Stability Following Elections
       url: https://persecution.org/2026/07/17/christians-in-bangladesh-hold-onto-fragile-stability-following-elections
       date: '2026-07-17'
@@ -10049,7 +10067,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id046
+    - &id047
       title: USCIRF 2023 Annual Report - Central African Republic
       url: https://www.uscirf.gov/countries/central-african-republic
       date: '2023'
@@ -10297,7 +10315,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id047
+    - &id048
       title: USCIRF 2023 Annual Report - Egypt
       url: https://www.uscirf.gov/countries/egypt
       date: '2023'
@@ -10320,7 +10338,7 @@ countries:
     opendoors_score: 68
     christian_population: 5270537
     christian_percentage: 4.82
-    uscirf_designation: none
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Egypt are poor. Baha'is, Jehovah’s Witnesses,
       and other religious minorities are unable to gain official recognition, impairing
@@ -10468,7 +10486,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id048
+    - &id049
       title: USCIRF 2023 Annual Report - Haiti
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -10703,7 +10721,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id049
+    - &id050
       title: USCIRF 2023 Annual Report - Libya
       url: https://www.uscirf.gov/countries/libya
       date: '2023'
@@ -10734,7 +10752,7 @@ countries:
       and one in five in Africa." } }, { "@type": "Question", "name": "What are the
       main causes of modern Christian persecution?", "acceptedAnswer": { "@type":
       "Answer", "text": "Islamic extr'
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Libya have significantly deteriorated amid the
       country’s political fragmentation, as the Tripoli-based government detains and
@@ -10816,6 +10834,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -10967,10 +10986,11 @@ countries:
     - odwwl2025archivemalaysia
     - freedomhouse2024
     - owid2024
+    - fides
     - vdem2025forb
     sources:
     - *id001
-    - &id050
+    - &id051
       title: USCIRF 2023 Annual Report - Malaysia
       url: https://www.uscirf.gov/countries/malaysia
       date: '2023'
@@ -10984,13 +11004,25 @@ countries:
       date: '2025'
     - *id002
     - *id004
+    - *id012
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
     freedom_house_cl: 4
     christian_population: 3101974
     christian_percentage: 9.15
-    uscirf_designation: none
+    fides_articles: 1
+    fides_samples:
+    - title: ASIA - “Choral compassion” to stop migrant tragedies in the “Mediterranean
+        of Asia”
+      url: https://www.fides.org/en/news/78003-ASIA_Choral_compassion_to_stop_migrant_tragedies_in_the_Mediterranean_of_Asia
+      date: '2026-07-31'
+      description: Jakarta – Forced migration and human trafficking, two deeply interconnected
+        phenomena, are among the most serious crises affecting the Asian continent.
+        In the face of the ongoing maritime tragedies in the Bay of Bengal, Catholic
+        communities in South and Southeast Asia—particularly in Bangladesh, Ind
+      source: Agenzia Fides
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Malaysia are poor amid a troubling rise in religious
       polarization and restrictions. The country’s dual legal system of Shari’a and
@@ -11061,6 +11093,7 @@ countries:
     - owid2024
     - gcr2026
     - vom2026
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -11226,10 +11259,11 @@ countries:
     - owid2024
     - gcr2026
     - vom2026
+    - fides
     - vdem2025forb
     sources:
     - *id001
-    - &id051
+    - &id052
       title: USCIRF 2023 Annual Report - Myanmar
       url: https://www.uscirf.gov/countries/burma
       date: '2023'
@@ -11246,6 +11280,7 @@ countries:
     - *id004
     - *id005
     - *id010
+    - *id012
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11273,7 +11308,18 @@ countries:
         he began to insult, rebuke and physically abuse her. On one occasion, he dragged
         he
       source: Voice of the Martyrs
-    uscirf_designation: none
+    fides_articles: 1
+    fides_samples:
+    - title: ASIA - “Choral compassion” to stop migrant tragedies in the “Mediterranean
+        of Asia”
+      url: https://www.fides.org/en/news/78003-ASIA_Choral_compassion_to_stop_migrant_tragedies_in_the_Mediterranean_of_Asia
+      date: '2026-07-31'
+      description: Jakarta – Forced migration and human trafficking, two deeply interconnected
+        phenomena, are among the most serious crises affecting the Asian continent.
+        In the face of the ongoing maritime tragedies in the Bay of Bengal, Catholic
+        communities in South and Southeast Asia—particularly in Bangladesh, Ind
+      source: Agenzia Fides
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Burma have deteriorated amid the country’s ongoing
       civil war. Burma’s military (the Tatmadaw) has displaced over 2.5 million people
@@ -11558,7 +11604,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id052
+    - &id053
       title: USCIRF 2023 Annual Report - Sudan
       url: https://www.uscirf.gov/countries/sudan
       date: '2023'
@@ -11576,7 +11622,7 @@ countries:
     - *id005
     - *id013
     - *id008
-    - *id017
+    - *id018
     - *id012
     - *id006
     freedom_house_status: Not Free
@@ -11943,7 +11989,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id053
+    - &id054
       title: USCIRF 2023 Annual Report - Turkey
       url: https://www.uscirf.gov/countries/turkey
       date: '2023'
@@ -11978,7 +12024,7 @@ countries:
         Gökce TABLE OF CONTENT Introduction Presentation of the Arameans-Assyrians-Chaldeans
         Region of origin Everyday language Identity debate Statist'
       source: Human Rights Without Frontiers
-    uscirf_designation: none
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom remains under threat in Turkey, as authorities continue to
       prosecute theological dissenters for perceived insults to Islam; exert undue
@@ -12286,7 +12332,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id054
+    - &id055
       title: USCIRF 2023 Annual Report - Venezuela
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -12455,7 +12501,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id055
+    - &id056
       title: USCIRF 2023 Annual Report - Zimbabwe
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -13750,7 +13796,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id070
+    - &id071
       title: USCIRF 2025 Annual Report - Uzbekistan
       url: https://www.uscirf.gov/countries/uzbekistan
       date: '2025'
@@ -13773,7 +13819,7 @@ countries:
     opendoors_score: 73
     christian_population: 932125
     christian_percentage: 2.78
-    uscirf_designation: none
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Uzbekistan continue to deteriorate as the government
       retreats from previous reforms. Authorities have increasingly invoked an expanding
@@ -14233,7 +14279,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id069
+    - &id070
       title: USCIRF 2025 Annual Report - Turkmenistan
       url: https://www.uscirf.gov/countries/turkmenistan
       date: '2025'
@@ -14256,7 +14302,7 @@ countries:
     opendoors_score: 71
     christian_population: 390253
     christian_percentage: 5.62
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Turkmenistan remain terrible as the government
       holds tight control over the religious sphere, criminalizing and viewing all
@@ -14556,6 +14602,7 @@ countries:
     - odwwl2026
     - owid2024
     - icc2026
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -14699,6 +14746,7 @@ countries:
     - odwwl2026
     - owid2024
     - icc2026
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -14714,6 +14762,7 @@ countries:
     - *id003
     - *id004
     - *id008
+    - *id012
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -14741,8 +14790,30 @@ countries:
         to follow Christ in November 2025. Instead of finding acceptance, she became
         the target of persecution from her community and family, forcing her to fl
       source: International Christian Concern
+    fides_articles: 1
+    fides_samples:
+    - title: 'AFRICA/ETHIOPIA - Attack on the ancient monastery of Saint Arsema: “Buildings
+        may be destroyed and lives broken, but our faith in Christ remains”'
+      url: https://www.fides.org/en/news/78004-AFRICA_ETHIOPIA_Attack_on_the_ancient_monastery_of_Saint_Arsema_Buildings_may_be_destroyed_and_lives_broken_but_our_faith_in_Christ_remains
+      date: '2026-07-31'
+      description: Addis Ababa – The ancient monastery of Saint Arsema, in South Wollo,
+        in Ethiopia’s Amhara region, was severely damaged in a drone attack on July
+        22, 2026. Numerous casualties were reported among monks, priests, nuns, and
+        faithful of the Ethiopian Orthodox Tewahedo Church who were at the monastery
+        to
+      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
     recent_incidents:
+    - title: 'AFRICA/ETHIOPIA - Attack on the ancient monastery of Saint Arsema: “Buildings
+        may be destroyed and lives broken, but our faith in Christ remains”'
+      url: https://www.fides.org/en/news/78004-AFRICA_ETHIOPIA_Attack_on_the_ancient_monastery_of_Saint_Arsema_Buildings_may_be_destroyed_and_lives_broken_but_our_faith_in_Christ_remains
+      date: '2026-07-31'
+      description: Addis Ababa – The ancient monastery of Saint Arsema, in South Wollo,
+        in Ethiopia’s Amhara region, was severely damaged in a drone attack on July
+        22, 2026. Numerous casualties were reported among monks, priests, nuns, and
+        faithful of the Ethiopian Orthodox Tewahedo Church who were at the monastery
+        to
+      source: Agenzia Fides
     - title: Ethiopian Christians Grieve Deadly Monastery Strike
       url: https://persecution.org/2026/07/28/ethiopian-christians-grieve-deadly-monastery-strike
       date: '2026-07-28'
@@ -15028,6 +15099,7 @@ countries:
     indicators:
     - odwwl2026
     - owid2024
+    - icc2026
     - barnabas
     - vdem2025forb
   pew_slug: ''
@@ -15305,6 +15377,7 @@ countries:
     - odwwl2025archivedemocraticrepublicofcongo
     - odwwl2026
     - owid2024
+    - icc2026
     - barnabas
     - vdem2025forb
     sources:
@@ -15319,12 +15392,24 @@ countries:
       date: '2025'
     - *id003
     - *id004
+    - *id008
     - *id011
     - *id006
     opendoors_ranking: 29
     opendoors_score: 72
     christian_population: 92401422
     christian_percentage: 96.26
+    icc_articles: 1
+    icc_samples:
+    - title: Islamic Militants Kill Christian Leaders in the DRC
+      url: https://persecution.org/2026/07/31/islamic-militants-kill-christian-leaders-in-the-drc
+      date: '2026-07-31'
+      description: Members of the Allied Democratic Forces (ADF) attacked communities
+        three times in just a few days in eastern Democratic Republic of the Congo
+        (DRC), killing more than 20 people. From July 14 to 16, the ADF raided the
+        primarily Christian commune of Mangina twice. Mangina Mayor Nicolas Kambale
+        said th
+      source: International Christian Concern
     barnabas_articles: 1
     barnabas_samples:
     - title: Thirty-Five Christians Killed by Islamists in Ituri Province, D. R. Congo
@@ -15334,6 +15419,15 @@ countries:
       source: Barnabas Aid
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/democratic-republic-of-the-congo/
     recent_incidents:
+    - title: Islamic Militants Kill Christian Leaders in the DRC
+      url: https://persecution.org/2026/07/31/islamic-militants-kill-christian-leaders-in-the-drc
+      date: '2026-07-31'
+      description: Members of the Allied Democratic Forces (ADF) attacked communities
+        three times in just a few days in eastern Democratic Republic of the Congo
+        (DRC), killing more than 20 people. From July 14 to 16, the ADF raided the
+        primarily Christian commune of Mangina twice. Mangina Mayor Nicolas Kambale
+        said th
+      source: International Christian Concern
     - title: Thirty-Five Christians Killed by Islamists in Ituri Province, D. R. Congo
       url: https://www.barnabasaid.org/us/news/thirty-five-christians-killed-by-islamists-in-ituri-province-d-r-congo
       date: ''
@@ -15455,7 +15549,7 @@ countries:
       and northwest and India to the south and southeast. With a population of over
       800,000 (800,871) and a territory of 38,394 square kilometres (14,824 sq mi),
       Bhutan ranks 133rd in land area and 160th in population. It is a democratic
-      constitutional monarchy with a King as the head of state and a prime minister
+      constitutional monarchy with a king as the head of state and a prime minister
       as the head of government. The Je Khenpo is the head of the state religion,
       Vajrayana Buddhism.
     country_polygon: true
@@ -16121,7 +16215,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id067
+    - &id068
       title: USCIRF 2025 Annual Report - Kazakhstan
       url: https://www.uscirf.gov/countries/kazakhstan
       date: '2025'
@@ -16144,7 +16238,7 @@ countries:
     opendoors_score: 67
     christian_population: 3758462
     christian_percentage: 19.29
-    uscirf_designation: none
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Kazakhstan are poor for all religious communities,
       particularly Muslims who deviate from the state’s preferred interpretation of
@@ -16337,7 +16431,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id071
+    - &id072
       title: USCIRF 2025 Annual Report - Tajikistan
       url: https://www.uscirf.gov/countries/tajikistan
       date: '2025'
@@ -16360,7 +16454,7 @@ countries:
     opendoors_score: 72
     christian_population: 97515
     christian_percentage: 1.0
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - The regime of President Emomali Rahmon tightly controls nearly all aspects of
       religious life in Tajikistan. The government consistently uses arbitrary extremism
@@ -16511,7 +16605,7 @@ countries:
     opendoors_score: 67
     christian_population: 351778
     christian_percentage: 12.55
-    uscirf_designation: none
+    uscirf_designation: SWL
     uscirf_key_findings:
     - The Qatari government systematically represses unregistered religious groups,
       including Baha’is, Buddhists, and Hindus. It limits and monitors worship practices
@@ -17008,12 +17102,13 @@ countries:
       state of Sarawak, with its territory bifurcated by the Sarawak district of Limbang.
       Brunei is the only sovereign state entirely on Borneo; the remainder of the
       island is divided between its multi-landmass neighbours of Malaysia and Indonesia.
-      As of 2025, the country had a population of 466,330, of whom approximately 64,409
-      resided in the capital and largest city of Bandar Seri Begawan. Its official
-      language is Malay, and Sunni Islam is the state religion of the country, although
-      other religions are nominally tolerated. The government of Brunei is an absolute
-      monarchy ruled by the Sultan, and it implements a fusion of English common law
-      and jurisprudence inspired by Islam, including sharia.
+      As of 2025, the country had a population of 466,330, being the least populated
+      country in Asia of whom approximately 64,409 resided in the capital and largest
+      city of Bandar Seri Begawan. Its official language is Malay, and Sunni Islam
+      is the state religion of the country, although other religions are nominally
+      tolerated. The government of Brunei is an absolute monarchy ruled by the Sultan,
+      and it implements a fusion of English common law and jurisprudence inspired
+      by Islam, including sharia.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -17213,7 +17308,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id068
+    - &id069
       title: USCIRF 2025 Annual Report - Kyrgyzstan
       url: https://www.uscirf.gov/countries/kyrgyzstan
       date: '2025'
@@ -17228,7 +17323,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id018
+    - &id019
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
@@ -17250,7 +17345,7 @@ countries:
         for two months. The three men and two women face criminal charges of "Production
         and distribution of extremist materials". If convicted as a group, ea
       source: Forum 18
-    uscirf_designation: none
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Kyrgyzstan are severely restricted. A 2025 religion
       law and related amendments have further undermined FoRB, including by imposing
@@ -18779,7 +18874,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id064
+    - &id065
       title: USCIRF 2025 Annual Report - Russia
       url: https://www.uscirf.gov/countries/russia
       date: '2025'
@@ -18793,7 +18888,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id018
+    - *id019
     - *id014
     - *id006
     freedom_house_status: Not Free
@@ -18835,7 +18930,7 @@ countries:
         deprived the Ukrainian Orthodox Church (UOC) of its jurisdiction over and
         ownership of'
       source: Human Rights Without Frontiers
-    uscirf_designation: none
+    uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Russia are particularly severe as the government
       criminalizes the activities of multiple peaceful religious groups, including
@@ -19037,7 +19132,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id065
+    - &id066
       title: USCIRF 2025 Annual Report - Azerbaijan
       url: https://www.uscirf.gov/countries/azerbaijan
       date: '2025'
@@ -19066,7 +19161,7 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    uscirf_designation: none
+    uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Azerbaijan are poor. Authorities detain Shi’a
       Muslims whose religious practice falls outside the government's preferred interpretation
@@ -19187,7 +19282,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id066
+    - &id067
       title: USCIRF 2025 Annual Report - Sri Lanka
       url: https://www.uscirf.gov/countries/sri-lanka
       date: '2025'
@@ -20051,7 +20146,7 @@ countries:
     - fides
     - vdem2025forb
     sources:
-    - &id056
+    - &id057
       title: U.S. State Department IRF Report 2023 - Kenya
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kenya/
       date: '2023'
@@ -20071,27 +20166,23 @@ countries:
     christian_percentage: 85.67
     fides_articles: 1
     fides_samples:
-    - title: 'AFRICA/KENYA - AMECEA Plenary Assembly concludes: East African Bishops
-        identify young people as pastoral priority for the next four years'
-      url: https://www.fides.org/en/news/77981-AFRICA_KENYA_AMECEA_Plenary_Assembly_concludes_East_African_Bishops_identify_young_people_as_pastoral_priority_for_the_next_four_years
-      date: '2026-07-28'
-      description: Nairobi – The 21st Plenary Assembly of the Association of Member
-        Episcopal Conferences in Eastern Africa concluded in Nairobi, Kenya, after
-        bringing together bishops, priests, religious, lay people and youth delegates
-        from across Eastern Africa from July 19 to 26 . The Assembly's final document
-        iden
+    - title: AFRICA/KENYA - Controversy over British military presence
+      url: https://www.fides.org/en/news/78001-AFRICA_KENYA_Controversy_over_British_military_presence
+      date: '2026-07-31'
+      description: Nairobi – How can national and international security be reconciled
+        with human rights and the well-being of local communities? These are the issues
+        being debated in Kenya after the Great Britain announced its intention to
+        relocate a planned exercise by the British Army Training Unit Kenya from Laiki
       source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kenya/
     recent_incidents:
-    - title: 'AFRICA/KENYA - AMECEA Plenary Assembly concludes: East African Bishops
-        identify young people as pastoral priority for the next four years'
-      url: https://www.fides.org/en/news/77981-AFRICA_KENYA_AMECEA_Plenary_Assembly_concludes_East_African_Bishops_identify_young_people_as_pastoral_priority_for_the_next_four_years
-      date: '2026-07-28'
-      description: Nairobi – The 21st Plenary Assembly of the Association of Member
-        Episcopal Conferences in Eastern Africa concluded in Nairobi, Kenya, after
-        bringing together bishops, priests, religious, lay people and youth delegates
-        from across Eastern Africa from July 19 to 26 . The Assembly's final document
-        iden
+    - title: AFRICA/KENYA - Controversy over British military presence
+      url: https://www.fides.org/en/news/78001-AFRICA_KENYA_Controversy_over_British_military_presence
+      date: '2026-07-31'
+      description: Nairobi – How can national and international security be reconciled
+        with human rights and the well-being of local communities? These are the issues
+        being debated in Kenya after the Great Britain announced its intention to
+        relocate a planned exercise by the British Army Training Unit Kenya from Laiki
       source: Agenzia Fides
     archive_modern_excerpt: The constitution stipulates there shall be no state religion
       and prohibits religious discrimination. The constitution provides for freedom
@@ -20272,7 +20363,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id057
+    - &id058
       title: U.S. State Department IRF Report 2023 - Tanzania
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/tanzania/
       date: '2023'
@@ -20371,7 +20462,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id058
+    - &id059
       title: U.S. State Department IRF Report 2023 - Kuwait
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kuwait/
       date: '2023'
@@ -20495,7 +20586,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id059
+    - &id060
       title: U.S. State Department IRF Report 2023 - United Arab Emirates
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/united-arab-emirates/
       date: '2023'
@@ -20593,7 +20684,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id060
+    - &id061
       title: U.S. State Department IRF Report 2023 - Lebanon
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/lebanon/
       date: '2023'
@@ -20726,7 +20817,7 @@ countries:
     - infochretienne
     - jubilee
     sources:
-    - &id061
+    - &id062
       title: U.S. State Department IRF Report 2023 - Nepal
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nepal/
       date: '2023'
@@ -20971,13 +21062,13 @@ countries:
     - owid2024
     - hrw
     sources:
-    - &id062
+    - &id063
       title: U.S. State Department IRF Report 2023 - South Sudan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/south-sudan/
       date: '2023'
     - *id002
     - *id004
-    - *id017
+    - *id018
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -21036,70 +21127,70 @@ sources:
       Faith 2022-24 / Report on Christian persecution
     url: https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/
     date: '2024'
-  uscirf2023afghanistan: *id019
-  bbc2021: *id020
-  uscirf2023china: *id021
-  pew2023china: *id022
-  uscirf2023colombia: *id023
-  uscirf2023cuba: *id024
-  uscirf2023eritrea: *id025
-  uscirf2023india: *id026
-  uscirf2023indonesia: *id027
-  uscirf2023iran: *id028
-  uscirf2023iraq: *id029
-  uscirf2023laos: *id030
-  uscirf2023mexico: *id031
-  uscirf2023nicaragua: *id032
-  uscirf2023nigeria: *id033
-  uscirf2023northkorea: *id034
-  uscirf2023pakistan: *id035
-  uscirf2023saudiarabia: *id036
-  uscirf2023somalia: *id037
-  uscirf2023syria: *id038
-  uscirf2023vietnam: *id039
-  uscirf2023yemen: *id040
-  uscirf2023unitedstates: *id041
-  uscirf2023uganda: *id042
-  pew2023america: *id043
-  uscirf2023algeria: *id044
-  uscirf2023bangladesh: *id045
-  uscirf2023car: *id046
-  uscirf2023egypt: *id047
-  uscirf2023haiti: *id048
-  uscirf2023libya: *id049
-  uscirf2023malaysia: *id050
-  uscirf2023myanmar: *id051
-  uscirf2023sudan: *id052
-  uscirf2023turkey: *id053
-  uscirf2023venezuela: *id054
-  uscirf2023zimbabwe: *id055
+  uscirf2023afghanistan: *id020
+  bbc2021: *id021
+  uscirf2023china: *id022
+  pew2023china: *id023
+  uscirf2023colombia: *id024
+  uscirf2023cuba: *id025
+  uscirf2023eritrea: *id026
+  uscirf2023india: *id027
+  uscirf2023indonesia: *id028
+  uscirf2023iran: *id029
+  uscirf2023iraq: *id030
+  uscirf2023laos: *id031
+  uscirf2023mexico: *id032
+  uscirf2023nicaragua: *id033
+  uscirf2023nigeria: *id034
+  uscirf2023northkorea: *id035
+  uscirf2023pakistan: *id036
+  uscirf2023saudiarabia: *id037
+  uscirf2023somalia: *id038
+  uscirf2023syria: *id039
+  uscirf2023vietnam: *id040
+  uscirf2023yemen: *id041
+  uscirf2023unitedstates: *id042
+  uscirf2023uganda: *id043
+  pew2023america: *id044
+  uscirf2023algeria: *id045
+  uscirf2023bangladesh: *id046
+  uscirf2023car: *id047
+  uscirf2023egypt: *id048
+  uscirf2023haiti: *id049
+  uscirf2023libya: *id050
+  uscirf2023malaysia: *id051
+  uscirf2023myanmar: *id052
+  uscirf2023sudan: *id053
+  uscirf2023turkey: *id054
+  uscirf2023venezuela: *id055
+  uscirf2023zimbabwe: *id056
   freedomhouse2024: *id002
   statedepartment2023:
     title: U.S. State Department International Religious Freedom Report 2023
     url: https://www.state.gov/international-religious-freedom-reports/
     date: '2023'
-  statedepartment2023kenya: *id056
-  statedepartment2023tanzania: *id057
-  statedepartment2023kuwait: *id058
-  statedepartment2023unitedarabemirates: *id059
-  statedepartment2023lebanon: *id060
-  statedepartment2023nepal: *id061
-  statedepartment2023southsudan: *id062
+  statedepartment2023kenya: *id057
+  statedepartment2023tanzania: *id058
+  statedepartment2023kuwait: *id059
+  statedepartment2023unitedarabemirates: *id060
+  statedepartment2023lebanon: *id061
+  statedepartment2023nepal: *id062
+  statedepartment2023southsudan: *id063
   ohchr2024:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id063
+  gdelt2025: *id064
   owid2024: *id004
   odwwl2026: *id003
-  uscirf2025russia: *id064
-  uscirf2025azerbaijan: *id065
-  uscirf2025srilanka: *id066
-  uscirf2025kazakhstan: *id067
-  uscirf2025kyrgyzstan: *id068
-  uscirf2025turkmenistan: *id069
-  uscirf2025uzbekistan: *id070
-  uscirf2025tajikistan: *id071
+  uscirf2025russia: *id065
+  uscirf2025azerbaijan: *id066
+  uscirf2025srilanka: *id067
+  uscirf2025kazakhstan: *id068
+  uscirf2025kyrgyzstan: *id069
+  uscirf2025turkmenistan: *id070
+  uscirf2025uzbekistan: *id071
+  uscirf2025tajikistan: *id072
   morningstarnews2026: *id013
   infochretienne: *id007
   fides: *id012
@@ -21121,12 +21212,12 @@ sources:
     url: https://www.csw.org.uk/
     date: '2026'
   icc2026: *id008
-  forum18: *id018
-  mec: *id072
-  bitterwinter: *id073
+  forum18: *id019
+  mec: *id073
+  bitterwinter: *id074
   releaseintl: *id009
   vom2026: *id010
-  chinaaid: *id074
+  chinaaid: *id075
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
     url: https://www.osce.org/odihr/freedom-of-religion-or-belief
@@ -21135,14 +21226,14 @@ sources:
     title: UN Special Rapporteur on Freedom of Religion or Belief
     url: https://www.ohchr.org/en/special-procedures/sr-religion-or-belief
     date: '2026'
-  hrw: *id017
+  hrw: *id018
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id011
   csi: *id015
-  cna: *id075
+  cna: *id017
   hrwf: *id014
   adf:
     title: ADF International
@@ -21701,152 +21792,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-07-31 09:19 UTC
+  generated_at: 2026-08-01 08:36 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-07-31T09:18:23.788765+00:00'
+    fetched_at: '2026-08-01T08:36:16.664317+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-07-31T09:17:57.134066+00:00'
+    fetched_at: '2026-08-01T08:35:49.182229+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-07-31T09:18:26.354784+00:00'
+    fetched_at: '2026-08-01T08:36:18.646280+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-07-31T09:18:16.448811+00:00'
+    fetched_at: '2026-08-01T08:36:09.096467+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-07-31T09:18:18.820373+00:00'
+    fetched_at: '2026-08-01T08:36:11.471649+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-07-31T09:18:05.406857+00:00'
+    fetched_at: '2026-08-01T08:35:56.180951+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-07-31T09:18:08.836063+00:00'
+    fetched_at: '2026-08-01T08:35:59.840676+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-07-31T09:18:22.140677+00:00'
+    fetched_at: '2026-08-01T08:36:14.282074+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-07-31T09:18:21.739453+00:00'
+    fetched_at: '2026-08-01T08:36:13.677894+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-07-31T09:17:58.241886+00:00'
+    fetched_at: '2026-08-01T08:35:50.296351+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-07-31T09:18:23.521882+00:00'
+    fetched_at: '2026-08-01T08:36:16.268242+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-07-31T09:18:00.072100+00:00'
+    fetched_at: '2026-08-01T08:35:52.820090+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-07-31T09:12:34.395853+00:00'
+    fetched_at: '2026-08-01T08:30:18.488047+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-07-31T09:17:56.092902+00:00'
+    fetched_at: '2026-08-01T08:35:47.735947+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-07-31T09:17:45.037119+00:00'
-    message: 2 of 4 queries failed
+    fetched_at: '2026-08-01T08:35:34.970466+00:00'
+    message: 3 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-07-31T09:18:15.921318+00:00'
+    fetched_at: '2026-08-01T08:36:08.592223+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-07-31T09:18:25.326764+00:00'
+    fetched_at: '2026-08-01T08:36:17.685709+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-07-31T09:17:59.106795+00:00'
+    fetched_at: '2026-08-01T08:35:51.095144+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-07-31T09:18:11.035573+00:00'
+    fetched_at: '2026-08-01T08:36:02.951036+00:00'
     message: null
   - name: ippforb
-    status: ok
-    fetched_at: '2026-07-31T09:18:38.681359+00:00'
-    message: null
+    status: failed
+    fetched_at: '2026-08-01T08:36:22.426169+00:00'
+    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-07-31T09:18:37.412302+00:00'
+    fetched_at: '2026-08-01T08:36:20.974045+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-07-31T09:18:04.262134+00:00'
+    fetched_at: '2026-08-01T08:35:55.074014+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-07-31T09:17:48.192347+00:00'
+    fetched_at: '2026-08-01T08:35:37.380467+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-07-31T09:18:39.141992+00:00'
+    fetched_at: '2026-08-01T08:36:23.579487+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-07-31T09:17:46.510760+00:00'
+    fetched_at: '2026-08-01T08:35:36.514515+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-07-31T09:12:33.327877+00:00'
+    fetched_at: '2026-08-01T08:30:17.060046+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-07-31T09:18:15.355860+00:00'
+    fetched_at: '2026-08-01T08:36:07.549200+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-07-31T09:12:36.475522+00:00'
+    fetched_at: '2026-08-01T08:30:21.784543+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-07-31T09:18:06.668195+00:00'
+    fetched_at: '2026-08-01T08:35:57.387841+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-07-31T09:15:18.720355+00:00'
+    fetched_at: '2026-08-01T08:33:28.110173+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-07-31T09:18:15.706585+00:00'
+    fetched_at: '2026-08-01T08:36:08.314572+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-07-31T09:13:16.577460+00:00'
+    fetched_at: '2026-08-01T08:31:10.200638+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-07-31T09:17:54.425658+00:00'
+    fetched_at: '2026-08-01T08:35:45.963803+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-07-31T09:18:07.524925+00:00'
+    fetched_at: '2026-08-01T08:35:58.189292+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-07-31T09:18:27.624458+00:00'
+    fetched_at: '2026-08-01T08:36:20.416701+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-07-31T09:19:03.450896+00:00'
+    fetched_at: '2026-08-01T08:36:48.330563+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
