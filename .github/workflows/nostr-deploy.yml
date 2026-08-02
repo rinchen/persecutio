@@ -10,6 +10,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout scripts
@@ -52,5 +53,6 @@ jobs:
           NSYTE_NAME: persecutio
           NSYTE_RELAYS: wss://relay.nsite.lol,wss://nos.lol,wss://relay.nostr.band,wss://relay.primal.net
           NSYTE_SERVERS: https://cdn.hzrd149.com
-          MAX_ATTEMPTS: "3"
+          MAX_ATTEMPTS: "12"
+          RETRY_BUDGET_SECONDS: "900"
         run: bash repo/scripts/ci_nsyte_deploy_with_retry.sh

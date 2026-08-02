@@ -131,7 +131,7 @@ Only **primary** fetch failures abort before generate/deploy. Secondary fetches 
 
 - Gateway: https://2vu4veopeh8g2tkli0pmbu2gtrmcicht56a5k9edx63jy6l7tcpersecutio.nsite.lol/
 - NIP-05A address (clients with nsite support): `naddr1qvzqqqyf8qpzqua6pgsfdufl97frsalzalnedutx94revzz4m47pgd2qtq28txxsqq98qetjwdjkxat5d9hs2c44ed`
-- Signing uses a NIP-46 bunker via repo secret `NBUNK_SECRET` (`nbunksec1…` from `nsyte ci`). Keep the bunker app awake and connected to the relays embedded in that credential. The workflow diagnoses the secret (non-secret hygiene + bunker relay probes), retries transient bunker/network timeouts (up to 3 attempts), and fails fast on permanent credential errors. Manual republish: Actions → **Deploy to Nostr** → Run workflow.
+- Signing uses a NIP-46 bunker via repo secret `NBUNK_SECRET` (`nbunksec1…` from `nsyte ci`). Keep the bunker app awake and connected to the relays embedded in that credential. The workflow diagnoses the secret (non-secret hygiene + bunker relay probes), then retries transient bunker/network timeouts for up to ~15 minutes (nsyte’s NIP-46 connect wait is a hard 30s per attempt). Flaky bunker relays may deliver the request to the bunker while dropping or delaying the response — the bunker app can show the request even when CI times out. Permanent credential errors fail fast. Manual republish: Actions → **Deploy to Nostr** → Run workflow.
 
 ### PR previews
 
