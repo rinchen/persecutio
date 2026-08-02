@@ -23,7 +23,7 @@ DEPLOY_RELAYS = [
     "wss://relay.primal.net",
 ]
 
-CHARSET = "qpzry9x8gf2tpevy0u2junkcr5zh3lw0dahaxgsmvd"
+CHARSET = "qpzry9x8gf2tvdw0s3jn54khce6mua7l"
 CHARSET_MAP = {c: i for i, c in enumerate(CHARSET)}
 
 
