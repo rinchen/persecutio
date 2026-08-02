@@ -5,25 +5,52 @@ on:
     workflows: ["Deploy Pages", "Update Persecutio"]
     types:
       - completed
+  workflow_dispatch: {}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout scripts
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: repo
+
+      - name: Checkout gh-pages site
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: gh-pages
-      - name: Deploy to Nostr/Blossom
-        uses: sandwichfarm/nsite-action@v0.5.1
-        with:
-          nbunksec: ${{ secrets.NBUNK_SECRET }}
-          directory: '.'
-          name: 'persecutio'
-          relays: |
-            wss://relay.nsite.lol
-            wss://nos.lol
-            wss://relay.nostr.band
-            wss://relay.primal.net
-          servers: |
-            https://cdn.hzrd149.com
+          path: site
+
+      - name: Diagnose nbunksec / bunker relays
+        env:
+          NBUNK_SECRET: ${{ secrets.NBUNK_SECRET }}
+        run: python3 repo/scripts/ci_nbunk_diagnose.py
+
+      - name: Download nsyte
+        id: nsyte
+        env:
+          NSYTE_VERSION: v0.27.2
+        run: |
+          set -euo pipefail
+          VERSION_NUMBER="${NSYTE_VERSION#v}"
+          ASSET="nsyte-linux-${VERSION_NUMBER}"
+          URL="https://github.com/sandwichfarm/nsyte/releases/download/${NSYTE_VERSION}/${ASSET}"
+          mkdir -p nsyte_bin
+          echo "Downloading ${URL}"
+          curl -fsSL -o "nsyte_bin/${ASSET}" "$URL"
+          chmod +x "nsyte_bin/${ASSET}"
+          echo "path=${{ github.workspace }}/nsyte_bin/${ASSET}" >> "$GITHUB_OUTPUT"
+          echo "version=${NSYTE_VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy to Nostr/Blossom (with retry)
+        env:
+          NBUNK_SECRET: ${{ secrets.NBUNK_SECRET }}
+          NSYTE_BIN: ${{ steps.nsyte.outputs.path }}
+          SITE_DIR: ${{ github.workspace }}/site
+          NSYTE_NAME: persecutio
+          NSYTE_RELAYS: wss://relay.nsite.lol,wss://nos.lol,wss://relay.nostr.band,wss://relay.primal.net
+          NSYTE_SERVERS: https://cdn.hzrd149.com
+          MAX_ATTEMPTS: "3"
+        run: bash repo/scripts/ci_nsyte_deploy_with_retry.sh
