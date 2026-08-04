@@ -83,7 +83,7 @@ jobs:
               re.IGNORECASE,
           )
 
-          def repl(m: re.Match[str]) -> str:
+          def repl(m):
               return f'{m.group(1)}{m.group(2)}?v={v}{m.group(3)}'
 
           for path in root.rglob("*.html"):
