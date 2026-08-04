@@ -65,6 +65,35 @@ jobs:
               print(f"rewrote {path}")
           PY
 
+      # Same preview URL across pushes; bust CSS/JS so browsers don't keep the first deploy.
+      - name: Cache-bust local assets
+        if: github.event.action != 'closed'
+        env:
+          ASSET_V: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          v = os.environ["ASSET_V"][:12]
+          root = Path("_site")
+          pat = re.compile(
+              r'((?:href|src)=")((?:\.\./)?assets/[^"?#]+\.(?:css|js))(")',
+              re.IGNORECASE,
+          )
+
+          def repl(m: re.Match[str]) -> str:
+              return f'{m.group(1)}{m.group(2)}?v={v}{m.group(3)}'
+
+          for path in root.rglob("*.html"):
+              text = path.read_text(encoding="utf-8")
+              new, n = pat.subn(repl, text)
+              if n:
+                  path.write_text(new, encoding="utf-8")
+                  print(f"cache-busted {path} ({n})")
+          PY
+
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
         with:

@@ -135,7 +135,7 @@ Only **primary** fetch failures abort before generate/deploy. Secondary fetches 
 
 ### PR previews
 
-Same-repo pull requests get a sticky comment with a live preview URL under `/pr-preview/pr-{N}/` (see [`.github/workflows/preview.yml`](.github/workflows/preview.yml)). Previews stage the PR’s public site files, rewrite absolute `/persecutio/…` links for the preview subpath, and are removed when the PR closes. Fork PRs do not get automatic previews — serve locally with `python3 -m http.server`. Preview URLs share the production GitHub Pages origin — treat them as **untrusted** until you review the PR.
+Same-repo pull requests get a sticky comment with a live preview URL under `/pr-preview/pr-{N}/` (see [`.github/workflows/preview.yml`](.github/workflows/preview.yml)). Previews stage the PR’s public site files, rewrite absolute `/persecutio/…` links for the preview subpath, append a per-commit `?v=` cache-buster to local CSS/JS so browsers pick up later pushes, and are removed when the PR closes. Fork PRs do not get automatic previews — serve locally with `python3 -m http.server`. Preview URLs share the production GitHub Pages origin — treat them as **untrusted** until you review the PR.
 
 **One-time setup** (after the first `gh-pages` deploy succeeds):
 
