@@ -1,26 +1,30 @@
 :root {
+  /* Third Order Trinitarians palette: navy + crimson on warm paper */
   color-scheme: light;
-  --color-bg: #f4f8fb;
+  --color-bg: #f8f1f1;
   --color-surface: #ffffff;
-  --color-surface-2: #e8f1f8;
-  --color-text: #1a2b3c;
-  --color-text-muted: #4a5f73;
-  --color-border: #c5d6e3;
-  --color-accent: #0369a1;
-  --color-accent-hover: #075985;
-  --color-accent-soft: #e0f2fe;
-  --color-focus: #0284c7;
+  --color-surface-2: #f0e8e8;
+  --color-text: #1d1d1d;
+  --color-text-muted: #4a4a4a;
+  --color-border: #d4c8c8;
+  --color-accent: #13327c;
+  --color-accent-hover: #0d2459;
+  --color-accent-soft: #e4eaf5;
+  --color-focus: #13327c;
+  --color-cta: #ba180d;
+  --color-cta-hover: #94130a;
+  --color-cta-soft: #f8e8e6;
   --color-error-bg: #fef2f2;
   --color-error-text: #991b1b;
   --color-success: #166534;
   --glass-bg: rgb(255 255 255 / 82%);
   --glass-bg-strong: rgb(255 255 255 / 94%);
-  --glass-border: rgb(197 214 227 / 90%);
-  --glass-text: #1a2b3c;
-  --glass-muted: #4a5f73;
-  --glass-accent: #0369a1;
+  --glass-border: rgb(212 200 200 / 90%);
+  --glass-text: #1d1d1d;
+  --glass-muted: #4a4a4a;
+  --glass-accent: #13327c;
   --radius: 10px;
-  --shadow: 0 1px 3px rgb(26 43 60 / 8%), 0 4px 16px rgb(26 43 60 / 6%);
+  --shadow: 0 1px 3px rgb(19 50 124 / 8%), 0 4px 16px rgb(29 29 29 / 6%);
   --page-gutter: clamp(0.75rem, 2.8vw, 2.5rem);
   --max-width: min(92rem, 100%);
   --header-height: 3.5rem;
@@ -46,7 +50,7 @@ html {
 body {
   margin: 0;
   font-family: 'Outfit', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-  background: linear-gradient(180deg, #dbeafe 0%, var(--color-bg) 28%, var(--color-bg) 100%);
+  background: linear-gradient(180deg, #e4eaf5 0%, var(--color-bg) 28%, var(--color-bg) 100%);
   color: var(--color-text);
   line-height: 1.55;
   min-height: 100dvh;
@@ -62,7 +66,7 @@ body {
   overflow: hidden;
   z-index: 9999;
   padding: 8px 16px;
-  background: var(--color-accent);
+  background: var(--color-cta);
   color: #fff;
   font-weight: 600;
   border-radius: 0 0 var(--radius) var(--radius);
@@ -1094,8 +1098,8 @@ button:focus-visible {
   background: var(--color-surface-2);
 }
 .post .org-card--primary {
-  border-color: color-mix(in srgb, var(--color-accent) 45%, var(--glass-border));
-  background: color-mix(in srgb, var(--color-accent-soft) 55%, var(--color-surface-2));
+  border-color: color-mix(in srgb, var(--color-cta) 40%, var(--glass-border));
+  background: color-mix(in srgb, var(--color-cta-soft) 55%, var(--color-surface-2));
 }
 .post .org-card h3 {
   margin: 0 0 0.4rem;
