@@ -23,6 +23,9 @@
   --glass-text: #1d1d1d;
   --glass-muted: #4a4a4a;
   --glass-accent: #13327c;
+  /* Alice = Third Order body; Montserrat ≈ Sofia Pro (Adobe, not freely licensable) */
+  --font-serif: 'Alice', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
   --radius: 10px;
   --shadow: 0 1px 3px rgb(19 50 124 / 8%), 0 4px 16px rgb(29 29 29 / 6%);
   --page-gutter: clamp(0.75rem, 2.8vw, 2.5rem);
@@ -49,7 +52,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Outfit', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  font-family: var(--font-serif);
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.55;
@@ -68,6 +71,7 @@ body {
   padding: 8px 16px;
   background: var(--color-cta);
   color: #fff;
+  font-family: var(--font-sans);
   font-weight: 600;
   border-radius: 0 0 var(--radius) var(--radius);
   text-decoration: none;
@@ -123,6 +127,7 @@ body > header a {
 }
 
 .brand {
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   letter-spacing: -0.01em;
@@ -137,6 +142,7 @@ nav {
   align-items: center;
   gap: 14px;
   flex-shrink: 0;
+  font-family: var(--font-sans);
 }
 nav a {
   color: var(--color-text-muted);
@@ -218,9 +224,10 @@ main {
 }
 
 /* Headings */
-h1, h2 {
+h1, h2, h3 {
   margin: 0 0 6px;
   color: var(--color-text);
+  font-family: var(--font-sans);
 }
 h1 {
   font-size: clamp(1.4rem, 2.6vw, 1.7rem);
@@ -300,7 +307,7 @@ section + section { margin-top: 1.35rem; }
   padding: 10px 14px;
   border: 1px solid var(--color-border);
   border-radius: calc(var(--radius) - 2px);
-  font: inherit;
+  font-family: var(--font-sans);
   font-size: 0.9375rem;
   background: var(--color-bg);
   color: var(--color-text);
@@ -310,7 +317,7 @@ section + section { margin-top: 1.35rem; }
 .search input::placeholder { color: var(--color-text-muted); }
 .search input:focus {
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.15);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 18%, transparent);
 }
 .search input:focus-visible {
   outline: none;
@@ -366,7 +373,7 @@ section + section { margin-top: 1.35rem; }
   border: 1px solid var(--glass-border);
 }
 .leaflet-tooltip {
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   padding: 5px 10px;
   border-radius: 6px;
@@ -392,6 +399,7 @@ section + section { margin-top: 1.35rem; }
   border-top: 1px solid var(--glass-border);
   background: var(--color-surface-2);
   border-radius: 0 0 12px 12px;
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   color: var(--color-text-muted);
   margin: 12px calc(-1 * clamp(1rem, 2.5vw, 1.5rem)) 0;
@@ -798,6 +806,7 @@ section + section { margin-top: 1.35rem; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   color: var(--color-accent);
   text-decoration: none;
@@ -839,6 +848,7 @@ section + section { margin-top: 1.35rem; }
     max(var(--page-gutter), env(safe-area-inset-left, 0px));
   box-sizing: border-box;
   color: var(--color-text-muted);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   border-top: 1px solid var(--glass-border);
   background: var(--glass-bg);
