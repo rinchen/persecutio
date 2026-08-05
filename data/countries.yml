@@ -244,7 +244,7 @@ countries:
       title: Global Christian Relief - Persecution Statistics 2026
       url: https://globalchristianrelief.org/stories/christian-persecution-statistics
       date: '2026'
-    - &id017
+    - &id019
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
@@ -381,6 +381,7 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
+    - gdelt2025
     - vdem2025forb
   pew_slug: china
   metadata:
@@ -894,6 +895,7 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
+    - gdelt2025
     - vdem2025forb
     sources:
     - &id023
@@ -941,6 +943,10 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
+    - &id012
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -998,6 +1004,16 @@ countries:
       source: Voice of the Martyrs
     chinaaid_articles: 8
     chinaaid_samples:
+    - title: China&#8217;s new exit rules expand travel bans, raising transnational
+        repression concerns
+      url: https://chinaaid.org/news/chinas-new-exit-rules-expand-travel-bans-raising-transnational-repression-concerns/?utm_source=rss&utm_medium=rss&utm_campaign=chinas-new-exit-rules-expand-travel-bans-raising-transnational-repression-concerns
+      date: '2026-08-04'
+      description: 'China s new exit-entry regulations, set to take effect next month,
+        expand the government s authority to bar people from leaving the country and
+        allow authorities to withhold notice of those restrictions in some cases,
+        raising concerns among human rights advocates. Issued by China’s State Council
+        on '
+      source: ChinaAid
     - title: After police raid, three Chinese house church members face criminal charges
       url: https://chinaaid.org/news/after-police-raid-three-chinese-house-church-members-face-criminal-charges/?utm_source=rss&utm_medium=rss&utm_campaign=after-police-raid-three-chinese-house-church-members-face-criminal-charges
       date: '2026-08-03'
@@ -1016,15 +1032,6 @@ countries:
         Zhenbin made the allegation in a letter sent from detention, according to
         informati
       source: ChinaAid
-    - title: Chinese authorities renew raids on Early Rain Covenant Church amid widening
-        crackdown
-      url: https://chinaaid.org/news/chinese-authorities-renew-raids-on-early-rain-covenant-church-amid-widening-crackdown/?utm_source=rss&utm_medium=rss&utm_campaign=chinese-authorities-renew-raids-on-early-rain-covenant-church-amid-widening-crackdown
-      date: '2026-07-30'
-      description: (Sichuan Province, China – July 30, 2026) Chinese authorities continued
-        their crackdown on unregistered Protestant churches Sunday, raiding multiple
-        gatherings of the prominent Early Rain Covenant Church in Chengdu in southwestern
-        China. The July 26 raids disrupted the church s decentralized worship
-      source: ChinaAid
     infochretienne_articles: 1
     infochretienne_samples:
     - title: '"Je ne me reposerai pas" : le pasteur de l''Église de Sion appelle à
@@ -1040,6 +1047,17 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Chinese Communists Step Up Persecution of Underground Church and Its
+        Priests
+      url: https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious communities in China face persecution when they refuse to submit to
@@ -1052,6 +1070,16 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/china
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/china/
     recent_incidents:
+    - title: China&#8217;s new exit rules expand travel bans, raising transnational
+        repression concerns
+      url: https://chinaaid.org/news/chinas-new-exit-rules-expand-travel-bans-raising-transnational-repression-concerns/?utm_source=rss&utm_medium=rss&utm_campaign=chinas-new-exit-rules-expand-travel-bans-raising-transnational-repression-concerns
+      date: '2026-08-04'
+      description: 'China s new exit-entry regulations, set to take effect next month,
+        expand the government s authority to bar people from leaving the country and
+        allow authorities to withhold notice of those restrictions in some cases,
+        raising concerns among human rights advocates. Issued by China’s State Council
+        on '
+      source: ChinaAid
     - title: After police raid, three Chinese house church members face criminal charges
       url: https://chinaaid.org/news/after-police-raid-three-chinese-house-church-members-face-criminal-charges/?utm_source=rss&utm_medium=rss&utm_campaign=after-police-raid-three-chinese-house-church-members-face-criminal-charges
       date: '2026-08-03'
@@ -1145,22 +1173,18 @@ countries:
         Enforcement (ICE) custody after being detained July 15 during an immigration
         enf
       source: ChinaAid
-    - title: Chinese authorities add new charge against Early Rain preacher as case
-        advances
-      url: https://chinaaid.org/news/chinese-authorities-add-new-charge-against-early-rain-preacher-as-case-advances/?utm_source=rss&utm_medium=rss&utm_campaign=chinese-authorities-add-new-charge-against-early-rain-preacher-as-case-advances
-      date: '2026-07-22'
-      description: (Sichuan, China – July 22, 2026) After six months in detention,
-        the case against Early Rain Covenant Church preacher Dai Zhichao has entered
-        a new phase as Chinese authorities continue their years-long campaign against
-        one of the country s best-known Protestant house churches. The case of Dai
-        Zhicha
-      source: ChinaAid
     - title: '"Je ne me reposerai pas" : le pasteur de l''Église de Sion appelle à
         la liberté religieuse en Chine'
       url: https://www.infochretienne.com/articles/je-ne-me-reposerai-pas-le-pasteur-de-leglise-de-sion-appelle-a-la-liberte-religieuse-en-chine
       date: '2026-07-20'
       description: ''
       source: Info Chrétienne
+    - title: Chinese Communists Step Up Persecution of Underground Church and Its
+        Priests
+      url: https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: Chinese pastor released!
       url: https://releaseinternational.org/pastorzhangshaojie
       date: '2025-11-17'
@@ -2036,9 +2060,9 @@ countries:
     - icc2026
     - releaseintl
     - vom2026
-    - infochretienne
     - barnabas
     - fides
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -2338,9 +2362,9 @@ countries:
     - icc2026
     - releaseintl
     - vom2026
-    - infochretienne
     - barnabas
     - fides
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -2360,19 +2384,19 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id012
+    - &id013
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
     - *id008
     - *id009
     - *id010
-    - *id007
     - *id011
-    - &id013
+    - &id014
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
       date: '2026'
+    - *id012
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 2
@@ -2463,13 +2487,6 @@ countries:
         After he placed his trust in Christ, they married and began a church that
         grew to
       source: Voice of the Martyrs
-    infochretienne_articles: 1
-    infochretienne_samples:
-    - title: 'Inde : des chrétiens agressés lors d’une attaque contre une église'
-      url: https://www.infochretienne.com/articles/inde-des-chretiens-agresses-lors-dune-attaque-contre-une-eglise
-      date: '2026-07-03'
-      description: ''
-      source: Info Chrétienne
     barnabas_articles: 2
     barnabas_samples:
     - title: Pastor Arrested and Charged in Madhya Pradesh, India, Following Baseless
@@ -2484,8 +2501,19 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    fides_articles: 2
+    fides_articles: 3
     fides_samples:
+    - title: 'Bishop Pitchaimuthu at the First Franciscan Missionary Symposium: “Asia
+        does not need missionaries who come with all the answers. It needs brothers
+        and sisters who bring Christ”'
+      url: https://www.fides.org/en/news/78015-Bishop_Pitchaimuthu_at_the_First_Franciscan_Missionary_Symposium_Asia_does_not_need_missionaries_who_come_with_all_the_answers_It_needs_brothers_and_sisters_who_bring_Christ
+      date: '2026-08-04'
+      description: by Elena Grazini Chennai – “Asia does not need missionaries who
+        come with all the answers. It needs brothers and sisters who bring Christ,
+        walk alongside the people, listen deeply, discern patiently, serve the wounded,
+        build peace, and proclaim the name of Jesus with humility and joy.” These
+        were th
+      source: Agenzia Fides
     - title: 'ASIA/INDIA - Jesuit Prakash: "Young people are awakening the country''s
         democratic conscience"'
       url: https://www.fides.org/en/news/77987-ASIA_INDIA_Jesuit_Prakash_Young_people_are_awakening_the_country_s_democratic_conscience
@@ -2505,6 +2533,24 @@ countries:
         In the face of the ongoing maritime tragedies in the Bay of Bengal, Catholic
         communities in South and Southeast Asia—particularly in Bangladesh, Ind
       source: Agenzia Fides
+    gdelt_articles: 2
+    gdelt_samples:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
+    gdelt_sample_urls:
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Indian government tolerates and perpetrates widespread harassment and violence
@@ -2559,11 +2605,18 @@ countries:
         law, two years after they were falsely accused at a child’s birthday party,
         sources said. The Christians were convicted on June 12 of “promoting e
       source: Morning Star News
-    - title: 'Inde : des chrétiens agressés lors d’une attaque contre une église'
-      url: https://www.infochretienne.com/articles/inde-des-chretiens-agresses-lors-dune-attaque-contre-une-eglise
-      date: '2026-07-03'
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
       description: ''
-      source: Info Chrétienne
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: Threat of ‘draconian’ regulations in India
       url: https://releaseinternational.org/podcast-india
       date: '2026-06-04'
@@ -3215,8 +3268,8 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id012
     - *id013
+    - *id014
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -3931,7 +3984,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id014
+    - &id015
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
@@ -4663,7 +4716,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id018
+    - &id016
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
@@ -4766,6 +4819,7 @@ countries:
     - owid2024
     - infochretienne
     - hrwf
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -4893,6 +4947,7 @@ countries:
     - owid2024
     - infochretienne
     - hrwf
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -4912,7 +4967,8 @@ countries:
     - *id003
     - *id004
     - *id007
-    - *id014
+    - *id015
+    - *id012
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -4938,6 +4994,30 @@ countries:
         Post (07.07.2026) An 80-year-old Roman Catholic bishop and three other Catholic
         leaders were detained in Nicaragua last week amid an ongoing crackdown aga'
       source: Human Rights Without Frontiers
+    gdelt_articles: 3
+    gdelt_samples:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    - title: 80 - year - old Catholic bishop detained in Nicaragua amid crackdown
+      url: https://www.christianpost.com/news/80-year-old-catholic-bishop-detained-in-nicaragua-amid-crackdown.html
+      date: '2026-07-07'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 3
+    gdelt_sample_urls:
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.christianpost.com/news/80-year-old-catholic-bishop-detained-in-nicaragua-amid-crackdown.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Nicaraguan regime continues to enforce a total crackdown on religious organizations.
@@ -4958,6 +5038,23 @@ countries:
         Post (07.07.2026) An 80-year-old Roman Catholic bishop and three other Catholic
         leaders were detained in Nicaragua last week amid an ongoing crackdown aga'
       source: Human Rights Without Frontiers
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    - title: 80 - year - old Catholic bishop detained in Nicaragua amid crackdown
+      url: https://www.christianpost.com/news/80-year-old-catholic-bishop-detained-in-nicaragua-amid-crackdown.html
+      date: '2026-07-07'
+      description: ''
+      source: GDELT
     - title: Arrestation puis libération d'un évêque critique du pouvoir au Nicaragua
       url: https://www.infochretienne.com/articles/arrestation-puis-liberation-dun-eveque-critique-du-pouvoir-au-nicaragua
       date: '2026-07-06'
@@ -5047,6 +5144,7 @@ countries:
     - infochretienne
     - barnabas
     - csi
+    - cna
     - fides
     - aciprensa
     - jubilee
@@ -5199,6 +5297,7 @@ countries:
     - infochretienne
     - barnabas
     - csi
+    - cna
     - fides
     - aciprensa
     - jubilee
@@ -5222,27 +5321,25 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
+    - *id013
     - *id008
     - *id007
     - *id011
-    - &id015
+    - &id017
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - *id013
+    - *id016
+    - *id014
     - &id072
       title: ACI Prensa - Noticias católicas
       url: https://www.aciprensa.com/
       date: '2026'
-    - &id016
+    - &id018
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
-    - &id019
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
+    - *id012
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -5268,8 +5365,16 @@ countries:
         on Saturday (Aug. 1) for 27 Christians massacred by suspected Fulani terrorists
         in Kaduna state, Nigeria, sources said. A funeral for three evangelical Chris
       source: Morning Star News
-    icc_articles: 2
+    icc_articles: 3
     icc_samples:
+    - title: Climate Change Is Not Christian Persecution, So Why Does It Matter?
+      url: https://persecution.org/2026/08/04/climate-change-is-not-christian-persecution-so-why-does-it-matter
+      date: '2026-08-04'
+      description: Part 1 of the series, “When Creation Groans” By ICC Fellow Lisa
+        Navarrette The first light of dawn stretches across a farming village in Nigeria’s
+        Middle Belt as Samuel walks slowly through the field his father once cultivated
+        before him. He kneels and scoops a handful of dry soil into his palm. Ano
+      source: International Christian Concern
     - title: Islamic Extremists Kill 30 Christians in Nigerian Village
       url: https://persecution.org/2026/07/28/islamic-extremists-kill-30-christians-in-nigerian-village
       date: '2026-07-28'
@@ -5307,7 +5412,7 @@ countries:
       date: '2026-07-17'
       description: ''
       source: Info Chrétienne
-    barnabas_articles: 3
+    barnabas_articles: 2
     barnabas_samples:
     - title: At Least 30 Killed in Attack on Christian Village in Kaduna State, Nigeria
       url: https://www.barnabasaid.org/us/news/at-least-30-killed-in-attack-on-christian-village-in-kaduna-state-nigeri
@@ -5320,12 +5425,6 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    - title: At Least 39 Killed as Terrorists Attack Christian Communities in Middle
-        Belt Nigeria
-      url: https://www.barnabasaid.org/us/news/at-least-39-killed-as-terrorists-attack-christian-communities-in-middle
-      date: ''
-      description: ''
-      source: Barnabas Aid
     csi_articles: 1
     csi_samples:
     - title: Nigerian widow sues state over alleged forced conversion of teenage daughter
@@ -5333,8 +5432,26 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    fides_articles: 2
+    cna_articles: 1
+    cna_samples:
+    - title: Priest murdered, followed by kidnappings at Mass in Nigeria
+      url: https://www.ewtnnews.com/world/africa/priest-killed-kidnappings-at-mass-in-nigeria
+      date: '2026-08-04'
+      description: While the local Church was still mourning the priest’s death, yet
+        another act of violence shook the country’s Catholics.
+      source: Catholic News Agency
+    fides_articles: 3
     fides_samples:
+    - title: AFRICA/NIGERIA - Deep sorrow over the killing of Father Oyetoro; relief
+        over the release of the seminarian kidnapped in Otukpo
+      url: https://www.fides.org/en/news/78016-AFRICA_NIGERIA_Deep_sorrow_over_the_killing_of_Father_Oyetoro_relief_over_the_release_of_the_seminarian_kidnapped_in_Otukpo
+      date: '2026-08-04'
+      description: Abuja – The killing of Father Samuel Opeyemi Oyetoro has deeply
+        affected both his home community and the one where he had been temporarily
+        assigned to serve. The priest, whose body, bearing machete wounds, was found
+        on Church Road in Ajaokuta, Kogi State, central Nigeria, was visiting St.
+        Paul the A
+      source: Agenzia Fides
     - title: AFRICA/NIGERIA - Church attacked during Sunday Mass, two people still
         held by kidnappers
       url: https://www.fides.org/en/news/78012-AFRICA_NIGERIA_Church_attacked_during_Sunday_Mass_two_people_still_held_by_kidnappers
@@ -5375,17 +5492,24 @@ countries:
         elicited by the widespread insecurity in the country. Discussion of freedom
         of '
       source: Jubilee Campaign
-    gdelt_articles: 1
+    gdelt_articles: 2
     gdelt_samples:
-    - title: Al menos 30 muertos en un ataque contra una comunidad cristiana en Nigeria
-        – INFOVATICANA
-      url: https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
-      date: '2026-07-31'
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 1
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
     gdelt_sample_urls:
-    - https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5397,6 +5521,30 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/nigeria
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nigeria/
     recent_incidents:
+    - title: Climate Change Is Not Christian Persecution, So Why Does It Matter?
+      url: https://persecution.org/2026/08/04/climate-change-is-not-christian-persecution-so-why-does-it-matter
+      date: '2026-08-04'
+      description: Part 1 of the series, “When Creation Groans” By ICC Fellow Lisa
+        Navarrette The first light of dawn stretches across a farming village in Nigeria’s
+        Middle Belt as Samuel walks slowly through the field his father once cultivated
+        before him. He kneels and scoops a handful of dry soil into his palm. Ano
+      source: International Christian Concern
+    - title: Priest murdered, followed by kidnappings at Mass in Nigeria
+      url: https://www.ewtnnews.com/world/africa/priest-killed-kidnappings-at-mass-in-nigeria
+      date: '2026-08-04'
+      description: While the local Church was still mourning the priest’s death, yet
+        another act of violence shook the country’s Catholics.
+      source: Catholic News Agency
+    - title: AFRICA/NIGERIA - Deep sorrow over the killing of Father Oyetoro; relief
+        over the release of the seminarian kidnapped in Otukpo
+      url: https://www.fides.org/en/news/78016-AFRICA_NIGERIA_Deep_sorrow_over_the_killing_of_Father_Oyetoro_relief_over_the_release_of_the_seminarian_kidnapped_in_Otukpo
+      date: '2026-08-04'
+      description: Abuja – The killing of Father Samuel Opeyemi Oyetoro has deeply
+        affected both his home community and the one where he had been temporarily
+        assigned to serve. The priest, whose body, bearing machete wounds, was found
+        on Church Road in Ajaokuta, Kogi State, central Nigeria, was visiting St.
+        Paul the A
+      source: Agenzia Fides
     - title: Funeral Services Held for 30 Christians Massacred in Nigeria
       url: https://morningstarnews.org/2026/08/funeral-services-held-for-30-christians-massacred-in-nigeria
       date: '2026-08-03'
@@ -5431,12 +5579,6 @@ countries:
         hombres armados irrumpieron en la misa del domingo y secuestraron a varias
         personas en Nigeria.
       source: ACI Prensa
-    - title: Al menos 30 muertos en un ataque contra una comunidad cristiana en Nigeria
-        – INFOVATICANA
-      url: https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
-      date: '2026-07-31'
-      description: ''
-      source: GDELT
     - title: 'Nigeria : un nouveau massacre de chrétiens fait 30 morts, dont huit
         enfants'
       url: https://www.infochretienne.com/articles/nigeria-un-nouveau-massacre-de-chretiens-fait-30-morts-dont-huit-enfants
@@ -5482,6 +5624,18 @@ countries:
       date: '2026-07-17'
       description: ''
       source: Info Chrétienne
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: At Least 30 Killed in Attack on Christian Village in Kaduna State, Nigeria
       url: https://www.barnabasaid.org/us/news/at-least-30-killed-in-attack-on-christian-village-in-kaduna-state-nigeri
       date: ''
@@ -5490,12 +5644,6 @@ countries:
     - title: Thirty-Six Students Still Missing After School Attack in Borno State,
         Nigeria
       url: https://www.barnabasaid.org/us/news/thirty-six-students-still-missing-after-school-attack-in-borno-state-nig
-      date: ''
-      description: ''
-      source: Barnabas Aid
-    - title: At Least 39 Killed as Terrorists Attack Christian Communities in Middle
-        Belt Nigeria
-      url: https://www.barnabasaid.org/us/news/at-least-39-killed-as-terrorists-attack-christian-communities-in-middle
       date: ''
       description: ''
       source: Barnabas Aid
@@ -5850,8 +5998,8 @@ countries:
     - infochretienne
     - barnabas
     - csi
-    - fides
     - jubilee
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -6016,8 +6164,8 @@ countries:
     - infochretienne
     - barnabas
     - csi
-    - fides
     - jubilee
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -6037,13 +6185,13 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
+    - *id013
     - *id008
     - *id007
     - *id011
-    - *id015
-    - *id013
-    - *id016
+    - *id017
+    - *id018
+    - *id012
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -6059,7 +6207,7 @@ countries:
       in seven worldwide and one in five in Africa." } }, { "@type": "Question", "name":
       "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "text": "Islam'
-    morningstarnews_articles: 4
+    morningstarnews_articles: 3
     morningstarnews_samples:
     - title: Alleged Kidnapper Given Custody of Christian Girl in Pakistan
       url: https://morningstarnews.org/2026/07/alleged-kidnapper-given-custody-of-christian-girl-in-pakistan
@@ -6088,7 +6236,7 @@ countries:
         of abducting, forcibly converting and marrying her, her family’s attorney
         said.
       source: Morning Star News
-    icc_articles: 2
+    icc_articles: 1
     icc_samples:
     - title: Pakistan Supreme Court Acquits All Suspects in 2014 Brick Kiln Murder
         Case
@@ -6099,14 +6247,6 @@ countries:
         Masih and his pregnant wife, Shama Bibi. With this decision, along with the
         dismissal of a state appeal against the acquittal of 102 other suspects, no
         one
-      source: International Christian Concern
-    - title: Christian Brick Kiln Worker Killed for Drinking from a Muslim s Cooler
-      url: https://persecution.org/2026/07/20/christian-brick-kiln-worker-killed-for-drinking-from-a-muslims-cooler
-      date: '2026-07-20'
-      description: Overcome by thirst after working under the sweltering summer heat
-        in Pattoki, Pakistan, a Christian brick kiln worker reached for the closest
-        water cooler and took a sip. Doing so cost him his life. The worker, a 39-year-old
-        man named Sadique, had just finished stacking bricks before he took the dri
       source: International Christian Concern
     infochretienne_articles: 1
     infochretienne_samples:
@@ -6135,19 +6275,6 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    fides_articles: 1
-    fides_samples:
-    - title: 'ASIA/PAKISTAN - Farewell to Father Mahboob Evarist, the first Punjabi
-        Capuchin priest: A life dedicated to the Gospel and the inculturation of the
-        faith'
-      url: https://www.fides.org/en/news/77998-ASIA_PAKISTAN_Farewell_to_Father_Mahboob_Evarist_the_first_Punjabi_Capuchin_priest_A_life_dedicated_to_the_Gospel_and_the_inculturation_of_the_faith
-      date: '2026-07-30'
-      description: Lahore – Father Mahboob Evarist, the first Capuchin priest of Punjabi
-        origin in Pakistan, died on July 27, 2026, at the age of 75. His funeral Mass
-        was celebrated on July 28 at St. Mary's Convent in Lahore, and was presided
-        over by Archbishop Khalid Rehmat, OFM Cap., Archbishop of Lahore, who paid
-        h
-      source: Agenzia Fides
     jubilee_articles: 1
     jubilee_samples:
     - title: Human Rights Groups Condemn Court’s Order Granting Custody of Minor Girl
@@ -6159,6 +6286,16 @@ countries:
         from Faisalabad, to the abductor who forcibly converted and coerced her into
         marriage. Human rights defenders strongly condemn a Pakistani court’s decisio
       source: Jubilee Campaign
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Pakistani court issues prison sentence over anti - Christian riots
+      url: https://www.christianpost.com/news/pakistani-court-issues-prison-sentence-over-anti-christian-riots.html
+      date: '2026-07-15'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christianpost.com/news/pakistani-court-issues-prison-sentence-over-anti-christian-riots.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Pakistani government’s systematic enforcement of blasphemy laws severely
@@ -6170,17 +6307,6 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/pakistan
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/pakistan/
     recent_incidents:
-    - title: 'ASIA/PAKISTAN - Farewell to Father Mahboob Evarist, the first Punjabi
-        Capuchin priest: A life dedicated to the Gospel and the inculturation of the
-        faith'
-      url: https://www.fides.org/en/news/77998-ASIA_PAKISTAN_Farewell_to_Father_Mahboob_Evarist_the_first_Punjabi_Capuchin_priest_A_life_dedicated_to_the_Gospel_and_the_inculturation_of_the_faith
-      date: '2026-07-30'
-      description: Lahore – Father Mahboob Evarist, the first Capuchin priest of Punjabi
-        origin in Pakistan, died on July 27, 2026, at the age of 75. His funeral Mass
-        was celebrated on July 28 at St. Mary's Convent in Lahore, and was presided
-        over by Archbishop Khalid Rehmat, OFM Cap., Archbishop of Lahore, who paid
-        h
-      source: Agenzia Fides
     - title: Alleged Kidnapper Given Custody of Christian Girl in Pakistan
       url: https://morningstarnews.org/2026/07/alleged-kidnapper-given-custody-of-christian-girl-in-pakistan
       date: '2026-07-29'
@@ -6227,28 +6353,17 @@ countries:
         dismissal of a state appeal against the acquittal of 102 other suspects, no
         one
       source: International Christian Concern
-    - title: Court in Pakistan to Consider Hearing Case of Abducted Christian Girl
-      url: https://morningstarnews.org/2026/07/court-in-pakistan-to-consider-hearing-case-of-abducted-christian-girl
-      date: '2026-07-21'
-      description: LAHORE, Pakistan (Christian Daily International Morning Star News)
-        – After multiple legal setbacks, relatives of a Christian girl who was forcibly
-        converted to Islam and married to her Muslim kidnapper are hoping Pakistan’s
-        highest constitutional court will revisit a controversial ruling that upheld
-      source: Morning Star News
-    - title: Christian Brick Kiln Worker Killed for Drinking from a Muslim s Cooler
-      url: https://persecution.org/2026/07/20/christian-brick-kiln-worker-killed-for-drinking-from-a-muslims-cooler
-      date: '2026-07-20'
-      description: Overcome by thirst after working under the sweltering summer heat
-        in Pattoki, Pakistan, a Christian brick kiln worker reached for the closest
-        water cooler and took a sip. Doing so cost him his life. The worker, a 39-year-old
-        man named Sadique, had just finished stacking bricks before he took the dri
-      source: International Christian Concern
     - title: 'Blasphème au Pakistan : une foule en colère rassemblée devant la maison
         d’un chrétien'
       url: https://www.infochretienne.com/articles/blaspheme-au-pakistan-une-foule-en-colere-rassemblee-devant-la-maison-dun-chretien
       date: '2026-07-15'
       description: ''
       source: Info Chrétienne
+    - title: Pakistani court issues prison sentence over anti - Christian riots
+      url: https://www.christianpost.com/news/pakistani-court-issues-prison-sentence-over-anti-christian-riots.html
+      date: '2026-07-15'
+      description: ''
+      source: GDELT
     - title: Pakistani Christian Acquitted of “Blasphemy” After Two-Year Legal Battle
       url: https://www.barnabasaid.org/us/news/pakistani-christian-acquitted-of-blasphemy-after-two-year-legal-battle
       date: ''
@@ -6350,7 +6465,6 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - hrw
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -6534,7 +6648,6 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - hrw
     - vdem2025forb
     sources:
     - *id001
@@ -6554,7 +6667,6 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -6571,16 +6683,6 @@ countries:
       72% of the worldwide total. Multiple armed groups drive this violence. Boko
       Haram, the Islamic State West Africa Province (ISWAP), Fulani ethnic militias,
       and a newer group called Mahmuda all ta
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'Saudi Arabia: New Executions of Ethiopian Migrants'
-      url: https://www.hrw.org/news/2026/07/28/saudi-arabia-new-executions-of-ethiopian-migrants
-      date: '2026-07-28'
-      description: 'Click to expand Image Ethiopian migrants seeking asylum or a better
-        life in Gulf States, walk along a highway to Saadah province to cross into
-        Saudi Arabia, on August 23, 2023 on the outskirts of Sana''a, Yemen. © 2023
-        Mohammed Hamoud/Getty Images (Beirut) – Saudi authorities executed five Ethiopian '
-      source: Human Rights Watch
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Saudi Arabia are particularly severe, as the
@@ -6592,15 +6694,6 @@ countries:
       beliefs.
     uscirf_url: https://www.uscirf.gov/countries/saudi-arabia
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/saudi-arabia/
-    recent_incidents:
-    - title: 'Saudi Arabia: New Executions of Ethiopian Migrants'
-      url: https://www.hrw.org/news/2026/07/28/saudi-arabia-new-executions-of-ethiopian-migrants
-      date: '2026-07-28'
-      description: 'Click to expand Image Ethiopian migrants seeking asylum or a better
-        life in Gulf States, walk along a highway to Saadah province to cross into
-        Saudi Arabia, on August 23, 2023 on the outskirts of Sana''a, Yemen. © 2023
-        Mohammed Hamoud/Getty Images (Beirut) – Saudi authorities executed five Ethiopian '
-      source: Human Rights Watch
     archive_modern_excerpt: Most Christians in Saudi Arabia are living and working
       temporarily in the country. The majority of expatriate Christians come from
       low and middle income countries, such as India, the Philippines and Africa,
@@ -6926,6 +7019,7 @@ countries:
     - icc2026
     - infochretienne
     - csi
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -7008,6 +7102,7 @@ countries:
     - icc2026
     - infochretienne
     - csi
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -7029,7 +7124,8 @@ countries:
     - *id005
     - *id008
     - *id007
-    - *id015
+    - *id017
+    - *id012
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -7070,6 +7166,24 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
+    gdelt_articles: 2
+    gdelt_samples:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
+    gdelt_sample_urls:
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
     uscirf_designation: CPC
     uscirf_key_findings:
     - Although President Bashar al-Assad’s government fell in December 2024, ending
@@ -7095,6 +7209,18 @@ countries:
         who remain vulnerable a year and a half after the fall of dictator Bashar
         a
       source: International Christian Concern
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: 'Syria: Attacks on Religious Minorities – June 2026'
       url: https://csi-usa.org/syria-attacks-on-religious-minorities-june-2026
       date: ''
@@ -9247,7 +9373,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id012
+    - *id013
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9340,6 +9466,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - morningstarnews2026
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -9489,6 +9616,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - morningstarnews2026
     - vdem2025forb
     sources:
     - *id001
@@ -9508,6 +9636,7 @@ countries:
     - *id003
     - *id004
     - *id005
+    - *id013
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9523,6 +9652,17 @@ countries:
       the highest levels of Christian persecution in 2026? The top 10 countries on
       the 2026 World Watch List are North Korea, Somalia, Yemen, Sudan, Eritrea, Syria,
       Nigeria, Pakistan, Libya, and Iran. A'
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Oppressed Christians in Algeria Go Underground
+      url: https://morningstarnews.org/2026/08/oppressed-christians-in-algeria-go-underground
+      date: '2026-08-04'
+      description: (Morning Star News) – Following Algeria’s closure of nearly all
+        evangelical churches in waves of repression that began in 2017, Christians
+        have been forced underground in what they describe as an internal exile, sources
+        said. Christians in the 99-percent Muslim country gather discreetly in homes,
+        ga
+      source: Morning Star News
     uscirf_designation: SWL
     uscirf_key_findings:
     - Algeria engages in systematic repression of religious minority communities.
@@ -9533,6 +9673,16 @@ countries:
       state-approved interpretation of Sunni Islam, including Shi’a and Ahmadi Muslims.
     uscirf_url: https://www.uscirf.gov/countries/algeria
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/algeria/
+    recent_incidents:
+    - title: Oppressed Christians in Algeria Go Underground
+      url: https://morningstarnews.org/2026/08/oppressed-christians-in-algeria-go-underground
+      date: '2026-08-04'
+      description: (Morning Star News) – Following Algeria’s closure of nearly all
+        evangelical churches in waves of repression that began in 2017, Christians
+        have been forced underground in what they describe as an internal exile, sources
+        said. Christians in the 99-percent Muslim country gather discreetly in homes,
+        ga
+      source: Morning Star News
     archive_modern_excerpt: The sharp increase of government pressure against the
       Algerian Protestant church in the WWL 2024 reporting period continued into WWL
       2025. State officials at various levels of the administrative hierarchy are
@@ -9615,7 +9765,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - hrw
     - fides
     - vdem2025forb
   pew_slug: ''
@@ -9715,7 +9864,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - hrw
     - fides
     - vdem2025forb
     sources:
@@ -9735,8 +9883,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id017
-    - *id013
+    - *id014
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -9745,16 +9892,6 @@ countries:
     opendoors_score: 71
     christian_population: 499044
     christian_percentage: 0.3
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'Bangladesh: Fair Trial Concerns at Tribunal'
-      url: https://www.hrw.org/news/2026/07/28/bangladesh-fair-trial-concerns-at-tribunal
-      date: '2026-07-28'
-      description: Click to expand Image Bangladesh military personnel guard the International
-        Criminal Tribunal in Dhaka, Bangladesh, November 17, 2025. © 2025 Mamunur
-        Rashid/NurPhoto via AP Photo (London) – Bangladesh authorities are failing
-        to uphold international legal standards at the country’s International Crim
-      source: Human Rights Watch
     fides_articles: 2
     fides_samples:
     - title: 'ASIA/BANGLADESH - The Church''s Mission among Khulna''s Dalits. Bishop
@@ -9797,14 +9934,6 @@ countries:
         In the face of the ongoing maritime tragedies in the Bay of Bengal, Catholic
         communities in South and Southeast Asia—particularly in Bangladesh, Ind
       source: Agenzia Fides
-    - title: 'Bangladesh: Fair Trial Concerns at Tribunal'
-      url: https://www.hrw.org/news/2026/07/28/bangladesh-fair-trial-concerns-at-tribunal
-      date: '2026-07-28'
-      description: Click to expand Image Bangladesh military personnel guard the International
-        Criminal Tribunal in Dhaka, Bangladesh, November 17, 2025. © 2025 Mamunur
-        Rashid/NurPhoto via AP Photo (London) – Bangladesh authorities are failing
-        to uphold international legal standards at the country’s International Crim
-      source: Human Rights Watch
     archive_modern_excerpt: Bangladesh is one of the few countries in the world where
       converts to Christian faith originate from four different backgrounds, namely
       from Muslim, Hindu, Buddhist and ethnic/tribal background. All, however, face
@@ -10302,7 +10431,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id018
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10992,7 +11121,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id013
+    - *id014
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -11265,7 +11394,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id013
+    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11594,10 +11723,10 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
-    - *id008
-    - *id017
     - *id013
+    - *id008
+    - *id019
+    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11633,8 +11762,17 @@ countries:
         of a break-away group from the rebel Sudan’s People Liberation Army-North
         (SPLA
       source: Morning Star News
-    icc_articles: 1
+    icc_articles: 2
     icc_samples:
+    - title: Upper Kauda Catholic Parish Continues to Mourn Following Attack, Killing
+        of Priest
+      url: https://persecution.org/2026/08/04/upper-kauda-catholic-parish-continues-to-mourn-following-attack-killing-of-priest
+      date: '2026-08-04'
+      description: Upper Kauda St. Vincent Catholic Parish in Sudan’s Nuba Mountains
+        had long served as a place of worship, education, and humanitarian care for
+        a community living amid conflict. On June 19, the place of refuge came under
+        attack after a 48-hour ultimatum issued by Izzat Kuku, a Muslim leader commanding
+      source: International Christian Concern
     - title: Girl Receives Death Threats after Finding New Life in Christ
       url: https://persecution.org/2026/07/22/girl-receives-death-threats-after-finding-new-life-in-christ
       date: '2026-07-22'
@@ -11675,6 +11813,15 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/sudan
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/sudan/
     recent_incidents:
+    - title: Upper Kauda Catholic Parish Continues to Mourn Following Attack, Killing
+        of Priest
+      url: https://persecution.org/2026/08/04/upper-kauda-catholic-parish-continues-to-mourn-following-attack-killing-of-priest
+      date: '2026-08-04'
+      description: Upper Kauda St. Vincent Catholic Parish in Sudan’s Nuba Mountains
+        had long served as a place of worship, education, and humanitarian care for
+        a community living amid conflict. On June 19, the place of refuge came under
+        attack after a 48-hour ultimatum issued by Izzat Kuku, a Muslim leader commanding
+      source: International Christian Concern
     - title: AFRICA/SUDAN - Drone warfare and humanitarian crisis deepen alarm in
         Darfur and Kordofan
       url: https://www.fides.org/en/news/78013-AFRICA_SUDAN_Drone_warfare_and_humanitarian_crisis_deepen_alarm_in_Darfur_and_Kordofan
@@ -11978,7 +12125,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id014
+    - *id015
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -13293,7 +13440,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id016
+    - *id018
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -14000,12 +14147,11 @@ countries:
       in West Africa. It is a unitary state bordered by Libya to the northeast, Chad
       to the east, Nigeria to the south, Benin and Burkina Faso to the southwest,
       Mali to the west, and Algeria to the northwest. It covers a land area of almost
-      1.27 million km2 (490,000 mi2), making it the sixth-largest country in Africa,
-      the largest landlocked country in West Africa and the second-largest landlocked
-      nation in Africa behind Chad. Over 80% of its land area lies in the Sahara.
-      Its predominantly Muslim population of about 25 million lives mostly in clusters
-      in the south and west of the country. The capital, Niamey, is located in Niger's
-      southwest corner along the namesake Niger River.
+      1.27 million km2 (490,000 mi2), making it the sixth-largest country in Africa
+      and the second-largest landlocked nation in Africa behind Chad. Over 80% of
+      its land area lies in the Sahara. Its predominantly Muslim population of about
+      25 million lives mostly in clusters in the south and west of the country. The
+      capital Niamey is located in the southwest corner along the namesake Niger River.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -14712,9 +14858,9 @@ countries:
       Somalia to the southeast, Kenya to the south, South Sudan to the west, and Sudan
       to the northwest. Ethiopia covers a land area of 1,104,300 km2 (426,400 sq mi).
       As of 2026, it has around 138 million inhabitants, making it the 10th-most populous
-      country in the world. The national capital and largest city, Addis Ababa, lies
-      several kilometres west of the East African Rift that splits the country into
-      the African and Somali tectonic plates.
+      country in the world and 2nd most populous country in Africa. The national capital
+      and largest city, Addis Ababa, lies several kilometres west of the East African
+      Rift that splits the country into the African and Somali tectonic plates.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -14740,7 +14886,7 @@ countries:
     - *id003
     - *id004
     - *id008
-    - *id013
+    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -14768,8 +14914,18 @@ countries:
         to follow Christ in November 2025. Instead of finding acceptance, she became
         the target of persecution from her community and family, forcing her to fl
       source: International Christian Concern
-    fides_articles: 1
+    fides_articles: 2
     fides_samples:
+    - title: 'AFRICA/ETHIOPIA - Tigray on the brink of renewed conflict: fighting
+        resumes as civilians flee'
+      url: https://www.fides.org/en/news/78017-AFRICA_ETHIOPIA_Tigray_on_the_brink_of_renewed_conflict_fighting_resumes_as_civilians_flee
+      date: '2026-08-04'
+      description: 'Mekelle – The truce reached with the 2022 Pretoria Agreement appears
+        increasingly fragile. Heavy fighting has resumed in western Tigray, near the
+        border with Sudan, between the Ethiopian National Defence Force and forces
+        linked to the Tigray People''s Liberation Front , in what is being described
+        as '
+      source: Agenzia Fides
     - title: 'AFRICA/ETHIOPIA - Attack on the ancient monastery of Saint Arsema: “Buildings
         may be destroyed and lives broken, but our faith in Christ remains”'
       url: https://www.fides.org/en/news/78004-AFRICA_ETHIOPIA_Attack_on_the_ancient_monastery_of_Saint_Arsema_Buildings_may_be_destroyed_and_lives_broken_but_our_faith_in_Christ_remains
@@ -14782,6 +14938,16 @@ countries:
       source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
     recent_incidents:
+    - title: 'AFRICA/ETHIOPIA - Tigray on the brink of renewed conflict: fighting
+        resumes as civilians flee'
+      url: https://www.fides.org/en/news/78017-AFRICA_ETHIOPIA_Tigray_on_the_brink_of_renewed_conflict_fighting_resumes_as_civilians_flee
+      date: '2026-08-04'
+      description: 'Mekelle – The truce reached with the 2022 Pretoria Agreement appears
+        increasingly fragile. Heavy fighting has resumed in western Tigray, near the
+        border with Sudan, between the Ethiopian National Defence Force and forces
+        linked to the Tigray People''s Liberation Front , in what is being described
+        as '
+      source: Agenzia Fides
     - title: 'AFRICA/ETHIOPIA - Attack on the ancient monastery of Saint Arsema: “Buildings
         may be destroyed and lives broken, but our faith in Christ remains”'
       url: https://www.fides.org/en/news/78004-AFRICA_ETHIOPIA_Attack_on_the_ancient_monastery_of_Saint_Arsema_Buildings_may_be_destroyed_and_lives_broken_but_our_faith_in_Christ_remains
@@ -15079,7 +15245,6 @@ countries:
     - owid2024
     - icc2026
     - barnabas
-    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -15358,7 +15523,6 @@ countries:
     - owid2024
     - icc2026
     - barnabas
-    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -15374,7 +15538,6 @@ countries:
     - *id004
     - *id008
     - *id011
-    - *id019
     - *id006
     opendoors_ranking: 29
     opendoors_score: 72
@@ -15398,23 +15561,8 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    gdelt_articles: 1
-    gdelt_samples:
-    - title: Islamic extremists kill church elder , worship leader in DRC
-      url: https://www.christianpost.com/news/islamic-extremists-kill-church-elder-worship-leader-in-drc.html
-      date: '2026-08-03'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 1
-    gdelt_sample_urls:
-    - https://www.christianpost.com/news/islamic-extremists-kill-church-elder-worship-leader-in-drc.html
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/democratic-republic-of-the-congo/
     recent_incidents:
-    - title: Islamic extremists kill church elder , worship leader in DRC
-      url: https://www.christianpost.com/news/islamic-extremists-kill-church-elder-worship-leader-in-drc.html
-      date: '2026-08-03'
-      description: ''
-      source: GDELT
     - title: Islamic Militants Kill Christian Leaders in the DRC
       url: https://persecution.org/2026/07/31/islamic-militants-kill-christian-leaders-in-the-drc
       date: '2026-07-31'
@@ -18839,7 +18987,7 @@ countries:
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id014
+    - *id015
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -18958,6 +19106,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - hrw
     - csi
     - vdem2025forb
   pew_slug: ''
@@ -19068,6 +19217,7 @@ countries:
     - odwwl2025archiveazerbaijan
     - freedomhouse2024
     - owid2024
+    - hrw
     - csi
     - vdem2025forb
     sources:
@@ -19086,13 +19236,24 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id015
+    - *id019
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
     christian_population: 42730
     christian_percentage: 0.42
+    hrw_articles: 1
+    hrw_samples:
+    - title: Azerbaijani Authorities Escalate Abuse of Detained Opposition Leader
+      url: https://www.hrw.org/news/2026/08/05/azerbaijani-authorities-escalate-abuse-of-detained-opposition-leader
+      date: '2026-08-05'
+      description: Click to expand Image Ali Karimli speaks at a rally in 2016. ©
+        2016 Aziz Karimov/Pacific Press/LightRocket via Getty Images Azerbaijani authorities
+        have imposed increasingly punitive detention conditions on Ali Karimli, chairman
+        of the opposition Azerbaijan Popular Front Party (APFP), raising seriou
+      source: Human Rights Watch
     csi_articles: 1
     csi_samples:
     - title: 'Statement: Armenian Political Prisoners in Azerbaijan and the Imperative
@@ -19113,6 +19274,14 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/azerbaijan
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/azerbaijan/
     recent_incidents:
+    - title: Azerbaijani Authorities Escalate Abuse of Detained Opposition Leader
+      url: https://www.hrw.org/news/2026/08/05/azerbaijani-authorities-escalate-abuse-of-detained-opposition-leader
+      date: '2026-08-05'
+      description: Click to expand Image Ali Karimli speaks at a rally in 2016. ©
+        2016 Aziz Karimov/Pacific Press/LightRocket via Getty Images Azerbaijani authorities
+        have imposed increasingly punitive detention conditions on Ali Karimli, chairman
+        of the opposition Azerbaijan Popular Front Party (APFP), raising seriou
+      source: Human Rights Watch
     - title: 'Statement: Armenian Political Prisoners in Azerbaijan and the Imperative
         of EU Engagement'
       url: https://csi-usa.org/statement-armenian-political-prisoners-in-azerbaijan-and-the-imperative-of-eu-engagement
@@ -19236,7 +19405,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id015
+    - *id017
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -19981,7 +20150,6 @@ countries:
     - odwwl2026
     - freedomhouse2024
     - owid2024
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -20083,7 +20251,6 @@ countries:
     - odwwl2025archivekenya
     - freedomhouse2024
     - owid2024
-    - fides
     - vdem2025forb
     sources:
     - &id057
@@ -20097,33 +20264,13 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id013
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
     freedom_house_cl: 4
     christian_population: 44734739
     christian_percentage: 85.67
-    fides_articles: 1
-    fides_samples:
-    - title: AFRICA/KENYA - Controversy over British military presence
-      url: https://www.fides.org/en/news/78001-AFRICA_KENYA_Controversy_over_British_military_presence
-      date: '2026-07-31'
-      description: Nairobi – How can national and international security be reconciled
-        with human rights and the well-being of local communities? These are the issues
-        being debated in Kenya after the Great Britain announced its intention to
-        relocate a planned exercise by the British Army Training Unit Kenya from Laiki
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kenya/
-    recent_incidents:
-    - title: AFRICA/KENYA - Controversy over British military presence
-      url: https://www.fides.org/en/news/78001-AFRICA_KENYA_Controversy_over_British_military_presence
-      date: '2026-07-31'
-      description: Nairobi – How can national and international security be reconciled
-        with human rights and the well-being of local communities? These are the issues
-        being debated in Kenya after the Great Britain announced its intention to
-        relocate a planned exercise by the British Army Training Unit Kenya from Laiki
-      source: Agenzia Fides
     archive_modern_excerpt: The constitution stipulates there shall be no state religion
       and prohibits religious discrimination. The constitution provides for freedom
       of religion and belief individually or in communities, including the freedom
@@ -20765,7 +20912,7 @@ countries:
     - *id002
     - *id004
     - *id007
-    - *id016
+    - *id018
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -21008,7 +21155,7 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id017
+    - *id019
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -21120,7 +21267,7 @@ sources:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id019
+  gdelt2025: *id012
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id064
@@ -21131,9 +21278,9 @@ sources:
   uscirf2025turkmenistan: *id069
   uscirf2025uzbekistan: *id070
   uscirf2025tajikistan: *id071
-  morningstarnews2026: *id012
+  morningstarnews2026: *id013
   infochretienne: *id007
-  fides: *id013
+  fides: *id014
   aciprensa: *id072
   vid2026:
     title: Violent Incidents Database (IIRF/GCR)
@@ -21166,15 +21313,15 @@ sources:
     title: UN Special Rapporteur on Freedom of Religion or Belief
     url: https://www.ohchr.org/en/special-procedures/sr-religion-or-belief
     date: '2026'
-  hrw: *id017
+  hrw: *id019
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id011
-  csi: *id015
-  cna: *id018
-  hrwf: *id014
+  csi: *id017
+  cna: *id016
+  hrwf: *id015
   adf:
     title: ADF International
     url: https://adfinternational.org/
@@ -21183,7 +21330,7 @@ sources:
     title: World Evangelical Alliance - Religious Liberty
     url: https://worldea.org/
     date: '2026'
-  jubilee: *id016
+  jubilee: *id018
   ippforb:
     title: IPPFoRB - Parliamentarians for FoRB
     url: https://ippforb.com/
@@ -21732,152 +21879,153 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-08-04 08:56 UTC
+  generated_at: 2026-08-05 08:56 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-08-04T08:55:45.559556+00:00'
+    fetched_at: '2026-08-05T08:53:04.904536+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-08-04T08:55:14.720584+00:00'
+    fetched_at: '2026-08-05T08:52:39.840465+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-08-04T08:55:48.176988+00:00'
+    fetched_at: '2026-08-05T08:53:07.244261+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-08-04T08:55:34.786095+00:00'
+    fetched_at: '2026-08-05T08:52:56.412697+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-08-04T08:55:37.379317+00:00'
+    fetched_at: '2026-08-05T08:52:59.085439+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-08-04T08:55:20.944654+00:00'
+    fetched_at: '2026-08-05T08:52:45.920853+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-08-04T08:55:25.647753+00:00'
+    fetched_at: '2026-08-05T08:52:48.738409+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-08-04T08:55:43.379786+00:00'
+    fetched_at: '2026-08-05T08:53:02.562072+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-08-04T08:55:42.771938+00:00'
+    fetched_at: '2026-08-05T08:53:02.016240+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-08-04T08:55:15.664352+00:00'
+    fetched_at: '2026-08-05T08:52:40.945741+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-08-04T08:55:45.200940+00:00'
+    fetched_at: '2026-08-05T08:53:04.589301+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-08-04T08:55:17.753559+00:00'
+    fetched_at: '2026-08-05T08:52:42.713284+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-08-04T08:49:31.695858+00:00'
+    fetched_at: '2026-08-05T08:46:57.027285+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-08-04T08:55:13.472332+00:00'
+    fetched_at: '2026-08-05T08:52:38.594922+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-08-04T08:55:01.779405+00:00'
-    message: 2 of 4 queries failed
+    fetched_at: '2026-08-05T08:52:26.650877+00:00'
+    message: 3 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-08-04T08:55:34.106823+00:00'
+    fetched_at: '2026-08-05T08:52:55.798377+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-08-04T08:55:46.828161+00:00'
+    fetched_at: '2026-08-05T08:53:06.285054+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-08-04T08:55:16.367451+00:00'
+    fetched_at: '2026-08-05T08:52:41.699250+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-08-04T08:55:27.549303+00:00'
+    fetched_at: '2026-08-05T08:52:50.500482+00:00'
     message: null
   - name: ippforb
     status: failed
-    fetched_at: '2026-08-04T08:56:03.268493+00:00'
-    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
+    fetched_at: '2026-08-05T08:56:18.803636+00:00'
+    message: 'fetch failed: URLError: <urlopen error timed out>'
   - name: jubilee
     status: ok
-    fetched_at: '2026-08-04T08:56:01.684227+00:00'
+    fetched_at: '2026-08-05T08:53:13.419652+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-08-04T08:55:20.127767+00:00'
+    fetched_at: '2026-08-05T08:52:45.142616+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-08-04T08:55:04.099455+00:00'
+    fetched_at: '2026-08-05T08:52:29.390164+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-08-04T08:56:03.828350+00:00'
+    fetched_at: '2026-08-05T08:56:19.204366+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-08-04T08:55:02.884702+00:00'
+    fetched_at: '2026-08-05T08:52:28.365165+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-08-04T08:49:30.589674+00:00'
+    fetched_at: '2026-08-05T08:46:55.597456+00:00'
     message: null
   - name: osce
-    status: ok
-    fetched_at: '2026-08-04T08:55:33.343850+00:00'
-    message: null
+    status: failed
+    fetched_at: '2026-08-05T08:52:55.074635+00:00'
+    message: 'fetch failed: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED]
+      certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>'
   - name: owid
     status: ok
-    fetched_at: '2026-08-04T08:49:34.768015+00:00'
+    fetched_at: '2026-08-05T08:47:00.133241+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-08-04T08:55:23.644975+00:00'
+    fetched_at: '2026-08-05T08:52:47.064844+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-08-04T08:52:42.271598+00:00'
+    fetched_at: '2026-08-05T08:50:15.893254+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-08-04T08:55:33.758447+00:00'
+    fetched_at: '2026-08-05T08:52:55.344099+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-08-04T08:50:25.275545+00:00'
+    fetched_at: '2026-08-05T08:47:46.769439+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-08-04T08:55:11.947816+00:00'
+    fetched_at: '2026-08-05T08:52:37.025534+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-08-04T08:55:24.698273+00:00'
+    fetched_at: '2026-08-05T08:52:47.538487+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-08-04T08:55:49.027267+00:00'
+    fetched_at: '2026-08-05T08:53:09.067500+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-08-04T08:56:28.153207+00:00'
+    fetched_at: '2026-08-05T08:56:43.512349+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
