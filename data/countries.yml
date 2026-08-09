@@ -208,7 +208,7 @@ countries:
     - vom2026
     - vdem2025forb
     sources:
-    - &id018
+    - &id019
       title: BBC News - Taliban tortured and massacred Hazara men 2021
       url: https://www.bbc.com/news/world-asia-58277463
       date: '2021'
@@ -216,7 +216,7 @@ countries:
       title: Open Doors World Watch List 2024
       url: https://www.opendoors.org/en-US/persecution/countries/
       date: '2024'
-    - &id017
+    - &id018
       title: USCIRF 2023 Annual Report - Afghanistan
       url: https://www.uscirf.gov/countries/afghanistan
       date: '2023'
@@ -896,12 +896,12 @@ countries:
     - barnabas
     - vdem2025forb
     sources:
-    - &id020
+    - &id021
       title: Pew Research - Measuring Religion in China
       url: https://www.pewresearch.org/religion/2023/08/30/measuring-religion-in-china/
       date: '2023'
     - *id001
-    - &id019
+    - &id020
       title: USCIRF 2023 Annual Report - China
       url: https://www.uscirf.gov/countries/china
       date: '2023'
@@ -922,7 +922,7 @@ countries:
       url: https://releaseinternational.org/
       date: '2026'
     - *id006
-    - &id071
+    - &id072
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
@@ -1439,7 +1439,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id021
+    - &id022
       title: USCIRF 2023 Annual Report - Colombia
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -1639,9 +1639,10 @@ countries:
       islets, and cays. Situated at the convergence of the Caribbean Sea, Gulf of
       Mexico, and Atlantic Ocean, Cuba is located east of the Yucatán Peninsula, south
       of both Florida and the Bahamas, west of Hispaniola, and north of Jamaica and
-      the Cayman Islands. Cuba is the largest Caribbean country by area and the third-largest
-      by population, after Haiti and the Dominican Republic. Culturally, Cuba is considered
-      to be part of Latin America. Its capital and largest city is Havana.
+      the Cayman Islands. Cuba is the largest country in the Caribbean by area and
+      the third-largest by population, after Haiti and the Dominican Republic. Culturally,
+      Cuba is considered to be part of Latin America. Its capital and largest city
+      is Havana.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -1654,7 +1655,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id022
+    - &id023
       title: USCIRF 2023 Annual Report - Cuba
       url: https://www.uscirf.gov/countries/cuba
       date: '2023'
@@ -1848,7 +1849,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id023
+    - &id024
       title: USCIRF 2023 Annual Report - Eritrea
       url: https://www.uscirf.gov/countries/eritrea
       date: '2023'
@@ -1974,7 +1975,6 @@ countries:
     - releaseintl
     - vom2026
     - barnabas
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -2274,11 +2274,10 @@ countries:
     - releaseintl
     - vom2026
     - barnabas
-    - fides
     - vdem2025forb
     sources:
     - *id001
-    - &id024
+    - &id025
       title: USCIRF 2023 Annual Report - India
       url: https://www.uscirf.gov/countries/india
       date: '2023'
@@ -2301,10 +2300,6 @@ countries:
     - *id008
     - *id006
     - *id009
-    - &id012
-      title: Agenzia Fides - Pontifical Mission Societies News
-      url: https://www.fides.org/en
-      date: '2026'
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 2
@@ -2391,19 +2386,6 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    fides_articles: 1
-    fides_samples:
-    - title: 'Bishop Pitchaimuthu at the First Franciscan Missionary Symposium: “Asia
-        does not need missionaries who come with all the answers. It needs brothers
-        and sisters who bring Christ”'
-      url: https://www.fides.org/en/news/78015-Bishop_Pitchaimuthu_at_the_First_Franciscan_Missionary_Symposium_Asia_does_not_need_missionaries_who_come_with_all_the_answers_It_needs_brothers_and_sisters_who_bring_Christ
-      date: '2026-08-04'
-      description: by Elena Grazini Chennai – “Asia does not need missionaries who
-        come with all the answers. It needs brothers and sisters who bring Christ,
-        walk alongside the people, listen deeply, discern patiently, serve the wounded,
-        build peace, and proclaim the name of Jesus with humility and joy.” These
-        were th
-      source: Agenzia Fides
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Indian government tolerates and perpetrates widespread harassment and violence
@@ -3065,7 +3047,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id025
+    - &id026
       title: USCIRF 2023 Annual Report - Indonesia
       url: https://www.uscirf.gov/countries/indonesia
       date: '2023'
@@ -3345,7 +3327,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id026
+    - &id027
       title: USCIRF 2023 Annual Report - Iran
       url: https://www.uscirf.gov/countries/iran
       date: '2023'
@@ -3361,7 +3343,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id070
+    - &id071
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
@@ -3765,7 +3747,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id027
+    - &id028
       title: USCIRF 2023 Annual Report - Iraq
       url: https://www.uscirf.gov/countries/iraq
       date: '2023'
@@ -3781,7 +3763,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id016
+    - &id017
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
@@ -4007,11 +3989,10 @@ countries:
       to the east, Cambodia to the southeast, and Thailand to the west and southwest.
       Laos has a population of more than 7.5 million, and its capital and most populous
       city is Vientiane. It has three UNESCO World Heritage Sites: the town of Luang
-      Prabang, the temple complex of Vat Phou, and the Plain of Jars. The 2021 completion
-      of the Boten–Vientiane railway, Laotian section of the Laos–China Railway, connects
-      Vientiane to Kunming. Laos participates in the Greater Mekong Subregion economic
-      cooperation programme and is a member of ASEAN, the Asia-Pacific Trade Agreement,
-      East Asia Summit, La Francophonie, and the World Trade Organization.'
+      Prabang, the temple complex of Vat Phou, and the Plain of Jars. Laos participates
+      in the Greater Mekong Subregion economic cooperation programme and is a member
+      of ASEAN, the Asia-Pacific Trade Agreement, East Asia Summit, La Francophonie,
+      and the World Trade Organization.'
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -4025,7 +4006,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id028
+    - &id029
       title: USCIRF 2023 Annual Report - Laos
       url: https://www.uscirf.gov/countries/laos
       date: '2023'
@@ -4514,7 +4495,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id029
+    - &id030
       title: USCIRF 2023 Annual Report - Mexico
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -4737,7 +4718,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id030
+    - &id031
       title: USCIRF 2023 Annual Report - Nicaragua
       url: https://www.uscirf.gov/countries/nicaragua
       date: '2023'
@@ -4855,9 +4836,9 @@ countries:
     - infochretienne
     - barnabas
     - csi
-    - cna
     - fides
     - jubilee
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -5006,13 +4987,13 @@ countries:
     - infochretienne
     - barnabas
     - csi
-    - cna
     - fides
     - jubilee
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
-    - &id031
+    - &id032
       title: USCIRF 2023 Annual Report - Nigeria
       url: https://www.uscirf.gov/countries/nigeria
       date: '2023'
@@ -5028,26 +5009,29 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id013
+    - &id012
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
     - *id011
     - *id010
     - *id009
-    - &id014
+    - &id013
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - &id073
-      title: Catholic News Agency
-      url: https://www.catholicnewsagency.com/
+    - &id016
+      title: Agenzia Fides - Pontifical Mission Societies News
+      url: https://www.fides.org/en
       date: '2026'
-    - *id012
-    - &id015
+    - &id014
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
+    - &id015
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -5139,14 +5123,6 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    cna_articles: 1
-    cna_samples:
-    - title: Priest murdered, followed by kidnappings at Mass in Nigeria
-      url: https://www.ewtnnews.com/world/africa/priest-killed-kidnappings-at-mass-in-nigeria
-      date: '2026-08-04'
-      description: While the local Church was still mourning the priest’s death, yet
-        another act of violence shook the country’s Catholics.
-      source: Catholic News Agency
     fides_articles: 2
     fides_samples:
     - title: AFRICA/NIGERIA - Missionary Childhood marks 25th anniversary, a seed
@@ -5180,6 +5156,23 @@ countries:
         elicited by the widespread insecurity in the country. Discussion of freedom
         of '
       source: Jubilee Campaign
+    gdelt_articles: 2
+    gdelt_samples:
+    - title: Al menos 30 muertos en un ataque contra una comunidad cristiana en Nigeria
+        – INFOVATICANA
+      url: https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
+      date: '2026-07-31'
+      description: ''
+      source: GDELT
+    - title: Dozens Of Christians Killed By Nigeria Underestimated Terrorist Group
+      url: https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
+      date: '2026-07-27'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
+    gdelt_sample_urls:
+    - https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
+    - https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5222,12 +5215,6 @@ countries:
         Middle Belt as Samuel walks slowly through the field his father once cultivated
         before him. He kneels and scoops a handful of dry soil into his palm. A
       source: International Christian Concern
-    - title: Priest murdered, followed by kidnappings at Mass in Nigeria
-      url: https://www.ewtnnews.com/world/africa/priest-killed-kidnappings-at-mass-in-nigeria
-      date: '2026-08-04'
-      description: While the local Church was still mourning the priest’s death, yet
-        another act of violence shook the country’s Catholics.
-      source: Catholic News Agency
     - title: AFRICA/NIGERIA - Deep sorrow over the killing of Father Oyetoro; relief
         over the release of the seminarian kidnapped in Otukpo
       url: https://www.fides.org/en/news/78016-AFRICA_NIGERIA_Deep_sorrow_over_the_killing_of_Father_Oyetoro_relief_over_the_release_of_the_seminarian_kidnapped_in_Otukpo
@@ -5246,6 +5233,12 @@ countries:
         on Saturday (Aug. 1) for 27 Christians massacred by suspected Fulani terrorists
         in Kaduna state, Nigeria, sources said. A funeral for three evangelical Chris
       source: Morning Star News
+    - title: Al menos 30 muertos en un ataque contra una comunidad cristiana en Nigeria
+        – INFOVATICANA
+      url: https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
+      date: '2026-07-31'
+      description: ''
+      source: GDELT
     - title: 'Nigeria : un nouveau massacre de chrétiens fait 30 morts, dont huit
         enfants'
       url: https://www.infochretienne.com/articles/nigeria-un-nouveau-massacre-de-chretiens-fait-30-morts-dont-huit-enfants
@@ -5270,6 +5263,11 @@ countries:
         elicited by the widespread insecurity in the country. Discussion of freedom
         of '
       source: Jubilee Campaign
+    - title: Dozens Of Christians Killed By Nigeria Underestimated Terrorist Group
+      url: https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
+      date: '2026-07-27'
+      description: ''
+      source: GDELT
     - title: 'Persécution au Nigeria : la Chambre des représentants veut suspendre
         l''aide américaine'
       url: https://www.infochretienne.com/articles/persecution-au-nigeria-la-chambre-des-representants-veut-suspendre-laide-americaine
@@ -5509,7 +5507,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id032
+    - &id033
       title: USCIRF 2023 Annual Report - North Korea
       url: https://www.uscirf.gov/countries/north-korea
       date: '2023'
@@ -5813,7 +5811,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id033
+    - &id034
       title: USCIRF 2023 Annual Report - Pakistan
       url: https://www.uscirf.gov/countries/pakistan
       date: '2023'
@@ -5829,12 +5827,12 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id013
+    - *id012
     - *id006
     - *id010
     - *id009
+    - *id013
     - *id014
-    - *id015
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -6274,7 +6272,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id034
+    - &id035
       title: USCIRF 2023 Annual Report - Saudi Arabia
       url: https://www.uscirf.gov/countries/saudi-arabia
       date: '2023'
@@ -6496,7 +6494,7 @@ countries:
       of more than 18 million, of which 2.7 million live in the capital and largest
       city, Mogadishu. As one of Africa's most ethnically homogeneous countries, around
       85% of its residents are ethnic Somalis. The official and national language
-      of the country is Somali while Arabic is recognised as a second language. The
+      of the country is Somali, and Arabic is recognised as a second language. The
       overwhelming majority of the population are Sunni Muslims.
     country_polygon: true
     source_ids:
@@ -6512,7 +6510,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id035
+    - &id036
       title: USCIRF 2023 Annual Report - Somalia
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -6642,6 +6640,7 @@ countries:
     - icc2026
     - infochretienne
     - csi
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -6724,10 +6723,11 @@ countries:
     - icc2026
     - infochretienne
     - csi
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
-    - &id036
+    - &id037
       title: USCIRF 2023 Annual Report - Syria
       url: https://www.uscirf.gov/countries/syria
       date: '2023'
@@ -6745,7 +6745,8 @@ countries:
     - *id005
     - *id011
     - *id010
-    - *id014
+    - *id013
+    - *id015
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -6786,6 +6787,16 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: 'Syria authorities release detained Kurdish pastor : church official'
+      url: https://www.arabnews.com/node/2653420/middle-east
+      date: '2026-08-04'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.arabnews.com/node/2653420/middle-east
     uscirf_designation: CPC
     uscirf_key_findings:
     - Although President Bashar al-Assad’s government fell in December 2024, ending
@@ -6797,6 +6808,11 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/syria
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/syria/
     recent_incidents:
+    - title: 'Syria authorities release detained Kurdish pastor : church official'
+      url: https://www.arabnews.com/node/2653420/middle-east
+      date: '2026-08-04'
+      description: ''
+      source: GDELT
     - title: 'Syrie : un pasteur kurde évangélique arrêté pour incitation à la haine'
       url: https://www.infochretienne.com/articles/syrie-un-pasteur-kurde-vanglique-arrt-pour-incitation-la-haine
       date: '2026-07-31'
@@ -7016,7 +7032,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id037
+    - &id038
       title: USCIRF 2023 Annual Report - Vietnam
       url: https://www.uscirf.gov/countries/vietnam
       date: '2023'
@@ -7251,7 +7267,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id038
+    - &id039
       title: USCIRF 2023 Annual Report - Yemen
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -8287,11 +8303,11 @@ countries:
     - icc2026
     - vdem2025forb
     sources:
-    - &id041
+    - &id042
       title: Pew Research - Religion in America
       url: https://www.pewresearch.org/collections/religious-landscape-study/
       date: '2023'
-    - &id039
+    - &id040
       title: USCIRF 2023 Annual Report - United States
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -8951,7 +8967,7 @@ countries:
     - morningstarnews2026
     - vdem2025forb
     sources:
-    - &id040
+    - &id041
       title: USCIRF 2023 Annual Report - Uganda
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -8965,7 +8981,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id013
+    - *id012
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9212,7 +9228,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id042
+    - &id043
       title: USCIRF 2023 Annual Report - Algeria
       url: https://www.uscirf.gov/countries/algeria
       date: '2023'
@@ -9228,7 +9244,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id013
+    - *id012
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9458,7 +9474,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id043
+    - &id044
       title: USCIRF 2023 Annual Report - Bangladesh
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -9712,7 +9728,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id044
+    - &id045
       title: USCIRF 2023 Annual Report - Central African Republic
       url: https://www.uscirf.gov/countries/central-african-republic
       date: '2023'
@@ -9940,7 +9956,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id045
+    - &id046
       title: USCIRF 2023 Annual Report - Egypt
       url: https://www.uscirf.gov/countries/egypt
       date: '2023'
@@ -10113,7 +10129,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id046
+    - &id047
       title: USCIRF 2023 Annual Report - Haiti
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -10124,7 +10140,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id012
+    - *id016
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10369,7 +10385,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id047
+    - &id048
       title: USCIRF 2023 Annual Report - Libya
       url: https://www.uscirf.gov/countries/libya
       date: '2023'
@@ -10636,7 +10652,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id048
+    - &id049
       title: USCIRF 2023 Annual Report - Malaysia
       url: https://www.uscirf.gov/countries/malaysia
       date: '2023'
@@ -10895,7 +10911,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id049
+    - &id050
       title: USCIRF 2023 Annual Report - Myanmar
       url: https://www.uscirf.gov/countries/burma
       date: '2023'
@@ -11232,7 +11248,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id050
+    - &id051
       title: USCIRF 2023 Annual Report - Sudan
       url: https://www.uscirf.gov/countries/sudan
       date: '2023'
@@ -11248,9 +11264,9 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id013
+    - *id012
     - *id011
-    - *id016
+    - *id017
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11630,7 +11646,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id051
+    - &id052
       title: USCIRF 2023 Annual Report - Turkey
       url: https://www.uscirf.gov/countries/turkey
       date: '2023'
@@ -11645,7 +11661,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id016
+    - *id017
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -11973,7 +11989,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id052
+    - &id053
       title: USCIRF 2023 Annual Report - Venezuela
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -12142,7 +12158,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id053
+    - &id054
       title: USCIRF 2023 Annual Report - Zimbabwe
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -12978,7 +12994,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id015
+    - *id014
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -13459,7 +13475,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id067
+    - &id068
       title: USCIRF 2025 Annual Report - Uzbekistan
       url: https://www.uscirf.gov/countries/uzbekistan
       date: '2025'
@@ -13941,7 +13957,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id066
+    - &id067
       title: USCIRF 2025 Annual Report - Turkmenistan
       url: https://www.uscirf.gov/countries/turkmenistan
       date: '2025'
@@ -14424,7 +14440,7 @@ countries:
     - *id003
     - *id004
     - *id011
-    - *id012
+    - *id016
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -14747,6 +14763,7 @@ countries:
     - owid2024
     - icc2026
     - barnabas
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -15025,6 +15042,7 @@ countries:
     - owid2024
     - icc2026
     - barnabas
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -15040,6 +15058,7 @@ countries:
     - *id004
     - *id011
     - *id009
+    - *id015
     - *id007
     opendoors_ranking: 29
     opendoors_score: 72
@@ -15063,8 +15082,23 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Islamic extremists kill church elder , worship leader in DRC
+      url: https://www.christianpost.com/news/islamic-extremists-kill-church-elder-worship-leader-in-drc.html
+      date: '2026-08-03'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christianpost.com/news/islamic-extremists-kill-church-elder-worship-leader-in-drc.html
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/democratic-republic-of-the-congo/
     recent_incidents:
+    - title: Islamic extremists kill church elder , worship leader in DRC
+      url: https://www.christianpost.com/news/islamic-extremists-kill-church-elder-worship-leader-in-drc.html
+      date: '2026-08-03'
+      description: ''
+      source: GDELT
     - title: Islamic Militants Kill Christian Leaders in the DRC
       url: https://persecution.org/2026/07/31/islamic-militants-kill-christian-leaders-in-the-drc
       date: '2026-07-31'
@@ -15837,7 +15871,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id064
+    - &id065
       title: USCIRF 2025 Annual Report - Kazakhstan
       url: https://www.uscirf.gov/countries/kazakhstan
       date: '2025'
@@ -16055,7 +16089,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id068
+    - &id069
       title: USCIRF 2025 Annual Report - Tajikistan
       url: https://www.uscirf.gov/countries/tajikistan
       date: '2025'
@@ -16952,7 +16986,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id065
+    - &id066
       title: USCIRF 2025 Annual Report - Kyrgyzstan
       url: https://www.uscirf.gov/countries/kyrgyzstan
       date: '2025'
@@ -18497,7 +18531,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id061
+    - &id062
       title: USCIRF 2025 Annual Report - Russia
       url: https://www.uscirf.gov/countries/russia
       date: '2025'
@@ -18512,11 +18546,11 @@ countries:
     - *id002
     - *id004
     - *id011
-    - &id069
+    - &id070
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id016
+    - *id017
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -18525,8 +18559,8 @@ countries:
     christian_percentage: 69.93
     icc_articles: 1
     icc_samples:
-    - title: Russia Missile Kills Beloved Christian Family in Ukraine
-      url: https://persecution.org/2026/08/07/russia-missile-kills-beloved-christian-family-in-ukraine
+    - title: Russian Missile Kills Beloved Christian Family in Ukraine
+      url: https://persecution.org/2026/08/07/russian-missile-kills-beloved-christian-family-in-ukraine
       date: '2026-08-07'
       description: In the early hours of the morning of July 30, Russia launched an
         attack on a village on the outskirts of Kryvyi Rih, a large industrial city
@@ -18568,8 +18602,8 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/russia
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/russia/
     recent_incidents:
-    - title: Russia Missile Kills Beloved Christian Family in Ukraine
-      url: https://persecution.org/2026/08/07/russia-missile-kills-beloved-christian-family-in-ukraine
+    - title: Russian Missile Kills Beloved Christian Family in Ukraine
+      url: https://persecution.org/2026/08/07/russian-missile-kills-beloved-christian-family-in-ukraine
       date: '2026-08-07'
       description: In the early hours of the morning of July 30, Russia launched an
         attack on a village on the outskirts of Kryvyi Rih, a large industrial city
@@ -18767,7 +18801,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id062
+    - &id063
       title: USCIRF 2025 Annual Report - Azerbaijan
       url: https://www.uscirf.gov/countries/azerbaijan
       date: '2025'
@@ -18781,11 +18815,11 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - &id072
+    - &id073
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
-    - *id014
+    - *id013
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -18939,7 +18973,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id063
+    - &id064
       title: USCIRF 2025 Annual Report - Sri Lanka
       url: https://www.uscirf.gov/countries/sri-lanka
       date: '2025'
@@ -18953,7 +18987,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id014
+    - *id013
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -19801,7 +19835,7 @@ countries:
     - owid2024
     - vdem2025forb
     sources:
-    - &id054
+    - &id055
       title: U.S. State Department IRF Report 2023 - Kenya
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kenya/
       date: '2023'
@@ -20000,7 +20034,7 @@ countries:
     - owid2024
     - icc2026
     sources:
-    - &id055
+    - &id056
       title: U.S. State Department IRF Report 2023 - Tanzania
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/tanzania/
       date: '2023'
@@ -20121,7 +20155,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id056
+    - &id057
       title: U.S. State Department IRF Report 2023 - Kuwait
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kuwait/
       date: '2023'
@@ -20245,7 +20279,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id057
+    - &id058
       title: U.S. State Department IRF Report 2023 - United Arab Emirates
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/united-arab-emirates/
       date: '2023'
@@ -20347,13 +20381,13 @@ countries:
     - fides
     - wea
     sources:
-    - &id058
+    - &id059
       title: U.S. State Department IRF Report 2023 - Lebanon
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/lebanon/
       date: '2023'
     - *id002
     - *id004
-    - *id012
+    - *id016
     - &id074
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
@@ -20522,7 +20556,7 @@ countries:
     - infochretienne
     - jubilee
     sources:
-    - &id059
+    - &id060
       title: U.S. State Department IRF Report 2023 - Nepal
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nepal/
       date: '2023'
@@ -20530,7 +20564,7 @@ countries:
     - *id002
     - *id004
     - *id010
-    - *id015
+    - *id014
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -20765,7 +20799,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id060
+    - &id061
       title: U.S. State Department IRF Report 2023 - South Sudan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/south-sudan/
       date: '2023'
@@ -20808,76 +20842,73 @@ sources:
       Faith 2022-24 / Report on Christian persecution
     url: https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/
     date: '2024'
-  uscirf2023afghanistan: *id017
-  bbc2021: *id018
-  uscirf2023china: *id019
-  pew2023china: *id020
-  uscirf2023colombia: *id021
-  uscirf2023cuba: *id022
-  uscirf2023eritrea: *id023
-  uscirf2023india: *id024
-  uscirf2023indonesia: *id025
-  uscirf2023iran: *id026
-  uscirf2023iraq: *id027
-  uscirf2023laos: *id028
-  uscirf2023mexico: *id029
-  uscirf2023nicaragua: *id030
-  uscirf2023nigeria: *id031
-  uscirf2023northkorea: *id032
-  uscirf2023pakistan: *id033
-  uscirf2023saudiarabia: *id034
-  uscirf2023somalia: *id035
-  uscirf2023syria: *id036
-  uscirf2023vietnam: *id037
-  uscirf2023yemen: *id038
-  uscirf2023unitedstates: *id039
-  uscirf2023uganda: *id040
-  pew2023america: *id041
-  uscirf2023algeria: *id042
-  uscirf2023bangladesh: *id043
-  uscirf2023car: *id044
-  uscirf2023egypt: *id045
-  uscirf2023haiti: *id046
-  uscirf2023libya: *id047
-  uscirf2023malaysia: *id048
-  uscirf2023myanmar: *id049
-  uscirf2023sudan: *id050
-  uscirf2023turkey: *id051
-  uscirf2023venezuela: *id052
-  uscirf2023zimbabwe: *id053
+  uscirf2023afghanistan: *id018
+  bbc2021: *id019
+  uscirf2023china: *id020
+  pew2023china: *id021
+  uscirf2023colombia: *id022
+  uscirf2023cuba: *id023
+  uscirf2023eritrea: *id024
+  uscirf2023india: *id025
+  uscirf2023indonesia: *id026
+  uscirf2023iran: *id027
+  uscirf2023iraq: *id028
+  uscirf2023laos: *id029
+  uscirf2023mexico: *id030
+  uscirf2023nicaragua: *id031
+  uscirf2023nigeria: *id032
+  uscirf2023northkorea: *id033
+  uscirf2023pakistan: *id034
+  uscirf2023saudiarabia: *id035
+  uscirf2023somalia: *id036
+  uscirf2023syria: *id037
+  uscirf2023vietnam: *id038
+  uscirf2023yemen: *id039
+  uscirf2023unitedstates: *id040
+  uscirf2023uganda: *id041
+  pew2023america: *id042
+  uscirf2023algeria: *id043
+  uscirf2023bangladesh: *id044
+  uscirf2023car: *id045
+  uscirf2023egypt: *id046
+  uscirf2023haiti: *id047
+  uscirf2023libya: *id048
+  uscirf2023malaysia: *id049
+  uscirf2023myanmar: *id050
+  uscirf2023sudan: *id051
+  uscirf2023turkey: *id052
+  uscirf2023venezuela: *id053
+  uscirf2023zimbabwe: *id054
   freedomhouse2024: *id002
   statedepartment2023:
     title: U.S. State Department International Religious Freedom Report 2023
     url: https://www.state.gov/international-religious-freedom-reports/
     date: '2023'
-  statedepartment2023kenya: *id054
-  statedepartment2023tanzania: *id055
-  statedepartment2023kuwait: *id056
-  statedepartment2023unitedarabemirates: *id057
-  statedepartment2023lebanon: *id058
-  statedepartment2023nepal: *id059
-  statedepartment2023southsudan: *id060
+  statedepartment2023kenya: *id055
+  statedepartment2023tanzania: *id056
+  statedepartment2023kuwait: *id057
+  statedepartment2023unitedarabemirates: *id058
+  statedepartment2023lebanon: *id059
+  statedepartment2023nepal: *id060
+  statedepartment2023southsudan: *id061
   ohchr2024:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025:
-    title: GDELT Global Database of Events, Language, and Tone
-    url: https://www.gdeltproject.org/
-    date: '2025'
+  gdelt2025: *id015
   owid2024: *id004
   odwwl2026: *id003
-  uscirf2025russia: *id061
-  uscirf2025azerbaijan: *id062
-  uscirf2025srilanka: *id063
-  uscirf2025kazakhstan: *id064
-  uscirf2025kyrgyzstan: *id065
-  uscirf2025turkmenistan: *id066
-  uscirf2025uzbekistan: *id067
-  uscirf2025tajikistan: *id068
-  morningstarnews2026: *id013
+  uscirf2025russia: *id062
+  uscirf2025azerbaijan: *id063
+  uscirf2025srilanka: *id064
+  uscirf2025kazakhstan: *id065
+  uscirf2025kyrgyzstan: *id066
+  uscirf2025turkmenistan: *id067
+  uscirf2025uzbekistan: *id068
+  uscirf2025tajikistan: *id069
+  morningstarnews2026: *id012
   infochretienne: *id010
-  fides: *id012
+  fides: *id016
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -20896,15 +20927,15 @@ sources:
     url: https://www.csw.org.uk/
     date: '2026'
   icc2026: *id011
-  forum18: *id069
-  mec: *id070
+  forum18: *id070
+  mec: *id071
   bitterwinter:
     title: Bitter Winter - Religious Liberty and Human Rights
     url: https://bitterwinter.org/
     date: '2026'
   releaseintl: *id008
   vom2026: *id006
-  chinaaid: *id071
+  chinaaid: *id072
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
     url: https://www.osce.org/odihr/freedom-of-religion-or-belief
@@ -20913,21 +20944,24 @@ sources:
     title: UN Special Rapporteur on Freedom of Religion or Belief
     url: https://www.ohchr.org/en/special-procedures/sr-religion-or-belief
     date: '2026'
-  hrw: *id072
+  hrw: *id073
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id009
-  csi: *id014
-  cna: *id073
-  hrwf: *id016
+  csi: *id013
+  cna:
+    title: Catholic News Agency
+    url: https://www.catholicnewsagency.com/
+    date: '2026'
+  hrwf: *id017
   adf:
     title: ADF International
     url: https://adfinternational.org/
     date: '2026'
   wea: *id074
-  jubilee: *id015
+  jubilee: *id014
   ippforb:
     title: IPPFoRB - Parliamentarians for FoRB
     url: https://ippforb.com/
@@ -21476,152 +21510,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-08-08 07:10 UTC
+  generated_at: 2026-08-09 07:11 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-08-08T07:09:41.507873+00:00'
+    fetched_at: '2026-08-09T07:11:10.248967+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-08-08T07:09:18.243366+00:00'
+    fetched_at: '2026-08-09T07:10:38.784627+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-08-08T07:09:43.783851+00:00'
+    fetched_at: '2026-08-09T07:11:12.121457+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-08-08T07:09:33.105798+00:00'
+    fetched_at: '2026-08-09T07:11:02.786062+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-08-08T07:09:35.394138+00:00'
+    fetched_at: '2026-08-09T07:11:04.806030+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-08-08T07:09:25.211622+00:00'
+    fetched_at: '2026-08-09T07:10:49.817341+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-08-08T07:09:27.499549+00:00'
+    fetched_at: '2026-08-09T07:10:53.604864+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-08-08T07:09:39.424064+00:00'
+    fetched_at: '2026-08-09T07:11:08.559740+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-08-08T07:09:38.942908+00:00'
+    fetched_at: '2026-08-09T07:11:08.216251+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-08-08T07:09:19.024375+00:00'
+    fetched_at: '2026-08-09T07:10:39.640619+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-08-08T07:09:41.201343+00:00'
+    fetched_at: '2026-08-09T07:11:09.910802+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-08-08T07:09:20.289510+00:00'
+    fetched_at: '2026-08-09T07:10:42.398483+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-08-08T07:04:15.158837+00:00'
+    fetched_at: '2026-08-09T07:06:26.898992+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-08-08T07:09:17.311071+00:00'
+    fetched_at: '2026-08-09T07:10:37.612636+00:00'
     message: null
   - name: gdelt
-    status: failed
-    fetched_at: '2026-08-08T07:09:07.650561+00:00'
-    message: all queries failed
+    status: partial
+    fetched_at: '2026-08-09T07:10:27.902680+00:00'
+    message: 1 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-08-08T07:09:32.818194+00:00'
+    fetched_at: '2026-08-09T07:11:00.213344+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-08-08T07:09:42.733567+00:00'
+    fetched_at: '2026-08-09T07:11:11.033452+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-08-08T07:09:19.651203+00:00'
+    fetched_at: '2026-08-09T07:10:41.302886+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-08-08T07:09:29.470999+00:00'
+    fetched_at: '2026-08-09T07:10:56.152443+00:00'
     message: null
   - name: ippforb
-    status: ok
-    fetched_at: '2026-08-08T07:09:50.162531+00:00'
-    message: null
+    status: failed
+    fetched_at: '2026-08-09T07:11:26.888373+00:00'
+    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-08-08T07:09:48.460547+00:00'
+    fetched_at: '2026-08-09T07:11:25.844135+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-08-08T07:09:24.349045+00:00'
+    fetched_at: '2026-08-09T07:10:47.752844+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-08-08T07:09:09.528770+00:00'
+    fetched_at: '2026-08-09T07:10:30.022929+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-08-08T07:09:50.563979+00:00'
+    fetched_at: '2026-08-09T07:11:27.235450+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-08-08T07:09:08.743089+00:00'
+    fetched_at: '2026-08-09T07:10:29.123605+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-08-08T07:04:14.181757+00:00'
+    fetched_at: '2026-08-09T07:06:25.817445+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-08-08T07:09:32.378491+00:00'
+    fetched_at: '2026-08-09T07:10:59.540876+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-08-08T07:04:18.013940+00:00'
+    fetched_at: '2026-08-09T07:06:28.825322+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-08-08T07:09:26.150361+00:00'
+    fetched_at: '2026-08-09T07:10:51.118011+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-08-08T07:07:00.172600+00:00'
+    fetched_at: '2026-08-09T07:09:02.257535+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-08-08T07:09:32.600175+00:00'
+    fetched_at: '2026-08-09T07:10:59.904900+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-08-08T07:04:58.579689+00:00'
+    fetched_at: '2026-08-09T07:07:09.059403+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-08-08T07:09:15.804306+00:00'
+    fetched_at: '2026-08-09T07:10:35.954460+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-08-08T07:09:26.943854+00:00'
+    fetched_at: '2026-08-09T07:10:52.417685+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-08-08T07:09:45.465263+00:00'
+    fetched_at: '2026-08-09T07:11:13.697183+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-08-08T07:10:14.917238+00:00'
+    fetched_at: '2026-08-09T07:11:51.606240+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
