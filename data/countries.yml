@@ -382,6 +382,7 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
+    - gdelt2025
     - vdem2025forb
   pew_slug: china
   metadata:
@@ -894,6 +895,7 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
+    - gdelt2025
     - vdem2025forb
     sources:
     - &id021
@@ -926,7 +928,7 @@ countries:
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
-    - &id010
+    - &id011
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
@@ -934,6 +936,10 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
+    - &id010
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -1015,6 +1021,17 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Chinese Communists Step Up Persecution of Underground Church and Its
+        Priests
+      url: https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious communities in China face persecution when they refuse to submit to
@@ -1118,6 +1135,12 @@ countries:
       date: '2026-07-20'
       description: ''
       source: Info Chrétienne
+    - title: Chinese Communists Step Up Persecution of Underground Church and Its
+        Priests
+      url: https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: Chinese pastor released!
       url: https://releaseinternational.org/pastorzhangshaojie
       date: '2025-11-17'
@@ -1975,6 +1998,7 @@ countries:
     - releaseintl
     - vom2026
     - barnabas
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -2274,6 +2298,7 @@ countries:
     - releaseintl
     - vom2026
     - barnabas
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -2293,13 +2318,14 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id011
+    - &id012
       title: International Christian Concern - Global Persecution Reports
       url: https://www.persecution.org/
       date: '2026'
     - *id008
     - *id006
     - *id009
+    - *id010
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 2
@@ -2386,6 +2412,24 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    gdelt_articles: 2
+    gdelt_samples:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
+    gdelt_sample_urls:
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Indian government tolerates and perpetrates widespread harassment and violence
@@ -2414,6 +2458,18 @@ countries:
         authority over the assets of NGOs, including Christian ministries, hospitals,
         schools, and charitable organizations that rely on foreign donations. Th
       source: International Christian Concern
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: Threat of ‘draconian’ regulations in India
       url: https://releaseinternational.org/podcast-india
       date: '2026-06-04'
@@ -3349,7 +3405,7 @@ countries:
       date: '2026'
     - *id008
     - *id006
-    - *id010
+    - *id011
     - *id009
     - *id007
     freedom_house_status: Not Free
@@ -4021,7 +4077,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id010
+    - *id011
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -4590,6 +4646,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -4715,6 +4772,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -4733,6 +4791,7 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id010
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -4741,6 +4800,24 @@ countries:
     opendoors_score: 71
     christian_population: 5567748
     christian_percentage: 84.81
+    gdelt_articles: 2
+    gdelt_samples:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
+    gdelt_sample_urls:
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Nicaraguan regime continues to enforce a total crackdown on religious organizations.
@@ -4752,6 +4829,19 @@ countries:
       worshippers abroad.
     uscirf_url: https://www.uscirf.gov/countries/nicaragua
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nicaragua/
+    recent_incidents:
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     archive_modern_excerpt: Under President Ortega, churches and Christians are viewed
       as destabilizing agents, thus making them a target for intimidation, harassment,
       monitoring, legal prosecution, closure and expropriation of many Christian organizations
@@ -5009,14 +5099,14 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id012
+    - &id013
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
+    - *id012
     - *id011
-    - *id010
     - *id009
-    - &id013
+    - &id014
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
@@ -5024,14 +5114,11 @@ countries:
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
       date: '2026'
-    - &id014
+    - &id015
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
-    - &id015
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
+    - *id010
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -5123,7 +5210,7 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    fides_articles: 2
+    fides_articles: 1
     fides_samples:
     - title: AFRICA/NIGERIA - Missionary Childhood marks 25th anniversary, a seed
         of hope for the people and the ecclesial community
@@ -5133,16 +5220,6 @@ countries:
         the 25th anniversary since its establishement with a National Congress marked
         by gratitude for the journey accomplished so far. “Every Jubilee is a time
         of remembrance, gratitude and renewal,” wrote Sister Inês Paulo Albino, Secre
-      source: Agenzia Fides
-    - title: AFRICA/NIGERIA - Deep sorrow over the killing of Father Oyetoro; relief
-        over the release of the seminarian kidnapped in Otukpo
-      url: https://www.fides.org/en/news/78016-AFRICA_NIGERIA_Deep_sorrow_over_the_killing_of_Father_Oyetoro_relief_over_the_release_of_the_seminarian_kidnapped_in_Otukpo
-      date: '2026-08-04'
-      description: Abuja – The killing of Father Samuel Opeyemi Oyetoro has deeply
-        affected both his home community and the one where he had been temporarily
-        assigned to serve. The priest, whose body, bearing machete wounds, was found
-        on Church Road in Ajaokuta, Kogi State, central Nigeria, was visiting St.
-        Paul the A
       source: Agenzia Fides
     jubilee_articles: 1
     jubilee_samples:
@@ -5156,23 +5233,30 @@ countries:
         elicited by the widespread insecurity in the country. Discussion of freedom
         of '
       source: Jubilee Campaign
-    gdelt_articles: 2
+    gdelt_articles: 3
     gdelt_samples:
-    - title: Al menos 30 muertos en un ataque contra una comunidad cristiana en Nigeria
-        – INFOVATICANA
-      url: https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
-      date: '2026-07-31'
-      description: ''
-      source: GDELT
     - title: Dozens Of Christians Killed By Nigeria Underestimated Terrorist Group
       url: https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
       date: '2026-07-27'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 2
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 3
     gdelt_sample_urls:
-    - https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
     - https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5215,16 +5299,6 @@ countries:
         Middle Belt as Samuel walks slowly through the field his father once cultivated
         before him. He kneels and scoops a handful of dry soil into his palm. A
       source: International Christian Concern
-    - title: AFRICA/NIGERIA - Deep sorrow over the killing of Father Oyetoro; relief
-        over the release of the seminarian kidnapped in Otukpo
-      url: https://www.fides.org/en/news/78016-AFRICA_NIGERIA_Deep_sorrow_over_the_killing_of_Father_Oyetoro_relief_over_the_release_of_the_seminarian_kidnapped_in_Otukpo
-      date: '2026-08-04'
-      description: Abuja – The killing of Father Samuel Opeyemi Oyetoro has deeply
-        affected both his home community and the one where he had been temporarily
-        assigned to serve. The priest, whose body, bearing machete wounds, was found
-        on Church Road in Ajaokuta, Kogi State, central Nigeria, was visiting St.
-        Paul the A
-      source: Agenzia Fides
     - title: Funeral Services Held for 30 Christians Massacred in Nigeria
       url: https://morningstarnews.org/2026/08/funeral-services-held-for-30-christians-massacred-in-nigeria
       date: '2026-08-03'
@@ -5233,12 +5307,6 @@ countries:
         on Saturday (Aug. 1) for 27 Christians massacred by suspected Fulani terrorists
         in Kaduna state, Nigeria, sources said. A funeral for three evangelical Chris
       source: Morning Star News
-    - title: Al menos 30 muertos en un ataque contra una comunidad cristiana en Nigeria
-        – INFOVATICANA
-      url: https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
-      date: '2026-07-31'
-      description: ''
-      source: GDELT
     - title: 'Nigeria : un nouveau massacre de chrétiens fait 30 morts, dont huit
         enfants'
       url: https://www.infochretienne.com/articles/nigeria-un-nouveau-massacre-de-chretiens-fait-30-morts-dont-huit-enfants
@@ -5280,6 +5348,18 @@ countries:
       date: '2026-07-17'
       description: ''
       source: Info Chrétienne
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: At Least 30 Killed in Attack on Christian Village in Kaduna State, Nigeria
       url: https://www.barnabasaid.org/us/news/at-least-30-killed-in-attack-on-christian-village-in-kaduna-state-nigeri
       date: ''
@@ -5643,6 +5723,7 @@ countries:
     - barnabas
     - csi
     - jubilee
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -5784,14 +5865,14 @@ countries:
     wiki_url: https://en.wikipedia.org/wiki/Pakistan
     wiki_extract: Pakistan, officially the Islamic Republic of Pakistan, is a country
       in South Asia. It is the fifth-most populous country, with a population of over
-      241.5 million, having the second-largest Muslim population as of 2023. Islamabad
-      is the nation's capital, while Karachi is its largest city and financial centre.
-      Pakistan is the 33rd-largest country by area. Bounded by the Arabian Sea on
-      the south, the Gulf of Oman on the southwest, and the Sir Creek on the southeast,
-      it shares land borders with India to the east; Afghanistan to the west; Iran
-      to the southwest; and China to the northeast. It shares a maritime border with
-      Oman in the Gulf of Oman, and is separated from Tajikistan in the northwest
-      by Afghanistan's narrow Wakhan Corridor.
+      241.5 million, having the second-largest Muslim population in the world as of
+      2023. Islamabad is the nation's capital, while Karachi is its largest city and
+      financial centre. Pakistan is the 33rd-largest country by area. Bounded by the
+      Arabian Sea on the south, the Gulf of Oman on the southwest, and the Sir Creek
+      on the southeast, it shares land borders with India to the east; Afghanistan
+      to the west; Iran to the southwest; and China to the northeast. It shares a
+      maritime border with Oman in the Gulf of Oman, and is separated from Tajikistan
+      in the northwest by Afghanistan's narrow Wakhan Corridor.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -5808,6 +5889,7 @@ countries:
     - barnabas
     - csi
     - jubilee
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -5827,12 +5909,13 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
-    - *id006
-    - *id010
-    - *id009
     - *id013
+    - *id006
+    - *id011
+    - *id009
     - *id014
+    - *id015
+    - *id010
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -5920,6 +6003,16 @@ countries:
         from Faisalabad, to the abductor who forcibly converted and coerced her into
         marriage. Human rights defenders strongly condemn a Pakistani court’s decisio
       source: Jubilee Campaign
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Pakistani court issues prison sentence over anti - Christian riots
+      url: https://www.christianpost.com/news/pakistani-court-issues-prison-sentence-over-anti-christian-riots.html
+      date: '2026-07-15'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christianpost.com/news/pakistani-court-issues-prison-sentence-over-anti-christian-riots.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Pakistani government’s systematic enforcement of blasphemy laws severely
@@ -5990,6 +6083,11 @@ countries:
       date: '2026-07-15'
       description: ''
       source: Info Chrétienne
+    - title: Pakistani court issues prison sentence over anti - Christian riots
+      url: https://www.christianpost.com/news/pakistani-court-issues-prison-sentence-over-anti-christian-riots.html
+      date: '2026-07-15'
+      description: ''
+      source: GDELT
     - title: Pakistani Christian Acquitted of “Blasphemy” After Two-Year Legal Battle
       url: https://www.barnabasaid.org/us/news/pakistani-christian-acquitted-of-blasphemy-after-two-year-legal-battle
       date: ''
@@ -6526,7 +6624,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id010
+    - *id011
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -6743,10 +6841,10 @@ countries:
     - *id003
     - *id004
     - *id005
+    - *id012
     - *id011
+    - *id014
     - *id010
-    - *id013
-    - *id015
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -6787,16 +6885,30 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    gdelt_articles: 1
+    gdelt_articles: 3
     gdelt_samples:
     - title: 'Syria authorities release detained Kurdish pastor : church official'
       url: https://www.arabnews.com/node/2653420/middle-east
       date: '2026-08-04'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 1
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 3
     gdelt_sample_urls:
     - https://www.arabnews.com/node/2653420/middle-east
+    - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
     uscirf_designation: CPC
     uscirf_key_findings:
     - Although President Bashar al-Assad’s government fell in December 2024, ending
@@ -6827,6 +6939,18 @@ countries:
         who remain vulnerable a year and a half after the fall of dictator Bashar
         a
       source: International Christian Concern
+    - title: Nigeria , Nicaragua , Syria , India cited in index of rising Christian
+        persecution
+      url: https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-17'
+      description: ''
+      source: GDELT
+    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
+        Persecution
+      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
+      date: '2026-07-16'
+      description: ''
+      source: GDELT
     - title: 'Syria: Attacks on Religious Minorities – June 2026'
       url: https://csi-usa.org/syria-attacks-on-religious-minorities-june-2026
       date: ''
@@ -8290,7 +8414,7 @@ countries:
       with the semi-exclave of Alaska in the northwest and the archipelago of Hawaii
       in the Pacific Ocean. The United States also asserts sovereignty over five major
       island territories and various uninhabited islands in Oceania and the Caribbean.
-      It is a megadiverse country, with the world's third-largest land area and third-largest
+      It is a megadiverse country, with the world's fourth-largest land area and third-largest
       population, exceeding 341 million.
     country_polygon: true
     source_ids:
@@ -8318,7 +8442,7 @@ countries:
     - *id002
     - *id004
     - *id005
-    - *id011
+    - *id012
     - *id007
     freedom_house_status: Free
     freedom_house_pr: 2
@@ -8981,7 +9105,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id012
+    - *id013
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9244,7 +9368,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
+    - *id013
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9839,6 +9963,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -9953,6 +10078,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -9971,6 +10097,7 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id010
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9979,6 +10106,17 @@ countries:
     opendoors_score: 68
     christian_population: 5270537
     christian_percentage: 4.82
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Egyptian Muslims Attacked Coptic Christians . Authorities Arrested the
+        Christians .
+      url: https://pjmedia.com/catherinesalgado/2026/08/09/egyptian-muslims-attacked-coptic-christians-authorities-arrested-the-christians-n4955970
+      date: '2026-08-10'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://pjmedia.com/catherinesalgado/2026/08/09/egyptian-muslims-attacked-coptic-christians-authorities-arrested-the-christians-n4955970
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Egypt are poor. Baha'is, Jehovah’s Witnesses,
@@ -9989,6 +10127,13 @@ countries:
       laws also remain key tools of systematic FoRB repression.
     uscirf_url: https://www.uscirf.gov/countries/egypt
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/egypt/
+    recent_incidents:
+    - title: Egyptian Muslims Attacked Coptic Christians . Authorities Arrested the
+        Christians .
+      url: https://pjmedia.com/catherinesalgado/2026/08/09/egyptian-muslims-attacked-coptic-christians-authorities-arrested-the-christians-n4955970
+      date: '2026-08-10'
+      description: ''
+      source: GDELT
     archive_modern_excerpt: Christians in Egypt report that freedom of religion violations
       occur mostly at the community level, with many Christians regularly facing discrimination.
       The constitution states that “freedom of belief is absolute” and “the freedom
@@ -11264,8 +11409,8 @@ countries:
     - *id003
     - *id004
     - *id005
+    - *id013
     - *id012
-    - *id011
     - *id017
     - *id007
     freedom_house_status: Not Free
@@ -12994,7 +13139,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id014
+    - *id015
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -13700,7 +13845,7 @@ countries:
     wiki_extract: Niger, officially the Republic of the Niger, is a landlocked country
       in West Africa. It is a unitary state bordered by Libya to the northeast, Chad
       to the east, Nigeria to the south, Benin and Burkina Faso to the southwest,
-      Mali to the west, and Algeria to the northwest. It covers a land area of almost
+      Mali to the west and Algeria to the northwest. It covers a land area of almost
       1.27 million km2 (490,000 mi2), making it the sixth-largest country in Africa
       and the second-largest landlocked nation in Africa behind Chad. Over 80% of
       its land area lies in the Sahara. Its predominantly Muslim population of about
@@ -14439,7 +14584,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id011
+    - *id012
     - *id016
     - *id007
     freedom_house_status: Not Free
@@ -15056,9 +15201,9 @@ countries:
       date: '2025'
     - *id003
     - *id004
-    - *id011
+    - *id012
     - *id009
-    - *id015
+    - *id010
     - *id007
     opendoors_ranking: 29
     opendoors_score: 72
@@ -18545,7 +18690,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id011
+    - *id012
     - &id070
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
@@ -18819,7 +18964,7 @@ countries:
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
-    - *id013
+    - *id014
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -18987,7 +19132,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id013
+    - *id014
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -20041,7 +20186,7 @@ countries:
     - *id003
     - *id002
     - *id004
-    - *id011
+    - *id012
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -20563,8 +20708,8 @@ countries:
     - *id003
     - *id002
     - *id004
-    - *id010
-    - *id014
+    - *id011
+    - *id015
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -20895,7 +21040,7 @@ sources:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id015
+  gdelt2025: *id010
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id062
@@ -20906,8 +21051,8 @@ sources:
   uscirf2025turkmenistan: *id067
   uscirf2025uzbekistan: *id068
   uscirf2025tajikistan: *id069
-  morningstarnews2026: *id012
-  infochretienne: *id010
+  morningstarnews2026: *id013
+  infochretienne: *id011
   fides: *id016
   aciprensa:
     title: ACI Prensa - Noticias católicas
@@ -20926,7 +21071,7 @@ sources:
     title: Christian Solidarity Worldwide - Persecution Reports
     url: https://www.csw.org.uk/
     date: '2026'
-  icc2026: *id011
+  icc2026: *id012
   forum18: *id070
   mec: *id071
   bitterwinter:
@@ -20950,7 +21095,7 @@ sources:
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id009
-  csi: *id013
+  csi: *id014
   cna:
     title: Catholic News Agency
     url: https://www.catholicnewsagency.com/
@@ -20961,7 +21106,7 @@ sources:
     url: https://adfinternational.org/
     date: '2026'
   wea: *id074
-  jubilee: *id014
+  jubilee: *id015
   ippforb:
     title: IPPFoRB - Parliamentarians for FoRB
     url: https://ippforb.com/
@@ -21510,152 +21655,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-08-09 07:11 UTC
+  generated_at: 2026-08-10 08:01 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-08-09T07:11:10.248967+00:00'
+    fetched_at: '2026-08-10T08:00:27.981454+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-08-09T07:10:38.784627+00:00'
+    fetched_at: '2026-08-10T07:59:57.762302+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-08-09T07:11:12.121457+00:00'
+    fetched_at: '2026-08-10T08:00:30.618203+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-08-09T07:11:02.786062+00:00'
+    fetched_at: '2026-08-10T08:00:17.653213+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-08-09T07:11:04.806030+00:00'
+    fetched_at: '2026-08-10T08:00:20.029725+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-08-09T07:10:49.817341+00:00'
+    fetched_at: '2026-08-10T08:00:05.236300+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-08-09T07:10:53.604864+00:00'
+    fetched_at: '2026-08-10T08:00:09.014790+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-08-09T07:11:08.559740+00:00'
+    fetched_at: '2026-08-10T08:00:25.011220+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-08-09T07:11:08.216251+00:00'
+    fetched_at: '2026-08-10T08:00:24.300347+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-08-09T07:10:39.640619+00:00'
+    fetched_at: '2026-08-10T07:59:58.947585+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-08-09T07:11:09.910802+00:00'
+    fetched_at: '2026-08-10T08:00:27.568813+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-08-09T07:10:42.398483+00:00'
+    fetched_at: '2026-08-10T08:00:00.892260+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-08-09T07:06:26.898992+00:00'
+    fetched_at: '2026-08-10T07:54:56.281107+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-08-09T07:10:37.612636+00:00'
+    fetched_at: '2026-08-10T07:59:56.538700+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-08-09T07:10:27.902680+00:00'
+    fetched_at: '2026-08-10T07:59:45.276296+00:00'
     message: 1 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-08-09T07:11:00.213344+00:00'
+    fetched_at: '2026-08-10T08:00:16.513930+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-08-09T07:11:11.033452+00:00'
+    fetched_at: '2026-08-10T08:00:29.397367+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-08-09T07:10:41.302886+00:00'
+    fetched_at: '2026-08-10T07:59:59.831959+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-08-09T07:10:56.152443+00:00'
+    fetched_at: '2026-08-10T08:00:11.275394+00:00'
     message: null
   - name: ippforb
     status: failed
-    fetched_at: '2026-08-09T07:11:26.888373+00:00'
+    fetched_at: '2026-08-10T08:00:34.499911+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-08-09T07:11:25.844135+00:00'
+    fetched_at: '2026-08-10T08:00:33.086451+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-08-09T07:10:47.752844+00:00'
+    fetched_at: '2026-08-10T08:00:04.466661+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-08-09T07:10:30.022929+00:00'
+    fetched_at: '2026-08-10T07:59:47.594316+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-08-09T07:11:27.235450+00:00'
+    fetched_at: '2026-08-10T08:00:35.336140+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-08-09T07:10:29.123605+00:00'
+    fetched_at: '2026-08-10T07:59:46.431139+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-08-09T07:06:25.817445+00:00'
+    fetched_at: '2026-08-10T07:54:55.087473+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-08-09T07:10:59.540876+00:00'
+    fetched_at: '2026-08-10T08:00:15.368959+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-08-09T07:06:28.825322+00:00'
+    fetched_at: '2026-08-10T07:54:59.372901+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-08-09T07:10:51.118011+00:00'
+    fetched_at: '2026-08-10T08:00:06.733946+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-08-09T07:09:02.257535+00:00'
+    fetched_at: '2026-08-10T07:58:01.081744+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-08-09T07:10:59.904900+00:00'
+    fetched_at: '2026-08-10T08:00:15.707263+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-08-09T07:07:09.059403+00:00'
+    fetched_at: '2026-08-10T07:55:49.611265+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-08-09T07:10:35.954460+00:00'
+    fetched_at: '2026-08-10T07:59:54.833020+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-08-09T07:10:52.417685+00:00'
+    fetched_at: '2026-08-10T08:00:07.506229+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-08-09T07:11:13.697183+00:00'
+    fetched_at: '2026-08-10T08:00:32.497633+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-08-09T07:11:51.606240+00:00'
+    fetched_at: '2026-08-10T08:00:59.682639+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
