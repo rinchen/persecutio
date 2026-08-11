@@ -382,7 +382,6 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
-    - gdelt2025
     - vdem2025forb
   pew_slug: china
   metadata:
@@ -895,7 +894,6 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
-    - gdelt2025
     - vdem2025forb
     sources:
     - &id021
@@ -928,7 +926,7 @@ countries:
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
-    - &id011
+    - &id010
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
@@ -936,10 +934,6 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id010
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -1021,17 +1015,6 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    gdelt_articles: 1
-    gdelt_samples:
-    - title: Chinese Communists Step Up Persecution of Underground Church and Its
-        Priests
-      url: https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
-      date: '2026-07-16'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 1
-    gdelt_sample_urls:
-    - https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious communities in China face persecution when they refuse to submit to
@@ -1135,12 +1118,6 @@ countries:
       date: '2026-07-20'
       description: ''
       source: Info Chrétienne
-    - title: Chinese Communists Step Up Persecution of Underground Church and Its
-        Priests
-      url: https://pjmedia.com/catherinesalgado/2026/07/15/chinese-communists-step-up-persecution-of-underground-church-priests-n4955088
-      date: '2026-07-16'
-      description: ''
-      source: GDELT
     - title: Chinese pastor released!
       url: https://releaseinternational.org/pastorzhangshaojie
       date: '2025-11-17'
@@ -1789,6 +1766,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - hrwf
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -1869,6 +1847,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - hrwf
     - vdem2025forb
     sources:
     - *id001
@@ -1888,6 +1867,10 @@ countries:
     - *id003
     - *id004
     - *id005
+    - &id011
+      title: Human Rights Without Frontiers
+      url: https://hrwf.eu/
+      date: '2026'
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -1903,6 +1886,16 @@ countries:
       globally, roughly one in seven worldwide and one in five in Africa." } }, {
       "@type": "Question", "name": "What are the main causes of modern Christian persecution?",
       "acceptedAnswer": { "@type"'
+    hrwf_articles: 1
+    hrwf_samples:
+    - title: 'ERITREA: 64 Jehovah’s Witnesses are currently in prison'
+      url: https://hrwf.eu/eritrea-64-jehovahs-witnesses-are-currently-in-prison-37-men-and-27-women
+      date: '2026-08-10'
+      description: 'ERITREA: 64 Jehovah’s Witnesses are currently in prison: 37 men
+        and 27 women They are imprisoned indefinitely without having been charged
+        or tried by a court HRWF (08.10.2026) According to the latest statistics (August
+        2026) published by the headquarters of Jehovah’s Witnesses in the United States, '
+      source: Human Rights Without Frontiers
     uscirf_designation: CPC
     uscirf_key_findings:
     - The government in Eritrea systematically persecutes individuals for their faith
@@ -1914,6 +1907,15 @@ countries:
       punishments.
     uscirf_url: https://www.uscirf.gov/countries/eritrea
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/eritrea/
+    recent_incidents:
+    - title: 'ERITREA: 64 Jehovah’s Witnesses are currently in prison'
+      url: https://hrwf.eu/eritrea-64-jehovahs-witnesses-are-currently-in-prison-37-men-and-27-women
+      date: '2026-08-10'
+      description: 'ERITREA: 64 Jehovah’s Witnesses are currently in prison: 37 men
+        and 27 women They are imprisoned indefinitely without having been charged
+        or tried by a court HRWF (08.10.2026) According to the latest statistics (August
+        2026) published by the headquarters of Jehovah’s Witnesses in the United States, '
+      source: Human Rights Without Frontiers
     archive_modern_excerpt: Eritrea has many complex actors-as well as victims-of
       discrimination, hostility and other forms of persecution. Young Christians are
       being forced to join the armed forces indefinitely as per the law of the country
@@ -2318,14 +2320,17 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id012
+    - &id013
       title: International Christian Concern - Global Persecution Reports
       url: https://www.persecution.org/
       date: '2026'
     - *id008
     - *id006
     - *id009
-    - *id010
+    - &id012
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 2
@@ -3405,7 +3410,7 @@ countries:
       date: '2026'
     - *id008
     - *id006
-    - *id011
+    - *id010
     - *id009
     - *id007
     freedom_house_status: Not Free
@@ -3819,10 +3824,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id017
-      title: Human Rights Without Frontiers
-      url: https://hrwf.eu/
-      date: '2026'
+    - *id011
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -4077,7 +4079,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id011
+    - *id010
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -4791,7 +4793,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id010
+    - *id012
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -4926,7 +4928,6 @@ countries:
     - infochretienne
     - barnabas
     - csi
-    - fides
     - jubilee
     - gdelt2025
     - vdem2025forb
@@ -5077,7 +5078,6 @@ countries:
     - infochretienne
     - barnabas
     - csi
-    - fides
     - jubilee
     - gdelt2025
     - vdem2025forb
@@ -5099,26 +5099,22 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id013
+    - &id014
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
-    - *id012
-    - *id011
+    - *id013
+    - *id010
     - *id009
-    - &id014
+    - &id015
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
     - &id016
-      title: Agenzia Fides - Pontifical Mission Societies News
-      url: https://www.fides.org/en
-      date: '2026'
-    - &id015
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
-    - *id010
+    - *id012
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -5134,8 +5130,17 @@ countries:
       roughly one in seven worldwide and one in five in Africa." } }, { "@type": "Question",
       "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "tex'
-    morningstarnews_articles: 1
+    morningstarnews_articles: 2
     morningstarnews_samples:
+    - title: Three Christians Killed in Plateau State, Nigeria
+      url: https://morningstarnews.org/2026/08/three-christians-killed-in-plateau-state-nigeria
+      date: '2026-08-10'
+      description: ABUJA, Nigeria (Christian Daily International Morning Star News)
+        – A Christian on his way to a Sunday morning worship service was shot and
+        killed by suspected Fulani herdsmen on Sunday (Aug. 9) in Fann village, Barkin
+        Ladi County, Plateau state in central Nigeria. The unidentified man was one
+        of thr
+      source: Morning Star News
     - title: Funeral Services Held for 30 Christians Massacred in Nigeria
       url: https://morningstarnews.org/2026/08/funeral-services-held-for-30-christians-massacred-in-nigeria
       date: '2026-08-03'
@@ -5210,17 +5215,6 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    fides_articles: 1
-    fides_samples:
-    - title: AFRICA/NIGERIA - Missionary Childhood marks 25th anniversary, a seed
-        of hope for the people and the ecclesial community
-      url: https://www.fides.org/en/news/78020-AFRICA_NIGERIA_Missionary_Childhood_marks_25th_anniversary_a_seed_of_hope_for_the_people_and_the_ecclesial_community
-      date: '2026-08-05'
-      description: Lagos – The Pontifical Society of Missionary Childhood is celebrating
-        the 25th anniversary since its establishement with a National Congress marked
-        by gratitude for the journey accomplished so far. “Every Jubilee is a time
-        of remembrance, gratitude and renewal,” wrote Sister Inês Paulo Albino, Secre
-      source: Agenzia Fides
     jubilee_articles: 1
     jubilee_samples:
     - title: UN Special Rapporteur on Freedom of Religion or Belief Concludes First
@@ -5233,8 +5227,14 @@ countries:
         elicited by the widespread insecurity in the country. Discussion of freedom
         of '
       source: Jubilee Campaign
-    gdelt_articles: 3
+    gdelt_articles: 4
     gdelt_samples:
+    - title: Al menos 30 muertos en un ataque contra una comunidad cristiana en Nigeria
+        – INFOVATICANA
+      url: https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
+      date: '2026-07-31'
+      description: ''
+      source: GDELT
     - title: Dozens Of Christians Killed By Nigeria Underestimated Terrorist Group
       url: https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
       date: '2026-07-27'
@@ -5246,17 +5246,11 @@ countries:
       date: '2026-07-17'
       description: ''
       source: GDELT
-    - title: Nigeria , Nicaragua , Syria , India Cited in Index of Rising Christian
-        Persecution
-      url: https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
-      date: '2026-07-16'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 3
+    gdelt_recent_articles: 4
     gdelt_sample_urls:
+    - https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
     - https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
     - https://www.catholicworldreport.com/2026/07/16/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
-    - https://www.ncregister.com/cna/nigeria-nicaragua-syria-india-cited-in-index-of-rising-christian-persecution
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5268,6 +5262,15 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/nigeria
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nigeria/
     recent_incidents:
+    - title: Three Christians Killed in Plateau State, Nigeria
+      url: https://morningstarnews.org/2026/08/three-christians-killed-in-plateau-state-nigeria
+      date: '2026-08-10'
+      description: ABUJA, Nigeria (Christian Daily International Morning Star News)
+        – A Christian on his way to a Sunday morning worship service was shot and
+        killed by suspected Fulani herdsmen on Sunday (Aug. 9) in Fann village, Barkin
+        Ladi County, Plateau state in central Nigeria. The unidentified man was one
+        of thr
+      source: Morning Star News
     - title: Après le massacre de 30 chrétiens au Nigeria, un premier suspect arrêté
       url: https://www.infochretienne.com/articles/apres-le-massacre-de-30-chretiens-au-nigeria-un-premier-suspect-arrete
       date: '2026-08-07'
@@ -5282,15 +5285,6 @@ countries:
         Peace arrested Salihu Miakailu during an intelligence-led operation at his
         residen
       source: International Christian Concern
-    - title: AFRICA/NIGERIA - Missionary Childhood marks 25th anniversary, a seed
-        of hope for the people and the ecclesial community
-      url: https://www.fides.org/en/news/78020-AFRICA_NIGERIA_Missionary_Childhood_marks_25th_anniversary_a_seed_of_hope_for_the_people_and_the_ecclesial_community
-      date: '2026-08-05'
-      description: Lagos – The Pontifical Society of Missionary Childhood is celebrating
-        the 25th anniversary since its establishement with a National Congress marked
-        by gratitude for the journey accomplished so far. “Every Jubilee is a time
-        of remembrance, gratitude and renewal,” wrote Sister Inês Paulo Albino, Secre
-      source: Agenzia Fides
     - title: Climate Change Is Not Christian Persecution, So Why Does It Matter?
       url: https://persecution.org/2026/08/04/climate-change-is-not-christian-persecution-so-why-does-it-matter
       date: '2026-08-04'
@@ -5307,6 +5301,12 @@ countries:
         on Saturday (Aug. 1) for 27 Christians massacred by suspected Fulani terrorists
         in Kaduna state, Nigeria, sources said. A funeral for three evangelical Chris
       source: Morning Star News
+    - title: Al menos 30 muertos en un ataque contra una comunidad cristiana en Nigeria
+        – INFOVATICANA
+      url: https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
+      date: '2026-07-31'
+      description: ''
+      source: GDELT
     - title: 'Nigeria : un nouveau massacre de chrétiens fait 30 morts, dont huit
         enfants'
       url: https://www.infochretienne.com/articles/nigeria-un-nouveau-massacre-de-chretiens-fait-30-morts-dont-huit-enfants
@@ -5909,13 +5909,13 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id013
-    - *id006
-    - *id011
-    - *id009
     - *id014
-    - *id015
+    - *id006
     - *id010
+    - *id009
+    - *id015
+    - *id016
+    - *id012
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -5931,7 +5931,7 @@ countries:
       in seven worldwide and one in five in Africa." } }, { "@type": "Question", "name":
       "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "text": "Islam'
-    morningstarnews_articles: 4
+    morningstarnews_articles: 3
     morningstarnews_samples:
     - title: Christian Girl Struggles to Void Forced Marriage in Pakistan
       url: https://morningstarnews.org/2026/08/christian-girl-struggles-to-void-forced-marriage-in-pakistan
@@ -6068,15 +6068,6 @@ countries:
         from Faisalabad, to the abductor who forcibly converted and coerced her into
         marriage. Human rights defenders strongly condemn a Pakistani court’s decisio
       source: Jubilee Campaign
-    - title: Muslim Woman Gains Custody of Christian Girl in Pakistan
-      url: https://morningstarnews.org/2026/07/muslim-woman-gains-custody-of-christian-girl-in-pakistan
-      date: '2026-07-24'
-      description: LAHORE, Pakistan (Christian Daily International Morning Star News)
-        – A court in Pakistan has handed custody of a 16-year-old Christian girl to
-        an unrelated Muslim woman after the minor was recovered from a Muslim accused
-        of abducting, forcibly converting and marrying her, her family’s attorney
-        said.
-      source: Morning Star News
     - title: 'Blasphème au Pakistan : une foule en colère rassemblée devant la maison
         d’un chrétien'
       url: https://www.infochretienne.com/articles/blaspheme-au-pakistan-une-foule-en-colere-rassemblee-devant-la-maison-dun-chretien
@@ -6624,7 +6615,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id011
+    - *id010
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -6841,10 +6832,10 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
-    - *id011
-    - *id014
+    - *id013
     - *id010
+    - *id015
+    - *id012
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -8442,7 +8433,7 @@ countries:
     - *id002
     - *id004
     - *id005
-    - *id012
+    - *id013
     - *id007
     freedom_house_status: Free
     freedom_house_pr: 2
@@ -9009,7 +9000,6 @@ countries:
     indicators:
     - freedomhouse2024
     - owid2024
-    - morningstarnews2026
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -9088,7 +9078,6 @@ countries:
     - odwwl2025archiveuganda
     - freedomhouse2024
     - owid2024
-    - morningstarnews2026
     - vdem2025forb
     sources:
     - &id041
@@ -9105,35 +9094,13 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id013
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
     christian_population: 39008617
     christian_percentage: 87.74
-    morningstarnews_articles: 1
-    morningstarnews_samples:
-    - title: Young Pastor Killed after Religious Debate in Uganda
-      url: https://morningstarnews.org/2026/07/young-pastor-killed-after-religious-debate-in-uganda
-      date: '2026-07-24'
-      description: NAIROBI, Kenya (Morning Star News) – An imam who debated a pastor
-        at an interfaith dialogue in Uganda is a suspect in the killing of the church
-        leader after the event on Saturday (July 18), sources said. Bernard Mulongo,
-        a 25-year-old pastor at New Restoration Church of Christ in Butebo District,
-        wa
-      source: Morning Star News
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/uganda/
-    recent_incidents:
-    - title: Young Pastor Killed after Religious Debate in Uganda
-      url: https://morningstarnews.org/2026/07/young-pastor-killed-after-religious-debate-in-uganda
-      date: '2026-07-24'
-      description: NAIROBI, Kenya (Morning Star News) – An imam who debated a pastor
-        at an interfaith dialogue in Uganda is a suspect in the killing of the church
-        leader after the event on Saturday (July 18), sources said. Bernard Mulongo,
-        a 25-year-old pastor at New Restoration Church of Christ in Butebo District,
-        wa
-      source: Morning Star News
     archive_modern_excerpt: The constitution prohibits religious discrimination and
       stipulates there shall be no state religion. It provides for freedom of belief,
       the right to practice and promote any religion, and the right to belong to and
@@ -9368,7 +9335,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id013
+    - *id014
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10097,7 +10064,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id010
+    - *id012
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10285,7 +10252,10 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id016
+    - &id017
+      title: Agenzia Fides - Pontifical Mission Societies News
+      url: https://www.fides.org/en
+      date: '2026'
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -11409,9 +11379,9 @@ countries:
     - *id003
     - *id004
     - *id005
+    - *id014
     - *id013
-    - *id012
-    - *id017
+    - *id011
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11427,8 +11397,17 @@ countries:
       of persecution globally, roughly one in seven worldwide and one in five in Africa."
       } }, { "@type": "Question", "name": "What are the main causes of modern Christian
       persecution?", "acceptedAnswer": '
-    morningstarnews_articles: 3
+    morningstarnews_articles: 4
     morningstarnews_samples:
+    - title: Two Church Leaders Abducted in Sudan Are Freed
+      url: https://morningstarnews.org/2026/08/two-church-leaders-abducted-in-sudan-are-freed
+      date: '2026-08-10'
+      description: NAIROBI, Kenya (Morning Star News) – Two church leaders abducted
+        in Sudan’s Nuba Mountains have been released, local sources said. The Rev.
+        Yaqob Ibrahim Tia and Zakaria Suliman Jana, both prominent leaders of a Sudanese
+        Church of Christ (SCOC) congregation in Heiban, South Kordofan state, were
+        free
+      source: Morning Star News
     - title: Another Church Leader Abducted in Sudan
       url: https://morningstarnews.org/2026/08/another-church-leader-abducted-in-sudan
       date: '2026-08-07'
@@ -11446,15 +11425,6 @@ countries:
         a pastor and others in South Kordofan state, Sudan on July 23, his brother
         said. The Rev. Yaqob Ibrahim Tia of the Sudanese Church of Christ (SCOC) was
         abducted
-      source: Morning Star News
-    - title: Rebel Militants in Sudan Kill Pastor, Abduct Others
-      url: https://morningstarnews.org/2026/07/rebel-militants-in-sudan-kill-pastor-abduct-others
-      date: '2026-07-28'
-      description: JUBA, South Sudan (Morning Star News) – A rebel militant faction
-        backed by Islamic extremist groups in Sudan on Friday (July 24) killed a pastor
-        in South Kordofan state’s Nuba Mountains, area church sources said. Members
-        of a break-away group from the rebel Sudan’s People Liberation Army-North
-        (SPLA
       source: Morning Star News
     icc_articles: 2
     icc_samples:
@@ -11476,8 +11446,16 @@ countries:
         a community living amid conflict. On June 19, the place of refuge came under
         attack after a 48-hour ultimatum issued by Izzat Kuku, a Muslim leader commanding
       source: International Christian Concern
-    hrwf_articles: 1
+    hrwf_articles: 2
     hrwf_samples:
+    - title: 'SUDAN: Churches in ruins as war erases hard won religious freedom gains'
+      url: https://hrwf.eu/sudan-churches-in-ruins-as-war-erases-hard-won-religious-freedom-gains
+      date: '2026-08-10'
+      description: 'SUDAN: Churches in ruins as war erases hard won religious freedom
+        gains Impact International (05.08.2026) Sudan s civil war has destroyed more
+        than churches; it has dismantled the fragile architecture of religious freedom
+        that took decades to build. According to the U.S. State Department, more than '
+      source: Human Rights Without Frontiers
     - title: 'SUDAN: Reverend Adil Idris Jangoul executed after arrest in Nuba Mountains'
       url: https://hrwf.eu/sudan-reverend-executed-after-arrest-in-nuba-mountains
       date: '2026-08-05'
@@ -11495,6 +11473,23 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/sudan
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/sudan/
     recent_incidents:
+    - title: Two Church Leaders Abducted in Sudan Are Freed
+      url: https://morningstarnews.org/2026/08/two-church-leaders-abducted-in-sudan-are-freed
+      date: '2026-08-10'
+      description: NAIROBI, Kenya (Morning Star News) – Two church leaders abducted
+        in Sudan’s Nuba Mountains have been released, local sources said. The Rev.
+        Yaqob Ibrahim Tia and Zakaria Suliman Jana, both prominent leaders of a Sudanese
+        Church of Christ (SCOC) congregation in Heiban, South Kordofan state, were
+        free
+      source: Morning Star News
+    - title: 'SUDAN: Churches in ruins as war erases hard won religious freedom gains'
+      url: https://hrwf.eu/sudan-churches-in-ruins-as-war-erases-hard-won-religious-freedom-gains
+      date: '2026-08-10'
+      description: 'SUDAN: Churches in ruins as war erases hard won religious freedom
+        gains Impact International (05.08.2026) Sudan s civil war has destroyed more
+        than churches; it has dismantled the fragile architecture of religious freedom
+        that took decades to build. According to the U.S. State Department, more than '
+      source: Human Rights Without Frontiers
     - title: Another Church Leader Abducted in Sudan
       url: https://morningstarnews.org/2026/08/another-church-leader-abducted-in-sudan
       date: '2026-08-07'
@@ -11806,7 +11801,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id017
+    - *id011
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -13139,7 +13134,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id015
+    - *id016
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -14425,7 +14420,6 @@ countries:
     - odwwl2026
     - owid2024
     - icc2026
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -14569,7 +14563,6 @@ countries:
     - odwwl2026
     - owid2024
     - icc2026
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -14584,8 +14577,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id012
-    - *id016
+    - *id013
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -14605,30 +14597,8 @@ countries:
         multiple reports, two nuns and six priests were among those killed, while
         many '
       source: International Christian Concern
-    fides_articles: 1
-    fides_samples:
-    - title: 'AFRICA/ETHIOPIA - Tigray on the brink of renewed conflict: fighting
-        resumes as civilians flee'
-      url: https://www.fides.org/en/news/78017-AFRICA_ETHIOPIA_Tigray_on_the_brink_of_renewed_conflict_fighting_resumes_as_civilians_flee
-      date: '2026-08-04'
-      description: 'Mekelle – The truce reached with the 2022 Pretoria Agreement appears
-        increasingly fragile. Heavy fighting has resumed in western Tigray, near the
-        border with Sudan, between the Ethiopian National Defence Force and forces
-        linked to the Tigray People''s Liberation Front , in what is being described
-        as '
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
     recent_incidents:
-    - title: 'AFRICA/ETHIOPIA - Tigray on the brink of renewed conflict: fighting
-        resumes as civilians flee'
-      url: https://www.fides.org/en/news/78017-AFRICA_ETHIOPIA_Tigray_on_the_brink_of_renewed_conflict_fighting_resumes_as_civilians_flee
-      date: '2026-08-04'
-      description: 'Mekelle – The truce reached with the 2022 Pretoria Agreement appears
-        increasingly fragile. Heavy fighting has resumed in western Tigray, near the
-        border with Sudan, between the Ethiopian National Defence Force and forces
-        linked to the Tigray People''s Liberation Front , in what is being described
-        as '
-      source: Agenzia Fides
     - title: Ethiopian Christians Grieve Deadly Monastery Strike
       url: https://persecution.org/2026/07/28/ethiopian-christians-grieve-deadly-monastery-strike
       date: '2026-07-28'
@@ -15201,9 +15171,9 @@ countries:
       date: '2025'
     - *id003
     - *id004
-    - *id012
+    - *id013
     - *id009
-    - *id010
+    - *id012
     - *id007
     opendoors_ranking: 29
     opendoors_score: 72
@@ -18690,12 +18660,12 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id012
+    - *id013
     - &id070
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id017
+    - *id011
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -18964,7 +18934,7 @@ countries:
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
-    - *id014
+    - *id015
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -19132,7 +19102,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id014
+    - *id015
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -19213,6 +19183,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -19453,6 +19424,7 @@ countries:
     - odwwl2025archivephilippines
     - freedomhouse2024
     - owid2024
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -19466,13 +19438,37 @@ countries:
       date: '2025'
     - *id002
     - *id004
+    - *id017
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
     christian_population: 102510876
     christian_percentage: 91.46
+    fides_articles: 1
+    fides_samples:
+    - title: 'ASIA/PHILIPPINES - The life of the Missionaries of Mary Queen of Heaven:
+        restoring dignity to women victims of exploitation'
+      url: https://www.fides.org/en/news/78040-ASIA_PHILIPPINES_The_life_of_the_Missionaries_of_Mary_Queen_of_Heaven_restoring_dignity_to_women_victims_of_exploitation
+      date: '2026-08-10'
+      description: Cebu – Over the past 30 years, the Missionaries of Mary Queen of
+        Heaven , a religious community of nuns founded in 1996 in the Archdiocese
+        of Cebu, have rescued and rehabilitated hundreds of women and girls who survived
+        sex trafficking, prostitution and child abuse. Sister Corazon J. Salazar,
+        founde
+      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/philippines/
+    recent_incidents:
+    - title: 'ASIA/PHILIPPINES - The life of the Missionaries of Mary Queen of Heaven:
+        restoring dignity to women victims of exploitation'
+      url: https://www.fides.org/en/news/78040-ASIA_PHILIPPINES_The_life_of_the_Missionaries_of_Mary_Queen_of_Heaven_restoring_dignity_to_women_victims_of_exploitation
+      date: '2026-08-10'
+      description: Cebu – Over the past 30 years, the Missionaries of Mary Queen of
+        Heaven , a religious community of nuns founded in 1996 in the Archdiocese
+        of Cebu, have rescued and rehabilitated hundreds of women and girls who survived
+        sex trafficking, prostitution and child abuse. Sister Corazon J. Salazar,
+        founde
+      source: Agenzia Fides
     archive_modern_excerpt: The constitution provides for the free exercise of religion
       and religious worship and prohibits the establishment of a state religion. The
       constitution provides for the separation of religion and state, and religious
@@ -20186,7 +20182,7 @@ countries:
     - *id003
     - *id002
     - *id004
-    - *id012
+    - *id013
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -20532,7 +20528,7 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id016
+    - *id017
     - &id074
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
@@ -20708,8 +20704,8 @@ countries:
     - *id003
     - *id002
     - *id004
-    - *id011
-    - *id015
+    - *id010
+    - *id016
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -21040,7 +21036,7 @@ sources:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id010
+  gdelt2025: *id012
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id062
@@ -21051,9 +21047,9 @@ sources:
   uscirf2025turkmenistan: *id067
   uscirf2025uzbekistan: *id068
   uscirf2025tajikistan: *id069
-  morningstarnews2026: *id013
-  infochretienne: *id011
-  fides: *id016
+  morningstarnews2026: *id014
+  infochretienne: *id010
+  fides: *id017
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -21071,7 +21067,7 @@ sources:
     title: Christian Solidarity Worldwide - Persecution Reports
     url: https://www.csw.org.uk/
     date: '2026'
-  icc2026: *id012
+  icc2026: *id013
   forum18: *id070
   mec: *id071
   bitterwinter:
@@ -21095,18 +21091,18 @@ sources:
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id009
-  csi: *id014
+  csi: *id015
   cna:
     title: Catholic News Agency
     url: https://www.catholicnewsagency.com/
     date: '2026'
-  hrwf: *id017
+  hrwf: *id011
   adf:
     title: ADF International
     url: https://adfinternational.org/
     date: '2026'
   wea: *id074
-  jubilee: *id015
+  jubilee: *id016
   ippforb:
     title: IPPFoRB - Parliamentarians for FoRB
     url: https://ippforb.com/
@@ -21655,152 +21651,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-08-10 08:01 UTC
+  generated_at: 2026-08-11 07:24 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-08-10T08:00:27.981454+00:00'
+    fetched_at: '2026-08-11T07:24:06.612873+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-08-10T07:59:57.762302+00:00'
+    fetched_at: '2026-08-11T07:23:42.013117+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-08-10T08:00:30.618203+00:00'
+    fetched_at: '2026-08-11T07:24:08.706416+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-08-10T08:00:17.653213+00:00'
+    fetched_at: '2026-08-11T07:23:58.442833+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-08-10T08:00:20.029725+00:00'
+    fetched_at: '2026-08-11T07:24:00.778431+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-08-10T08:00:05.236300+00:00'
+    fetched_at: '2026-08-11T07:23:47.515094+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-08-10T08:00:09.014790+00:00'
+    fetched_at: '2026-08-11T07:23:52.190314+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-08-10T08:00:25.011220+00:00'
+    fetched_at: '2026-08-11T07:24:04.684257+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-08-10T08:00:24.300347+00:00'
+    fetched_at: '2026-08-11T07:24:04.220264+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-08-10T07:59:58.947585+00:00'
+    fetched_at: '2026-08-11T07:23:43.032303+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-08-10T08:00:27.568813+00:00'
+    fetched_at: '2026-08-11T07:24:06.220724+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-08-10T08:00:00.892260+00:00'
+    fetched_at: '2026-08-11T07:23:44.713449+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-08-10T07:54:56.281107+00:00'
+    fetched_at: '2026-08-11T07:18:46.753396+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-08-10T07:59:56.538700+00:00'
+    fetched_at: '2026-08-11T07:23:40.945476+00:00'
     message: null
   - name: gdelt
-    status: partial
-    fetched_at: '2026-08-10T07:59:45.276296+00:00'
-    message: 1 of 4 queries failed
+    status: ok
+    fetched_at: '2026-08-11T07:23:29.140964+00:00'
+    message: null
   - name: hrw
     status: ok
-    fetched_at: '2026-08-10T08:00:16.513930+00:00'
+    fetched_at: '2026-08-11T07:23:58.081680+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-08-10T08:00:29.397367+00:00'
+    fetched_at: '2026-08-11T07:24:07.670711+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-08-10T07:59:59.831959+00:00'
+    fetched_at: '2026-08-11T07:23:43.541068+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-08-10T08:00:11.275394+00:00'
+    fetched_at: '2026-08-11T07:23:54.078794+00:00'
     message: null
   - name: ippforb
-    status: failed
-    fetched_at: '2026-08-10T08:00:34.499911+00:00'
-    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
+    status: ok
+    fetched_at: '2026-08-11T07:24:30.339018+00:00'
+    message: null
   - name: jubilee
     status: ok
-    fetched_at: '2026-08-10T08:00:33.086451+00:00'
+    fetched_at: '2026-08-11T07:24:28.764805+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-08-10T08:00:04.466661+00:00'
+    fetched_at: '2026-08-11T07:23:46.768391+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-08-10T07:59:47.594316+00:00'
+    fetched_at: '2026-08-11T07:23:31.343557+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-08-10T08:00:35.336140+00:00'
+    fetched_at: '2026-08-11T07:24:30.774352+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-08-10T07:59:46.431139+00:00'
+    fetched_at: '2026-08-11T07:23:30.367077+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-08-10T07:54:55.087473+00:00'
+    fetched_at: '2026-08-11T07:18:45.645935+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-08-10T08:00:15.368959+00:00'
+    fetched_at: '2026-08-11T07:23:57.536657+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-08-10T07:54:59.372901+00:00'
+    fetched_at: '2026-08-11T07:18:48.879553+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-08-10T08:00:06.733946+00:00'
+    fetched_at: '2026-08-11T07:23:50.059751+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-08-10T07:58:01.081744+00:00'
+    fetched_at: '2026-08-11T07:21:30.444366+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-08-10T08:00:15.707263+00:00'
+    fetched_at: '2026-08-11T07:23:57.775674+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-08-10T07:55:49.611265+00:00'
+    fetched_at: '2026-08-11T07:19:27.100544+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-08-10T07:59:54.833020+00:00'
+    fetched_at: '2026-08-11T07:23:38.008436+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-08-10T08:00:07.506229+00:00'
+    fetched_at: '2026-08-11T07:23:51.112802+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-08-10T08:00:32.497633+00:00'
+    fetched_at: '2026-08-11T07:24:10.355512+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-08-10T08:00:59.682639+00:00'
+    fetched_at: '2026-08-11T07:24:55.093979+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
