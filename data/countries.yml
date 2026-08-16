@@ -917,7 +917,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id013
+    - &id014
       title: International Christian Concern - Global Persecution Reports
       url: https://www.persecution.org/
       date: '2026'
@@ -930,7 +930,7 @@ countries:
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
-    - &id009
+    - &id010
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
@@ -1473,7 +1473,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id014
+    - &id009
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
       date: '2026'
@@ -1913,7 +1913,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id011
+    - &id012
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
@@ -2045,6 +2045,7 @@ countries:
     - releaseintl
     - vom2026
     - barnabas
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -2343,6 +2344,7 @@ countries:
     - releaseintl
     - vom2026
     - barnabas
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -2364,10 +2366,14 @@ countries:
     - *id005
     - *id008
     - *id006
-    - &id010
+    - &id011
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
+    - &id015
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 2
@@ -2443,6 +2449,16 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Bibles are being shipped to India Odisha State despite intense persecution
+      url: https://www.mnnonline.org/news/bibles-are-being-shipped-to-indias-odisha-state-despite-intense-persecution
+      date: '2026-07-21'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.mnnonline.org/news/bibles-are-being-shipped-to-indias-odisha-state-despite-intense-persecution
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Indian government tolerates and perpetrates widespread harassment and violence
@@ -2462,6 +2478,11 @@ countries:
         by Hindu extremists who burned down his house and shop. All the family's belongings
         were destroyed, and they had to move into Tanmay's brother's house. T
       source: Voice of the Martyrs
+    - title: Bibles are being shipped to India Odisha State despite intense persecution
+      url: https://www.mnnonline.org/news/bibles-are-being-shipped-to-indias-odisha-state-despite-intense-persecution
+      date: '2026-07-21'
+      description: ''
+      source: GDELT
     - title: Threat of ‘draconian’ regulations in India
       url: https://releaseinternational.org/podcast-india
       date: '2026-06-04'
@@ -2569,6 +2590,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - morningstarnews2026
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -3094,6 +3116,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - morningstarnews2026
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -3111,10 +3134,11 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - &id012
+    - &id013
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
+    - *id009
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -3132,6 +3156,18 @@ countries:
         of his arrest and trial. A panel of judges at Banda Aceh Court on July 10
         handed do
       source: Morning Star News
+    fides_articles: 1
+    fides_samples:
+    - title: 'ASIA/INDONESIA - Earthquake in Flores: fear, damage and faith in the
+        face of adversity'
+      url: https://www.fides.org/en/news/78054-ASIA_INDONESIA_Earthquake_in_Flores_fear_damage_and_faith_in_the_face_of_adversity
+      date: '2026-08-15'
+      description: 'Maumere – This morning, August 15, 2026, the island of Flores
+        was struck by a violent magnitude 7.7 earthquake shortly before 6 a.m. The
+        tremor, whose epicenter was located in the Nagekeo area, was felt strongly
+        across numerous parts of the island, including Maumere, causing damage to
+        buildings and '
+      source: Agenzia Fides
     uscirf_designation: SWL
     uscirf_key_findings:
     - Indonesia’s religious freedom conditions are poor. Despite constitutional FoRB
@@ -3143,6 +3179,16 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/indonesia
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/indonesia/
     recent_incidents:
+    - title: 'ASIA/INDONESIA - Earthquake in Flores: fear, damage and faith in the
+        face of adversity'
+      url: https://www.fides.org/en/news/78054-ASIA_INDONESIA_Earthquake_in_Flores_fear_damage_and_faith_in_the_face_of_adversity
+      date: '2026-08-15'
+      description: 'Maumere – This morning, August 15, 2026, the island of Flores
+        was struck by a violent magnitude 7.7 earthquake shortly before 6 a.m. The
+        tremor, whose epicenter was located in the Nagekeo area, was felt strongly
+        across numerous parts of the island, including Maumere, causing damage to
+        buildings and '
+      source: Agenzia Fides
     - title: Pastor Sentenced to Two Years in Prison in Indonesia
       url: https://morningstarnews.org/2026/08/pastor-sentenced-to-two-years-in-prison-in-indonesia
       date: '2026-08-13'
@@ -3426,9 +3472,9 @@ countries:
       date: '2026'
     - *id008
     - *id006
-    - *id009
     - *id010
     - *id011
+    - *id012
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -3482,7 +3528,7 @@ countries:
         The post Release International partner speaks on Iran appeared first on Release
         International .
       source: Release International
-    vom_articles: 2
+    vom_articles: 1
     vom_samples:
     - title: Returning Christians Interrogated
       url: https://www.persecution.com/stories/returning-christians-interrogated
@@ -3492,14 +3538,6 @@ countries:
         to their home country, including Christians who are interrogated upon their
         return. "Now that the Taliban has full control, when Christians are deported
         bac
-      source: Voice of the Martyrs
-    - title: Historic Church Destroyed by Regime
-      url: https://www.persecution.com/stories/historic-church-destroyed-by-regime
-      date: '2026-07-30'
-      description: On June 4, 2026, workmen under orders from the Iranian regime bulldozed
-        the Evangelical Church of Mashhad, Iran, without explanation. The church was
-        around 80 years old but had been closed by Iranian officials for more than
-        two decades. Still, some Iranian Christians hoped that it would one day reop
       source: Voice of the Martyrs
     infochretienne_articles: 2
     infochretienne_samples:
@@ -3576,14 +3614,6 @@ countries:
         to their home country, including Christians who are interrogated upon their
         return. "Now that the Taliban has full control, when Christians are deported
         bac
-      source: Voice of the Martyrs
-    - title: Historic Church Destroyed by Regime
-      url: https://www.persecution.com/stories/historic-church-destroyed-by-regime
-      date: '2026-07-30'
-      description: On June 4, 2026, workmen under orders from the Iranian regime bulldozed
-        the Evangelical Church of Mashhad, Iran, without explanation. The church was
-        around 80 years old but had been closed by Iranian officials for more than
-        two decades. Still, some Iranian Christians hoped that it would one day reop
       source: Voice of the Martyrs
     - title: '"L’Église ne mourra pas" : L’Iran ferme la plus ancienne église protestante
         du pays'
@@ -4106,7 +4136,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id009
+    - *id010
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -5096,27 +5126,24 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
     - *id013
-    - *id009
+    - *id014
     - *id010
-    - &id015
+    - *id011
+    - &id016
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - &id016
+    - &id017
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
-    - *id014
-    - &id017
+    - *id009
+    - &id018
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
-    - &id018
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
+    - *id015
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -5251,17 +5278,29 @@ countries:
         elicited by the widespread insecurity in the country. Discussion of freedom
         of '
       source: Jubilee Campaign
-    gdelt_articles: 1
+    gdelt_articles: 3
     gdelt_samples:
+    - title: US intervention in Nigeria didnt halt Christian persecution
+      url: https://www.christianpost.com/news/us-intervention-in-nigeria-didnt-halt-christian-persecution.html
+      date: '2026-08-13'
+      description: ''
+      source: GDELT
     - title: Al menos 30 muertos en un ataque contra una comunidad cristiana en Nigeria
         – INFOVATICANA
       url: https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
       date: '2026-07-31'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 1
+    - title: Dozens Of Christians Killed By Nigeria Underestimated Terrorist Group
+      url: https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
+      date: '2026-07-27'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 3
     gdelt_sample_urls:
+    - https://www.christianpost.com/news/us-intervention-in-nigeria-didnt-halt-christian-persecution.html
     - https://infovaticana.com/2026/07/31/al-menos-30-muertos-en-un-ataque-contra-una-comunidad-cristiana-en-nigeria
+    - https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5298,6 +5337,11 @@ countries:
         motivated violence and persecution,” the letter said, “especially Christians,
         including women and girls.”
       source: Catholic News Agency
+    - title: US intervention in Nigeria didnt halt Christian persecution
+      url: https://www.christianpost.com/news/us-intervention-in-nigeria-didnt-halt-christian-persecution.html
+      date: '2026-08-13'
+      description: ''
+      source: GDELT
     - title: AFRICA/NIGERIA - Seminarian and lay faithful kidnapped in attack on St.
         Joseph’s Church released
       url: https://www.fides.org/en/news/78043-AFRICA_NIGERIA_Seminarian_and_lay_faithful_kidnapped_in_attack_on_St_Joseph_s_Church_released
@@ -5361,6 +5405,11 @@ countries:
         elicited by the widespread insecurity in the country. Discussion of freedom
         of '
       source: Jubilee Campaign
+    - title: Dozens Of Christians Killed By Nigeria Underestimated Terrorist Group
+      url: https://dailycaller.com/2026/07/27/dozens-christians-killed-nigeria-terrorist-fulani-judd-saul-masara-kim
+      date: '2026-07-27'
+      description: ''
+      source: GDELT
     - title: 'Persécution au Nigeria : la Chambre des représentants veut suspendre
         l''aide américaine'
       url: https://www.infochretienne.com/articles/persecution-au-nigeria-la-chambre-des-representants-veut-suspendre-laide-americaine
@@ -5923,14 +5972,14 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
     - *id013
+    - *id014
     - *id006
-    - *id009
     - *id010
-    - *id015
+    - *id011
     - *id016
     - *id017
+    - *id018
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -6635,7 +6684,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id009
+    - *id010
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -6749,6 +6798,7 @@ countries:
     - icc2026
     - infochretienne
     - csi
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -6831,6 +6881,7 @@ countries:
     - icc2026
     - infochretienne
     - csi
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -6850,8 +6901,9 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id013
-    - *id009
+    - *id014
+    - *id010
+    - *id016
     - *id015
     - *id007
     freedom_house_status: Not Free
@@ -6893,6 +6945,16 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: 'Syria authorities release detained Kurdish pastor : church official'
+      url: https://www.arabnews.com/node/2653420/middle-east
+      date: '2026-08-04'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.arabnews.com/node/2653420/middle-east
     uscirf_designation: CPC
     uscirf_key_findings:
     - Although President Bashar al-Assad’s government fell in December 2024, ending
@@ -6913,6 +6975,11 @@ countries:
         20. He was reportedly detained because the government deemed his comments
         about Islam '
       source: International Christian Concern
+    - title: 'Syria authorities release detained Kurdish pastor : church official'
+      url: https://www.arabnews.com/node/2653420/middle-east
+      date: '2026-08-04'
+      description: ''
+      source: GDELT
     - title: 'Syrie : un pasteur kurde évangélique arrêté pour incitation à la haine'
       url: https://www.infochretienne.com/articles/syrie-un-pasteur-kurde-vanglique-arrt-pour-incitation-la-haine
       date: '2026-07-31'
@@ -7139,7 +7206,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id013
+    - *id014
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -7496,6 +7563,7 @@ countries:
     - gcr2026
     - hrw
     - cna
+    - gdelt2025
     - vdem2025forb
   pew_slug: america
   metadata:
@@ -8416,6 +8484,7 @@ countries:
     - gcr2026
     - hrw
     - cna
+    - gdelt2025
     - vdem2025forb
     sources:
     - &id043
@@ -8437,7 +8506,8 @@ countries:
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
-    - *id016
+    - *id017
+    - *id015
     - *id007
     freedom_house_status: Free
     freedom_house_pr: 2
@@ -8470,6 +8540,16 @@ countries:
       description: The research showed that support for the death penalty among U.S.
         adults is 6 percentage points higher than it was in April 2021.
       source: Catholic News Agency
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: US intervention in Nigeria didnt halt Christian persecution
+      url: https://www.christianpost.com/news/us-intervention-in-nigeria-didnt-halt-christian-persecution.html
+      date: '2026-08-13'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christianpost.com/news/us-intervention-in-nigeria-didnt-halt-christian-persecution.html
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/united-states/
     recent_incidents:
     - title: Pew report finds most American Catholics favor death penalty for those
@@ -8479,6 +8559,11 @@ countries:
       description: The research showed that support for the death penalty among U.S.
         adults is 6 percentage points higher than it was in April 2021.
       source: Catholic News Agency
+    - title: US intervention in Nigeria didnt halt Christian persecution
+      url: https://www.christianpost.com/news/us-intervention-in-nigeria-didnt-halt-christian-persecution.html
+      date: '2026-08-13'
+      description: ''
+      source: GDELT
     - title: Rights Groups Sue Trump Administration Over Targeting ICC
       url: https://www.hrw.org/news/2026/08/11/rights-groups-sue-trump-administration-over-targeting-icc
       date: '2026-08-11'
@@ -8523,6 +8608,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -8949,6 +9035,7 @@ countries:
     - statedepartment2023brazil
     - freedomhouse2024
     - owid2024
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -8958,13 +9045,33 @@ countries:
       date: '2023'
     - *id002
     - *id004
+    - *id009
     - *id007
     freedom_house_status: Free
     freedom_house_pr: 2
     freedom_house_cl: 3
     christian_population: 168295544
     christian_percentage: 80.66
+    fides_articles: 1
+    fides_samples:
+    - title: What lies behind the diplomatic clash between Argentina and Brazil
+      url: https://www.fides.org/en/news/78053-What_lies_behind_the_diplomatic_clash_between_Argentina_and_Brazil
+      date: '2026-08-15'
+      description: by Cosimo Graziani Brasilia/Buenos Aires – In recent days, a diplomatic
+        crisis has strained relations between Argentina and Brazil. It all began when
+        Argentine President Javier Milei described his Brazilian counterpart, Luiz
+        Inácio Lula da Silva, as a “thief” and a “convict” in a television intervie
+      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/brazil/
+    recent_incidents:
+    - title: What lies behind the diplomatic clash between Argentina and Brazil
+      url: https://www.fides.org/en/news/78053-What_lies_behind_the_diplomatic_clash_between_Argentina_and_Brazil
+      date: '2026-08-15'
+      description: by Cosimo Graziani Brasilia/Buenos Aires – In recent days, a diplomatic
+        crisis has strained relations between Argentina and Brazil. It all began when
+        Argentine President Javier Milei described his Brazilian counterpart, Luiz
+        Inácio Lula da Silva, as a “thief” and a “convict” in a television intervie
+      source: Agenzia Fides
     archive_modern_excerpt: The constitution states freedom of conscience and belief
       is inviolable, provides for the free exercise of religious beliefs, and prohibits
       federal, state, and local governments from either supporting or hindering any
@@ -9353,7 +9460,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
+    - *id013
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9610,7 +9717,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id016
+    - *id017
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -9978,6 +10085,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -10092,6 +10200,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -10110,6 +10219,7 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id015
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10118,6 +10228,17 @@ countries:
     opendoors_score: 68
     christian_population: 5270537
     christian_percentage: 4.82
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Egyptian Muslims Attacked Coptic Christians . Authorities Arrested the
+        Christians .
+      url: https://pjmedia.com/catherinesalgado/2026/08/09/egyptian-muslims-attacked-coptic-christians-authorities-arrested-the-christians-n4955970
+      date: '2026-08-10'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://pjmedia.com/catherinesalgado/2026/08/09/egyptian-muslims-attacked-coptic-christians-authorities-arrested-the-christians-n4955970
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Egypt are poor. Baha'is, Jehovah’s Witnesses,
@@ -10128,6 +10249,13 @@ countries:
       laws also remain key tools of systematic FoRB repression.
     uscirf_url: https://www.uscirf.gov/countries/egypt
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/egypt/
+    recent_incidents:
+    - title: Egyptian Muslims Attacked Coptic Christians . Authorities Arrested the
+        Christians .
+      url: https://pjmedia.com/catherinesalgado/2026/08/09/egyptian-muslims-attacked-coptic-christians-authorities-arrested-the-christians-n4955970
+      date: '2026-08-10'
+      description: ''
+      source: GDELT
     archive_modern_excerpt: Christians in Egypt report that freedom of religion violations
       occur mostly at the community level, with many Christians regularly facing discrimination.
       The constitution states that “freedom of belief is absolute” and “the freedom
@@ -10276,7 +10404,7 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id016
+    - *id017
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10520,7 +10648,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id014
+    - *id009
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11415,10 +11543,10 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
     - *id013
     - *id014
-    - *id011
+    - *id009
+    - *id012
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -13178,7 +13306,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id017
+    - *id018
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -13881,7 +14009,7 @@ countries:
         - - 14.8513
           - 22.86295
     wiki_url: https://en.wikipedia.org/wiki/Niger
-    wiki_extract: Niger, officially the Republic of the Niger, is a landlocked country
+    wiki_extract: Niger, officially the Republic of Niger, is a landlocked country
       in West Africa. It is a unitary state bordered by Libya to the northeast, Chad
       to the east, Nigeria to the south, Benin and Burkina Faso to the southwest,
       Mali to the west and Algeria to the northwest. It covers a land area of almost
@@ -15189,8 +15317,8 @@ countries:
       date: '2025'
     - *id003
     - *id004
-    - *id010
-    - *id018
+    - *id011
+    - *id015
     - *id007
     opendoors_ranking: 29
     opendoors_score: 72
@@ -18693,12 +18821,12 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id013
+    - *id014
     - &id071
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id011
+    - *id012
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -18977,7 +19105,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id015
+    - *id016
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -19127,7 +19255,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id015
+    - *id016
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -19463,7 +19591,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id014
+    - *id009
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -19720,7 +19848,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id014
+    - *id009
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -20231,7 +20359,7 @@ countries:
     - *id003
     - *id002
     - *id004
-    - *id013
+    - *id014
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
@@ -20725,8 +20853,8 @@ countries:
     - *id003
     - *id002
     - *id004
-    - *id009
-    - *id017
+    - *id010
+    - *id018
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -20971,8 +21099,8 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id013
     - *id014
+    - *id009
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -21106,7 +21234,7 @@ sources:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id018
+  gdelt2025: *id015
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id063
@@ -21117,9 +21245,9 @@ sources:
   uscirf2025turkmenistan: *id068
   uscirf2025uzbekistan: *id069
   uscirf2025tajikistan: *id070
-  morningstarnews2026: *id012
-  infochretienne: *id009
-  fides: *id014
+  morningstarnews2026: *id013
+  infochretienne: *id010
+  fides: *id009
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -21137,7 +21265,7 @@ sources:
     title: Christian Solidarity Worldwide - Persecution Reports
     url: https://www.csw.org.uk/
     date: '2026'
-  icc2026: *id013
+  icc2026: *id014
   forum18: *id071
   mec: *id072
   bitterwinter:
@@ -21160,16 +21288,16 @@ sources:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
-  barnabas: *id010
-  csi: *id015
-  cna: *id016
-  hrwf: *id011
+  barnabas: *id011
+  csi: *id016
+  cna: *id017
+  hrwf: *id012
   adf:
     title: ADF International
     url: https://adfinternational.org/
     date: '2026'
   wea: *id075
-  jubilee: *id017
+  jubilee: *id018
   ippforb:
     title: IPPFoRB - Parliamentarians for FoRB
     url: https://ippforb.com/
@@ -21718,152 +21846,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-08-15 06:59 UTC
+  generated_at: 2026-08-16 06:57 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-08-15T06:56:19.365920+00:00'
+    fetched_at: '2026-08-16T06:57:12.482184+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-08-15T06:55:54.770630+00:00'
+    fetched_at: '2026-08-16T06:56:45.395606+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-08-15T06:56:21.658912+00:00'
+    fetched_at: '2026-08-16T06:57:14.967764+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-08-15T06:56:12.119770+00:00'
+    fetched_at: '2026-08-16T06:57:03.221594+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-08-15T06:56:14.358934+00:00'
+    fetched_at: '2026-08-16T06:57:05.710178+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-08-15T06:56:00.865680+00:00'
+    fetched_at: '2026-08-16T06:56:51.558843+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-08-15T06:56:05.653295+00:00'
+    fetched_at: '2026-08-16T06:56:54.215740+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-08-15T06:56:16.804733+00:00'
+    fetched_at: '2026-08-16T06:57:09.885844+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-08-15T06:56:16.266864+00:00'
+    fetched_at: '2026-08-16T06:57:09.425582+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-08-15T06:55:55.771695+00:00'
+    fetched_at: '2026-08-16T06:56:46.366201+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-08-15T06:56:19.018207+00:00'
+    fetched_at: '2026-08-16T06:57:12.146429+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-08-15T06:55:57.622262+00:00'
+    fetched_at: '2026-08-16T06:56:48.403921+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-08-15T06:49:50.211680+00:00'
+    fetched_at: '2026-08-16T06:51:36.763363+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-08-15T06:55:53.481747+00:00'
+    fetched_at: '2026-08-16T06:56:44.014024+00:00'
     message: null
   - name: gdelt
-    status: partial
-    fetched_at: '2026-08-15T06:55:41.433683+00:00'
-    message: 3 of 4 queries failed
+    status: ok
+    fetched_at: '2026-08-16T06:56:30.533269+00:00'
+    message: null
   - name: hrw
     status: ok
-    fetched_at: '2026-08-15T06:56:11.670663+00:00'
+    fetched_at: '2026-08-16T06:57:00.784835+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-08-15T06:56:20.553454+00:00'
+    fetched_at: '2026-08-16T06:57:13.870168+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-08-15T06:55:56.615336+00:00'
+    fetched_at: '2026-08-16T06:56:47.249056+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-08-15T06:56:07.297417+00:00'
+    fetched_at: '2026-08-16T06:56:56.051241+00:00'
     message: null
   - name: ippforb
     status: failed
-    fetched_at: '2026-08-15T06:59:31.116540+00:00'
-    message: 'fetch failed: URLError: <urlopen error timed out>'
+    fetched_at: '2026-08-16T06:57:26.202702+00:00'
+    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-08-15T06:56:25.932888+00:00'
+    fetched_at: '2026-08-16T06:57:24.782672+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-08-15T06:56:00.109235+00:00'
+    fetched_at: '2026-08-16T06:56:50.745862+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-08-15T06:55:44.253128+00:00'
+    fetched_at: '2026-08-16T06:56:33.659777+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-08-15T06:59:31.579387+00:00'
+    fetched_at: '2026-08-16T06:57:26.673494+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-08-15T06:55:42.568051+00:00'
+    fetched_at: '2026-08-16T06:56:32.006183+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-08-15T06:49:48.959820+00:00'
+    fetched_at: '2026-08-16T06:51:35.642405+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-08-15T06:56:11.132214+00:00'
+    fetched_at: '2026-08-16T06:57:00.179749+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-08-15T06:49:53.082366+00:00'
+    fetched_at: '2026-08-16T06:51:39.487938+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-08-15T06:56:04.183965+00:00'
+    fetched_at: '2026-08-16T06:56:52.830136+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-08-15T06:53:00.734798+00:00'
+    fetched_at: '2026-08-16T06:54:48.369788+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-08-15T06:56:11.349894+00:00'
+    fetched_at: '2026-08-16T06:57:00.474009+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-08-15T06:50:38.423911+00:00'
+    fetched_at: '2026-08-16T06:52:27.442692+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-08-15T06:55:51.908704+00:00'
+    fetched_at: '2026-08-16T06:56:42.008828+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-08-15T06:56:04.787757+00:00'
+    fetched_at: '2026-08-16T06:56:53.290224+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-08-15T06:56:23.251805+00:00'
+    fetched_at: '2026-08-16T06:57:16.580793+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-08-15T06:59:55.836521+00:00'
+    fetched_at: '2026-08-16T06:57:50.925165+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
