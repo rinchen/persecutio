@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b132b" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>About | Christian Persecution World Map</title>
+  <link rel="icon" href="/persecutio/pr-preview/pr-32/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/persecutio/pr-preview/pr-32/assets/img/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="index.html">Christian Persecution World Map</a>
+      <nav>
+        <a href="index.html">Map</a>
+        <a href="faq.html">FAQ</a>
+        <a href="act.html">Act</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a
+          class="site-nav-github"
+          href="https://github.com/rinchen/persecutio"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Persecutio on GitHub (opens in new tab)"
+        >
+          <svg
+            class="site-nav-github-icon"
+            viewBox="0 0 16 16"
+            width="18"
+            height="18"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+            />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <div class="card">
+      <article class="post">
+        <h1>About this site</h1>
+        <p>This is a static site hosted on GitHub Pages, with a Nostr/nsite mirror for <a href="#censorship-resistant-access">censorship-resistant access</a>. There is no application server. Country pages and index data are generated from structured source records and updated automatically via GitHub Actions.</p>
+
+        <h2>What the map shows</h2>
+        <p>The map uses color-coded markers to reflect country-level persecution severity: red for Extreme/Very High, orange for High, yellow for Moderate, and blue for Low. Clicking a country opens a page with historical background, modern context, data fields (scores and statistics when available), recent incident samples, and linked sources.</p>
+
+        <h2>Data sources</h2>
+        <p>This project relies on publicly available reports and feeds. Country pages reference the specific reports used for each entry. The table below matches the source chips shown on the site footer.</p>
+
+        <p><strong>Quality tier key</strong></p>
+        <div class="status-legend">
+          <span><strong>A</strong> &mdash; Strong fit for Christian-persecution / FoRB country documentation; reliable primary or specialist reporting we lean on heavily.</span>
+          <span><strong>B</strong> &mdash; Useful supporting source (broader rights indexes, demography, or solid but less central FoRB feeds).</span>
+          <span><strong>C</strong> &mdash; Supplementary or noisier signal (general news / wide aggregators); cited when relevant, not a backbone source.</span>
+          <span><strong>Infra</strong> &mdash; Not a FoRB content source (e.g. map boundaries).</span>
+          <span><strong>X</strong> &mdash; Evaluated and not used (see unused table); legal, operational, or mission block.</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="sources-table">
+            <thead>
+              <tr>
+                <th scope="col">Abbr</th>
+                <th scope="col">Source</th>
+                <th scope="col">Quality</th>
+                <th scope="col">What it covers</th>
+              </tr>
+            </thead>
+            <tbody>              <tr>
+                <td><span class="abbr-badge">ACI</span></td>
+                <td><a href="https://www.aciprensa.com/" target="_blank" rel="noopener">ACI Prensa</a></td>
+                <td>B</td>
+                <td>Spanish Catholic news wire including LatAm persecution reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">ADF</span></td>
+                <td><a href="https://adfinternational.org/" target="_blank" rel="noopener">ADF International</a></td>
+                <td>B</td>
+                <td>Legal FoRB advocacy and related reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">Fides</span></td>
+                <td><a href="https://www.fides.org/en" target="_blank" rel="noopener">Agenzia Fides</a></td>
+                <td>A</td>
+                <td>Pontifical Mission Societies news; missionary-territory FoRB / persecution reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">ACN</span></td>
+                <td><a href="https://acninternational.org/" target="_blank" rel="noopener">Aid to the Church in Need</a></td>
+                <td>A</td>
+                <td>Religious freedom and Persecuted and Forgotten reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">AI</span></td>
+                <td><a href="https://www.amnesty.org/" target="_blank" rel="noopener">Amnesty International</a></td>
+                <td>A</td>
+                <td>Global human-rights research including FoRB (CC BY-NC-ND; link + short excerpt only)</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">BA</span></td>
+                <td><a href="https://www.barnabasaid.org/" target="_blank" rel="noopener">Barnabas Aid</a></td>
+                <td>B</td>
+                <td>Persecuted-church news and aid reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">BBC</span></td>
+                <td><a href="https://www.bbc.com/news" target="_blank" rel="noopener">BBC News</a></td>
+                <td>C</td>
+                <td>Documented news reporting on persecution events</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">BW</span></td>
+                <td><a href="https://bitterwinter.org/" target="_blank" rel="noopener">Bitter Winter</a></td>
+                <td>A</td>
+                <td>FoRB news with coverage of China and related repression</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">CNA</span></td>
+                <td><a href="https://www.catholicnewsagency.com/" target="_blank" rel="noopener">Catholic News Agency</a></td>
+                <td>B</td>
+                <td>Catholic news wire including persecution reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">CA</span></td>
+                <td><a href="https://www.chinaaid.org/" target="_blank" rel="noopener">ChinaAid</a></td>
+                <td>A</td>
+                <td>Christian persecution and FoRB monitoring focused on China</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">CSI</span></td>
+                <td><a href="https://www.csi-int.org/" target="_blank" rel="noopener">Christian Solidarity International</a></td>
+                <td>B</td>
+                <td>FoRB campaigning and country reporting (distinct from CSW)</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">CSW</span></td>
+                <td><a href="https://www.csw.org.uk/" target="_blank" rel="noopener">Christian Solidarity Worldwide</a></td>
+                <td>A</td>
+                <td>Freedom of religion or belief advocacy and incident reports</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">F18</span></td>
+                <td><a href="https://www.forum18.org/" target="_blank" rel="noopener">Forum 18</a></td>
+                <td>A</td>
+                <td>Freedom of religion or belief news, focused on former Soviet and related regions</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">FH</span></td>
+                <td><a href="https://freedomhouse.org/report/freedom-world" target="_blank" rel="noopener">Freedom House Freedom in the World</a></td>
+                <td>B</td>
+                <td>Political rights and civil liberties ratings</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">GDELT</span></td>
+                <td><a href="https://www.gdeltproject.org/" target="_blank" rel="noopener">GDELT</a></td>
+                <td>C</td>
+                <td>Recent news events mentioning Christian persecution</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">GCR</span></td>
+                <td><a href="https://globalchristianrelief.org/" target="_blank" rel="noopener">Global Christian Relief</a></td>
+                <td>B</td>
+                <td>Persecution statistics and advocacy reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">HRW</span></td>
+                <td><a href="https://www.hrw.org/" target="_blank" rel="noopener">Human Rights Watch</a></td>
+                <td>A</td>
+                <td>Global human-rights reporting including FoRB (CC BY-NC-ND; link + short excerpt only)</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">HRWF</span></td>
+                <td><a href="https://hrwf.eu/" target="_blank" rel="noopener">Human Rights Without Frontiers</a></td>
+                <td>B</td>
+                <td>Brussels FoRB monitoring and newsletters</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">IC</span></td>
+                <td><a href="https://www.infochretienne.com/" target="_blank" rel="noopener">Info Chrétienne</a></td>
+                <td>B</td>
+                <td>French Christian news covering FoRB / persecution incidents</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">ICC</span></td>
+                <td><a href="https://www.persecution.org/" target="_blank" rel="noopener">International Christian Concern</a></td>
+                <td>A</td>
+                <td>Global persecution news and Global Persecution Index</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">IPP</span></td>
+                <td><a href="https://ippforb.com/" target="_blank" rel="noopener">IPPFoRB</a></td>
+                <td>C</td>
+                <td>Parliamentarians&rsquo; network for freedom of religion or belief</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">JC</span></td>
+                <td><a href="https://jubileecampaign.org/" target="_blank" rel="noopener">Jubilee Campaign</a></td>
+                <td>C</td>
+                <td>UK/US FoRB advocacy reporting</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">MEC</span></td>
+                <td><a href="https://www.meconcern.org/" target="_blank" rel="noopener">Middle East Concern</a></td>
+                <td>A</td>
+                <td>FoRB advocacy and incident reporting for the Middle East and North Africa</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">MSN</span></td>
+                <td><a href="https://morningstarnews.org/" target="_blank" rel="noopener">Morning Star News</a></td>
+                <td>A</td>
+                <td>Incident reporting focused on Christian persecution</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">NE</span></td>
+                <td><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a></td>
+                <td>Infra</td>
+                <td>Public domain map boundaries for the interactive map</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">OHCHR</span></td>
+                <td><a href="https://uhri.ohchr.org/" target="_blank" rel="noopener">OHCHR Universal Human Rights Index</a></td>
+                <td>B</td>
+                <td>UN human rights recommendations related to religion</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">OD</span></td>
+                <td><a href="https://www.opendoors.org/en-US/persecution/countries/" target="_blank" rel="noopener">Open Doors World Watch List</a></td>
+                <td>A</td>
+                <td>Annual ranking of countries where Christians face the most persecution</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">OSCE</span></td>
+                <td><a href="https://www.osce.org/odihr/freedom-of-religion-or-belief" target="_blank" rel="noopener">OSCE / ODIHR FoRB</a></td>
+                <td>A</td>
+                <td>Hate-crime and freedom of religion or belief monitoring in the OSCE region</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">OWID</span></td>
+                <td><a href="https://ourworldindata.org/grapher/religious-composition" target="_blank" rel="noopener">Our World in Data</a></td>
+                <td>B</td>
+                <td>Christian population share and counts (Pew-based)</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">Pew</span></td>
+                <td><a href="https://www.pewresearch.org/religion/" target="_blank" rel="noopener">Pew Research Center</a></td>
+                <td>B</td>
+                <td>Religious landscape and restriction studies</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">RI</span></td>
+                <td><a href="https://www.releaseinternational.org/" target="_blank" rel="noopener">Release International</a></td>
+                <td>A</td>
+                <td>Advocacy and news for persecuted Christians worldwide</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">SD</span></td>
+                <td><a href="https://www.state.gov/international-religious-freedom-reports/" target="_blank" rel="noopener">U.S. State Dept IRF Reports</a></td>
+                <td>A</td>
+                <td>International Religious Freedom country reports</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">SR</span></td>
+                <td><a href="https://www.ohchr.org/en/special-procedures/sr-religion-or-belief" target="_blank" rel="noopener">UN Special Rapporteur on FoRB</a></td>
+                <td>A</td>
+                <td>UN Special Rapporteur country and thematic FoRB reporting (distinct from UHRI)</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">UC</span></td>
+                <td><a href="https://www.uscirf.gov/" target="_blank" rel="noopener">USCIRF Annual Reports</a></td>
+                <td>A</td>
+                <td>U.S. Commission on International Religious Freedom country reports</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">VD</span></td>
+                <td><a href="https://www.v-dem.net/data/the-v-dem-dataset/" target="_blank" rel="noopener">V-Dem (Varieties of Democracy)</a></td>
+                <td>A</td>
+                <td>FoRB indicators (CC BY-SA); country subset archived under <code>data/archives/vdem/</code></td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">VID</span></td>
+                <td><a href="https://iirf.global/vid/" target="_blank" rel="noopener">Violent Incidents Database</a></td>
+                <td>A</td>
+                <td>Aggregated violence statistics against Christians</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">VOM</span></td>
+                <td><a href="https://www.persecution.com/" target="_blank" rel="noopener">Voice of the Martyrs</a></td>
+                <td>A</td>
+                <td>Persecution news, prisoner alerts, and country stories</td>
+              </tr>
+              <tr>
+                <td><span class="abbr-badge">WEA</span></td>
+                <td><a href="https://worldea.org/" target="_blank" rel="noopener">WEA Religious Liberty Commission</a></td>
+                <td>B</td>
+                <td>Global evangelical FoRB advocacy</td>
+              </tr>
+</tbody>
+          </table>
+        </div>
+
+        <p><strong>Source status key</strong> (shown on the site footer):</p>
+        <div class="status-legend">
+          <span><span class="swatch swatch--ok" aria-hidden="true"></span> OK &mdash; source fetched successfully</span>
+          <span><span class="swatch swatch--partial" aria-hidden="true"></span> Partial &mdash; partial data retrieved</span>
+          <span><span class="swatch swatch--error" aria-hidden="true"></span> Error &mdash; fetch failed</span>
+          <span><span class="swatch swatch--skipped" aria-hidden="true"></span> Skipped &mdash; not yet fetched</span>
+        </div>
+
+        <h3>Sources evaluated but not used</h3>
+        <p>Candidates below were reviewed and are <strong>not</strong> used in the pipeline or country narratives. The Quality column is the same A/B/C/Infra/X scale as above: <strong>X</strong> means legal, mission, or permanent ops block; <strong>A/B/C</strong> means the content could fit but we are not wiring it yet (usually no workable nightly feed). Overlap with another source alone is not a reason for rejection.</p>
+        <div class="table-wrap">
+          <table class="sources-table">
+            <thead>
+              <tr>
+                <th scope="col">Source</th>
+                <th scope="col">Quality</th>
+                <th scope="col">Why not used</th>
+              </tr>
+            </thead>
+            <tbody>              <tr>
+                <td><a href="https://www.acidigital.com/" target="_blank" rel="noopener">ACI Digital</a></td>
+                <td>B</td>
+                <td>Portuguese ACI/EWTN wire (Brazil + Lusophone Africa); deferred pending Fides/ACI Prensa path; English CNA and ACI Prensa already cover the network.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.acistampa.com/" target="_blank" rel="noopener">ACI Stampa</a></td>
+                <td>B</td>
+                <td>Italian ACI/EWTN wire; deferred pending multilingual filter path; no nightly wire this release.</td>
+              </tr>
+              <tr>
+                <td><a href="https://acnbrasil.org/" target="_blank" rel="noopener">ACN Brasil</a></td>
+                <td>A</td>
+                <td>Portuguese / Lusophone Africa focus; unreachable in evaluation; English ACN already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.acn-deutschland.de/" target="_blank" rel="noopener">ACN Deutschland</a></td>
+                <td>A</td>
+                <td><em>Verfolgt und vergessen?</em> German edition; unreachable in evaluation; English ACN already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://acn-es.org/" target="_blank" rel="noopener">ACN España</a></td>
+                <td>A</td>
+                <td>Spanish national editions; unreachable in evaluation; English ACN already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://acn-france.org/" target="_blank" rel="noopener">ACN France</a></td>
+                <td>A</td>
+                <td>National <em>Persécutés et Oubliés?</em> editions; site unreachable in evaluation; English ACN already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.chiesainnecessita.it/" target="_blank" rel="noopener">ACN Italia (Chiesa in Necessità)</a></td>
+                <td>A</td>
+                <td>National religious-freedom editions; unreachable in evaluation; English ACN already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://aleteia.org/" target="_blank" rel="noopener">Aleteia</a></td>
+                <td>C</td>
+                <td>Inspirational + news mix; persecution coverage sporadic / noisier for FoRB ingest.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.americamagazine.org/" target="_blank" rel="noopener">America Magazine</a></td>
+                <td>C</td>
+                <td>Jesuit analysis; opinion-heavy English coverage; not a persecution incident feed.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.asianews.it/" target="_blank" rel="noopener">AsiaNews (PIME)</a></td>
+                <td>B</td>
+                <td>Strong Asia religious-freedom wire and citation-friendly for link + excerpt, but live site/RSS returned bot blocks (HTTP 403) with no workable nightly fetch surface after evaluation.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.avvenire.it/" target="_blank" rel="noopener">Avvenire</a></td>
+                <td>C</td>
+                <td>General Italian Catholic daily; persecution covered but no working feed found for nightly ingest.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.catholicculture.org/" target="_blank" rel="noopener">Catholic Culture</a></td>
+                <td>C</td>
+                <td>Daily Catholic world news digest (CWN); cite underlying originals, not the aggregator.</td>
+              </tr>
+              <tr>
+                <td><a href="https://catholicherald.co.uk/" target="_blank" rel="noopener">Catholic Herald</a></td>
+                <td>C</td>
+                <td>UK global Catholic news generalist; low net-new vs wired English FoRB sources.</td>
+              </tr>
+              <tr>
+                <td><a href="https://na.social/@CatholicNews" target="_blank" rel="noopener">CatholicNews (na.social)</a></td>
+                <td>C</td>
+                <td>Mastodon aggregator RSS of general Catholic headlines (CWR, EWTN/CNA, America, Pillar, etc.); cite underlying originals, not the fediverse digest. Sparse FoRB signal vs lifestyle/pastoral noise; CNA already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.chinaaid.net/" target="_blank" rel="noopener">ChinaAid Mandarin</a></td>
+                <td>A</td>
+                <td>Mandarin persecution reporting live; no RSS; English chinaaid.org Atom feed already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.cnadeutsch.com/" target="_blank" rel="noopener">CNA Deutsch</a></td>
+                <td>C</td>
+                <td>German CNA node; persecution appears but not a dedicated desk; English CNA already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://cruxnow.com/" target="_blank" rel="noopener">Crux</a></td>
+                <td>C</td>
+                <td>English Vatican + religious-freedom desk exists but generalist; low net-new vs wired English FoRB sources.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.csw.org.uk/fr/" target="_blank" rel="noopener">CSW France</a></td>
+                <td>X</td>
+                <td>Documented URL returns 404; English CSW already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.horowitzfreedomcenter.org/" target="_blank" rel="noopener">David Horowitz Freedom Center</a></td>
+                <td>X</td>
+                <td>Parent advocacy organization of Jihad Watch (also FrontPage Magazine and campus campaigns). Focus is U.S. culture-war and counter-jihad activism, not international persecution datasets or incident feeds. Same proprietary terms.</td>
+              </tr>
+              <tr>
+                <td>Forum 18 Russian/Ukrainian archives</td>
+                <td>X</td>
+                <td>Documented <code>/archive/ru</code> and <code>/archive/ua</code> paths return 404; English Forum 18 already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://worldchristiandatabase.org/" target="_blank" rel="noopener">Gordon-Conwell World Christian Database</a></td>
+                <td>X</td>
+                <td>Proprietary subscription dataset; republication prohibited. Demography is covered via Our World in Data / Pew citations.</td>
+              </tr>
+              <tr>
+                <td><a href="https://press.vatican.va/" target="_blank" rel="noopener">Holy See Press Office</a></td>
+                <td>B</td>
+                <td>Primary official bulletins/statements with strong provenance; no clean automated FoRB nightly feed evaluated yet. Verify per-document rights before archiving.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.hrw.org/zh-hans/news/" target="_blank" rel="noopener">HRW Chinese</a></td>
+                <td>B</td>
+                <td>Translation lane of English HRW (already used, citation-only NC/ND); no FoRB-specific feed.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.persecution.org/es/" target="_blank" rel="noopener">ICC Spanish</a></td>
+                <td>B</td>
+                <td>Spanish path redirects to a stale English article; English ICC already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.ijm.org/" target="_blank" rel="noopener">International Justice Mission</a></td>
+                <td>C</td>
+                <td>Some FoRB overlap with anti-violence casework; site feeds returned bot blocks (HTTP 403) and FoRB signal is thinner than specialist persecution outlets, so not wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://jihadwatch.org/" target="_blank" rel="noopener">Jihad Watch</a></td>
+                <td>X</td>
+                <td>Counter-jihad commentary blog, not specialized country-level Christian persecution reporting. Content is all-rights-reserved (no free-redistribution license suitable for archives). Prefer FoRB / persecution outlets listed above.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.kathpress.at/" target="_blank" rel="noopener">Kathpress</a></td>
+                <td>B</td>
+                <td>Austrian Catholic news agency; no reliable nightly fetch surface confirmed this pass.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.kcrs.org/" target="_blank" rel="noopener">KCRS (Serbia)</a></td>
+                <td>C</td>
+                <td>Thin FoRB signal on live homepage; no feed for nightly ingest.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.baylor.edu/library/" target="_blank" rel="noopener">Keston Center (Baylor)</a></td>
+                <td>X</td>
+                <td>Archival research collection; reproduction generally requires written permission; no public incident feed.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.kmis.hr/" target="_blank" rel="noopener">KMIS (Croatia)</a></td>
+                <td>B</td>
+                <td>Balkan FoRB briefs; unreachable in evaluation.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.kna.de/" target="_blank" rel="noopener">KNA (Katholische Nachrichten-Agentur)</a></td>
+                <td>B</td>
+                <td>German Catholic wire; no reliable nightly fetch surface confirmed this pass.</td>
+              </tr>
+              <tr>
+                <td><a href="https://international.la-croix.com/" target="_blank" rel="noopener">La Croix / La Croix International</a></td>
+                <td>B</td>
+                <td>Serious French/English Church+world reporting with persecution coverage; RSS exists but deferred this release.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.osservatoreromano.va/" target="_blank" rel="noopener">L’Osservatore Romano</a></td>
+                <td>X</td>
+                <td>Official Vatican newspaper under Dicastery for Communication copyright posture similar to Vatican News; reproduction restricted without authorization. Not wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.ncregister.com/" target="_blank" rel="noopener">National Catholic Register</a></td>
+                <td>C</td>
+                <td>General English Catholic news (EWTN); low net-new vs wired FoRB specialists.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.ncronline.org/" target="_blank" rel="noopener">National Catholic Reporter</a></td>
+                <td>C</td>
+                <td>Independent English Catholic news; occasional FoRB pieces, not a persecution specialist feed.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.newadvent.org/" target="_blank" rel="noopener">New Advent</a></td>
+                <td>C</td>
+                <td>Headline aggregator that links out; cite original outlets, not the digest.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.opendoors.at/index/" target="_blank" rel="noopener">Open Doors Austria</a></td>
+                <td>A</td>
+                <td>German-language WWL node; no RSS; English Open Doors already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.opendoors.de/" target="_blank" rel="noopener">Open Doors Deutschland</a></td>
+                <td>A</td>
+                <td>WWL / Verfolgung content live in German; no RSS for nightly ingest; English Open Doors already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.opendoors.it/" target="_blank" rel="noopener">Open Doors Italia</a></td>
+                <td>A</td>
+                <td>Content fit for Italian WWL reporting; site unreachable (timeout) in evaluation.</td>
+              </tr>
+              <tr>
+                <td><a href="https://opendoorskorea.org/" target="_blank" rel="noopener">Open Doors Korea</a></td>
+                <td>A</td>
+                <td>Korean WWL / country reports fit; site unreachable in evaluation.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.opendoors.pl/" target="_blank" rel="noopener">Open Doors Polska</a></td>
+                <td>A</td>
+                <td>Światowy Indeks Prześladowań live; no RSS; English Open Doors already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://persecutionrelief.org/" target="_blank" rel="noopener">Persecution Relief</a></td>
+                <td>X</td>
+                <td>India-focused tracker largely dormant; no reliable nightly feed.</td>
+              </tr>
+              <tr>
+                <td><a href="https://portasabertas.org.br/" target="_blank" rel="noopener">Portas Abiertas Brasil</a></td>
+                <td>A</td>
+                <td>Portuguese WWL / Latin America node; no RSS; English Open Doors already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.portesouvertes.fr/" target="_blank" rel="noopener">Portes Ouvertes (France)</a></td>
+                <td>A</td>
+                <td>Index Mondial de Persécution pages live; no RSS; English Open Doors already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.puertasabiertas.org/es-ES/persecucion/lmp/" target="_blank" rel="noopener">Puertas Abiertas (ES/LATAM)</a></td>
+                <td>A</td>
+                <td>Lista Mundial de Persecución and persecution pages live; no RSS / noticias unreachable; English Open Doors already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://puertasabiertasal.org/" target="_blank" rel="noopener">Puertas Abiertas Argentina</a></td>
+                <td>B</td>
+                <td>Regional Latin America stories; no RSS for nightly ingest.</td>
+              </tr>
+              <tr>
+                <td><a href="https://puertasabiertas.ca/" target="_blank" rel="noopener">Puertas Abiertas Canada</a></td>
+                <td>B</td>
+                <td>French-Canada Open Doors node; unreachable in evaluation.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.religiondigital.org/" target="_blank" rel="noopener">Religión Digital</a></td>
+                <td>B</td>
+                <td>Spanish Catholic portal (Spain + LatAm); no reliable nightly feed confirmed this pass.</td>
+              </tr>
+              <tr>
+                <td>Ressources Chrétiennes (OD PDF mirror)</td>
+                <td>X</td>
+                <td>Mirror of Open Doors material; prefer primary Open Doors nodes.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.rfa.org/mandarin/" target="_blank" rel="noopener">RFA Mandarin</a></td>
+                <td>C</td>
+                <td>General Mandarin news, not Christian-specialist; no RSS found for nightly ingest.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.romereports.com/" target="_blank" rel="noopener">Rome Reports</a></td>
+                <td>C</td>
+                <td>Video/documentary focus; lower text-fetch value for nightly country citations.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.agensir.it/" target="_blank" rel="noopener">SIR / AgenSIR</a></td>
+                <td>C</td>
+                <td>Italian Catholic wire RSS exists; mostly domestic church news with sparse FoRB signal.</td>
+              </tr>
+              <tr>
+                <td><a href="https://stefanus.no/" target="_blank" rel="noopener">Stefanus Alliance</a></td>
+                <td>C</td>
+                <td>Norwegian FoRB mission reporting that could corroborate incidents, but no reliable public RSS/HTML listing found for automated nightly ingest.</td>
+              </tr>
+              <tr>
+                <td><a href="https://21wilberforce.org/" target="_blank" rel="noopener">The 21 Wilberforce</a></td>
+                <td>X</td>
+                <td>Terms restrict distributing materials or using them on other websites without prior written permission.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.pillarcatholic.com/" target="_blank" rel="noopener">The Pillar</a></td>
+                <td>C</td>
+                <td>High-quality investigative Catholic journalism; persecution incidental, not FoRB-specialized.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.thetablet.co.uk/" target="_blank" rel="noopener">The Tablet</a></td>
+                <td>C</td>
+                <td>UK Catholic weekly; world religion/politics generalist; low nightly FoRB signal.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.vaticannews.va/" target="_blank" rel="noopener">Vatican News</a></td>
+                <td>X</td>
+                <td>Legal block: Dicastery for Communication terms ban non-personal reproduction/collection and unauthorized deep-links (<a href="https://www.vaticannews.va/ln/legal-notes.html" target="_blank" rel="noopener">legal notes</a>). Not wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.persecution.de/" target="_blank" rel="noopener">Voice of the Martyrs Germany</a></td>
+                <td>A</td>
+                <td>National VOM node; unreachable in evaluation; English VOM already wired.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.voiceofthemartyrs.org.kr/" target="_blank" rel="noopener">Voice of the Martyrs Korea</a></td>
+                <td>A</td>
+                <td>National VOM node; unreachable in evaluation; English VOM already wired.</td>
+              </tr>
+              <tr>
+                <td>World Watch Monitor</td>
+                <td>X</td>
+                <td>Defunct (~2019); no live feed. Open Doors already covers the World Watch research franchise.</td>
+              </tr>
+              <tr>
+                <td><a href="https://x.com/" target="_blank" rel="noopener">X (Twitter)</a></td>
+                <td>X</td>
+                <td>User and platform media are all-rights-reserved; no redistributable license for archive or site rehost. Prefer citing linked text FoRB reports; no video fetcher. See <a href="#video-and-social-media">Video and social media</a>.</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></td>
+                <td>X</td>
+                <td>Default all-rights-reserved; Creative Commons is rare, hard to verify provenance at scale, and not a nightly FoRB feed. No embed or archive pipeline. See <a href="#video-and-social-media">Video and social media</a>.</td>
+              </tr>
+              <tr>
+                <td><a href="https://zenit.org/" target="_blank" rel="noopener">Zenit</a></td>
+                <td>B</td>
+                <td>Multilingual Catholic wire with human-rights desk; deferred after Fides/ACI Prensa. Citation ARR OK if wired later.</td>
+              </tr>
+</tbody>
+          </table>
+        </div>
+
+
+        <h2>Licensing</h2>
+        <p>This repository uses a <strong>multi-license</strong> model (not a single Creative Commons grant for the whole tree):</p>
+        <ul>
+          <li><strong>Project code, templates, and curated narratives</strong> we author are under the <a href="LICENSE">MIT License</a>.</li>
+          <li><strong>Archived research</strong> under <code>data/archives/</code> stays under each upstream provider&rsquo;s terms in <code>data/archives/NOTICE</code> (U.S. government works; Open Doors free use with attribution; V-Dem FoRB subset <strong>CC BY-SA</strong>).</li>
+          <li><strong>Live news feeds and indexes</strong> are citation-only: we link and may show a short attributed excerpt. We do not republish full articles, and all-rights-reserved or NC/ND sources are never placed in the archive.</li>
+        </ul>
+        <p>V-Dem&rsquo;s share-alike applies to that adapted indicator subset, not to unrelated scripts or site chrome. A whole-repo CC BY-SA license would mislabel Open Doors, U.S. government works, and software.</p>
+
+        <h3 id="video-and-social-media">Video and social media</h3>
+        <p>Country pages use <strong>text citations</strong> (a link plus a short attributed excerpt). We do not embed video players, hotlink platform media, or rehost clips in the repository or on the site.</p>
+        <p>Posts on X, YouTube, TikTok, and similar platforms are almost always <strong>all-rights-reserved</strong>. A platform&rsquo;s product license covers its own service; it does not grant this project redistribution or archive rights. Even FoRB-relevant footage fails the <code>data/archives/NOTICE</code> bar unless the rights holder grants free redistribution (or rare opt-in Creative Commons with clear provenance). Viral incident video may tip research toward a text report already wired (for example Morning Star News, Open Doors, or State Department IRF); we do not scrape or embed the clip. Third-party video embeds are also out of scope for this static site&rsquo;s content-security policy and citation-only model. See X and YouTube in the unused-sources table above.</p>
+
+        <h2>Archived research materials</h2>
+        <p>A one-time archive under <code>data/archives/</code> stores legally redistributable research used to enrich country pages:</p>
+        <ul>
+          <li><strong>U.S. State Department IRF</strong> country chapters (U.S. government works)</li>
+          <li><strong>USCIRF</strong> annual report PDF and country pages (U.S. government works)</li>
+          <li><strong>Open Doors World Watch Research</strong> persecution-dynamics dossiers (free use/distribution with &copy; Open Doors International attribution)</li>
+          <li><strong>V-Dem</strong> FoRB indicator subset (CC BY-SA)</li>
+        </ul>
+        <p>See <code>data/archives/NOTICE</code> for license details. Country pages cite these sources and may show short excerpts; they do not republish full report bodies.</p>
+
+        <h2>Update workflow</h2>
+        <p>A GitHub Actions workflow runs <strong>daily</strong> (and on manual dispatch). It fetches external sources, regenerates country pages and JSON assets, runs tests, commits data updates, and deploys the public site to the <code>gh-pages</code> branch. After a successful Pages deploy, the same public files are republished to Nostr via nsite. Same-repo pull requests get a sticky preview link under <code>/pr-preview/pr-N/</code>.</p>
+        <p><strong>Primary</strong> sources (Open Doors, Freedom House, OWID, USCIRF, State Dept) gate the job: only a clean <code>ok</code> status proceeds; <code>failed</code>, <code>partial</code>, and <code>cached</code> abort generate/deploy. <strong>Secondary</strong> sources (see the used-sources table above — MSN, GDELT, OHCHR, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International, VOM, ChinaAid, Info Chrétienne, OSCE, UNSR FoRB, HRW, Amnesty, Barnabas, CSI, CNA, Fides, ACI Prensa, HRWF, ADF, WEA, Jubilee, IPPFoRB, and others) enrich when available and never abort deploy; failures are summarized as warnings. Only public site files are uploaded to Pages &mdash; not scrape caches under <code>data/fetched/</code> (runtime-only; not tracked in git).</p>
+
+        <h2 id="censorship-resistant-access">Censorship-resistant access</h2>
+        <p>The site is also published on Nostr via nsite (same content as GitHub Pages; republished automatically after successful deploys). Use either:</p>
+        <ul>
+          <li><strong>Gateway (browser):</strong> <a href="https://2vu4veopeh8g2tkli0pmbu2gtrmcicht56a5k9edx63jy6l7tcpersecutio.nsite.lol/" target="_blank" rel="noopener">https://2vu4veopeh8g2tkli0pmbu2gtrmcicht56a5k9edx63jy6l7tcpersecutio.nsite.lol/</a></li>
+          <li><strong>NIP-05A address</strong> (Nostr clients with nsite support): <code>naddr1qvzqqqyf8qpzqua6pgsfdufl97frsalzalnedutx94revzz4m47pgd2qtq28txxsqq98qetjwdjkxat5d9hs2c44ed</code></li>
+        </ul>
+
+        <h2>Privacy and access</h2>
+        <p>This site does not collect personal data. Map tiles come from CARTO/OpenStreetMap; Leaflet and Lunr are self-hosted under <code>assets/vendor/</code>. If you use an ad blocker, map tiles may still be affected.</p>
+
+        <div class="callout">
+          <strong>Attribution note:</strong> This project is unaffiliated with any government, NGO, or religious organization listed as a source. Source information remains the property of each provider and is subject to their terms and attribution requirements.
+        </div>
+
+        <h2>About the creator</h2>
+        <p>This site was created by <a href="https://fishy.best/~jjs/" target="_blank" rel="noopener">Joey</a> as a companion tool for <a href="https://www.trinitari.org/sit/" target="_blank" rel="noopener">SIT: Solidariet&agrave; Internazionale Trinitaria</a>, the Trinitarian Order&rsquo;s international solidarity ministry supporting persecuted Christians worldwide. SIT works to raise awareness and provide concrete aid to Christians facing persecution because of their faith. For practical next steps, sharing country pages, contacting representatives, and supporting SIT and peer organizations, see <a href="act.html">What you can do</a>.</p>
+
+        <h2>Contributing</h2>
+        <p>Edits are tracked in the repository as structured data. To suggest a source, correction, or new country entry, open an issue or pull request. See the README for the fetch &rarr; collect &rarr; generate &rarr; pytest workflow.</p>
+
+        <a class="back-link" href="index.html">&larr; Back to map</a>
+      </article>
+    </div>
+  </main>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+  <script src="assets/js/back-to-top.js" defer></script>
+</body>
+</html>
