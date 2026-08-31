@@ -902,7 +902,7 @@ countries:
       title: International Christian Concern - Global Persecution Reports
       url: https://www.persecution.org/
       date: '2026'
-    - &id021
+    - &id020
       title: Bitter Winter - Religious Liberty and Human Rights
       url: https://bitterwinter.org/
       date: '2026'
@@ -914,7 +914,7 @@ countries:
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
-    - &id018
+    - &id015
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
@@ -922,7 +922,7 @@ countries:
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
-    - &id016
+    - &id014
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
@@ -2575,7 +2575,6 @@ countries:
     - owid2024
     - morningstarnews2026
     - icc2026
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -3099,7 +3098,6 @@ countries:
     - owid2024
     - morningstarnews2026
     - icc2026
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -3122,10 +3120,6 @@ countries:
       url: https://morningstarnews.org/
       date: '2026'
     - *id007
-    - &id014
-      title: Agenzia Fides - Pontifical Mission Societies News
-      url: https://www.fides.org/en
-      date: '2026'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -3163,17 +3157,6 @@ countries:
         Kalimantan. The Aceh Regional Police arrested him on allegations of blasphemy
         and hat
       source: International Christian Concern
-    fides_articles: 1
-    fides_samples:
-    - title: 'ASIA/INDONESIA - In Flores, Bishop of Ruteng: “Resilience is not made
-        of concrete, but of social capital and presence”'
-      url: https://www.fides.org/en/news/78083-ASIA_INDONESIA_In_Flores_Bishop_of_Ruteng_Resilience_is_not_made_of_concrete_but_of_social_capital_and_presence
-      date: '2026-08-25'
-      description: Ruteng – “An earthquake can bring so many things to collapse in
-        a matter of seconds. Homes, places of worship, schools—even our sense of security
-        can suddenly become fragile. Yet, amid the devastation caused by the earthquake
-        that struck Flores on August 15, I witnessed the emergence of a remarkable
-      source: Agenzia Fides
     uscirf_designation: SWL
     uscirf_key_findings:
     - Indonesia’s religious freedom conditions are poor. Despite constitutional FoRB
@@ -3194,15 +3177,6 @@ countries:
         social tension, sources said. The church held worship services in a traditional
         I
       source: Morning Star News
-    - title: 'ASIA/INDONESIA - In Flores, Bishop of Ruteng: “Resilience is not made
-        of concrete, but of social capital and presence”'
-      url: https://www.fides.org/en/news/78083-ASIA_INDONESIA_In_Flores_Bishop_of_Ruteng_Resilience_is_not_made_of_concrete_but_of_social_capital_and_presence
-      date: '2026-08-25'
-      description: Ruteng – “An earthquake can bring so many things to collapse in
-        a matter of seconds. Homes, places of worship, schools—even our sense of security
-        can suddenly become fragile. Yet, amid the devastation caused by the earthquake
-        that struck Flores on August 15, I witnessed the emergence of a remarkable
-      source: Agenzia Fides
     - title: Pastor Sentenced to Prison in Indonesia
       url: https://persecution.org/2026/08/21/pastor-sentenced-to-prison-in-indonesia
       date: '2026-08-21'
@@ -4915,7 +4889,6 @@ countries:
     - icc2026
     - infochretienne
     - barnabas
-    - csi
     - fides
     - wea
     - jubilee
@@ -5067,7 +5040,6 @@ countries:
     - icc2026
     - infochretienne
     - barnabas
-    - csi
     - fides
     - wea
     - jubilee
@@ -5095,17 +5067,16 @@ countries:
     - *id007
     - *id011
     - *id010
-    - &id015
-      title: Christian Solidarity International
-      url: https://www.csi-int.org/
+    - &id017
+      title: Agenzia Fides - Pontifical Mission Societies News
+      url: https://www.fides.org/en
       date: '2026'
-    - *id014
     - &id023
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
       date: '2026'
     - *id012
-    - &id017
+    - &id016
       title: GDELT Global Database of Events, Language, and Tone
       url: https://www.gdeltproject.org/
       date: '2025'
@@ -5200,15 +5171,17 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    csi_articles: 1
-    csi_samples:
-    - title: Nigerian widow sues state over alleged forced conversion of teenage daughter
-      url: https://csi-usa.org/nigerian-widow-sues-state-over-alleged-forced-conversion-of-teenage-daughter
-      date: ''
-      description: ''
-      source: Christian Solidarity International
-    fides_articles: 1
+    fides_articles: 2
     fides_samples:
+    - title: AFRICA/NIGERIA - Bishop of Kontagora calls for increased security measures
+        at places of worship
+      url: https://www.fides.org/en/news/78105-AFRICA_NIGERIA_Bishop_of_Kontagora_calls_for_increased_security_measures_at_places_of_worship
+      date: '2026-08-31'
+      description: 'Abuja – “Protect mosques from jihadist attacks.” This is the appeal
+        issued by Bishop Bulus Yohanna of Kontagora and president of the Christian
+        Association of Nigeria in Niger State, one of the 36 States of the Federation,
+        located in north-central Nigeria. “For us, an attack on any place of worship, '
+      source: Agenzia Fides
     - title: AFRICA/NIGERIA - “Stop the massacres and mass kidnappings,” Bishops say,
         expressing their condolences to all victims
       url: https://www.fides.org/en/news/78098-AFRICA_NIGERIA_Stop_the_massacres_and_mass_kidnappings_Bishops_say_expressing_their_condolences_to_all_victims
@@ -5273,6 +5246,15 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/nigeria
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nigeria/
     recent_incidents:
+    - title: AFRICA/NIGERIA - Bishop of Kontagora calls for increased security measures
+        at places of worship
+      url: https://www.fides.org/en/news/78105-AFRICA_NIGERIA_Bishop_of_Kontagora_calls_for_increased_security_measures_at_places_of_worship
+      date: '2026-08-31'
+      description: 'Abuja – “Protect mosques from jihadist attacks.” This is the appeal
+        issued by Bishop Bulus Yohanna of Kontagora and president of the Christian
+        Association of Nigeria in Niger State, one of the 36 States of the Federation,
+        located in north-central Nigeria. “For us, an attack on any place of worship, '
+      source: Agenzia Fides
     - title: AFRICA/NIGERIA - “Stop the massacres and mass kidnappings,” Bishops say,
         expressing their condolences to all victims
       url: https://www.fides.org/en/news/78098-AFRICA_NIGERIA_Stop_the_massacres_and_mass_kidnappings_Bishops_say_expressing_their_condolences_to_all_victims
@@ -5399,11 +5381,6 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    - title: Nigerian widow sues state over alleged forced conversion of teenage daughter
-      url: https://csi-usa.org/nigerian-widow-sues-state-over-alleged-forced-conversion-of-teenage-daughter
-      date: ''
-      description: ''
-      source: Christian Solidarity International
     archive_modern_excerpt: In terms of Persecution engines, Christians suffer from
       a suffocating combination of Ethno-religious hostility, Islamic oppression,
       Religious nationalism, Dictatorial paranoia and Organized corruption and crime.
@@ -5747,6 +5724,7 @@ countries:
     - gcr2026
     - morningstarnews2026
     - icc2026
+    - infochretienne
     - barnabas
     - csi
     - jubilee
@@ -5911,6 +5889,7 @@ countries:
     - gcr2026
     - morningstarnews2026
     - icc2026
+    - infochretienne
     - barnabas
     - csi
     - jubilee
@@ -5935,8 +5914,12 @@ countries:
     - *id005
     - *id013
     - *id007
+    - *id011
     - *id010
-    - *id015
+    - &id022
+      title: Christian Solidarity International
+      url: https://www.csi-int.org/
+      date: '2026'
     - *id012
     - *id006
     freedom_house_status: Partly Free
@@ -5993,6 +5976,13 @@ countries:
         was instantly overshadowed by the acquittal of 13 co-defendants — an outcome
         th
       source: International Christian Concern
+    infochretienne_articles: 1
+    infochretienne_samples:
+    - title: 'Pakistan : deux chrétiens acquittés après des accusations de blasphème'
+      url: https://www.infochretienne.com/articles/pakistan-deux-chretiens-acquittes-apres-des-accusations-de-blaspheme
+      date: '2026-08-31'
+      description: ''
+      source: Info Chrétienne
     barnabas_articles: 1
     barnabas_samples:
     - title: Pakistani Christian Acquitted of “Blasphemy” After Two-Year Legal Battle
@@ -6040,6 +6030,11 @@ countries:
     uscirf_url: https://www.uscirf.gov/countries/pakistan
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/pakistan/
     recent_incidents:
+    - title: 'Pakistan : deux chrétiens acquittés après des accusations de blasphème'
+      url: https://www.infochretienne.com/articles/pakistan-deux-chretiens-acquittes-apres-des-accusations-de-blaspheme
+      date: '2026-08-31'
+      description: ''
+      source: Info Chrétienne
     - title: U.S. Lawmakers Urge Protection for Christian Girl in Pakistan
       url: https://morningstarnews.org/2026/08/u-s-lawmakers-urge-protection-for-christian-girl-in-pakistan
       date: '2026-08-28'
@@ -6786,9 +6781,7 @@ countries:
     - gcr2026
     - infochretienne
     - hrw
-    - csi
     - hrwf
-    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -6870,9 +6863,7 @@ countries:
     - gcr2026
     - infochretienne
     - hrw
-    - csi
     - hrwf
-    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -6893,13 +6884,11 @@ countries:
     - *id004
     - *id005
     - *id011
-    - *id016
-    - *id015
-    - &id019
+    - *id014
+    - &id018
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
-    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -6938,13 +6927,6 @@ countries:
         the Assad era raise important legal issues the government should urgently
         address,
       source: Human Rights Watch
-    csi_articles: 1
-    csi_samples:
-    - title: 'Syria: Attacks on Religious Minorities – June 2026'
-      url: https://csi-usa.org/syria-attacks-on-religious-minorities-june-2026
-      date: ''
-      description: ''
-      source: Christian Solidarity International
     hrwf_articles: 1
     hrwf_samples:
     - title: 'SYRIA: More than one thousand unarmed Druze civilians killed in 16 months'
@@ -6956,16 +6938,6 @@ countries:
         by the Syrian Observatory for Human Rights (SOHR), highlighting the scale
         of vi'
       source: Human Rights Without Frontiers
-    gdelt_articles: 1
-    gdelt_samples:
-    - title: 'Syria authorities release detained Kurdish pastor : church official'
-      url: https://www.arabnews.com/node/2653420/middle-east
-      date: '2026-08-04'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 1
-    gdelt_sample_urls:
-    - https://www.arabnews.com/node/2653420/middle-east
     uscirf_designation: CPC
     uscirf_key_findings:
     - Although President Bashar al-Assad’s government fell in December 2024, ending
@@ -7000,21 +6972,11 @@ countries:
       date: '2026-08-17'
       description: ''
       source: Info Chrétienne
-    - title: 'Syria authorities release detained Kurdish pastor : church official'
-      url: https://www.arabnews.com/node/2653420/middle-east
-      date: '2026-08-04'
-      description: ''
-      source: GDELT
     - title: 'Syrie : un pasteur kurde évangélique arrêté pour incitation à la haine'
       url: https://www.infochretienne.com/articles/syrie-un-pasteur-kurde-vanglique-arrt-pour-incitation-la-haine
       date: '2026-07-31'
       description: ''
       source: Info Chrétienne
-    - title: 'Syria: Attacks on Religious Minorities – June 2026'
-      url: https://csi-usa.org/syria-attacks-on-religious-minorities-june-2026
-      date: ''
-      description: ''
-      source: Christian Solidarity International
     archive_modern_excerpt: 'Just a few weeks following the close of the WWL 2025
       reporting period, the Assad regime fell: On 8 December 2024, forces aligned
       with the al-Qaeda affiliate Hay''at Tahrir al-Sham (HTS) captured Damascus after
@@ -8509,8 +8471,8 @@ countries:
     - *id005
     - *id013
     - *id007
-    - *id018
-    - *id017
+    - *id015
+    - *id016
     - *id006
     freedom_house_status: Free
     freedom_house_pr: 2
@@ -9309,6 +9271,7 @@ countries:
     - owid2024
     - gcr2026
     - vom2026
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -9459,6 +9422,7 @@ countries:
     - owid2024
     - gcr2026
     - vom2026
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -9479,6 +9443,7 @@ countries:
     - *id004
     - *id005
     - *id009
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9505,6 +9470,18 @@ countries:
         inside the courts," said a front-line worker. Later, the Christians learned
         that the
       source: Voice of the Martyrs
+    fides_articles: 1
+    fides_samples:
+    - title: AFRICA/NIGER - Algeria sends fighter jets to Niger after a failed military
+        coup
+      url: https://www.fides.org/en/news/78104-AFRICA_NIGER_Algeria_sends_fighter_jets_to_Niger_after_a_failed_military_coup
+      date: '2026-08-31'
+      description: Niamey – Four Su-30 fighter jets, accompanied by an Il-76 transport
+        aircraft and an Il-78 aerial tanker, have been deployed by Algeria to Air
+        Base 101, adjacent to Diori Hamani International Airport in Niamey, following
+        the military uprising that broke out last weekend. This is the first overseas
+        de
+      source: Agenzia Fides
     uscirf_designation: SWL
     uscirf_key_findings:
     - Algeria engages in systematic repression of religious minority communities.
@@ -9515,6 +9492,17 @@ countries:
       state-approved interpretation of Sunni Islam, including Shi’a and Ahmadi Muslims.
     uscirf_url: https://www.uscirf.gov/countries/algeria
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/algeria/
+    recent_incidents:
+    - title: AFRICA/NIGER - Algeria sends fighter jets to Niger after a failed military
+        coup
+      url: https://www.fides.org/en/news/78104-AFRICA_NIGER_Algeria_sends_fighter_jets_to_Niger_after_a_failed_military_coup
+      date: '2026-08-31'
+      description: Niamey – Four Su-30 fighter jets, accompanied by an Il-76 transport
+        aircraft and an Il-78 aerial tanker, have been deployed by Algeria to Air
+        Base 101, adjacent to Diori Hamani International Airport in Niamey, following
+        the military uprising that broke out last weekend. This is the first overseas
+        de
+      source: Agenzia Fides
     archive_modern_excerpt: The sharp increase of government pressure against the
       Algerian Protestant church in the WWL 2024 reporting period continued into WWL
       2025. State officials at various levels of the administrative hierarchy are
@@ -10063,7 +10051,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -10178,7 +10165,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -10197,7 +10183,6 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10206,17 +10191,6 @@ countries:
     opendoors_score: 68
     christian_population: 5270537
     christian_percentage: 4.82
-    gdelt_articles: 1
-    gdelt_samples:
-    - title: Egyptian Muslims Attacked Coptic Christians . Authorities Arrested the
-        Christians .
-      url: https://pjmedia.com/catherinesalgado/2026/08/09/egyptian-muslims-attacked-coptic-christians-authorities-arrested-the-christians-n4955970
-      date: '2026-08-10'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 1
-    gdelt_sample_urls:
-    - https://pjmedia.com/catherinesalgado/2026/08/09/egyptian-muslims-attacked-coptic-christians-authorities-arrested-the-christians-n4955970
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Egypt are poor. Baha'is, Jehovah’s Witnesses,
@@ -10227,13 +10201,6 @@ countries:
       laws also remain key tools of systematic FoRB repression.
     uscirf_url: https://www.uscirf.gov/countries/egypt
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/egypt/
-    recent_incidents:
-    - title: Egyptian Muslims Attacked Coptic Christians . Authorities Arrested the
-        Christians .
-      url: https://pjmedia.com/catherinesalgado/2026/08/09/egyptian-muslims-attacked-coptic-christians-authorities-arrested-the-christians-n4955970
-      date: '2026-08-10'
-      description: ''
-      source: GDELT
     archive_modern_excerpt: Christians in Egypt report that freedom of religion violations
       occur mostly at the community level, with many Christians regularly facing discrimination.
       The constitution states that “freedom of belief is absolute” and “the freedom
@@ -10307,7 +10274,7 @@ countries:
     - owid2024
     - icc2026
     - amnesty
-    - fides
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -10372,7 +10339,7 @@ countries:
     - owid2024
     - icc2026
     - amnesty
-    - fides
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -10387,11 +10354,11 @@ countries:
     - *id002
     - *id004
     - *id007
-    - &id020
+    - &id019
       title: Amnesty International
       url: https://www.amnesty.org/
       date: '2026'
-    - *id014
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10420,18 +10387,23 @@ countries:
         of people were reportedly abducted. Those attacked reportedly included people
         di
       source: Amnesty International
-    fides_articles: 1
-    fides_samples:
-    - title: 'AMERICA/HAITI - Massacre in Kenscoff: at Least 47 victims'
-      url: https://www.fides.org/en/news/78087-AMERICA_HAITI_Massacre_in_Kenscoff_at_Least_47_victims
-      date: '2026-08-25'
-      description: Port-au-Prince – At least 47 people were killed in a massacre carried
-        out during the night of August 23–24 in Kenscoff, a hilltop town overlooking
-        Port-au-Prince, Haiti’s capital. At least 22 people were wounded in the attack,
-        which was carried out by one of the criminal gangs that have been terrori
-      source: Agenzia Fides
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: 'Haiti : 47 Killed , 50 Kidnapped in Gang Attack on Church'
+      url: https://pjmedia.com/catherinesalgado/2026/08/30/haiti-47-killed-50-kidnapped-in-gang-attack-on-church-n4956706
+      date: '2026-08-30'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://pjmedia.com/catherinesalgado/2026/08/30/haiti-47-killed-50-kidnapped-in-gang-attack-on-church-n4956706
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
     recent_incidents:
+    - title: 'Haiti : 47 Killed , 50 Kidnapped in Gang Attack on Church'
+      url: https://pjmedia.com/catherinesalgado/2026/08/30/haiti-47-killed-50-kidnapped-in-gang-attack-on-church-n4956706
+      date: '2026-08-30'
+      description: ''
+      source: GDELT
     - title: Gang Attacks Church, Kills Dozens in Haiti
       url: https://persecution.org/2026/08/28/gang-attacks-church-kills-dozens-in-haiti
       date: '2026-08-28'
@@ -10450,14 +10422,6 @@ countries:
         of people were reportedly abducted. Those attacked reportedly included people
         di
       source: Amnesty International
-    - title: 'AMERICA/HAITI - Massacre in Kenscoff: at Least 47 victims'
-      url: https://www.fides.org/en/news/78087-AMERICA_HAITI_Massacre_in_Kenscoff_at_Least_47_victims
-      date: '2026-08-25'
-      description: Port-au-Prince – At least 47 people were killed in a massacre carried
-        out during the night of August 23–24 in Kenscoff, a hilltop town overlooking
-        Port-au-Prince, Haiti’s capital. At least 22 people were wounded in the attack,
-        which was carried out by one of the criminal gangs that have been terrori
-      source: Agenzia Fides
     archive_modern_excerpt: The 1987 constitution provides for the free exercise of
       all religions. Any religious group seeking official recognition must obtain
       it through a multistep registration process with the Bureau of Worship (BOW),
@@ -11370,7 +11334,6 @@ countries:
     - owid2024
     - gcr2026
     - morningstarnews2026
-    - fides
     - hrwf
     - gdelt2025
     - vdem2025forb
@@ -11560,7 +11523,6 @@ countries:
     - owid2024
     - gcr2026
     - morningstarnews2026
-    - fides
     - hrwf
     - gdelt2025
     - vdem2025forb
@@ -11583,9 +11545,8 @@ countries:
     - *id004
     - *id005
     - *id013
-    - *id014
-    - *id019
-    - *id017
+    - *id018
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11630,17 +11591,6 @@ countries:
         leader in the Sudanese Church of Christ (SCOC) in Heiban, South Kordofan state,
         w
       source: Morning Star News
-    fides_articles: 1
-    fides_samples:
-    - title: 'AFRICA/SUDAN - War in Sudan spreads to neighboring countries: tensions
-        with Chad and Ethiopia'
-      url: https://www.fides.org/en/news/78085-AFRICA_SUDAN_War_in_Sudan_spreads_to_neighboring_countries_tensions_with_Chad_and_Ethiopia
-      date: '2026-08-25'
-      description: Khartoum – The war in Sudan is increasingly involving neighboring
-        countries into the conflict. The Sudan Armed Forces , led by General Abdel
-        Fattah al-Burhan, have stepped up operations aimed at cutting the supply lines
-        of the Rapid Support Forces , led by Mohammed Hamdan Dagalo, known as “Hemedti,”
-      source: Agenzia Fides
     hrwf_articles: 1
     hrwf_samples:
     - title: 'SUDAN: Christian relief worker detained in Nuba Mountains and sentenced
@@ -11687,15 +11637,6 @@ countries:
         to the Committee for Justice (CFJ), a military court has sentenced humanitarian
         activist Najwa Musa Konda to one year in prison over a social media post attribute'
       source: Human Rights Without Frontiers
-    - title: 'AFRICA/SUDAN - War in Sudan spreads to neighboring countries: tensions
-        with Chad and Ethiopia'
-      url: https://www.fides.org/en/news/78085-AFRICA_SUDAN_War_in_Sudan_spreads_to_neighboring_countries_tensions_with_Chad_and_Ethiopia
-      date: '2026-08-25'
-      description: Khartoum – The war in Sudan is increasingly involving neighboring
-        countries into the conflict. The Sudan Armed Forces , led by General Abdel
-        Fattah al-Burhan, have stepped up operations aimed at cutting the supply lines
-        of the Rapid Support Forces , led by Mohammed Hamdan Dagalo, known as “Hemedti,”
-      source: Agenzia Fides
     - title: Christian Relief Worker Detained in Sudan’s Nuba Mountains
       url: https://morningstarnews.org/2026/08/christian-relief-worker-detained-in-sudans-nuba-mountains
       date: '2026-08-24'
@@ -11994,8 +11935,8 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id016
-    - *id020
+    - *id014
+    - *id019
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -13806,7 +13747,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id019
+    - *id018
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -13914,6 +13855,7 @@ countries:
     - gcr2026
     - icc2026
     - infochretienne
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -14057,6 +13999,7 @@ countries:
     - gcr2026
     - icc2026
     - infochretienne
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -14074,6 +14017,7 @@ countries:
     - *id005
     - *id007
     - *id011
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -14106,8 +14050,30 @@ countries:
       date: '2026-08-17'
       description: ''
       source: Info Chrétienne
+    fides_articles: 1
+    fides_samples:
+    - title: AFRICA/NIGER - Algeria sends fighter jets to Niger after a failed military
+        coup
+      url: https://www.fides.org/en/news/78104-AFRICA_NIGER_Algeria_sends_fighter_jets_to_Niger_after_a_failed_military_coup
+      date: '2026-08-31'
+      description: Niamey – Four Su-30 fighter jets, accompanied by an Il-76 transport
+        aircraft and an Il-78 aerial tanker, have been deployed by Algeria to Air
+        Base 101, adjacent to Diori Hamani International Airport in Niamey, following
+        the military uprising that broke out last weekend. This is the first overseas
+        de
+      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/niger/
     recent_incidents:
+    - title: AFRICA/NIGER - Algeria sends fighter jets to Niger after a failed military
+        coup
+      url: https://www.fides.org/en/news/78104-AFRICA_NIGER_Algeria_sends_fighter_jets_to_Niger_after_a_failed_military_coup
+      date: '2026-08-31'
+      description: Niamey – Four Su-30 fighter jets, accompanied by an Il-76 transport
+        aircraft and an Il-78 aerial tanker, have been deployed by Algeria to Air
+        Base 101, adjacent to Diori Hamani International Airport in Niamey, following
+        the military uprising that broke out last weekend. This is the first overseas
+        de
+      source: Agenzia Fides
     - title: Kidnapped U.S. Missionary Pilot Freed in Niger
       url: https://persecution.org/2026/08/17/kidnapped-u-s-missionary-pilot-freed-in-niger
       date: '2026-08-17'
@@ -14349,7 +14315,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id014
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -14679,7 +14645,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -14822,7 +14787,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -14837,7 +14801,6 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -14846,28 +14809,7 @@ countries:
     opendoors_score: 70
     christian_population: 73227447
     christian_percentage: 61.58
-    fides_articles: 1
-    fides_samples:
-    - title: 'AFRICA/SUDAN - War in Sudan spreads to neighboring countries: tensions
-        with Chad and Ethiopia'
-      url: https://www.fides.org/en/news/78085-AFRICA_SUDAN_War_in_Sudan_spreads_to_neighboring_countries_tensions_with_Chad_and_Ethiopia
-      date: '2026-08-25'
-      description: Khartoum – The war in Sudan is increasingly involving neighboring
-        countries into the conflict. The Sudan Armed Forces , led by General Abdel
-        Fattah al-Burhan, have stepped up operations aimed at cutting the supply lines
-        of the Rapid Support Forces , led by Mohammed Hamdan Dagalo, known as “Hemedti,”
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
-    recent_incidents:
-    - title: 'AFRICA/SUDAN - War in Sudan spreads to neighboring countries: tensions
-        with Chad and Ethiopia'
-      url: https://www.fides.org/en/news/78085-AFRICA_SUDAN_War_in_Sudan_spreads_to_neighboring_countries_tensions_with_Chad_and_Ethiopia
-      date: '2026-08-25'
-      description: Khartoum – The war in Sudan is increasingly involving neighboring
-        countries into the conflict. The Sudan Armed Forces , led by General Abdel
-        Fattah al-Burhan, have stepped up operations aimed at cutting the supply lines
-        of the Rapid Support Forces , led by Mohammed Hamdan Dagalo, known as “Hemedti,”
-      source: Agenzia Fides
     archive_modern_excerpt: In Ethiopia, all three categories of Christian communities
       face violations of religious freedom, with non-traditional Christians suffering
       the most severe mistreatment from both the local government and the Ethiopian
@@ -15430,7 +15372,7 @@ countries:
     - *id003
     - *id004
     - *id010
-    - *id017
+    - *id016
     - *id006
     opendoors_ranking: 29
     opendoors_score: 72
@@ -16265,7 +16207,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id014
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -17044,7 +16986,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id021
+    - *id020
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -17402,7 +17344,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id022
+    - &id021
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
@@ -18970,8 +18912,8 @@ countries:
     - *id002
     - *id004
     - *id007
-    - *id022
-    - *id019
+    - *id021
+    - *id018
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -19234,7 +19176,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id015
+    - *id022
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -19384,7 +19326,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id015
+    - *id022
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -20129,7 +20071,6 @@ countries:
     - odwwl2026
     - freedomhouse2024
     - owid2024
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -20231,7 +20172,6 @@ countries:
     - odwwl2025archivekenya
     - freedomhouse2024
     - owid2024
-    - fides
     - vdem2025forb
     sources:
     - &id061
@@ -20245,35 +20185,13 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id014
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
     freedom_house_cl: 4
     christian_population: 44734739
     christian_percentage: 85.67
-    fides_articles: 1
-    fides_samples:
-    - title: AFRICA/KENYA - Fake priest discovered
-      url: https://www.fides.org/en/news/78082-AFRICA_KENYA_Fake_priest_discovered
-      date: '2026-08-24'
-      description: Nairobi – The Diocese of Lodwar, in Kenya’s Rift Valley, west of
-        Lake Turkana, has warned the faithful about a fake priest who for an extended
-        period allegedly pretended to celebrate Mass and administer the sacraments.
-        The man presented himself as Fr Jones Bogonko Onchonga, M.C., but is in fact
-        a la
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kenya/
-    recent_incidents:
-    - title: AFRICA/KENYA - Fake priest discovered
-      url: https://www.fides.org/en/news/78082-AFRICA_KENYA_Fake_priest_discovered
-      date: '2026-08-24'
-      description: Nairobi – The Diocese of Lodwar, in Kenya’s Rift Valley, west of
-        Lake Turkana, has warned the faithful about a fake priest who for an extended
-        period allegedly pretended to celebrate Mass and administer the sacraments.
-        The man presented himself as Fr Jones Bogonko Onchonga, M.C., but is in fact
-        a la
-      source: Agenzia Fides
     archive_modern_excerpt: The constitution stipulates there shall be no state religion
       and prohibits religious discrimination. The constitution provides for freedom
       of religion and belief individually or in communities, including the freedom
@@ -20930,7 +20848,7 @@ countries:
     - *id002
     - *id004
     - *id007
-    - *id014
+    - *id017
     freedom_house_status: Partly Free
     freedom_house_pr: 3
     freedom_house_cl: 4
@@ -21273,7 +21191,7 @@ sources:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id017
+  gdelt2025: *id016
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id068
@@ -21286,7 +21204,7 @@ sources:
   uscirf2025tajikistan: *id075
   morningstarnews2026: *id013
   infochretienne: *id011
-  fides: *id014
+  fides: *id017
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -21305,12 +21223,12 @@ sources:
     url: https://www.csw.org.uk/
     date: '2026'
   icc2026: *id007
-  forum18: *id022
+  forum18: *id021
   mec: *id076
-  bitterwinter: *id021
+  bitterwinter: *id020
   releaseintl: *id008
   vom2026: *id009
-  chinaaid: *id018
+  chinaaid: *id015
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
     url: https://www.osce.org/odihr/freedom-of-religion-or-belief
@@ -21319,15 +21237,15 @@ sources:
     title: UN Special Rapporteur on Freedom of Religion or Belief
     url: https://www.ohchr.org/en/special-procedures/sr-religion-or-belief
     date: '2026'
-  hrw: *id016
-  amnesty: *id020
+  hrw: *id014
+  amnesty: *id019
   barnabas: *id010
-  csi: *id015
+  csi: *id022
   cna:
     title: Catholic News Agency
     url: https://www.catholicnewsagency.com/
     date: '2026'
-  hrwf: *id019
+  hrwf: *id018
   adf:
     title: ADF International
     url: https://adfinternational.org/
@@ -21882,152 +21800,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-08-30 11:52 UTC
+  generated_at: 2026-08-31 13:34 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-08-30T11:51:45.880411+00:00'
+    fetched_at: '2026-08-31T13:34:13.320754+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-08-30T11:51:17.931588+00:00'
+    fetched_at: '2026-08-31T13:33:45.653106+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-08-30T11:51:48.437710+00:00'
+    fetched_at: '2026-08-31T13:34:15.475928+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-08-30T11:51:35.367285+00:00'
+    fetched_at: '2026-08-31T13:34:03.733125+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-08-30T11:51:37.861582+00:00'
+    fetched_at: '2026-08-31T13:34:05.946693+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-08-30T11:51:25.215042+00:00'
+    fetched_at: '2026-08-31T13:33:51.759612+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-08-30T11:51:28.782053+00:00'
+    fetched_at: '2026-08-31T13:33:56.042313+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-08-30T11:51:43.099115+00:00'
+    fetched_at: '2026-08-31T13:34:11.627112+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-08-30T11:51:42.559285+00:00'
+    fetched_at: '2026-08-31T13:34:11.210970+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-08-30T11:51:18.834153+00:00'
+    fetched_at: '2026-08-31T13:33:47.053551+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-08-30T11:51:45.531002+00:00'
+    fetched_at: '2026-08-31T13:34:12.990760+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-08-30T11:51:22.099665+00:00'
+    fetched_at: '2026-08-31T13:33:48.811944+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-08-30T11:44:22.247489+00:00'
+    fetched_at: '2026-08-31T13:24:35.864018+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-08-30T11:51:16.526967+00:00'
+    fetched_at: '2026-08-31T13:33:44.572568+00:00'
     message: null
   - name: gdelt
-    status: ok
-    fetched_at: '2026-08-30T11:51:04.340155+00:00'
-    message: null
+    status: partial
+    fetched_at: '2026-08-31T13:33:32.749377+00:00'
+    message: 2 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-08-30T11:51:34.928089+00:00'
+    fetched_at: '2026-08-31T13:34:03.136647+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-08-30T11:51:47.021924+00:00'
+    fetched_at: '2026-08-31T13:34:14.415601+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-08-30T11:51:20.488608+00:00'
+    fetched_at: '2026-08-31T13:33:48.094945+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-08-30T11:51:30.652454+00:00'
+    fetched_at: '2026-08-31T13:33:57.733505+00:00'
     message: null
   - name: ippforb
-    status: ok
-    fetched_at: '2026-08-30T11:51:54.771471+00:00'
-    message: null
+    status: failed
+    fetched_at: '2026-08-31T13:34:24.532707+00:00'
+    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-08-30T11:51:53.290521+00:00'
+    fetched_at: '2026-08-31T13:34:22.406540+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-08-30T11:51:24.227996+00:00'
+    fetched_at: '2026-08-31T13:33:50.947137+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-08-30T11:51:07.277171+00:00'
+    fetched_at: '2026-08-31T13:33:35.241835+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-08-30T11:51:55.176287+00:00'
+    fetched_at: '2026-08-31T13:34:24.951922+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-08-30T11:51:05.659581+00:00'
+    fetched_at: '2026-08-31T13:33:33.763957+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-08-30T11:44:21.357083+00:00'
+    fetched_at: '2026-08-31T13:24:34.957857+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-08-30T11:51:34.382079+00:00'
+    fetched_at: '2026-08-31T13:34:02.162605+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-08-30T11:44:25.119089+00:00'
+    fetched_at: '2026-08-31T13:24:37.900306+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-08-30T11:51:26.416761+00:00'
+    fetched_at: '2026-08-31T13:33:53.897956+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-08-30T11:47:13.904535+00:00'
+    fetched_at: '2026-08-31T13:27:22.605164+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-08-30T11:51:34.638308+00:00'
+    fetched_at: '2026-08-31T13:34:02.389065+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-08-30T11:45:05.182794+00:00'
+    fetched_at: '2026-08-31T13:25:18.121089+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-08-30T11:51:14.352355+00:00'
+    fetched_at: '2026-08-31T13:33:42.793109+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-08-30T11:51:27.308048+00:00'
+    fetched_at: '2026-08-31T13:33:54.791488+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-08-30T11:51:50.158140+00:00'
+    fetched_at: '2026-08-31T13:34:16.739873+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-08-30T11:52:19.481381+00:00'
+    fetched_at: '2026-08-31T13:34:49.252725+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
