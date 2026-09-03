@@ -39,7 +39,7 @@ TARGET_COUNTRIES = sorted(slugify(title) for title in COUNTRY_GEO)
 
 
 def fetch_url(url, timeout=20):
-    text, err = fetch_text(url, timeout=timeout)
+    text, err = fetch_text(url, timeout=timeout, user_agent=USER_AGENT)
     if err:
         raise RuntimeError(err)
     return text

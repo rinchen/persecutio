@@ -32,9 +32,11 @@ DATA = ROOT / "data"
 FETCHED = DATA / "fetched"
 SCRIPTS = Path(__file__).resolve().parent
 
+# Must start with Mozilla/5.0 — CloudFront/WAF on state.gov (and similar) returns
+# 403 for custom product-token-first agents like "PersecutioBot/1.0 (...)".
 USER_AGENT = (
-    "PersecutioBot/1.0 (+https://github.com/joeyism/persecutio; "
-    "Mozilla/5.0 compatible research fetcher)"
+    "Mozilla/5.0 (compatible; PersecutioBot/1.0; "
+    "+https://github.com/joeyism/persecutio)"
 )
 DEFAULT_MAX_BYTES = 20 * 1024 * 1024  # 20 MiB
 # Cap accumulated news articles per source (daily merges otherwise grow forever).

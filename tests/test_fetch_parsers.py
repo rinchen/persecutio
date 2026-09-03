@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from fetch_common import (  # noqa: E402
+    USER_AGENT,
     detect_countries,
     is_persecution_article,
     merge_articles,
@@ -24,6 +25,11 @@ from fetch_opendoors import (  # noqa: E402
 
 
 class TestFetchCommon(unittest.TestCase):
+    def test_user_agent_starts_with_mozilla(self):
+        # CloudFront/WAF on state.gov returns 403 for product-token-first UAs.
+        self.assertTrue(USER_AGENT.startswith("Mozilla/5.0"))
+        self.assertIn("PersecutioBot", USER_AGENT)
+
     def test_strip_html(self):
         self.assertEqual(strip_html("<p>Hello <b>world</b></p>"), "Hello world")
 
