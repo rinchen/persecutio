@@ -31,11 +31,19 @@ SLUG_MAP = {
     "democratic-republic-of-congo": "democratic-republic-of-the-congo",
 }
 
-# Cover the full known-country registry rather than a hand-maintained subset, so the
-# fetch list can never drift behind the countries the site actually publishes. The IRF
-# report covers ~199 countries, so all of these resolve; fetch_country_report degrades
-# to a non-fatal "partial" for any slug that 404s.
-TARGET_COUNTRIES = sorted(slugify(title) for title in COUNTRY_GEO)
+# IRF is the State Department's report on religious freedom *abroad*. There is no
+# United States country chapter (state.gov 404s). Keep US in COUNTRY_GEO for news /
+# map coverage, but do not treat its missing IRF page as a primary-fetch failure.
+IRF_EXCLUDED_SLUGS = frozenset({"united-states"})
+
+# Cover the known-country registry (minus IRF exclusions) so the fetch list cannot
+# drift behind countries the site publishes. Unexpected 404s still count as
+# partial/failed under the strict primary gate.
+TARGET_COUNTRIES = sorted(
+    slug
+    for slug in (slugify(title) for title in COUNTRY_GEO)
+    if slug not in IRF_EXCLUDED_SLUGS
+)
 
 
 def fetch_url(url, timeout=20):

@@ -15,7 +15,12 @@ from fetch_common import (  # noqa: E402
 )
 from rss_news_fetcher import parse_rss_items  # noqa: E402
 from fetch_owid import parse_csv  # noqa: E402
-from fetch_state_dept import extract_christian_mentions, strip_tags  # noqa: E402
+from fetch_state_dept import (  # noqa: E402
+    IRF_EXCLUDED_SLUGS,
+    TARGET_COUNTRIES,
+    extract_christian_mentions,
+    strip_tags,
+)
 from fetch_uscirf import normalize_name  # noqa: E402
 from fetch_opendoors import (  # noqa: E402
     normalize_wwl_country_name,
@@ -145,6 +150,12 @@ class TestOwidParse(unittest.TestCase):
 
 
 class TestStateDeptHelpers(unittest.TestCase):
+    def test_irf_excludes_united_states(self):
+        # IRF has no US chapter; fetching it 404s and trips the primary gate.
+        self.assertIn("united-states", IRF_EXCLUDED_SLUGS)
+        self.assertNotIn("united-states", TARGET_COUNTRIES)
+        self.assertIn("afghanistan", TARGET_COUNTRIES)
+
     def test_strip_tags(self):
         self.assertIn("Hello", strip_tags("<div>Hello &amp; world</div>"))
 
