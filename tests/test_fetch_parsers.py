@@ -17,8 +17,10 @@ from rss_news_fetcher import parse_rss_items  # noqa: E402
 from fetch_owid import parse_csv  # noqa: E402
 from fetch_state_dept import (  # noqa: E402
     IRF_EXCLUDED_SLUGS,
+    REPORT_YEAR,
     TARGET_COUNTRIES,
     extract_christian_mentions,
+    irf_candidate_urls,
     strip_tags,
 )
 from fetch_uscirf import normalize_name  # noqa: E402
@@ -155,6 +157,27 @@ class TestStateDeptHelpers(unittest.TestCase):
         self.assertIn("united-states", IRF_EXCLUDED_SLUGS)
         self.assertNotIn("united-states", TARGET_COUNTRIES)
         self.assertIn("afghanistan", TARGET_COUNTRIES)
+
+    def test_irf_candidate_urls_fallback_years(self):
+        # state.gov India 2023 self-301s; candidates must include the prior year.
+        urls = irf_candidate_urls("india")
+        years = [y for y, _ in urls]
+        self.assertEqual(years[0], REPORT_YEAR)
+        self.assertIn(REPORT_YEAR - 1, years)
+        self.assertTrue(
+            any(f"/{REPORT_YEAR}-report-on-international-religious-freedom/india/" in u for _, u in urls)
+        )
+        self.assertTrue(
+            any(
+                f"/{REPORT_YEAR - 1}-report-on-international-religious-freedom/india/" in u
+                for _, u in urls
+            )
+        )
+
+    def test_irf_candidate_urls_slug_map(self):
+        urls = [u for _, u in irf_candidate_urls("myanmar")]
+        self.assertTrue(any(u.endswith("/burma/") for u in urls))
+        self.assertTrue(any(u.endswith("/myanmar/") for u in urls))
 
     def test_strip_tags(self):
         self.assertIn("Hello", strip_tags("<div>Hello &amp; world</div>"))

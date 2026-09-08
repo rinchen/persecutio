@@ -21,9 +21,10 @@ STATE_DEPT = FETCHED / "state_dept"
 STATE_DEPT.mkdir(parents=True, exist_ok=True)
 
 REPORT_YEAR = 2023
-BASE_URL = f"https://www.state.gov/reports/{REPORT_YEAR}-report-on-international-religious-freedom"
-MAIN_URL = "https://www.state.gov/international-religious-freedom-reports/"
 REQUEST_DELAY = 1.5
+# When the current-year chapter is broken (e.g. WordPress self-301 on India 2023),
+# try prior IRF years before treating the country as failed.
+FALLBACK_YEAR_DEPTH = 2
 
 # Some country slugs differ between our project and state.gov URLs
 SLUG_MAP = {
@@ -44,6 +45,18 @@ TARGET_COUNTRIES = sorted(
     for slug in (slugify(title) for title in COUNTRY_GEO)
     if slug not in IRF_EXCLUDED_SLUGS
 )
+
+
+def irf_candidate_urls(slug: str) -> list[tuple[int, str]]:
+    """Return (year, url) pairs to try for a country, newest year first."""
+    state_slug = SLUG_MAP.get(slug, slug)
+    slugs = list(dict.fromkeys([state_slug, slug]))
+    out: list[tuple[int, str]] = []
+    for year in range(REPORT_YEAR, REPORT_YEAR - FALLBACK_YEAR_DEPTH, -1):
+        base = f"https://www.state.gov/reports/{year}-report-on-international-religious-freedom"
+        for s in slugs:
+            out.append((year, f"{base}/{s}/"))
+    return out
 
 
 def fetch_url(url, timeout=20):
@@ -221,7 +234,6 @@ def extract_christian_mentions(full_text):
 
 def fetch_country_report(slug, skip=False):
     """Fetch and parse a single country's IRF report."""
-    state_slug = SLUG_MAP.get(slug, slug)
     cache_path = STATE_DEPT / f"{slug}.json"
 
     if skip and cache_path.exists():
@@ -232,17 +244,16 @@ def fetch_country_report(slug, skip=False):
         except Exception as e:
             print(f"  warning: corrupt state dept cache {cache_path.name}: {type(e).__name__}: {e}")
 
-    urls_to_try = [
-        f"{BASE_URL}/{state_slug}/",
-        f"{BASE_URL}/{slug}/",
-    ]
-
     html = None
     final_url = None
-    for url in urls_to_try:
+    report_year = REPORT_YEAR
+    for year, url in irf_candidate_urls(slug):
         try:
             html = fetch_url(url)
             final_url = url
+            report_year = year
+            if year != REPORT_YEAR:
+                print(f"  note: using {year} IRF chapter (primary {REPORT_YEAR} unavailable)")
             break
         except Exception as e:
             print(f"  warning: state dept fetch {url}: {type(e).__name__}: {e}")
@@ -280,6 +291,7 @@ def fetch_country_report(slug, skip=False):
         "slug": slug,
         "has_report": True,
         "url": final_url,
+        "report_year": report_year,
         "title": title,
         "fetched_at": datetime.now(timezone.utc).isoformat(),
         "sections": {k: v[:5000] for k, v in sections.items()},
