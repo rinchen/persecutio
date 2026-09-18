@@ -5,8 +5,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from fetch_uscirf import (  # noqa: E402
+    RecommendationParser,
+    _lists_from_archive,
+    _lists_from_html,
+    normalize_name,
+)
 from fetch_common import (  # noqa: E402
     USER_AGENT,
+    _is_retryable_error,
     detect_countries,
     is_persecution_article,
     merge_articles,
@@ -23,7 +30,6 @@ from fetch_state_dept import (  # noqa: E402
     irf_candidate_urls,
     strip_tags,
 )
-from fetch_uscirf import normalize_name  # noqa: E402
 from fetch_opendoors import (  # noqa: E402
     normalize_wwl_country_name,
     parse_uk_wwl_rankings,
@@ -36,6 +42,11 @@ class TestFetchCommon(unittest.TestCase):
         # CloudFront/WAF on state.gov returns 403 for product-token-first UAs.
         self.assertTrue(USER_AGENT.startswith("Mozilla/5.0"))
         self.assertIn("PersecutioBot", USER_AGENT)
+
+    def test_403_is_retryable(self):
+        # GitHub Actions IPs sometimes get intermittent Cloudflare 403s (USCIRF).
+        self.assertTrue(_is_retryable_error("HTTPError: HTTP Error 403: Forbidden"))
+        self.assertFalse(_is_retryable_error("HTTPError: HTTP Error 404: Not Found"))
 
     def test_strip_html(self):
         self.assertEqual(strip_html("<p>Hello <b>world</b></p>"), "Hello world")
@@ -191,6 +202,37 @@ class TestStateDeptHelpers(unittest.TestCase):
 class TestUscirfHelpers(unittest.TestCase):
     def test_normalize_name(self):
         self.assertEqual(normalize_name("  Burma / Myanmar "), "burma / myanmar")
+
+    def test_recommendation_parser_extracts_cpc_and_swl(self):
+        html = """
+        <div class="view-content row">
+          <h3>Countries of Particular Concern</h3>
+          <a href="/countries/nigeria">Nigeria</a>
+          <a href="/countries/china">China</a>
+          <h3>Special Watch List</h3>
+          <a href="/countries/egypt">Egypt</a>
+          <a href="/countries/indonesia">Indonesia</a>
+        </div>
+        """
+        parser = RecommendationParser()
+        parser.feed(html)
+        self.assertEqual(parser.cpc_countries, ["Nigeria", "China"])
+        self.assertEqual(parser.swl_countries, ["Egypt", "Indonesia"])
+        cpc, swl = _lists_from_html(html)
+        self.assertEqual(cpc, ["nigeria", "china"])
+        self.assertEqual(swl, ["egypt", "indonesia"])
+
+    def test_lists_from_archive_snapshot(self):
+        lists = _lists_from_archive()
+        self.assertIsNotNone(lists)
+        cpc, swl = lists
+        self.assertIn("nigeria", cpc)
+        self.assertIn("egypt", swl)
+        self.assertGreaterEqual(len(cpc), 10)
+        self.assertGreaterEqual(len(swl), 5)
+
+    def test_lists_from_archive_missing_file(self):
+        self.assertIsNone(_lists_from_archive(Path("/nonexistent/recommendations.json")))
 
 
 class TestOpenDoorsWwlParsers(unittest.TestCase):

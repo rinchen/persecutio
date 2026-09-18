@@ -247,6 +247,8 @@ def _is_retryable_error(err: str | None) -> bool:
         "502",
         "504",
         "429",
+        # Intermittent Cloudflare/WAF blocks on GitHub Actions IPs (e.g. uscirf.gov).
+        "http error 403",
         "urlerror",
         "httperror: 5",
     )

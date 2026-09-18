@@ -23,6 +23,15 @@ FETCHED.mkdir(parents=True, exist_ok=True)
 
 BASE_URL = "https://www.uscirf.gov"
 RECOMMENDATIONS_URL = f"{BASE_URL}/countries/2026-recommendations"
+# Committed U.S. gov work snapshot — used when Cloudflare/WAF 403s the live page
+# on CI (data/fetched is gitignored, so runners have no prior-night cache).
+RECOMMENDATIONS_ARCHIVE = (
+    Path(__file__).resolve().parents[1]
+    / "data"
+    / "archives"
+    / "uscirf"
+    / "recommendations_2026.json"
+)
 
 COUNTRIES = [
     # Existing project countries that have USCIRF pages
@@ -205,28 +214,68 @@ class RecommendationParser(HTMLParser):
             self._link_text.append(data)
 
 
+def _lists_from_html(html: str) -> tuple[list[str], list[str]] | None:
+    parser = RecommendationParser()
+    parser.feed(html)
+    cpc = [normalize_name(c) for c in parser.cpc_countries]
+    swl = [normalize_name(s) for s in parser.swl_countries]
+    if not cpc and not swl:
+        return None
+    return cpc, swl
+
+
+def _lists_from_archive(path: Path = RECOMMENDATIONS_ARCHIVE) -> tuple[list[str], list[str]] | None:
+    """Load CPC/SWL names from the committed annual recommendations snapshot."""
+    if not path.is_file():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"  Warning: corrupt recommendations archive {path.name}: {type(e).__name__}: {e}")
+        return None
+    cpc_raw = data.get("cpc") or []
+    swl_raw = data.get("swl") or []
+    if not isinstance(cpc_raw, list) or not isinstance(swl_raw, list):
+        print(f"  Warning: recommendations archive {path.name} missing cpc/swl lists")
+        return None
+    cpc = [normalize_name(c) for c in cpc_raw if isinstance(c, str) and c.strip()]
+    swl = [normalize_name(s) for s in swl_raw if isinstance(s, str) and s.strip()]
+    if not cpc and not swl:
+        return None
+    return cpc, swl
+
+
 def fetch_recommendations():
-    """Return (cpc_names, swl_names) or None if the recommendations source is unavailable."""
+    """Return (cpc_names, swl_names) or None if the recommendations source is unavailable.
+
+    Prefer live HTML, then same-run/fetched cache, then the committed archive snapshot
+    so intermittent WAF 403s on CI do not abort the primary USCIRF fetch.
+    """
     cache_path = FETCHED / "recommendations_2026.json"
     try:
         html = fetch_url(RECOMMENDATIONS_URL)
         cache_path.write_text(html, encoding="utf-8")
+        parsed = _lists_from_html(html)
+        if parsed:
+            return parsed
+        print("  Warning: recommendations page yielded empty CPC/SWL lists")
     except Exception as e:
         print(f"  Warning: could not fetch recommendations page: {e}")
-        if cache_path.exists():
-            html = cache_path.read_text(encoding="utf-8")
-        else:
-            return None
 
-    parser = RecommendationParser()
-    parser.feed(html)
+    if cache_path.exists():
+        try:
+            parsed = _lists_from_html(cache_path.read_text(encoding="utf-8"))
+            if parsed:
+                print("  Using fetched recommendations cache")
+                return parsed
+        except Exception as e:
+            print(f"  Warning: could not read recommendations cache: {e}")
 
-    cpc = [normalize_name(c) for c in parser.cpc_countries]
-    swl = [normalize_name(s) for s in parser.swl_countries]
-    if not cpc and not swl:
-        print("  Warning: recommendations page yielded empty CPC/SWL lists")
-        return None
-    return cpc, swl
+    archived = _lists_from_archive()
+    if archived:
+        print(f"  Using archived recommendations snapshot ({RECOMMENDATIONS_ARCHIVE.name})")
+        return archived
+    return None
 
 
 def normalize_name(name):

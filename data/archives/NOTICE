@@ -57,7 +57,9 @@ gitignored and can be re-fetched with:
     python3 scripts/archive_extract.py
 
 Committed artifacts are NOTICE, manifest.json, per-country JSON extracts,
-extracted/countries.json, and the V-Dem FoRB CSV/JSON subset.
+extracted/countries.json, the V-Dem FoRB CSV/JSON subset, and the USCIRF
+annual CPC/SWL recommendations snapshot (recommendations_YYYY.json) used when
+the live recommendations page is unreachable from CI.
 
 Coverage notes
 --------------
