@@ -933,7 +933,7 @@ countries:
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
-    - &id009
+    - &id010
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
@@ -2129,6 +2129,7 @@ countries:
     - gcr2026
     - releaseintl
     - infochretienne
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -2426,6 +2427,7 @@ countries:
     - gcr2026
     - releaseintl
     - infochretienne
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -2447,6 +2449,10 @@ countries:
     - *id005
     - *id007
     - *id008
+    - &id009
+      title: Agenzia Fides - Pontifical Mission Societies News
+      url: https://www.fides.org/en
+      date: '2026'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 2
@@ -2497,6 +2503,18 @@ countries:
       date: '2026-09-03'
       description: ''
       source: Info Chrétienne
+    fides_articles: 1
+    fides_samples:
+    - title: The BRICS between “global governance” challenges and the growing role
+        of African countries
+      url: https://www.fides.org/en/news/78187-The_BRICS_between_global_governance_challenges_and_the_growing_role_of_African_countries
+      date: '2026-09-19'
+      description: by Cosimo Graziani New Delhi – The 18th BRICS summit was held in
+        New Delhi on Saturday, Sept. 13, and Sunday, Sept. 14, with India hosting
+        and chairing the group’s proceedings. The BRICS now brings together countries
+        that account for around 40% of global GDP and half of the world’s population.
+        The s
+      source: Agenzia Fides
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Indian government tolerates and perpetrates widespread harassment and violence
@@ -2535,6 +2553,16 @@ countries:
       exploit a woman, including for marriage.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: The BRICS between “global governance” challenges and the growing role
+        of African countries
+      url: https://www.fides.org/en/news/78187-The_BRICS_between_global_governance_challenges_and_the_growing_role_of_African_countries
+      date: '2026-09-19'
+      description: by Cosimo Graziani New Delhi – The 18th BRICS summit was held in
+        New Delhi on Saturday, Sept. 13, and Sunday, Sept. 14, with India hosting
+        and chairing the group’s proceedings. The BRICS now brings together countries
+        that account for around 40% of global GDP and half of the world’s population.
+        The s
+      source: Agenzia Fides
     - title: 'Loi anti-conversion en Inde : les chrétiens contraints de prouver leur
         foi'
       url: https://www.infochretienne.com/articles/loi-anti-conversion-en-inde-les-chretiens-contraints-de-prouver-leur-foi
@@ -3170,10 +3198,7 @@ countries:
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
-    - &id010
-      title: Agenzia Fides - Pontifical Mission Societies News
-      url: https://www.fides.org/en
-      date: '2026'
+    - *id009
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -3471,9 +3496,9 @@ countries:
           - 29.926778
     wiki_url: https://en.wikipedia.org/wiki/Iran
     wiki_extract: Iran, officially the Islamic Republic of Iran, and historically
-      known as Persia, is a country in West Asia. It borders Iraq to the west, Turkey,
-      Azerbaijan, and Armenia to the northwest, the Caspian Sea to the north, Turkmenistan
-      to the northeast, Afghanistan to the east, Pakistan to the southeast, and the
+      known as Persia, is a country in West Asia. It borders Iraq to the west; Turkey,
+      Azerbaijan, and Armenia to the northwest; the Caspian Sea to the north, Turkmenistan
+      to the northeast; Afghanistan to the east; Pakistan to the southeast; and the
       Gulf of Oman and the Persian Gulf to the south. With a population of over 92
       million, Iran ranks 17th globally in both geographic size and population. It
       is divided into five regions with 31 provinces. Tehran is the nation's capital
@@ -3521,7 +3546,7 @@ countries:
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
-    - *id009
+    - *id010
     - &id015
       title: GDELT Global Database of Events, Language, and Tone
       url: https://www.gdeltproject.org/
@@ -4666,7 +4691,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id010
+    - *id009
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -5235,7 +5260,7 @@ countries:
     - *id013
     - *id008
     - *id014
-    - *id010
+    - *id009
     - *id011
     - *id015
     - *id006
@@ -5319,7 +5344,7 @@ countries:
       date: '2026-08-17'
       description: window.option_df_18313 = {"outline":[],"backgroundColor":"#eef7fd","autoEnableOutline":"false","autoEnableThumbnail":"false","overwritePDFOutline":"false","direction":"1","pageSize":"0","source":"https:\/\/jubileecampaign.org\/wp-content\/uploads\/2026\/08\/HRC-63-Prisoners-of-Conscience.pdf","wpOpt
       source: Jubilee Campaign
-    gdelt_articles: 4
+    gdelt_articles: 2
     gdelt_samples:
     - title: New report says over 3000 Christians killed in Nigeria in just eight
         months in 2026
@@ -5334,17 +5359,10 @@ countries:
       date: '2026-08-25'
       description: ''
       source: GDELT
-    - title: 'Christians killings : Why US wont remove Nigeria CPC tag Congressman
-        Moore'
-      url: https://www.vanguardngr.com/2026/08/christians-killings-why-us-wont-remove-nigerias-cpc-tag-congressman-moore
-      date: '2026-08-21'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 4
+    gdelt_recent_articles: 2
     gdelt_sample_urls:
     - https://www.catholicworldreport.com/2026/09/08/new-report-says-over-3000-christians-killed-in-nigeria-in-just-eight-months-in-2026
     - https://www.nigerianeye.com/2026/08/el-rufai-persecuted-christians.html
-    - https://www.vanguardngr.com/2026/08/christians-killings-why-us-wont-remove-nigerias-cpc-tag-congressman-moore
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5423,18 +5441,6 @@ countries:
         Nigerian Newspaper
       url: https://www.nigerianeye.com/2026/08/el-rufai-persecuted-christians.html
       date: '2026-08-25'
-      description: ''
-      source: GDELT
-    - title: 'Christians killings : Why US wont remove Nigeria CPC tag Congressman
-        Moore'
-      url: https://www.vanguardngr.com/2026/08/christians-killings-why-us-wont-remove-nigerias-cpc-tag-congressman-moore
-      date: '2026-08-21'
-      description: ''
-      source: GDELT
-    - title: 27 Christians Killed as Jihadists Aim to  Wipe Out the Entirety of Christianity
-        in Nigeria
-      url: https://cbn.com/news/world/27-christians-killed-jihadists-aim-wipe-out-entirety-christianity-nigeria
-      date: '2026-08-20'
       description: ''
       source: GDELT
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
@@ -5815,7 +5821,6 @@ countries:
     - gcr2026
     - morningstarnews2026
     - icc2026
-    - vom2026
     - infochretienne
     - hrw
     - fides
@@ -5981,7 +5986,6 @@ countries:
     - gcr2026
     - morningstarnews2026
     - icc2026
-    - vom2026
     - infochretienne
     - hrw
     - fides
@@ -6007,10 +6011,9 @@ countries:
     - *id005
     - *id012
     - *id016
-    - *id013
     - *id008
-    - *id009
     - *id010
+    - *id009
     - *id011
     - *id006
     freedom_house_status: Partly Free
@@ -6083,17 +6086,6 @@ countries:
         him to confess to her murder. Saba Mehboob and her two daughters had been
         livin
       source: International Christian Concern
-    vom_articles: 1
-    vom_samples:
-    - title: Abducted Christian Girl Escapes, Testifies
-      url: https://www.persecution.com/stories/abducted-christian-girl-escapes-testifies
-      date: '2026-09-03'
-      description: A Christian girl who was assaulted and kidnapped has escaped from
-        her abductors. On March 25, 2026, a 14-year-old Christian Pakistani girl named
-        Abigal and her sister walked to school, unaware it was closed for a holiday.
-        The older sister's class was having a party, so she stayed. Abigal tried to
-        fi
-      source: Voice of the Martyrs
     infochretienne_articles: 2
     infochretienne_samples:
     - title: 'Pakistan : un adolescent chrétien battu après avoir défendu une fille
@@ -6263,15 +6255,6 @@ countries:
         ruling that says living in a marital relationship with a girl under 18 can
         constitute child abuse even if the minor consents. They described the decision '
       source: Morning Star News
-    - title: Abducted Christian Girl Escapes, Testifies
-      url: https://www.persecution.com/stories/abducted-christian-girl-escapes-testifies
-      date: '2026-09-03'
-      description: A Christian girl who was assaulted and kidnapped has escaped from
-        her abductors. On March 25, 2026, a 14-year-old Christian Pakistani girl named
-        Abigal and her sister walked to school, unaware it was closed for a holiday.
-        The older sister's class was having a party, so she stayed. Abigal tried to
-        fi
-      source: Voice of the Martyrs
     - title: Two Christians Arrested under Blasphemy Laws in Pakistan
       url: https://morningstarnews.org/2026/09/two-christians-arrested-under-blasphemy-laws-in-pakistan
       date: '2026-09-02'
@@ -8717,18 +8700,29 @@ countries:
       description: Christian Solidarity International (CSI) is calling for U.S. governmental
         intervention after Suleiman Khalil was arrested and detained Feb. 8, 2025.
       source: Catholic News Agency
-    gdelt_articles: 1
+    gdelt_articles: 2
     gdelt_samples:
-    - title: 'Christians killings : Why US wont remove Nigeria CPC tag Congressman
-        Moore'
-      url: https://www.vanguardngr.com/2026/08/christians-killings-why-us-wont-remove-nigerias-cpc-tag-congressman-moore
-      date: '2026-08-21'
+    - title: Baptist pastor killed in Myanmar ; US urged to take action
+      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+      date: '2026-09-20'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 1
+    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
+        in FY2026
+      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
+      date: '2026-09-05'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
     gdelt_sample_urls:
-    - https://www.vanguardngr.com/2026/08/christians-killings-why-us-wont-remove-nigerias-cpc-tag-congressman-moore
+    - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+    - https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
     recent_incidents:
+    - title: Baptist pastor killed in Myanmar ; US urged to take action
+      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+      date: '2026-09-20'
+      description: ''
+      source: GDELT
     - title: U.S. Refugee Policies Leave Persecuted Christians with Fewer Paths to
         Safety
       url: https://persecution.org/2026/09/18/u-s-refugee-policies-leave-persecuted-christians-with-fewer-paths-to-safety
@@ -8745,6 +8739,12 @@ countries:
       description: Christian Solidarity International (CSI) is calling for U.S. governmental
         intervention after Suleiman Khalil was arrested and detained Feb. 8, 2025.
       source: Catholic News Agency
+    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
+        in FY2026
+      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
+      date: '2026-09-05'
+      description: ''
+      source: GDELT
     - title: U.S. Lawmakers Urge Protection for Christian Girl in Pakistan
       url: https://morningstarnews.org/2026/08/u-s-lawmakers-urge-protection-for-christian-girl-in-pakistan
       date: '2026-08-28'
@@ -8753,12 +8753,6 @@ countries:
         steps to protect an 18-year-old Christian woman who her family says was abducted
         and forcibly converted to Islam. In an Aug. 20 letter sent to Pakistan Minist
       source: Morning Star News
-    - title: 'Christians killings : Why US wont remove Nigeria CPC tag Congressman
-        Moore'
-      url: https://www.vanguardngr.com/2026/08/christians-killings-why-us-wont-remove-nigerias-cpc-tag-congressman-moore
-      date: '2026-08-21'
-      description: ''
-      source: GDELT
     vdem_year: 2025.0
     vdem_freedom_of_religion: 0.953
     vdem_freedom_of_religion_ord: 3.0
@@ -11452,7 +11446,7 @@ countries:
     - *id004
     - *id005
     - *id016
-    - *id010
+    - *id009
     - *id015
     - *id006
     freedom_house_status: Not Free
@@ -11492,16 +11486,28 @@ countries:
         and care for families; they listen to them and offer comfort.” This is the
         testimony given to Fides by Bishop Bernardino Ne Ne, Coadjutor Bishop of Taungn
       source: Agenzia Fides
-    gdelt_articles: 1
+    gdelt_articles: 3
     gdelt_samples:
+    - title: Baptist pastor killed in Myanmar ; US urged to take action
+      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+      date: '2026-09-20'
+      description: ''
+      source: GDELT
+    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
+      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
+      date: '2026-09-20'
+      description: ''
+      source: GDELT
     - title: World News | Myanmar Junta Kills Baptist Pastor , Fellow Christian in
         Chin
       url: https://www.christianitydaily.com:443/news/myanmar-junta-kills-baptist-pastor-fellow-christian-in-chin.html
       date: '2026-09-03'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 1
+    gdelt_recent_articles: 3
     gdelt_sample_urls:
+    - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+    - https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
     - https://www.christianitydaily.com:443/news/myanmar-junta-kills-baptist-pastor-fellow-christian-in-chin.html
     uscirf_designation: CPC
     uscirf_key_findings:
@@ -11539,6 +11545,16 @@ countries:
       monks during the year. The regime also detained one Muslim leader.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Baptist pastor killed in Myanmar ; US urged to take action
+      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+      date: '2026-09-20'
+      description: ''
+      source: GDELT
+    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
+      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
+      date: '2026-09-20'
+      description: ''
+      source: GDELT
     - title: Military Kills Another Pastor in Myanmar
       url: https://persecution.org/2026/09/17/military-kills-another-pastor-in-myanmar
       date: '2026-09-17'
@@ -11969,6 +11985,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - vom2026
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -12130,6 +12147,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - vom2026
     - vdem2025forb
     sources:
     - *id001
@@ -12148,6 +12166,7 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id013
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -12156,6 +12175,17 @@ countries:
     opendoors_score: 68
     christian_population: 117069
     christian_percentage: 0.14
+    vom_articles: 1
+    vom_samples:
+    - title: 'TURKIYE: Evangelism Happens Through Relationships'
+      url: https://www.persecution.com/stories/turkiye-evangelism-happens-through-relationships
+      date: '2026-09-19'
+      description: 'Most Turks believe being Turkish and being Muslim are inseparably
+        intertwined. Pastor Ramazan Arkan was an adult before he ever met a Turkish
+        Christian. Then he became friends with a coworker who had left Islam to follow
+        Jesus. That friendship started Ramazan on a journey that eventually led to
+        the '
+      source: Voice of the Martyrs
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom remains under threat in Turkey, as authorities continue to
@@ -12194,6 +12224,16 @@ countries:
       back to Iran, later released them after they reportedly agreed to cease their
       home-based worship.
     state_dept_christian_mentions: true
+    recent_incidents:
+    - title: 'TURKIYE: Evangelism Happens Through Relationships'
+      url: https://www.persecution.com/stories/turkiye-evangelism-happens-through-relationships
+      date: '2026-09-19'
+      description: 'Most Turks believe being Turkish and being Muslim are inseparably
+        intertwined. Pastor Ramazan Arkan was an adult before he ever met a Turkish
+        Christian. Then he became friends with a coworker who had left Islam to follow
+        Jesus. That friendship started Ramazan on a journey that eventually led to
+        the '
+      source: Voice of the Martyrs
     archive_modern_excerpt: The very strong Religious nationalism in society puts
       a lot of pressure on Christians. Society’s nationalism leaves almost no space
       for Christians to make an alternative message heard. In Turkey, nationalism
@@ -12665,7 +12705,7 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id010
+    - *id009
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -14790,8 +14830,9 @@ countries:
     opendoors_score: 70
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
-      content="@GC_
+    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
+      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/c07feb74b0c9b660446d93aa147c040e"},"headline":"Christian
+      Persecution by the Numbers: 2026 Global Tre'
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
     state_dept_executive_summary: The Basic Law declares Islam to be the state religion
       and declares sharia is the basis for legislation. It protects the right of individuals
@@ -15344,7 +15385,6 @@ countries:
     - odwwl2026
     - owid2024
     - barnabas
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -15622,7 +15662,6 @@ countries:
     - odwwl2026
     - owid2024
     - barnabas
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -15637,7 +15676,6 @@ countries:
     - *id003
     - *id004
     - *id014
-    - *id010
     - *id006
     opendoors_ranking: 29
     opendoors_score: 72
@@ -15656,17 +15694,6 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    fides_articles: 1
-    fides_samples:
-    - title: 'AFRICA/DR CONGO - Bukavu mourns 27 victims of the fire; civil society:
-        “A humanitarian catastrophe”'
-      url: https://www.fides.org/en/news/78167-AFRICA_DR_CONGO_Bukavu_mourns_27_victims_of_the_fire_civil_society_A_humanitarian_catastrophe
-      date: '2026-09-14'
-      description: Kinshasa – The funerals of the 27 victims of the fire that devastated
-        a school on September 10 in the Cimpunda district of Bukavu, capital of South
-        Kivu Province in eastern Democratic Republic of the Congo , were held today,
-        September 14 . Six of the victims were adults, while the others were minors
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/democratic-republic-of-the-congo/
     state_dept_executive_summary: The constitution provides for freedom of religion
       and prohibits discrimination based on religious belief. The law regulates the
@@ -15695,15 +15722,6 @@ countries:
       in Kasindi, North Kivu Province, killing 16 and injuring at least 62.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: 'AFRICA/DR CONGO - Bukavu mourns 27 victims of the fire; civil society:
-        “A humanitarian catastrophe”'
-      url: https://www.fides.org/en/news/78167-AFRICA_DR_CONGO_Bukavu_mourns_27_victims_of_the_fire_civil_society_A_humanitarian_catastrophe
-      date: '2026-09-14'
-      description: Kinshasa – The funerals of the 27 victims of the fire that devastated
-        a school on September 10 in the Cimpunda district of Bukavu, capital of South
-        Kivu Province in eastern Democratic Republic of the Congo , were held today,
-        September 14 . Six of the victims were adults, while the others were minors
-      source: Agenzia Fides
     - title: At Least 72 Christians Massacred by Islamists Across Ituri, D. R. Congo
       url: https://www.barnabasaid.org/us/news/at-least-72-christians-massacred-by-islamists-across-ituri-d-r-congo
       date: ''
@@ -16508,7 +16526,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id009
+    - *id010
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -17342,7 +17360,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id010
+    - *id009
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -19354,7 +19372,7 @@ countries:
     - *id002
     - *id004
     - *id018
-    - *id009
+    - *id010
     - *id017
     - *id006
     freedom_house_status: Not Free
@@ -20726,7 +20744,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id009
+    - *id010
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -21829,7 +21847,7 @@ sources:
   uscirf2025tajikistan: *id070
   morningstarnews2026: *id012
   infochretienne: *id008
-  fides: *id010
+  fides: *id009
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -21862,7 +21880,7 @@ sources:
     title: UN Special Rapporteur on Freedom of Religion or Belief
     url: https://www.ohchr.org/en/special-procedures/sr-religion-or-belief
     date: '2026'
-  hrw: *id009
+  hrw: *id010
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
@@ -22427,152 +22445,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-09-19 10:50 UTC
+  generated_at: 2026-09-20 11:12 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-09-19T10:49:38.146262+00:00'
+    fetched_at: '2026-09-20T11:11:59.524735+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-09-19T10:49:02.720646+00:00'
+    fetched_at: '2026-09-20T11:11:31.840785+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-09-19T10:49:40.580146+00:00'
+    fetched_at: '2026-09-20T11:12:01.610085+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-09-19T10:49:26.790137+00:00'
+    fetched_at: '2026-09-20T11:11:51.529632+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-09-19T10:49:29.913748+00:00'
+    fetched_at: '2026-09-20T11:11:53.569061+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-09-19T10:49:09.091817+00:00'
+    fetched_at: '2026-09-20T11:11:36.557990+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-09-19T10:49:12.835533+00:00'
+    fetched_at: '2026-09-20T11:11:41.269265+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-09-19T10:49:34.779329+00:00'
+    fetched_at: '2026-09-20T11:11:57.347071+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-09-19T10:49:33.964066+00:00'
+    fetched_at: '2026-09-20T11:11:57.038589+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-09-19T10:49:03.397616+00:00'
+    fetched_at: '2026-09-20T11:11:32.409389+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-09-19T10:49:37.603878+00:00'
+    fetched_at: '2026-09-20T11:11:59.263314+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-09-19T10:49:05.796534+00:00'
+    fetched_at: '2026-09-20T11:11:34.275875+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-09-19T10:44:09.989516+00:00'
+    fetched_at: '2026-09-20T11:06:51.345441+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-09-19T10:49:01.453103+00:00'
+    fetched_at: '2026-09-20T11:11:30.760181+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-09-19T10:48:49.456203+00:00'
-    message: 3 of 4 queries failed
+    fetched_at: '2026-09-20T11:11:20.091045+00:00'
+    message: 2 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-09-19T10:49:23.681831+00:00'
+    fetched_at: '2026-09-20T11:11:51.089082+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-09-19T10:49:39.244248+00:00'
+    fetched_at: '2026-09-20T11:12:00.584452+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-09-19T10:49:04.484047+00:00'
+    fetched_at: '2026-09-20T11:11:33.260213+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-09-19T10:49:14.997830+00:00'
+    fetched_at: '2026-09-20T11:11:44.125734+00:00'
     message: null
   - name: ippforb
-    status: ok
-    fetched_at: '2026-09-19T10:49:47.263267+00:00'
-    message: null
+    status: failed
+    fetched_at: '2026-09-20T11:12:15.715259+00:00'
+    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-09-19T10:49:45.844338+00:00'
+    fetched_at: '2026-09-20T11:12:07.428874+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-09-19T10:49:07.791768+00:00'
+    fetched_at: '2026-09-20T11:11:35.855434+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-09-19T10:48:52.646012+00:00'
+    fetched_at: '2026-09-20T11:11:22.324463+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-09-19T10:49:47.888447+00:00'
+    fetched_at: '2026-09-20T11:12:15.980232+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-09-19T10:48:50.834585+00:00'
+    fetched_at: '2026-09-20T11:11:21.107082+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-09-19T10:44:08.646120+00:00'
+    fetched_at: '2026-09-20T11:06:50.286432+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-09-19T10:49:20.029670+00:00'
+    fetched_at: '2026-09-20T11:11:47.835742+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-09-19T10:44:12.704218+00:00'
+    fetched_at: '2026-09-20T11:06:53.269796+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-09-19T10:49:10.494518+00:00'
+    fetched_at: '2026-09-20T11:11:39.620715+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-09-19T10:46:55.635895+00:00'
+    fetched_at: '2026-09-20T11:09:19.900641+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-09-19T10:49:23.212574+00:00'
+    fetched_at: '2026-09-20T11:11:50.809606+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-09-19T10:45:01.301382+00:00'
+    fetched_at: '2026-09-20T11:07:33.198782+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-09-19T10:48:59.744631+00:00'
+    fetched_at: '2026-09-20T11:11:29.409359+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-09-19T10:49:11.197004+00:00'
+    fetched_at: '2026-09-20T11:11:40.519092+00:00'
     message: null
   - name: wea
     status: failed
-    fetched_at: '2026-09-19T10:49:42.690318+00:00'
+    fetched_at: '2026-09-20T11:12:02.769723+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 500: Internal Server Error'
   - name: wikipedia
     status: ok
-    fetched_at: '2026-09-19T10:50:12.414301+00:00'
+    fetched_at: '2026-09-20T11:12:40.382845+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
