@@ -935,7 +935,7 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id014
+    - &id019
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
       date: '2026'
@@ -2486,8 +2486,14 @@ countries:
       date: '2026-09-03'
       description: ''
       source: Info Chrétienne
-    barnabas_articles: 1
+    barnabas_articles: 2
     barnabas_samples:
+    - title: Authorities Urged to Halt Rise in Violence Against Christians in West
+        Bengal, India
+      url: https://www.barnabasaid.org/us/news/authorities-urged-to-halt-rise-in-violence-against-christians-in-west-be
+      date: ''
+      description: ''
+      source: Barnabas Aid
     - title: Extremists Attack Christians at Worship Services in West Bengal, India
       url: https://www.barnabasaid.org/us/news/extremists-attack-christians-at-worship-services-in-west-bengal-india
       date: ''
@@ -2561,6 +2567,12 @@ countries:
         in China. The post Police stand aside as Indian pastor beaten appeared first
         on Release International .
       source: Release International
+    - title: Authorities Urged to Halt Rise in Violence Against Christians in West
+        Bengal, India
+      url: https://www.barnabasaid.org/us/news/authorities-urged-to-halt-rise-in-violence-against-christians-in-west-be
+      date: ''
+      description: ''
+      source: Barnabas Aid
     - title: Extremists Attack Christians at Worship Services in West Bengal, India
       url: https://www.barnabasaid.org/us/news/extremists-attack-christians-at-worship-services-in-west-bengal-india
       date: ''
@@ -3281,7 +3293,6 @@ countries:
     - gcr2026
     - mec
     - releaseintl
-    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -3461,7 +3472,6 @@ countries:
     - gcr2026
     - mec
     - releaseintl
-    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -3481,15 +3491,11 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id018
+    - &id016
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
     - *id007
-    - &id017
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -3543,23 +3549,6 @@ countries:
         The post Release International partner speaks on Iran appeared first on Release
         International .
       source: Release International
-    gdelt_articles: 2
-    gdelt_samples:
-    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
-        ,  The Chosen  Christmas Special
-      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
-    - title: Iran kills , imprisons dozens of Christians as persecution rises
-      url: https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
-      date: '2026-08-31'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 2
-    gdelt_sample_urls:
-    - https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-    - https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Iran are particularly severe. The government
@@ -3596,17 +3585,6 @@ countries:
       propaganda.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
-        ,  The Chosen  Christmas Special
-      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
-    - title: Iran kills , imprisons dozens of Christians as persecution rises
-      url: https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
-      date: '2026-08-31'
-      description: ''
-      source: GDELT
     - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
       url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
       date: '2026-07-13'
@@ -4594,7 +4572,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id016
+    - &id015
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
@@ -5869,7 +5847,7 @@ countries:
     - *id011
     - *id013
     - *id008
-    - &id019
+    - &id017
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
@@ -6566,7 +6544,6 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -6668,7 +6645,6 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -6688,7 +6664,6 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -6704,18 +6679,6 @@ countries:
       face high levels of persecution globally, roughly one in seven worldwide and
       one in five in Africa." } }, { "@type": "Question", "name": "What are the main
       causes of modern Christian persecution?", "acc'
-    fides_articles: 1
-    fides_samples:
-    - title: AFRICA/SOMALIA - Humanitarian crisis compounded by political and institutional
-        instability
-      url: https://www.fides.org/en/news/78191-AFRICA_SOMALIA_Humanitarian_crisis_compounded_by_political_and_institutional_instability
-      date: '2026-09-21'
-      description: Mogadishu – “With great concern, I am following the humanitarian
-        crisis unfolding in certain areas of Somalia, where acts of violence and extreme
-        weather events are exacerbating the already precarious living conditions of
-        the population, particularly of women and children. I hope for the generous
-        in
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/somalia/
     state_dept_executive_summary: The provisional federal constitution (PFC) provides
       for the right of individuals to practice their religion, makes Islam the state
@@ -6743,17 +6706,6 @@ countries:
       police, and troops from contributing countries of the African Union Transition
       Mission in Somalia (ATMIS).
     state_dept_christian_mentions: true
-    recent_incidents:
-    - title: AFRICA/SOMALIA - Humanitarian crisis compounded by political and institutional
-        instability
-      url: https://www.fides.org/en/news/78191-AFRICA_SOMALIA_Humanitarian_crisis_compounded_by_political_and_institutional_instability
-      date: '2026-09-21'
-      description: Mogadishu – “With great concern, I am following the humanitarian
-        crisis unfolding in certain areas of Somalia, where acts of violence and extreme
-        weather events are exacerbating the already precarious living conditions of
-        the population, particularly of women and children. I hope for the generous
-        in
-      source: Agenzia Fides
     archive_modern_excerpt: Somalia is one of the most hostile nations for Christians
       and Christianity. Christians in the country find themselves in an exceedingly
       precarious situation, marked by multiple layers of threats. Despite suffering
@@ -6940,8 +6892,13 @@ countries:
       roughly one in seven worldwide and one in five in Africa." } }, { "@type": "Question",
       "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answ'
-    infochretienne_articles: 1
+    infochretienne_articles: 2
     infochretienne_samples:
+    - title: L’arrestation d’un pasteur kurde ravive les craintes dans la Syrie post-Assad
+      url: https://www.infochretienne.com/articles/larrestation-dun-pasteur-kurde-ravive-les-craintes-dans-la-syrie-post-assad
+      date: '2026-09-25'
+      description: ''
+      source: Info Chrétienne
     - title: 'Syrie : explosion d’une bombe devant la cathédrale Saint-Georges de
         Hama'
       url: https://www.infochretienne.com/articles/syrie-explosion-dune-bombe-devant-la-cathedrale-saint-georges-de-hama
@@ -6984,6 +6941,11 @@ countries:
       destruction of hospitals, homes, and other civilian infrastructure.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: L’arrestation d’un pasteur kurde ravive les craintes dans la Syrie post-Assad
+      url: https://www.infochretienne.com/articles/larrestation-dun-pasteur-kurde-ravive-les-craintes-dans-la-syrie-post-assad
+      date: '2026-09-25'
+      description: ''
+      source: Info Chrétienne
     - title: 'Syrie : explosion d’une bombe devant la cathédrale Saint-Georges de
         Hama'
       url: https://www.infochretienne.com/articles/syrie-explosion-dune-bombe-devant-la-cathedrale-saint-georges-de-hama
@@ -7197,7 +7159,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - &id015
+    - &id014
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
@@ -8537,9 +8499,12 @@ countries:
     - *id004
     - *id005
     - *id013
+    - *id014
     - *id015
-    - *id016
-    - *id017
+    - &id018
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id006
     freedom_house_status: Free
     freedom_house_pr: 2
@@ -8585,23 +8550,16 @@ countries:
         into immigration detention since January 2025, according to the Catholic Legal
         Immigration Network.
       source: Catholic News Agency
-    gdelt_articles: 2
+    gdelt_articles: 1
     gdelt_samples:
     - title: Baptist pastor killed in Myanmar ; US urged to take action
       url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
       date: '2026-09-20'
       description: ''
       source: GDELT
-    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
-        in FY2026
-      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
-      date: '2026-09-05'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 2
+    gdelt_recent_articles: 1
     gdelt_sample_urls:
     - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
-    - https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
     recent_incidents:
     - title: Survey finds immigration enforcement activity at schools, courthouses
       url: https://www.ewtnnews.com/world/us/survey-finds-immigration-enforcement-activity-at-schools-courthouses
@@ -8634,12 +8592,6 @@ countries:
         some claims are initially reviewed. A new report from World Relief and Open
         Doors
       source: International Christian Concern
-    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
-        in FY2026
-      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
-      date: '2026-09-05'
-      description: ''
-      source: GDELT
     vdem_year: 2025.0
     vdem_freedom_of_religion: 0.953
     vdem_freedom_of_religion_ord: 3.0
@@ -9559,7 +9511,7 @@ countries:
     - *id004
     - *id005
     - *id011
-    - *id018
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10105,7 +10057,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id015
+    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -10369,7 +10321,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id019
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10570,8 +10522,8 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id015
-    - *id017
+    - *id014
+    - *id018
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -11432,7 +11384,7 @@ countries:
     - *id013
     - *id008
     - *id009
-    - *id017
+    - *id018
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11842,7 +11794,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id014
+    - *id019
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11858,8 +11810,16 @@ countries:
       of persecution globally, roughly one in seven worldwide and one in five in Africa."
       } }, { "@type": "Question", "name": "What are the main causes of modern Christian
       persecution?", "acceptedAnswer": '
-    fides_articles: 1
+    fides_articles: 2
     fides_samples:
+    - title: AFRICA/SOUTH SUDAN — Kiir dissolves government ahead of December 22 elections
+      url: https://www.fides.org/en/news/78211-AFRICA_SOUTH_SUDAN_Kiir_dissolves_government_ahead_of_December_22_elections
+      date: '2026-09-24'
+      description: 'Juba — South Sudan is heading toward elections scheduled for December
+        22 after President Salva Kiir, on September 22, dissolved the Transitional
+        Government of National Unity and appointed an interim executive. The move
+        brings to an end the power-sharing arrangement established under the Revitalized '
+      source: Agenzia Fides
     - title: 'AFRICA/SOUTH SUDAN - International Day of Peace. Bishop of Tombura-Yambio:
         “Our wounds belong to our history; peace is the legacy we must leave to our
         children”'
@@ -11906,6 +11866,14 @@ countries:
       others.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: AFRICA/SOUTH SUDAN — Kiir dissolves government ahead of December 22 elections
+      url: https://www.fides.org/en/news/78211-AFRICA_SOUTH_SUDAN_Kiir_dissolves_government_ahead_of_December_22_elections
+      date: '2026-09-24'
+      description: 'Juba — South Sudan is heading toward elections scheduled for December
+        22 after President Salva Kiir, on September 22, dissolved the Transitional
+        Government of National Unity and appointed an interim executive. The move
+        brings to an end the power-sharing arrangement established under the Revitalized '
+      source: Agenzia Fides
     - title: 'AFRICA/SOUTH SUDAN - International Day of Peace. Bishop of Tombura-Yambio:
         “Our wounds belong to our history; peace is the legacy we must leave to our
         children”'
@@ -12167,7 +12135,7 @@ countries:
     - *id003
     - *id004
     - *id012
-    - *id019
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -14167,6 +14135,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - hrw
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -14308,6 +14277,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - hrw
     - vdem2025forb
     sources:
     - *id001
@@ -14323,6 +14293,7 @@ countries:
     - *id003
     - *id004
     - *id005
+    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -14338,6 +14309,17 @@ countries:
       roughly one in seven worldwide and one in five in Africa." } }, { "@type": "Question",
       "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "t'
+    hrw_articles: 1
+    hrw_samples:
+    - title: Niger Rejects Key Rights Recommendations at UN Review
+      url: https://www.hrw.org/news/2026/09/25/niger-rejects-key-rights-recommendations-at-un-review
+      date: '2026-09-25'
+      description: Niger has rejected key recommendations raised by United Nations
+        member countries during its Universal Periodic Review (UPR) earlier this year,
+        including calls to address arbitrary detention, discrimination against lesbian,
+        gay, bisexual and transgender (LGBT) people, and accountability for serious
+        h
+      source: Human Rights Watch
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/niger/
     state_dept_executive_summary: The country has been under military rule since the
       July overthrow of President Mohamed Bazoum’s government by the Council for the
@@ -14364,6 +14346,16 @@ countries:
       during which they reiterated calls for peaceful coexistence between their respective
       communities and within the country’s population in general.
     state_dept_christian_mentions: true
+    recent_incidents:
+    - title: Niger Rejects Key Rights Recommendations at UN Review
+      url: https://www.hrw.org/news/2026/09/25/niger-rejects-key-rights-recommendations-at-un-review
+      date: '2026-09-25'
+      description: Niger has rejected key recommendations raised by United Nations
+        member countries during its Universal Periodic Review (UPR) earlier this year,
+        including calls to address arbitrary detention, discrimination against lesbian,
+        gay, bisexual and transgender (LGBT) people, and accountability for serious
+        h
+      source: Human Rights Watch
     archive_modern_excerpt: The jihadist group al-Sunnah wa Jama'ah (ASWJ) has made
       life increasingly difficult for Christians in Niger. In areas under their influence,
       Christian gatherings are severely restricted, and communal worship often occurs
@@ -14823,8 +14815,9 @@ countries:
     opendoors_score: null
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
-      content="@GC_
+    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
+      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/d72fc33d5b8961c2ed9b72cb197413c9"},"headline":"Christian
+      Persecution by the Numbers: 2026 Global Tre'
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
     state_dept_executive_summary: The Basic Law declares Islam to be the state religion
       and declares sharia is the basis for legislation. It protects the right of individuals
@@ -14912,6 +14905,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - cna
     - fides
     - vdem2025forb
   pew_slug: ''
@@ -15055,6 +15049,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - cna
     - fides
     - vdem2025forb
     sources:
@@ -15070,7 +15065,8 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id014
+    - *id015
+    - *id019
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -15079,6 +15075,15 @@ countries:
     opendoors_score: null
     christian_population: 73227447
     christian_percentage: 61.58
+    cna_articles: 1
+    cna_samples:
+    - title: Catholic Relief Services aid convoy comes under attack in Ethiopia
+      url: https://www.ewtnnews.com/world/africa/catholic-relief-services-aid-convoy-comes-under-attack-in-ethiopia
+      date: '2026-09-25'
+      description: Catholic relief convoy attacked in Ethiopia, Kazakhstan abolishes
+        death penalty, South African archbishop condemns killing of nine women, and
+        more in this week’s Catholic world news roundup.
+      source: Catholic News Agency
     fides_articles: 1
     fides_samples:
     - title: AFRICA/ETHIOPIA - New rebel alliance reignites the struggle over the
@@ -15120,6 +15125,13 @@ countries:
       outskirts of Addis Ababa in March.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Catholic Relief Services aid convoy comes under attack in Ethiopia
+      url: https://www.ewtnnews.com/world/africa/catholic-relief-services-aid-convoy-comes-under-attack-in-ethiopia
+      date: '2026-09-25'
+      description: Catholic relief convoy attacked in Ethiopia, Kazakhstan abolishes
+        death penalty, South African archbishop condemns killing of nine women, and
+        more in this week’s Catholic world news roundup.
+      source: Catholic News Agency
     - title: AFRICA/ETHIOPIA - New rebel alliance reignites the struggle over the
         Red Sea
       url: https://www.fides.org/en/news/78204-AFRICA_ETHIOPIA_New_rebel_alliance_reignites_the_struggle_over_the_Red_Sea
@@ -15699,16 +15711,10 @@ countries:
     opendoors_score: null
     christian_population: 92401422
     christian_percentage: 96.26
-    barnabas_articles: 2
+    barnabas_articles: 1
     barnabas_samples:
     - title: At Least 72 Christians Massacred by Islamists Across Ituri, D. R. Congo
       url: https://www.barnabasaid.org/us/news/at-least-72-christians-massacred-by-islamists-across-ituri-d-r-congo
-      date: ''
-      description: ''
-      source: Barnabas Aid
-    - title: At Least 130 Christians Killed in Three Weeks of Violence Across Ituri,
-        D. R. Congo
-      url: https://www.barnabasaid.org/us/news/sixty-three-d-r-congo-christians-slaughtered-in-week-of-violence
       date: ''
       description: ''
       source: Barnabas Aid
@@ -15742,12 +15748,6 @@ countries:
     recent_incidents:
     - title: At Least 72 Christians Massacred by Islamists Across Ituri, D. R. Congo
       url: https://www.barnabasaid.org/us/news/at-least-72-christians-massacred-by-islamists-across-ituri-d-r-congo
-      date: ''
-      description: ''
-      source: Barnabas Aid
-    - title: At Least 130 Christians Killed in Three Weeks of Violence Across Ituri,
-        D. R. Congo
-      url: https://www.barnabasaid.org/us/news/sixty-three-d-r-congo-christians-slaughtered-in-week-of-violence
       date: ''
       description: ''
       source: Barnabas Aid
@@ -16174,7 +16174,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id014
+    - *id019
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -16303,8 +16303,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - hrw
-    - fides
+    - forum18
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -16552,8 +16551,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - hrw
-    - fides
+    - forum18
     - vdem2025forb
     sources:
     - *id001
@@ -16572,8 +16570,10 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id015
-    - *id014
+    - &id020
+      title: Forum 18 - Freedom of Religion or Belief News
+      url: https://www.forum18.org/
+      date: '2026'
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -16582,28 +16582,18 @@ countries:
     opendoors_score: null
     christian_population: 3758462
     christian_percentage: 19.29
-    hrw_articles: 1
-    hrw_samples:
-    - title: Satire Can be a Crime in Kazakhstan
-      url: https://www.hrw.org/news/2026/09/17/satire-can-be-a-crime-in-kazakhstan
-      date: '2026-09-17'
-      description: 'Click to expand Image Downtown Astana, Kazakhstan, February 28,
-        2023. © 2023 Olivier Douliery/AP Photo Satirist and political commentator
-        Azamat Omarov, who had been in pre-trial detention in Kazakhstan since mid-April
-        on “inciting discord” charges, struck a plea bargain with the prosecution,
-        under '
-      source: Human Rights Watch
-    fides_articles: 1
-    fides_samples:
-    - title: 'ASIA/KAZAKHSTAN - New Constitution confirms ban on death penalty: “Human
-        dignity is inviolable”'
-      url: https://www.fides.org/en/news/78190-ASIA_KAZAKHSTAN_New_Constitution_confirms_ban_on_death_penalty_Human_dignity_is_inviolable
-      date: '2026-09-21'
-      description: Astana – Kazakhstan is a country where no one is put to death and
-        where the inalienable dignity of every human being is upheld. This is enshrined
-        in Kazakhstan’s new Constitution, approved by referendum on 15 March 2026
-        and which entered into force on 1 July 2026. The transition to the new constitut
-      source: Agenzia Fides
+    forum18_articles: 1
+    forum18_samples:
+    - title: "KAZAKHSTAN: Hidden camera, \"special measures\", \"expert analyses\"\
+        , trial â\x80\x93 jail to follow?"
+      url: https://www.forum18.org/archive.php?article_id=3071
+      date: ''
+      description: Zhakipbek Ormanov and 8 other Muslims are on criminal trial in
+        Taldykorgan accused of membership of the banned Muslim missionary movement
+        Tabligh Jamaat. They face up to two years' imprisonment. The NSC secret police
+        hid a camera in Ormanov's home and recorded conversations, including on religion.
+        N
+      source: Forum 18
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Kazakhstan are poor for all religious communities,
@@ -16639,24 +16629,16 @@ countries:
       was necessary to make laws regulating religious activity more stringent.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: 'ASIA/KAZAKHSTAN - New Constitution confirms ban on death penalty: “Human
-        dignity is inviolable”'
-      url: https://www.fides.org/en/news/78190-ASIA_KAZAKHSTAN_New_Constitution_confirms_ban_on_death_penalty_Human_dignity_is_inviolable
-      date: '2026-09-21'
-      description: Astana – Kazakhstan is a country where no one is put to death and
-        where the inalienable dignity of every human being is upheld. This is enshrined
-        in Kazakhstan’s new Constitution, approved by referendum on 15 March 2026
-        and which entered into force on 1 July 2026. The transition to the new constitut
-      source: Agenzia Fides
-    - title: Satire Can be a Crime in Kazakhstan
-      url: https://www.hrw.org/news/2026/09/17/satire-can-be-a-crime-in-kazakhstan
-      date: '2026-09-17'
-      description: 'Click to expand Image Downtown Astana, Kazakhstan, February 28,
-        2023. © 2023 Olivier Douliery/AP Photo Satirist and political commentator
-        Azamat Omarov, who had been in pre-trial detention in Kazakhstan since mid-April
-        on “inciting discord” charges, struck a plea bargain with the prosecution,
-        under '
-      source: Human Rights Watch
+    - title: "KAZAKHSTAN: Hidden camera, \"special measures\", \"expert analyses\"\
+        , trial â\x80\x93 jail to follow?"
+      url: https://www.forum18.org/archive.php?article_id=3071
+      date: ''
+      description: Zhakipbek Ormanov and 8 other Muslims are on criminal trial in
+        Taldykorgan accused of membership of the banned Muslim missionary movement
+        Tabligh Jamaat. They face up to two years' imprisonment. The NSC secret police
+        hid a camera in Ormanov's home and recorded conversations, including on religion.
+        N
+      source: Forum 18
     archive_modern_excerpt: Religious freedom is restricted by legislation dating
       back to September 2011 and the Kazakhstan government is constantly working at
       increasing its control over the whole of society, which means increased surveillance,
@@ -17796,10 +17778,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id020
-      title: Forum 18 - Freedom of Religion or Belief News
-      url: https://www.forum18.org/
-      date: '2026'
+    - *id020
     - *id012
     - *id006
     freedom_house_status: Not Free
@@ -19413,7 +19392,7 @@ countries:
     - *id002
     - *id004
     - *id020
-    - *id019
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -19822,8 +19801,8 @@ countries:
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - *id016
-    - *id014
+    - *id015
+    - *id019
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -21795,14 +21774,22 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id014
+    - *id019
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
     christian_population: 6472748
     christian_percentage: 60.5
-    fides_articles: 1
+    fides_articles: 2
     fides_samples:
+    - title: AFRICA/SOUTH SUDAN — Kiir dissolves government ahead of December 22 elections
+      url: https://www.fides.org/en/news/78211-AFRICA_SOUTH_SUDAN_Kiir_dissolves_government_ahead_of_December_22_elections
+      date: '2026-09-24'
+      description: 'Juba — South Sudan is heading toward elections scheduled for December
+        22 after President Salva Kiir, on September 22, dissolved the Transitional
+        Government of National Unity and appointed an interim executive. The move
+        brings to an end the power-sharing arrangement established under the Revitalized '
+      source: Agenzia Fides
     - title: 'AFRICA/SOUTH SUDAN - International Day of Peace. Bishop of Tombura-Yambio:
         “Our wounds belong to our history; peace is the legacy we must leave to our
         children”'
@@ -21842,6 +21829,14 @@ countries:
       resulting in more than 50 deaths.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: AFRICA/SOUTH SUDAN — Kiir dissolves government ahead of December 22 elections
+      url: https://www.fides.org/en/news/78211-AFRICA_SOUTH_SUDAN_Kiir_dissolves_government_ahead_of_December_22_elections
+      date: '2026-09-24'
+      description: 'Juba — South Sudan is heading toward elections scheduled for December
+        22 after President Salva Kiir, on September 22, dissolved the Transitional
+        Government of National Unity and appointed an interim executive. The move
+        brings to an end the power-sharing arrangement established under the Revitalized '
+      source: Agenzia Fides
     - title: 'AFRICA/SOUTH SUDAN - International Day of Peace. Bishop of Tombura-Yambio:
         “Our wounds belong to our history; peace is the legacy we must leave to our
         children”'
@@ -21926,7 +21921,7 @@ sources:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id017
+  gdelt2025: *id018
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id065
@@ -21939,7 +21934,7 @@ sources:
   uscirf2025tajikistan: *id072
   morningstarnews2026: *id011
   infochretienne: *id008
-  fides: *id014
+  fides: *id019
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -21959,7 +21954,7 @@ sources:
     date: '2026'
   icc2026: *id013
   forum18: *id020
-  mec: *id018
+  mec: *id016
   bitterwinter: *id073
   releaseintl: *id007
   vom2026: *id012
@@ -21972,15 +21967,15 @@ sources:
     title: UN Special Rapporteur on Freedom of Religion or Belief
     url: https://www.ohchr.org/en/special-procedures/sr-religion-or-belief
     date: '2026'
-  hrw: *id015
+  hrw: *id014
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id009
   csi: *id075
-  cna: *id016
-  hrwf: *id019
+  cna: *id015
+  hrwf: *id017
   adf:
     title: ADF International
     url: https://adfinternational.org/
@@ -22537,152 +22532,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-09-24 11:38 UTC
+  generated_at: 2026-09-25 11:45 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-09-24T11:37:44.029627+00:00'
+    fetched_at: '2026-09-25T11:44:43.074476+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-09-24T11:37:13.463820+00:00'
+    fetched_at: '2026-09-25T11:44:11.922670+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-09-24T11:37:46.361390+00:00'
+    fetched_at: '2026-09-25T11:44:45.062403+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-09-24T11:37:35.284541+00:00'
+    fetched_at: '2026-09-25T11:44:34.348311+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-09-24T11:37:37.517914+00:00'
+    fetched_at: '2026-09-25T11:44:36.873436+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-09-24T11:37:20.799836+00:00'
+    fetched_at: '2026-09-25T11:44:18.596746+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-09-24T11:37:24.310382+00:00'
+    fetched_at: '2026-09-25T11:44:22.248176+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-09-24T11:37:41.629287+00:00'
+    fetched_at: '2026-09-25T11:44:40.962355+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-09-24T11:37:41.139361+00:00'
+    fetched_at: '2026-09-25T11:44:40.456231+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-09-24T11:37:16.937273+00:00'
+    fetched_at: '2026-09-25T11:44:13.595027+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-09-24T11:37:43.690845+00:00'
+    fetched_at: '2026-09-25T11:44:42.795829+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-09-24T11:37:18.798463+00:00'
+    fetched_at: '2026-09-25T11:44:15.723187+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-09-24T11:32:18.909378+00:00'
+    fetched_at: '2026-09-25T11:39:32.564845+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-09-24T11:37:12.148919+00:00'
+    fetched_at: '2026-09-25T11:44:08.858559+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-09-24T11:36:59.729934+00:00'
-    message: 1 of 4 queries failed
+    fetched_at: '2026-09-25T11:43:57.670974+00:00'
+    message: 3 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-09-24T11:37:34.597148+00:00'
+    fetched_at: '2026-09-25T11:44:31.838169+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-09-24T11:37:45.142037+00:00'
+    fetched_at: '2026-09-25T11:44:43.971327+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-09-24T11:37:17.961888+00:00'
+    fetched_at: '2026-09-25T11:44:14.552568+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-09-24T11:37:27.164981+00:00'
+    fetched_at: '2026-09-25T11:44:24.298359+00:00'
     message: null
   - name: ippforb
     status: failed
-    fetched_at: '2026-09-24T11:38:05.987071+00:00'
+    fetched_at: '2026-09-25T11:45:05.190207+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-09-24T11:37:56.485725+00:00'
+    fetched_at: '2026-09-25T11:44:56.485484+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-09-24T11:37:19.990911+00:00'
+    fetched_at: '2026-09-25T11:44:17.847389+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-09-24T11:37:03.475360+00:00'
+    fetched_at: '2026-09-25T11:44:00.529382+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-09-24T11:38:06.855614+00:00'
+    fetched_at: '2026-09-25T11:45:05.660337+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-09-24T11:37:01.046957+00:00'
+    fetched_at: '2026-09-25T11:43:58.907893+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-09-24T11:32:17.709242+00:00'
+    fetched_at: '2026-09-25T11:39:31.468455+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-09-24T11:37:31.389455+00:00'
+    fetched_at: '2026-09-25T11:44:28.511071+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-09-24T11:32:21.699319+00:00'
+    fetched_at: '2026-09-25T11:39:34.911117+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-09-24T11:37:22.291294+00:00'
+    fetched_at: '2026-09-25T11:44:19.765553+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-09-24T11:35:02.517959+00:00'
+    fetched_at: '2026-09-25T11:42:01.660565+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-09-24T11:37:34.213355+00:00'
+    fetched_at: '2026-09-25T11:44:31.454392+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-09-24T11:33:08.707564+00:00'
+    fetched_at: '2026-09-25T11:40:13.472565+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-09-24T11:37:10.613691+00:00'
+    fetched_at: '2026-09-25T11:44:07.119395+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-09-24T11:37:23.060759+00:00'
+    fetched_at: '2026-09-25T11:44:20.864635+00:00'
     message: null
   - name: wea
     status: failed
-    fetched_at: '2026-09-24T11:37:47.921578+00:00'
+    fetched_at: '2026-09-25T11:44:46.188348+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 500: Internal Server Error'
   - name: wikipedia
     status: ok
-    fetched_at: '2026-09-24T11:38:31.941680+00:00'
+    fetched_at: '2026-09-25T11:45:29.958861+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
