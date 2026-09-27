@@ -935,7 +935,7 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id019
+    - &id018
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
       date: '2026'
@@ -3516,7 +3516,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id017
+    - &id016
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
@@ -4243,7 +4243,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - cna
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -4610,7 +4609,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - cna
     - vdem2025forb
     sources:
     - *id001
@@ -4629,10 +4627,6 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id016
-      title: Catholic News Agency
-      url: https://www.catholicnewsagency.com/
-      date: '2026'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -4641,15 +4635,6 @@ countries:
     opendoors_score: null
     christian_population: 113070626
     christian_percentage: 89.17
-    cna_articles: 1
-    cna_samples:
-    - title: Priest’s murder in Mexico may be warning to sow fear, priest says
-      url: https://www.ewtnnews.com/world/americas/priest-s-murder-in-mexico-may-be-warning-to-sow-fear-priest-says
-      date: '2026-09-22'
-      description: The Sept. 15 murder of Father Román de la Cruz Hernández was likely
-        perpetrated by organized crime and is not an isolated incident but forms part
-        of a pattern of fear and intimidation.
-      source: Catholic News Agency
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mexico/
     state_dept_executive_summary: The constitution provides all persons the right
       to religious freedom, including the right to engage in religious ceremonies
@@ -4677,14 +4662,6 @@ countries:
       (NGOs) said municipal and state officials frequently sided with local leaders
       at the expense of members of minority religious groups.
     state_dept_christian_mentions: true
-    recent_incidents:
-    - title: Priest’s murder in Mexico may be warning to sow fear, priest says
-      url: https://www.ewtnnews.com/world/americas/priest-s-murder-in-mexico-may-be-warning-to-sow-fear-priest-says
-      date: '2026-09-22'
-      description: The Sept. 15 murder of Father Román de la Cruz Hernández was likely
-        perpetrated by organized crime and is not an isolated incident but forms part
-        of a pattern of fear and intimidation.
-      source: Catholic News Agency
     archive_modern_excerpt: The increased presence of several criminal groups and
       their struggle for territorial control has caused Christians and church leaders
       living in affected areas to face the constant risk of being targeted. This occurs
@@ -5965,7 +5942,7 @@ countries:
     - *id012
     - *id007
     - *id009
-    - &id018
+    - &id017
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
@@ -6887,6 +6864,7 @@ countries:
     - owid2024
     - gcr2026
     - infochretienne
+    - hrw
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -6967,6 +6945,7 @@ countries:
     - owid2024
     - gcr2026
     - infochretienne
+    - hrw
     - vdem2025forb
     sources:
     - *id001
@@ -6987,6 +6966,10 @@ countries:
     - *id004
     - *id005
     - *id009
+    - &id015
+      title: Human Rights Watch
+      url: https://www.hrw.org/
+      date: '2026'
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -7015,6 +6998,16 @@ countries:
       date: '2026-09-16'
       description: ''
       source: Info Chrétienne
+    hrw_articles: 1
+    hrw_samples:
+    - title: 'Syria: Reconstruction Deals Lack Critical Rights Framework'
+      url: https://www.hrw.org/news/2026/09/27/syria-reconstruction-deals-lack-critical-rights-framework
+      date: '2026-09-27'
+      description: Click to expand Image A destroyed school in Ghadfa village, Idlib
+        countryside, Syria. © 2026 Ali Haj Suleiman/Human Rights Watch (Amman) – The
+        Syrian transitional government is signing billions of dollars in reconstruction
+        deals without a human rights framework that would ensure that rebuilding resp
+      source: Human Rights Watch
     uscirf_designation: CPC
     uscirf_key_findings:
     - Although President Bashar al-Assad’s government fell in December 2024, ending
@@ -7051,6 +7044,14 @@ countries:
       destruction of hospitals, homes, and other civilian infrastructure.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: 'Syria: Reconstruction Deals Lack Critical Rights Framework'
+      url: https://www.hrw.org/news/2026/09/27/syria-reconstruction-deals-lack-critical-rights-framework
+      date: '2026-09-27'
+      description: Click to expand Image A destroyed school in Ghadfa village, Idlib
+        countryside, Syria. © 2026 Ali Haj Suleiman/Human Rights Watch (Amman) – The
+        Syrian transitional government is signing billions of dollars in reconstruction
+        deals without a human rights framework that would ensure that rebuilding resp
+      source: Human Rights Watch
     - title: L’arrestation d’un pasteur kurde ravive les craintes dans la Syrie post-Assad
       url: https://www.infochretienne.com/articles/larrestation-dun-pasteur-kurde-ravive-les-craintes-dans-la-syrie-post-assad
       date: '2026-09-25'
@@ -7269,10 +7270,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - &id015
-      title: Human Rights Watch
-      url: https://www.hrw.org/
-      date: '2026'
+    - *id015
     - *id010
     - *id006
     freedom_house_status: Not Free
@@ -8610,7 +8608,10 @@ countries:
     - *id005
     - *id007
     - *id015
-    - *id016
+    - &id019
+      title: Catholic News Agency
+      url: https://www.catholicnewsagency.com/
+      date: '2026'
     - *id014
     - *id006
     freedom_house_status: Free
@@ -9649,7 +9650,7 @@ countries:
     - *id004
     - *id005
     - *id012
-    - *id017
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10459,7 +10460,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id018
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10679,29 +10680,16 @@ countries:
         Temporary Protected Status (TPS) for Haiti in late July 2026, US authorities
         have dep
       source: Human Rights Watch
-    gdelt_articles: 3
+    gdelt_articles: 1
     gdelt_samples:
     - title: 'Haiti : 47 Killed , 50 Kidnapped in Gang Attack on Church'
       url: https://pjmedia.com/catherinesalgado/2026/08/30/haiti-47-killed-50-kidnapped-in-gang-attack-on-church-n4956706
       date: '2026-08-30'
       description: ''
       source: GDELT
-    - title: Christians Targeted in Haiti Massacre , at Least 47 People Killed , Church
-        Burned
-      url: https://cbn.com/news/world/christians-targeted-haiti-massacre-least-47-people-killed-church-burned
-      date: '2026-08-27'
-      description: ''
-      source: GDELT
-    - title: Gang Attack On Haiti Church Leaves 47 Dead , Dozens Kidnapped
-      url: https://www.worthynews.com/117070-gang-attack-on-haiti-church-leaves-47-dead-dozens-kidnapped
-      date: '2026-08-27'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 3
+    gdelt_recent_articles: 1
     gdelt_sample_urls:
     - https://pjmedia.com/catherinesalgado/2026/08/30/haiti-47-killed-50-kidnapped-in-gang-attack-on-church-n4956706
-    - https://cbn.com/news/world/christians-targeted-haiti-massacre-least-47-people-killed-church-burned
-    - https://www.worthynews.com/117070-gang-attack-on-haiti-church-leaves-47-dead-dozens-kidnapped
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
     state_dept_executive_summary: The 1987 constitution provides for the free exercise
       of all religions. Any religious group seeking official recognition must obtain
@@ -10742,17 +10730,6 @@ countries:
     - title: 'Haiti : 47 Killed , 50 Kidnapped in Gang Attack on Church'
       url: https://pjmedia.com/catherinesalgado/2026/08/30/haiti-47-killed-50-kidnapped-in-gang-attack-on-church-n4956706
       date: '2026-08-30'
-      description: ''
-      source: GDELT
-    - title: Christians Targeted in Haiti Massacre , at Least 47 People Killed , Church
-        Burned
-      url: https://cbn.com/news/world/christians-targeted-haiti-massacre-least-47-people-killed-church-burned
-      date: '2026-08-27'
-      description: ''
-      source: GDELT
-    - title: Gang Attack On Haiti Church Leaves 47 Dead , Dozens Kidnapped
-      url: https://www.worthynews.com/117070-gang-attack-on-haiti-church-leaves-47-dead-dozens-kidnapped
-      date: '2026-08-27'
       description: ''
       source: GDELT
     archive_modern_excerpt: The 1987 constitution provides for the free exercise of
@@ -11934,7 +11911,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id019
+    - *id018
     - *id014
     - *id006
     freedom_house_status: Not Free
@@ -12230,15 +12207,16 @@ countries:
           - - 26.117042
             - 41.826905
     wiki_url: https://en.wikipedia.org/wiki/Turkey
-    wiki_extract: Turkey, officially the Republic of Türkiye, is a country mainly
-      located in Anatolia in West Asia, with a smaller part called East Thrace in
-      Southeast Europe. It borders the Black Sea to the north; Georgia, Armenia, Azerbaijan,
-      and Iran to the east; Iraq, Syria, and the Mediterranean Sea to the south; and
-      the Aegean Sea, Greece, and Bulgaria to the west. Turkey is home to over 86
-      million people; most are ethnic Turks, while Kurds are the largest ethnic minority.
-      Officially a secular state, Turkey has a Muslim-majority population. Ankara
-      is Turkey's capital and second-largest city. Istanbul is its largest city and
-      economic center. Other major cities include İzmir, Bursa, and Antalya.
+    wiki_extract: Turkey, officially the Republic of Türkiye and often referred to
+      in English as Türkiye, is a country mainly located in Anatolia in West Asia,
+      with a smaller part called East Thrace in Southeast Europe. It borders the Black
+      Sea to the north; Georgia, Armenia, Azerbaijan, and Iran to the east; Iraq,
+      Syria, and the Mediterranean Sea to the south; and the Aegean Sea, Greece, and
+      Bulgaria to the west. Turkey is home to over 86 million people; most are ethnic
+      Turks, while Kurds are the largest ethnic minority. Officially a secular state,
+      Turkey has a Muslim-majority population. Ankara is Turkey's capital and second-largest
+      city. Istanbul is its largest city and economic center. Other major cities include
+      İzmir, Bursa, and Antalya.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -12269,7 +12247,7 @@ countries:
     - *id003
     - *id004
     - *id013
-    - *id018
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -12278,8 +12256,17 @@ countries:
     opendoors_score: null
     christian_population: 117069
     christian_percentage: 0.14
-    vom_articles: 1
+    vom_articles: 2
     vom_samples:
+    - title: 'TURKIYE: Walking by Faith Doesn’t Mean You Don’t Get Scared'
+      url: https://www.persecution.com/stories/turkiye-walking-by-faith-doesnt-mean-you-dont-get-scared
+      date: '2026-09-26'
+      description: For our Turkish brothers and sisters, church is not just a weekly
+        service. It's a family where they come together, united in Christ, deepening
+        relationships and encouraging each other. The church is also the training
+        ground where new believers are discipled and equipped to live faithfully for
+        Christ
+      source: Voice of the Martyrs
     - title: 'TURKIYE: Evangelism Happens Through Relationships'
       url: https://www.persecution.com/stories/turkiye-evangelism-happens-through-relationships
       date: '2026-09-19'
@@ -12338,6 +12325,15 @@ countries:
       home-based worship.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: 'TURKIYE: Walking by Faith Doesn’t Mean You Don’t Get Scared'
+      url: https://www.persecution.com/stories/turkiye-walking-by-faith-doesnt-mean-you-dont-get-scared
+      date: '2026-09-26'
+      description: For our Turkish brothers and sisters, church is not just a weekly
+        service. It's a family where they come together, united in Christ, deepening
+        relationships and encouraging each other. The church is also the training
+        ground where new believers are discipled and equipped to live faithfully for
+        Christ
+      source: Voice of the Martyrs
     - title: 'TÜRKIYE: Over 60 rights groups condemn crackdown on LGBTI+ civil society'
       url: https://hrwf.eu/turkiye-over-60-rights-groups-condemn-crackdown-on-lgbti-civil-society
       date: '2026-09-23'
@@ -15216,8 +15212,8 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id016
     - *id019
+    - *id018
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -16349,7 +16345,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id019
+    - *id018
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -19535,10 +19531,10 @@ countries:
       and North Asia. It is the largest country in the world, spanning eleven time
       zones and sharing land borders with fourteen countries. With a population of
       over 140 million, Russia is the most populous country in Europe and the ninth-most
-      populous in the world. It is a highly urbanised country, with sixteen of its
-      urban areas having more than 1 million inhabitants. Moscow, the most populous
-      metropolitan area in Europe, is the capital and largest city of Russia, while
-      Saint Petersburg is its second-largest city and a major cultural centre.
+      populous in the world. It is a highly urbanised country, with three-fourths
+      of its population living in urban areas. Moscow, the most populous metropolitan
+      area in Europe, is the capital and largest city of Russia, while Saint Petersburg
+      is its second-largest city and a major cultural centre.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -19567,7 +19563,7 @@ countries:
     - *id002
     - *id004
     - *id020
-    - *id018
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -19976,8 +19972,8 @@ countries:
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - *id016
     - *id019
+    - *id018
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -21973,7 +21969,7 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id019
+    - *id018
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -22111,7 +22107,7 @@ sources:
   uscirf2025tajikistan: *id072
   morningstarnews2026: *id012
   infochretienne: *id009
-  fides: *id019
+  fides: *id018
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -22131,7 +22127,7 @@ sources:
     date: '2026'
   icc2026: *id007
   forum18: *id020
-  mec: *id017
+  mec: *id016
   bitterwinter: *id073
   releaseintl: *id008
   vom2026: *id013
@@ -22151,8 +22147,8 @@ sources:
     date: '2026'
   barnabas: *id010
   csi: *id075
-  cna: *id016
-  hrwf: *id018
+  cna: *id019
+  hrwf: *id017
   adf:
     title: ADF International
     url: https://adfinternational.org/
@@ -22709,152 +22705,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-09-26 11:17 UTC
+  generated_at: 2026-09-27 11:56 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-09-26T11:17:13.909514+00:00'
+    fetched_at: '2026-09-27T11:55:37.013251+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-09-26T11:16:45.715778+00:00'
+    fetched_at: '2026-09-27T11:55:08.354138+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-09-26T11:17:17.357170+00:00'
+    fetched_at: '2026-09-27T11:55:39.094431+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-09-26T11:17:05.536271+00:00'
+    fetched_at: '2026-09-27T11:55:29.577916+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-09-26T11:17:08.019770+00:00'
+    fetched_at: '2026-09-27T11:55:31.717464+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-09-26T11:16:51.538881+00:00'
+    fetched_at: '2026-09-27T11:55:15.229658+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-09-26T11:16:55.258802+00:00'
+    fetched_at: '2026-09-27T11:55:18.069042+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-09-26T11:17:11.827212+00:00'
+    fetched_at: '2026-09-27T11:55:35.541395+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-09-26T11:17:11.308500+00:00'
+    fetched_at: '2026-09-27T11:55:35.127684+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-09-26T11:16:47.663523+00:00'
+    fetched_at: '2026-09-27T11:55:10.410799+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-09-26T11:17:13.536571+00:00'
+    fetched_at: '2026-09-27T11:55:36.809623+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-09-26T11:16:49.245138+00:00'
+    fetched_at: '2026-09-27T11:55:12.641620+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-09-26T11:12:19.773104+00:00'
+    fetched_at: '2026-09-27T11:50:53.781403+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-09-26T11:16:44.709891+00:00'
+    fetched_at: '2026-09-27T11:55:07.156255+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-09-26T11:16:33.178259+00:00'
+    fetched_at: '2026-09-27T11:54:56.799466+00:00'
     message: 1 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-09-26T11:17:05.014524+00:00'
+    fetched_at: '2026-09-27T11:55:29.135347+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-09-26T11:17:16.325475+00:00'
+    fetched_at: '2026-09-27T11:55:38.102157+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-09-26T11:16:48.394701+00:00'
+    fetched_at: '2026-09-27T11:55:11.407799+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-09-26T11:16:57.196486+00:00'
+    fetched_at: '2026-09-27T11:55:21.731344+00:00'
     message: null
   - name: ippforb
-    status: failed
-    fetched_at: '2026-09-26T11:17:29.190154+00:00'
-    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
+    status: ok
+    fetched_at: '2026-09-27T11:55:43.984641+00:00'
+    message: null
   - name: jubilee
     status: ok
-    fetched_at: '2026-09-26T11:17:20.240040+00:00'
+    fetched_at: '2026-09-27T11:55:42.963069+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-09-26T11:16:50.906189+00:00'
+    fetched_at: '2026-09-27T11:55:14.361347+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-09-26T11:16:35.760204+00:00'
+    fetched_at: '2026-09-27T11:54:58.775098+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-09-26T11:17:29.676961+00:00'
+    fetched_at: '2026-09-27T11:55:44.356497+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-09-26T11:16:34.299848+00:00'
+    fetched_at: '2026-09-27T11:54:57.722955+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-09-26T11:12:18.827152+00:00'
+    fetched_at: '2026-09-27T11:50:52.512113+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-09-26T11:17:01.894924+00:00'
+    fetched_at: '2026-09-27T11:55:25.845812+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-09-26T11:12:22.256465+00:00'
+    fetched_at: '2026-09-27T11:50:55.228030+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-09-26T11:16:52.758322+00:00'
+    fetched_at: '2026-09-27T11:55:16.222638+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-09-26T11:14:56.312232+00:00'
+    fetched_at: '2026-09-27T11:53:22.290864+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-09-26T11:17:04.759807+00:00'
+    fetched_at: '2026-09-27T11:55:28.786872+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-09-26T11:13:01.455312+00:00'
+    fetched_at: '2026-09-27T11:51:33.010484+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-09-26T11:16:42.939774+00:00'
+    fetched_at: '2026-09-27T11:55:05.016144+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-09-26T11:16:53.887175+00:00'
+    fetched_at: '2026-09-27T11:55:17.272239+00:00'
     message: null
   - name: wea
     status: failed
-    fetched_at: '2026-09-26T11:17:18.271449+00:00'
+    fetched_at: '2026-09-27T11:55:39.777500+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 500: Internal Server Error'
   - name: wikipedia
     status: ok
-    fetched_at: '2026-09-26T11:17:55.273968+00:00'
+    fetched_at: '2026-09-27T11:56:08.724252+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
