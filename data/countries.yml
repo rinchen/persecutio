@@ -371,7 +371,6 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
-    - fides
     - jubilee
     - vdem2025forb
   pew_slug: china
@@ -886,7 +885,6 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
-    - fides
     - jubilee
     - vdem2025forb
     sources:
@@ -934,10 +932,6 @@ countries:
     - &id010
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
-      date: '2026'
-    - &id018
-      title: Agenzia Fides - Pontifical Mission Societies News
-      url: https://www.fides.org/en
       date: '2026'
     - &id011
       title: Jubilee Campaign
@@ -1031,17 +1025,6 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    fides_articles: 1
-    fides_samples:
-    - title: 100 YEARS SINCE THE ORDINATION OF THE FIRST SIX CHINESE BISHOPS/1 - Odorico
-        Cheng Hede and the Diocese of Puchi
-      url: https://www.fides.org/en/news/78195-100_YEARS_SINCE_THE_ORDINATION_OF_THE_FIRST_SIX_CHINESE_BISHOPS_1_Odorico_Cheng_Hede_and_the_Diocese_of_Puchi
-      date: '2026-09-22'
-      description: One hundred years after the ordination of the first six Chinese
-        bishops of the modern era , Fides News Agency is dedicating a series of documentary
-        profiles on these Successors of the Apostles and the dioceses entrusted to
-        them. Their ordination marked a crucial moment in the history of the Catholic
-      source: Agenzia Fides
     jubilee_articles: 1
     jubilee_samples:
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
@@ -1113,15 +1096,6 @@ countries:
         believers phones and ordering young Christians to replace hymns with songs
         praising the Chinese Communist Party, according to multiple sources. The o
       source: ChinaAid
-    - title: 100 YEARS SINCE THE ORDINATION OF THE FIRST SIX CHINESE BISHOPS/1 - Odorico
-        Cheng Hede and the Diocese of Puchi
-      url: https://www.fides.org/en/news/78195-100_YEARS_SINCE_THE_ORDINATION_OF_THE_FIRST_SIX_CHINESE_BISHOPS_1_Odorico_Cheng_Hede_and_the_Diocese_of_Puchi
-      date: '2026-09-22'
-      description: One hundred years after the ordination of the first six Chinese
-        bishops of the modern era , Fides News Agency is dedicating a series of documentary
-        profiles on these Successors of the Apostles and the dioceses entrusted to
-        them. Their ordination marked a crucial moment in the history of the Catholic
-      source: Agenzia Fides
     - title: Chinese authorities reportedly detain pastors, workers from Beijing Church
       url: https://chinaaid.org/news/chinese-authorities-reportedly-detain-pastors-workers-from-beijing-church/?utm_source=rss&utm_medium=rss&utm_campaign=chinese-authorities-reportedly-detain-pastors-workers-from-beijing-church
       date: '2026-09-21'
@@ -2101,6 +2075,7 @@ countries:
     - vom2026
     - infochretienne
     - barnabas
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -2401,6 +2376,7 @@ countries:
     - vom2026
     - infochretienne
     - barnabas
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -2428,6 +2404,10 @@ countries:
       date: '2026'
     - *id009
     - *id010
+    - &id017
+      title: Agenzia Fides - Pontifical Mission Societies News
+      url: https://www.fides.org/en
+      date: '2026'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 2
@@ -2513,6 +2493,16 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    fides_articles: 1
+    fides_samples:
+    - title: ASIA/INDIA - In Mumbai, the Church’s mission at the heart of the megalopolis
+      url: https://www.fides.org/en/news/78217-ASIA_INDIA_In_Mumbai_the_Church_s_mission_at_the_heart_of_the_megalopolis
+      date: '2026-09-28'
+      description: 'by Paolo Affatato Mumbai – A Church called to carry out its mission
+        in the heart of one of India’s largest, most dynamic and complex megalopolises:
+        this is the daily reality of the Archdiocese of Bombay, a territory where
+        major financial and commercial centres and Bollywood’s entertainment industry '
+      source: Agenzia Fides
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Indian government tolerates and perpetrates widespread harassment and violence
@@ -2551,6 +2541,14 @@ countries:
       exploit a woman, including for marriage.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: ASIA/INDIA - In Mumbai, the Church’s mission at the heart of the megalopolis
+      url: https://www.fides.org/en/news/78217-ASIA_INDIA_In_Mumbai_the_Church_s_mission_at_the_heart_of_the_megalopolis
+      date: '2026-09-28'
+      description: 'by Paolo Affatato Mumbai – A Church called to carry out its mission
+        in the heart of one of India’s largest, most dynamic and complex megalopolises:
+        this is the daily reality of the Archdiocese of Bombay, a territory where
+        major financial and commercial centres and Bollywood’s entertainment industry '
+      source: Agenzia Fides
     - title: Seven Letters from the Persecuted Church
       url: https://persecution.org/2026/09/25/seven-letters-from-the-persecuted-church
       date: '2026-09-25'
@@ -3578,22 +3576,15 @@ countries:
         The post Release International partner speaks on Iran appeared first on Release
         International .
       source: Release International
-    gdelt_articles: 2
+    gdelt_articles: 1
     gdelt_samples:
-    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
-        ,  The Chosen  Christmas Special
-      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
     - title: Iran kills , imprisons dozens of Christians as persecution rises
       url: https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
       date: '2026-08-31'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 2
+    gdelt_recent_articles: 1
     gdelt_sample_urls:
-    - https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
     - https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
     uscirf_designation: CPC
     uscirf_key_findings:
@@ -3631,12 +3622,6 @@ countries:
       propaganda.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
-        ,  The Chosen  Christmas Special
-      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
     - title: Iran kills , imprisons dozens of Christians as persecution rises
       url: https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
       date: '2026-08-31'
@@ -5281,16 +5266,22 @@ countries:
       date: '2026-08-17'
       description: window.option_df_18313 = {"outline":[],"backgroundColor":"#eef7fd","autoEnableOutline":"false","autoEnableThumbnail":"false","overwritePDFOutline":"false","direction":"1","pageSize":"0","source":"https:\/\/jubileecampaign.org\/wp-content\/uploads\/2026\/08\/HRC-63-Prisoners-of-Conscience.pdf","wpOpt
       source: Jubilee Campaign
-    gdelt_articles: 1
+    gdelt_articles: 2
     gdelt_samples:
+    - title: 'At least one Christian killed every 86 minutes in Nigeria : report'
+      url: https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
+      date: '2026-09-27'
+      description: ''
+      source: GDELT
     - title: New report says over 3000 Christians killed in Nigeria in just eight
         months in 2026
       url: https://www.catholicworldreport.com/2026/09/08/new-report-says-over-3000-christians-killed-in-nigeria-in-just-eight-months-in-2026
       date: '2026-09-08'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 1
+    gdelt_recent_articles: 2
     gdelt_sample_urls:
+    - https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
     - https://www.catholicworldreport.com/2026/09/08/new-report-says-over-3000-christians-killed-in-nigeria-in-just-eight-months-in-2026
     uscirf_designation: CPC
     uscirf_key_findings:
@@ -5327,6 +5318,11 @@ countries:
       the head and two individuals sustaining fractures in their legs.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: 'At least one Christian killed every 86 minutes in Nigeria : report'
+      url: https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
+      date: '2026-09-27'
+      description: ''
+      source: GDELT
     - title: More Christians Killed in Previously Attacked Area in Nigeria
       url: https://morningstarnews.org/2026/09/more-christians-killed-in-previously-attacked-area-in-nigeria
       date: '2026-09-25'
@@ -5942,7 +5938,7 @@ countries:
     - *id012
     - *id007
     - *id009
-    - &id017
+    - &id018
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
@@ -6465,7 +6461,7 @@ countries:
       country in West Asia that occupies the bulk of the Arabian Peninsula. Covering
       a land area of approximately 2,149,690 km2 (830,000 sq mi), it is the fifth-largest
       country in Asia and the twelfth-largest in the world. It is bordered by the
-      Red Sea to the west, Jordan, Iraq, and Kuwait to the north, the Arabian Gulf,
+      Red Sea to the west, Jordan, Iraq, and Kuwait to the north, the Persian Gulf,
       Bahrain, Qatar, and the United Arab Emirates to the east, Oman to the southeast,
       and Yemen to the south. The Gulf of Aqaba in the northwest separates it from
       Egypt and Israel. Riyadh is the capital and largest city, while other major
@@ -8667,23 +8663,16 @@ countries:
         into immigration detention since January 2025, according to the Catholic Legal
         Immigration Network.
       source: Catholic News Agency
-    gdelt_articles: 2
+    gdelt_articles: 1
     gdelt_samples:
     - title: Baptist pastor killed in Myanmar ; US urged to take action
       url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
       date: '2026-09-20'
       description: ''
       source: GDELT
-    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
-        in FY2026
-      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
-      date: '2026-09-05'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 2
+    gdelt_recent_articles: 1
     gdelt_sample_urls:
     - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
-    - https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
     recent_incidents:
     - title: Array of Experts Back Lawsuit Challenging Trump’s ICC Sanctions Regime
       url: https://www.hrw.org/news/2026/09/25/array-of-experts-back-lawsuit-challenging-trumps-icc-sanctions-regime
@@ -8725,12 +8714,6 @@ countries:
         some claims are initially reviewed. A new report from World Relief and Open
         Doors
       source: International Christian Concern
-    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
-        in FY2026
-      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
-      date: '2026-09-05'
-      description: ''
-      source: GDELT
     vdem_year: 2025.0
     vdem_freedom_of_religion: 0.953
     vdem_freedom_of_religion_ord: 3.0
@@ -10326,7 +10309,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - hrwf
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -10441,7 +10423,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - hrwf
     - vdem2025forb
     sources:
     - *id001
@@ -10460,7 +10441,6 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10469,16 +10449,6 @@ countries:
     opendoors_score: null
     christian_population: 5270537
     christian_percentage: 4.82
-    hrwf_articles: 1
-    hrwf_samples:
-    - title: 'EGYPT: 115 MEPs and MPs push to end religious persecution in Egypt'
-      url: https://hrwf.eu/egypt-115-meps-and-mps-push-to-end-religious-persecution-in-egypt
-      date: '2026-09-18'
-      description: 'EGYPT: 115 MEPs and MPs push to end religious persecution in Egypt
-        By Aaron Rhodes The European Times (18.09.2026) Religious persecution in Egypt
-        is not improving, and could worsen if international partners downplay it in
-        order to strengthen strategic cooperation. As Egypt’s largest trading partner,'
-      source: Human Rights Without Frontiers
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Egypt are poor. Baha'is, Jehovah’s Witnesses,
@@ -10513,15 +10483,6 @@ countries:
       false news. In February, a misdemeanor court in Alexandria sentenced TikTok
       content creator Osama Sharaf El-Din to three years in prison for insulting Christianity.
     state_dept_christian_mentions: true
-    recent_incidents:
-    - title: 'EGYPT: 115 MEPs and MPs push to end religious persecution in Egypt'
-      url: https://hrwf.eu/egypt-115-meps-and-mps-push-to-end-religious-persecution-in-egypt
-      date: '2026-09-18'
-      description: 'EGYPT: 115 MEPs and MPs push to end religious persecution in Egypt
-        By Aaron Rhodes The European Times (18.09.2026) Religious persecution in Egypt
-        is not improving, and could worsen if international partners downplay it in
-        order to strengthen strategic cooperation. As Egypt’s largest trading partner,'
-      source: Human Rights Without Frontiers
     archive_modern_excerpt: Christians in Egypt report that freedom of religion violations
       occur mostly at the community level, with many Christians regularly facing discrimination.
       The constitution states that “freedom of belief is absolute” and “the freedom
@@ -10583,7 +10544,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - hrw
-    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -10647,7 +10607,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - hrw
-    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -10662,7 +10621,6 @@ countries:
     - *id002
     - *id004
     - *id015
-    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10680,16 +10638,6 @@ countries:
         Temporary Protected Status (TPS) for Haiti in late July 2026, US authorities
         have dep
       source: Human Rights Watch
-    gdelt_articles: 1
-    gdelt_samples:
-    - title: 'Haiti : 47 Killed , 50 Kidnapped in Gang Attack on Church'
-      url: https://pjmedia.com/catherinesalgado/2026/08/30/haiti-47-killed-50-kidnapped-in-gang-attack-on-church-n4956706
-      date: '2026-08-30'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 1
-    gdelt_sample_urls:
-    - https://pjmedia.com/catherinesalgado/2026/08/30/haiti-47-killed-50-kidnapped-in-gang-attack-on-church-n4956706
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
     state_dept_executive_summary: The 1987 constitution provides for the free exercise
       of all religions. Any religious group seeking official recognition must obtain
@@ -10727,11 +10675,6 @@ countries:
         Temporary Protected Status (TPS) for Haiti in late July 2026, US authorities
         have dep
       source: Human Rights Watch
-    - title: 'Haiti : 47 Killed , 50 Kidnapped in Gang Attack on Church'
-      url: https://pjmedia.com/catherinesalgado/2026/08/30/haiti-47-killed-50-kidnapped-in-gang-attack-on-church-n4956706
-      date: '2026-08-30'
-      description: ''
-      source: GDELT
     archive_modern_excerpt: The 1987 constitution provides for the free exercise of
       all religions. Any religious group seeking official recognition must obtain
       it through a multistep registration process with the Bureau of Worship (BOW),
@@ -11543,13 +11486,13 @@ countries:
       source: Barnabas Aid
     gdelt_articles: 3
     gdelt_samples:
-    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
-      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
+    - title: Baptist pastor killed in Myanmar ; US urged to take action
+      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
       date: '2026-09-20'
       description: ''
       source: GDELT
-    - title: Baptist pastor killed in Myanmar ; US urged to take action
-      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
+      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
       date: '2026-09-20'
       description: ''
       source: GDELT
@@ -11561,8 +11504,8 @@ countries:
       source: GDELT
     gdelt_recent_articles: 3
     gdelt_sample_urls:
-    - https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
     - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+    - https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
     - https://www.christianitydaily.com:443/news/myanmar-junta-kills-baptist-pastor-fellow-christian-in-chin.html
     uscirf_designation: CPC
     uscirf_key_findings:
@@ -11605,13 +11548,13 @@ countries:
       date: '2026-09-21'
       description: ''
       source: Info Chrétienne
-    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
-      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
+    - title: Baptist pastor killed in Myanmar ; US urged to take action
+      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
       date: '2026-09-20'
       description: ''
       source: GDELT
-    - title: Baptist pastor killed in Myanmar ; US urged to take action
-      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
+      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
       date: '2026-09-20'
       description: ''
       source: GDELT
@@ -11911,7 +11854,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id018
+    - *id017
     - *id014
     - *id006
     freedom_house_status: Not Free
@@ -12207,16 +12150,15 @@ countries:
           - - 26.117042
             - 41.826905
     wiki_url: https://en.wikipedia.org/wiki/Turkey
-    wiki_extract: Turkey, officially the Republic of Türkiye and often referred to
-      in English as Türkiye, is a country mainly located in Anatolia in West Asia,
-      with a smaller part called East Thrace in Southeast Europe. It borders the Black
-      Sea to the north; Georgia, Armenia, Azerbaijan, and Iran to the east; Iraq,
-      Syria, and the Mediterranean Sea to the south; and the Aegean Sea, Greece, and
-      Bulgaria to the west. Turkey is home to over 86 million people; most are ethnic
-      Turks, while Kurds are the largest ethnic minority. Officially a secular state,
-      Turkey has a Muslim-majority population. Ankara is Turkey's capital and second-largest
-      city. Istanbul is its largest city and economic center. Other major cities include
-      İzmir, Bursa, and Antalya.
+    wiki_extract: Turkey, officially the Republic of Türkiye, is a country mainly
+      located in Anatolia in West Asia, with a smaller part called East Thrace in
+      Southeast Europe. It borders the Black Sea to the north; Georgia, Armenia, Azerbaijan,
+      and Iran to the east; Iraq, Syria, and the Mediterranean Sea to the south; and
+      the Aegean Sea, Greece, and Bulgaria to the west. Turkey is home to over 86
+      million people; most are ethnic Turks, while Kurds are the largest ethnic minority.
+      Officially a secular state, Turkey has a Muslim-majority population. Ankara
+      is Turkey's capital and second-largest city. Istanbul is its largest city and
+      economic center. Other major cities include İzmir, Bursa, and Antalya.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -12247,7 +12189,7 @@ countries:
     - *id003
     - *id004
     - *id013
-    - *id017
+    - *id018
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -15213,7 +15155,7 @@ countries:
     - *id003
     - *id004
     - *id019
-    - *id018
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -16148,7 +16090,6 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -16329,7 +16270,6 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -16345,7 +16285,6 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id018
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -16361,18 +16300,6 @@ countries:
       "extreme" category scored between 85 and 97 out of 100 on Open Doors' persecution
       measurement scale. How many Christians are persecuted globally each year? According
       to the 2026 World Watch List,
-    fides_articles: 1
-    fides_samples:
-    - title: 'AFRICA/MOZAMBIQUE - Archbishop of Nampula to Catholic university graduates:
-        “Science without conscience is simply the ruin of the soul”'
-      url: https://www.fides.org/en/news/78199-AFRICA_MOZAMBIQUE_Archbishop_of_Nampula_to_Catholic_university_graduates_Science_without_conscience_is_simply_the_ruin_of_the_soul
-      date: '2026-09-23'
-      description: Nampula – “Seeing young people who are well-educated and full of
-        hope facing an uncertain future, precisely at a time when the country needs
-        their skills, energy and talent most, is one of the most painful realities
-        afflicting our beloved land.” With these words, the Archbishop of Nampula,
-        Dom Ináci
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mozambique/
     state_dept_executive_summary: The constitution provides for the right to practice
       freely or not to practice religion and prohibits discrimination based on religion.
@@ -16399,17 +16326,6 @@ countries:
       names before opening fire on those they supposed to be Christians. Media reports
       indicated that ISIS-M targeted both Muslim and Christian communities.
     state_dept_christian_mentions: true
-    recent_incidents:
-    - title: 'AFRICA/MOZAMBIQUE - Archbishop of Nampula to Catholic university graduates:
-        “Science without conscience is simply the ruin of the soul”'
-      url: https://www.fides.org/en/news/78199-AFRICA_MOZAMBIQUE_Archbishop_of_Nampula_to_Catholic_university_graduates_Science_without_conscience_is_simply_the_ruin_of_the_soul
-      date: '2026-09-23'
-      description: Nampula – “Seeing young people who are well-educated and full of
-        hope facing an uncertain future, precisely at a time when the country needs
-        their skills, energy and talent most, is one of the most painful realities
-        afflicting our beloved land.” With these words, the Archbishop of Nampula,
-        Dom Ináci
-      source: Agenzia Fides
     archive_modern_excerpt: In Mozambique, Christians face a multifaceted web of persecution
       stemming from violent Islamic militants, drug trafficking, government restrictions,
       conflict-related violence and social discrimination. The constitution provides
@@ -16965,11 +16881,12 @@ countries:
           - 37.144994
     wiki_url: https://en.wikipedia.org/wiki/Tajikistan
     wiki_extract: Tajikistan, officially the Republic of Tajikistan, is a landlocked
-      country located in Central Asia. Dushanbe is the capital and largest city of
-      the country, with a population of over 1.2 million. Tajikistan borders Afghanistan
-      to the south, Uzbekistan to the west, Kyrgyzstan to the north, and China to
-      the east; it is narrowly separated from Pakistan by Afghanistan's Wakhan Corridor.
-      Its total population exceeds 11 million.
+      country located in Central Asia. Dushanbe is the largest city and the capital
+      city of the country and it is most populous city, with a population of over
+      1.2 million. Tajikistan borders Afghanistan to the south, Uzbekistan to the
+      west, Kyrgyzstan to the north, and China to the east; it is narrowly separated
+      from Pakistan by Afghanistan's Wakhan Corridor. Its total population exceeds
+      11 million.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -18269,7 +18186,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - forum18
-    - hrwf
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -19544,7 +19460,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - forum18
-    - hrwf
     - vdem2025forb
     sources:
     - *id001
@@ -19563,7 +19478,6 @@ countries:
     - *id002
     - *id004
     - *id020
-    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -19581,18 +19495,6 @@ countries:
         undesirable organisations\" register. Those \"cooperating\" with them risk\
         \ punishment. Olga Sibiryova "
       source: Forum 18
-    hrwf_articles: 1
-    hrwf_samples:
-    - title: 'RUSSIA: Religious issues and persecution – Bimonthly Digest Septembre
-        01-15'
-      url: https://hrwf.eu/85642-2
-      date: '2026-09-19'
-      description: 'RUSSIA: Religious issues and persecution – Bimonthly Digest September
-        01-15 16.09.2026 Russia’s “weaponization” of Christianity denounced in UK
-        parliament Evangelical focus David Smith, a parliamentarian of the governing
-        Labour party, shared with the House of Commons (the UK’s lower chamber in
-        Westm'
-      source: Human Rights Without Frontiers
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Russia are particularly severe as the government
@@ -19630,17 +19532,6 @@ countries:
       According to Jehovah’s Witnesses representatives, as of December 18, 115 individuals
       were imprisoned under the charge of extremism.
     state_dept_christian_mentions: true
-    recent_incidents:
-    - title: 'RUSSIA: Religious issues and persecution – Bimonthly Digest Septembre
-        01-15'
-      url: https://hrwf.eu/85642-2
-      date: '2026-09-19'
-      description: 'RUSSIA: Religious issues and persecution – Bimonthly Digest September
-        01-15 16.09.2026 Russia’s “weaponization” of Christianity denounced in UK
-        parliament Evangelical focus David Smith, a parliamentarian of the governing
-        Labour party, shared with the House of Commons (the UK’s lower chamber in
-        Westm'
-      source: Human Rights Without Frontiers
     archive_modern_excerpt: The constitution declares the state is secular and guarantees
       freedom of religion, equal rights irrespective of religious belief, and the
       right to worship and profess one’s religion. The law states government officials
@@ -19896,7 +19787,6 @@ countries:
     - owid2024
     - infochretienne
     - csi
-    - cna
     - fides
     - vdem2025forb
   pew_slug: ''
@@ -19948,7 +19838,6 @@ countries:
     - owid2024
     - infochretienne
     - csi
-    - cna
     - fides
     - vdem2025forb
     sources:
@@ -19972,8 +19861,7 @@ countries:
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - *id019
-    - *id018
+    - *id017
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -20000,15 +19888,7 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    cna_articles: 1
-    cna_samples:
-    - title: Sri Lanka jails 15 for up to 260 years over Easter Sunday church bombings
-      url: https://www.ewtnnews.com/world/asia-pacific/sri-lanka-jails-15-for-up-to-260-years-over-easter-sunday-church-bombings
-      date: '2026-09-23'
-      description: The Archdiocese of Colombo welcomed the ruling but said those convicted
-        are only part of the case, as a separate probe into alleged state links continues.
-      source: Catholic News Agency
-    fides_articles: 2
+    fides_articles: 1
     fides_samples:
     - title: 'ASIA/SRI LANKA - Easter bombings: “Towards Truth and Justice”'
       url: https://www.fides.org/en/news/78206-ASIA_SRI_LANKA_Easter_bombings_Towards_Truth_and_Justice
@@ -20018,14 +19898,6 @@ countries:
         of truth and justice, since those who carried out the massacre and some of
         its co-organizers have been identified. There is still a second part to be
         es
-      source: Agenzia Fides
-    - title: 'ASIA/SRI LANKA - Easter attacks verdict: 15 of 24 defendants convicted'
-      url: https://www.fides.org/en/news/78201-ASIA_SRI_LANKA_Easter_attacks_verdict_15_of_24_defendants_convicted
-      date: '2026-09-22'
-      description: Colombo – Fifteen of the 24 defendants have been convicted in the
-        trial concerning the attacks of 21 April 2019, Easter Sunday, which targeted
-        three churches and three luxury hotels in Sri Lanka, killing 279 people, including
-        45 foreigners. Today, 22 September, the Colombo High Court delivered its v
       source: Agenzia Fides
     uscirf_designation: none
     uscirf_key_findings:
@@ -20070,12 +19942,6 @@ countries:
       date: '2026-09-23'
       description: ''
       source: Info Chrétienne
-    - title: Sri Lanka jails 15 for up to 260 years over Easter Sunday church bombings
-      url: https://www.ewtnnews.com/world/asia-pacific/sri-lanka-jails-15-for-up-to-260-years-over-easter-sunday-church-bombings
-      date: '2026-09-23'
-      description: The Archdiocese of Colombo welcomed the ruling but said those convicted
-        are only part of the case, as a separate probe into alleged state links continues.
-      source: Catholic News Agency
     - title: 'ASIA/SRI LANKA - Easter bombings: “Towards Truth and Justice”'
       url: https://www.fides.org/en/news/78206-ASIA_SRI_LANKA_Easter_bombings_Towards_Truth_and_Justice
       date: '2026-09-23'
@@ -20090,14 +19956,6 @@ countries:
       date: '2026-09-22'
       description: ''
       source: Info Chrétienne
-    - title: 'ASIA/SRI LANKA - Easter attacks verdict: 15 of 24 defendants convicted'
-      url: https://www.fides.org/en/news/78201-ASIA_SRI_LANKA_Easter_attacks_verdict_15_of_24_defendants_convicted
-      date: '2026-09-22'
-      description: Colombo – Fifteen of the 24 defendants have been convicted in the
-        trial concerning the attacks of 21 April 2019, Easter Sunday, which targeted
-        three churches and three luxury hotels in Sri Lanka, killing 279 people, including
-        45 foreigners. Today, 22 September, the Colombo High Court delivered its v
-      source: Agenzia Fides
     - title: 'Sri Lanka: Church faces harassment over registration'
       url: https://csi-usa.org/sri-lanka-church-faces-harassment-over-registration
       date: ''
@@ -21969,7 +21827,7 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id018
+    - *id017
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -22107,7 +21965,7 @@ sources:
   uscirf2025tajikistan: *id072
   morningstarnews2026: *id012
   infochretienne: *id009
-  fides: *id018
+  fides: *id017
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -22148,7 +22006,7 @@ sources:
   barnabas: *id010
   csi: *id075
   cna: *id019
-  hrwf: *id017
+  hrwf: *id018
   adf:
     title: ADF International
     url: https://adfinternational.org/
@@ -22705,152 +22563,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-09-27 11:56 UTC
+  generated_at: 2026-09-28 13:42 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-09-27T11:55:37.013251+00:00'
+    fetched_at: '2026-09-28T13:41:31.237357+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-09-27T11:55:08.354138+00:00'
+    fetched_at: '2026-09-28T13:40:54.610160+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-09-27T11:55:39.094431+00:00'
+    fetched_at: '2026-09-28T13:41:33.284687+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-09-27T11:55:29.577916+00:00'
+    fetched_at: '2026-09-28T13:41:18.852053+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-09-27T11:55:31.717464+00:00'
+    fetched_at: '2026-09-28T13:41:21.255008+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-09-27T11:55:15.229658+00:00'
+    fetched_at: '2026-09-28T13:41:02.028975+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-09-27T11:55:18.069042+00:00'
+    fetched_at: '2026-09-28T13:41:05.437002+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-09-27T11:55:35.541395+00:00'
+    fetched_at: '2026-09-28T13:41:29.458322+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-09-27T11:55:35.127684+00:00'
+    fetched_at: '2026-09-28T13:41:28.767023+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-09-27T11:55:10.410799+00:00'
+    fetched_at: '2026-09-28T13:40:57.099062+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-09-27T11:55:36.809623+00:00'
+    fetched_at: '2026-09-28T13:41:30.850049+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-09-27T11:55:12.641620+00:00'
+    fetched_at: '2026-09-28T13:40:59.071903+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-09-27T11:50:53.781403+00:00'
+    fetched_at: '2026-09-28T13:35:43.336225+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-09-27T11:55:07.156255+00:00'
+    fetched_at: '2026-09-28T13:40:53.600077+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-09-27T11:54:56.799466+00:00'
-    message: 1 of 4 queries failed
+    fetched_at: '2026-09-28T13:40:41.909830+00:00'
+    message: 3 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-09-27T11:55:29.135347+00:00'
+    fetched_at: '2026-09-28T13:41:15.601427+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-09-27T11:55:38.102157+00:00'
+    fetched_at: '2026-09-28T13:41:32.282168+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-09-27T11:55:11.407799+00:00'
+    fetched_at: '2026-09-28T13:40:57.939997+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-09-27T11:55:21.731344+00:00'
+    fetched_at: '2026-09-28T13:41:07.698178+00:00'
     message: null
   - name: ippforb
     status: ok
-    fetched_at: '2026-09-27T11:55:43.984641+00:00'
+    fetched_at: '2026-09-28T13:41:36.761961+00:00'
     message: null
   - name: jubilee
     status: ok
-    fetched_at: '2026-09-27T11:55:42.963069+00:00'
+    fetched_at: '2026-09-28T13:41:35.369314+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-09-27T11:55:14.361347+00:00'
+    fetched_at: '2026-09-28T13:41:01.052868+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-09-27T11:54:58.775098+00:00'
+    fetched_at: '2026-09-28T13:40:45.074849+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-09-27T11:55:44.356497+00:00'
+    fetched_at: '2026-09-28T13:41:37.217389+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-09-27T11:54:57.722955+00:00'
+    fetched_at: '2026-09-28T13:40:43.240580+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-09-27T11:50:52.512113+00:00'
+    fetched_at: '2026-09-28T13:35:42.343467+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-09-27T11:55:25.845812+00:00'
+    fetched_at: '2026-09-28T13:41:12.426398+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-09-27T11:50:55.228030+00:00'
+    fetched_at: '2026-09-28T13:35:45.676137+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-09-27T11:55:16.222638+00:00'
+    fetched_at: '2026-09-28T13:41:03.253234+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-09-27T11:53:22.290864+00:00'
+    fetched_at: '2026-09-28T13:38:22.088425+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-09-27T11:55:28.786872+00:00'
+    fetched_at: '2026-09-28T13:41:15.331039+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-09-27T11:51:33.010484+00:00'
+    fetched_at: '2026-09-28T13:36:28.602569+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-09-27T11:55:05.016144+00:00'
+    fetched_at: '2026-09-28T13:40:52.047544+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-09-27T11:55:17.272239+00:00'
+    fetched_at: '2026-09-28T13:41:04.139672+00:00'
     message: null
   - name: wea
     status: failed
-    fetched_at: '2026-09-27T11:55:39.777500+00:00'
+    fetched_at: '2026-09-28T13:41:34.382694+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 500: Internal Server Error'
   - name: wikipedia
     status: ok
-    fetched_at: '2026-09-27T11:56:08.724252+00:00'
+    fetched_at: '2026-09-28T13:42:01.637228+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
