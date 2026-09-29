@@ -925,15 +925,15 @@ countries:
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
-    - &id009
+    - &id013
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
-    - &id010
+    - &id009
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id011
+    - &id010
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
@@ -982,6 +982,15 @@ countries:
       source: Release International
     chinaaid_articles: 9
     chinaaid_samples:
+    - title: ChinaAid raises health alarm for imprisoned Pastor Wang Yi, calls for
+        family access
+      url: https://chinaaid.org/news/chinaaid-raises-health-alarm-for-imprisoned-pastor-wang-yi-calls-for-family-access/?utm_source=rss&utm_medium=rss&utm_campaign=chinaaid-raises-health-alarm-for-imprisoned-pastor-wang-yi-calls-for-family-access
+      date: '2026-09-28'
+      description: (Midland, Texas — September 28, 2026) — ChinaAid has received deeply
+        concerning information from sources inside China indicating that imprisoned
+        Early Rain Covenant Church Pastor Wang Yi, held in southwestern China, may
+        be suffering from advanced liver cancer. Because of severe restrictions surround
+      source: ChinaAid
     - title: Two Early Rain Church members released; Chinese police crackdown continues
       url: https://chinaaid.org/news/two-early-rain-church-members-released-chinese-police-crackdown-continues/?utm_source=rss&utm_medium=rss&utm_campaign=two-early-rain-church-members-released-chinese-police-crackdown-continues
       date: '2026-09-23'
@@ -997,14 +1006,6 @@ countries:
         against an underground house church in central China on Sept. 16-17, confiscating
         believers phones and ordering young Christians to replace hymns with songs
         praising the Chinese Communist Party, according to multiple sources. The o
-      source: ChinaAid
-    - title: Chinese authorities reportedly detain pastors, workers from Beijing Church
-      url: https://chinaaid.org/news/chinese-authorities-reportedly-detain-pastors-workers-from-beijing-church/?utm_source=rss&utm_medium=rss&utm_campaign=chinese-authorities-reportedly-detain-pastors-workers-from-beijing-church
-      date: '2026-09-21'
-      description: BEIJING, CHINA — Sept. 21, 2026 — Chinese authorities have reportedly
-        detained multiple pastors and church coworkers from Beijing Jiaquan Church,
-        an influential urban house-church network with more than two decades of ministry
-        in the Chinese capital and congregations elsewhere in China. ChinaAid has
       source: ChinaAid
     infochretienne_articles: 2
     infochretienne_samples:
@@ -1071,6 +1072,15 @@ countries:
       in most religious activities or receiving religious education.'
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: ChinaAid raises health alarm for imprisoned Pastor Wang Yi, calls for
+        family access
+      url: https://chinaaid.org/news/chinaaid-raises-health-alarm-for-imprisoned-pastor-wang-yi-calls-for-family-access/?utm_source=rss&utm_medium=rss&utm_campaign=chinaaid-raises-health-alarm-for-imprisoned-pastor-wang-yi-calls-for-family-access
+      date: '2026-09-28'
+      description: (Midland, Texas — September 28, 2026) — ChinaAid has received deeply
+        concerning information from sources inside China indicating that imprisoned
+        Early Rain Covenant Church Pastor Wang Yi, held in southwestern China, may
+        be suffering from advanced liver cancer. Because of severe restrictions surround
+      source: ChinaAid
     - title: Two Early Rain Church members released; Chinese police crackdown continues
       url: https://chinaaid.org/news/two-early-rain-church-members-released-chinese-police-crackdown-continues/?utm_source=rss&utm_medium=rss&utm_campaign=two-early-rain-church-members-released-chinese-police-crackdown-continues
       date: '2026-09-23'
@@ -1164,16 +1174,6 @@ countries:
         for one of the most consequential meetings between the leaders of the world’s
         two most powerful nations. Expectations are already building around trade,
         invest
-      source: ChinaAid
-    - title: Chinese prosecutors seek 12+ years in prison for pastor&#8217;s alleged
-        church offering fraud
-      url: https://chinaaid.org/news/chinese-prosecutors-seek-12-years-in-prison-for-pastors-alleged-church-offering-fraud/?utm_source=rss&utm_medium=rss&utm_campaign=chinese-prosecutors-seek-12-years-in-prison-for-pastors-alleged-church-offering-fraud
-      date: '2026-09-14'
-      description: (Xi’an, Shaanxi Province — September 2026) Chinese prosecutors
-        are seeking 12 to 13 years in prison for a nearly 70-year-old house church
-        pastor in Xi’an, according to an indictment newly published by ChinaAid that
-        alleges he and other church leaders fraudulently obtained RMB 25.5 million
-        ($3.6 mill
       source: ChinaAid
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
         Nigeria, and Pakistan'
@@ -2073,7 +2073,6 @@ countries:
     - icc2026
     - releaseintl
     - vom2026
-    - infochretienne
     - barnabas
     - fides
     - vdem2025forb
@@ -2374,7 +2373,6 @@ countries:
     - icc2026
     - releaseintl
     - vom2026
-    - infochretienne
     - barnabas
     - fides
     - vdem2025forb
@@ -2398,12 +2396,11 @@ countries:
     - *id005
     - *id007
     - *id008
-    - &id013
+    - &id012
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
     - *id009
-    - *id010
     - &id017
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
@@ -2424,8 +2421,16 @@ countries:
       Nigeria. That's roughly 72% of the worldwide total. Multiple armed groups drive
       this violence. Boko Haram, the Islamic State West Africa Province (ISWAP), Fulani
       ethnic militias, and a newer group
-    icc_articles: 1
+    icc_articles: 2
     icc_samples:
+    - title: Churches Restrict Entry of Non-Christians in Persecution-Hit Region
+      url: https://persecution.org/2026/09/28/churches-restrict-entry-of-non-christians-in-persecution-hit-region
+      date: '2026-09-28'
+      description: 'In an unprecedented development last week, more than 40 churches
+        in the Dhamtari district of the central Indian state of Chhattisgarh, India,
+        declared that worship is restricted to Christians only, raising eyebrows among
+        Christians and non-Christians across the country. The churches that restricted '
+      source: International Christian Concern
     - title: Seven Letters from the Persecuted Church
       url: https://persecution.org/2026/09/25/seven-letters-from-the-persecuted-church
       date: '2026-09-25'
@@ -2472,16 +2477,14 @@ countries:
         man then demanded that Rakesh say "Jai Sri Ram" (a Hindu slogan used for worship).
         When '
       source: Voice of the Martyrs
-    infochretienne_articles: 1
-    infochretienne_samples:
-    - title: 'Loi anti-conversion en Inde : les chrétiens contraints de prouver leur
-        foi'
-      url: https://www.infochretienne.com/articles/loi-anti-conversion-en-inde-les-chretiens-contraints-de-prouver-leur-foi
-      date: '2026-09-03'
-      description: ''
-      source: Info Chrétienne
-    barnabas_articles: 2
+    barnabas_articles: 3
     barnabas_samples:
+    - title: Seven Christians Arrested in Three Separate Incidents in Madhya Pradesh,
+        India
+      url: https://www.barnabasaid.org/us/news/seven-christians-arrested-in-three-separate-incidents-in-madhya-pradesh
+      date: ''
+      description: ''
+      source: Barnabas Aid
     - title: Authorities Urged to Halt Rise in Violence Against Christians in West
         Bengal, India
       url: https://www.barnabasaid.org/us/news/authorities-urged-to-halt-rise-in-violence-against-christians-in-west-be
@@ -2541,6 +2544,14 @@ countries:
       exploit a woman, including for marriage.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Churches Restrict Entry of Non-Christians in Persecution-Hit Region
+      url: https://persecution.org/2026/09/28/churches-restrict-entry-of-non-christians-in-persecution-hit-region
+      date: '2026-09-28'
+      description: 'In an unprecedented development last week, more than 40 churches
+        in the Dhamtari district of the central Indian state of Chhattisgarh, India,
+        declared that worship is restricted to Christians only, raising eyebrows among
+        Christians and non-Christians across the country. The churches that restricted '
+      source: International Christian Concern
     - title: ASIA/INDIA - In Mumbai, the Church’s mission at the heart of the megalopolis
       url: https://www.fides.org/en/news/78217-ASIA_INDIA_In_Mumbai_the_Church_s_mission_at_the_heart_of_the_megalopolis
       date: '2026-09-28'
@@ -2558,12 +2569,6 @@ countries:
         they face because of their faith in Jesus. During the journey, I visited seven
         loc
       source: International Christian Concern
-    - title: 'Loi anti-conversion en Inde : les chrétiens contraints de prouver leur
-        foi'
-      url: https://www.infochretienne.com/articles/loi-anti-conversion-en-inde-les-chretiens-contraints-de-prouver-leur-foi
-      date: '2026-09-03'
-      description: ''
-      source: Info Chrétienne
     - title: Threat of ‘draconian’ regulations in India
       url: https://releaseinternational.org/podcast-india
       date: '2026-06-04'
@@ -2588,6 +2593,12 @@ countries:
         in China. The post Police stand aside as Indian pastor beaten appeared first
         on Release International .
       source: Release International
+    - title: Seven Christians Arrested in Three Separate Incidents in Madhya Pradesh,
+        India
+      url: https://www.barnabasaid.org/us/news/seven-christians-arrested-in-three-separate-incidents-in-madhya-pradesh
+      date: ''
+      description: ''
+      source: Barnabas Aid
     - title: Authorities Urged to Halt Rise in Violence Against Christians in West
         Bengal, India
       url: https://www.barnabasaid.org/us/news/authorities-urged-to-halt-rise-in-violence-against-christians-in-west-be
@@ -3198,7 +3209,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - &id012
+    - &id011
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
@@ -3208,8 +3219,17 @@ countries:
     freedom_house_cl: 4
     christian_population: 28202346
     christian_percentage: 10.26
-    morningstarnews_articles: 1
+    morningstarnews_articles: 2
     morningstarnews_samples:
+    - title: Muslims Protest against Pork Restaurant in Indonesia
+      url: https://morningstarnews.org/2026/09/muslims-protest-against-pork-restaurant-in-indonesia
+      date: '2026-09-28'
+      description: SURABAYA, Indonesia (Morning Star News) – A protest in Indonesia
+        against a restaurant specializing in pork dishes reflects a trend of Muslims
+        pressuring Christian-owned businesses serving food forbidden in Islam, sources
+        said. The protest by dozens of Muslim residents in Tondo Urban village, Palu,
+        C
+      source: Morning Star News
     - title: Muslims Stall Construction of Church Building in Indonesia
       url: https://morningstarnews.org/2026/09/muslims-stall-construction-of-church-building-in-indonesia
       date: '2026-09-22'
@@ -3255,6 +3275,15 @@ countries:
       houses of worship and rebuild destroyed structures.'
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Muslims Protest against Pork Restaurant in Indonesia
+      url: https://morningstarnews.org/2026/09/muslims-protest-against-pork-restaurant-in-indonesia
+      date: '2026-09-28'
+      description: SURABAYA, Indonesia (Morning Star News) – A protest in Indonesia
+        against a restaurant specializing in pork dishes reflects a trend of Muslims
+        pressuring Christian-owned businesses serving food forbidden in Islam, sources
+        said. The protest by dozens of Muslim residents in Tondo Urban village, Palu,
+        C
+      source: Morning Star News
     - title: Muslims Stall Construction of Church Building in Indonesia
       url: https://morningstarnews.org/2026/09/muslims-stall-construction-of-church-building-in-indonesia
       date: '2026-09-22'
@@ -3576,15 +3605,22 @@ countries:
         The post Release International partner speaks on Iran appeared first on Release
         International .
       source: Release International
-    gdelt_articles: 1
+    gdelt_articles: 2
     gdelt_samples:
+    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
+        ,  The Chosen  Christmas Special
+      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
     - title: Iran kills , imprisons dozens of Christians as persecution rises
       url: https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
       date: '2026-08-31'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 1
+    gdelt_recent_articles: 2
     gdelt_sample_urls:
+    - https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
     - https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
     uscirf_designation: CPC
     uscirf_key_findings:
@@ -3622,6 +3658,12 @@ countries:
       propaganda.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
+        ,  The Chosen  Christmas Special
+      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
     - title: Iran kills , imprisons dozens of Christians as persecution rises
       url: https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
       date: '2026-08-31'
@@ -4228,6 +4270,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - cna
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -4594,6 +4637,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - cna
     - vdem2025forb
     sources:
     - *id001
@@ -4612,6 +4656,10 @@ countries:
     - *id002
     - *id003
     - *id004
+    - &id019
+      title: Catholic News Agency
+      url: https://www.catholicnewsagency.com/
+      date: '2026'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -4620,6 +4668,15 @@ countries:
     opendoors_score: null
     christian_population: 113070626
     christian_percentage: 89.17
+    cna_articles: 1
+    cna_samples:
+    - title: Mexico commemorates 500th anniversary of Child Martyrs
+      url: https://www.ewtnnews.com/world/americas/mexico-commemorates-500th-anniversary-of-child-martyrs
+      date: '2026-09-29'
+      description: The first martyrs of the Americas were not missionary priests but
+        three young Indigenous boys in Mexico who sought to spread the faith they
+        were taught and embraced 500 years ago.
+      source: Catholic News Agency
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mexico/
     state_dept_executive_summary: The constitution provides all persons the right
       to religious freedom, including the right to engage in religious ceremonies
@@ -4647,6 +4704,14 @@ countries:
       (NGOs) said municipal and state officials frequently sided with local leaders
       at the expense of members of minority religious groups.
     state_dept_christian_mentions: true
+    recent_incidents:
+    - title: Mexico commemorates 500th anniversary of Child Martyrs
+      url: https://www.ewtnnews.com/world/americas/mexico-commemorates-500th-anniversary-of-child-martyrs
+      date: '2026-09-29'
+      description: The first martyrs of the Americas were not missionary priests but
+        three young Indigenous boys in Mexico who sought to spread the faith they
+        were taught and embraced 500 years ago.
+      source: Catholic News Agency
     archive_modern_excerpt: The increased presence of several criminal groups and
       their struggle for territorial control has caused Christians and church leaders
       living in affected areas to face the constant risk of being targeted. This occurs
@@ -4852,7 +4917,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id011
+    - *id010
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -5155,12 +5220,12 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
+    - *id011
     - *id007
+    - *id012
     - *id013
     - *id009
     - *id010
-    - *id011
     - *id014
     - *id006
     freedom_house_status: Partly Free
@@ -5206,8 +5271,17 @@ countries:
         in Mangu County took place on Saturday (Sept. 5), where three Christians were
         killed in
       source: Morning Star News
-    icc_articles: 1
+    icc_articles: 2
     icc_samples:
+    - title: New Legislation Threatens Independent Documentation of Persecution in
+        Nigeria
+      url: https://persecution.org/2026/09/28/new-legislation-threatens-independent-documentation-of-persecution-in-nigeria
+      date: '2026-09-28'
+      description: 'Nigeria’s Senate is advancing legislation that could significantly
+        expand government oversight of organizations receiving foreign funding, raising
+        concerns that the measure could affect the ability of churches, humanitarian
+        organizations, human rights groups, and independent researchers to document '
+      source: International Christian Concern
     - title: Nigerian Pastor, Believer Killed on Their Way to Church
       url: https://persecution.org/2026/09/25/nigerian-pastor-believer-killed-on-their-way-to-church
       date: '2026-09-25'
@@ -5227,8 +5301,14 @@ countries:
         was born into the Fulani tribal group and raised as a Muslim in Chad. He eventually
         placed his trust in Christ and attended a Bible school in neighboring Niger
       source: Voice of the Martyrs
-    infochretienne_articles: 2
+    infochretienne_articles: 3
     infochretienne_samples:
+    - title: Un chrétien est tué toutes les 86 minutes au Nigeria, selon un nouveau
+        rapport
+      url: https://www.infochretienne.com/articles/un-chretien-est-tue-toutes-les-86-minutes-au-nigeria-selon-un-nouveau-rapport
+      date: '2026-09-28'
+      description: ''
+      source: Info Chrétienne
     - title: 'Nigeria : un pasteur baptiste parmi une dizaine de chrétiens tués en
         quelques jours'
       url: https://www.infochretienne.com/articles/nigeria-un-pasteur-baptiste-parmi-une-dizaine-de-chretiens-tues-en-quelques-jours
@@ -5240,7 +5320,7 @@ countries:
       date: '2026-09-14'
       description: ''
       source: Info Chrétienne
-    barnabas_articles: 4
+    barnabas_articles: 2
     barnabas_samples:
     - title: Survivor of Kidnapping in Nigeria Tells of Pastor’s Murder
       url: https://www.barnabasaid.org/us/news/survivor-of-kidnapping-in-nigeria-tells-of-pastor-s-murder
@@ -5250,11 +5330,6 @@ countries:
     - title: Islamists Murder Pastor in Plateau State, Nigeria, Despite Wife’s Pleas
         for Mercy
       url: https://www.barnabasaid.org/us/news/islamists-murder-pastor-in-plateau-state-nigeria-despite-wife-s-pleas-fo
-      date: ''
-      description: ''
-      source: Barnabas Aid
-    - title: Thirty Killed as 100 Gunmen Attack Village in Plateau State, Nigeria
-      url: https://www.barnabasaid.org/us/news/thirty-killed-as-100-gunmen-attack-village-in-plateau-state-nigeria
       date: ''
       description: ''
       source: Barnabas Aid
@@ -5318,6 +5393,21 @@ countries:
       the head and two individuals sustaining fractures in their legs.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: New Legislation Threatens Independent Documentation of Persecution in
+        Nigeria
+      url: https://persecution.org/2026/09/28/new-legislation-threatens-independent-documentation-of-persecution-in-nigeria
+      date: '2026-09-28'
+      description: 'Nigeria’s Senate is advancing legislation that could significantly
+        expand government oversight of organizations receiving foreign funding, raising
+        concerns that the measure could affect the ability of churches, humanitarian
+        organizations, human rights groups, and independent researchers to document '
+      source: International Christian Concern
+    - title: Un chrétien est tué toutes les 86 minutes au Nigeria, selon un nouveau
+        rapport
+      url: https://www.infochretienne.com/articles/un-chretien-est-tue-toutes-les-86-minutes-au-nigeria-selon-un-nouveau-rapport
+      date: '2026-09-28'
+      description: ''
+      source: Info Chrétienne
     - title: 'At least one Christian killed every 86 minutes in Nigeria : report'
       url: https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
       date: '2026-09-27'
@@ -5390,16 +5480,6 @@ countries:
     - title: Islamists Murder Pastor in Plateau State, Nigeria, Despite Wife’s Pleas
         for Mercy
       url: https://www.barnabasaid.org/us/news/islamists-murder-pastor-in-plateau-state-nigeria-despite-wife-s-pleas-fo
-      date: ''
-      description: ''
-      source: Barnabas Aid
-    - title: Thirty Killed as 100 Gunmen Attack Village in Plateau State, Nigeria
-      url: https://www.barnabasaid.org/us/news/thirty-killed-as-100-gunmen-attack-village-in-plateau-state-nigeria
-      date: ''
-      description: ''
-      source: Barnabas Aid
-    - title: Four Christians Killed and 12 Injured by Islamists in Benue State, Nigeria
-      url: https://www.barnabasaid.org/us/news/four-christians-killed-and-12-injured-by-islamists-in-benue-state-nigeri
       date: ''
       description: ''
       source: Barnabas Aid
@@ -5935,14 +6015,14 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
+    - *id011
     - *id007
-    - *id009
+    - *id013
     - &id018
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
-    - *id011
+    - *id010
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -5958,7 +6038,7 @@ countries:
       in seven worldwide and one in five in Africa." } }, { "@type": "Question", "name":
       "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "text": "Islam'
-    morningstarnews_articles: 4
+    morningstarnews_articles: 3
     morningstarnews_samples:
     - title: Muslim Shoots Christian Woman to Death in Pakistan
       url: https://morningstarnews.org/2026/09/muslim-shoots-christian-woman-to-death-in-pakistan
@@ -5986,7 +6066,7 @@ countries:
         ruling that says living in a marital relationship with a girl under 18 can
         constitute child abuse even if the minor consents. They described the decision '
       source: Morning Star News
-    icc_articles: 3
+    icc_articles: 1
     icc_samples:
     - title: Pakistani Christian Remains Detained Following Blasphemy Allegations
       url: https://persecution.org/2026/09/18/pakistani-christian-remains-detained-following-blasphemy-allegations
@@ -5996,23 +6076,6 @@ countries:
         and a video said to have circulated on social media. Amir Masih, a Christian
         from Dhala Sharif, near Nowshera Virkan in Gujranwala District in Punjab,
         Pakistan,
-      source: International Christian Concern
-    - title: Christian Man Arrested for Blasphemy in Pakistan
-      url: https://persecution.org/2026/09/11/christian-man-arrested-for-blasphemy-in-pakistan
-      date: '2026-09-11'
-      description: 'A 26-year-old Christian man, Samuel Arif, has been arrested and
-        sent on judicial remand in Lahore after being accused of blasphemy. The incident
-        has again raised deep concerns among local rights activists and the Christian
-        community regarding the misuse of blasphemy laws to settle personal grudges. '
-      source: International Christian Concern
-    - title: Christian Woman Shot by Muslim in Pakistan
-      url: https://persecution.org/2026/09/10/christian-woman-shot-by-muslim-in-pakistan
-      date: '2026-09-10'
-      description: A 21-year-old woman was fatally shot inside her home in Rawalpindi,
-        Pakistan, by her Muslim neighbor, according to a report by Christian Daily
-        International. Her killer then abducted her 16-year-old stepbrother, coercing
-        him to confess to her murder. Saba Mehboob and her two daughters had been
-        livin
       source: International Christian Concern
     infochretienne_articles: 1
     infochretienne_samples:
@@ -6129,23 +6192,6 @@ countries:
         from Dhala Sharif, near Nowshera Virkan in Gujranwala District in Punjab,
         Pakistan,
       source: International Christian Concern
-    - title: Christian Man Arrested for Blasphemy in Pakistan
-      url: https://persecution.org/2026/09/11/christian-man-arrested-for-blasphemy-in-pakistan
-      date: '2026-09-11'
-      description: 'A 26-year-old Christian man, Samuel Arif, has been arrested and
-        sent on judicial remand in Lahore after being accused of blasphemy. The incident
-        has again raised deep concerns among local rights activists and the Christian
-        community regarding the misuse of blasphemy laws to settle personal grudges. '
-      source: International Christian Concern
-    - title: Christian Woman Shot by Muslim in Pakistan
-      url: https://persecution.org/2026/09/10/christian-woman-shot-by-muslim-in-pakistan
-      date: '2026-09-10'
-      description: A 21-year-old woman was fatally shot inside her home in Rawalpindi,
-        Pakistan, by her Muslim neighbor, according to a report by Christian Daily
-        International. Her killer then abducted her 16-year-old stepbrother, coercing
-        him to confess to her murder. Saba Mehboob and her two daughters had been
-        livin
-      source: International Christian Concern
     - title: 'Pakistan : un adolescent chrétien battu après avoir défendu une fille
         harcelée'
       url: https://www.infochretienne.com/articles/pakistan-un-adolescent-chretien-battu-apres-avoir-defendu-une-fille-harcelee
@@ -6177,15 +6223,6 @@ countries:
         – Christian leaders and attorneys this week welcomed a Lahore High Court (LHC)
         ruling that says living in a marital relationship with a girl under 18 can
         constitute child abuse even if the minor consents. They described the decision '
-      source: Morning Star News
-    - title: Two Christians Arrested under Blasphemy Laws in Pakistan
-      url: https://morningstarnews.org/2026/09/two-christians-arrested-under-blasphemy-laws-in-pakistan
-      date: '2026-09-02'
-      description: LAHORE, Pakistan (Christian Daily International Morning Star News)
-        – One Christian in Pakistan was arrested and charged with blasphemy on Saturday
-        (Aug. 29) and another faced the same accusation on Aug. 11 under laws that
-        carry the death penalty, sources said. Police on Saturday arrested Samuel
-        Arif
       source: Morning Star News
     - title: 'Stolen Girls Part 5: Pakistan’s Shameful Track Record'
       url: https://jubileecampaign.org/stolen-girls-part-5-pakistans-shameful-track-record
@@ -6961,7 +6998,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id009
+    - *id013
     - &id015
       title: Human Rights Watch
       url: https://www.hrw.org/
@@ -7267,7 +7304,7 @@ countries:
     - *id002
     - *id004
     - *id015
-    - *id010
+    - *id009
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -7666,7 +7703,6 @@ countries:
     - gcr2026
     - icc2026
     - hrw
-    - cna
     - gdelt2025
     - vdem2025forb
   pew_slug: america
@@ -8587,7 +8623,6 @@ countries:
     - gcr2026
     - icc2026
     - hrw
-    - cna
     - gdelt2025
     - vdem2025forb
     sources:
@@ -8604,10 +8639,6 @@ countries:
     - *id005
     - *id007
     - *id015
-    - &id019
-      title: Catholic News Agency
-      url: https://www.catholicnewsagency.com/
-      date: '2026'
     - *id014
     - *id006
     freedom_house_status: Free
@@ -8654,25 +8685,23 @@ countries:
         Temporary Protected Status (TPS) for Haiti in late July 2026, US authorities
         have dep
       source: Human Rights Watch
-    cna_articles: 1
-    cna_samples:
-    - title: Survey finds immigration enforcement activity at schools, courthouses
-      url: https://www.ewtnnews.com/world/us/survey-finds-immigration-enforcement-activity-at-schools-courthouses
-      date: '2026-09-24'
-      description: More than 145,000 U.S.-citizen children have had a parent booked
-        into immigration detention since January 2025, according to the Catholic Legal
-        Immigration Network.
-      source: Catholic News Agency
-    gdelt_articles: 1
+    gdelt_articles: 2
     gdelt_samples:
     - title: Baptist pastor killed in Myanmar ; US urged to take action
       url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
       date: '2026-09-20'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 1
+    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
+        in FY2026
+      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
+      date: '2026-09-05'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
     gdelt_sample_urls:
     - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+    - https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
     recent_incidents:
     - title: Array of Experts Back Lawsuit Challenging Trump’s ICC Sanctions Regime
       url: https://www.hrw.org/news/2026/09/25/array-of-experts-back-lawsuit-challenging-trumps-icc-sanctions-regime
@@ -8683,13 +8712,6 @@ countries:
         human rights groups, bar associations, and legal experts from around the world
         have '
       source: Human Rights Watch
-    - title: Survey finds immigration enforcement activity at schools, courthouses
-      url: https://www.ewtnnews.com/world/us/survey-finds-immigration-enforcement-activity-at-schools-courthouses
-      date: '2026-09-24'
-      description: More than 145,000 U.S.-citizen children have had a parent booked
-        into immigration detention since January 2025, according to the Catholic Legal
-        Immigration Network.
-      source: Catholic News Agency
     - title: 'US: Deportations to Haiti Endanger Lives'
       url: https://www.hrw.org/news/2026/09/21/us-deportations-to-haiti-endanger-lives
       date: '2026-09-21'
@@ -8714,6 +8736,12 @@ countries:
         some claims are initially reviewed. A new report from World Relief and Open
         Doors
       source: International Christian Concern
+    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
+        in FY2026
+      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
+      date: '2026-09-05'
+      description: ''
+      source: GDELT
     vdem_year: 2025.0
     vdem_freedom_of_religion: 0.953
     vdem_freedom_of_religion_ord: 3.0
@@ -9356,7 +9384,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id012
+    - *id011
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9632,7 +9660,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
+    - *id011
     - *id016
     - *id006
     freedom_house_status: Not Free
@@ -11440,8 +11468,8 @@ countries:
     - *id004
     - *id005
     - *id007
+    - *id013
     - *id009
-    - *id010
     - *id014
     - *id006
     freedom_house_status: Not Free
@@ -12188,7 +12216,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id013
+    - *id012
     - *id018
     - *id006
     freedom_house_status: Not Free
@@ -14995,7 +15023,6 @@ countries:
     - odwwl2026
     - owid2024
     - cna
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -15139,7 +15166,6 @@ countries:
     - odwwl2026
     - owid2024
     - cna
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -15155,7 +15181,6 @@ countries:
     - *id003
     - *id004
     - *id019
-    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -15173,18 +15198,6 @@ countries:
         death penalty, South African archbishop condemns killing of nine women, and
         more in this week’s Catholic world news roundup.
       source: Catholic News Agency
-    fides_articles: 1
-    fides_samples:
-    - title: AFRICA/ETHIOPIA - New rebel alliance reignites the struggle over the
-        Red Sea
-      url: https://www.fides.org/en/news/78204-AFRICA_ETHIOPIA_New_rebel_alliance_reignites_the_struggle_over_the_Red_Sea
-      date: '2026-09-23'
-      description: 'Addis Ababa – The rebel coalition announced a few days ago has
-        gone on the offensive, and one of its main components, the Tigray People’s
-        Liberation Front , has captured Mekelle airport. On September 20, seven Ethiopian
-        armed groups—including historic enemies who fought on opposing sides during
-        the '
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
     state_dept_executive_summary: The country is a secular state; the constitution
       requires the separation of religion and the state, establishes freedom of religious
@@ -15221,16 +15234,6 @@ countries:
         death penalty, South African archbishop condemns killing of nine women, and
         more in this week’s Catholic world news roundup.
       source: Catholic News Agency
-    - title: AFRICA/ETHIOPIA - New rebel alliance reignites the struggle over the
-        Red Sea
-      url: https://www.fides.org/en/news/78204-AFRICA_ETHIOPIA_New_rebel_alliance_reignites_the_struggle_over_the_Red_Sea
-      date: '2026-09-23'
-      description: 'Addis Ababa – The rebel coalition announced a few days ago has
-        gone on the offensive, and one of its main components, the Tigray People’s
-        Liberation Front , has captured Mekelle airport. On September 20, seven Ethiopian
-        armed groups—including historic enemies who fought on opposing sides during
-        the '
-      source: Agenzia Fides
     archive_modern_excerpt: In Ethiopia, all three categories of Christian communities
       face violations of religious freedom, with non-traditional Christians suffering
       the most severe mistreatment from both the local government and the Ethiopian
@@ -15794,7 +15797,7 @@ countries:
       date: '2025'
     - *id003
     - *id004
-    - *id010
+    - *id009
     - *id006
     opendoors_ranking: 29
     opendoors_score: null
@@ -16090,6 +16093,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - barnabas
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -16270,6 +16274,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - barnabas
     - vdem2025forb
     sources:
     - *id001
@@ -16285,6 +16290,7 @@ countries:
     - *id003
     - *id004
     - *id005
+    - *id009
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -16300,6 +16306,13 @@ countries:
       "extreme" category scored between 85 and 97 out of 100 on Open Doors' persecution
       measurement scale. How many Christians are persecuted globally each year? According
       to the 2026 World Watch List,
+    barnabas_articles: 1
+    barnabas_samples:
+    - title: Christian Captured and Killed in Cabo Delgado, Northern Mozambique
+      url: https://www.barnabasaid.org/us/news/christian-captured-and-killed-in-cabo-delgado-northern-mozambique
+      date: ''
+      description: ''
+      source: Barnabas Aid
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mozambique/
     state_dept_executive_summary: The constitution provides for the right to practice
       freely or not to practice religion and prohibits discrimination based on religion.
@@ -16326,6 +16339,12 @@ countries:
       names before opening fire on those they supposed to be Christians. Media reports
       indicated that ISIS-M targeted both Muslim and Christian communities.
     state_dept_christian_mentions: true
+    recent_incidents:
+    - title: Christian Captured and Killed in Cabo Delgado, Northern Mozambique
+      url: https://www.barnabasaid.org/us/news/christian-captured-and-killed-in-cabo-delgado-northern-mozambique
+      date: ''
+      description: ''
+      source: Barnabas Aid
     archive_modern_excerpt: In Mozambique, Christians face a multifaceted web of persecution
       stemming from violent Islamic militants, drug trafficking, government restrictions,
       conflict-related violence and social discrimination. The constitution provides
@@ -17753,6 +17772,7 @@ countries:
     - owid2024
     - forum18
     - vom2026
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -17848,6 +17868,7 @@ countries:
     - owid2024
     - forum18
     - vom2026
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -17867,7 +17888,8 @@ countries:
     - *id003
     - *id004
     - *id020
-    - *id013
+    - *id012
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -17896,6 +17918,17 @@ countries:
         for being too poor to care for their children, and now government agents are
         threatening to take them," said a front-line worker. "But that family is no
       source: Voice of the Martyrs
+    fides_articles: 1
+    fides_samples:
+    - title: 'ASIA/KYRGYZSTAN - “The fate of the flock is my fate”: Bishop Anthony
+        Corcoran’s missionary road'
+      url: https://www.fides.org/en/news/78228-ASIA_KYRGYZSTAN_The_fate_of_the_flock_is_my_fate_Bishop_Anthony_Corcoran_s_missionary_road
+      date: '2026-09-29'
+      description: 'by Marie-Lucile Kubacki Biškek – On September 29, Cardinal Giorgio
+        Marengo will lay his hands on the head of Father Anthony Corcoran, an American-born
+        Jesuit, who will become a bishop that day. He will be confirmed in what he
+        has been for nearly a decade: the shepherd of a few hundred Catholics scat'
+      source: Agenzia Fides
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Kyrgyzstan are severely restricted. A 2025 religion
@@ -17934,6 +17967,15 @@ countries:
       and 21 madrassahs.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: 'ASIA/KYRGYZSTAN - “The fate of the flock is my fate”: Bishop Anthony
+        Corcoran’s missionary road'
+      url: https://www.fides.org/en/news/78228-ASIA_KYRGYZSTAN_The_fate_of_the_flock_is_my_fate_Bishop_Anthony_Corcoran_s_missionary_road
+      date: '2026-09-29'
+      description: 'by Marie-Lucile Kubacki Biškek – On September 29, Cardinal Giorgio
+        Marengo will lay his hands on the head of Father Anthony Corcoran, an American-born
+        Jesuit, who will become a bishop that day. He will be confirmed in what he
+        has been for nearly a decade: the shepherd of a few hundred Catholics scat'
+      source: Agenzia Fides
     - title: Christians in Rural Villages Face Increasing Pressure
       url: https://www.persecution.com/stories/christians-in-rural-villages-face-increasing-pressure
       date: '2026-09-17'
@@ -19787,7 +19829,6 @@ countries:
     - owid2024
     - infochretienne
     - csi
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -19838,7 +19879,6 @@ countries:
     - owid2024
     - infochretienne
     - csi
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -19856,12 +19896,11 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id009
+    - *id013
     - &id075
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - *id017
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -19888,17 +19927,6 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    fides_articles: 1
-    fides_samples:
-    - title: 'ASIA/SRI LANKA - Easter bombings: “Towards Truth and Justice”'
-      url: https://www.fides.org/en/news/78206-ASIA_SRI_LANKA_Easter_bombings_Towards_Truth_and_Justice
-      date: '2026-09-23'
-      description: Colombo – “It is a wound that is slowly healing. The healing process
-        is underway. With this verdict, we can say that we are moving in the direction
-        of truth and justice, since those who carried out the massacre and some of
-        its co-organizers have been identified. There is still a second part to be
-        es
-      source: Agenzia Fides
     uscirf_designation: none
     uscirf_key_findings:
     - Religious freedom conditions in Sri Lanka are concerning. The government enforces
@@ -19942,15 +19970,6 @@ countries:
       date: '2026-09-23'
       description: ''
       source: Info Chrétienne
-    - title: 'ASIA/SRI LANKA - Easter bombings: “Towards Truth and Justice”'
-      url: https://www.fides.org/en/news/78206-ASIA_SRI_LANKA_Easter_bombings_Towards_Truth_and_Justice
-      date: '2026-09-23'
-      description: Colombo – “It is a wound that is slowly healing. The healing process
-        is underway. With this verdict, we can say that we are moving in the direction
-        of truth and justice, since those who carried out the massacre and some of
-        its co-organizers have been identified. There is still a second part to be
-        es
-      source: Agenzia Fides
     - title: 'Sri Lanka : verdict attendu dans le procès des attentats de Pâques 2019'
       url: https://www.infochretienne.com/articles/sri-lanka-verdict-attendu-dans-le-proces-des-attentats-de-paques-2019
       date: '2026-09-22'
@@ -21402,7 +21421,7 @@ countries:
     - *id002
     - *id004
     - *id007
-    - *id013
+    - *id012
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 4
@@ -21963,8 +21982,8 @@ sources:
   uscirf2025turkmenistan: *id070
   uscirf2025uzbekistan: *id071
   uscirf2025tajikistan: *id072
-  morningstarnews2026: *id012
-  infochretienne: *id009
+  morningstarnews2026: *id011
+  infochretienne: *id013
   fides: *id017
   aciprensa:
     title: ACI Prensa - Noticias católicas
@@ -21988,7 +22007,7 @@ sources:
   mec: *id016
   bitterwinter: *id073
   releaseintl: *id008
-  vom2026: *id013
+  vom2026: *id012
   chinaaid: *id074
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
@@ -22003,7 +22022,7 @@ sources:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
-  barnabas: *id010
+  barnabas: *id009
   csi: *id075
   cna: *id019
   hrwf: *id018
@@ -22015,7 +22034,7 @@ sources:
     title: World Evangelical Alliance - Religious Liberty
     url: https://worldea.org/
     date: '2026'
-  jubilee: *id011
+  jubilee: *id010
   ippforb:
     title: IPPFoRB - Parliamentarians for FoRB
     url: https://ippforb.com/
@@ -22563,152 +22582,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-09-28 13:42 UTC
+  generated_at: 2026-09-29 12:43 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-09-28T13:41:31.237357+00:00'
+    fetched_at: '2026-09-29T12:42:53.703357+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-09-28T13:40:54.610160+00:00'
+    fetched_at: '2026-09-29T12:42:25.240308+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-09-28T13:41:33.284687+00:00'
+    fetched_at: '2026-09-29T12:42:56.197685+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-09-28T13:41:18.852053+00:00'
+    fetched_at: '2026-09-29T12:42:45.877709+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-09-28T13:41:21.255008+00:00'
+    fetched_at: '2026-09-29T12:42:48.092967+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-09-28T13:41:02.028975+00:00'
+    fetched_at: '2026-09-29T12:42:30.984839+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-09-28T13:41:05.437002+00:00'
+    fetched_at: '2026-09-29T12:42:34.063923+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-09-28T13:41:29.458322+00:00'
+    fetched_at: '2026-09-29T12:42:51.851429+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-09-28T13:41:28.767023+00:00'
+    fetched_at: '2026-09-29T12:42:51.348978+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-09-28T13:40:57.099062+00:00'
+    fetched_at: '2026-09-29T12:42:26.970810+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-09-28T13:41:30.850049+00:00'
+    fetched_at: '2026-09-29T12:42:53.395594+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-09-28T13:40:59.071903+00:00'
+    fetched_at: '2026-09-29T12:42:28.594336+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-09-28T13:35:43.336225+00:00'
+    fetched_at: '2026-09-29T12:36:54.176622+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-09-28T13:40:53.600077+00:00'
+    fetched_at: '2026-09-29T12:42:24.274470+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-09-28T13:40:41.909830+00:00'
-    message: 3 of 4 queries failed
+    fetched_at: '2026-09-29T12:42:13.030205+00:00'
+    message: 1 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-09-28T13:41:15.601427+00:00'
+    fetched_at: '2026-09-29T12:42:43.357997+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-09-28T13:41:32.282168+00:00'
+    fetched_at: '2026-09-29T12:42:55.064508+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-09-28T13:40:57.939997+00:00'
+    fetched_at: '2026-09-29T12:42:27.847920+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-09-28T13:41:07.698178+00:00'
+    fetched_at: '2026-09-29T12:42:35.899744+00:00'
     message: null
   - name: ippforb
     status: ok
-    fetched_at: '2026-09-28T13:41:36.761961+00:00'
+    fetched_at: '2026-09-29T12:43:04.939285+00:00'
     message: null
   - name: jubilee
     status: ok
-    fetched_at: '2026-09-28T13:41:35.369314+00:00'
+    fetched_at: '2026-09-29T12:43:03.757656+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-09-28T13:41:01.052868+00:00'
+    fetched_at: '2026-09-29T12:42:30.155456+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-09-28T13:40:45.074849+00:00'
+    fetched_at: '2026-09-29T12:42:16.662717+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-09-28T13:41:37.217389+00:00'
+    fetched_at: '2026-09-29T12:43:05.340498+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-09-28T13:40:43.240580+00:00'
+    fetched_at: '2026-09-29T12:42:13.873703+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-09-28T13:35:42.343467+00:00'
+    fetched_at: '2026-09-29T12:36:52.914060+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-09-28T13:41:12.426398+00:00'
+    fetched_at: '2026-09-29T12:42:39.943956+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-09-28T13:35:45.676137+00:00'
+    fetched_at: '2026-09-29T12:36:56.469450+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-09-28T13:41:03.253234+00:00'
+    fetched_at: '2026-09-29T12:42:31.985479+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-09-28T13:38:22.088425+00:00'
+    fetched_at: '2026-09-29T12:39:30.449813+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-09-28T13:41:15.331039+00:00'
+    fetched_at: '2026-09-29T12:42:42.984251+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-09-28T13:36:28.602569+00:00'
+    fetched_at: '2026-09-29T12:37:36.314428+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-09-28T13:40:52.047544+00:00'
+    fetched_at: '2026-09-29T12:42:22.702324+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-09-28T13:41:04.139672+00:00'
+    fetched_at: '2026-09-29T12:42:33.256144+00:00'
     message: null
   - name: wea
     status: failed
-    fetched_at: '2026-09-28T13:41:34.382694+00:00'
+    fetched_at: '2026-09-29T12:42:57.600696+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 500: Internal Server Error'
   - name: wikipedia
     status: ok
-    fetched_at: '2026-09-28T13:42:01.637228+00:00'
+    fetched_at: '2026-09-29T12:43:30.253263+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
