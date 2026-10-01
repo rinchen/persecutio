@@ -206,7 +206,7 @@ countries:
     - gcr2026
     - vdem2025forb
     sources:
-    - &id022
+    - &id020
       title: BBC News - Taliban tortured and massacred Hazara men 2021
       url: https://www.bbc.com/news/world-asia-58277463
       date: '2021'
@@ -214,15 +214,15 @@ countries:
       title: Open Doors World Watch List 2024
       url: https://www.opendoors.org/en-US/persecution/countries/
       date: '2024'
-    - &id021
+    - &id019
       title: USCIRF 2023 Annual Report - Afghanistan
       url: https://www.uscirf.gov/countries/afghanistan
       date: '2023'
-    - &id076
+    - &id072
       title: U.S. State Department IRF Report 2023 - Afghanistan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/afghanistan/
       date: '2023'
-    - &id077
+    - &id073
       title: Open Doors WWL 2025 Persecution Dynamics — Afghanistan
       url: https://www.opendoors.org/persecution/reports/Afghanistan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -366,11 +366,11 @@ countries:
     - owid2024
     - gcr2026
     - icc2026
-    - bitterwinter
     - releaseintl
     - chinaaid
     - infochretienne
     - barnabas
+    - hrwf
     - jubilee
     - vdem2025forb
   pew_slug: china
@@ -880,28 +880,28 @@ countries:
     - owid2024
     - gcr2026
     - icc2026
-    - bitterwinter
     - releaseintl
     - chinaaid
     - infochretienne
     - barnabas
+    - hrwf
     - jubilee
     - vdem2025forb
     sources:
-    - &id024
+    - &id022
       title: Pew Research - Measuring Religion in China
       url: https://www.pewresearch.org/religion/2023/08/30/measuring-religion-in-china/
       date: '2023'
     - *id001
-    - &id023
+    - &id021
       title: USCIRF 2023 Annual Report - China
       url: https://www.uscirf.gov/countries/china
       date: '2023'
-    - &id078
+    - &id074
       title: U.S. State Department IRF Report 2023 - China
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/china/
       date: '2023'
-    - &id079
+    - &id075
       title: Open Doors WWL 2025 Persecution Dynamics — China
       url: https://www.opendoors.org/persecution/reports/China-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -913,15 +913,11 @@ countries:
       title: International Christian Concern - Global Persecution Reports
       url: https://www.persecution.org/
       date: '2026'
-    - &id073
-      title: Bitter Winter - Religious Liberty and Human Rights
-      url: https://bitterwinter.org/
-      date: '2026'
     - &id008
       title: Release International - Serving the Persecuted Church
       url: https://releaseinternational.org/
       date: '2026'
-    - &id074
+    - &id071
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
@@ -933,7 +929,11 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id010
+    - &id015
+      title: Human Rights Without Frontiers
+      url: https://hrwf.eu/
+      date: '2026'
+    - &id011
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
@@ -963,15 +963,6 @@ countries:
         But the meeting also comes as Christians and other religious believers in
         C
       source: International Christian Concern
-    bitterwinter_articles: 1
-    bitterwinter_samples:
-    - title: In Dallas, Christians Unite to Protest Persecution in China
-      url: https://bitterwinter.org/in-dallas-christians-unite-to-protest-persecution-in-china
-      date: '2026-09-15'
-      description: Believers in China and overseas keep watch for imprisoned pastors
-        and persecuted churches. The post In Dallas, Christians Unite to Protest Persecution
-        in China first appeared on Bitter Winter .
-      source: Bitter Winter
     releaseintl_articles: 1
     releaseintl_samples:
     - title: Chinese pastor released!
@@ -980,34 +971,35 @@ countries:
       description: Chinese Pastor Zhang Shaojie is released from prison. The post
         Chinese pastor released! appeared first on Release International .
       source: Release International
-    chinaaid_articles: 9
+    chinaaid_articles: 10
     chinaaid_samples:
-    - title: Christian students, educators questioned as central China crackdown expands
-      url: https://chinaaid.org/news/christian-students-educators-questioned-as-central-china-crackdown-expands/?utm_source=rss&utm_medium=rss&utm_campaign=christian-students-educators-questioned-as-central-china-crackdown-expands
-      date: '2026-09-29'
-      description: Hunan Province — September 28, 2026 — Chinese authorities have
-        expanded a crackdown on house-church Christians in central China from places
-        of worship into schools, where students and educators have been questioned
-        or disciplined, according to local Christians. The reported pressure follows
-        coordina
+    - title: Early Rain member Chen Yunfei arrested again in southwestern China
+      url: https://chinaaid.org/news/early-rain-member-chen-yunfei-arrested-again-in-southwestern-china/?utm_source=rss&utm_medium=rss&utm_campaign=early-rain-member-chen-yunfei-arrested-again-in-southwestern-china
+      date: '2026-09-30'
+      description: CHENGDU, SICHUAN PROVINCE, CHINA — Sept. 30, 2026 — Authorities
+        in southwestern China have formally arrested veteran dissident and Early Rain
+        Covenant Church member Chen Yunfei again on suspicion of “picking quarrels
+        and provoking trouble,” after he spent more than a month in custody following
+        an Au
       source: ChinaAid
-    - title: Preacher in northern China detained on suspicion of ‘organizing illegal
-        religious activities’
-      url: https://chinaaid.org/news/preacher-in-northern-china-detained-on-suspicion-of-organizing-illegal-religious-activities/?utm_source=rss&utm_medium=rss&utm_campaign=preacher-in-northern-china-detained-on-suspicion-of-organizing-illegal-religious-activities
-      date: '2026-09-29'
-      description: NORTHERN CHINA — September 29, 2026 — Police detained house church
-        preacher An Yankui at his residence Tuesday morning after summoning him for
-        investigation on suspicion of “organizing illegal religious activities,” according
-        to Taiyuan Xuncheng Reformed Church and a police document reviewed by Chin
+    - title: Police in southern China seize Gospel materials, force church from meeting
+        space
+      url: https://chinaaid.org/news/police-in-southern-china-seize-gospel-materials-force-church-from-meeting-space/?utm_source=rss&utm_medium=rss&utm_campaign=police-in-southern-china-seize-gospel-materials-force-church-from-meeting-space
+      date: '2026-09-30'
+      description: (Guangzhou — September 30, 2026) Police in southern China confiscated
+        Gospel materials and forced a long-established house church from its rented
+        meeting space after three Christians distributed fans printed with Gospel
+        messages near a school, according to local Christians. Guangfu Church is a
+        long-
       source: ChinaAid
-    - title: Beijing pastor, seven coworkers held on suspicion of ‘fraud’
-      url: https://chinaaid.org/news/beijing-pastor-seven-coworkers-held-on-suspicion-of-fraud/?utm_source=rss&utm_medium=rss&utm_campaign=beijing-pastor-seven-coworkers-held-on-suspicion-of-fraud
-      date: '2026-09-29'
-      description: NORTHERN CHINA — September 29, 2026 — Pastor Zhou Zixun, legally
-        known as Cui Xianfeng, and seven coworkers of Beijing Jiaquan Church are being
-        held in criminal detention on suspicion of “fraud,” according to a Sept. 29
-        prayer letter from Zhou’s wife, Cui Jinyoung, who also uses the English name
-        Reb
+    - title: 8 sentenced by China in &#8216;Create Abundance&#8217; case, assets seized
+        across network
+      url: https://chinaaid.org/news/8-sentenced-by-china-in-create-abundance-case-assets-seized-across-network/?utm_source=rss&utm_medium=rss&utm_campaign=8-sentenced-by-china-in-create-abundance-case-assets-seized-across-network
+      date: '2026-09-30'
+      description: (MIDLAND, Texas — Press Release — September 30, 2026) — A Chinese
+        court has sentenced eight people associated with Create Abundance, a nationwide
+        spiritual-development and commercial network, to seven to nine months in prison
+        under China’s Criminal Law Article 300. The case, centered in northeast Ch
       source: ChinaAid
     infochretienne_articles: 2
     infochretienne_samples:
@@ -1028,6 +1020,17 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    hrwf_articles: 1
+    hrwf_samples:
+    - title: 'CHINA: Religious persecution and issues – Bimonthly Digest September
+        16-30'
+      url: https://hrwf.eu/china-religious-persecution-and-issues-bimonthly-digest-september-16-30-3
+      date: '2026-10-01'
+      description: 'CHINA: Religious persecution and issues – Bimonthly Digest September
+        16-30 General 18.09.2026 US-China summit must address China s religious freedom
+        repression USCIRF The U.S. Commission on International Religious Freedom (USCIRF)
+        has reported for years that China’s violations of freedom of religion'
+      source: Human Rights Without Frontiers
     jubilee_articles: 1
     jubilee_samples:
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
@@ -1074,6 +1077,52 @@ countries:
       in most religious activities or receiving religious education.'
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: 'CHINA: Religious persecution and issues – Bimonthly Digest September
+        16-30'
+      url: https://hrwf.eu/china-religious-persecution-and-issues-bimonthly-digest-september-16-30-3
+      date: '2026-10-01'
+      description: 'CHINA: Religious persecution and issues – Bimonthly Digest September
+        16-30 General 18.09.2026 US-China summit must address China s religious freedom
+        repression USCIRF The U.S. Commission on International Religious Freedom (USCIRF)
+        has reported for years that China’s violations of freedom of religion'
+      source: Human Rights Without Frontiers
+    - title: Early Rain member Chen Yunfei arrested again in southwestern China
+      url: https://chinaaid.org/news/early-rain-member-chen-yunfei-arrested-again-in-southwestern-china/?utm_source=rss&utm_medium=rss&utm_campaign=early-rain-member-chen-yunfei-arrested-again-in-southwestern-china
+      date: '2026-09-30'
+      description: CHENGDU, SICHUAN PROVINCE, CHINA — Sept. 30, 2026 — Authorities
+        in southwestern China have formally arrested veteran dissident and Early Rain
+        Covenant Church member Chen Yunfei again on suspicion of “picking quarrels
+        and provoking trouble,” after he spent more than a month in custody following
+        an Au
+      source: ChinaAid
+    - title: Police in southern China seize Gospel materials, force church from meeting
+        space
+      url: https://chinaaid.org/news/police-in-southern-china-seize-gospel-materials-force-church-from-meeting-space/?utm_source=rss&utm_medium=rss&utm_campaign=police-in-southern-china-seize-gospel-materials-force-church-from-meeting-space
+      date: '2026-09-30'
+      description: (Guangzhou — September 30, 2026) Police in southern China confiscated
+        Gospel materials and forced a long-established house church from its rented
+        meeting space after three Christians distributed fans printed with Gospel
+        messages near a school, according to local Christians. Guangfu Church is a
+        long-
+      source: ChinaAid
+    - title: 8 sentenced by China in &#8216;Create Abundance&#8217; case, assets seized
+        across network
+      url: https://chinaaid.org/news/8-sentenced-by-china-in-create-abundance-case-assets-seized-across-network/?utm_source=rss&utm_medium=rss&utm_campaign=8-sentenced-by-china-in-create-abundance-case-assets-seized-across-network
+      date: '2026-09-30'
+      description: (MIDLAND, Texas — Press Release — September 30, 2026) — A Chinese
+        court has sentenced eight people associated with Create Abundance, a nationwide
+        spiritual-development and commercial network, to seven to nine months in prison
+        under China’s Criminal Law Article 300. The case, centered in northeast Ch
+      source: ChinaAid
+    - title: Military Drills, Party Ideology Mark New Term at Christian Seminary in
+        China
+      url: https://chinaaid.org/news/military-drills-party-ideology-mark-new-term-at-christian-seminary-in-china/?utm_source=rss&utm_medium=rss&utm_campaign=military-drills-party-ideology-mark-new-term-at-christian-seminary-in-china
+      date: '2026-09-30'
+      description: Eastern China — September 30, 2026 — Military drills, target shooting
+        and political instruction marked the start of the fall semester at a Christian
+        seminary in eastern China, highlighting Beijing s push for the Chinafication
+        of Christianity and raising concerns about government influence over theol
+      source: ChinaAid
     - title: Christian students, educators questioned as central China crackdown expands
       url: https://chinaaid.org/news/christian-students-educators-questioned-as-central-china-crackdown-expands/?utm_source=rss&utm_medium=rss&utm_campaign=christian-students-educators-questioned-as-central-china-crackdown-expands
       date: '2026-09-29'
@@ -1135,50 +1184,16 @@ countries:
         believers phones and ordering young Christians to replace hymns with songs
         praising the Chinese Communist Party, according to multiple sources. The o
       source: ChinaAid
-    - title: Chinese authorities reportedly detain pastors, workers from Beijing Church
-      url: https://chinaaid.org/news/chinese-authorities-reportedly-detain-pastors-workers-from-beijing-church/?utm_source=rss&utm_medium=rss&utm_campaign=chinese-authorities-reportedly-detain-pastors-workers-from-beijing-church
-      date: '2026-09-21'
-      description: BEIJING, CHINA — Sept. 21, 2026 — Chinese authorities have reportedly
-        detained multiple pastors and church coworkers from Beijing Jiaquan Church,
-        an influential urban house-church network with more than two decades of ministry
-        in the Chinese capital and congregations elsewhere in China. ChinaAid has
-      source: ChinaAid
     - title: 'Chine : onze chrétiens de l''église Early Rain Covenant arrêtés'
       url: https://www.infochretienne.com/articles/chine-onze-chrtiens-de-lglise-early-rain-covenant-arrts
       date: '2026-09-21'
       description: ''
       source: Info Chrétienne
-    - title: '‘At war with faith’: Washington forum spotlights China’s repression
-        ahead of Xi visit'
-      url: https://chinaaid.org/news/at-war-with-faith-washington-forum-spotlights-chinas-repression-ahead-of-xi-visit/?utm_source=rss&utm_medium=rss&utm_campaign=at-war-with-faith-washington-forum-spotlights-chinas-repression-ahead-of-xi-visit
-      date: '2026-09-18'
-      description: (Washington, D.C. — September 18, 2026) Days before Chinese leader
-        Xi Jinping’s planned visit to Washington, former U.S. Ambassador-at-Large
-        for International Religious Freedom Sam Brownback told a gathering of religious
-        freedom advocates that the Chinese government is “at war with faith.” Brownback
-      source: ChinaAid
-    - title: Family of detained Chinese pastor issues prayer letter as ‘fraud’ case
-        advances
-      url: https://chinaaid.org/news/stories-by-issue/advocacy/family-of-detained-chinese-pastor-issues-prayer-letter-as-fraud-case-advances/?utm_source=rss&utm_medium=rss&utm_campaign=family-of-detained-chinese-pastor-issues-prayer-letter-as-fraud-case-advances
-      date: '2026-09-17'
-      description: (Xi’an — September 17, 2026) Authorities in northwestern China
-        are moving toward trial in a “fraud” case against house church Pastor Tang
-        Bingyi, part of a broader prosecution of Light of Zion Church leaders that
-        supporters say treats voluntary church offerings as criminal fraud. Tang,
-        40, serves at
-      source: ChinaAid
     - title: 'Chine : les familles de détenus chrétiens s’inquiètent pour leur santé'
       url: https://www.infochretienne.com/articles/chine-les-familles-de-detenus-chretiens-sinquietent-pour-leur-sante
       date: '2026-09-17'
       description: ''
       source: Info Chrétienne
-    - title: In Dallas, Christians Unite to Protest Persecution in China
-      url: https://bitterwinter.org/in-dallas-christians-unite-to-protest-persecution-in-china
-      date: '2026-09-15'
-      description: Believers in China and overseas keep watch for imprisoned pastors
-        and persecuted churches. The post In Dallas, Christians Unite to Protest Persecution
-        in China first appeared on Bitter Winter .
-      source: Bitter Winter
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
         Nigeria, and Pakistan'
       url: https://jubileecampaign.org/prisoners-of-conscience-behind-bars-for-belief-in-china-nicaragua-nigeria-and-pakistan
@@ -1495,15 +1510,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id025
+    - &id023
       title: USCIRF 2023 Annual Report - Colombia
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
-    - &id080
+    - &id076
       title: U.S. State Department IRF Report 2023 - Colombia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/colombia/
       date: '2023'
-    - &id081
+    - &id077
       title: Open Doors WWL 2025 Persecution Dynamics — Colombia
       url: https://www.opendoors.org/persecution/reports/Colombia-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -1727,15 +1742,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id026
+    - &id024
       title: USCIRF 2023 Annual Report - Cuba
       url: https://www.uscirf.gov/countries/cuba
       date: '2023'
-    - &id082
+    - &id078
       title: U.S. State Department IRF Report 2023 - Cuba
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/cuba/
       date: '2023'
-    - &id083
+    - &id079
       title: Open Doors WWL 2025 Persecution Dynamics — Cuba
       url: https://www.opendoors.org/persecution/reports/Cuba-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -1937,15 +1952,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id027
+    - &id025
       title: USCIRF 2023 Annual Report - Eritrea
       url: https://www.uscirf.gov/countries/eritrea
       date: '2023'
-    - &id084
+    - &id080
       title: U.S. State Department IRF Report 2023 - Eritrea
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/eritrea/
       date: '2023'
-    - &id085
+    - &id081
       title: Open Doors WWL 2025 Persecution Dynamics — Eritrea
       url: https://www.opendoors.org/persecution/reports/Eritrea-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -2359,11 +2374,11 @@ countries:
           - 28.261583
     wiki_url: https://en.wikipedia.org/wiki/India
     wiki_extract: India, officially the Republic of India, is a country in South Asia.
-      It is the world's seventh-largest country by area and the largest by population.
-      Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest,
-      and the Bay of Bengal on the southeast, it shares land borders with Pakistan
-      to the west; China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar
-      to the east. In the Indian Ocean, India is near Sri Lanka and the Maldives.
+      It is the world's seventh-largest country by area and its most populous. Bounded
+      by the Indian Ocean on the south, the Arabian Sea on the southwest, and the
+      Bay of Bengal on the southeast, it shares land borders with Pakistan to the
+      west, China, Nepal, and Bhutan to the north, and Bangladesh and Myanmar to the
+      east. In the Indian Ocean, India is near Sri Lanka and the Maldives.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -2382,15 +2397,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id028
+    - &id026
       title: USCIRF 2023 Annual Report - India
       url: https://www.uscirf.gov/countries/india
       date: '2023'
-    - &id086
+    - &id082
       title: U.S. State Department IRF Report 2023 - India
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/india/
       date: '2023'
-    - &id087
+    - &id083
       title: Open Doors WWL 2025 Persecution Dynamics — India
       url: https://www.opendoors.org/persecution/reports/India-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -2400,12 +2415,12 @@ countries:
     - *id005
     - *id007
     - *id008
-    - &id012
+    - &id010
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
     - *id009
-    - &id018
+    - &id014
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
       date: '2026'
@@ -3199,21 +3214,21 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id029
+    - &id027
       title: USCIRF 2023 Annual Report - Indonesia
       url: https://www.uscirf.gov/countries/indonesia
       date: '2023'
-    - &id088
+    - &id084
       title: U.S. State Department IRF Report 2023 - Indonesia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/indonesia/
       date: '2023'
-    - &id089
+    - &id085
       title: Open Doors WWL 2025 Persecution Dynamics — Indonesia
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Indonesia-Persecution-Dynamics
       date: '2025'
     - *id002
     - *id004
-    - &id011
+    - &id012
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
@@ -3345,9 +3360,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - mec
     - releaseintl
-    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -3525,21 +3538,19 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
-    - mec
     - releaseintl
-    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
-    - &id030
+    - &id028
       title: USCIRF 2023 Annual Report - Iran
       url: https://www.uscirf.gov/countries/iran
       date: '2023'
-    - &id090
+    - &id086
       title: U.S. State Department IRF Report 2023 - Iran
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/iran/
       date: '2023'
-    - &id091
+    - &id087
       title: Open Doors WWL 2025 Persecution Dynamics — Iran
       url: https://www.opendoors.org/persecution/reports/Iran-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -3547,15 +3558,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id017
-      title: Middle East Concern - News
-      url: https://www.meconcern.org/
-      date: '2026'
     - *id008
-    - &id014
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -3571,34 +3574,6 @@ countries:
       one in five in Africa." } }, { "@type": "Question", "name": "What are the main
       causes of modern Christian persecution?", "acceptedAnswer": { "@type": "Answer",
       "text": "Islamic extremism, auth'
-    mec_articles: 7
-    mec_samples:
-    - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
-      url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
-      date: '2026-07-13'
-      description: The Iranian evangelical Christian community and others concerned
-        for the preservation of Iran’s Christian heritage express their sorrow that
-        the oldest Protestant Church in the country could soon be demolished after
-        being confiscated by state authorities. St Peter’s Evangelical Church was
-        founded in
-      source: Middle East Concern
-    - title: 'Iran: Turkish immigration question custody of Iranian convert couple’s
-        adopted child'
-      url: https://www.meconcern.org/2026/06/03/iran-turkish-immigration-question-custody-of-iranian-convert-couples-adopted-child/?utm_source=rss&utm_medium=rss&utm_campaign=iran-turkish-immigration-question-custody-of-iranian-convert-couples-adopted-child
-      date: '2026-06-03'
-      description: Iranian Christian converts and asylum-seekers Sam Khosravi and
-        Maryam Falahi request prayer after an interview with Turkish immigration officials
-        on 2 June. During the interview, the officials questioned whether Sam and
-        Maryam have legal custody over their adopted daughter Lydia in view of a previou
-      source: Middle East Concern
-    - title: 'Iran: Enforced disappearance of Christian convert Mary Mohammadi'
-      url: https://www.meconcern.org/2026/06/01/iran-enforced-disappearance-of-christian-convert-mary-mohammadi/?utm_source=rss&utm_medium=rss&utm_campaign=iran-enforced-disappearance-of-christian-convert-mary-mohammadi
-      date: '2026-06-01'
-      description: 'Prayer is requested for human rights defender, journalist and
-        Christian convert Mary Mohammadi after Amnesty International reports her enforced
-        disappearance since late February 2026. Mary was arrested for the first time
-        at the age of 19 after converting from Islam to Christianity at a house church '
-      source: Middle East Concern
     releaseintl_articles: 1
     releaseintl_samples:
     - title: Release International partner speaks on Iran
@@ -3609,23 +3584,6 @@ countries:
         The post Release International partner speaks on Iran appeared first on Release
         International .
       source: Release International
-    gdelt_articles: 2
-    gdelt_samples:
-    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
-        ,  The Chosen  Christmas Special
-      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
-    - title: Iran kills , imprisons dozens of Christians as persecution rises
-      url: https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
-      date: '2026-08-31'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 2
-    gdelt_sample_urls:
-    - https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-    - https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Iran are particularly severe. The government
@@ -3662,61 +3620,6 @@ countries:
       propaganda.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
-        ,  The Chosen  Christmas Special
-      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
-    - title: Iran kills , imprisons dozens of Christians as persecution rises
-      url: https://www.christianpost.com/news/iran-kills-imprisons-dozens-of-christians-as-persecution-rises.html
-      date: '2026-08-31'
-      description: ''
-      source: GDELT
-    - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
-      url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
-      date: '2026-07-13'
-      description: The Iranian evangelical Christian community and others concerned
-        for the preservation of Iran’s Christian heritage express their sorrow that
-        the oldest Protestant Church in the country could soon be demolished after
-        being confiscated by state authorities. St Peter’s Evangelical Church was
-        founded in
-      source: Middle East Concern
-    - title: 'Iran: Turkish immigration question custody of Iranian convert couple’s
-        adopted child'
-      url: https://www.meconcern.org/2026/06/03/iran-turkish-immigration-question-custody-of-iranian-convert-couples-adopted-child/?utm_source=rss&utm_medium=rss&utm_campaign=iran-turkish-immigration-question-custody-of-iranian-convert-couples-adopted-child
-      date: '2026-06-03'
-      description: Iranian Christian converts and asylum-seekers Sam Khosravi and
-        Maryam Falahi request prayer after an interview with Turkish immigration officials
-        on 2 June. During the interview, the officials questioned whether Sam and
-        Maryam have legal custody over their adopted daughter Lydia in view of a previou
-      source: Middle East Concern
-    - title: 'Iran: Enforced disappearance of Christian convert Mary Mohammadi'
-      url: https://www.meconcern.org/2026/06/01/iran-enforced-disappearance-of-christian-convert-mary-mohammadi/?utm_source=rss&utm_medium=rss&utm_campaign=iran-enforced-disappearance-of-christian-convert-mary-mohammadi
-      date: '2026-06-01'
-      description: 'Prayer is requested for human rights defender, journalist and
-        Christian convert Mary Mohammadi after Amnesty International reports her enforced
-        disappearance since late February 2026. Mary was arrested for the first time
-        at the age of 19 after converting from Islam to Christianity at a house church '
-      source: Middle East Concern
-    - title: 'Iran: Catholic convert sentenced to over nine years’ imprisonment'
-      url: https://www.meconcern.org/2026/05/27/iran-catholic-convert-sentenced-to-over-nine-years-imprisonment/?utm_source=rss&utm_medium=rss&utm_campaign=iran-catholic-convert-sentenced-to-over-nine-years-imprisonment
-      date: '2026-05-27'
-      description: Prayer is requested for Ghazal Marzban, a convert from Islam to
-        Christianity, as she faces a prison sentence of nine years and eight months
-        on charges including “propaganda against the state” and “gathering and collusion
-        against national security”. Ghazal was arrested at her home in Tehran last
-        Janu
-      source: Middle East Concern
-    - title: 'Iran: Christian convert in prison denied medical treatment'
-      url: https://www.meconcern.org/2026/05/15/iran-christian-convert-in-prison-denied-medical-treatment/?utm_source=rss&utm_medium=rss&utm_campaign=iran-christian-convert-in-prison-denied-medical-treatment
-      date: '2026-05-15'
-      description: 'Prayer is requested for Mahshar Parandin, a Christian prisoner
-        of conscience denied medical care. Human Rights Activists News Agency (HRANA)
-        reports that Mahshar, an artist, is serving a two-year sentence in Tehran’s
-        Evin Prison. She has been denied access to necessary medical care. Mahshar
-        suffers '
-      source: Middle East Concern
     - title: Release International partner speaks on Iran
       url: https://releaseinternational.org/podcastiran
       date: '2026-04-02'
@@ -3725,23 +3628,6 @@ countries:
         The post Release International partner speaks on Iran appeared first on Release
         International .
       source: Release International
-    - title: 'Iran: Concern for Christians in prison'
-      url: https://www.meconcern.org/2026/03/19/iran-concern-for-christians-in-prison/?utm_source=rss&utm_medium=rss&utm_campaign=iran-concern-for-christians-in-prison
-      date: '2026-03-19'
-      description: The families and friends of Christians in prison in Iran request
-        prayer as concerns for their well-being grow and communication has all but
-        ceased. As our joint report [1] published in February mentions, there are
-        at least 48 Christians in prison on account of their Christian faith and related
-        activ
-      source: Middle East Concern
-    - title: 'Iran: Christian convert starts prison sentence'
-      url: https://www.meconcern.org/2026/01/05/iran-christian-convert-starts-prison-sentence/?utm_source=rss&utm_medium=rss&utm_campaign=iran-christian-convert-starts-prison-sentence
-      date: '2026-01-05'
-      description: 'Prayer is requested for Christian converts Nayereh Arjaneh and
-        Qasem Esmaili from Garmsar in North Iran. Nayereh started serving two concurrent
-        five-year sentences in Semnan Prison on 23 December. Her husband Qasem’s prison
-        sentence is on hold while he has cancer treatment. Article Eighteen reports '
-      source: Middle East Concern
     archive_modern_excerpt: 'Christianity in Iran is divided between constitutionally
       recognized and unrecognized Christians: • Recognized: The recognized historical
       communities of Armenian and Assyrian Christians are protected by the state but
@@ -3911,15 +3797,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id031
+    - &id029
       title: USCIRF 2023 Annual Report - Iraq
       url: https://www.uscirf.gov/countries/iraq
       date: '2023'
-    - &id092
+    - &id088
       title: U.S. State Department IRF Report 2023 - Iraq
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/iraq/
       date: '2023'
-    - &id093
+    - &id089
       title: Open Doors WWL 2025 Persecution Dynamics — Iraq
       url: https://www.opendoors.org/persecution/reports/Iraq-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -4052,6 +3938,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - vom2026
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -4152,24 +4039,26 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - vom2026
     - vdem2025forb
     sources:
     - *id001
-    - &id032
+    - &id030
       title: USCIRF 2023 Annual Report - Laos
       url: https://www.uscirf.gov/countries/laos
       date: '2023'
-    - &id094
+    - &id090
       title: U.S. State Department IRF Report 2023 - Laos
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/laos/
       date: '2023'
-    - &id095
+    - &id091
       title: Open Doors WWL 2025 Persecution Dynamics — Laos
       url: https://www.opendoors.org/persecution/reports/Laos-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id003
     - *id004
+    - *id010
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -4178,6 +4067,17 @@ countries:
     opendoors_score: null
     christian_population: 113096
     christian_percentage: 1.54
+    vom_articles: 1
+    vom_samples:
+    - title: Widow Cast Out with No Provisions
+      url: https://www.persecution.com/stories/widow-cast-out-with-no-provisions
+      date: '2026-10-01'
+      description: 'The body of Christ is caring for a widow whose family rejected
+        her for her faith in Christ. Toon Simom, 73, is a widow from a Laotian minority
+        group and has followed Christ for five years. She had lived with her only
+        daughter, Thon, since Toon''s husband died in 2006. Thon is opposed to her
+        mother''s '
+      source: Voice of the Martyrs
     uscirf_designation: none
     uscirf_key_findings:
     - Religious freedom conditions in Laos remain poor. The government uses Decree
@@ -4645,22 +4545,22 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id033
+    - &id031
       title: USCIRF 2023 Annual Report - Mexico
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
-    - &id096
+    - &id092
       title: U.S. State Department IRF Report 2023 - Mexico
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mexico/
       date: '2023'
-    - &id097
+    - &id093
       title: Open Doors WWL 2025 Persecution Dynamics — Mexico
       url: https://www.opendoors.org/persecution/reports/Mexico-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id003
     - *id004
-    - &id016
+    - &id017
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
@@ -4906,22 +4806,22 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id034
+    - &id032
       title: USCIRF 2023 Annual Report - Nicaragua
       url: https://www.uscirf.gov/countries/nicaragua
       date: '2023'
-    - &id098
+    - &id094
       title: U.S. State Department IRF Report 2023 - Nicaragua
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nicaragua/
       date: '2023'
-    - &id099
+    - &id095
       title: Open Doors WWL 2025 Persecution Dynamics — Nicaragua
       url: https://www.opendoors.org/persecution/reports/Nicaragua-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id003
     - *id004
-    - *id010
+    - *id011
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -5054,7 +4954,6 @@ countries:
     - infochretienne
     - barnabas
     - jubilee
-    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -5204,19 +5103,18 @@ countries:
     - infochretienne
     - barnabas
     - jubilee
-    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
-    - &id035
+    - &id033
       title: USCIRF 2023 Annual Report - Nigeria
       url: https://www.uscirf.gov/countries/nigeria
       date: '2023'
-    - &id100
+    - &id096
       title: U.S. State Department IRF Report 2023 - Nigeria
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nigeria/
       date: '2023'
-    - &id101
+    - &id097
       title: Open Doors WWL 2025 Persecution Dynamics — Nigeria
       url: https://www.opendoors.org/persecution/reports/Nigeria-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -5224,13 +5122,12 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id011
-    - *id007
     - *id012
+    - *id007
+    - *id010
     - *id013
     - *id009
-    - *id010
-    - *id014
+    - *id011
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -5345,23 +5242,6 @@ countries:
       date: '2026-08-17'
       description: window.option_df_18313 = {"outline":[],"backgroundColor":"#eef7fd","autoEnableOutline":"false","autoEnableThumbnail":"false","overwritePDFOutline":"false","direction":"1","pageSize":"0","source":"https:\/\/jubileecampaign.org\/wp-content\/uploads\/2026\/08\/HRC-63-Prisoners-of-Conscience.pdf","wpOpt
       source: Jubilee Campaign
-    gdelt_articles: 2
-    gdelt_samples:
-    - title: As violence escalates in Nigeria , Christian and Muslim leaders unite
-      url: https://religionnews.com/2026/09/23/as-violence-escalates-in-nigeria-christian-and-muslim-leaders-unite-in-interfaith-front
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
-    - title: New report says over 3000 Christians killed in Nigeria in just eight
-        months in 2026
-      url: https://www.catholicworldreport.com/2026/09/08/new-report-says-over-3000-christians-killed-in-nigeria-in-just-eight-months-in-2026
-      date: '2026-09-08'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 2
-    gdelt_sample_urls:
-    - https://religionnews.com/2026/09/23/as-violence-escalates-in-nigeria-christian-and-muslim-leaders-unite-in-interfaith-front
-    - https://www.catholicworldreport.com/2026/09/08/new-report-says-over-3000-christians-killed-in-nigeria-in-just-eight-months-in-2026
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5430,11 +5310,6 @@ countries:
         morning in Dorowa Babuje when armed men ambushed them. They shot and killed
         the pasto
       source: International Christian Concern
-    - title: As violence escalates in Nigeria , Christian and Muslim leaders unite
-      url: https://religionnews.com/2026/09/23/as-violence-escalates-in-nigeria-christian-and-muslim-leaders-unite-in-interfaith-front
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
     - title: 'Nigeria : un pasteur baptiste parmi une dizaine de chrétiens tués en
         quelques jours'
       url: https://www.infochretienne.com/articles/nigeria-un-pasteur-baptiste-parmi-une-dizaine-de-chretiens-tues-en-quelques-jours
@@ -5464,12 +5339,6 @@ countries:
         in Mangu County took place on Saturday (Sept. 5), where three Christians were
         killed in
       source: Morning Star News
-    - title: New report says over 3000 Christians killed in Nigeria in just eight
-        months in 2026
-      url: https://www.catholicworldreport.com/2026/09/08/new-report-says-over-3000-christians-killed-in-nigeria-in-just-eight-months-in-2026
-      date: '2026-09-08'
-      description: ''
-      source: GDELT
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
         Nigeria, and Pakistan'
       url: https://jubileecampaign.org/prisoners-of-conscience-behind-bars-for-belief-in-china-nicaragua-nigeria-and-pakistan
@@ -5687,15 +5556,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id036
+    - &id034
       title: USCIRF 2023 Annual Report - North Korea
       url: https://www.uscirf.gov/countries/north-korea
       date: '2023'
-    - &id102
+    - &id098
       title: U.S. State Department IRF Report 2023 - North Korea
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/north-korea/
       date: '2023'
-    - &id103
+    - &id099
       title: Open Doors WWL 2025 Persecution Dynamics — North Korea
       url: https://www.opendoors.org/persecution/reports/North-Korea-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -5833,7 +5702,9 @@ countries:
     - gcr2026
     - morningstarnews2026
     - icc2026
+    - vom2026
     - infochretienne
+    - fides
     - hrwf
     - jubilee
     - vdem2025forb
@@ -5997,21 +5868,23 @@ countries:
     - gcr2026
     - morningstarnews2026
     - icc2026
+    - vom2026
     - infochretienne
+    - fides
     - hrwf
     - jubilee
     - vdem2025forb
     sources:
     - *id001
-    - &id037
+    - &id035
       title: USCIRF 2023 Annual Report - Pakistan
       url: https://www.uscirf.gov/countries/pakistan
       date: '2023'
-    - &id104
+    - &id100
       title: U.S. State Department IRF Report 2023 - Pakistan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/pakistan/
       date: '2023'
-    - &id105
+    - &id101
       title: Open Doors WWL 2025 Persecution Dynamics — Pakistan
       url: https://www.opendoors.org/persecution/reports/Pakistan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -6019,14 +5892,13 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id011
+    - *id012
     - *id007
-    - *id013
-    - &id019
-      title: Human Rights Without Frontiers
-      url: https://hrwf.eu/
-      date: '2026'
     - *id010
+    - *id013
+    - *id014
+    - *id015
+    - *id011
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -6081,6 +5953,17 @@ countries:
         from Dhala Sharif, near Nowshera Virkan in Gujranwala District in Punjab,
         Pakistan,
       source: International Christian Concern
+    vom_articles: 1
+    vom_samples:
+    - title: Evangelist’s Home Burned
+      url: https://www.persecution.com/stories/evangelists-home-burned
+      date: '2026-10-01'
+      description: A Pakistani evangelist, his wife and two young children are homeless
+        after local Muslims, angered by his Christian ministry, set fire to his home.
+        Evangelist Salim Chaudhry regularly traveled throughout the area near his
+        home village to share the gospel. He also constructed a small church on land
+        he
+      source: Voice of the Martyrs
     infochretienne_articles: 1
     infochretienne_samples:
     - title: 'Pakistan : un adolescent chrétien battu après avoir défendu une fille
@@ -6089,6 +5972,26 @@ countries:
       date: '2026-09-09'
       description: ''
       source: Info Chrétienne
+    fides_articles: 2
+    fides_samples:
+    - title: ASIA/PAKISTAN - In Mariamabad, the memory of Capuchin missionary Father
+        Frank Van Butsele, who gave his life for the Gospel
+      url: https://www.fides.org/en/news/78238-ASIA_PAKISTAN_In_Mariamabad_the_memory_of_Capuchin_missionary_Father_Frank_Van_Butsele_who_gave_his_life_for_the_Gospel
+      date: '2026-10-01'
+      description: Lahore – As the feast of St. Francis of Assisi approaches, during
+        the eighth centenary of his death , the Catholic community of Mariamabad village,
+        in Pakistan’s Punjab Province, is looking back at its history and once again
+        entrusts the journey of the mission to the Blessed Virgin Mary. In the “Cit
+      source: Agenzia Fides
+    - title: ASIA/PAKISTAN - Franciscan family marks the 800th anniversary of the
+        Transitus of St. Francis in a spirit of dialogue and peace
+      url: https://www.fides.org/en/news/78235-ASIA_PAKISTAN_Franciscan_family_marks_the_800th_anniversary_of_the_Transitus_of_St_Francis_in_a_spirit_of_dialogue_and_peace
+      date: '2026-10-01'
+      description: Islamabad – Franciscan fraternities in Pakistan are marking the
+        800th anniversary of the death of St Francis of Assisi , ahead of the liturgical
+        feast of St Francis on October 4, renewing their commitment to live and proclaim
+        the Gospel, according to the spirit of the saint, in the Pakistani nation.
+      source: Agenzia Fides
     hrwf_articles: 2
     hrwf_samples:
     - title: 'PAKISTAN: Blasphemy laws and the sad case of Junaid Hafeez, university
@@ -6169,6 +6072,33 @@ countries:
       to be precise.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Evangelist’s Home Burned
+      url: https://www.persecution.com/stories/evangelists-home-burned
+      date: '2026-10-01'
+      description: A Pakistani evangelist, his wife and two young children are homeless
+        after local Muslims, angered by his Christian ministry, set fire to his home.
+        Evangelist Salim Chaudhry regularly traveled throughout the area near his
+        home village to share the gospel. He also constructed a small church on land
+        he
+      source: Voice of the Martyrs
+    - title: ASIA/PAKISTAN - In Mariamabad, the memory of Capuchin missionary Father
+        Frank Van Butsele, who gave his life for the Gospel
+      url: https://www.fides.org/en/news/78238-ASIA_PAKISTAN_In_Mariamabad_the_memory_of_Capuchin_missionary_Father_Frank_Van_Butsele_who_gave_his_life_for_the_Gospel
+      date: '2026-10-01'
+      description: Lahore – As the feast of St. Francis of Assisi approaches, during
+        the eighth centenary of his death , the Catholic community of Mariamabad village,
+        in Pakistan’s Punjab Province, is looking back at its history and once again
+        entrusts the journey of the mission to the Blessed Virgin Mary. In the “Cit
+      source: Agenzia Fides
+    - title: ASIA/PAKISTAN - Franciscan family marks the 800th anniversary of the
+        Transitus of St. Francis in a spirit of dialogue and peace
+      url: https://www.fides.org/en/news/78235-ASIA_PAKISTAN_Franciscan_family_marks_the_800th_anniversary_of_the_Transitus_of_St_Francis_in_a_spirit_of_dialogue_and_peace
+      date: '2026-10-01'
+      description: Islamabad – Franciscan fraternities in Pakistan are marking the
+        800th anniversary of the death of St Francis of Assisi , ahead of the liturgical
+        feast of St Francis on October 4, renewing their commitment to live and proclaim
+        the Gospel, according to the spirit of the saint, in the Pakistani nation.
+      source: Agenzia Fides
     - title: 'PAKISTAN: Blasphemy laws and the sad case of Junaid Hafeez, university
         lecturer'
       url: https://hrwf.eu/pakistan-blasphemy-laws-and-the-sad-case-of-junaid-hafeez
@@ -6520,15 +6450,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id038
+    - &id036
       title: USCIRF 2023 Annual Report - Saudi Arabia
       url: https://www.uscirf.gov/countries/saudi-arabia
       date: '2023'
-    - &id106
+    - &id102
       title: U.S. State Department IRF Report 2023 - Saudi Arabia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/saudi-arabia/
       date: '2023'
-    - &id107
+    - &id103
       title: Open Doors WWL 2025 Persecution Dynamics — Saudi Arabia
       url: https://www.opendoors.org/persecution/reports/Saudi-Arabia-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -6772,15 +6702,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id039
+    - &id037
       title: USCIRF 2023 Annual Report - Somalia
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
-    - &id108
+    - &id104
       title: U.S. State Department IRF Report 2023 - Somalia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/somalia/
       date: '2023'
-    - &id109
+    - &id105
       title: Open Doors WWL 2025 Persecution Dynamics — Somalia
       url: https://www.opendoors.org/persecution/reports/Somalia-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -6986,15 +6916,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id040
+    - &id038
       title: USCIRF 2023 Annual Report - Syria
       url: https://www.uscirf.gov/countries/syria
       date: '2023'
-    - &id110
+    - &id106
       title: U.S. State Department IRF Report 2023 - Syria
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/syria/
       date: '2023'
-    - &id111
+    - &id107
       title: Open Doors WWL 2025 Persecution Dynamics — Syria
       url: https://www.opendoors.org/persecution/reports/Syria-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -7003,7 +6933,7 @@ countries:
     - *id004
     - *id005
     - *id013
-    - &id015
+    - &id016
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
@@ -7293,21 +7223,21 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id041
+    - &id039
       title: USCIRF 2023 Annual Report - Vietnam
       url: https://www.uscirf.gov/countries/vietnam
       date: '2023'
-    - &id112
+    - &id108
       title: U.S. State Department IRF Report 2023 - Vietnam
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/vietnam/
       date: '2023'
-    - &id113
+    - &id109
       title: Open Doors WWL 2025 Persecution Dynamics — Vietnam
       url: https://www.opendoors.org/persecution/reports/Vietnam-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id004
-    - *id015
+    - *id016
     - *id009
     - *id006
     freedom_house_status: Not Free
@@ -7577,15 +7507,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id042
+    - &id040
       title: USCIRF 2023 Annual Report - Yemen
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
-    - &id114
+    - &id110
       title: U.S. State Department IRF Report 2023 - Yemen
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/yemen/
       date: '2023'
-    - &id115
+    - &id111
       title: Open Doors WWL 2025 Persecution Dynamics — Yemen
       url: https://www.opendoors.org/persecution/reports/Yemen-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -7708,7 +7638,6 @@ countries:
     - icc2026
     - hrw
     - cna
-    - gdelt2025
     - vdem2025forb
   pew_slug: america
   metadata:
@@ -8629,14 +8558,13 @@ countries:
     - icc2026
     - hrw
     - cna
-    - gdelt2025
     - vdem2025forb
     sources:
-    - &id045
+    - &id043
       title: Pew Research - Religion in America
       url: https://www.pewresearch.org/collections/religious-landscape-study/
       date: '2023'
-    - &id043
+    - &id041
       title: USCIRF 2023 Annual Report - United States
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -8644,9 +8572,8 @@ countries:
     - *id004
     - *id005
     - *id007
-    - *id015
     - *id016
-    - *id014
+    - *id017
     - *id006
     freedom_house_status: Free
     freedom_house_pr: 2
@@ -8672,7 +8599,7 @@ countries:
         some claims are initially reviewed. A new report from World Relief and Open
         Doors
       source: International Christian Concern
-    hrw_articles: 2
+    hrw_articles: 1
     hrw_samples:
     - title: Array of Experts Back Lawsuit Challenging Trump’s ICC Sanctions Regime
       url: https://www.hrw.org/news/2026/09/25/array-of-experts-back-lawsuit-challenging-trumps-icc-sanctions-regime
@@ -8683,15 +8610,6 @@ countries:
         human rights groups, bar associations, and legal experts from around the world
         have '
       source: Human Rights Watch
-    - title: 'US: Deportations to Haiti Endanger Lives'
-      url: https://www.hrw.org/news/2026/09/21/us-deportations-to-haiti-endanger-lives
-      date: '2026-09-21'
-      description: Click to expand Image Haitians deported from the United States
-        disembark from a charter flight at Cap-Haïtien International Airport, Haiti,
-        August 27, 2026. © 2026 Human Rights Watch (Washington, DC) – Since ending
-        Temporary Protected Status (TPS) for Haiti in late July 2026, US authorities
-        have dep
-      source: Human Rights Watch
     cna_articles: 1
     cna_samples:
     - title: Across the U.S., 3 bishops, dozens of religious sisters leading lawsuits
@@ -8701,23 +8619,6 @@ countries:
       description: Church leaders in New York and Illinois are pushing back against
         various states’ recently passed laws allowing doctors to help kill their patients.
       source: Catholic News Agency
-    gdelt_articles: 2
-    gdelt_samples:
-    - title: Baptist pastor killed in Myanmar ; US urged to take action
-      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
-      date: '2026-09-20'
-      description: ''
-      source: GDELT
-    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
-        in FY2026
-      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
-      date: '2026-09-05'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 2
-    gdelt_sample_urls:
-    - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
-    - https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
     recent_incidents:
     - title: Across the U.S., 3 bishops, dozens of religious sisters leading lawsuits
         against assisted suicide
@@ -8735,20 +8636,6 @@ countries:
         human rights groups, bar associations, and legal experts from around the world
         have '
       source: Human Rights Watch
-    - title: 'US: Deportations to Haiti Endanger Lives'
-      url: https://www.hrw.org/news/2026/09/21/us-deportations-to-haiti-endanger-lives
-      date: '2026-09-21'
-      description: Click to expand Image Haitians deported from the United States
-        disembark from a charter flight at Cap-Haïtien International Airport, Haiti,
-        August 27, 2026. © 2026 Human Rights Watch (Washington, DC) – Since ending
-        Temporary Protected Status (TPS) for Haiti in late July 2026, US authorities
-        have dep
-      source: Human Rights Watch
-    - title: Baptist pastor killed in Myanmar ; US urged to take action
-      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
-      date: '2026-09-20'
-      description: ''
-      source: GDELT
     - title: U.S. Refugee Policies Leave Persecuted Christians with Fewer Paths to
         Safety
       url: https://persecution.org/2026/09/18/u-s-refugee-policies-leave-persecuted-christians-with-fewer-paths-to-safety
@@ -8759,12 +8646,6 @@ countries:
         some claims are initially reviewed. A new report from World Relief and Open
         Doors
       source: International Christian Concern
-    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
-        in FY2026
-      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
-      date: '2026-09-05'
-      description: ''
-      source: GDELT
     vdem_year: 2025.0
     vdem_freedom_of_religion: 0.953
     vdem_freedom_of_religion_ord: 3.0
@@ -9230,7 +9111,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id116
+    - &id112
       title: U.S. State Department IRF Report 2023 - Brazil
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/brazil/
       date: '2023'
@@ -9393,21 +9274,21 @@ countries:
     - morningstarnews2026
     - vdem2025forb
     sources:
-    - &id044
+    - &id042
       title: USCIRF 2023 Annual Report - Uganda
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
-    - &id117
+    - &id113
       title: U.S. State Department IRF Report 2023 - Uganda
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/uganda/
       date: '2023'
-    - &id118
+    - &id114
       title: Open Doors WWL 2025 Persecution Dynamics — Uganda
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Uganda-Persecution-Dynamics
       date: '2025'
     - *id002
     - *id004
-    - *id011
+    - *id012
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9512,7 +9393,6 @@ countries:
     - owid2024
     - gcr2026
     - morningstarnews2026
-    - mec
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -9663,19 +9543,18 @@ countries:
     - owid2024
     - gcr2026
     - morningstarnews2026
-    - mec
     - vdem2025forb
     sources:
     - *id001
-    - &id046
+    - &id044
       title: USCIRF 2023 Annual Report - Algeria
       url: https://www.uscirf.gov/countries/algeria
       date: '2023'
-    - &id119
+    - &id115
       title: U.S. State Department IRF Report 2023 - Algeria
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/algeria/
       date: '2023'
-    - &id120
+    - &id116
       title: Open Doors WWL 2025 Persecution Dynamics — Algeria
       url: https://www.opendoors.org/persecution/reports/Algeria-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -9683,8 +9562,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id011
-    - *id017
+    - *id012
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9710,16 +9588,6 @@ countries:
         present on suspicion of holding an unauthorized, non-Muslim religious service,
         sources said. The House of Refuge shelter in L’Ayaida, 36 kilometers (22 mil
       source: Morning Star News
-    mec_articles: 1
-    mec_samples:
-    - title: 'Algeria: Christians in West Algeria Detained and Facing Charges'
-      url: https://www.meconcern.org/2026/09/21/algeria-christians-in-west-algeria-detained-and-facing-charges/?utm_source=rss&utm_medium=rss&utm_campaign=algeria-christians-in-west-algeria-detained-and-facing-charges
-      date: '2026-09-21'
-      description: Christians in Algeria are asking for prayer for 12 Christians,
-        women and men, who were detained and interrogated by the police and will probably
-        face charges. On 4 September 2026, a special police force raided a humanitarian
-        institute approximately 25 km east of Oran, where the Christians used to me
-      source: Middle East Concern
     uscirf_designation: SWL
     uscirf_key_findings:
     - Algeria engages in systematic repression of religious minority communities.
@@ -9756,14 +9624,6 @@ countries:
       they had experienced threats and intolerance.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: 'Algeria: Christians in West Algeria Detained and Facing Charges'
-      url: https://www.meconcern.org/2026/09/21/algeria-christians-in-west-algeria-detained-and-facing-charges/?utm_source=rss&utm_medium=rss&utm_campaign=algeria-christians-in-west-algeria-detained-and-facing-charges
-      date: '2026-09-21'
-      description: Christians in Algeria are asking for prayer for 12 Christians,
-        women and men, who were detained and interrogated by the police and will probably
-        face charges. On 4 September 2026, a special police force raided a humanitarian
-        institute approximately 25 km east of Oran, where the Christians used to me
-      source: Middle East Concern
     - title: Police in Algeria Arrest 12 Christians during Worship
       url: https://morningstarnews.org/2026/09/police-in-algeria-arrest-12-christians-during-worship
       date: '2026-09-14'
@@ -9948,15 +9808,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id047
+    - &id045
       title: USCIRF 2023 Annual Report - Bangladesh
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
-    - &id121
+    - &id117
       title: U.S. State Department IRF Report 2023 - Bangladesh
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bangladesh/
       date: '2023'
-    - &id122
+    - &id118
       title: Open Doors WWL 2025 Persecution Dynamics — Bangladesh
       url: https://www.opendoors.org/persecution/reports/Bangladesh-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -9964,7 +9824,7 @@ countries:
     - *id003
     - *id004
     - *id013
-    - *id018
+    - *id014
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -10258,22 +10118,22 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id048
+    - &id046
       title: USCIRF 2023 Annual Report - Central African Republic
       url: https://www.uscirf.gov/countries/central-african-republic
       date: '2023'
-    - &id123
+    - &id119
       title: U.S. State Department IRF Report 2023 - Central African Republic
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/central-african-republic/
       date: '2023'
-    - &id124
+    - &id120
       title: Open Doors WWL 2025 Persecution Dynamics — Central African Republic
       url: https://www.opendoors.org/persecution/reports/CAR-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id003
     - *id004
-    - *id015
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -10403,6 +10263,7 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - icc2026
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -10517,24 +10378,26 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
+    - icc2026
     - vdem2025forb
     sources:
     - *id001
-    - &id049
+    - &id047
       title: USCIRF 2023 Annual Report - Egypt
       url: https://www.uscirf.gov/countries/egypt
       date: '2023'
-    - &id125
+    - &id121
       title: U.S. State Department IRF Report 2023 - Egypt
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/egypt/
       date: '2023'
-    - &id126
+    - &id122
       title: Open Doors WWL 2025 Persecution Dynamics — Egypt
       url: https://www.opendoors.org/persecution/reports/Egypt-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id003
     - *id004
+    - *id007
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -10543,6 +10406,17 @@ countries:
     opendoors_score: null
     christian_population: 5270537
     christian_percentage: 4.82
+    icc_articles: 1
+    icc_samples:
+    - title: 'Egypt: The Internet, Christian Conversion, and Persecution'
+      url: https://persecution.org/2026/09/30/egypt-the-internet-christian-conversion-and-persecution
+      date: '2026-09-30'
+      description: By ICC Fellow Linda Burkle, PhD Recently, I had the privilege of
+        having lunch with Caleb, who lives in Cairo, Egypt. Fluent in Arabic, Caleb
+        ministers to college students at the National Christian University, one of
+        several private Christian institutions and secular schools. Public, state-funded
+        sch
+      source: International Christian Concern
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Egypt are poor. Baha'is, Jehovah’s Witnesses,
@@ -10577,6 +10451,16 @@ countries:
       false news. In February, a misdemeanor court in Alexandria sentenced TikTok
       content creator Osama Sharaf El-Din to three years in prison for insulting Christianity.
     state_dept_christian_mentions: true
+    recent_incidents:
+    - title: 'Egypt: The Internet, Christian Conversion, and Persecution'
+      url: https://persecution.org/2026/09/30/egypt-the-internet-christian-conversion-and-persecution
+      date: '2026-09-30'
+      description: By ICC Fellow Linda Burkle, PhD Recently, I had the privilege of
+        having lunch with Caleb, who lives in Cairo, Egypt. Fluent in Arabic, Caleb
+        ministers to college students at the National Christian University, one of
+        several private Christian institutions and secular schools. Public, state-funded
+        sch
+      source: International Christian Concern
     archive_modern_excerpt: Christians in Egypt report that freedom of religion violations
       occur mostly at the community level, with many Christians regularly facing discrimination.
       The constitution states that “freedom of belief is absolute” and “the freedom
@@ -10637,7 +10521,6 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
-    - hrw
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -10700,38 +10583,25 @@ countries:
     - statedepartment2023haiti
     - freedomhouse2024
     - owid2024
-    - hrw
     - vdem2025forb
     sources:
     - *id001
-    - &id050
+    - &id048
       title: USCIRF 2023 Annual Report - Haiti
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
-    - &id127
+    - &id123
       title: U.S. State Department IRF Report 2023 - Haiti
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
       date: '2023'
     - *id002
     - *id004
-    - *id015
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
     freedom_house_cl: 5
     christian_population: 9975391
     christian_percentage: 88.72
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'US: Deportations to Haiti Endanger Lives'
-      url: https://www.hrw.org/news/2026/09/21/us-deportations-to-haiti-endanger-lives
-      date: '2026-09-21'
-      description: Click to expand Image Haitians deported from the United States
-        disembark from a charter flight at Cap-Haïtien International Airport, Haiti,
-        August 27, 2026. © 2026 Human Rights Watch (Washington, DC) – Since ending
-        Temporary Protected Status (TPS) for Haiti in late July 2026, US authorities
-        have dep
-      source: Human Rights Watch
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
     state_dept_executive_summary: The 1987 constitution provides for the free exercise
       of all religions. Any religious group seeking official recognition must obtain
@@ -10759,16 +10629,6 @@ countries:
       capital was a “serious impediment” to the free practice of all religions, “not
       just for Catholics or Christians.”
     state_dept_christian_mentions: true
-    recent_incidents:
-    - title: 'US: Deportations to Haiti Endanger Lives'
-      url: https://www.hrw.org/news/2026/09/21/us-deportations-to-haiti-endanger-lives
-      date: '2026-09-21'
-      description: Click to expand Image Haitians deported from the United States
-        disembark from a charter flight at Cap-Haïtien International Airport, Haiti,
-        August 27, 2026. © 2026 Human Rights Watch (Washington, DC) – Since ending
-        Temporary Protected Status (TPS) for Haiti in late July 2026, US authorities
-        have dep
-      source: Human Rights Watch
     archive_modern_excerpt: The 1987 constitution provides for the free exercise of
       all religions. Any religious group seeking official recognition must obtain
       it through a multistep registration process with the Bureau of Worship (BOW),
@@ -10956,15 +10816,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id051
+    - &id049
       title: USCIRF 2023 Annual Report - Libya
       url: https://www.uscirf.gov/countries/libya
       date: '2023'
-    - &id128
+    - &id124
       title: U.S. State Department IRF Report 2023 - Libya
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/libya/
       date: '2023'
-    - &id129
+    - &id125
       title: Open Doors WWL 2025 Persecution Dynamics — Libya
       url: https://www.opendoors.org/persecution/reports/Libya-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -11238,15 +11098,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id052
+    - &id050
       title: USCIRF 2023 Annual Report - Malaysia
       url: https://www.uscirf.gov/countries/malaysia
       date: '2023'
-    - &id130
+    - &id126
       title: U.S. State Department IRF Report 2023 - Malaysia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/malaysia/
       date: '2023'
-    - &id131
+    - &id127
       title: Open Doors WWL 2025 Persecution Dynamics — Malaysia
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Malaysia-Persecution-Dynamics
       date: '2025'
@@ -11345,7 +11205,6 @@ countries:
     - icc2026
     - infochretienne
     - barnabas
-    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -11513,19 +11372,18 @@ countries:
     - icc2026
     - infochretienne
     - barnabas
-    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
-    - &id053
+    - &id051
       title: USCIRF 2023 Annual Report - Myanmar
       url: https://www.uscirf.gov/countries/burma
       date: '2023'
-    - &id132
+    - &id128
       title: U.S. State Department IRF Report 2023 - Myanmar
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/burma/
       date: '2023'
-    - &id133
+    - &id129
       title: Open Doors WWL 2025 Persecution Dynamics — Myanmar
       url: https://www.opendoors.org/persecution/reports/Myanmar-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -11536,7 +11394,6 @@ countries:
     - *id007
     - *id013
     - *id009
-    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11578,29 +11435,6 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    gdelt_articles: 3
-    gdelt_samples:
-    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
-      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
-      date: '2026-09-20'
-      description: ''
-      source: GDELT
-    - title: Baptist pastor killed in Myanmar ; US urged to take action
-      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
-      date: '2026-09-20'
-      description: ''
-      source: GDELT
-    - title: World News | Myanmar Junta Kills Baptist Pastor , Fellow Christian in
-        Chin
-      url: https://www.christianitydaily.com:443/news/myanmar-junta-kills-baptist-pastor-fellow-christian-in-chin.html
-      date: '2026-09-03'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 3
-    gdelt_sample_urls:
-    - https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
-    - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
-    - https://www.christianitydaily.com:443/news/myanmar-junta-kills-baptist-pastor-fellow-christian-in-chin.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Burma have deteriorated amid the country’s ongoing
@@ -11642,16 +11476,6 @@ countries:
       date: '2026-09-21'
       description: ''
       source: Info Chrétienne
-    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
-      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
-      date: '2026-09-20'
-      description: ''
-      source: GDELT
-    - title: Baptist pastor killed in Myanmar ; US urged to take action
-      url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
-      date: '2026-09-20'
-      description: ''
-      source: GDELT
     - title: Military Kills Another Pastor in Myanmar
       url: https://persecution.org/2026/09/17/military-kills-another-pastor-in-myanmar
       date: '2026-09-17'
@@ -11661,12 +11485,6 @@ countries:
         state. The Burma Research Institute (BRI) confirmed his death. “Our staff
         is prayin
       source: International Christian Concern
-    - title: World News | Myanmar Junta Kills Baptist Pastor , Fellow Christian in
-        Chin
-      url: https://www.christianitydaily.com:443/news/myanmar-junta-kills-baptist-pastor-fellow-christian-in-chin.html
-      date: '2026-09-03'
-      description: ''
-      source: GDELT
     - title: Pastor Killed by Military After Arrest in Chin State, Myanmar
       url: https://www.barnabasaid.org/us/news/pastor-killed-by-military-after-arrest-in-chin-state-myanmar
       date: ''
@@ -11928,15 +11746,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id054
+    - &id052
       title: USCIRF 2023 Annual Report - Sudan
       url: https://www.uscirf.gov/countries/sudan
       date: '2023'
-    - &id134
+    - &id130
       title: U.S. State Department IRF Report 2023 - Sudan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/sudan/
       date: '2023'
-    - &id135
+    - &id131
       title: Open Doors WWL 2025 Persecution Dynamics — Sudan
       url: https://www.opendoors.org/persecution/reports/Sudan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -12227,23 +12045,23 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id055
+    - &id053
       title: USCIRF 2023 Annual Report - Turkey
       url: https://www.uscirf.gov/countries/turkey
       date: '2023'
-    - &id136
+    - &id132
       title: U.S. State Department IRF Report 2023 - Turkey
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/turkey/
       date: '2023'
-    - &id137
+    - &id133
       title: Open Doors WWL 2025 Persecution Dynamics — Turkey
       url: https://www.opendoors.org/persecution/reports/Turkey-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id003
     - *id004
-    - *id012
-    - *id019
+    - *id010
+    - *id015
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -12623,15 +12441,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id056
+    - &id054
       title: USCIRF 2023 Annual Report - Venezuela
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
-    - &id138
+    - &id134
       title: U.S. State Department IRF Report 2023 - Venezuela
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/venezuela/
       date: '2023'
-    - &id139
+    - &id135
       title: Open Doors WWL 2025 Persecution Dynamics — Venezuela
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Venezuela-Persecution-Dynamics
       date: '2025'
@@ -12806,11 +12624,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id057
+    - &id055
       title: USCIRF 2023 Annual Report - Zimbabwe
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
-    - &id140
+    - &id136
       title: U.S. State Department IRF Report 2023 - Zimbabwe
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/zimbabwe/
       date: '2023'
@@ -13075,11 +12893,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id141
+    - &id137
       title: U.S. State Department IRF Report 2023 - Mali
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mali/
       date: '2023'
-    - &id142
+    - &id138
       title: Open Doors WWL 2025 Persecution Dynamics — Mali
       url: https://www.opendoors.org/persecution/reports/Mali-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -13294,11 +13112,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id143
+    - &id139
       title: U.S. State Department IRF Report 2023 - Burkina Faso
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/burkina-faso/
       date: '2023'
-    - &id144
+    - &id140
       title: Open Doors WWL 2025 Persecution Dynamics — Burkina Faso
       url: https://www.opendoors.org/persecution/reports/Burkina-Faso-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -13427,11 +13245,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id145
+    - &id141
       title: U.S. State Department IRF Report 2023 - Maldives
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/maldives/
       date: '2023'
-    - &id146
+    - &id142
       title: Open Doors WWL 2025 Persecution Dynamics — Maldives
       url: https://www.opendoors.org/persecution/reports/Maldives-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -13646,11 +13464,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id147
+    - &id143
       title: U.S. State Department IRF Report 2023 - Mauritania
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mauritania/
       date: '2023'
-    - &id148
+    - &id144
       title: Open Doors WWL 2025 Persecution Dynamics — Mauritania
       url: https://www.opendoors.org/persecution/reports/Mauritania-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -13902,11 +13720,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id149
+    - &id145
       title: U.S. State Department IRF Report 2023 - Morocco
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/morocco/
       date: '2023'
-    - &id150
+    - &id146
       title: Open Doors WWL 2025 Persecution Dynamics — Morocco
       url: https://www.opendoors.org/persecution/reports/Morocco-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -14147,15 +13965,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id071
+    - &id069
       title: USCIRF 2025 Annual Report - Uzbekistan
       url: https://www.uscirf.gov/countries/uzbekistan
       date: '2025'
-    - &id151
+    - &id147
       title: U.S. State Department IRF Report 2023 - Uzbekistan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/uzbekistan/
       date: '2023'
-    - &id152
+    - &id148
       title: Open Doors WWL 2025 Persecution Dynamics — Uzbekistan
       url: https://www.opendoors.org/persecution/reports/Uzbekistan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -14407,11 +14225,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id153
+    - &id149
       title: U.S. State Department IRF Report 2023 - Niger
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/niger/
       date: '2023'
-    - &id154
+    - &id150
       title: Open Doors WWL 2025 Persecution Dynamics — Niger
       url: https://www.opendoors.org/persecution/reports/Niger-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -14419,7 +14237,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id015
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -14435,17 +14253,8 @@ countries:
       roughly one in seven worldwide and one in five in Africa." } }, { "@type": "Question",
       "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "t'
-    hrw_articles: 2
+    hrw_articles: 1
     hrw_samples:
-    - title: Niger Rejects Key Rights Recommendations at UN Review
-      url: https://www.hrw.org/news/2026/09/26/niger-rejects-key-rights-recommendations-at-un-review
-      date: '2026-09-26'
-      description: Click to expand Image Gen. Abdourahamane Tiani of Niger attends
-        the Alliance of Sahel States second summit on security and development, in
-        Bamako, Mali, December 23, 2025. © 2025 Mali Government Information Center
-        via AP Niger has rejected key recommendations raised by United Nations member
-        countrie
-      source: Human Rights Watch
     - title: Niger Rejects Key Rights Recommendations at UN Review
       url: https://www.hrw.org/news/2026/09/25/niger-rejects-key-rights-recommendations-at-un-review
       date: '2026-09-25'
@@ -14482,15 +14291,6 @@ countries:
       communities and within the country’s population in general.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: Niger Rejects Key Rights Recommendations at UN Review
-      url: https://www.hrw.org/news/2026/09/26/niger-rejects-key-rights-recommendations-at-un-review
-      date: '2026-09-26'
-      description: Click to expand Image Gen. Abdourahamane Tiani of Niger attends
-        the Alliance of Sahel States second summit on security and development, in
-        Bamako, Mali, December 23, 2025. © 2025 Mali Government Information Center
-        via AP Niger has rejected key recommendations raised by United Nations member
-        countrie
-      source: Human Rights Watch
     - title: Niger Rejects Key Rights Recommendations at UN Review
       url: https://www.hrw.org/news/2026/09/25/niger-rejects-key-rights-recommendations-at-un-review
       date: '2026-09-25'
@@ -14700,15 +14500,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id070
+    - &id068
       title: USCIRF 2025 Annual Report - Turkmenistan
       url: https://www.uscirf.gov/countries/turkmenistan
       date: '2025'
-    - &id155
+    - &id151
       title: U.S. State Department IRF Report 2023 - Turkmenistan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/turkmenistan/
       date: '2023'
-    - &id156
+    - &id152
       title: Open Doors WWL 2025 Persecution Dynamics — Turkmenistan
       url: https://www.opendoors.org/persecution/reports/Turkmenistan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -14939,11 +14739,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id157
+    - &id153
       title: U.S. State Department IRF Report 2023 - Oman
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
       date: '2023'
-    - &id158
+    - &id154
       title: Open Doors WWL 2025 Persecution Dynamics — Oman
       url: https://www.opendoors.org/persecution/reports/Oman-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -14959,8 +14759,9 @@ countries:
     opendoors_score: null
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
-      content="@GC_
+    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
+      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/d72fc33d5b8961c2ed9b72cb197413c9"},"headline":"Christian
+      Persecution by the Numbers: 2026 Global Tre'
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
     state_dept_executive_summary: The Basic Law declares Islam to be the state religion
       and declares sharia is the basis for legislation. It protects the right of individuals
@@ -15195,18 +14996,18 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id159
+    - &id155
       title: U.S. State Department IRF Report 2023 - Ethiopia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
       date: '2023'
-    - &id160
+    - &id156
       title: Open Doors WWL 2025 Persecution Dynamics — Ethiopia
       url: https://www.opendoors.org/persecution/reports/Ethiopia-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id003
     - *id004
-    - *id018
+    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -15424,11 +15225,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id161
+    - &id157
       title: U.S. State Department IRF Report 2023 - Tunisia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/tunisia/
       date: '2023'
-    - &id162
+    - &id158
       title: Open Doors WWL 2025 Persecution Dynamics — Tunisia
       url: https://www.opendoors.org/persecution/reports/Tunisia-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -15817,11 +15618,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id163
+    - &id159
       title: U.S. State Department IRF Report 2023 - Democratic Republic of Congo
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/democratic-republic-of-the-congo/
       date: '2023'
-    - &id164
+    - &id160
       title: Open Doors WWL 2025 Persecution Dynamics — Democratic Republic of Congo
       url: https://www.opendoors.org/persecution/reports/DRC-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -15994,11 +15795,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id165
+    - &id161
       title: U.S. State Department IRF Report 2023 - Bhutan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bhutan/
       date: '2023'
-    - &id166
+    - &id162
       title: Open Doors WWL 2025 Persecution Dynamics — Bhutan
       url: https://www.opendoors.org/persecution/reports/Bhutan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -16308,11 +16109,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id167
+    - &id163
       title: U.S. State Department IRF Report 2023 - Mozambique
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mozambique/
       date: '2023'
-    - &id168
+    - &id164
       title: Open Doors WWL 2025 Persecution Dynamics — Mozambique
       url: https://www.opendoors.org/persecution/reports/Mozambique-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -16691,22 +16492,22 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id068
+    - &id066
       title: USCIRF 2025 Annual Report - Kazakhstan
       url: https://www.uscirf.gov/countries/kazakhstan
       date: '2025'
-    - &id169
+    - &id165
       title: U.S. State Department IRF Report 2023 - Kazakhstan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kazakhstan/
       date: '2023'
-    - &id170
+    - &id166
       title: Open Doors WWL 2025 Persecution Dynamics — Kazakhstan
       url: https://www.opendoors.org/persecution/reports/Kazakhstan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id003
     - *id004
-    - &id020
+    - &id018
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
@@ -16948,15 +16749,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id072
+    - &id070
       title: USCIRF 2025 Annual Report - Tajikistan
       url: https://www.uscirf.gov/countries/tajikistan
       date: '2025'
-    - &id171
+    - &id167
       title: U.S. State Department IRF Report 2023 - Tajikistan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/tajikistan/
       date: '2023'
-    - &id172
+    - &id168
       title: Open Doors WWL 2025 Persecution Dynamics — Tajikistan
       url: https://www.opendoors.org/persecution/reports/Tajikistan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -17113,15 +16914,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id173
+    - &id169
       title: USCIRF Annual Report - Qatar
       url: https://www.uscirf.gov/countries/qatar
       date: '2026'
-    - &id174
+    - &id170
       title: U.S. State Department IRF Report 2023 - Qatar
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/qatar/
       date: '2023'
-    - &id175
+    - &id171
       title: Open Doors WWL 2025 Persecution Dynamics — Qatar
       url: https://www.opendoors.org/persecution/reports/Qatar-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -17267,11 +17068,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id176
+    - &id172
       title: U.S. State Department IRF Report 2023 - Comoros
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/comoros/
       date: '2023'
-    - &id177
+    - &id173
       title: Open Doors WWL 2025 Persecution Dynamics — Comoros
       url: https://www.opendoors.org/persecution/reports/Comoros-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -17532,11 +17333,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id178
+    - &id174
       title: U.S. State Department IRF Report 2023 - Cameroon
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/cameroon/
       date: '2023'
-    - &id179
+    - &id175
       title: Open Doors WWL 2025 Persecution Dynamics — Cameroon
       url: https://www.opendoors.org/persecution/reports/Cameroon-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -17695,11 +17496,11 @@ countries:
     - owid2024
     sources:
     - *id001
-    - &id180
+    - &id176
       title: U.S. State Department IRF Report 2023 - Brunei
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/brunei/
       date: '2023'
-    - &id181
+    - &id177
       title: Open Doors WWL 2025 Persecution Dynamics — Brunei
       url: https://www.opendoors.org/persecution/reports/Brunei-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -17801,7 +17602,6 @@ countries:
     - odwwl2026
     - owid2024
     - forum18
-    - vom2026
     - fides
     - vdem2025forb
   pew_slug: ''
@@ -17897,29 +17697,27 @@ countries:
     - odwwl2026
     - owid2024
     - forum18
-    - vom2026
     - fides
     - vdem2025forb
     sources:
     - *id001
-    - &id069
+    - &id067
       title: USCIRF 2025 Annual Report - Kyrgyzstan
       url: https://www.uscirf.gov/countries/kyrgyzstan
       date: '2025'
-    - &id182
+    - &id178
       title: U.S. State Department IRF Report 2023 - Kyrgyzstan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kyrgyzstan/
       date: '2023'
-    - &id183
+    - &id179
       title: Open Doors WWL 2025 Persecution Dynamics — Kyrgyzstan
       url: https://www.opendoors.org/persecution/reports/Kyrgyzstan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
     - *id002
     - *id003
     - *id004
-    - *id020
-    - *id012
     - *id018
+    - *id014
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -17938,16 +17736,6 @@ countries:
         the leader. Four of the five are accused of producing or distributing "extremist"
         literature, the fifth of participating in a court-banned "extremist" orga
       source: Forum 18
-    vom_articles: 1
-    vom_samples:
-    - title: Christians in Rural Villages Face Increasing Pressure
-      url: https://www.persecution.com/stories/christians-in-rural-villages-face-increasing-pressure
-      date: '2026-09-17'
-      description: Church leaders in Kyrgyzstan say Christians living in rural villages
-        are facing increasing persecution. "One family was reported to social services
-        for being too poor to care for their children, and now government agents are
-        threatening to take them," said a front-line worker. "But that family is no
-      source: Voice of the Martyrs
     fides_articles: 2
     fides_samples:
     - title: The Heaven opened, the Bishop’s Mission, and the Grace of being a little
@@ -18016,14 +17804,6 @@ countries:
         Jesuit, who will become a bishop that day. He will be confirmed in what he
         has been for nearly a decade: the shepherd of a few hundred Catholics scat'
       source: Agenzia Fides
-    - title: Christians in Rural Villages Face Increasing Pressure
-      url: https://www.persecution.com/stories/christians-in-rural-villages-face-increasing-pressure
-      date: '2026-09-17'
-      description: Church leaders in Kyrgyzstan say Christians living in rural villages
-        are facing increasing persecution. "One family was reported to social services
-        for being too poor to care for their children, and now government agents are
-        threatening to take them," said a front-line worker. "But that family is no
-      source: Voice of the Martyrs
     - title: 'KYRGYZSTAN: Trials imminent for detained Reform Adventists?'
       url: https://www.forum18.org/archive.php?article_id=3066
       date: ''
@@ -18154,11 +17934,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id184
+    - &id180
       title: U.S. State Department IRF Report 2023 - Jordan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/jordan/
       date: '2023'
-    - &id185
+    - &id181
       title: Open Doors WWL 2025 Persecution Dynamics — Jordan
       url: https://www.opendoors.org/persecution/reports/Jordan-Full_Country_Dossier-ODI-2025.pdf
       date: '2025'
@@ -19545,21 +19325,21 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id065
+    - &id063
       title: USCIRF 2025 Annual Report - Russia
       url: https://www.uscirf.gov/countries/russia
       date: '2025'
-    - &id186
+    - &id182
       title: U.S. State Department IRF Report 2023 - Russia
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/russia/
       date: '2023'
-    - &id187
+    - &id183
       title: Open Doors WWL 2025 Persecution Dynamics — Russia
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Russian-Federation-Persecution-Dynamics
       date: '2025'
     - *id002
     - *id004
-    - *id020
+    - *id018
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -19770,15 +19550,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id066
+    - &id064
       title: USCIRF 2025 Annual Report - Azerbaijan
       url: https://www.uscirf.gov/countries/azerbaijan
       date: '2025'
-    - &id188
+    - &id184
       title: U.S. State Department IRF Report 2023 - Azerbaijan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/azerbaijan/
       date: '2023'
-    - &id189
+    - &id185
       title: Open Doors WWL 2025 Persecution Dynamics — Azerbaijan
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Azerbaijan-Persecution-Dynamics
       date: '2025'
@@ -19868,7 +19648,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - infochretienne
-    - csi
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -19918,29 +19697,24 @@ countries:
     - freedomhouse2024
     - owid2024
     - infochretienne
-    - csi
     - vdem2025forb
     sources:
     - *id001
-    - &id067
+    - &id065
       title: USCIRF 2025 Annual Report - Sri Lanka
       url: https://www.uscirf.gov/countries/sri-lanka
       date: '2025'
-    - &id190
+    - &id186
       title: U.S. State Department IRF Report 2023 - Sri Lanka
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/sri-lanka/
       date: '2023'
-    - &id191
+    - &id187
       title: Open Doors WWL 2025 Persecution Dynamics — Sri Lanka
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Sri-Lanka-Persecution-Dynamics
       date: '2025'
     - *id002
     - *id004
     - *id013
-    - &id075
-      title: Christian Solidarity International
-      url: https://www.csi-int.org/
-      date: '2026'
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -19960,13 +19734,6 @@ countries:
       date: '2026-09-22'
       description: ''
       source: Info Chrétienne
-    csi_articles: 1
-    csi_samples:
-    - title: 'Sri Lanka: Church faces harassment over registration'
-      url: https://csi-usa.org/sri-lanka-church-faces-harassment-over-registration
-      date: ''
-      description: ''
-      source: Christian Solidarity International
     uscirf_designation: none
     uscirf_key_findings:
     - Religious freedom conditions in Sri Lanka are concerning. The government enforces
@@ -20015,11 +19782,6 @@ countries:
       date: '2026-09-22'
       description: ''
       source: Info Chrétienne
-    - title: 'Sri Lanka: Church faces harassment over registration'
-      url: https://csi-usa.org/sri-lanka-church-faces-harassment-over-registration
-      date: ''
-      description: ''
-      source: Christian Solidarity International
     archive_modern_excerpt: 'The constitution provides for freedom of thought, conscience,
       and religion, including the freedom to change religion. The law recognizes four
       religions: Buddhism, Islam, Hinduism, and Christianity.'
@@ -20304,11 +20066,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id192
+    - &id188
       title: U.S. State Department IRF Report 2023 - Philippines
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/philippines/
       date: '2023'
-    - &id193
+    - &id189
       title: Open Doors WWL 2025 Persecution Dynamics — Philippines
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Philippines-Persecution-Dynamics
       date: '2025'
@@ -20549,11 +20311,11 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id194
+    - &id190
       title: U.S. State Department IRF Report 2023 - Guinea
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/guinea/
       date: '2023'
-    - &id195
+    - &id191
       title: Open Doors WWL 2025 Persecution Dynamics — Guinea
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Guinea-Persecution-Dynamics
       date: '2025'
@@ -20665,15 +20427,15 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id196
+    - &id192
       title: USCIRF Annual Report - Bahrain
       url: https://www.uscirf.gov/countries/bahrain
       date: '2026'
-    - &id197
+    - &id193
       title: U.S. State Department IRF Report 2023 - Bahrain
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bahrain/
       date: '2023'
-    - &id198
+    - &id194
       title: Open Doors WWL 2025 Persecution Dynamics — Bahrain
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Bahrain-Persecution-Dynamics
       date: '2025'
@@ -20872,12 +20634,12 @@ countries:
     - owid2024
     - vdem2025forb
     sources:
-    - &id058
+    - &id056
       title: U.S. State Department IRF Report 2023 - Kenya
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kenya/
       date: '2023'
     - *id003
-    - &id199
+    - &id195
       title: Open Doors WWL 2025 Persecution Dynamics — Kenya
       url: https://www.opendoors.org/research-reports/country-dossiers/WWL-2025-Kenya-Persecution-Dynamics
       date: '2025'
@@ -21084,7 +20846,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id059
+    - &id057
       title: U.S. State Department IRF Report 2023 - Tanzania
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/tanzania/
       date: '2023'
@@ -21198,7 +20960,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id060
+    - &id058
       title: U.S. State Department IRF Report 2023 - Kuwait
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kuwait/
       date: '2023'
@@ -21337,7 +21099,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id061
+    - &id059
       title: U.S. State Department IRF Report 2023 - United Arab Emirates
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/united-arab-emirates/
       date: '2023'
@@ -21452,13 +21214,13 @@ countries:
     - owid2024
     - vom2026
     sources:
-    - &id062
+    - &id060
       title: U.S. State Department IRF Report 2023 - Lebanon
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/lebanon/
       date: '2023'
     - *id002
     - *id004
-    - *id012
+    - *id010
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 4
@@ -21610,7 +21372,7 @@ countries:
     - owid2024
     - icc2026
     sources:
-    - &id063
+    - &id061
       title: U.S. State Department IRF Report 2023 - Nepal
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nepal/
       date: '2023'
@@ -21856,7 +21618,7 @@ countries:
     - freedomhouse2024
     - owid2024
     sources:
-    - &id064
+    - &id062
       title: U.S. State Department IRF Report 2023 - South Sudan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/south-sudan/
       date: '2023'
@@ -21914,73 +21676,76 @@ sources:
       Faith 2022-24 / Report on Christian persecution
     url: https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/
     date: '2024'
-  uscirf2023afghanistan: *id021
-  bbc2021: *id022
-  uscirf2023china: *id023
-  pew2023china: *id024
-  uscirf2023colombia: *id025
-  uscirf2023cuba: *id026
-  uscirf2023eritrea: *id027
-  uscirf2023india: *id028
-  uscirf2023indonesia: *id029
-  uscirf2023iran: *id030
-  uscirf2023iraq: *id031
-  uscirf2023laos: *id032
-  uscirf2023mexico: *id033
-  uscirf2023nicaragua: *id034
-  uscirf2023nigeria: *id035
-  uscirf2023northkorea: *id036
-  uscirf2023pakistan: *id037
-  uscirf2023saudiarabia: *id038
-  uscirf2023somalia: *id039
-  uscirf2023syria: *id040
-  uscirf2023vietnam: *id041
-  uscirf2023yemen: *id042
-  uscirf2023unitedstates: *id043
-  uscirf2023uganda: *id044
-  pew2023america: *id045
-  uscirf2023algeria: *id046
-  uscirf2023bangladesh: *id047
-  uscirf2023car: *id048
-  uscirf2023egypt: *id049
-  uscirf2023haiti: *id050
-  uscirf2023libya: *id051
-  uscirf2023malaysia: *id052
-  uscirf2023myanmar: *id053
-  uscirf2023sudan: *id054
-  uscirf2023turkey: *id055
-  uscirf2023venezuela: *id056
-  uscirf2023zimbabwe: *id057
+  uscirf2023afghanistan: *id019
+  bbc2021: *id020
+  uscirf2023china: *id021
+  pew2023china: *id022
+  uscirf2023colombia: *id023
+  uscirf2023cuba: *id024
+  uscirf2023eritrea: *id025
+  uscirf2023india: *id026
+  uscirf2023indonesia: *id027
+  uscirf2023iran: *id028
+  uscirf2023iraq: *id029
+  uscirf2023laos: *id030
+  uscirf2023mexico: *id031
+  uscirf2023nicaragua: *id032
+  uscirf2023nigeria: *id033
+  uscirf2023northkorea: *id034
+  uscirf2023pakistan: *id035
+  uscirf2023saudiarabia: *id036
+  uscirf2023somalia: *id037
+  uscirf2023syria: *id038
+  uscirf2023vietnam: *id039
+  uscirf2023yemen: *id040
+  uscirf2023unitedstates: *id041
+  uscirf2023uganda: *id042
+  pew2023america: *id043
+  uscirf2023algeria: *id044
+  uscirf2023bangladesh: *id045
+  uscirf2023car: *id046
+  uscirf2023egypt: *id047
+  uscirf2023haiti: *id048
+  uscirf2023libya: *id049
+  uscirf2023malaysia: *id050
+  uscirf2023myanmar: *id051
+  uscirf2023sudan: *id052
+  uscirf2023turkey: *id053
+  uscirf2023venezuela: *id054
+  uscirf2023zimbabwe: *id055
   freedomhouse2024: *id002
   statedepartment2023:
     title: U.S. State Department International Religious Freedom Report 2023
     url: https://www.state.gov/international-religious-freedom-reports/
     date: '2023'
-  statedepartment2023kenya: *id058
-  statedepartment2023tanzania: *id059
-  statedepartment2023kuwait: *id060
-  statedepartment2023unitedarabemirates: *id061
-  statedepartment2023lebanon: *id062
-  statedepartment2023nepal: *id063
-  statedepartment2023southsudan: *id064
+  statedepartment2023kenya: *id056
+  statedepartment2023tanzania: *id057
+  statedepartment2023kuwait: *id058
+  statedepartment2023unitedarabemirates: *id059
+  statedepartment2023lebanon: *id060
+  statedepartment2023nepal: *id061
+  statedepartment2023southsudan: *id062
   ohchr2024:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id014
+  gdelt2025:
+    title: GDELT Global Database of Events, Language, and Tone
+    url: https://www.gdeltproject.org/
+    date: '2025'
   owid2024: *id004
   odwwl2026: *id003
-  uscirf2025russia: *id065
-  uscirf2025azerbaijan: *id066
-  uscirf2025srilanka: *id067
-  uscirf2025kazakhstan: *id068
-  uscirf2025kyrgyzstan: *id069
-  uscirf2025turkmenistan: *id070
-  uscirf2025uzbekistan: *id071
-  uscirf2025tajikistan: *id072
-  morningstarnews2026: *id011
+  uscirf2025russia: *id063
+  uscirf2025azerbaijan: *id064
+  uscirf2025srilanka: *id065
+  uscirf2025kazakhstan: *id066
+  uscirf2025kyrgyzstan: *id067
+  uscirf2025turkmenistan: *id068
+  uscirf2025uzbekistan: *id069
+  uscirf2025tajikistan: *id070
+  morningstarnews2026: *id012
   infochretienne: *id013
-  fides: *id018
+  fides: *id014
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -21999,12 +21764,18 @@ sources:
     url: https://www.csw.org.uk/
     date: '2026'
   icc2026: *id007
-  forum18: *id020
-  mec: *id017
-  bitterwinter: *id073
+  forum18: *id018
+  mec:
+    title: Middle East Concern - News
+    url: https://www.meconcern.org/
+    date: '2026'
+  bitterwinter:
+    title: Bitter Winter - Religious Liberty and Human Rights
+    url: https://bitterwinter.org/
+    date: '2026'
   releaseintl: *id008
-  vom2026: *id012
-  chinaaid: *id074
+  vom2026: *id010
+  chinaaid: *id071
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
     url: https://www.osce.org/odihr/freedom-of-religion-or-belief
@@ -22013,15 +21784,18 @@ sources:
     title: UN Special Rapporteur on Freedom of Religion or Belief
     url: https://www.ohchr.org/en/special-procedures/sr-religion-or-belief
     date: '2026'
-  hrw: *id015
+  hrw: *id016
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id009
-  csi: *id075
-  cna: *id016
-  hrwf: *id019
+  csi:
+    title: Christian Solidarity International
+    url: https://www.csi-int.org/
+    date: '2026'
+  cna: *id017
+  hrwf: *id015
   adf:
     title: ADF International
     url: https://adfinternational.org/
@@ -22030,13 +21804,13 @@ sources:
     title: World Evangelical Alliance - Religious Liberty
     url: https://worldea.org/
     date: '2026'
-  jubilee: *id010
+  jubilee: *id011
   ippforb:
     title: IPPFoRB - Parliamentarians for FoRB
     url: https://ippforb.com/
     date: '2026'
-  statedepartment2023afghanistan: *id076
-  odwwl2025archiveafghanistan: *id077
+  statedepartment2023afghanistan: *id072
+  odwwl2025archiveafghanistan: *id073
   statedepartment2023archiveafghanistan:
     title: U.S. State Department IRF Report 2023 — Afghanistan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/afghanistan/
@@ -22046,8 +21820,8 @@ sources:
     url: https://www.uscirf.gov/countries/afghanistan
     date: '2025'
   vdem2025forb: *id006
-  statedepartment2023china: *id078
-  odwwl2025archivechina: *id079
+  statedepartment2023china: *id074
+  odwwl2025archivechina: *id075
   statedepartment2023archivechina:
     title: U.S. State Department IRF Report 2023 — China
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/china/
@@ -22056,14 +21830,14 @@ sources:
     title: USCIRF Country Page — China
     url: https://www.uscirf.gov/countries/china
     date: '2025'
-  statedepartment2023colombia: *id080
-  odwwl2025archivecolombia: *id081
+  statedepartment2023colombia: *id076
+  odwwl2025archivecolombia: *id077
   statedepartment2023archivecolombia:
     title: U.S. State Department IRF Report 2023 — Colombia
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/colombia/
     date: '2023'
-  statedepartment2023cuba: *id082
-  odwwl2025archivecuba: *id083
+  statedepartment2023cuba: *id078
+  odwwl2025archivecuba: *id079
   statedepartment2023archivecuba:
     title: U.S. State Department IRF Report 2023 — Cuba
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/cuba/
@@ -22072,8 +21846,8 @@ sources:
     title: USCIRF Country Page — Cuba
     url: https://www.uscirf.gov/countries/cuba
     date: '2025'
-  statedepartment2023eritrea: *id084
-  odwwl2025archiveeritrea: *id085
+  statedepartment2023eritrea: *id080
+  odwwl2025archiveeritrea: *id081
   statedepartment2023archiveeritrea:
     title: U.S. State Department IRF Report 2023 — Eritrea
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/eritrea/
@@ -22082,8 +21856,8 @@ sources:
     title: USCIRF Country Page — Eritrea
     url: https://www.uscirf.gov/countries/eritrea
     date: '2025'
-  statedepartment2023india: *id086
-  odwwl2025archiveindia: *id087
+  statedepartment2023india: *id082
+  odwwl2025archiveindia: *id083
   statedepartment2023archiveindia:
     title: U.S. State Department IRF Report 2023 — India
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/india/
@@ -22092,8 +21866,8 @@ sources:
     title: USCIRF Country Page — India
     url: https://www.uscirf.gov/countries/india
     date: '2025'
-  statedepartment2023indonesia: *id088
-  odwwl2025archiveindonesia: *id089
+  statedepartment2023indonesia: *id084
+  odwwl2025archiveindonesia: *id085
   statedepartment2023archiveindonesia:
     title: U.S. State Department IRF Report 2023 — Indonesia
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/indonesia/
@@ -22102,8 +21876,8 @@ sources:
     title: USCIRF Country Page — Indonesia
     url: https://www.uscirf.gov/countries/indonesia
     date: '2025'
-  statedepartment2023iran: *id090
-  odwwl2025archiveiran: *id091
+  statedepartment2023iran: *id086
+  odwwl2025archiveiran: *id087
   statedepartment2023archiveiran:
     title: U.S. State Department IRF Report 2023 — Iran
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/iran/
@@ -22112,8 +21886,8 @@ sources:
     title: USCIRF Country Page — Iran
     url: https://www.uscirf.gov/countries/iran
     date: '2025'
-  statedepartment2023iraq: *id092
-  odwwl2025archiveiraq: *id093
+  statedepartment2023iraq: *id088
+  odwwl2025archiveiraq: *id089
   statedepartment2023archiveiraq:
     title: U.S. State Department IRF Report 2023 — Iraq
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/iraq/
@@ -22122,8 +21896,8 @@ sources:
     title: USCIRF Country Page — Iraq
     url: https://www.uscirf.gov/countries/iraq
     date: '2025'
-  statedepartment2023laos: *id094
-  odwwl2025archivelaos: *id095
+  statedepartment2023laos: *id090
+  odwwl2025archivelaos: *id091
   statedepartment2023archivelaos:
     title: U.S. State Department IRF Report 2023 — Laos
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/laos/
@@ -22132,14 +21906,14 @@ sources:
     title: USCIRF Country Page — Laos
     url: https://www.uscirf.gov/countries/laos
     date: '2025'
-  statedepartment2023mexico: *id096
-  odwwl2025archivemexico: *id097
+  statedepartment2023mexico: *id092
+  odwwl2025archivemexico: *id093
   statedepartment2023archivemexico:
     title: U.S. State Department IRF Report 2023 — Mexico
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mexico/
     date: '2023'
-  statedepartment2023nicaragua: *id098
-  odwwl2025archivenicaragua: *id099
+  statedepartment2023nicaragua: *id094
+  odwwl2025archivenicaragua: *id095
   statedepartment2023archivenicaragua:
     title: U.S. State Department IRF Report 2023 — Nicaragua
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nicaragua/
@@ -22148,8 +21922,8 @@ sources:
     title: USCIRF Country Page — Nicaragua
     url: https://www.uscirf.gov/countries/nicaragua
     date: '2025'
-  statedepartment2023nigeria: *id100
-  odwwl2025archivenigeria: *id101
+  statedepartment2023nigeria: *id096
+  odwwl2025archivenigeria: *id097
   statedepartment2023archivenigeria:
     title: U.S. State Department IRF Report 2023 — Nigeria
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nigeria/
@@ -22158,8 +21932,8 @@ sources:
     title: USCIRF Country Page — Nigeria
     url: https://www.uscirf.gov/countries/nigeria
     date: '2025'
-  statedepartment2023northkorea: *id102
-  odwwl2025archivenorthkorea: *id103
+  statedepartment2023northkorea: *id098
+  odwwl2025archivenorthkorea: *id099
   statedepartment2023archivenorthkorea:
     title: U.S. State Department IRF Report 2023 — North Korea
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/north-korea/
@@ -22168,8 +21942,8 @@ sources:
     title: USCIRF Country Page — North Korea
     url: https://www.uscirf.gov/countries/north-korea
     date: '2025'
-  statedepartment2023pakistan: *id104
-  odwwl2025archivepakistan: *id105
+  statedepartment2023pakistan: *id100
+  odwwl2025archivepakistan: *id101
   statedepartment2023archivepakistan:
     title: U.S. State Department IRF Report 2023 — Pakistan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/pakistan/
@@ -22178,8 +21952,8 @@ sources:
     title: USCIRF Country Page — Pakistan
     url: https://www.uscirf.gov/countries/pakistan
     date: '2025'
-  statedepartment2023saudiarabia: *id106
-  odwwl2025archivesaudiarabia: *id107
+  statedepartment2023saudiarabia: *id102
+  odwwl2025archivesaudiarabia: *id103
   statedepartment2023archivesaudiarabia:
     title: U.S. State Department IRF Report 2023 — Saudi Arabia
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/saudi-arabia/
@@ -22188,14 +21962,14 @@ sources:
     title: USCIRF Country Page — Saudi Arabia
     url: https://www.uscirf.gov/countries/saudi-arabia
     date: '2025'
-  statedepartment2023somalia: *id108
-  odwwl2025archivesomalia: *id109
+  statedepartment2023somalia: *id104
+  odwwl2025archivesomalia: *id105
   statedepartment2023archivesomalia:
     title: U.S. State Department IRF Report 2023 — Somalia
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/somalia/
     date: '2023'
-  statedepartment2023syria: *id110
-  odwwl2025archivesyria: *id111
+  statedepartment2023syria: *id106
+  odwwl2025archivesyria: *id107
   statedepartment2023archivesyria:
     title: U.S. State Department IRF Report 2023 — Syria
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/syria/
@@ -22204,8 +21978,8 @@ sources:
     title: USCIRF Country Page — Syria
     url: https://www.uscirf.gov/countries/syria
     date: '2025'
-  statedepartment2023vietnam: *id112
-  odwwl2025archivevietnam: *id113
+  statedepartment2023vietnam: *id108
+  odwwl2025archivevietnam: *id109
   statedepartment2023archivevietnam:
     title: U.S. State Department IRF Report 2023 — Vietnam
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/vietnam/
@@ -22214,25 +21988,25 @@ sources:
     title: USCIRF Country Page — Vietnam
     url: https://www.uscirf.gov/countries/vietnam
     date: '2025'
-  statedepartment2023yemen: *id114
-  odwwl2025archiveyemen: *id115
+  statedepartment2023yemen: *id110
+  odwwl2025archiveyemen: *id111
   statedepartment2023archiveyemen:
     title: U.S. State Department IRF Report 2023 — Yemen
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/yemen/
     date: '2023'
-  statedepartment2023brazil: *id116
+  statedepartment2023brazil: *id112
   statedepartment2023archivebrazil:
     title: U.S. State Department IRF Report 2023 — Brazil
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/brazil/
     date: '2023'
-  statedepartment2023uganda: *id117
-  odwwl2025archiveuganda: *id118
+  statedepartment2023uganda: *id113
+  odwwl2025archiveuganda: *id114
   statedepartment2023archiveuganda:
     title: U.S. State Department IRF Report 2023 — Uganda
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/uganda/
     date: '2023'
-  statedepartment2023algeria: *id119
-  odwwl2025archivealgeria: *id120
+  statedepartment2023algeria: *id115
+  odwwl2025archivealgeria: *id116
   statedepartment2023archivealgeria:
     title: U.S. State Department IRF Report 2023 — Algeria
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/algeria/
@@ -22241,8 +22015,8 @@ sources:
     title: USCIRF Country Page — Algeria
     url: https://www.uscirf.gov/countries/algeria
     date: '2025'
-  statedepartment2023bangladesh: *id121
-  odwwl2025archivebangladesh: *id122
+  statedepartment2023bangladesh: *id117
+  odwwl2025archivebangladesh: *id118
   statedepartment2023archivebangladesh:
     title: U.S. State Department IRF Report 2023 — Bangladesh
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bangladesh/
@@ -22251,8 +22025,8 @@ sources:
     title: USCIRF Annual Report - Central African Republic
     url: https://www.uscirf.gov/countries/central-african-republic
     date: '2026'
-  statedepartment2023centralafricanrepublic: *id123
-  odwwl2025archivecentralafricanrepublic: *id124
+  statedepartment2023centralafricanrepublic: *id119
+  odwwl2025archivecentralafricanrepublic: *id120
   statedepartment2023archivecentralafricanrepublic:
     title: U.S. State Department IRF Report 2023 — Central African Republic
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/central-african-republic/
@@ -22261,8 +22035,8 @@ sources:
     title: USCIRF Country Page — Central African Republic
     url: https://www.uscirf.gov/countries/central-african-republic
     date: '2025'
-  statedepartment2023egypt: *id125
-  odwwl2025archiveegypt: *id126
+  statedepartment2023egypt: *id121
+  odwwl2025archiveegypt: *id122
   statedepartment2023archiveegypt:
     title: U.S. State Department IRF Report 2023 — Egypt
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/egypt/
@@ -22271,13 +22045,13 @@ sources:
     title: USCIRF Country Page — Egypt
     url: https://www.uscirf.gov/countries/egypt
     date: '2025'
-  statedepartment2023haiti: *id127
+  statedepartment2023haiti: *id123
   statedepartment2023archivehaiti:
     title: U.S. State Department IRF Report 2023 — Haiti
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
     date: '2023'
-  statedepartment2023libya: *id128
-  odwwl2025archivelibya: *id129
+  statedepartment2023libya: *id124
+  odwwl2025archivelibya: *id125
   statedepartment2023archivelibya:
     title: U.S. State Department IRF Report 2023 — Libya
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/libya/
@@ -22286,8 +22060,8 @@ sources:
     title: USCIRF Country Page — Libya
     url: https://www.uscirf.gov/countries/libya
     date: '2025'
-  statedepartment2023malaysia: *id130
-  odwwl2025archivemalaysia: *id131
+  statedepartment2023malaysia: *id126
+  odwwl2025archivemalaysia: *id127
   statedepartment2023archivemalaysia:
     title: U.S. State Department IRF Report 2023 — Malaysia
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/malaysia/
@@ -22296,8 +22070,8 @@ sources:
     title: USCIRF Country Page — Malaysia
     url: https://www.uscirf.gov/countries/malaysia
     date: '2025'
-  statedepartment2023myanmar: *id132
-  odwwl2025archivemyanmar: *id133
+  statedepartment2023myanmar: *id128
+  odwwl2025archivemyanmar: *id129
   statedepartment2023archivemyanmar:
     title: U.S. State Department IRF Report 2023 — Myanmar
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/burma/
@@ -22306,8 +22080,8 @@ sources:
     title: USCIRF Country Page — Myanmar
     url: https://www.uscirf.gov/countries/burma
     date: '2025'
-  statedepartment2023sudan: *id134
-  odwwl2025archivesudan: *id135
+  statedepartment2023sudan: *id130
+  odwwl2025archivesudan: *id131
   statedepartment2023archivesudan:
     title: U.S. State Department IRF Report 2023 — Sudan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/sudan/
@@ -22316,8 +22090,8 @@ sources:
     title: USCIRF Country Page — Sudan
     url: https://www.uscirf.gov/countries/sudan
     date: '2025'
-  statedepartment2023turkey: *id136
-  odwwl2025archiveturkey: *id137
+  statedepartment2023turkey: *id132
+  odwwl2025archiveturkey: *id133
   statedepartment2023archiveturkey:
     title: U.S. State Department IRF Report 2023 — Turkey
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/turkey/
@@ -22326,49 +22100,49 @@ sources:
     title: USCIRF Country Page — Turkey
     url: https://www.uscirf.gov/countries/turkey
     date: '2025'
-  statedepartment2023venezuela: *id138
-  odwwl2025archivevenezuela: *id139
+  statedepartment2023venezuela: *id134
+  odwwl2025archivevenezuela: *id135
   statedepartment2023archivevenezuela:
     title: U.S. State Department IRF Report 2023 — Venezuela
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/venezuela/
     date: '2023'
-  statedepartment2023zimbabwe: *id140
+  statedepartment2023zimbabwe: *id136
   statedepartment2023archivezimbabwe:
     title: U.S. State Department IRF Report 2023 — Zimbabwe
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/zimbabwe/
     date: '2023'
-  statedepartment2023mali: *id141
-  odwwl2025archivemali: *id142
+  statedepartment2023mali: *id137
+  odwwl2025archivemali: *id138
   statedepartment2023archivemali:
     title: U.S. State Department IRF Report 2023 — Mali
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mali/
     date: '2023'
-  statedepartment2023burkinafaso: *id143
-  odwwl2025archiveburkinafaso: *id144
+  statedepartment2023burkinafaso: *id139
+  odwwl2025archiveburkinafaso: *id140
   statedepartment2023archiveburkinafaso:
     title: U.S. State Department IRF Report 2023 — Burkina Faso
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/burkina-faso/
     date: '2023'
-  statedepartment2023maldives: *id145
-  odwwl2025archivemaldives: *id146
+  statedepartment2023maldives: *id141
+  odwwl2025archivemaldives: *id142
   statedepartment2023archivemaldives:
     title: U.S. State Department IRF Report 2023 — Maldives
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/maldives/
     date: '2023'
-  statedepartment2023mauritania: *id147
-  odwwl2025archivemauritania: *id148
+  statedepartment2023mauritania: *id143
+  odwwl2025archivemauritania: *id144
   statedepartment2023archivemauritania:
     title: U.S. State Department IRF Report 2023 — Mauritania
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mauritania/
     date: '2023'
-  statedepartment2023morocco: *id149
-  odwwl2025archivemorocco: *id150
+  statedepartment2023morocco: *id145
+  odwwl2025archivemorocco: *id146
   statedepartment2023archivemorocco:
     title: U.S. State Department IRF Report 2023 — Morocco
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/morocco/
     date: '2023'
-  statedepartment2023uzbekistan: *id151
-  odwwl2025archiveuzbekistan: *id152
+  statedepartment2023uzbekistan: *id147
+  odwwl2025archiveuzbekistan: *id148
   statedepartment2023archiveuzbekistan:
     title: U.S. State Department IRF Report 2023 — Uzbekistan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/uzbekistan/
@@ -22377,14 +22151,14 @@ sources:
     title: USCIRF Country Page — Uzbekistan
     url: https://www.uscirf.gov/countries/uzbekistan
     date: '2025'
-  statedepartment2023niger: *id153
-  odwwl2025archiveniger: *id154
+  statedepartment2023niger: *id149
+  odwwl2025archiveniger: *id150
   statedepartment2023archiveniger:
     title: U.S. State Department IRF Report 2023 — Niger
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/niger/
     date: '2023'
-  statedepartment2023turkmenistan: *id155
-  odwwl2025archiveturkmenistan: *id156
+  statedepartment2023turkmenistan: *id151
+  odwwl2025archiveturkmenistan: *id152
   statedepartment2023archiveturkmenistan:
     title: U.S. State Department IRF Report 2023 — Turkmenistan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/turkmenistan/
@@ -22393,44 +22167,44 @@ sources:
     title: USCIRF Country Page — Turkmenistan
     url: https://www.uscirf.gov/countries/turkmenistan
     date: '2025'
-  statedepartment2023oman: *id157
-  odwwl2025archiveoman: *id158
+  statedepartment2023oman: *id153
+  odwwl2025archiveoman: *id154
   statedepartment2023archiveoman:
     title: U.S. State Department IRF Report 2023 — Oman
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
     date: '2023'
-  statedepartment2023ethiopia: *id159
-  odwwl2025archiveethiopia: *id160
+  statedepartment2023ethiopia: *id155
+  odwwl2025archiveethiopia: *id156
   statedepartment2023archiveethiopia:
     title: U.S. State Department IRF Report 2023 — Ethiopia
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
     date: '2023'
-  statedepartment2023tunisia: *id161
-  odwwl2025archivetunisia: *id162
+  statedepartment2023tunisia: *id157
+  odwwl2025archivetunisia: *id158
   statedepartment2023archivetunisia:
     title: U.S. State Department IRF Report 2023 — Tunisia
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/tunisia/
     date: '2023'
-  statedepartment2023democraticrepublicofcongo: *id163
-  odwwl2025archivedemocraticrepublicofcongo: *id164
+  statedepartment2023democraticrepublicofcongo: *id159
+  odwwl2025archivedemocraticrepublicofcongo: *id160
   statedepartment2023archivedemocraticrepublicofcongo:
     title: U.S. State Department IRF Report 2023 — Democratic Republic of Congo
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/democratic-republic-of-the-congo/
     date: '2023'
-  statedepartment2023bhutan: *id165
-  odwwl2025archivebhutan: *id166
+  statedepartment2023bhutan: *id161
+  odwwl2025archivebhutan: *id162
   statedepartment2023archivebhutan:
     title: U.S. State Department IRF Report 2023 — Bhutan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bhutan/
     date: '2023'
-  statedepartment2023mozambique: *id167
-  odwwl2025archivemozambique: *id168
+  statedepartment2023mozambique: *id163
+  odwwl2025archivemozambique: *id164
   statedepartment2023archivemozambique:
     title: U.S. State Department IRF Report 2023 — Mozambique
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mozambique/
     date: '2023'
-  statedepartment2023kazakhstan: *id169
-  odwwl2025archivekazakhstan: *id170
+  statedepartment2023kazakhstan: *id165
+  odwwl2025archivekazakhstan: *id166
   statedepartment2023archivekazakhstan:
     title: U.S. State Department IRF Report 2023 — Kazakhstan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kazakhstan/
@@ -22439,8 +22213,8 @@ sources:
     title: USCIRF Country Page — Kazakhstan
     url: https://www.uscirf.gov/countries/kazakhstan
     date: '2025'
-  statedepartment2023tajikistan: *id171
-  odwwl2025archivetajikistan: *id172
+  statedepartment2023tajikistan: *id167
+  odwwl2025archivetajikistan: *id168
   statedepartment2023archivetajikistan:
     title: U.S. State Department IRF Report 2023 — Tajikistan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/tajikistan/
@@ -22449,9 +22223,9 @@ sources:
     title: USCIRF Country Page — Tajikistan
     url: https://www.uscirf.gov/countries/tajikistan
     date: '2025'
-  uscirf2026qatar: *id173
-  statedepartment2023qatar: *id174
-  odwwl2025archiveqatar: *id175
+  uscirf2026qatar: *id169
+  statedepartment2023qatar: *id170
+  odwwl2025archiveqatar: *id171
   statedepartment2023archiveqatar:
     title: U.S. State Department IRF Report 2023 — Qatar
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/qatar/
@@ -22460,26 +22234,26 @@ sources:
     title: USCIRF Country Page — Qatar
     url: https://www.uscirf.gov/countries/qatar
     date: '2025'
-  statedepartment2023comoros: *id176
-  odwwl2025archivecomoros: *id177
+  statedepartment2023comoros: *id172
+  odwwl2025archivecomoros: *id173
   statedepartment2023archivecomoros:
     title: U.S. State Department IRF Report 2023 — Comoros
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/comoros/
     date: '2023'
-  statedepartment2023cameroon: *id178
-  odwwl2025archivecameroon: *id179
+  statedepartment2023cameroon: *id174
+  odwwl2025archivecameroon: *id175
   statedepartment2023archivecameroon:
     title: U.S. State Department IRF Report 2023 — Cameroon
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/cameroon/
     date: '2023'
-  statedepartment2023brunei: *id180
-  odwwl2025archivebrunei: *id181
+  statedepartment2023brunei: *id176
+  odwwl2025archivebrunei: *id177
   statedepartment2023archivebrunei:
     title: U.S. State Department IRF Report 2023 — Brunei
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/brunei/
     date: '2023'
-  statedepartment2023kyrgyzstan: *id182
-  odwwl2025archivekyrgyzstan: *id183
+  statedepartment2023kyrgyzstan: *id178
+  odwwl2025archivekyrgyzstan: *id179
   statedepartment2023archivekyrgyzstan:
     title: U.S. State Department IRF Report 2023 — Kyrgyzstan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kyrgyzstan/
@@ -22488,14 +22262,14 @@ sources:
     title: USCIRF Country Page — Kyrgyzstan
     url: https://www.uscirf.gov/countries/kyrgyzstan
     date: '2025'
-  statedepartment2023jordan: *id184
-  odwwl2025archivejordan: *id185
+  statedepartment2023jordan: *id180
+  odwwl2025archivejordan: *id181
   statedepartment2023archivejordan:
     title: U.S. State Department IRF Report 2023 — Jordan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/jordan/
     date: '2023'
-  statedepartment2023russia: *id186
-  odwwl2025archiverussia: *id187
+  statedepartment2023russia: *id182
+  odwwl2025archiverussia: *id183
   statedepartment2023archiverussia:
     title: U.S. State Department IRF Report 2023 — Russia
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/russia/
@@ -22504,8 +22278,8 @@ sources:
     title: USCIRF Country Page — Russia
     url: https://www.uscirf.gov/countries/russia
     date: '2025'
-  statedepartment2023azerbaijan: *id188
-  odwwl2025archiveazerbaijan: *id189
+  statedepartment2023azerbaijan: *id184
+  odwwl2025archiveazerbaijan: *id185
   statedepartment2023archiveazerbaijan:
     title: U.S. State Department IRF Report 2023 — Azerbaijan
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/azerbaijan/
@@ -22514,8 +22288,8 @@ sources:
     title: USCIRF Country Page — Azerbaijan
     url: https://www.uscirf.gov/countries/azerbaijan
     date: '2025'
-  statedepartment2023srilanka: *id190
-  odwwl2025archivesrilanka: *id191
+  statedepartment2023srilanka: *id186
+  odwwl2025archivesrilanka: *id187
   statedepartment2023archivesrilanka:
     title: U.S. State Department IRF Report 2023 — Sri Lanka
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/sri-lanka/
@@ -22524,21 +22298,21 @@ sources:
     title: USCIRF Country Page — Sri Lanka
     url: https://www.uscirf.gov/countries/sri-lanka
     date: '2025'
-  statedepartment2023philippines: *id192
-  odwwl2025archivephilippines: *id193
+  statedepartment2023philippines: *id188
+  odwwl2025archivephilippines: *id189
   statedepartment2023archivephilippines:
     title: U.S. State Department IRF Report 2023 — Philippines
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/philippines/
     date: '2023'
-  statedepartment2023guinea: *id194
-  odwwl2025archiveguinea: *id195
+  statedepartment2023guinea: *id190
+  odwwl2025archiveguinea: *id191
   statedepartment2023archiveguinea:
     title: U.S. State Department IRF Report 2023 — Guinea
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/guinea/
     date: '2023'
-  uscirf2026bahrain: *id196
-  statedepartment2023bahrain: *id197
-  odwwl2025archivebahrain: *id198
+  uscirf2026bahrain: *id192
+  statedepartment2023bahrain: *id193
+  odwwl2025archivebahrain: *id194
   statedepartment2023archivebahrain:
     title: U.S. State Department IRF Report 2023 — Bahrain
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bahrain/
@@ -22547,7 +22321,7 @@ sources:
     title: USCIRF Country Page — Bahrain
     url: https://www.uscirf.gov/countries/bahrain
     date: '2025'
-  odwwl2025archivekenya: *id199
+  odwwl2025archivekenya: *id195
   statedepartment2023archivekenya:
     title: U.S. State Department IRF Report 2023 — Kenya
     url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kenya/
@@ -22578,152 +22352,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-09-30 12:28 UTC
+  generated_at: 2026-10-01 13:06 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-09-30T12:27:56.420356+00:00'
+    fetched_at: '2026-10-01T13:05:54.301177+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-09-30T12:27:26.809251+00:00'
+    fetched_at: '2026-10-01T13:03:47.316089+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-09-30T12:27:58.967733+00:00'
+    fetched_at: '2026-10-01T13:05:56.852152+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-09-30T12:27:47.235706+00:00'
+    fetched_at: '2026-10-01T13:05:42.996871+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-09-30T12:27:49.587660+00:00'
+    fetched_at: '2026-10-01T13:05:45.945945+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-09-30T12:27:34.048199+00:00'
+    fetched_at: '2026-10-01T13:05:26.605880+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-09-30T12:27:36.959127+00:00'
+    fetched_at: '2026-10-01T13:05:31.595713+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-09-30T12:27:54.404776+00:00'
+    fetched_at: '2026-10-01T13:05:51.324210+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-09-30T12:27:53.876087+00:00'
+    fetched_at: '2026-10-01T13:05:50.688082+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-09-30T12:27:28.986148+00:00'
+    fetched_at: '2026-10-01T13:03:49.559609+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-09-30T12:27:56.092172+00:00'
+    fetched_at: '2026-10-01T13:05:53.786039+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-09-30T12:27:30.924868+00:00'
+    fetched_at: '2026-10-01T13:03:52.024731+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-09-30T12:21:52.452370+00:00'
+    fetched_at: '2026-10-01T12:56:47.058571+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-09-30T12:27:25.559267+00:00'
+    fetched_at: '2026-10-01T13:03:46.011509+00:00'
     message: null
   - name: gdelt
-    status: partial
-    fetched_at: '2026-09-30T12:27:13.202625+00:00'
-    message: 2 of 4 queries failed
+    status: failed
+    fetched_at: '2026-10-01T13:03:34.320844+00:00'
+    message: all queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-09-30T12:27:46.756949+00:00'
+    fetched_at: '2026-10-01T13:05:41.782929+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-09-30T12:27:57.654727+00:00'
+    fetched_at: '2026-10-01T13:05:55.481988+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-09-30T12:27:29.961443+00:00'
+    fetched_at: '2026-10-01T13:03:50.587855+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-09-30T12:27:38.648292+00:00'
+    fetched_at: '2026-10-01T13:05:34.195389+00:00'
     message: null
   - name: ippforb
-    status: ok
-    fetched_at: '2026-09-30T12:28:03.603202+00:00'
-    message: null
+    status: failed
+    fetched_at: '2026-10-01T13:06:10.547018+00:00'
+    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-09-30T12:28:00.445442+00:00'
+    fetched_at: '2026-10-01T13:06:01.631763+00:00'
     message: null
   - name: mec
-    status: ok
-    fetched_at: '2026-09-30T12:27:33.271422+00:00'
-    message: null
+    status: failed
+    fetched_at: '2026-10-01T13:05:25.363287+00:00'
+    message: 'fetch failed: URLError: <urlopen error timed out>'
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-09-30T12:27:16.595872+00:00'
+    fetched_at: '2026-10-01T13:03:37.361023+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-09-30T12:28:04.007038+00:00'
+    fetched_at: '2026-10-01T13:06:11.203620+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-09-30T12:27:14.898386+00:00'
+    fetched_at: '2026-10-01T13:03:35.732022+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-09-30T12:21:51.409251+00:00'
+    fetched_at: '2026-10-01T12:56:45.664209+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-09-30T12:27:43.391833+00:00'
+    fetched_at: '2026-10-01T13:05:38.284833+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-09-30T12:21:55.571202+00:00'
+    fetched_at: '2026-10-01T12:56:49.211314+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-09-30T12:27:35.159301+00:00'
+    fetched_at: '2026-10-01T13:05:27.907050+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-09-30T12:24:31.080144+00:00'
+    fetched_at: '2026-10-01T13:00:43.719443+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-09-30T12:27:46.325621+00:00'
+    fetched_at: '2026-10-01T13:05:41.252190+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-09-30T12:22:40.843116+00:00'
+    fetched_at: '2026-10-01T12:57:37.822534+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-09-30T12:27:24.089610+00:00'
+    fetched_at: '2026-10-01T13:03:44.367188+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-09-30T12:27:35.745112+00:00'
+    fetched_at: '2026-10-01T13:05:28.592989+00:00'
     message: null
   - name: wea
     status: failed
-    fetched_at: '2026-09-30T12:28:00.185324+00:00'
+    fetched_at: '2026-10-01T13:05:58.459162+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 500: Internal Server Error'
   - name: wikipedia
     status: ok
-    fetched_at: '2026-09-30T12:28:28.376369+00:00'
+    fetched_at: '2026-10-01T13:06:35.547386+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
