@@ -370,6 +370,7 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
+    - fides
     - hrwf
     - jubilee
     - vdem2025forb
@@ -884,6 +885,7 @@ countries:
     - chinaaid
     - infochretienne
     - barnabas
+    - fides
     - hrwf
     - jubilee
     - vdem2025forb
@@ -921,7 +923,7 @@ countries:
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
-    - &id013
+    - &id014
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
@@ -929,11 +931,15 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id015
+    - &id010
+      title: Agenzia Fides - Pontifical Mission Societies News
+      url: https://www.fides.org/en
+      date: '2026'
+    - &id019
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
-    - &id011
+    - &id012
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
@@ -1029,6 +1035,17 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    fides_articles: 1
+    fides_samples:
+    - title: 100 YEARS SINCE THE ORDINATION OF THE FIRST SIX CHINESE BISHOPS - Bishop
+        Aloysius Chen Guodi and the Diocese of Fenyang
+      url: https://www.fides.org/en/news/78249-100_YEARS_SINCE_THE_ORDINATION_OF_THE_FIRST_SIX_CHINESE_BISHOPS_Bishop_Aloysius_Chen_Guodi_and_the_Diocese_of_Fenyang
+      date: '2026-10-05'
+      description: One hundred years since the ordination of the first six Chinese
+        Bishops consecrated in modern times , Fides News Agency is dedicating a series
+        of documentary profiles on these Successors of the Apostles and on their dioceses,
+        which were at the heart of this crucial event in the history of the Cathol
+      source: Agenzia Fides
     hrwf_articles: 1
     hrwf_samples:
     - title: 'CHINA: Religious persecution and issues – Bimonthly Digest September
@@ -1086,6 +1103,15 @@ countries:
       in most religious activities or receiving religious education.'
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: 100 YEARS SINCE THE ORDINATION OF THE FIRST SIX CHINESE BISHOPS - Bishop
+        Aloysius Chen Guodi and the Diocese of Fenyang
+      url: https://www.fides.org/en/news/78249-100_YEARS_SINCE_THE_ORDINATION_OF_THE_FIRST_SIX_CHINESE_BISHOPS_Bishop_Aloysius_Chen_Guodi_and_the_Diocese_of_Fenyang
+      date: '2026-10-05'
+      description: One hundred years since the ordination of the first six Chinese
+        Bishops consecrated in modern times , Fides News Agency is dedicating a series
+        of documentary profiles on these Successors of the Apostles and on their dioceses,
+        which were at the heart of this crucial event in the history of the Cathol
+      source: Agenzia Fides
     - title: Chinese Pastor Detained for ‘Organizing Illegal Religious Activities’
       url: https://persecution.org/2026/10/02/chinese-pastor-detained-for-organizing-illegal-religious-activities
       date: '2026-10-02'
@@ -2431,7 +2457,7 @@ countries:
     - *id005
     - *id007
     - *id008
-    - &id010
+    - &id011
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
@@ -3224,14 +3250,11 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - &id012
+    - &id013
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
-    - &id014
-      title: Agenzia Fides - Pontifical Mission Societies News
-      url: https://www.fides.org/en
-      date: '2026'
+    - *id010
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -3384,6 +3407,7 @@ countries:
     - gcr2026
     - mec
     - releaseintl
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -3563,6 +3587,7 @@ countries:
     - gcr2026
     - mec
     - releaseintl
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -3582,11 +3607,15 @@ countries:
     - *id003
     - *id004
     - *id005
-    - &id018
+    - &id017
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
     - *id008
+    - &id015
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -3640,6 +3669,17 @@ countries:
         The post Release International partner speaks on Iran appeared first on Release
         International .
       source: Release International
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
+        ,  The Chosen  Christmas Special
+      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Iran are particularly severe. The government
@@ -3676,6 +3716,12 @@ countries:
       propaganda.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
+        ,  The Chosen  Christmas Special
+      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
     - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
       url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
       date: '2026-07-13'
@@ -3826,6 +3872,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - hrw
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -3911,6 +3958,7 @@ countries:
     - odwwl2026
     - owid2024
     - gcr2026
+    - hrw
     - vdem2025forb
     sources:
     - *id001
@@ -3930,6 +3978,10 @@ countries:
     - *id003
     - *id004
     - *id005
+    - &id016
+      title: Human Rights Watch
+      url: https://www.hrw.org/
+      date: '2026'
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -3944,6 +3996,17 @@ countries:
       world, allowing God’s Word to reach people in their own languages and transform
       their daily lives. Send Bibles and support to your persecuted brothers and sisters
       today. learn more Copy Link <a href="https://twitter.com/share?text=Christian+Persecution+by+the+Numbers%3A+2026+
+    hrw_articles: 1
+    hrw_samples:
+    - title: 'Iraq: Dire Prospects for Alleged ISIS-Linked Men, Boys'
+      url: https://www.hrw.org/news/2026/10/05/iraq-dire-prospects-for-alleged-isis-linked-men-boys
+      date: '2026-10-05'
+      description: 'Click to expand Image Men accused of Islamic State links await
+        questioning at Al-Karkh prison in Iraq following their transfer from northeast
+        Syria, February 12, 2026. © 2026 Hadi Mizban/AP Photo Nearly 5,700 men and
+        boys held as alleged Islamic State (ISIS) members and transferred to Iraq
+        in early '
+      source: Human Rights Watch
     uscirf_designation: SWL
     uscirf_key_findings:
     - Iraq’s religious communities face ongoing challenges 11 years after the Islamic
@@ -3980,6 +4043,16 @@ countries:
       taken over local land and economic activities and blocked the return of internally
       displaced persons (IDPs).
     state_dept_christian_mentions: true
+    recent_incidents:
+    - title: 'Iraq: Dire Prospects for Alleged ISIS-Linked Men, Boys'
+      url: https://www.hrw.org/news/2026/10/05/iraq-dire-prospects-for-alleged-isis-linked-men-boys
+      date: '2026-10-05'
+      description: 'Click to expand Image Men accused of Islamic State links await
+        questioning at Al-Karkh prison in Iraq following their transfer from northeast
+        Syria, February 12, 2026. © 2026 Hadi Mizban/AP Photo Nearly 5,700 men and
+        boys held as alleged Islamic State (ISIS) members and transferred to Iraq
+        in early '
+      source: Human Rights Watch
     archive_modern_excerpt: The main focus of pressure on Iraqi Christians following
       the territorial losses by the Islamic State group (IS) has been the Shia militias
       backed by Iran. However, IS continued its attacks against civilians, infrastructure
@@ -4175,7 +4248,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id010
+    - *id011
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -4915,7 +4988,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id011
+    - *id012
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -5218,16 +5291,13 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
-    - *id007
-    - *id010
     - *id013
-    - *id009
+    - *id007
     - *id011
-    - &id016
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
+    - *id014
+    - *id009
+    - *id012
+    - *id015
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -5272,8 +5342,16 @@ countries:
         in Mangu County took place on Saturday (Sept. 5), where three Christians were
         killed in
       source: Morning Star News
-    icc_articles: 2
+    icc_articles: 3
     icc_samples:
+    - title: Plateau Governor Imposes Curfew After Pastor, 27 Others Killed in Week
+      url: https://persecution.org/2026/10/04/plateau-governor-imposes-curfew-after-pastor-27-others-killed-in-week
+      date: '2026-10-04'
+      description: David Nanpet, an eyewitness documenter with the International Committee
+        on Nigeria (ICON), was monitoring reports of renewed attacks across Plateau
+        state when he received news that a pastor had been killed on his way to church.
+        “Yes, it is true,” Nanpet told International Christian Concern (ICC), co
+      source: International Christian Concern
     - title: New Legislation Threatens Independent Documentation of Persecution in
         Nigeria
       url: https://persecution.org/2026/09/28/new-legislation-threatens-independent-documentation-of-persecution-in-nigeria
@@ -5342,23 +5420,17 @@ countries:
       date: '2026-08-17'
       description: window.option_df_18313 = {"outline":[],"backgroundColor":"#eef7fd","autoEnableOutline":"false","autoEnableThumbnail":"false","overwritePDFOutline":"false","direction":"1","pageSize":"0","source":"https:\/\/jubileecampaign.org\/wp-content\/uploads\/2026\/08\/HRC-63-Prisoners-of-Conscience.pdf","wpOpt
       source: Jubilee Campaign
-    gdelt_articles: 2
+    gdelt_articles: 1
     gdelt_samples:
-    - title: As violence escalates in Nigeria , Christian and Muslim leaders unite
-      url: https://religionnews.com/2026/09/23/as-violence-escalates-in-nigeria-christian-and-muslim-leaders-unite-in-interfaith-front
-      date: '2026-09-23'
+    - title: 'Persecution : Trump pressure on Nigeria just saved hundreds of Christian
+        lives * WorldNetDaily * by Sean Nelson , The Daily Signal'
+      url: https://www.wnd.com/2026/09/persecution-trumps-pressure-nigeria-just-saved-hundreds-christians
+      date: '2026-10-01'
       description: ''
       source: GDELT
-    - title: New report says over 3000 Christians killed in Nigeria in just eight
-        months in 2026
-      url: https://www.catholicworldreport.com/2026/09/08/new-report-says-over-3000-christians-killed-in-nigeria-in-just-eight-months-in-2026
-      date: '2026-09-08'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 2
+    gdelt_recent_articles: 1
     gdelt_sample_urls:
-    - https://religionnews.com/2026/09/23/as-violence-escalates-in-nigeria-christian-and-muslim-leaders-unite-in-interfaith-front
-    - https://www.catholicworldreport.com/2026/09/08/new-report-says-over-3000-christians-killed-in-nigeria-in-just-eight-months-in-2026
+    - https://www.wnd.com/2026/09/persecution-trumps-pressure-nigeria-just-saved-hundreds-christians
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5394,6 +5466,20 @@ countries:
       the head and two individuals sustaining fractures in their legs.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: Plateau Governor Imposes Curfew After Pastor, 27 Others Killed in Week
+      url: https://persecution.org/2026/10/04/plateau-governor-imposes-curfew-after-pastor-27-others-killed-in-week
+      date: '2026-10-04'
+      description: David Nanpet, an eyewitness documenter with the International Committee
+        on Nigeria (ICON), was monitoring reports of renewed attacks across Plateau
+        state when he received news that a pastor had been killed on his way to church.
+        “Yes, it is true,” Nanpet told International Christian Concern (ICC), co
+      source: International Christian Concern
+    - title: 'Persecution : Trump pressure on Nigeria just saved hundreds of Christian
+        lives * WorldNetDaily * by Sean Nelson , The Daily Signal'
+      url: https://www.wnd.com/2026/09/persecution-trumps-pressure-nigeria-just-saved-hundreds-christians
+      date: '2026-10-01'
+      description: ''
+      source: GDELT
     - title: New Legislation Threatens Independent Documentation of Persecution in
         Nigeria
       url: https://persecution.org/2026/09/28/new-legislation-threatens-independent-documentation-of-persecution-in-nigeria
@@ -5427,11 +5513,6 @@ countries:
         morning in Dorowa Babuje when armed men ambushed them. They shot and killed
         the pasto
       source: International Christian Concern
-    - title: As violence escalates in Nigeria , Christian and Muslim leaders unite
-      url: https://religionnews.com/2026/09/23/as-violence-escalates-in-nigeria-christian-and-muslim-leaders-unite-in-interfaith-front
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
     - title: 'Nigeria : un pasteur baptiste parmi une dizaine de chrétiens tués en
         quelques jours'
       url: https://www.infochretienne.com/articles/nigeria-un-pasteur-baptiste-parmi-une-dizaine-de-chretiens-tues-en-quelques-jours
@@ -5461,12 +5542,6 @@ countries:
         in Mangu County took place on Saturday (Sept. 5), where three Christians were
         killed in
       source: Morning Star News
-    - title: New report says over 3000 Christians killed in Nigeria in just eight
-        months in 2026
-      url: https://www.catholicworldreport.com/2026/09/08/new-report-says-over-3000-christians-killed-in-nigeria-in-just-eight-months-in-2026
-      date: '2026-09-08'
-      description: ''
-      source: GDELT
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
         Nigeria, and Pakistan'
       url: https://jubileecampaign.org/prisoners-of-conscience-behind-bars-for-belief-in-china-nicaragua-nigeria-and-pakistan
@@ -5831,11 +5906,8 @@ countries:
     - morningstarnews2026
     - icc2026
     - vom2026
-    - infochretienne
     - fides
-    - hrwf
     - jubilee
-    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -5998,11 +6070,8 @@ countries:
     - morningstarnews2026
     - icc2026
     - vom2026
-    - infochretienne
     - fides
-    - hrwf
     - jubilee
-    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -6022,14 +6091,11 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
-    - *id007
-    - *id010
     - *id013
-    - *id014
-    - *id015
+    - *id007
     - *id011
-    - *id016
+    - *id010
+    - *id012
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -6096,14 +6162,6 @@ countries:
         home village to share the gospel. He also constructed a small church on land
         he
       source: Voice of the Martyrs
-    infochretienne_articles: 1
-    infochretienne_samples:
-    - title: 'Pakistan : un adolescent chrétien battu après avoir défendu une fille
-        harcelée'
-      url: https://www.infochretienne.com/articles/pakistan-un-adolescent-chretien-battu-apres-avoir-defendu-une-fille-harcelee
-      date: '2026-09-09'
-      description: ''
-      source: Info Chrétienne
     fides_articles: 2
     fides_samples:
     - title: ASIA/PAKISTAN - In Mariamabad, the memory of Capuchin missionary Father
@@ -6124,17 +6182,6 @@ countries:
         feast of St Francis on October 4, renewing their commitment to live and proclaim
         the Gospel, according to the spirit of the saint, in the Pakistani nation.
       source: Agenzia Fides
-    hrwf_articles: 1
-    hrwf_samples:
-    - title: 'PAKISTAN: Blasphemy laws and the sad case of Junaid Hafeez, university
-        lecturer'
-      url: https://hrwf.eu/pakistan-blasphemy-laws-and-the-sad-case-of-junaid-hafeez
-      date: '2026-09-23'
-      description: 'PAKISTAN: Blasphemy laws and the sad case of Junaid Hafeez A respectful
-        call to the highest authorities of Pakistan to uphold fundamental rights and
-        the rule of law. by Sajid Sandhu Bitter Winter (21.09.2026) or more than thirteen
-        years, Junaid Hafeez, a former university lecturer and member of Paki'
-      source: Human Rights Without Frontiers
     jubilee_articles: 5
     jubilee_samples:
     - title: “No Response Yet” – Silence from Pakistan on Grave Human Rights Violations
@@ -6161,16 +6208,6 @@ countries:
       date: '2026-08-17'
       description: 'window.option_df_18319 = {"outline":[],"backgroundColor":"#eef7fd","autoEnableOutline":"false","autoEnableThumbnail":"false","overwritePDFOutline":"false","direction":"1","pageSize":"0","source":"https:\/\/jubileecampaign.org\/wp-content\/uploads\/2026\/08\/HRC-63-Pakistan.pdf","wpOptions":"true"}; '
       source: Jubilee Campaign
-    gdelt_articles: 1
-    gdelt_samples:
-    - title: Pakistani pastor  attacked  for backing changes to Christian family laws
-      url: https://www.ucanews.com/news/pakistani-pastor-attacked-for-backing-changes-to-christian-family-laws/115556
-      date: '2026-10-01'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 1
-    gdelt_sample_urls:
-    - https://www.ucanews.com/news/pakistani-pastor-attacked-for-backing-changes-to-christian-family-laws/115556
     uscirf_designation: CPC
     uscirf_key_findings:
     - The Pakistani government’s systematic enforcement of blasphemy laws severely
@@ -6255,20 +6292,6 @@ countries:
         slavery and sexual violence, and uphold human rights. “We don’t know where
         they
       source: Jubilee Campaign
-    - title: Pakistani pastor  attacked  for backing changes to Christian family laws
-      url: https://www.ucanews.com/news/pakistani-pastor-attacked-for-backing-changes-to-christian-family-laws/115556
-      date: '2026-10-01'
-      description: ''
-      source: GDELT
-    - title: 'PAKISTAN: Blasphemy laws and the sad case of Junaid Hafeez, university
-        lecturer'
-      url: https://hrwf.eu/pakistan-blasphemy-laws-and-the-sad-case-of-junaid-hafeez
-      date: '2026-09-23'
-      description: 'PAKISTAN: Blasphemy laws and the sad case of Junaid Hafeez A respectful
-        call to the highest authorities of Pakistan to uphold fundamental rights and
-        the rule of law. by Sajid Sandhu Bitter Winter (21.09.2026) or more than thirteen
-        years, Junaid Hafeez, a former university lecturer and member of Paki'
-      source: Human Rights Without Frontiers
     - title: Pakistani Christian Remains Detained Following Blasphemy Allegations
       url: https://persecution.org/2026/09/18/pakistani-christian-remains-detained-following-blasphemy-allegations
       date: '2026-09-18'
@@ -6278,12 +6301,6 @@ countries:
         from Dhala Sharif, near Nowshera Virkan in Gujranwala District in Punjab,
         Pakistan,
       source: International Christian Concern
-    - title: 'Pakistan : un adolescent chrétien battu après avoir défendu une fille
-        harcelée'
-      url: https://www.infochretienne.com/articles/pakistan-un-adolescent-chretien-battu-apres-avoir-defendu-une-fille-harcelee
-      date: '2026-09-09'
-      description: ''
-      source: Info Chrétienne
     - title: Muslim Shoots Christian Woman to Death in Pakistan
       url: https://morningstarnews.org/2026/09/muslim-shoots-christian-woman-to-death-in-pakistan
       date: '2026-09-08'
@@ -7068,11 +7085,8 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id013
-    - &id017
-      title: Human Rights Watch
-      url: https://www.hrw.org/
-      date: '2026'
+    - *id014
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -8685,8 +8699,8 @@ countries:
     - *id004
     - *id005
     - *id007
-    - *id017
     - *id016
+    - *id015
     - *id006
     freedom_house_status: Free
     freedom_house_pr: 2
@@ -8723,16 +8737,23 @@ countries:
         human rights groups, bar associations, and legal experts from around the world
         have '
       source: Human Rights Watch
-    gdelt_articles: 1
+    gdelt_articles: 2
     gdelt_samples:
     - title: Baptist pastor killed in Myanmar ; US urged to take action
       url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
       date: '2026-09-20'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 1
+    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
+        in FY2026
+      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
+      date: '2026-09-05'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 2
     gdelt_sample_urls:
     - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
+    - https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
     recent_incidents:
     - title: Array of Experts Back Lawsuit Challenging Trump’s ICC Sanctions Regime
       url: https://www.hrw.org/news/2026/09/25/array-of-experts-back-lawsuit-challenging-trumps-icc-sanctions-regime
@@ -8758,6 +8779,12 @@ countries:
         some claims are initially reviewed. A new report from World Relief and Open
         Doors
       source: International Christian Concern
+    - title: US News | U . S . on Track to Admit No Persecuted Christian Refugees
+        in FY2026
+      url: https://www.christianitydaily.com:443/news/us-on-track-to-admit-no-persecuted-christian-refugees-in-fy2026.html
+      date: '2026-09-05'
+      description: ''
+      source: GDELT
     vdem_year: 2025.0
     vdem_freedom_of_religion: 0.953
     vdem_freedom_of_religion_ord: 3.0
@@ -9400,7 +9427,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id012
+    - *id013
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9676,8 +9703,8 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id012
-    - *id018
+    - *id013
+    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -9956,8 +9983,8 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id013
     - *id014
+    - *id010
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -9980,8 +10007,18 @@ countries:
       date: '2026-09-29'
       description: ''
       source: Info Chrétienne
-    fides_articles: 1
+    fides_articles: 2
     fides_samples:
+    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
+        Bangladesh take different approaches'
+      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
+      date: '2026-10-03'
+      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
+        again attracting international attention. In Malaysia, an initial operation
+        to repatriate around 1,500 Myanmar nationals began on September 29, as part
+        of a program that could eventually involve up to 5,000 people. In Bangladesh,
+        how
+      source: Agenzia Fides
     - title: 'ASIA/BANGLADESH - In the tribal area of Joypurhat, Bishop Gomes: “the
         new diocese between poverty and hope”'
       url: https://www.fides.org/en/news/78229-ASIA_BANGLADESH_In_the_tribal_area_of_Joypurhat_Bishop_Gomes_the_new_diocese_between_poverty_and_hope
@@ -10020,6 +10057,16 @@ countries:
       the government employment quota system for members of religious minorities.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
+        Bangladesh take different approaches'
+      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
+      date: '2026-10-03'
+      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
+        again attracting international attention. In Malaysia, an initial operation
+        to repatriate around 1,500 Myanmar nationals began on September 29, as part
+        of a program that could eventually involve up to 5,000 people. In Bangladesh,
+        how
+      source: Agenzia Fides
     - title: '"Nous prions pour la paix" : au Bangladesh, un village chrétien pris
         pour cible'
       url: https://www.infochretienne.com/articles/nous-prions-pour-la-paix-au-bangladesh-un-village-chretien-pris-pour-cible
@@ -10108,7 +10155,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - hrw
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -10259,7 +10305,6 @@ countries:
     - freedomhouse2024
     - odwwl2026
     - owid2024
-    - hrw
     - vdem2025forb
     sources:
     - *id001
@@ -10278,7 +10323,6 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id017
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -10287,16 +10331,6 @@ countries:
     opendoors_score: null
     christian_population: 4557904
     christian_percentage: 90.68
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'Central African Republic: ICC Verdict in Seleka Commander Case'
-      url: https://www.hrw.org/news/2026/09/23/central-african-republic-icc-verdict-in-seleka-commander-case
-      date: '2026-09-23'
-      description: Click to expand Image Mahamat Said Abdel Kani during closing statements
-        in the courtroom of the International Criminal Court in The Hague, Netherlands,
-        November 25, 2025. © 2025 ICC-CPi (The Hague) – The International Criminal
-        Court (ICC)’s conviction of Mahamat Said Abdel Kani for crimes against hu
-      source: Human Rights Watch
     uscirf_designation: none
     uscirf_key_findings:
     - Religious freedom conditions in the Central African Republic (CAR) have not
@@ -10333,15 +10367,6 @@ countries:
       leaders continued. MINUSCA and Muslim leaders reported government discrimination
       against Muslims, particularly in the issuance of identity cards.
     state_dept_christian_mentions: true
-    recent_incidents:
-    - title: 'Central African Republic: ICC Verdict in Seleka Commander Case'
-      url: https://www.hrw.org/news/2026/09/23/central-african-republic-icc-verdict-in-seleka-commander-case
-      date: '2026-09-23'
-      description: Click to expand Image Mahamat Said Abdel Kani during closing statements
-        in the courtroom of the International Criminal Court in The Hague, Netherlands,
-        November 25, 2025. © 2025 ICC-CPi (The Hague) – The International Criminal
-        Court (ICC)’s conviction of Mahamat Said Abdel Kani for crimes against hu
-      source: Human Rights Watch
     archive_modern_excerpt: The Central African Republic (CAR) has been engulfed in
       civil conflict since 2013, characterized by religious and ethnic violence. Much
       of the country is controlled by domestic and foreign armed groups responsible
@@ -11065,6 +11090,7 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
+    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -11216,6 +11242,7 @@ countries:
     - odwwl2025archivemalaysia
     - freedomhouse2024
     - owid2024
+    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -11233,12 +11260,25 @@ countries:
       date: '2025'
     - *id002
     - *id004
+    - *id010
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
     freedom_house_cl: 4
     christian_population: 3101974
     christian_percentage: 9.15
+    fides_articles: 1
+    fides_samples:
+    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
+        Bangladesh take different approaches'
+      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
+      date: '2026-10-03'
+      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
+        again attracting international attention. In Malaysia, an initial operation
+        to repatriate around 1,500 Myanmar nationals began on September 29, as part
+        of a program that could eventually involve up to 5,000 people. In Bangladesh,
+        how
+      source: Agenzia Fides
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Malaysia are poor amid a troubling rise in religious
@@ -11275,6 +11315,17 @@ countries:
       to his wife, but the government appealed the decision and obtained an order
       from the court to block release of the report.
     state_dept_christian_mentions: true
+    recent_incidents:
+    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
+        Bangladesh take different approaches'
+      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
+      date: '2026-10-03'
+      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
+        again attracting international attention. In Malaysia, an initial operation
+        to repatriate around 1,500 Myanmar nationals began on September 29, as part
+        of a program that could eventually involve up to 5,000 people. In Bangladesh,
+        how
+      source: Agenzia Fides
     archive_modern_excerpt: The constitution states, “Islam is the religion of the
       Federation; but other religions may be practiced in peace and harmony.” Federal
       and state governments have the power to mandate doctrine for Muslims and promote
@@ -11326,6 +11377,7 @@ countries:
     - icc2026
     - infochretienne
     - barnabas
+    - fides
     - gdelt2025
     - vdem2025forb
   pew_slug: ''
@@ -11494,6 +11546,7 @@ countries:
     - icc2026
     - infochretienne
     - barnabas
+    - fides
     - gdelt2025
     - vdem2025forb
     sources:
@@ -11515,9 +11568,10 @@ countries:
     - *id004
     - *id005
     - *id007
-    - *id013
+    - *id014
     - *id009
-    - *id016
+    - *id010
+    - *id015
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -11559,21 +11613,27 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    gdelt_articles: 2
+    fides_articles: 1
+    fides_samples:
+    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
+        Bangladesh take different approaches'
+      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
+      date: '2026-10-03'
+      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
+        again attracting international attention. In Malaysia, an initial operation
+        to repatriate around 1,500 Myanmar nationals began on September 29, as part
+        of a program that could eventually involve up to 5,000 people. In Bangladesh,
+        how
+      source: Agenzia Fides
+    gdelt_articles: 1
     gdelt_samples:
-    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
-      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
-      date: '2026-09-20'
-      description: ''
-      source: GDELT
     - title: Baptist pastor killed in Myanmar ; US urged to take action
       url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
       date: '2026-09-20'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 2
+    gdelt_recent_articles: 1
     gdelt_sample_urls:
-    - https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
     - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
     uscirf_designation: CPC
     uscirf_key_findings:
@@ -11611,16 +11671,21 @@ countries:
       monks during the year. The regime also detained one Muslim leader.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
+        Bangladesh take different approaches'
+      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
+      date: '2026-10-03'
+      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
+        again attracting international attention. In Malaysia, an initial operation
+        to repatriate around 1,500 Myanmar nationals began on September 29, as part
+        of a program that could eventually involve up to 5,000 people. In Bangladesh,
+        how
+      source: Agenzia Fides
     - title: 'Myanmar : la junte militaire tue un pasteur'
       url: https://www.infochretienne.com/articles/myanmar-la-junte-militaire-tue-un-pasteur
       date: '2026-09-21'
       description: ''
       source: Info Chrétienne
-    - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
-      url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
-      date: '2026-09-20'
-      description: ''
-      source: GDELT
     - title: Baptist pastor killed in Myanmar ; US urged to take action
       url: https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
       date: '2026-09-20'
@@ -12028,7 +12093,6 @@ countries:
     - odwwl2026
     - owid2024
     - vom2026
-    - hrwf
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -12191,7 +12255,6 @@ countries:
     - odwwl2026
     - owid2024
     - vom2026
-    - hrwf
     - vdem2025forb
     sources:
     - *id001
@@ -12210,8 +12273,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id010
-    - *id015
+    - *id011
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 5
@@ -12240,16 +12302,6 @@ countries:
         Jesus. That friendship started Ramazan on a journey that eventually led to
         the '
       source: Voice of the Martyrs
-    hrwf_articles: 1
-    hrwf_samples:
-    - title: 'TÜRKIYE: Over 60 rights groups condemn crackdown on LGBTI+ civil society'
-      url: https://hrwf.eu/turkiye-over-60-rights-groups-condemn-crackdown-on-lgbti-civil-society
-      date: '2026-09-23'
-      description: 'TÜRKIYE: Over 60 rights groups condemn crackdown on LGBTI+ civil
-        society At least 162 people were detained, including about 50-60 LGBTI human
-        rights defenders and activists ILGA (14.09.2026) We, the undersigned organisations,
-        condemn the large-scale police raids and detentions targeting LGBTI activi'
-      source: Human Rights Without Frontiers
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom remains under threat in Turkey, as authorities continue to
@@ -12298,14 +12350,6 @@ countries:
         ground where new believers are discipled and equipped to live faithfully for
         Christ
       source: Voice of the Martyrs
-    - title: 'TÜRKIYE: Over 60 rights groups condemn crackdown on LGBTI+ civil society'
-      url: https://hrwf.eu/turkiye-over-60-rights-groups-condemn-crackdown-on-lgbti-civil-society
-      date: '2026-09-23'
-      description: 'TÜRKIYE: Over 60 rights groups condemn crackdown on LGBTI+ civil
-        society At least 162 people were detained, including about 50-60 LGBTI human
-        rights defenders and activists ILGA (14.09.2026) We, the undersigned organisations,
-        condemn the large-scale police raids and detentions targeting LGBTI activi'
-      source: Human Rights Without Frontiers
     - title: 'TURKIYE: Evangelism Happens Through Relationships'
       url: https://www.persecution.com/stories/turkiye-evangelism-happens-through-relationships
       date: '2026-09-19'
@@ -14387,7 +14431,7 @@ countries:
     - *id003
     - *id004
     - *id005
-    - *id017
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -14909,9 +14953,8 @@ countries:
     opendoors_score: null
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
-      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/d72fc33d5b8961c2ed9b72cb197413c9"},"headline":"Christian
-      Persecution by the Numbers: 2026 Global Tre'
+    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
+      content="@GC_
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
     state_dept_executive_summary: The Basic Law declares Islam to be the state religion
       and declares sharia is the basis for legislation. It protects the right of individuals
@@ -15157,7 +15200,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id014
+    - *id010
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 6
@@ -16657,7 +16700,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id019
+    - &id018
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
@@ -17866,8 +17909,8 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id019
-    - *id014
+    - *id018
+    - *id010
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -17886,7 +17929,7 @@ countries:
         the leader. Four of the five are accused of producing or distributing "extremist"
         literature, the fifth of participating in a court-banned "extremist" orga
       source: Forum 18
-    fides_articles: 2
+    fides_articles: 1
     fides_samples:
     - title: The Heaven opened, the Bishop’s Mission, and the Grace of being a little
         flock
@@ -17897,15 +17940,6 @@ countries:
         of St Paul Outside the Walls. Cardinal Giorgio Marengo, who delivered the
         homily, invited him to keep his eyes raised to the “greater things” promised
         by Chris
-      source: Agenzia Fides
-    - title: 'ASIA/KYRGYZSTAN - “The fate of the flock is my fate”: Bishop Anthony
-        Corcoran’s missionary road'
-      url: https://www.fides.org/en/news/78228-ASIA_KYRGYZSTAN_The_fate_of_the_flock_is_my_fate_Bishop_Anthony_Corcoran_s_missionary_road
-      date: '2026-09-29'
-      description: 'by Marie-Lucile Kubacki Biškek – On September 29, Cardinal Giorgio
-        Marengo will lay his hands on the head of Father Anthony Corcoran, an American-born
-        Jesuit, who will become a bishop that day. He will be confirmed in what he
-        has been for nearly a decade: the shepherd of a few hundred Catholics scat'
       source: Agenzia Fides
     uscirf_designation: SWL
     uscirf_key_findings:
@@ -17945,15 +17979,6 @@ countries:
       and 21 madrassahs.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: 'ASIA/KYRGYZSTAN - “The fate of the flock is my fate”: Bishop Anthony
-        Corcoran’s missionary road'
-      url: https://www.fides.org/en/news/78228-ASIA_KYRGYZSTAN_The_fate_of_the_flock_is_my_fate_Bishop_Anthony_Corcoran_s_missionary_road
-      date: '2026-09-29'
-      description: 'by Marie-Lucile Kubacki Biškek – On September 29, Cardinal Giorgio
-        Marengo will lay his hands on the head of Father Anthony Corcoran, an American-born
-        Jesuit, who will become a bishop that day. He will be confirmed in what he
-        has been for nearly a decade: the shepherd of a few hundred Catholics scat'
-      source: Agenzia Fides
     - title: 'KYRGYZSTAN: Trials imminent for detained Reform Adventists?'
       url: https://www.forum18.org/archive.php?article_id=3066
       date: ''
@@ -19491,8 +19516,8 @@ countries:
       date: '2025'
     - *id002
     - *id004
+    - *id018
     - *id019
-    - *id015
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -19888,7 +19913,7 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id013
+    - *id014
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -20226,10 +20251,9 @@ countries:
     wiki_extract: 'The Philippines, officially the Republic of the Philippines, is
       an archipelagic country in Southeast Asia. Located in the western Pacific Ocean,
       it consists of about 7,641 islands, with a total area of about 300,000 square
-      kilometers. The islands are broadly categorized in three main geographical divisions.
-      From north to south, the divisions are: Luzon, Visayas, and Mindanao. With a
-      population of over 114 million, it is the world''s thirteenth-most-populous
-      country.'
+      kilometers. The islands are broadly categorized into three main geographical
+      divisions: from north to south, Luzon, Visayas, and Mindanao. With a population
+      of over 114 million, it is the world''s thirteenth-most-populous country.'
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -21394,7 +21418,7 @@ countries:
       date: '2023'
     - *id002
     - *id004
-    - *id010
+    - *id011
     freedom_house_status: Partly Free
     freedom_house_pr: 5
     freedom_house_cl: 4
@@ -21903,7 +21927,7 @@ sources:
     title: OHCHR Universal Human Rights Index
     url: https://uhri.ohchr.org/
     date: '2024'
-  gdelt2025: *id016
+  gdelt2025: *id015
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id064
@@ -21914,9 +21938,9 @@ sources:
   uscirf2025turkmenistan: *id069
   uscirf2025uzbekistan: *id070
   uscirf2025tajikistan: *id071
-  morningstarnews2026: *id012
-  infochretienne: *id013
-  fides: *id014
+  morningstarnews2026: *id013
+  infochretienne: *id014
+  fides: *id010
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -21935,14 +21959,14 @@ sources:
     url: https://www.csw.org.uk/
     date: '2026'
   icc2026: *id007
-  forum18: *id019
-  mec: *id018
+  forum18: *id018
+  mec: *id017
   bitterwinter:
     title: Bitter Winter - Religious Liberty and Human Rights
     url: https://bitterwinter.org/
     date: '2026'
   releaseintl: *id008
-  vom2026: *id010
+  vom2026: *id011
   chinaaid: *id072
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
@@ -21952,7 +21976,7 @@ sources:
     title: UN Special Rapporteur on Freedom of Religion or Belief
     url: https://www.ohchr.org/en/special-procedures/sr-religion-or-belief
     date: '2026'
-  hrw: *id017
+  hrw: *id016
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
@@ -21966,7 +21990,7 @@ sources:
     title: Catholic News Agency
     url: https://www.catholicnewsagency.com/
     date: '2026'
-  hrwf: *id015
+  hrwf: *id019
   adf:
     title: ADF International
     url: https://adfinternational.org/
@@ -21975,7 +21999,7 @@ sources:
     title: World Evangelical Alliance - Religious Liberty
     url: https://worldea.org/
     date: '2026'
-  jubilee: *id011
+  jubilee: *id012
   ippforb:
     title: IPPFoRB - Parliamentarians for FoRB
     url: https://ippforb.com/
@@ -22523,152 +22547,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-10-04 12:15 UTC
+  generated_at: 2026-10-05 14:25 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-10-04T12:15:17.176987+00:00'
+    fetched_at: '2026-10-05T14:25:21.279578+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-10-04T12:14:43.200428+00:00'
+    fetched_at: '2026-10-05T14:24:51.379870+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-10-04T12:15:19.694602+00:00'
+    fetched_at: '2026-10-05T14:25:24.026659+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-10-04T12:15:05.955522+00:00'
+    fetched_at: '2026-10-05T14:25:13.251147+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-10-04T12:15:07.923211+00:00'
+    fetched_at: '2026-10-05T14:25:15.675129+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-10-04T12:14:50.252111+00:00'
+    fetched_at: '2026-10-05T14:24:58.786608+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-10-04T12:14:53.827448+00:00'
+    fetched_at: '2026-10-05T14:25:01.794678+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-10-04T12:15:14.123596+00:00'
+    fetched_at: '2026-10-05T14:25:19.146469+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-10-04T12:15:13.639223+00:00'
+    fetched_at: '2026-10-05T14:25:18.720328+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-10-04T12:14:45.416138+00:00'
+    fetched_at: '2026-10-05T14:24:54.036176+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-10-04T12:15:16.840291+00:00'
+    fetched_at: '2026-10-05T14:25:20.932872+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-10-04T12:14:47.364208+00:00'
+    fetched_at: '2026-10-05T14:24:56.538496+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-10-04T12:10:15.296653+00:00'
+    fetched_at: '2026-10-05T14:19:31.172396+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-10-04T12:14:41.973956+00:00'
+    fetched_at: '2026-10-05T14:24:50.035130+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-10-04T12:14:30.443733+00:00'
-    message: 2 of 4 queries failed
+    fetched_at: '2026-10-05T14:24:37.627430+00:00'
+    message: 3 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-10-04T12:15:05.400170+00:00'
+    fetched_at: '2026-10-05T14:25:12.830632+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-10-04T12:15:18.488630+00:00'
+    fetched_at: '2026-10-05T14:25:22.791345+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-10-04T12:14:46.334566+00:00'
+    fetched_at: '2026-10-05T14:24:55.259934+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-10-04T12:14:56.561097+00:00'
+    fetched_at: '2026-10-05T14:25:05.012158+00:00'
     message: null
   - name: ippforb
-    status: failed
-    fetched_at: '2026-10-04T12:15:33.779773+00:00'
-    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
+    status: ok
+    fetched_at: '2026-10-05T14:25:28.806419+00:00'
+    message: null
   - name: jubilee
     status: ok
-    fetched_at: '2026-10-04T12:15:25.014271+00:00'
+    fetched_at: '2026-10-05T14:25:27.398046+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-10-04T12:14:49.380482+00:00'
+    fetched_at: '2026-10-05T14:24:58.129274+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-10-04T12:14:33.108653+00:00'
+    fetched_at: '2026-10-05T14:24:40.098234+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-10-04T12:15:34.241150+00:00'
+    fetched_at: '2026-10-05T14:25:29.264514+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-10-04T12:14:31.692870+00:00'
+    fetched_at: '2026-10-05T14:24:38.670796+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-10-04T12:10:14.412615+00:00'
+    fetched_at: '2026-10-05T14:19:29.813465+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-10-04T12:15:02.035340+00:00'
+    fetched_at: '2026-10-05T14:25:08.827107+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-10-04T12:10:17.426337+00:00'
+    fetched_at: '2026-10-05T14:19:33.432445+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-10-04T12:14:51.577378+00:00'
+    fetched_at: '2026-10-05T14:25:00.295787+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-10-04T12:12:51.480149+00:00'
+    fetched_at: '2026-10-05T14:22:11.081582+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-10-04T12:15:05.037246+00:00'
+    fetched_at: '2026-10-05T14:25:12.258617+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-10-04T12:10:56.665386+00:00'
+    fetched_at: '2026-10-05T14:20:18.147799+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-10-04T12:14:40.640645+00:00'
+    fetched_at: '2026-10-05T14:24:48.388067+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-10-04T12:14:52.500277+00:00'
+    fetched_at: '2026-10-05T14:25:00.895588+00:00'
     message: null
   - name: wea
     status: failed
-    fetched_at: '2026-10-04T12:15:20.666340+00:00'
+    fetched_at: '2026-10-05T14:25:25.198221+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 500: Internal Server Error'
   - name: wikipedia
     status: ok
-    fetched_at: '2026-10-04T12:15:58.499138+00:00'
+    fetched_at: '2026-10-05T14:25:53.602580+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
