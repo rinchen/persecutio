@@ -937,7 +937,7 @@ countries:
       title: Amnesty International
       url: https://www.amnesty.org/
       date: '2026'
-    - &id018
+    - &id019
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
       date: '2026'
@@ -2546,7 +2546,7 @@ countries:
         in China. The post Police stand aside as Indian pastor beaten appeared first
         on Release International .
       source: Release International
-    vom_articles: 2
+    vom_articles: 1
     vom_samples:
     - title: Evangelist and Family Exiled After Attack
       url: https://www.persecution.com/stories/evangelist-and-family-exiled-after-attack
@@ -2555,15 +2555,6 @@ countries:
         after a violent attack and false accusations. Rangja began evangelistic work
         in his native village in 2020. By 2024, seven families had come to Christ.
         On Jan. 18, 2026, village leaders called a meeting with these families, threateni
-      source: Voice of the Martyrs
-    - title: False Charges Filed After Pastor Refuses Hindu Ritual
-      url: https://www.persecution.com/stories/false-charges-filed-after-pastor-refuses-hindu-ritual
-      date: '2026-09-24'
-      description: 'A pastor has been falsely charged with forced conversion of a
-        Hindu man. On Dec. 8, 2025, Pastor Rakesh was heading home after working on
-        his farm when stranger approached him and began asking him questions. The
-        man then demanded that Rakesh say "Jai Sri Ram" (a Hindu slogan used for worship).
-        When '
       source: Voice of the Martyrs
     barnabas_articles: 3
     barnabas_samples:
@@ -3414,6 +3405,7 @@ countries:
     - bitterwinter
     - releaseintl
     - hrwf
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -3595,6 +3587,7 @@ countries:
     - bitterwinter
     - releaseintl
     - hrwf
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -3621,6 +3614,10 @@ countries:
     - *id009
     - *id008
     - *id010
+    - &id016
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -3695,6 +3692,17 @@ countries:
         death for apostasy Article 18 (22.09.2026) A Christian convert serving a sentence
         of over nine years in Evin Prison has gone on hunger strike to protest agains'
       source: Human Rights Without Frontiers
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
+        ,  The Chosen  Christmas Special
+      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Iran are particularly severe. The government
@@ -3748,6 +3756,12 @@ countries:
         death for apostasy Article 18 (22.09.2026) A Christian convert serving a sentence
         of over nine years in Evin Prison has gone on hunger strike to protest agains'
       source: Human Rights Without Frontiers
+    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
+        ,  The Chosen  Christmas Special
+      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
     - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
       url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
       date: '2026-07-13'
@@ -4202,7 +4216,7 @@ countries:
           - 14.202441
     wiki_url: https://en.wikipedia.org/wiki/Laos
     wiki_extract: 'Laos, officially the Lao People''s Democratic Republic (LPDR),
-      is a country in Mainland Southeast Asia, and the only landlocked country in
+      is a country in Mainland Southeast Asia; it is the only landlocked country in
       Southeast Asia. It is bordered by Myanmar and China to the northwest, Vietnam
       to the east, Cambodia to the southeast, and Thailand to the west and southwest.
       Laos has a population of more than 7.5 million, and its capital and most populous
@@ -4741,7 +4755,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - &id019
+    - &id018
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
@@ -5314,10 +5328,7 @@ countries:
       url: https://www.csi-int.org/
       date: '2026'
     - *id012
-    - &id016
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
+    - *id016
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
@@ -5418,19 +5429,19 @@ countries:
       source: Barnabas Aid
     csi_articles: 4
     csi_samples:
-    - title: CSI raises alarm about mass violence against Nigerian Christians at UN
-        Human Rights Council
-      url: https://csi-usa.org/csi-raises-alarm-about-mass-violence-against-nigerian-christians-at-un-human-rights-council-3
+    - title: A primer on the killings of Christians in Nigeria’s Middle Belt
+      url: https://csi-usa.org/a-primer-on-the-killings-of-christians-in-nigerias-middle-belt-4
       date: ''
       description: ''
       source: Christian Solidarity International
     - title: Nigerian forces warned of Middle Belt massacres but fail to act
-      url: https://csi-usa.org/nigerian-forces-warned-of-middle-belt-massacres-but-fail-to-act-2
+      url: https://csi-usa.org/nigerian-forces-warned-of-middle-belt-massacres-but-fail-to-act-3
       date: ''
       description: ''
       source: Christian Solidarity International
-    - title: A primer on the killings of Christians in Nigeria’s Middle Belt
-      url: https://csi-usa.org/a-primer-on-the-killings-of-christians-in-nigerias-middle-belt-3
+    - title: CSI raises alarm about mass violence against Nigerian Christians at UN
+        Human Rights Council
+      url: https://csi-usa.org/csi-raises-alarm-about-mass-violence-against-nigerian-christians-at-un-human-rights-council-3
       date: ''
       description: ''
       source: Christian Solidarity International
@@ -5442,7 +5453,7 @@ countries:
       date: '2026-08-17'
       description: window.option_df_18313 = {"outline":[],"backgroundColor":"#eef7fd","autoEnableOutline":"false","autoEnableThumbnail":"false","overwritePDFOutline":"false","direction":"1","pageSize":"0","source":"https:\/\/jubileecampaign.org\/wp-content\/uploads\/2026\/08\/HRC-63-Prisoners-of-Conscience.pdf","wpOpt
       source: Jubilee Campaign
-    gdelt_articles: 2
+    gdelt_articles: 1
     gdelt_samples:
     - title: 'Persecution : Trump pressure on Nigeria just saved hundreds of Christian
         lives * WorldNetDaily * by Sean Nelson , The Daily Signal'
@@ -5450,15 +5461,9 @@ countries:
       date: '2026-10-01'
       description: ''
       source: GDELT
-    - title: 'At least one Christian killed every 86 minutes in Nigeria : report'
-      url: https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
-      date: '2026-09-27'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 2
+    gdelt_recent_articles: 1
     gdelt_sample_urls:
     - https://www.wnd.com/2026/09/persecution-trumps-pressure-nigeria-just-saved-hundreds-christians
-    - https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5566,11 +5571,6 @@ countries:
       date: '2026-09-28'
       description: ''
       source: Info Chrétienne
-    - title: 'At least one Christian killed every 86 minutes in Nigeria : report'
-      url: https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
-      date: '2026-09-27'
-      description: ''
-      source: GDELT
     - title: Nigerian Pastor, Believer Killed on Their Way to Church
       url: https://persecution.org/2026/09/25/nigerian-pastor-believer-killed-on-their-way-to-church
       date: '2026-09-25'
@@ -5603,6 +5603,16 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    - title: A primer on the killings of Christians in Nigeria’s Middle Belt
+      url: https://csi-usa.org/a-primer-on-the-killings-of-christians-in-nigerias-middle-belt-4
+      date: ''
+      description: ''
+      source: Christian Solidarity International
+    - title: Nigerian forces warned of Middle Belt massacres but fail to act
+      url: https://csi-usa.org/nigerian-forces-warned-of-middle-belt-massacres-but-fail-to-act-3
+      date: ''
+      description: ''
+      source: Christian Solidarity International
     - title: CSI raises alarm about mass violence against Nigerian Christians at UN
         Human Rights Council
       url: https://csi-usa.org/csi-raises-alarm-about-mass-violence-against-nigerian-christians-at-un-human-rights-council-3
@@ -5611,16 +5621,6 @@ countries:
       source: Christian Solidarity International
     - title: Nigerian forces warned of Middle Belt massacres but fail to act
       url: https://csi-usa.org/nigerian-forces-warned-of-middle-belt-massacres-but-fail-to-act-2
-      date: ''
-      description: ''
-      source: Christian Solidarity International
-    - title: A primer on the killings of Christians in Nigeria’s Middle Belt
-      url: https://csi-usa.org/a-primer-on-the-killings-of-christians-in-nigerias-middle-belt-3
-      date: ''
-      description: ''
-      source: Christian Solidarity International
-    - title: A primer on the killings of Christians in Nigeria’s Middle Belt
-      url: https://csi-usa.org/a-primer-on-the-killings-of-christians-in-nigerias-middle-belt-2
       date: ''
       description: ''
       source: Christian Solidarity International
@@ -7004,6 +7004,7 @@ countries:
     - owid2024
     - gcr2026
     - infochretienne
+    - gdelt2025
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -7084,6 +7085,7 @@ countries:
     - owid2024
     - gcr2026
     - infochretienne
+    - gdelt2025
     - vdem2025forb
     sources:
     - *id001
@@ -7104,6 +7106,7 @@ countries:
     - *id004
     - *id005
     - *id014
+    - *id016
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -7132,6 +7135,16 @@ countries:
       date: '2026-09-16'
       description: ''
       source: Info Chrétienne
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: A Kurdish Pastor Arrest Stirs Fears in Post - Assad Syria
+      url: https://www.christianitytoday.com/2026/09/syria-kurdish-pastor-nehad-hasan-lebanon
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christianitytoday.com/2026/09/syria-kurdish-pastor-nehad-hasan-lebanon
     uscirf_designation: CPC
     uscirf_key_findings:
     - Although President Bashar al-Assad’s government fell in December 2024, ending
@@ -7173,6 +7186,11 @@ countries:
       date: '2026-09-25'
       description: ''
       source: Info Chrétienne
+    - title: A Kurdish Pastor Arrest Stirs Fears in Post - Assad Syria
+      url: https://www.christianitytoday.com/2026/09/syria-kurdish-pastor-nehad-hasan-lebanon
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
     - title: 'Syrie : explosion d’une bombe devant la cathédrale Saint-Georges de
         Hama'
       url: https://www.infochretienne.com/articles/syrie-explosion-dune-bombe-devant-la-cathedrale-saint-georges-de-hama
@@ -9761,7 +9779,6 @@ countries:
     - odwwl2026
     - owid2024
     - infochretienne
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -9861,7 +9878,6 @@ countries:
     - odwwl2026
     - owid2024
     - infochretienne
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -9881,7 +9897,6 @@ countries:
     - *id003
     - *id004
     - *id014
-    - *id018
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -9904,18 +9919,6 @@ countries:
       date: '2026-09-29'
       description: ''
       source: Info Chrétienne
-    fides_articles: 1
-    fides_samples:
-    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
-        Bangladesh take different approaches'
-      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
-      date: '2026-10-03'
-      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
-        again attracting international attention. In Malaysia, an initial operation
-        to repatriate around 1,500 Myanmar nationals began on September 29, as part
-        of a program that could eventually involve up to 5,000 people. In Bangladesh,
-        how
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bangladesh/
     state_dept_executive_summary: The constitution designates Islam as the state religion
       but upholds the principle of secularism. It prohibits religious discrimination
@@ -9944,16 +9947,6 @@ countries:
       the government employment quota system for members of religious minorities.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
-        Bangladesh take different approaches'
-      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
-      date: '2026-10-03'
-      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
-        again attracting international attention. In Malaysia, an initial operation
-        to repatriate around 1,500 Myanmar nationals began on September 29, as part
-        of a program that could eventually involve up to 5,000 people. In Bangladesh,
-        how
-      source: Agenzia Fides
     - title: '"Nous prions pour la paix" : au Bangladesh, un village chrétien pris
         pour cible'
       url: https://www.infochretienne.com/articles/nous-prions-pour-la-paix-au-bangladesh-un-village-chretien-pris-pour-cible
@@ -10967,7 +10960,6 @@ countries:
     - odwwl2024
     - freedomhouse2024
     - owid2024
-    - fides
     - vdem2025forb
   pew_slug: ''
   metadata:
@@ -11119,7 +11111,6 @@ countries:
     - odwwl2025archivemalaysia
     - freedomhouse2024
     - owid2024
-    - fides
     - vdem2025forb
     sources:
     - *id001
@@ -11137,25 +11128,12 @@ countries:
       date: '2025'
     - *id002
     - *id004
-    - *id018
     - *id006
     freedom_house_status: Partly Free
     freedom_house_pr: 4
     freedom_house_cl: 4
     christian_population: 3101974
     christian_percentage: 9.15
-    fides_articles: 1
-    fides_samples:
-    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
-        Bangladesh take different approaches'
-      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
-      date: '2026-10-03'
-      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
-        again attracting international attention. In Malaysia, an initial operation
-        to repatriate around 1,500 Myanmar nationals began on September 29, as part
-        of a program that could eventually involve up to 5,000 people. In Bangladesh,
-        how
-      source: Agenzia Fides
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Malaysia are poor amid a troubling rise in religious
@@ -11192,17 +11170,6 @@ countries:
       to his wife, but the government appealed the decision and obtained an order
       from the court to block release of the report.
     state_dept_christian_mentions: true
-    recent_incidents:
-    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
-        Bangladesh take different approaches'
-      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
-      date: '2026-10-03'
-      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
-        again attracting international attention. In Malaysia, an initial operation
-        to repatriate around 1,500 Myanmar nationals began on September 29, as part
-        of a program that could eventually involve up to 5,000 people. In Bangladesh,
-        how
-      source: Agenzia Fides
     archive_modern_excerpt: The constitution states, “Islam is the religion of the
       Federation; but other religions may be practiced in peace and harmony.” Federal
       and state governments have the power to mandate doctrine for Muslims and promote
@@ -11253,7 +11220,6 @@ countries:
     - gcr2026
     - infochretienne
     - barnabas
-    - fides
     - gdelt2025
     - vdem2025forb
   pew_slug: ''
@@ -11421,7 +11387,6 @@ countries:
     - gcr2026
     - infochretienne
     - barnabas
-    - fides
     - gdelt2025
     - vdem2025forb
     sources:
@@ -11444,7 +11409,6 @@ countries:
     - *id005
     - *id014
     - *id015
-    - *id018
     - *id016
     - *id006
     freedom_house_status: Not Free
@@ -11476,18 +11440,6 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    fides_articles: 1
-    fides_samples:
-    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
-        Bangladesh take different approaches'
-      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
-      date: '2026-10-03'
-      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
-        again attracting international attention. In Malaysia, an initial operation
-        to repatriate around 1,500 Myanmar nationals began on September 29, as part
-        of a program that could eventually involve up to 5,000 people. In Bangladesh,
-        how
-      source: Agenzia Fides
     gdelt_articles: 2
     gdelt_samples:
     - title: Baptist pastor killed in Myanmar ; US urged to take action
@@ -11540,16 +11492,6 @@ countries:
       monks during the year. The regime also detained one Muslim leader.
     state_dept_christian_mentions: true
     recent_incidents:
-    - title: 'ASIA/MALAYSIA - Repatriation of the Rohingya to Myanmar: Malaysia and
-        Bangladesh take different approaches'
-      url: https://www.fides.org/en/news/78231-ASIA_MALAYSIA_Repatriation_of_the_Rohingya_to_Myanmar_Malaysia_and_Bangladesh_take_different_approaches
-      date: '2026-10-03'
-      description: Kuala Lumpur – The repatriation of the Rohingya to Myanmar is once
-        again attracting international attention. In Malaysia, an initial operation
-        to repatriate around 1,500 Myanmar nationals began on September 29, as part
-        of a program that could eventually involve up to 5,000 people. In Bangladesh,
-        how
-      source: Agenzia Fides
     - title: 'Myanmar : la junte militaire tue un pasteur'
       url: https://www.infochretienne.com/articles/myanmar-la-junte-militaire-tue-un-pasteur
       date: '2026-09-21'
@@ -11847,7 +11789,7 @@ countries:
     - *id004
     - *id005
     - *id013
-    - *id019
+    - *id018
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -13177,12 +13119,12 @@ countries:
         - - -5.404342
           - 10.370737
     wiki_url: https://en.wikipedia.org/wiki/Burkina_Faso
-    wiki_extract: Burkina Faso is a landlocked country in West Africa. It was formerly
-      the Republic of Upper Volta. It is bordered by Mali to the northwest, Niger
-      to the northeast, Benin to the southeast, Togo and Ghana to the south, and Ivory
-      Coast to the southwest. It covers an area of 274,223 km2 (105,878 sq mi). In
-      2024, the country had an estimated population of approximately 23,286,000. Its
-      citizens are known as Burkinabes, and its capital and largest city is Ouagadougou.
+    wiki_extract: Burkina Faso is a landlocked country in West Africa. It is bordered
+      by Mali to the northwest, Niger to the northeast, Benin to the southeast, Togo
+      and Ghana to the south, and Ivory Coast to the southwest. It covers an area
+      of 274,223 km2 (105,878 sq mi). In 2024, the country had an estimated population
+      of approximately 23,286,000. Its citizens are known as Burkinabes, and its capital
+      and largest city is Ouagadougou.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -16148,7 +16090,7 @@ countries:
           - -11.52002
     wiki_url: https://en.wikipedia.org/wiki/Mozambique
     wiki_extract: Mozambique, officially the Republic of Mozambique, is a country
-      in Southeast Africa bordered by the Indian Ocean to the east, Tanzania to the
+      in Southern Africa bordered by the Indian Ocean to the east, Tanzania to the
       north, Malawi and Zambia to the northwest, Zimbabwe to the west, and Eswatini
       and South Africa to the south and southwest. The sovereign state is separated
       from the Comoros, Mayotte, and Madagascar through the Mozambique Channel to
@@ -16570,7 +16512,7 @@ countries:
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id018
+    - *id019
     - *id006
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -16591,8 +16533,18 @@ countries:
         hid a camera in Ormanov's home and recorded conversations, including on religion.
         N
       source: Forum 18
-    fides_articles: 1
+    fides_articles: 2
     fides_samples:
+    - title: 'ASIA/KAZAKHSTAN - New Bishop of Karaganda: “Mission means reaching out
+        to those who have yet to encounter Christ or whose faith has faded away”'
+      url: https://www.fides.org/en/news/78265-ASIA_KAZAKHSTAN_New_Bishop_of_Karaganda_Mission_means_reaching_out_to_those_who_have_yet_to_encounter_Christ_or_whose_faith_has_faded_away
+      date: '2026-10-10'
+      description: 'by Paolo Affatato Karaganda – “Mission does not mean organizing
+        an ever-increasing number of events. Sometimes, mission takes this form: a
+        priest travels many kilometres to celebrate Holy Mass, speak with people,
+        listen to them and simply be with them. Missio ad gentes means, above all,
+        reaching out'
+      source: Agenzia Fides
     - title: 'ASIA/KAZAKHSTAN - Religious leaders approve three documents: from dialogue
         to joint action for peace and human dignity'
       url: https://www.fides.org/en/news/78260-ASIA_KAZAKHSTAN_Religious_leaders_approve_three_documents_from_dialogue_to_joint_action_for_peace_and_human_dignity
@@ -16637,6 +16589,16 @@ countries:
       was necessary to make laws regulating religious activity more stringent.
     state_dept_christian_mentions: true
     recent_incidents:
+    - title: 'ASIA/KAZAKHSTAN - New Bishop of Karaganda: “Mission means reaching out
+        to those who have yet to encounter Christ or whose faith has faded away”'
+      url: https://www.fides.org/en/news/78265-ASIA_KAZAKHSTAN_New_Bishop_of_Karaganda_Mission_means_reaching_out_to_those_who_have_yet_to_encounter_Christ_or_whose_faith_has_faded_away
+      date: '2026-10-10'
+      description: 'by Paolo Affatato Karaganda – “Mission does not mean organizing
+        an ever-increasing number of events. Sometimes, mission takes this form: a
+        priest travels many kilometres to celebrate Holy Mass, speak with people,
+        listen to them and simply be with them. Missio ad gentes means, above all,
+        reaching out'
+      source: Agenzia Fides
     - title: 'ASIA/KAZAKHSTAN - Religious leaders approve three documents: from dialogue
         to joint action for peace and human dignity'
       url: https://www.fides.org/en/news/78260-ASIA_KAZAKHSTAN_Religious_leaders_approve_three_documents_from_dialogue_to_joint_action_for_peace_and_human_dignity
@@ -21793,7 +21755,7 @@ countries:
     - *id002
     - *id004
     - *id013
-    - *id019
+    - *id018
     freedom_house_status: Not Free
     freedom_house_pr: 7
     freedom_house_cl: 7
@@ -21947,7 +21909,7 @@ sources:
   uscirf2025tajikistan: *id072
   morningstarnews2026: *id013
   infochretienne: *id014
-  fides: *id018
+  fides: *id019
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -21984,7 +21946,7 @@ sources:
   amnesty: *id075
   barnabas: *id015
   csi: *id076
-  cna: *id019
+  cna: *id018
   hrwf: *id010
   adf:
     title: ADF International
@@ -22542,152 +22504,152 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-10-10 12:24 UTC
+  generated_at: 2026-10-11 14:09 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-10-10T12:23:27.343275+00:00'
+    fetched_at: '2026-10-11T14:09:07.949194+00:00'
     message: null
   - name: acn
     status: failed
-    fetched_at: '2026-10-10T12:22:51.419605+00:00'
+    fetched_at: '2026-10-11T14:08:38.859628+00:00'
     message: parse yielded no countries
   - name: adf
     status: failed
-    fetched_at: '2026-10-10T12:23:29.958841+00:00'
+    fetched_at: '2026-10-11T14:09:10.784969+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 404: Not Found'
   - name: amnesty
     status: ok
-    fetched_at: '2026-10-10T12:23:14.885375+00:00'
+    fetched_at: '2026-10-11T14:09:00.383323+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-10-10T12:23:17.181047+00:00'
+    fetched_at: '2026-10-11T14:09:02.690625+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-10-10T12:23:00.370031+00:00'
+    fetched_at: '2026-10-11T14:08:44.814095+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-10-10T12:23:03.735397+00:00'
+    fetched_at: '2026-10-11T14:08:49.765453+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-10-10T12:23:24.560067+00:00'
+    fetched_at: '2026-10-11T14:09:06.195876+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-10-10T12:23:24.054845+00:00'
+    fetched_at: '2026-10-11T14:09:05.775482+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-10-10T12:22:54.078387+00:00'
+    fetched_at: '2026-10-11T14:08:40.814906+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-10-10T12:23:26.906479+00:00'
+    fetched_at: '2026-10-11T14:09:07.625956+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-10-10T12:22:56.841063+00:00'
+    fetched_at: '2026-10-11T14:08:42.159763+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-10-10T12:18:03.543323+00:00'
+    fetched_at: '2026-10-11T14:03:55.321869+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-10-10T12:22:48.289594+00:00'
+    fetched_at: '2026-10-11T14:08:38.255319+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-10-10T12:22:34.015258+00:00'
-    message: 3 of 4 queries failed
+    fetched_at: '2026-10-11T14:08:26.753548+00:00'
+    message: 2 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-10-10T12:23:13.534644+00:00'
+    fetched_at: '2026-10-11T14:08:59.950541+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-10-10T12:23:28.638704+00:00'
+    fetched_at: '2026-10-11T14:09:08.841191+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-10-10T12:22:54.963799+00:00'
+    fetched_at: '2026-10-11T14:08:41.214054+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-10-10T12:23:05.433361+00:00'
+    fetched_at: '2026-10-11T14:08:51.667480+00:00'
     message: null
   - name: ippforb
-    status: failed
-    fetched_at: '2026-10-10T12:23:43.080575+00:00'
-    message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
+    status: ok
+    fetched_at: '2026-10-11T14:09:17.997180+00:00'
+    message: null
   - name: jubilee
     status: ok
-    fetched_at: '2026-10-10T12:23:32.828165+00:00'
+    fetched_at: '2026-10-11T14:09:16.878697+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-10-10T12:22:59.371725+00:00'
+    fetched_at: '2026-10-11T14:08:44.081000+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-10-10T12:22:37.001876+00:00'
+    fetched_at: '2026-10-11T14:08:29.490468+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-10-10T12:23:43.515788+00:00'
+    fetched_at: '2026-10-11T14:09:18.316070+00:00'
     message: null
   - name: ohchr
     status: failed
-    fetched_at: '2026-10-10T12:22:35.456299+00:00'
+    fetched_at: '2026-10-11T14:08:28.137411+00:00'
     message: api unavailable, no cache
   - name: opendoors
     status: ok
-    fetched_at: '2026-10-10T12:18:02.420764+00:00'
+    fetched_at: '2026-10-11T14:03:54.387575+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-10-10T12:23:09.984810+00:00'
+    fetched_at: '2026-10-11T14:08:56.883265+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-10-10T12:18:06.558285+00:00'
+    fetched_at: '2026-10-11T14:03:58.194200+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-10-10T12:23:01.769758+00:00'
+    fetched_at: '2026-10-11T14:08:47.647481+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-10-10T12:20:42.514529+00:00'
+    fetched_at: '2026-10-11T14:06:23.167864+00:00'
     message: null
   - name: unsrforb
     status: failed
-    fetched_at: '2026-10-10T12:23:13.087426+00:00'
+    fetched_at: '2026-10-11T14:08:59.613059+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-10-10T12:18:52.157198+00:00'
+    fetched_at: '2026-10-11T14:04:36.389973+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-10-10T12:22:46.840540+00:00'
+    fetched_at: '2026-10-11T14:08:36.560129+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-10-10T12:23:02.416847+00:00'
+    fetched_at: '2026-10-11T14:08:48.879195+00:00'
     message: null
   - name: wea
     status: failed
-    fetched_at: '2026-10-10T12:23:31.834604+00:00'
+    fetched_at: '2026-10-11T14:09:12.194636+00:00'
     message: 'fetch failed: HTTPError: HTTP Error 500: Internal Server Error'
   - name: wikipedia
     status: ok
-    fetched_at: '2026-10-10T12:24:21.652667+00:00'
+    fetched_at: '2026-10-11T14:09:42.691563+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
