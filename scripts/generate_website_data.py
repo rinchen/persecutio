@@ -582,7 +582,6 @@ def render_recent_incidents(country: dict) -> str:
             ("chinaaid_samples", "ChinaAid"),
             ("infochretienne_samples", "Info Chrétienne"),
             ("osce_samples", "OSCE / ODIHR"),
-            ("unsrforb_samples", "UN Special Rapporteur on FoRB"),
             ("hrw_samples", "Human Rights Watch"),
             ("amnesty_samples", "Amnesty International"),
             ("barnabas_samples", "Barnabas Aid"),
@@ -594,7 +593,6 @@ def render_recent_incidents(country: dict) -> str:
             ("adf_samples", "ADF International"),
             ("wea_samples", "WEA"),
             ("jubilee_samples", "Jubilee Campaign"),
-            ("ippforb_samples", "IPPFoRB"),
         ]:
             for a in meta.get(sample_key, []) or []:
                 articles.append({

@@ -40,7 +40,7 @@ Pipeline sources (status chips on the map footer):
 
 **Primary** (fetch failure aborts generate/deploy): Open Doors (OD), Freedom House (FH), Our World in Data (OWID), USCIRF (UC), U.S. State Dept IRF (SD).
 
-**Secondary** (enrich when available; never abort deploy): Morning Star News, GDELT, OHCHR, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International, VOM, ChinaAid, Info Chrétienne, OSCE/ODIHR, UNSR FoRB, HRW, Amnesty, Barnabas Aid, CSI, CNA, Fides, ACI Prensa, HRWF, ADF, WEA, Jubilee Campaign, IPPFoRB. Full quality tiers and links: [about.html](about.html).
+**Secondary** (enrich when available; never abort deploy): Morning Star News, GDELT, OHCHR, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International, VOM, ChinaAid, Info Chrétienne, OSCE/ODIHR, HRW, Amnesty, Barnabas Aid, CSI, CNA, Fides, ACI Prensa, HRWF, ADF, WEA, Jubilee Campaign. Full quality tiers and links: [about.html](about.html).
 
 **Archived** (snapshotted once, not fetched by the daily job): V-Dem FoRB indicators (VD), plus State Dept IRF, USCIRF, and Open Doors report text under `data/archives/`.
 

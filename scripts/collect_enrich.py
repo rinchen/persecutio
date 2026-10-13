@@ -766,7 +766,6 @@ def register_org_sources(sources: dict) -> None:
         ("chinaaid", "ChinaAid - Persecution Monitoring", "https://www.chinaaid.org/"),
         ("infochretienne", "Info Chrétienne - Actualités chrétiennes", "https://www.infochretienne.com/"),
         ("osce", "OSCE / ODIHR - Freedom of Religion or Belief", "https://www.osce.org/odihr/freedom-of-religion-or-belief"),
-        ("unsrforb", "UN Special Rapporteur on Freedom of Religion or Belief", "https://www.ohchr.org/en/special-procedures/sr-religion-or-belief"),
         ("hrw", "Human Rights Watch", "https://www.hrw.org/"),
         ("amnesty", "Amnesty International", "https://www.amnesty.org/"),
         ("barnabas", "Barnabas Aid - Persecuted Church News", "https://www.barnabasaid.org/"),
@@ -778,6 +777,5 @@ def register_org_sources(sources: dict) -> None:
         ("adf", "ADF International", "https://adfinternational.org/"),
         ("wea", "World Evangelical Alliance - Religious Liberty", "https://worldea.org/"),
         ("jubilee", "Jubilee Campaign", "https://jubileecampaign.org/"),
-        ("ippforb", "IPPFoRB - Parliamentarians for FoRB", "https://ippforb.com/"),
     ):
         ensure_source(sources, sid, title, url, "2026")

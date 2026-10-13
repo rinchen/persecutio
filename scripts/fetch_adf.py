@@ -24,7 +24,9 @@ from rss_news_fetcher import parse_rss_items
 ensure_fetched_dir()
 
 RSS_URL = "https://www.adfinternational.org/feed/"
-NEWS_URL = "https://adfinternational.org/news/"
+# /feed/ now returns an empty RSS document and /news/ 404s; the newsroom
+# listing page still exposes /news/<slug>/ article links.
+NEWS_URL = "https://adfinternational.org/newsroom/"
 OUTPUT = FETCHED / "adf.json"
 LINK_RE = re.compile(
     r'href="(https://adfinternational\.org/(?:news|advocacy)/[^"]+)"[^>]*>(.*?)</a>',

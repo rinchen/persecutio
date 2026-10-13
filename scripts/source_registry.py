@@ -7,7 +7,7 @@ from typing import Literal
 Tier = Literal["primary", "secondary", "archived", "infra"]
 
 # Custom fetchers own these; keep rss_url on SourceDef for fallback scripts only.
-_HYBRID_RSS_OWNERS = frozenset({"adf", "csi", "ippforb"})
+_HYBRID_RSS_OWNERS = frozenset({"adf", "csi"})
 
 _FORB_REQUIRE_ANY = (
     "religion",
@@ -19,18 +19,6 @@ _FORB_REQUIRE_ANY = (
     "faith",
     "worship",
     "forb",
-)
-
-_UNSR_REQUIRE_ANY = (
-    "religion",
-    "belief",
-    "forb",
-    "christian",
-    "church",
-    "blasphemy",
-    "apostasy",
-    "religious",
-    "special rapporteur",
 )
 
 # NEWS_SOURCES historically used short display names for a few orgs.
@@ -381,21 +369,10 @@ SOURCES: list[SourceDef] = [
         news_source_id="osce",
         about_description="Hate-crime and freedom of religion or belief monitoring in the OSCE region",
     ),
-    SourceDef(
-        key="unsrforb",
-        label="SR",
-        title="UN Special Rapporteur on FoRB",
-        tier="secondary",
-        quality="A",
-        fetch_script="fetch_unsrforb.py",
-        status_name="unsrforb",
-        homepage="https://www.ohchr.org/en/special-procedures/sr-religion-or-belief",
-        rss_url=None,  # HTML-only hub; do not advertise OHCHR site RSS
-        high_trust=True,
-        require_any=_UNSR_REQUIRE_ANY,
-        news_source_id="unsrforb",
-        about_description="UN Special Rapporteur country and thematic FoRB reporting (distinct from UHRI)",
-    ),
+    # unsrforb (UN Special Rapporteur on FoRB) evaluated but not wired: the
+    # ohchr.org public site is behind a Cloudflare bot challenge (HTTP 403 for
+    # all UAs) and there is no machine-readable SR hub feed. Documented as
+    # unused (Quality A) on about.html.
     SourceDef(
         key="hrw",
         label="HRW",
@@ -551,20 +528,9 @@ SOURCES: list[SourceDef] = [
         news_source_id="jubilee",
         about_description="UK/US FoRB advocacy reporting",
     ),
-    SourceDef(
-        key="ippforb",
-        label="IPP",
-        title="IPPFoRB",
-        tier="secondary",
-        quality="C",
-        fetch_script="fetch_ippforb.py",
-        status_name="ippforb",
-        homepage="https://ippforb.com/",
-        rss_url="https://ippforb.com/feed/",
-        high_trust=True,
-        news_source_id="ippforb",
-        about_description="Parliamentarians' network for freedom of religion or belief",
-    ),
+    # ippforb (IPPFoRB) evaluated but not wired: ippforb.com is behind a
+    # Cloudflare bot challenge (HTTP 403) with no alternate feed surface.
+    # Documented as unused (Quality C) on about.html.
 ]
 
 # Preserve historical NEWS_SOURCES order (not SOURCES list order).
@@ -580,7 +546,6 @@ _NEWS_ORDER = (
     "chinaaid",
     "infochretienne",
     "osce",
-    "unsrforb",
     "hrw",
     "amnesty",
     "barnabas",
@@ -592,7 +557,6 @@ _NEWS_ORDER = (
     "adf",
     "wea",
     "jubilee",
-    "ippforb",
     "gdelt",
 )
 

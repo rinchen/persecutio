@@ -324,7 +324,6 @@ GLOBAL_INDICATOR_SOURCE_IDS = frozenset(
         "chinaaid",
         "infochretienne",
         "osce",
-        "unsrforb",
         "hrw",
         "amnesty",
         "barnabas",
@@ -336,7 +335,6 @@ GLOBAL_INDICATOR_SOURCE_IDS = frozenset(
         "adf",
         "wea",
         "jubilee",
-        "ippforb",
     }
 )
 

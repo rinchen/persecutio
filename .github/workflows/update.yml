@@ -58,7 +58,6 @@ jobs:
           run_sec fetch_chinaaid.py
           run_sec fetch_infochretienne.py
           run_sec fetch_osce.py
-          run_sec fetch_unsrforb.py
           run_sec fetch_hrw.py
           run_sec fetch_amnesty.py
           run_sec fetch_barnabas.py
@@ -70,7 +69,6 @@ jobs:
           run_sec fetch_adf.py
           run_sec fetch_wea.py
           run_sec fetch_jubilee.py
-          run_sec fetch_ippforb.py
 
           if [ "$SEC_FAIL" -gt 0 ]; then
             echo "::warning::Secondary fetch failures ($SEC_FAIL):$SEC_FAILED"

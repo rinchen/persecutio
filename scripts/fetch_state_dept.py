@@ -22,9 +22,16 @@ STATE_DEPT.mkdir(parents=True, exist_ok=True)
 
 REPORT_YEAR = 2023
 REQUEST_DELAY = 1.5
+# state.gov sits behind CloudFront; a cold country chapter can take ~35s to
+# populate from origin, which blew past the old 20s timeout and tripped the
+# strict primary gate. Allow for cold-cache latency.
+REQUEST_TIMEOUT = 60
+# fetch_common retries timeouts; two attempts plus the year/slug fallbacks keep
+# the worst case bounded when a chapter genuinely hangs.
+REQUEST_RETRIES = 2
 # When the current-year chapter is broken (e.g. WordPress self-301 on India 2023),
 # try prior IRF years before treating the country as failed.
-FALLBACK_YEAR_DEPTH = 2
+FALLBACK_YEAR_DEPTH = 3
 
 # Some country slugs differ between our project and state.gov URLs
 SLUG_MAP = {
@@ -59,8 +66,10 @@ def irf_candidate_urls(slug: str) -> list[tuple[int, str]]:
     return out
 
 
-def fetch_url(url, timeout=20):
-    text, err = fetch_text(url, timeout=timeout, user_agent=USER_AGENT)
+def fetch_url(url, timeout=REQUEST_TIMEOUT):
+    text, err = fetch_text(
+        url, timeout=timeout, user_agent=USER_AGENT, retries=REQUEST_RETRIES
+    )
     if err:
         raise RuntimeError(err)
     return text
