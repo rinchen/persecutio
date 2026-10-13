@@ -203,12 +203,6 @@
                 <td>Global persecution news and Global Persecution Index</td>
               </tr>
               <tr>
-                <td><span class="abbr-badge">IPP</span></td>
-                <td><a href="https://ippforb.com/" target="_blank" rel="noopener">IPPFoRB</a></td>
-                <td>C</td>
-                <td>Parliamentarians&rsquo; network for freedom of religion or belief</td>
-              </tr>
-              <tr>
                 <td><span class="abbr-badge">JC</span></td>
                 <td><a href="https://jubileecampaign.org/" target="_blank" rel="noopener">Jubilee Campaign</a></td>
                 <td>C</td>
@@ -273,12 +267,6 @@
                 <td><a href="https://www.state.gov/international-religious-freedom-reports/" target="_blank" rel="noopener">U.S. State Dept IRF Reports</a></td>
                 <td>A</td>
                 <td>International Religious Freedom country reports</td>
-              </tr>
-              <tr>
-                <td><span class="abbr-badge">SR</span></td>
-                <td><a href="https://www.ohchr.org/en/special-procedures/sr-religion-or-belief" target="_blank" rel="noopener">UN Special Rapporteur on FoRB</a></td>
-                <td>A</td>
-                <td>UN Special Rapporteur country and thematic FoRB reporting (distinct from UHRI)</td>
               </tr>
               <tr>
                 <td><span class="abbr-badge">UC</span></td>
@@ -459,6 +447,11 @@
                 <td>Some FoRB overlap with anti-violence casework; site feeds returned bot blocks (HTTP 403) and FoRB signal is thinner than specialist persecution outlets, so not wired.</td>
               </tr>
               <tr>
+                <td><a href="https://ippforb.com/" target="_blank" rel="noopener">IPPFoRB</a></td>
+                <td>C</td>
+                <td>Parliamentarians&rsquo; network for freedom of religion or belief. ippforb.com is behind a Cloudflare bot challenge (HTTP 403 for all clients) and exposes no alternate RSS/API surface, so it is not wired; revisit if a feed appears.</td>
+              </tr>
+              <tr>
                 <td><a href="https://jihadwatch.org/" target="_blank" rel="noopener">Jihad Watch</a></td>
                 <td>X</td>
                 <td>Counter-jihad commentary blog, not specialized country-level Christian persecution reporting. Content is all-rights-reserved (no free-redistribution license suitable for archives). Prefer FoRB / persecution outlets listed above.</td>
@@ -599,6 +592,11 @@
                 <td>Norwegian FoRB mission reporting that could corroborate incidents, but no reliable public RSS/HTML listing found for automated nightly ingest.</td>
               </tr>
               <tr>
+                <td><a href="https://www.ohchr.org/en/special-procedures/sr-religion-or-belief" target="_blank" rel="noopener">UN Special Rapporteur on FoRB</a></td>
+                <td>A</td>
+                <td>Strong FoRB fit, but ohchr.org serves the SR hub behind a Cloudflare bot challenge (HTTP 403 for all clients) and no SR-specific feed surface exists. OHCHR UHRI is wired and already surfaces UN recommendations filtered for religion per country. Not wired (Quality A unused); revisit if a feed appears.</td>
+              </tr>
+              <tr>
                 <td><a href="https://21wilberforce.org/" target="_blank" rel="noopener">The 21 Wilberforce</a></td>
                 <td>X</td>
                 <td>Terms restrict distributing materials or using them on other websites without prior written permission.</td>
@@ -678,7 +676,7 @@
 
         <h2>Update workflow</h2>
         <p>A GitHub Actions workflow runs <strong>daily</strong> (and on manual dispatch). It fetches external sources, regenerates country pages and JSON assets, runs tests, commits data updates, and deploys the public site to the <code>gh-pages</code> branch. After a successful Pages deploy, the same public files are republished to Nostr via nsite. Same-repo pull requests get a sticky preview link under <code>/pr-preview/pr-N/</code>.</p>
-        <p><strong>Primary</strong> sources (Open Doors, Freedom House, OWID, USCIRF, State Dept) gate the job: only a clean <code>ok</code> status proceeds; <code>failed</code>, <code>partial</code>, and <code>cached</code> abort generate/deploy. <strong>Secondary</strong> sources (see the used-sources table above — MSN, GDELT, OHCHR, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International, VOM, ChinaAid, Info Chrétienne, OSCE, UNSR FoRB, HRW, Amnesty, Barnabas, CSI, CNA, Fides, ACI Prensa, HRWF, ADF, WEA, Jubilee, IPPFoRB, and others) enrich when available and never abort deploy; failures are summarized as warnings. Only public site files are uploaded to Pages &mdash; not scrape caches under <code>data/fetched/</code> (runtime-only; not tracked in git).</p>
+        <p><strong>Primary</strong> sources (Open Doors, Freedom House, OWID, USCIRF, State Dept) gate the job: only a clean <code>ok</code> status proceeds; <code>failed</code>, <code>partial</code>, and <code>cached</code> abort generate/deploy. <strong>Secondary</strong> sources (see the used-sources table above — MSN, GDELT, OHCHR, VID, GCR, ACN, CSW, ICC, Forum 18, MEC, Bitter Winter, Release International, VOM, ChinaAid, Info Chrétienne, OSCE, HRW, Amnesty, Barnabas, CSI, CNA, Fides, ACI Prensa, HRWF, ADF, WEA, Jubilee, and others) enrich when available and never abort deploy; failures are summarized as warnings. Only public site files are uploaded to Pages &mdash; not scrape caches under <code>data/fetched/</code> (runtime-only; not tracked in git).</p>
 
         <h2 id="censorship-resistant-access">Censorship-resistant access</h2>
         <p>The site is also published on Nostr via nsite (same content as GitHub Pages; republished automatically after successful deploys). Use either:</p>
