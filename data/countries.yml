@@ -1097,7 +1097,7 @@ countries:
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
-    - &id013
+    - &id014
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
@@ -2449,6 +2449,7 @@ countries:
     - infochretienne
     - hrw
     - barnabas
+    - cna
     - fides
     - adf
     - ohchr2024
@@ -2754,6 +2755,7 @@ countries:
     - infochretienne
     - hrw
     - barnabas
+    - cna
     - fides
     - adf
     - ohchr2024
@@ -2783,7 +2785,7 @@ countries:
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
-    - &id014
+    - &id015
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
@@ -2791,9 +2793,13 @@ countries:
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
-    - &id015
+    - &id016
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
+      date: '2026'
+    - &id013
+      title: Catholic News Agency
+      url: https://www.catholicnewsagency.com/
       date: '2026'
     - &id017
       title: Agenzia Fides - Pontifical Mission Societies News
@@ -2914,6 +2920,15 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    cna_articles: 1
+    cna_samples:
+    - title: Jesuit Refugee Service UK calls Catholic finance leaders to aid refugees
+      url: https://www.ewtnnews.com/world/europe/jesuit-refugee-service-uk-calls-catholic-finance-leaders-to-aid-refugees
+      date: '2026-10-17'
+      description: Jesuit Refugee Service UK urges solidarity with migrants, a priest
+        in India is arrest for minor sex abuse, a Maronite bishop is appointed in
+        Mexico, and more in this week’s world news roundup.
+      source: Catholic News Agency
     fides_articles: 2
     fides_samples:
     - title: ASIA/INDIA - In the month of the Rosary, a prayer for peace in Manipur
@@ -2925,15 +2940,14 @@ countries:
         innocent villagers and women. The situation appears to be worsening by the
         day, with divisions and polarization deepening. What began as a conflict b
       source: Agenzia Fides
-    - title: 'ASIA - “In Christ’s love, pray for the Holy Father”: Faithful across
-        Asia express their closeness to Pope Leo XIV'
-      url: https://www.fides.org/en/news/78277-ASIA_In_Christ_s_love_pray_for_the_Holy_Father_Faithful_across_Asia_express_their_closeness_to_Pope_Leo_XIV
-      date: '2026-10-13'
-      description: New Delhi – “In Christ’s love, pray for the Holy Father.” This
-        is the appeal resounding across Catholic communities in Asia as Pope Leo XIV
-        prepares to undergo surgery at Agostino Gemelli University Hospital in Rome.
-        From India to Myanmar, from the Philippines to Thailand, and throughout the
-        Churche
+    - title: 'ASIA/INDIA - Attack during Bible Conference: Catholic lay Association
+        calls for an investigation'
+      url: https://www.fides.org/en/news/78288-ASIA_INDIA_Attack_during_Bible_Conference_Catholic_lay_Association_calls_for_an_investigation
+      date: '2026-10-14'
+      description: Calcutta – “We express our solidarity with the faithful of the
+        Diocese of Krishnanagar, the Archdiocese of Calcutta and all Christian communities
+        in West Bengal. We stand with the Santhal Christian community, whose right
+        to worship in their own language is a constitutional right that must be protect
       source: Agenzia Fides
     adf_articles: 1
     adf_samples:
@@ -2982,6 +2996,13 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1506
     recent_incidents:
+    - title: Jesuit Refugee Service UK calls Catholic finance leaders to aid refugees
+      url: https://www.ewtnnews.com/world/europe/jesuit-refugee-service-uk-calls-catholic-finance-leaders-to-aid-refugees
+      date: '2026-10-17'
+      description: Jesuit Refugee Service UK urges solidarity with migrants, a priest
+        in India is arrest for minor sex abuse, a Maronite bishop is appointed in
+        Mexico, and more in this week’s world news roundup.
+      source: Catholic News Agency
     - title: '"Je ne t''abandonnerai jamais" : en Inde, la foi des chrétiens persécutés
         racontée'
       url: https://www.infochretienne.com/articles/je-ne-tabandonnerai-jamais-en-inde-la-foi-des-chretiens-persecutes-racontee
@@ -2996,6 +3017,15 @@ countries:
         of violence reported almost every day. Most of the violence is directed against
         innocent villagers and women. The situation appears to be worsening by the
         day, with divisions and polarization deepening. What began as a conflict b
+      source: Agenzia Fides
+    - title: 'ASIA/INDIA - Attack during Bible Conference: Catholic lay Association
+        calls for an investigation'
+      url: https://www.fides.org/en/news/78288-ASIA_INDIA_Attack_during_Bible_Conference_Catholic_lay_Association_calls_for_an_investigation
+      date: '2026-10-14'
+      description: Calcutta – “We express our solidarity with the faithful of the
+        Diocese of Krishnanagar, the Archdiocese of Calcutta and all Christian communities
+        in West Bengal. We stand with the Santhal Christian community, whose right
+        to worship in their own language is a constitutional right that must be protect
       source: Agenzia Fides
     - title: Chhattisgarh’s Anti-Conversion Law Challenged in Court
       url: https://persecution.org/2026/10/13/chhattisgarhs-anti-conversion-law-challenged-in-court
@@ -3014,16 +3044,6 @@ countries:
         India, October 10, 2026. © 2026 AP Photo/Manish Swarup (New York) – Indian
         authorities are using abusive methods to crack down on thousands of peacefu
       source: Human Rights Watch
-    - title: 'ASIA - “In Christ’s love, pray for the Holy Father”: Faithful across
-        Asia express their closeness to Pope Leo XIV'
-      url: https://www.fides.org/en/news/78277-ASIA_In_Christ_s_love_pray_for_the_Holy_Father_Faithful_across_Asia_express_their_closeness_to_Pope_Leo_XIV
-      date: '2026-10-13'
-      description: New Delhi – “In Christ’s love, pray for the Holy Father.” This
-        is the appeal resounding across Catholic communities in Asia as Pope Leo XIV
-        prepares to undergo surgery at Agostino Gemelli University Hospital in Rome.
-        From India to Myanmar, from the Philippines to Thailand, and throughout the
-        Churche
-      source: Agenzia Fides
     - title: Evangelist and Family Exiled After Attack
       url: https://www.persecution.com/stories/evangelist-and-family-exiled-after-attack
       date: '2026-10-08'
@@ -3808,7 +3828,6 @@ countries:
     - bitterwinter
     - releaseintl
     - hrwf
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -3992,7 +4011,6 @@ countries:
     - bitterwinter
     - releaseintl
     - hrwf
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
     sources:
@@ -4024,10 +4042,6 @@ countries:
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
-    - &id019
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -4045,8 +4059,17 @@ countries:
       causes of modern Christian persecution?", "acceptedAnswer": { "@type": "Answer",
       "text": "Islamic extremism, auth'
     acn_classification: persecution
-    mec_articles: 6
+    mec_articles: 7
     mec_samples:
+    - title: 'Iran: Jailed pastor’s wife summoned to serve prison sentence'
+      url: https://www.meconcern.org/2026/10/16/iran-jailed-pastors-wife-summoned-to-serve-prison-sentence/?utm_source=rss&utm_medium=rss&utm_campaign=iran-jailed-pastors-wife-summoned-to-serve-prison-sentence
+      date: '2026-10-16'
+      description: 'The family of Lida Alexani and her husband Joseph Shahbazian,
+        request prayer as Lida has been ordered to turn herself in to Evin Prison
+        to serve a 13-year prison sentence. Pastor Joseph is already serving his 16-year
+        prison sentence in the same prison. Lida was arrested on 12 April 2025 and
+        spent a '
+      source: Middle East Concern
     - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
       url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
       date: '2026-07-13'
@@ -4064,14 +4087,6 @@ countries:
         Maryam Falahi request prayer after an interview with Turkish immigration officials
         on 2 June. During the interview, the officials questioned whether Sam and
         Maryam have legal custody over their adopted daughter Lydia in view of a previou
-      source: Middle East Concern
-    - title: 'Iran: Enforced disappearance of Christian convert Mary Mohammadi'
-      url: https://www.meconcern.org/2026/06/01/iran-enforced-disappearance-of-christian-convert-mary-mohammadi/?utm_source=rss&utm_medium=rss&utm_campaign=iran-enforced-disappearance-of-christian-convert-mary-mohammadi
-      date: '2026-06-01'
-      description: 'Prayer is requested for human rights defender, journalist and
-        Christian convert Mary Mohammadi after Amnesty International reports her enforced
-        disappearance since late February 2026. Mary was arrested for the first time
-        at the age of 19 after converting from Islam to Christianity at a house church '
       source: Middle East Concern
     bitterwinter_articles: 1
     bitterwinter_samples:
@@ -4104,17 +4119,6 @@ countries:
         death for apostasy Article 18 (22.09.2026) A Christian convert serving a sentence
         of over nine years in Evin Prison has gone on hunger strike to protest agains'
       source: Human Rights Without Frontiers
-    gdelt_articles: 1
-    gdelt_samples:
-    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
-        ,  The Chosen  Christmas Special
-      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 1
-    gdelt_sample_urls:
-    - https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Iran are particularly severe. The government
@@ -4152,6 +4156,15 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1581
     recent_incidents:
+    - title: 'Iran: Jailed pastor’s wife summoned to serve prison sentence'
+      url: https://www.meconcern.org/2026/10/16/iran-jailed-pastors-wife-summoned-to-serve-prison-sentence/?utm_source=rss&utm_medium=rss&utm_campaign=iran-jailed-pastors-wife-summoned-to-serve-prison-sentence
+      date: '2026-10-16'
+      description: 'The family of Lida Alexani and her husband Joseph Shahbazian,
+        request prayer as Lida has been ordered to turn herself in to Evin Prison
+        to serve a 13-year prison sentence. Pastor Joseph is already serving his 16-year
+        prison sentence in the same prison. Lida was arrested on 12 April 2025 and
+        spent a '
+      source: Middle East Concern
     - title: 'St Peter’s Evangelical Church: Iran Faces UN Scrutiny After Confiscation
         Threat'
       url: https://bitterwinter.org/st-peters-evangelical-church-iran-faces-un-scrutiny-after-confiscation-threat
@@ -4169,12 +4182,6 @@ countries:
         death for apostasy Article 18 (22.09.2026) A Christian convert serving a sentence
         of over nine years in Evin Prison has gone on hunger strike to protest agains'
       source: Human Rights Without Frontiers
-    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
-        ,  The Chosen  Christmas Special
-      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
-      date: '2026-09-23'
-      description: ''
-      source: GDELT
     - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
       url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
       date: '2026-07-13'
@@ -5228,10 +5235,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - &id016
-      title: Catholic News Agency
-      url: https://www.catholicnewsagency.com/
-      date: '2026'
+    - *id013
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -5242,8 +5246,15 @@ countries:
     christian_population: 113070626
     christian_percentage: 89.17
     acn_classification: discrimination
-    cna_articles: 1
+    cna_articles: 2
     cna_samples:
+    - title: Jesuit Refugee Service UK calls Catholic finance leaders to aid refugees
+      url: https://www.ewtnnews.com/world/europe/jesuit-refugee-service-uk-calls-catholic-finance-leaders-to-aid-refugees
+      date: '2026-10-17'
+      description: Jesuit Refugee Service UK urges solidarity with migrants, a priest
+        in India is arrest for minor sex abuse, a Maronite bishop is appointed in
+        Mexico, and more in this week’s world news roundup.
+      source: Catholic News Agency
     - title: Mexican Church holds colloquium on forgotten period of fierce persecution
       url: https://www.ewtnnews.com/world/americas/mexican-church-holding-colloquium-on-forgotten-period-of-fierce-persecution
       date: '2026-10-15'
@@ -5280,6 +5291,13 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 2452
     recent_incidents:
+    - title: Jesuit Refugee Service UK calls Catholic finance leaders to aid refugees
+      url: https://www.ewtnnews.com/world/europe/jesuit-refugee-service-uk-calls-catholic-finance-leaders-to-aid-refugees
+      date: '2026-10-17'
+      description: Jesuit Refugee Service UK urges solidarity with migrants, a priest
+        in India is arrest for minor sex abuse, a Maronite bishop is appointed in
+        Mexico, and more in this week’s world news roundup.
+      source: Catholic News Agency
     - title: Mexican Church holds colloquium on forgotten period of fierce persecution
       url: https://www.ewtnnews.com/world/americas/mexican-church-holding-colloquium-on-forgotten-period-of-fierce-persecution
       date: '2026-10-15'
@@ -5497,7 +5515,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id013
+    - *id014
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -5818,18 +5836,18 @@ countries:
     - *id004
     - *id005
     - *id006
-    - &id020
+    - &id019
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
     - *id009
-    - *id014
     - *id015
+    - *id016
     - &id080
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - *id016
+    - *id013
     - *id017
     - &id078
       title: ACI Prensa - Noticias católicas
@@ -5840,8 +5858,11 @@ countries:
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
       date: '2026'
-    - *id013
-    - *id019
+    - *id014
+    - &id020
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -5859,7 +5880,7 @@ countries:
       "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "tex'
     acn_classification: persecution
-    morningstarnews_articles: 6
+    morningstarnews_articles: 5
     morningstarnews_samples:
     - title: Christian Humanitarian Worker Slain in Northwest Nigeria
       url: https://morningstarnews.org/2026/10/christian-humanitarian-worker-slain-in-northwest-nigeria
@@ -5936,8 +5957,16 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
-    cna_articles: 1
+    cna_articles: 2
     cna_samples:
+    - title: Catholic missionaries in Nigeria urged to persevere amid insecurity,
+        restrictions on worship
+      url: https://www.ewtnnews.com/world/africa/catholic-missionaries-in-nigeria-urged-to-persevere-amid-insecurity-restrictions-on-worship
+      date: '2026-10-16'
+      description: Despite threats of violence and restrictions placed on some Christian
+        communities, the national director of the Pontifical Mission Societies in
+        Nigeria is encouragging missionaries to be unafraid.
+      source: Catholic News Agency
     - title: Nigeria Catholic parish, hospital and 3 schools suspend activities indefinitely
         amid insecurity
       url: https://www.ewtnnews.com/world/africa/nigeria-catholic-parish-hospital-and-3-schools-suspend-activities-indefinitely-amid-insecurity
@@ -5981,8 +6010,7 @@ countries:
     adf_samples:
     - title: Press Release September 25, 2026 Lawyers urge Nigerian Supreme Court
         to hear case of young musician who nears seventh year in prison on blasphemy
-        charge Lawyers for Yahaya Sharif-Aminu submit letter to the Court, renewing
-        their previous request for an accelerated hearing of Read More
+        charge Read More
       url: https://adfinternational.org/news/lawyers-urge-nigerian-supreme-court-to-hear-case-of-young-musician-who-nears-seventh-year-in-prison
       date: ''
       description: ''
@@ -6078,6 +6106,14 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1353
     recent_incidents:
+    - title: Catholic missionaries in Nigeria urged to persevere amid insecurity,
+        restrictions on worship
+      url: https://www.ewtnnews.com/world/africa/catholic-missionaries-in-nigeria-urged-to-persevere-amid-insecurity-restrictions-on-worship
+      date: '2026-10-16'
+      description: Despite threats of violence and restrictions placed on some Christian
+        communities, the national director of the Pontifical Mission Societies in
+        Nigeria is encouragging missionaries to be unafraid.
+      source: Catholic News Agency
     - title: AFRICA/NIGERIA - Priest from the Diocese of Otukpo kidnapped
       url: https://www.fides.org/en/news/78298-AFRICA_NIGERIA_Priest_from_the_Diocese_of_Otukpo_kidnapped
       date: '2026-10-16'
@@ -6161,15 +6197,6 @@ countries:
         on Saturday, sources said. “Two Christians were killed and three others were
         injur
       source: Morning Star News
-    - title: Attacks in Plateau State, Nigeria Claim Lives of 12 Christians
-      url: https://morningstarnews.org/2026/10/attacks-in-plateau-state-nigeria-claim-lives-of-12-christians
-      date: '2026-10-06'
-      description: ABUJA, Nigeria (Christian Daily International Morning Star News)
-        – Fulani gunmen in Nigeria killed at least 12 Christians in Barkin Ladi County,
-        Plateau state over three days at the end of September, sources said. Five
-        of the Christians were killed, and two wounded, in Marit village on Sept.
-        26, sai
-      source: Morning Star News
     - title: Plateau Governor Imposes Curfew After Pastor, 27 Others Killed in Week
       url: https://persecution.org/2026/10/04/plateau-governor-imposes-curfew-after-pastor-27-others-killed-in-week
       date: '2026-10-04'
@@ -6240,8 +6267,7 @@ countries:
       source: Christian Solidarity International
     - title: Press Release September 25, 2026 Lawyers urge Nigerian Supreme Court
         to hear case of young musician who nears seventh year in prison on blasphemy
-        charge Lawyers for Yahaya Sharif-Aminu submit letter to the Court, renewing
-        their previous request for an accelerated hearing of Read More
+        charge Read More
       url: https://adfinternational.org/news/lawyers-urge-nigerian-supreme-court-to-hear-case-of-young-musician-who-nears-seventh-year-in-prison
       date: ''
       description: ''
@@ -6927,15 +6953,15 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id020
+    - *id019
     - *id009
     - *id011
     - *id012
-    - *id014
     - *id015
+    - *id016
     - *id018
-    - *id013
-    - *id019
+    - *id014
+    - *id020
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -6972,8 +6998,16 @@ countries:
         families to flee their homes amid fears of further violence, sources said.
         Polic
       source: Morning Star News
-    icc_articles: 1
+    icc_articles: 2
     icc_samples:
+    - title: Christian’s Death Sentence Upheld in Pakistan
+      url: https://persecution.org/2026/10/16/christians-death-sentence-upheld-in-pakistan
+      date: '2026-10-16'
+      description: In 2018, two Christian brothers were sentenced to death over allegations
+        of blasphemy. After about a decade of fighting for their freedom, one brother
+        was acquitted by Pakistan’s Supreme Court on Oct. 7. The other brother, however,
+        is still on death row. According to Section 295-C of the country’s p
+      source: International Christian Concern
     - title: Mob Burns Christian Man s Home, Pharmacy Over Blasphemy Allegation
       url: https://persecution.org/2026/10/13/mob-burns-christian-mans-home-pharmacy-over-blasphemy-allegation
       date: '2026-10-13'
@@ -7024,8 +7058,7 @@ countries:
     - title: Press Release October 13, 2026 Pakistani court orders to reopen case
         of Christian girl who was abducted, forced to convert and marry 30-year-old
         man A high court in Pakistan ordered reopening of police investigation in
-        the case of Maria Shahbaz, a 13-year-old girl who was kidnapped and forced
-        to marry her abductor. ADF commends Read More
+        the case of Maria Shahbaz, a 13-year-old Read More
       url: https://adfinternational.org/news/pakistani-court-orders-to-reopen-case
       date: ''
       description: ''
@@ -7161,6 +7194,14 @@ countries:
       cooperation with the United Nations Children &rsquo; s Fund (UNICEF), among
       other entities.</p>'
     recent_incidents:
+    - title: Christian’s Death Sentence Upheld in Pakistan
+      url: https://persecution.org/2026/10/16/christians-death-sentence-upheld-in-pakistan
+      date: '2026-10-16'
+      description: In 2018, two Christian brothers were sentenced to death over allegations
+        of blasphemy. After about a decade of fighting for their freedom, one brother
+        was acquitted by Pakistan’s Supreme Court on Oct. 7. The other brother, however,
+        is still on death row. According to Section 295-C of the country’s p
+      source: International Christian Concern
     - title: Calls for US Congress to End Impunity Surrounding Forced Religious Conversions
         and Child Marriage in Pakistan
       url: https://jubileecampaign.org/calls-for-us-congress-to-end-impunity-surrounding-forced-religious-conversions-and-child-marriage-in-pakistan
@@ -7262,8 +7303,7 @@ countries:
     - title: Press Release October 13, 2026 Pakistani court orders to reopen case
         of Christian girl who was abducted, forced to convert and marry 30-year-old
         man A high court in Pakistan ordered reopening of police investigation in
-        the case of Maria Shahbaz, a 13-year-old girl who was kidnapped and forced
-        to marry her abductor. ADF commends Read More
+        the case of Maria Shahbaz, a 13-year-old Read More
       url: https://adfinternational.org/news/pakistani-court-orders-to-reopen-case
       date: ''
       description: ''
@@ -7298,13 +7338,13 @@ countries:
       date: ''
       description: ''
       source: ADF International
+    historical_incidents:
     - title: Press Release March 4, 2025 WIN in Pakistan for Christian fraudulently
         “converted” by employer in attempted enslavement Read More
       url: https://adfinternational.org/news/win-in-pakistan-for-christian-fraudulently-converted-by-employer-in-attempted-enslavement
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: 'Press Release May 8, 2024 Freed from forced marriage: Pakistan court
         annuls marriage between young Christian girl and her abductor Read More'
       url: https://adfinternational.org/news/freed-from-forced-marriage-pakistan-court-annuls-marriage-between-young-christian-girl-and-her-abductor
@@ -8009,8 +8049,8 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id020
-    - *id014
+    - *id019
+    - *id015
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -8323,7 +8363,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id014
+    - *id015
     - *id018
     - *id007
     - *id008
@@ -8990,6 +9030,7 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
+    - fides
     - hrwf
     - adf
     - jubilee
@@ -9913,6 +9954,7 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
+    - fides
     - hrwf
     - adf
     - jubilee
@@ -9932,10 +9974,11 @@ countries:
     - *id004
     - *id005
     - *id006
+    - *id017
     - *id022
     - *id018
-    - *id013
-    - *id019
+    - *id014
+    - *id020
     - *id007
     - *id008
     freedom_house_status: Free
@@ -9951,6 +9994,19 @@ countries:
       score surged from 7 to 16.1 out of a possible 16.7, and its overall persecution
       score jumped 12 points to 90. The worst
     acn_classification: unclassified
+    fides_articles: 1
+    fides_samples:
+    - title: AMERICA/UNITED STATES - At the "G20 Interfaith Forum" Apostolic Nuncio
+        Caccia points out that technologies and innovations "do not tell us what the
+        good is”
+      url: https://www.fides.org/en/news/78302-AMERICA_UNITED_STATES_At_the_G20_Interfaith_Forum_Apostolic_Nuncio_Caccia_points_out_that_technologies_and_innovations_do_not_tell_us_what_the_good_is
+      date: '2026-10-17'
+      description: 'by Marie-Lucile Kubacki Salt Lake City – “What kind of human future
+        are we building together?” Archbishop Gabriele Caccia, Apostolic Nuncio to
+        the United States, posed this question at the opening ceremony of the G20
+        Interfaith Forum on October 15 at the historic Tabernacle at Temple Square
+        in Salt '
+      source: Agenzia Fides
     hrwf_articles: 1
     hrwf_samples:
     - title: 'USA: The OneTaste Case reaches Warsaw’s OSCE-ODIHR Meeting'
@@ -10005,6 +10061,17 @@ countries:
     - https://www.christianpost.com/news/baptist-pastor-killed-in-myanmar-us-urged-to-take-action.html
     ohchr_recommendation_count: 2030
     recent_incidents:
+    - title: AMERICA/UNITED STATES - At the "G20 Interfaith Forum" Apostolic Nuncio
+        Caccia points out that technologies and innovations "do not tell us what the
+        good is”
+      url: https://www.fides.org/en/news/78302-AMERICA_UNITED_STATES_At_the_G20_Interfaith_Forum_Apostolic_Nuncio_Caccia_points_out_that_technologies_and_innovations_do_not_tell_us_what_the_good_is
+      date: '2026-10-17'
+      description: 'by Marie-Lucile Kubacki Salt Lake City – “What kind of human future
+        are we building together?” Archbishop Gabriele Caccia, Apostolic Nuncio to
+        the United States, posed this question at the opening ceremony of the G20
+        Interfaith Forum on October 15 at the historic Tabernacle at Temple Square
+        in Salt '
+      source: Agenzia Fides
     - title: Calls for US Congress to End Impunity Surrounding Forced Religious Conversions
         and Child Marriage in Pakistan
       url: https://jubileecampaign.org/calls-for-us-congress-to-end-impunity-surrounding-forced-religious-conversions-and-child-marriage-in-pakistan
@@ -11454,7 +11521,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id014
+    - *id015
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -11934,7 +12001,6 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
-    - icc2026
     - adf
     - ohchr2024
     - vdem2025forb
@@ -12052,7 +12118,6 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
-    - icc2026
     - adf
     - ohchr2024
     - vdem2025forb
@@ -12074,7 +12139,6 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id009
     - *id018
     - *id007
     - *id008
@@ -12086,17 +12150,6 @@ countries:
     christian_population: 5270537
     christian_percentage: 4.82
     acn_classification: discrimination
-    icc_articles: 1
-    icc_samples:
-    - title: 'Egypt: The Internet, Christian Conversion, and Persecution'
-      url: https://persecution.org/2026/09/30/egypt-the-internet-christian-conversion-and-persecution
-      date: '2026-09-30'
-      description: By ICC Fellow Linda Burkle, PhD Recently, I had the privilege of
-        having lunch with Caleb, who lives in Cairo, Egypt.(1) Fluent in Arabic, he
-        ministers to college students at the National Christian University, one of
-        several private Christian institutions and secular schools. Public, state-funded
-        sch
-      source: International Christian Concern
     adf_articles: 4
     adf_samples:
     - title: Press Release April 27, 2026 Christian YouTuber in Egypt Faces Five Years’
@@ -12153,15 +12206,6 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1680
     recent_incidents:
-    - title: 'Egypt: The Internet, Christian Conversion, and Persecution'
-      url: https://persecution.org/2026/09/30/egypt-the-internet-christian-conversion-and-persecution
-      date: '2026-09-30'
-      description: By ICC Fellow Linda Burkle, PhD Recently, I had the privilege of
-        having lunch with Caleb, who lives in Cairo, Egypt.(1) Fluent in Arabic, he
-        ministers to college students at the National Christian University, one of
-        several private Christian institutions and secular schools. Public, state-funded
-        sch
-      source: International Christian Concern
     - title: Press Release April 27, 2026 Christian YouTuber in Egypt Faces Five Years’
         Imprisonment and Hard Labor for Teaching His Faith Online Read More
       url: https://adfinternational.org/news/christian-youtuber-in-egypt-faces-five-years-imprisonment
@@ -13250,9 +13294,9 @@ countries:
     - *id005
     - *id006
     - *id012
-    - *id014
+    - *id015
     - *id017
-    - *id019
+    - *id020
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -13289,7 +13333,7 @@ countries:
       date: '2026-10-13'
       description: ''
       source: Info Chrétienne
-    fides_articles: 2
+    fides_articles: 1
     fides_samples:
     - title: 'ASIA/MYANMAR - Churches occupied by the military and Christian Communities
         struggling amid conflict: the story of a parish priest from Sagaing'
@@ -13300,16 +13344,6 @@ countries:
         parts of our area and maintain their positions around the parish. I have been
         displaced and am now staying in a village, where I assist people who have
         been fo
-      source: Agenzia Fides
-    - title: 'ASIA - “In Christ’s love, pray for the Holy Father”: Faithful across
-        Asia express their closeness to Pope Leo XIV'
-      url: https://www.fides.org/en/news/78277-ASIA_In_Christ_s_love_pray_for_the_Holy_Father_Faithful_across_Asia_express_their_closeness_to_Pope_Leo_XIV
-      date: '2026-10-13'
-      description: New Delhi – “In Christ’s love, pray for the Holy Father.” This
-        is the appeal resounding across Catholic communities in Asia as Pope Leo XIV
-        prepares to undergo surgery at Agostino Gemelli University Hospital in Rome.
-        From India to Myanmar, from the Philippines to Thailand, and throughout the
-        Churche
       source: Agenzia Fides
     gdelt_articles: 2
     gdelt_samples:
@@ -13519,16 +13553,6 @@ countries:
       date: '2026-10-13'
       description: ''
       source: Info Chrétienne
-    - title: 'ASIA - “In Christ’s love, pray for the Holy Father”: Faithful across
-        Asia express their closeness to Pope Leo XIV'
-      url: https://www.fides.org/en/news/78277-ASIA_In_Christ_s_love_pray_for_the_Holy_Father_Faithful_across_Asia_express_their_closeness_to_Pope_Leo_XIV
-      date: '2026-10-13'
-      description: New Delhi – “In Christ’s love, pray for the Holy Father.” This
-        is the appeal resounding across Catholic communities in Asia as Pope Leo XIV
-        prepares to undergo surgery at Agostino Gemelli University Hospital in Rome.
-        From India to Myanmar, from the Philippines to Thailand, and throughout the
-        Churche
-      source: Agenzia Fides
     - title: Myanmar Military Murders Pastor and Fulani Muslims Kill 11 Nigerians
       url: https://pjmedia.com/catherinesalgado/2026/09/19/myanmar-military-murders-pastor-and-fulani-muslims-kill-11-nigerians-n4957434
       date: '2026-09-20'
@@ -13818,7 +13842,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id020
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -13836,8 +13860,17 @@ countries:
       } }, { "@type": "Question", "name": "What are the main causes of modern Christian
       persecution?", "acceptedAnswer": '
     acn_classification: persecution
-    morningstarnews_articles: 1
+    morningstarnews_articles: 2
     morningstarnews_samples:
+    - title: Pastors Face Death Threats in Refugee Camp in South Sudan
+      url: https://morningstarnews.org/2026/10/pastors-face-death-threats-in-refugee-camp-in-south-sudan
+      date: '2026-10-16'
+      description: JUBA, South Sudan (Morning Star News) – Two Sudanese pastors at
+        a refugee camp in South Sudan have been facing death threats since an attack
+        by Muslim extremists earlier this year, sources said. The concerns of the
+        two pastors from Sudan’s Darfur Region heightened on Sept. 25, when a man
+        lingered fo
+      source: Morning Star News
     - title: Christian Workers Abducted in South Sudan Are Released
       url: https://morningstarnews.org/2026/10/christian-workers-abducted-in-south-sudan-are-released
       date: '2026-10-06'
@@ -13882,6 +13915,15 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1258
     recent_incidents:
+    - title: Pastors Face Death Threats in Refugee Camp in South Sudan
+      url: https://morningstarnews.org/2026/10/pastors-face-death-threats-in-refugee-camp-in-south-sudan
+      date: '2026-10-16'
+      description: JUBA, South Sudan (Morning Star News) – Two Sudanese pastors at
+        a refugee camp in South Sudan have been facing death threats since an attack
+        by Muslim extremists earlier this year, sources said. The concerns of the
+        two pastors from Sudan’s Darfur Region heightened on Sept. 25, when a man
+        lingered fo
+      source: Morning Star News
     - title: Christian Workers Abducted in South Sudan Are Released
       url: https://morningstarnews.org/2026/10/christian-workers-abducted-in-south-sudan-are-released
       date: '2026-10-06'
@@ -17275,7 +17317,7 @@ countries:
         and injured nine of them, including a pregnant woman. A local missionary lost
         three
       source: Voice of the Martyrs
-    fides_articles: 2
+    fides_articles: 1
     fides_samples:
     - title: AFRICA/ETHIOPIA - Renewed conflict in Tigray raises fears of a new humanitarian
         emergency
@@ -17285,16 +17327,6 @@ countries:
         where an alliance of rebel groups led by the Tigray People’s Liberation Front
         has launched a new offensive, reigniting a conflict that claimed hundreds
         of thousands of lives between 2020 and 2022. Almost four years after the Pre
-      source: Agenzia Fides
-    - title: 'WORLD MISSION SUNDAY - Father James Lengarin, Superior General of the
-        Consolata Missionaries: “It is God’s Love, not us, that saves the world”'
-      url: https://www.fides.org/en/news/78279-WORLD_MISSION_SUNDAY_Father_James_Lengarin_Superior_General_of_the_Consolata_Missionaries_It_is_God_s_Love_not_us_that_saves_the_world
-      date: '2026-10-13'
-      description: 'by Paolo Affatato Rome – This year, Father James Bhola Lengarin,
-        Superior General of the Consolata Missionaries, will celebrate World Mission
-        Sunday in a place of profound symbolic value: Ethiopia, the country that St
-        Joseph Allamano, founder of his religious institute, described as “a great
-        mission'
       source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
     state_dept_executive_summary: The country is a secular state; the constitution
@@ -17334,16 +17366,6 @@ countries:
         where an alliance of rebel groups led by the Tigray People’s Liberation Front
         has launched a new offensive, reigniting a conflict that claimed hundreds
         of thousands of lives between 2020 and 2022. Almost four years after the Pre
-      source: Agenzia Fides
-    - title: 'WORLD MISSION SUNDAY - Father James Lengarin, Superior General of the
-        Consolata Missionaries: “It is God’s Love, not us, that saves the world”'
-      url: https://www.fides.org/en/news/78279-WORLD_MISSION_SUNDAY_Father_James_Lengarin_Superior_General_of_the_Consolata_Missionaries_It_is_God_s_Love_not_us_that_saves_the_world
-      date: '2026-10-13'
-      description: 'by Paolo Affatato Rome – This year, Father James Bhola Lengarin,
-        Superior General of the Consolata Missionaries, will celebrate World Mission
-        Sunday in a place of profound symbolic value: Ethiopia, the country that St
-        Joseph Allamano, founder of his religious institute, described as “a great
-        mission'
       source: Agenzia Fides
     - title: Nine Injured in Church Attack
       url: https://www.persecution.com/stories/nine-injured-in-church-attack
@@ -17932,7 +17954,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id015
+    - *id016
     - *id018
     - *id007
     - *id008
@@ -18437,7 +18459,7 @@ countries:
     - *id005
     - *id006
     - *id012
-    - *id015
+    - *id016
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -22601,7 +22623,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - fides
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -22844,7 +22865,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - fides
     - ohchr2024
     - vdem2025forb
     sources:
@@ -22860,7 +22880,6 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id017
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -22869,18 +22888,6 @@ countries:
     christian_population: 102510876
     christian_percentage: 91.46
     acn_classification: under_observation
-    fides_articles: 1
-    fides_samples:
-    - title: 'ASIA - “In Christ’s love, pray for the Holy Father”: Faithful across
-        Asia express their closeness to Pope Leo XIV'
-      url: https://www.fides.org/en/news/78277-ASIA_In_Christ_s_love_pray_for_the_Holy_Father_Faithful_across_Asia_express_their_closeness_to_Pope_Leo_XIV
-      date: '2026-10-13'
-      description: New Delhi – “In Christ’s love, pray for the Holy Father.” This
-        is the appeal resounding across Catholic communities in Asia as Pope Leo XIV
-        prepares to undergo surgery at Agostino Gemelli University Hospital in Rome.
-        From India to Myanmar, from the Philippines to Thailand, and throughout the
-        Churche
-      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/philippines/
     state_dept_executive_summary: The constitution provides for the free exercise
       of religion and religious worship and prohibits the establishment of a state
@@ -22943,17 +22950,6 @@ countries:
       powerful economic interests in the country. This has nothing to do with anti-terrorism
       or anti-communism. The gross overreaction to people trying to defend their right
       to a clean, healthy and sustainable environment is totally unacceptable.</p>'
-    recent_incidents:
-    - title: 'ASIA - “In Christ’s love, pray for the Holy Father”: Faithful across
-        Asia express their closeness to Pope Leo XIV'
-      url: https://www.fides.org/en/news/78277-ASIA_In_Christ_s_love_pray_for_the_Holy_Father_Faithful_across_Asia_express_their_closeness_to_Pope_Leo_XIV
-      date: '2026-10-13'
-      description: New Delhi – “In Christ’s love, pray for the Holy Father.” This
-        is the appeal resounding across Catholic communities in Asia as Pope Leo XIV
-        prepares to undergo surgery at Agostino Gemelli University Hospital in Rome.
-        From India to Myanmar, from the Philippines to Thailand, and throughout the
-        Churche
-      source: Agenzia Fides
     archive_modern_excerpt: The constitution provides for the free exercise of religion
       and religious worship and prohibits the establishment of a state religion. The
       constitution provides for the separation of religion and state, and religious
@@ -24218,6 +24214,7 @@ countries:
     - owid2024
     - acn2025
     - icc2026
+    - infochretienne
     - hrwf
     - ohchr2024
   pew_slug: ''
@@ -24272,16 +24269,16 @@ countries:
         - - 88.120441
           - 27.876542
     wiki_url: https://en.wikipedia.org/wiki/Nepal
-    wiki_extract: Nepal is a landlocked country in South Asia. It is mainly situated
-      in the Himalayas, but also includes parts of the Indo-Gangetic Plain. It borders
-      the Tibet Autonomous Region of China to the north, and India to the south, east,
-      and west, while it is narrowly separated from Bangladesh by the Siliguri Corridor,
-      and from Bhutan by the Indian state of Sikkim. Nepal has a diverse geography,
-      including fertile plains, subalpine forested hills, and eight of the world's
-      ten highest mountains, including Mount Everest, the highest point above mean
-      sea level on Earth. Kathmandu is the nation's capital and its largest city.
-      Nepal is a multi-ethnic, multi-lingual, multi-religious, and multi-cultural
-      sovereign state, with Nepali as the official language.
+    wiki_extract: Federal Democratic Republic Nepal is a landlocked country in South
+      Asia. It is mainly situated in the Himalayas, but also includes parts of the
+      Indo-Gangetic Plain. It borders the Tibet Autonomous Region of China to the
+      north, and India to the south, east, and west, while it is narrowly separated
+      from Bangladesh by the Siliguri Corridor, and from Bhutan by the Indian state
+      of Sikkim. Nepal has a diverse geography, including fertile plains, subalpine
+      forested hills, and eight of the world's ten highest mountains, including Mount
+      Everest, the highest point above mean sea level on Earth. Kathmandu is the nation's
+      capital and its largest city. Nepal is a multi-ethnic, multi-lingual, multi-religious,
+      and multi-cultural sovereign state, with Nepali as the official language.
     country_polygon: true
     source_ids:
     - statedepartment2023nepal
@@ -24290,6 +24287,7 @@ countries:
     - owid2024
     - acn2025
     - icc2026
+    - infochretienne
     - hrwf
     - ohchr2024
     sources:
@@ -24302,6 +24300,7 @@ countries:
     - *id004
     - *id006
     - *id009
+    - *id015
     - *id022
     - *id007
     freedom_house_status: Partly Free
@@ -24323,6 +24322,14 @@ countries:
         arrested at a gathering at the Nepal New Covenant College (NNCC) in Morang
         Distri
       source: International Christian Concern
+    infochretienne_articles: 1
+    infochretienne_samples:
+    - title: 'Népal : 24 sud-coréens arrêtés lors d’un rassemblement dans un collège
+        biblique'
+      url: https://www.infochretienne.com/articles/nepal-24-sud-coreens-arretes-lors-dun-rassemblement-dans-un-college-biblique
+      date: '2026-10-16'
+      description: ''
+      source: Info Chrétienne
     hrwf_articles: 1
     hrwf_samples:
     - title: 'NEPAL: 24 Korean Christians arrested for alleged missionary activities'
@@ -24479,6 +24486,12 @@ countries:
       and Untouchability (Offence and Punishment) Act precisely with that objective
       in mind.</p>'
     recent_incidents:
+    - title: 'Népal : 24 sud-coréens arrêtés lors d’un rassemblement dans un collège
+        biblique'
+      url: https://www.infochretienne.com/articles/nepal-24-sud-coreens-arretes-lors-dun-rassemblement-dans-un-college-biblique
+      date: '2026-10-16'
+      description: ''
+      source: Info Chrétienne
     - title: 'NEPAL: 24 Korean Christians arrested for alleged missionary activities'
       url: https://hrwf.eu/nepal-24-korean-christians-arrested-for-alleged-missionary-activities
       date: '2026-10-14'
@@ -24691,7 +24704,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id020
+    - *id019
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -24699,8 +24712,17 @@ countries:
     christian_population: 6472748
     christian_percentage: 60.5
     acn_classification: under_observation
-    morningstarnews_articles: 1
+    morningstarnews_articles: 2
     morningstarnews_samples:
+    - title: Pastors Face Death Threats in Refugee Camp in South Sudan
+      url: https://morningstarnews.org/2026/10/pastors-face-death-threats-in-refugee-camp-in-south-sudan
+      date: '2026-10-16'
+      description: JUBA, South Sudan (Morning Star News) – Two Sudanese pastors at
+        a refugee camp in South Sudan have been facing death threats since an attack
+        by Muslim extremists earlier this year, sources said. The concerns of the
+        two pastors from Sudan’s Darfur Region heightened on Sept. 25, when a man
+        lingered fo
+      source: Morning Star News
     - title: Christian Workers Abducted in South Sudan Are Released
       url: https://morningstarnews.org/2026/10/christian-workers-abducted-in-south-sudan-are-released
       date: '2026-10-06'
@@ -24738,6 +24760,15 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 675
     recent_incidents:
+    - title: Pastors Face Death Threats in Refugee Camp in South Sudan
+      url: https://morningstarnews.org/2026/10/pastors-face-death-threats-in-refugee-camp-in-south-sudan
+      date: '2026-10-16'
+      description: JUBA, South Sudan (Morning Star News) – Two Sudanese pastors at
+        a refugee camp in South Sudan have been facing death threats since an attack
+        by Muslim extremists earlier this year, sources said. The concerns of the
+        two pastors from Sudan’s Darfur Region heightened on Sept. 25, when a man
+        lingered fo
+      source: Morning Star News
     - title: Christian Workers Abducted in South Sudan Are Released
       url: https://morningstarnews.org/2026/10/christian-workers-abducted-in-south-sudan-are-released
       date: '2026-10-06'
@@ -24816,7 +24847,7 @@ sources:
   statedepartment2023nepal: *id068
   statedepartment2023southsudan: *id069
   ohchr2024: *id007
-  gdelt2025: *id019
+  gdelt2025: *id020
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id070
@@ -24827,8 +24858,8 @@ sources:
   uscirf2025turkmenistan: *id075
   uscirf2025uzbekistan: *id076
   uscirf2025tajikistan: *id077
-  morningstarnews2026: *id020
-  infochretienne: *id014
+  morningstarnews2026: *id019
+  infochretienne: *id015
   fides: *id017
   aciprensa: *id078
   vid2026:
@@ -24857,13 +24888,13 @@ sources:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
-  barnabas: *id015
+  barnabas: *id016
   csi: *id080
-  cna: *id016
+  cna: *id013
   hrwf: *id022
   adf: *id018
   wea: *id024
-  jubilee: *id013
+  jubilee: *id014
   statedepartment2023afghanistan: *id081
   odwwl2025archiveafghanistan: *id082
   statedepartment2023archiveafghanistan:
@@ -25407,83 +25438,83 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-10-16 11:18 UTC
+  generated_at: 2026-10-17 10:38 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-10-16T11:18:03.536838+00:00'
+    fetched_at: '2026-10-17T10:38:17.136221+00:00'
     message: null
   - name: acn
     status: ok
-    fetched_at: '2026-10-16T11:17:29.782289+00:00'
+    fetched_at: '2026-10-17T10:36:24.358333+00:00'
     message: null
   - name: adf
     status: ok
-    fetched_at: '2026-10-16T11:18:06.935852+00:00'
+    fetched_at: '2026-10-17T10:38:19.418170+00:00'
     message: null
   - name: amnesty
     status: ok
-    fetched_at: '2026-10-16T11:17:48.911641+00:00'
+    fetched_at: '2026-10-17T10:38:01.038660+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-10-16T11:17:52.547214+00:00'
+    fetched_at: '2026-10-17T10:38:03.796309+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-10-16T11:17:37.752041+00:00'
+    fetched_at: '2026-10-17T10:36:31.445553+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-10-16T11:17:40.548441+00:00'
+    fetched_at: '2026-10-17T10:36:36.665476+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-10-16T11:18:00.802916+00:00'
+    fetched_at: '2026-10-17T10:38:12.786816+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-10-16T11:18:00.325780+00:00'
+    fetched_at: '2026-10-17T10:38:12.380239+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-10-16T11:17:32.310290+00:00'
+    fetched_at: '2026-10-17T10:36:26.666939+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-10-16T11:18:03.066064+00:00'
+    fetched_at: '2026-10-17T10:38:16.674395+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-10-16T11:17:34.768505+00:00'
+    fetched_at: '2026-10-17T10:36:28.768727+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-10-16T11:10:05.444492+00:00'
+    fetched_at: '2026-10-17T10:29:05.805743+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-10-16T11:17:28.214662+00:00'
+    fetched_at: '2026-10-17T10:36:22.741970+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-10-16T11:14:55.128294+00:00'
+    fetched_at: '2026-10-17T10:34:05.358956+00:00'
     message: 2 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-10-16T11:17:48.235010+00:00'
+    fetched_at: '2026-10-17T10:36:43.234196+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-10-16T11:18:05.126077+00:00'
+    fetched_at: '2026-10-17T10:38:18.461535+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-10-16T11:17:33.568997+00:00'
+    fetched_at: '2026-10-17T10:36:27.677154+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-10-16T11:17:42.848743+00:00'
+    fetched_at: '2026-10-17T10:36:38.388091+00:00'
     message: null
   - name: ippforb
     status: failed
@@ -25491,44 +25522,44 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-10-16T11:18:15.167289+00:00'
+    fetched_at: '2026-10-17T10:38:23.160078+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-10-16T11:17:37.057528+00:00'
+    fetched_at: '2026-10-17T10:36:30.601780+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-10-16T11:17:17.612519+00:00'
+    fetched_at: '2026-10-17T10:36:11.535166+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-10-16T11:18:15.588259+00:00'
+    fetched_at: '2026-10-17T10:38:23.722588+00:00'
     message: null
   - name: ohchr
     status: ok
-    fetched_at: '2026-10-16T11:17:15.695191+00:00'
+    fetched_at: '2026-10-17T10:36:10.104642+00:00'
     message: null
   - name: opendoors
     status: ok
-    fetched_at: '2026-10-16T11:10:04.288840+00:00'
+    fetched_at: '2026-10-17T10:29:04.663867+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-10-16T11:17:47.828456+00:00'
+    fetched_at: '2026-10-17T10:36:42.797026+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-10-16T11:10:08.672475+00:00'
+    fetched_at: '2026-10-17T10:29:08.856473+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-10-16T11:17:39.156275+00:00'
+    fetched_at: '2026-10-17T10:36:34.148196+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-10-16T11:13:10.741181+00:00'
+    fetched_at: '2026-10-17T10:31:58.007437+00:00'
     message: null
   - name: unsrforb
     status: failed
@@ -25536,23 +25567,23 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-10-16T11:10:54.681304+00:00'
+    fetched_at: '2026-10-17T10:29:49.455607+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-10-16T11:17:26.794881+00:00'
+    fetched_at: '2026-10-17T10:36:20.705609+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-10-16T11:17:39.780868+00:00'
+    fetched_at: '2026-10-17T10:36:35.205683+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-10-16T11:18:08.485679+00:00'
+    fetched_at: '2026-10-17T10:38:20.408866+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-10-16T11:18:39.944199+00:00'
+    fetched_at: '2026-10-17T10:38:47.990614+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
