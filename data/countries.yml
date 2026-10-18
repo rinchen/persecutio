@@ -541,6 +541,7 @@ countries:
     - bitterwinter
     - releaseintl
     - chinaaid
+    - hrwf
     - jubilee
     - ohchr2024
     - vdem2025forb
@@ -1055,6 +1056,7 @@ countries:
     - bitterwinter
     - releaseintl
     - chinaaid
+    - hrwf
     - jubilee
     - ohchr2024
     - vdem2025forb
@@ -1097,7 +1099,11 @@ countries:
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
-    - &id014
+    - &id012
+      title: Human Rights Without Frontiers
+      url: https://hrwf.eu/
+      date: '2026'
+    - &id015
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
@@ -1175,6 +1181,16 @@ countries:
         believers. The Lantos Foundation for Human Rights and Justice announced Friday
         t
       source: ChinaAid
+    hrwf_articles: 1
+    hrwf_samples:
+    - title: 'CHINA: Religious issues and persecution – Bimonthly Digest October 01-15'
+      url: https://hrwf.eu/china-religious-persecution-and-issues-bimonthly-digest-october-01-15-2
+      date: '2026-10-18'
+      description: 'CHINA: Religious persecution and issues – Bimonthly Digest October
+        01-15 General 11.10.2026 China ranks 7th worldwide for Bible shortages China
+        Aid China ranks seventh worldwide for Bible shortages, with an estimated 5
+        million to 10 million Christians who want a Bible but do not have one, according '
+      source: Human Rights Without Frontiers
     jubilee_articles: 1
     jubilee_samples:
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
@@ -1232,6 +1248,14 @@ countries:
       law, including agreements on the protection of international trade and investment
       and on mutual enforcement of judicial decisions.</p>
     recent_incidents:
+    - title: 'CHINA: Religious issues and persecution – Bimonthly Digest October 01-15'
+      url: https://hrwf.eu/china-religious-persecution-and-issues-bimonthly-digest-october-01-15-2
+      date: '2026-10-18'
+      description: 'CHINA: Religious persecution and issues – Bimonthly Digest October
+        01-15 General 11.10.2026 China ranks 7th worldwide for Bible shortages China
+        Aid China ranks seventh worldwide for Bible shortages, with an estimated 5
+        million to 10 million Christians who want a Bible but do not have one, according '
+      source: Human Rights Without Frontiers
     - title: 'China church roundup: Believers speak out as pastors remain imprisoned'
       url: https://chinaaid.org/news/china-church-roundup-believers-speak-out-as-pastors-remain-imprisoned/?utm_source=rss&utm_medium=rss&utm_campaign=china-church-roundup-believers-speak-out-as-pastors-remain-imprisoned
       date: '2026-10-14'
@@ -2781,31 +2805,31 @@ countries:
     - *id006
     - *id009
     - *id010
-    - &id012
+    - &id013
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
-    - &id015
+    - &id016
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
-    - &id021
+    - &id022
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
-    - &id016
+    - &id017
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id013
+    - &id014
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
-    - &id017
+    - &id018
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
       date: '2026'
-    - &id018
+    - &id019
       title: ADF International
       url: https://adfinternational.org/
       date: '2026'
@@ -3828,6 +3852,7 @@ countries:
     - bitterwinter
     - releaseintl
     - hrwf
+    - gdelt2025
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -4011,6 +4036,7 @@ countries:
     - bitterwinter
     - releaseintl
     - hrwf
+    - gdelt2025
     - ohchr2024
     - vdem2025forb
     sources:
@@ -4038,10 +4064,11 @@ countries:
       date: '2026'
     - *id011
     - *id010
-    - &id022
-      title: Human Rights Without Frontiers
-      url: https://hrwf.eu/
-      date: '2026'
+    - *id012
+    - &id020
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -4119,6 +4146,17 @@ countries:
         death for apostasy Article 18 (22.09.2026) A Christian convert serving a sentence
         of over nine years in Evin Prison has gone on hunger strike to protest agains'
       source: Human Rights Without Frontiers
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
+        ,  The Chosen  Christmas Special
+      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Iran are particularly severe. The government
@@ -4182,6 +4220,12 @@ countries:
         death for apostasy Article 18 (22.09.2026) A Christian convert serving a sentence
         of over nine years in Evin Prison has gone on hunger strike to protest agains'
       source: Human Rights Without Frontiers
+    - title: Trump Threatens Iran at UN , British Teens Rank Lowest in Life Satisfaction
+        ,  The Chosen  Christmas Special
+      url: https://www.christianpost.com/podcast/trump-threatens-iran-at-un-british-teens-rank-lowest-in-life-satisfaction-the-chosen-christmas-special.html
+      date: '2026-09-23'
+      description: ''
+      source: GDELT
     - title: 'Iran: Confiscation of historical church and fears of its imminent demolition'
       url: https://www.meconcern.org/2026/07/13/iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition/?utm_source=rss&utm_medium=rss&utm_campaign=iran-confiscation-of-historical-church-and-fears-of-its-imminent-demolition
       date: '2026-07-13'
@@ -4725,7 +4769,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id012
+    - *id013
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -5235,7 +5279,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id013
+    - *id014
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -5515,7 +5559,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id014
+    - *id015
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -5836,33 +5880,30 @@ countries:
     - *id004
     - *id005
     - *id006
-    - &id019
+    - &id021
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
     - *id009
-    - *id015
     - *id016
+    - *id017
     - &id080
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - *id013
-    - *id017
+    - *id014
+    - *id018
     - &id078
       title: ACI Prensa - Noticias católicas
       url: https://www.aciprensa.com/
       date: '2026'
-    - *id018
+    - *id019
     - &id024
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
       date: '2026'
-    - *id014
-    - &id020
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
+    - *id015
+    - *id020
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -6047,7 +6088,7 @@ countries:
       date: '2026-08-17'
       description: window.option_df_18313 = {"outline":[],"backgroundColor":"#eef7fd","autoEnableOutline":"false","autoEnableThumbnail":"false","overwritePDFOutline":"false","direction":"1","pageSize":"0","source":"https:\/\/jubileecampaign.org\/wp-content\/uploads\/2026\/08\/HRC-63-Prisoners-of-Conscience.pdf","wpOpt
       source: Jubilee Campaign
-    gdelt_articles: 3
+    gdelt_articles: 2
     gdelt_samples:
     - title: 'Persecution : Trump pressure on Nigeria just saved hundreds of Christian
         lives * WorldNetDaily * by Sean Nelson , The Daily Signal'
@@ -6055,20 +6096,14 @@ countries:
       date: '2026-10-01'
       description: ''
       source: GDELT
-    - title: 'At least one Christian killed every 86 minutes in Nigeria : report'
-      url: https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
-      date: '2026-09-27'
-      description: ''
-      source: GDELT
     - title: As violence escalates in Nigeria , Christian and Muslim leaders unite
       url: https://religionnews.com/2026/09/23/as-violence-escalates-in-nigeria-christian-and-muslim-leaders-unite-in-interfaith-front
       date: '2026-09-23'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 3
+    gdelt_recent_articles: 2
     gdelt_sample_urls:
     - https://www.wnd.com/2026/09/persecution-trumps-pressure-nigeria-just-saved-hundreds-christians
-    - https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
     - https://religionnews.com/2026/09/23/as-violence-escalates-in-nigeria-christian-and-muslim-leaders-unite-in-interfaith-front
     uscirf_designation: CPC
     uscirf_key_findings:
@@ -6217,11 +6252,6 @@ countries:
       date: '2026-09-28'
       description: ''
       source: Info Chrétienne
-    - title: 'At least one Christian killed every 86 minutes in Nigeria : report'
-      url: https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
-      date: '2026-09-27'
-      description: ''
-      source: GDELT
     - title: As violence escalates in Nigeria , Christian and Muslim leaders unite
       url: https://religionnews.com/2026/09/23/as-violence-escalates-in-nigeria-christian-and-muslim-leaders-unite-in-interfaith-front
       date: '2026-09-23'
@@ -6253,12 +6283,12 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    historical_incidents:
     - title: A primer on the killings of Christians in Nigeria’s Middle Belt
       url: https://csi-usa.org/a-primer-on-the-killings-of-christians-in-nigerias-middle-belt
       date: ''
       description: ''
       source: Christian Solidarity International
+    historical_incidents:
     - title: CSI raises alarm about mass violence against Nigerian Christians at UN
         Human Rights Council
       url: https://csi-usa.org/csi-raises-alarm-about-mass-violence-against-nigerian-christians-at-un-human-rights-council
@@ -6756,7 +6786,6 @@ countries:
     - morningstarnews2026
     - icc2026
     - bitterwinter
-    - vom2026
     - infochretienne
     - barnabas
     - adf
@@ -6926,7 +6955,6 @@ countries:
     - morningstarnews2026
     - icc2026
     - bitterwinter
-    - vom2026
     - infochretienne
     - barnabas
     - adf
@@ -6953,14 +6981,13 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id019
+    - *id021
     - *id009
     - *id011
-    - *id012
-    - *id015
     - *id016
-    - *id018
-    - *id014
+    - *id017
+    - *id019
+    - *id015
     - *id020
     - *id007
     - *id008
@@ -7027,17 +7054,6 @@ countries:
         the voice of the Church. The post Opinion: Pakistan’s Christian Marriage Laws
         Review and the Church first appeared on Bitter Winter .'
       source: Bitter Winter
-    vom_articles: 1
-    vom_samples:
-    - title: Evangelist’s Home Burned
-      url: https://www.persecution.com/stories/evangelists-home-burned
-      date: '2026-10-01'
-      description: A Pakistani evangelist, his wife and two young children are homeless
-        after local Muslims, angered by his Christian ministry, set fire to his home.
-        Evangelist Salim Chaudhry regularly traveled throughout the area near his
-        home village to share the gospel. He also constructed a small church on land
-        he
-      source: Voice of the Martyrs
     infochretienne_articles: 1
     infochretienne_samples:
     - title: 'Accusation de blasphème : une foule attaque un chrétien au Pakistan'
@@ -7250,15 +7266,6 @@ countries:
         families to flee their homes amid fears of further violence, sources said.
         Polic
       source: Morning Star News
-    - title: Evangelist’s Home Burned
-      url: https://www.persecution.com/stories/evangelists-home-burned
-      date: '2026-10-01'
-      description: A Pakistani evangelist, his wife and two young children are homeless
-        after local Muslims, angered by his Christian ministry, set fire to his home.
-        Evangelist Salim Chaudhry regularly traveled throughout the area near his
-        home village to share the gospel. He also constructed a small church on land
-        he
-      source: Voice of the Martyrs
     - title: “No Response Yet” – Silence from Pakistan on Grave Human Rights Violations
         Surrounding Forced Religious Conversions and Child Marriage of Minority Girls
       url: https://jubileecampaign.org/no-response-yet-silence-from-pakistan-on-grave-human-rights-violations-surrounding-forced-religious-conversions-and-child-marriage-of-minority-girls
@@ -7338,13 +7345,13 @@ countries:
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: Press Release March 4, 2025 WIN in Pakistan for Christian fraudulently
         “converted” by employer in attempted enslavement Read More
       url: https://adfinternational.org/news/win-in-pakistan-for-christian-fraudulently-converted-by-employer-in-attempted-enslavement
       date: ''
       description: ''
       source: ADF International
+    historical_incidents:
     - title: 'Press Release May 8, 2024 Freed from forced marriage: Pakistan court
         annuls marriage between young Christian girl and her abductor Read More'
       url: https://adfinternational.org/news/freed-from-forced-marriage-pakistan-court-annuls-marriage-between-young-christian-girl-and-her-abductor
@@ -7630,7 +7637,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id021
+    - *id022
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -8049,8 +8056,8 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id019
-    - *id015
+    - *id021
+    - *id016
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -8363,8 +8370,8 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id015
-    - *id018
+    - *id016
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -9974,10 +9981,10 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id017
-    - *id022
     - *id018
-    - *id014
+    - *id012
+    - *id019
+    - *id015
     - *id020
     - *id007
     - *id008
@@ -10651,8 +10658,8 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id017
     - *id018
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Free
@@ -11153,13 +11160,10 @@ countries:
           - 27.395744
     wiki_url: https://en.wikipedia.org/wiki/Algeria
     wiki_extract: Algeria, officially the People's Democratic Republic of Algeria,
-      is a country in the Maghreb region of North Africa. Spanning over 2,381,741
-      square kilometres (919,595 sq mi), it is the largest country in Africa and the
-      tenth largest in the world. It is bordered to the northeast by Tunisia; to the
-      east by Libya; to the southeast by Niger; to the southwest by Mali, Mauritania,
-      and Western Sahara; to the west by Morocco; and to the north by the Mediterranean
-      Sea. With a population of over 47 million, Algeria is the tenth-most populous
-      country in Africa. Its capital and largest city is Algiers.
+      is a country in the Maghreb region of North Africa. It is bordered to the northeast
+      by Tunisia; to the east by Libya; to the southeast by Niger; to the southwest
+      by Mali, Mauritania, and Western Sahara; to the west by Morocco; and to the
+      north by the Mediterranean Sea. Its capital and largest city is Algiers.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -11521,7 +11525,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id015
+    - *id016
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -12139,7 +12143,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id018
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -13293,9 +13297,9 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id012
-    - *id015
-    - *id017
+    - *id013
+    - *id016
+    - *id018
     - *id020
     - *id007
     - *id008
@@ -13842,7 +13846,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id019
+    - *id021
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -14184,7 +14188,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id018
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -15306,7 +15310,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id017
+    - *id018
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -15967,15 +15971,15 @@ countries:
         - - -2.169914
           - 35.168396
     wiki_url: https://en.wikipedia.org/wiki/Morocco
-    wiki_extract: Morocco, officially the Kingdom of Morocco, is a country in the
-      Maghreb region of North Africa. It has coastlines on the Mediterranean Sea to
-      the north and the Atlantic Ocean to the west, and has land borders with Algeria
-      to the east; the Spanish exclaves of Ceuta, Melilla and Peñón de Vélez de la
-      Gomera along the north, which it claims together with several small Spanish-controlled
-      islands; and the disputed territory of Western Sahara to the south, partly occupied
-      by Morocco since 1975. Morocco also claims to share a border with Mauritania
-      through the disputed territory of Western Sahara. It has a population of approximately
-      37 million. Its capital is Rabat, while its largest city is Casablanca.
+    wiki_extract: Morocco, officially the Kingdom of Morocco, is a country in North
+      Africa. It has coastlines on the Mediterranean Sea to the north and the Atlantic
+      Ocean to the west, and has land borders with Algeria to the east; the Spanish
+      exclaves of Ceuta, Melilla and Peñón de Vélez de la Gomera along the north,
+      which it claims together with several small Spanish-controlled islands; and
+      the disputed territory of Western Sahara to the south, partly occupied by Morocco
+      since 1975. Morocco also claims to share a border with Mauritania through the
+      disputed territory of Western Sahara. It has a population of approximately 37
+      million. Its capital is Rabat, while its largest city is Casablanca.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -17294,8 +17298,8 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id012
-    - *id017
+    - *id013
+    - *id018
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -17440,6 +17444,7 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - vom2026
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -17536,6 +17541,7 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - vom2026
     - ohchr2024
     - vdem2025forb
     sources:
@@ -17552,6 +17558,7 @@ countries:
     - *id003
     - *id004
     - *id006
+    - *id013
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -17562,6 +17569,17 @@ countries:
     christian_population: 29537
     christian_percentage: 0.25
     acn_classification: discrimination
+    vom_articles: 1
+    vom_samples:
+    - title: 'MINISTRY TO MUSLIMS: “Did You See a Man in a White Robe?”'
+      url: https://www.persecution.com/stories/ministry-to-muslims-did-you-see-a-man-in-a-white-robe
+      date: '2026-10-17'
+      description: Ali Sassi, from Tunisia, is a former Muslim now walking with Jesus.
+        Ali had been taught, as a Muslim, that the Bible we have today has been changed
+        and corrupted. When a Christian friend challenged him to demonstrate when
+        and how the Bible had been changed, Ali accepted the challenge. He figured
+        he'
+      source: Voice of the Martyrs
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/tunisia/
     state_dept_executive_summary: The constitution requires the state to support and
       advance the purposes of Islam and provides that “Tunisia is part of the Islamic
@@ -17590,6 +17608,16 @@ countries:
       books in his possession; he was released the same day without charges.
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1658
+    recent_incidents:
+    - title: 'MINISTRY TO MUSLIMS: “Did You See a Man in a White Robe?”'
+      url: https://www.persecution.com/stories/ministry-to-muslims-did-you-see-a-man-in-a-white-robe
+      date: '2026-10-17'
+      description: Ali Sassi, from Tunisia, is a former Muslim now walking with Jesus.
+        Ali had been taught, as a Muslim, that the Bible we have today has been changed
+        and corrupted. When a Christian friend challenged him to demonstrate when
+        and how the Bible had been changed, Ali accepted the challenge. He figured
+        he'
+      source: Voice of the Martyrs
     archive_modern_excerpt: 'A journalist who has investigated the situation of Tunisian
       Christians in depth states: ”Tunisian Christians face discrimination and targeting
       that is often obscure and hidden to the public eye. Because of their Christian
@@ -17954,8 +17982,8 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id016
-    - *id018
+    - *id017
+    - *id019
     - *id007
     - *id008
     opendoors_ranking: 29
@@ -18458,8 +18486,8 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id012
-    - *id016
+    - *id013
+    - *id017
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -18947,7 +18975,7 @@ countries:
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id017
+    - *id018
     - *id024
     - *id007
     - *id008
@@ -22053,7 +22081,7 @@ countries:
     - *id004
     - *id006
     - *id025
-    - *id022
+    - *id012
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -23706,7 +23734,7 @@ countries:
       and Malawi to the south, Zambia to the southwest, and Rwanda, Burundi, and the
       Democratic Republic of the Congo to the west. According to a 2024 estimate,
       Tanzania has a population of around 67.5 million, making it the most populous
-      African country located entirely south of the equator.
+      country located entirely south of the equator.
     country_polygon: true
     source_ids:
     - statedepartment2023tanzania
@@ -24117,7 +24145,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id012
+    - *id013
     - *id024
     - *id007
     freedom_house_status: Partly Free
@@ -24300,8 +24328,8 @@ countries:
     - *id004
     - *id006
     - *id009
-    - *id015
-    - *id022
+    - *id016
+    - *id012
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -24704,7 +24732,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id019
+    - *id021
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -24858,9 +24886,9 @@ sources:
   uscirf2025turkmenistan: *id075
   uscirf2025uzbekistan: *id076
   uscirf2025tajikistan: *id077
-  morningstarnews2026: *id019
-  infochretienne: *id015
-  fides: *id017
+  morningstarnews2026: *id021
+  infochretienne: *id016
+  fides: *id018
   aciprensa: *id078
   vid2026:
     title: Violent Incidents Database (IIRF/GCR)
@@ -24877,24 +24905,24 @@ sources:
   mec: *id023
   bitterwinter: *id011
   releaseintl: *id010
-  vom2026: *id012
+  vom2026: *id013
   chinaaid: *id079
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
     url: https://www.osce.org/odihr/freedom-of-religion-or-belief
     date: '2026'
-  hrw: *id021
+  hrw: *id022
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
-  barnabas: *id016
+  barnabas: *id017
   csi: *id080
-  cna: *id013
-  hrwf: *id022
-  adf: *id018
+  cna: *id014
+  hrwf: *id012
+  adf: *id019
   wea: *id024
-  jubilee: *id014
+  jubilee: *id015
   statedepartment2023afghanistan: *id081
   odwwl2025archiveafghanistan: *id082
   statedepartment2023archiveafghanistan:
@@ -25438,83 +25466,83 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-10-17 10:38 UTC
+  generated_at: 2026-10-18 10:56 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-10-17T10:38:17.136221+00:00'
+    fetched_at: '2026-10-18T10:55:41.647101+00:00'
     message: null
   - name: acn
     status: ok
-    fetched_at: '2026-10-17T10:36:24.358333+00:00'
+    fetched_at: '2026-10-18T10:55:19.095676+00:00'
     message: null
   - name: adf
     status: ok
-    fetched_at: '2026-10-17T10:38:19.418170+00:00'
+    fetched_at: '2026-10-18T10:55:43.460839+00:00'
     message: null
   - name: amnesty
     status: ok
-    fetched_at: '2026-10-17T10:38:01.038660+00:00'
+    fetched_at: '2026-10-18T10:55:34.959394+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-10-17T10:38:03.796309+00:00'
+    fetched_at: '2026-10-18T10:55:37.122130+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-10-17T10:36:31.445553+00:00'
+    fetched_at: '2026-10-18T10:55:25.349235+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-10-17T10:36:36.665476+00:00'
+    fetched_at: '2026-10-18T10:55:28.146428+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-10-17T10:38:12.786816+00:00'
+    fetched_at: '2026-10-18T10:55:39.401513+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-10-17T10:38:12.380239+00:00'
+    fetched_at: '2026-10-18T10:55:39.023166+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-10-17T10:36:26.666939+00:00'
+    fetched_at: '2026-10-18T10:55:20.998107+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-10-17T10:38:16.674395+00:00'
+    fetched_at: '2026-10-18T10:55:41.407039+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-10-17T10:36:28.768727+00:00'
+    fetched_at: '2026-10-18T10:55:22.752755+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-10-17T10:29:05.805743+00:00'
+    fetched_at: '2026-10-18T10:49:06.220788+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-10-17T10:36:22.741970+00:00'
+    fetched_at: '2026-10-18T10:55:17.739893+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-10-17T10:34:05.358956+00:00'
+    fetched_at: '2026-10-18T10:53:20.648005+00:00'
     message: 2 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-10-17T10:36:43.234196+00:00'
+    fetched_at: '2026-10-18T10:55:34.627357+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-10-17T10:38:18.461535+00:00'
+    fetched_at: '2026-10-18T10:55:42.666285+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-10-17T10:36:27.677154+00:00'
+    fetched_at: '2026-10-18T10:55:21.686131+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-10-17T10:36:38.388091+00:00'
+    fetched_at: '2026-10-18T10:55:30.183902+00:00'
     message: null
   - name: ippforb
     status: failed
@@ -25522,44 +25550,44 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-10-17T10:38:23.160078+00:00'
+    fetched_at: '2026-10-18T10:55:48.838223+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-10-17T10:36:30.601780+00:00'
+    fetched_at: '2026-10-18T10:55:24.608031+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-10-17T10:36:11.535166+00:00'
+    fetched_at: '2026-10-18T10:55:08.340156+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-10-17T10:38:23.722588+00:00'
+    fetched_at: '2026-10-18T10:55:49.227392+00:00'
     message: null
   - name: ohchr
     status: ok
-    fetched_at: '2026-10-17T10:36:10.104642+00:00'
+    fetched_at: '2026-10-18T10:55:07.406615+00:00'
     message: null
   - name: opendoors
     status: ok
-    fetched_at: '2026-10-17T10:29:04.663867+00:00'
+    fetched_at: '2026-10-18T10:49:05.110314+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-10-17T10:36:42.797026+00:00'
+    fetched_at: '2026-10-18T10:55:34.232369+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-10-17T10:29:08.856473+00:00'
+    fetched_at: '2026-10-18T10:49:07.947100+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-10-17T10:36:34.148196+00:00'
+    fetched_at: '2026-10-18T10:55:26.395400+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-10-17T10:31:58.007437+00:00'
+    fetched_at: '2026-10-18T10:51:45.095113+00:00'
     message: null
   - name: unsrforb
     status: failed
@@ -25567,23 +25595,23 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-10-17T10:29:49.455607+00:00'
+    fetched_at: '2026-10-18T10:49:45.803065+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-10-17T10:36:20.705609+00:00'
+    fetched_at: '2026-10-18T10:55:15.536951+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-10-17T10:36:35.205683+00:00'
+    fetched_at: '2026-10-18T10:55:27.146019+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-10-17T10:38:20.408866+00:00'
+    fetched_at: '2026-10-18T10:55:44.543444+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-10-17T10:38:47.990614+00:00'
+    fetched_at: '2026-10-18T10:56:13.573311+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
