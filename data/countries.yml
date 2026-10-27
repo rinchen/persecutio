@@ -2764,7 +2764,7 @@ countries:
       url: https://www.persecution.org/
       date: '2026'
     - *id009
-    - &id020
+    - &id022
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
@@ -2802,7 +2802,7 @@ countries:
       this violence. Boko Haram, the Islamic State West Africa Province (ISWAP), Fulani
       ethnic militias, and a newer group
     acn_classification: persecution
-    icc_articles: 2
+    icc_articles: 1
     icc_samples:
     - title: Bible Convention Attacked in India
       url: https://persecution.org/2026/10/20/bible-convention-attacked-in-india
@@ -2812,15 +2812,6 @@ countries:
         state of West Bengal, highlighting the escalation of hostilities and vulnerability
         of the religious minorities in the region. The Annual Santhali Mega Bible
         Conve
-      source: International Christian Concern
-    - title: Chhattisgarh’s Anti-Conversion Law Challenged in Court
-      url: https://persecution.org/2026/10/13/chhattisgarhs-anti-conversion-law-challenged-in-court
-      date: '2026-10-13'
-      description: A petition challenging the validity of the Chhattisgarh Freedom
-        of Religion Act, 2026, was heard in the Chhattisgarh High Court on Oct. 8,
-        even as the intense persecution of the Christian community in the central
-        Indian state continues unabated. Based on the petition, the High Court issued
-        a three-w
       source: International Christian Concern
     releaseintl_articles: 3
     releaseintl_samples:
@@ -3005,15 +2996,6 @@ countries:
       date: '2026-10-16'
       description: ''
       source: Info Chrétienne
-    - title: Chhattisgarh’s Anti-Conversion Law Challenged in Court
-      url: https://persecution.org/2026/10/13/chhattisgarhs-anti-conversion-law-challenged-in-court
-      date: '2026-10-13'
-      description: A petition challenging the validity of the Chhattisgarh Freedom
-        of Religion Act, 2026, was heard in the Chhattisgarh High Court on Oct. 8,
-        even as the intense persecution of the Christian community in the central
-        Indian state continues unabated. Based on the petition, the High Court issued
-        a three-w
-      source: International Christian Concern
     - title: Evangelist and Family Exiled After Attack
       url: https://www.persecution.com/stories/evangelist-and-family-exiled-after-attack
       date: '2026-10-08'
@@ -5563,6 +5545,7 @@ countries:
     - infochretienne
     - barnabas
     - csi
+    - cna
     - adf
     - wea
     - jubilee
@@ -5717,6 +5700,7 @@ countries:
     - infochretienne
     - barnabas
     - csi
+    - cna
     - adf
     - wea
     - jubilee
@@ -5753,8 +5737,12 @@ countries:
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
+    - &id021
+      title: Catholic News Agency
+      url: https://www.catholicnewsagency.com/
+      date: '2026'
     - *id015
-    - &id022
+    - &id023
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
       date: '2026'
@@ -5819,8 +5807,13 @@ countries:
         Justice A. B. Kumdila of the Borno State High Court sentenced Liyatu Samuel
         Dawa
       source: International Christian Concern
-    infochretienne_articles: 1
+    infochretienne_articles: 2
     infochretienne_samples:
+    - title: Un prêtre libéré au Nigeria après cinq jours de captivité
+      url: https://www.infochretienne.com/articles/un-pretre-libere-au-nigeria-apres-cinq-jours-de-captivite
+      date: '2026-10-26'
+      description: ''
+      source: Info Chrétienne
     - title: Assassinat d’une travailleuse humanitaire chrétienne au Nigeria
       url: https://www.infochretienne.com/articles/assassinat-dune-travailleuse-humanitaire-chretienne-au-nigeria
       date: '2026-10-14'
@@ -5852,6 +5845,16 @@ countries:
       date: ''
       description: ''
       source: Christian Solidarity International
+    cna_articles: 1
+    cna_samples:
+    - title: Seminarian training kicks off in Nigeria to combat sexual and gender-based
+        violence
+      url: https://www.ewtnnews.com/world/seminarian-training-kicks-off-in-nigeria-to-combat-sexual-and-gender-based-violence
+      date: '2026-10-27'
+      description: The initiative aims to reach at least 1,000 seminarians to prepare
+        them to recognize different forms of abuse, support survivors, and promote
+        safer communities in their future pastoral ministry.
+      source: Catholic News Agency
     adf_articles: 20
     adf_samples:
     - title: Press Release October 19, 2026 Nigerian Christian mother acquitted of
@@ -5947,6 +5950,19 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1353
     recent_incidents:
+    - title: Seminarian training kicks off in Nigeria to combat sexual and gender-based
+        violence
+      url: https://www.ewtnnews.com/world/seminarian-training-kicks-off-in-nigeria-to-combat-sexual-and-gender-based-violence
+      date: '2026-10-27'
+      description: The initiative aims to reach at least 1,000 seminarians to prepare
+        them to recognize different forms of abuse, support survivors, and promote
+        safer communities in their future pastoral ministry.
+      source: Catholic News Agency
+    - title: Un prêtre libéré au Nigeria après cinq jours de captivité
+      url: https://www.infochretienne.com/articles/un-pretre-libere-au-nigeria-apres-cinq-jours-de-captivite
+      date: '2026-10-26'
+      description: ''
+      source: Info Chrétienne
     - title: Christian Mother Sentenced to 14 Years in Prison in Nigeria
       url: https://persecution.org/2026/10/21/christian-mother-sentenced-to-14-years-in-prison-in-nigeria
       date: '2026-10-21'
@@ -6071,6 +6087,7 @@ countries:
       date: ''
       description: ''
       source: ADF International
+    historical_incidents:
     - title: Press Release August 11, 2026 Nigerian Court Rules Religious Police Cannot
         Arrest Christian Woman for Converting from Islam Read More
       url: https://adfinternational.org/news/nigerian-court-rules-religious-police-cannot-arrest-christian-woman-for-converting-from-islam
@@ -6083,7 +6100,6 @@ countries:
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: Press Release June 25, 2026 Nigerian Supreme Court Further Delays Justice
         for Young Musician Facing Death Sentence for Blasphemy Read More
       url: https://adfinternational.org/news/nigerian-supreme-court-further-delays-justice-for-young-musician-facing-death-sentence-for-blasphemy
@@ -8417,7 +8433,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - &id021
+    - &id020
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
@@ -11760,7 +11776,9 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - hrw
     - cna
+    - hrwf
     - adf
     - ohchr2024
     - vdem2025forb
@@ -11878,7 +11896,9 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - hrw
     - cna
+    - hrwf
     - adf
     - ohchr2024
     - vdem2025forb
@@ -11900,10 +11920,9 @@ countries:
     - *id003
     - *id004
     - *id006
-    - &id024
-      title: Catholic News Agency
-      url: https://www.catholicnewsagency.com/
-      date: '2026'
+    - *id020
+    - *id021
+    - *id011
     - *id015
     - *id007
     - *id008
@@ -11915,6 +11934,16 @@ countries:
     christian_population: 5270537
     christian_percentage: 4.82
     acn_classification: discrimination
+    hrw_articles: 1
+    hrw_samples:
+    - title: 'Egypt: Drop Charges Against Prominent Journalist'
+      url: https://www.hrw.org/news/2026/10/27/egypt-drop-charges-against-prominent-journalist
+      date: '2026-10-27'
+      description: Click to expand Image Lina Attalah, editor-in-chief of Mada Masr,
+        in Cairo, Egypt, November 24, 2017. © 2017 Roger Anis/AP Photo (Beirut) –
+        Egyptian authorities should drop their case against Lina Attalah, editor-in-chief
+        of the independent media outlet Mada Masr, ahead of her October 27, 2026 heari
+      source: Human Rights Watch
     cna_articles: 2
     cna_samples:
     - title: Rights group urges immediate release of 6 Christians detained over TikTok
@@ -11931,6 +11960,17 @@ countries:
       description: The Coptic Orthodox Diocese of Central Giza saidaid no one was
         hurt after a fire was set inside the Church of the Virgin Mary in Giza.
       source: Catholic News Agency
+    hrwf_articles: 1
+    hrwf_samples:
+    - title: 'EGYPT: Christians arrested over alleged anti-Islam TikTok video'
+      url: https://hrwf.eu/egypt-six-christians-arrested-over-tiktok-video-deemed-offensive-to-islam
+      date: '2026-10-26'
+      description: 'EGYPT: Six Christians arrested over TikTok video deemed offensive
+        to Islam By Anugrah Kumar Christian Post (24.11.2026) Six young Christian
+        men have been jailed in Egypt for more than two weeks over a TikTok video
+        that authorities deemed offensive to Islam. State security prosecutors started
+        questio'
+      source: Human Rights Without Frontiers
     adf_articles: 5
     adf_samples:
     - title: Press Release October 22, 2026 Egypt arrests six young Christian men
@@ -11990,6 +12030,23 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1680
     recent_incidents:
+    - title: 'Egypt: Drop Charges Against Prominent Journalist'
+      url: https://www.hrw.org/news/2026/10/27/egypt-drop-charges-against-prominent-journalist
+      date: '2026-10-27'
+      description: Click to expand Image Lina Attalah, editor-in-chief of Mada Masr,
+        in Cairo, Egypt, November 24, 2017. © 2017 Roger Anis/AP Photo (Beirut) –
+        Egyptian authorities should drop their case against Lina Attalah, editor-in-chief
+        of the independent media outlet Mada Masr, ahead of her October 27, 2026 heari
+      source: Human Rights Watch
+    - title: 'EGYPT: Christians arrested over alleged anti-Islam TikTok video'
+      url: https://hrwf.eu/egypt-six-christians-arrested-over-tiktok-video-deemed-offensive-to-islam
+      date: '2026-10-26'
+      description: 'EGYPT: Six Christians arrested over TikTok video deemed offensive
+        to Islam By Anugrah Kumar Christian Post (24.11.2026) Six young Christian
+        men have been jailed in Egypt for more than two weeks over a TikTok video
+        that authorities deemed offensive to Islam. State security prosecutors started
+        questio'
+      source: Human Rights Without Frontiers
     - title: Rights group urges immediate release of 6 Christians detained over TikTok
         video in Egypt
       url: https://www.ewtnnews.com/world/africa/rights-group-urges-immediate-release-of-6-christians-detained-over-tiktok-video-in-egypt
@@ -13127,7 +13184,7 @@ countries:
     - *id005
     - *id006
     - *id010
-    - *id020
+    - *id022
     - *id013
     - *id018
     - *id017
@@ -14943,7 +15000,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id021
+    - *id020
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -17430,7 +17487,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id020
+    - *id022
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -17558,7 +17615,6 @@ countries:
     - owid2024
     - acn2025
     - icc2026
-    - barnabas
     - adf
     - ohchr2024
     - vdem2025forb
@@ -17839,7 +17895,6 @@ countries:
     - owid2024
     - acn2025
     - icc2026
-    - barnabas
     - adf
     - ohchr2024
     - vdem2025forb
@@ -17857,7 +17912,6 @@ countries:
     - *id004
     - *id006
     - *id010
-    - *id014
     - *id015
     - *id007
     - *id008
@@ -17877,13 +17931,6 @@ countries:
         of the Congo (DRC). During her captivity, Katungu endured severe abuse and
         pressure
       source: International Christian Concern
-    barnabas_articles: 1
-    barnabas_samples:
-    - title: At Least 72 Christians Massacred by Islamists Across Ituri, D. R. Congo
-      url: https://www.barnabasaid.org/us/news/at-least-72-christians-massacred-by-islamists-across-ituri-d-r-congo
-      date: ''
-      description: ''
-      source: Barnabas Aid
     adf_articles: 1
     adf_samples:
     - title: 'Press Release May 14, 2026 East African Court case filed: Christian
@@ -17931,11 +17978,6 @@ countries:
         of the Congo (DRC). During her captivity, Katungu endured severe abuse and
         pressure
       source: International Christian Concern
-    - title: At Least 72 Christians Massacred by Islamists Across Ituri, D. R. Congo
-      url: https://www.barnabasaid.org/us/news/at-least-72-christians-massacred-by-islamists-across-ituri-d-r-congo
-      date: ''
-      description: ''
-      source: Barnabas Aid
     - title: 'Press Release May 14, 2026 East African Court case filed: Christian
         communities in DRC left unable to worship after targeted attacks on churches,
         charities Read More'
@@ -18383,7 +18425,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id020
+    - *id022
     - *id014
     - *id018
     - *id007
@@ -18889,11 +18931,11 @@ countries:
     - *id003
     - *id004
     - *id006
-    - &id023
+    - &id024
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id022
+    - *id023
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -20278,8 +20320,8 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id023
-    - *id020
+    - *id024
+    - *id022
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -20527,7 +20569,9 @@ countries:
     - owid2024
     - acn2025
     - icc2026
+    - barnabas
     - cna
+    - hrwf
     - wea
     - gdelt2025
     - ohchr2024
@@ -20594,7 +20638,9 @@ countries:
     - owid2024
     - acn2025
     - icc2026
+    - barnabas
     - cna
+    - hrwf
     - wea
     - gdelt2025
     - ohchr2024
@@ -20614,8 +20660,10 @@ countries:
     - *id004
     - *id006
     - *id010
-    - *id024
-    - *id022
+    - *id014
+    - *id021
+    - *id011
+    - *id023
     - *id017
     - *id007
     - *id008
@@ -20627,8 +20675,25 @@ countries:
     christian_population: 305222
     christian_percentage: 2.81
     acn_classification: discrimination
-    icc_articles: 1
+    icc_articles: 3
     icc_samples:
+    - title: Community Mourns as Nine Killed in Jordanian Church Attack Buried
+      url: https://persecution.org/2026/10/26/community-mourns-as-nine-killed-in-jordanian-church-attack-buried
+      date: '2026-10-26'
+      description: Thousands of people gathered at St. George’s Greek Orthodox Church
+        in Hamoud, Karak, Jordan on Sunday, as eight of the nine Christians killed
+        in Friday’s attack on the church were laid to rest. The ninth victim, Mohammed
+        al-Qasous, was buried on Monday. Extra security stood watch as the coffins,
+        eac
+      source: International Christian Concern
+    - title: When Violence Strikes, Christ Remains our Rock
+      url: https://persecution.org/2026/10/26/when-violence-strikes-christ-remains-our-rock
+      date: '2026-10-26'
+      description: Today, our hearts are heavy for our brothers and sisters in Jordan.
+        A terrorist attack during a church funeral service killed at least nine and
+        injured 40 others. A gathering meant for mourning and celebration of a good
+        and faithful servant became a scene of even deeper grief. Some of those affected
+      source: International Christian Concern
     - title: Gunmen Attack Church, Kill 7 During Funeral in Jordan
       url: https://persecution.org/2026/10/23/gunmen-attack-church-kill-7-during-funeral-in-jordan
       date: '2026-10-23'
@@ -20638,6 +20703,13 @@ countries:
         to nine deaths and 40 injured.) Authorities have launched an investigation,
         and the
       source: International Christian Concern
+    barnabas_articles: 1
+    barnabas_samples:
+    - title: Nine Christians Killed in Attack on Church Funeral in Jordan
+      url: https://www.barnabasaid.org/us/news/nine-christians-killed-in-attack-on-church-funeral-in-jordan
+      date: ''
+      description: ''
+      source: Barnabas Aid
     cna_articles: 2
     cna_samples:
     - title: Jordan church attack death toll rises to 9 as Christian leaders call
@@ -20654,6 +20726,17 @@ countries:
       description: Jordan’s Public Security Directorate said unidentified gunmen opened
         fire inside a church in Karak province.
       source: Catholic News Agency
+    hrwf_articles: 1
+    hrwf_samples:
+    - title: 'JORDAN: Seven shot dead by gunmen at church funeral, officials say'
+      url: https://hrwf.eu/jordan-seven-shot-dead-by-gunmen-at-church-funeral-officials-say
+      date: '2026-10-26'
+      description: 'JORDAN: Seven shot dead by gunmen at church funeral, officials
+        say By Jamie Whitehead and Jacob Phillips BBC (23.10.2024) Seven people have
+        been killed in an attack on a funeral in central Jordan, officials have said.
+        At least 34 others were injured as gunmen opened fire on a church in Hmoud,
+        in the'
+      source: Human Rights Without Frontiers
     wea_articles: 1
     wea_samples:
     - title: World Evangelical Alliance Condemns Deadly Shooting at Jordan Church
@@ -20666,7 +20749,7 @@ countries:
         the attack by masked men that targeted a church funeral in the village of
         Hmoud in the
       source: WEA
-    gdelt_articles: 10
+    gdelt_articles: 11
     gdelt_samples:
     - title: Nine Killed , 40 Injured in Terror Attack on Church in Jordan
       url: https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
@@ -20683,7 +20766,7 @@ countries:
       date: '2026-10-24'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 10
+    gdelt_recent_articles: 11
     gdelt_sample_urls:
     - https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
     - https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
@@ -20718,6 +20801,32 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1525
     recent_incidents:
+    - title: Community Mourns as Nine Killed in Jordanian Church Attack Buried
+      url: https://persecution.org/2026/10/26/community-mourns-as-nine-killed-in-jordanian-church-attack-buried
+      date: '2026-10-26'
+      description: Thousands of people gathered at St. George’s Greek Orthodox Church
+        in Hamoud, Karak, Jordan on Sunday, as eight of the nine Christians killed
+        in Friday’s attack on the church were laid to rest. The ninth victim, Mohammed
+        al-Qasous, was buried on Monday. Extra security stood watch as the coffins,
+        eac
+      source: International Christian Concern
+    - title: When Violence Strikes, Christ Remains our Rock
+      url: https://persecution.org/2026/10/26/when-violence-strikes-christ-remains-our-rock
+      date: '2026-10-26'
+      description: Today, our hearts are heavy for our brothers and sisters in Jordan.
+        A terrorist attack during a church funeral service killed at least nine and
+        injured 40 others. A gathering meant for mourning and celebration of a good
+        and faithful servant became a scene of even deeper grief. Some of those affected
+      source: International Christian Concern
+    - title: 'JORDAN: Seven shot dead by gunmen at church funeral, officials say'
+      url: https://hrwf.eu/jordan-seven-shot-dead-by-gunmen-at-church-funeral-officials-say
+      date: '2026-10-26'
+      description: 'JORDAN: Seven shot dead by gunmen at church funeral, officials
+        say By Jamie Whitehead and Jacob Phillips BBC (23.10.2024) Seven people have
+        been killed in an attack on a funeral in central Jordan, officials have said.
+        At least 34 others were injured as gunmen opened fire on a church in Hmoud,
+        in the'
+      source: Human Rights Without Frontiers
     - title: Nine Killed , 40 Injured in Terror Attack on Church in Jordan
       url: https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
       date: '2026-10-25'
@@ -20805,6 +20914,16 @@ countries:
       date: '2026-10-23'
       description: ''
       source: GDELT
+    - title: Seven killed in Jordan church shooting
+      url: https://punchng.com/seven-killed-in-jordan-church-shooting
+      date: '2026-10-23'
+      description: ''
+      source: GDELT
+    - title: Nine Christians Killed in Attack on Church Funeral in Jordan
+      url: https://www.barnabasaid.org/us/news/nine-christians-killed-in-attack-on-church-funeral-in-jordan
+      date: ''
+      description: ''
+      source: Barnabas Aid
     archive_modern_excerpt: Most Christians in Jordan belong to Orthodox or Roman
       Catholic churches. Overall, they enjoy a certain level of religious freedom
       but experience discrimination in employment and restrictions against public
@@ -22170,7 +22289,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id023
+    - *id024
     - *id011
     - *id007
     - *id008
@@ -24213,8 +24332,8 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id020
     - *id022
+    - *id023
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -24311,7 +24430,6 @@ countries:
     - acn2025
     - icc2026
     - infochretienne
-    - hrwf
     - ohchr2024
   pew_slug: ''
   metadata:
@@ -24365,16 +24483,16 @@ countries:
         - - 88.120441
           - 27.876542
     wiki_url: https://en.wikipedia.org/wiki/Nepal
-    wiki_extract: Nepal, officially Federal Democratic Republic of Nepal, is a landlocked
-      country in South Asia. It is mainly situated in the Himalayas, but also includes
-      parts of the Indo-Gangetic Plain. It borders the Tibet Autonomous Region of
-      China to the north, and India to the south, east, and west, while it is narrowly
-      separated from Bangladesh by the Siliguri Corridor, and from Bhutan by the Indian
-      state of Sikkim. Nepal has a diverse geography, including fertile plains, subalpine
-      forested hills, and eight of the world's ten highest mountains, including Mount
-      Everest, the highest point above mean sea level on Earth. Kathmandu is the nation's
-      capital and its largest city. Nepal is a multi-ethnic, multi-lingual, multi-religious,
-      and multi-cultural sovereign state, with Nepali as the official language.
+    wiki_extract: Nepal is a landlocked country in South Asia. It is mainly situated
+      in the Himalayas, but also includes parts of the Indo-Gangetic Plain. It borders
+      the Tibet Autonomous Region of China to the north, and India to the south, east,
+      and west, while it is narrowly separated from Bangladesh by the Siliguri Corridor,
+      and from Bhutan by the Indian state of Sikkim. Nepal has a diverse geography,
+      including fertile plains, subalpine forested hills, and eight of the world's
+      ten highest mountains, including Mount Everest, the highest point above mean
+      sea level on Earth. Kathmandu is the nation's capital and its largest city.
+      Nepal is a multi-ethnic, multi-lingual, multi-religious, and multi-cultural
+      sovereign state, with Nepali as the official language.
     country_polygon: true
     source_ids:
     - statedepartment2023nepal
@@ -24384,7 +24502,6 @@ countries:
     - acn2025
     - icc2026
     - infochretienne
-    - hrwf
     - ohchr2024
     sources:
     - &id067
@@ -24397,7 +24514,6 @@ countries:
     - *id006
     - *id010
     - *id013
-    - *id011
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 3
@@ -24426,16 +24542,6 @@ countries:
       date: '2026-10-16'
       description: ''
       source: Info Chrétienne
-    hrwf_articles: 1
-    hrwf_samples:
-    - title: 'NEPAL: 24 Korean Christians arrested for alleged missionary activities'
-      url: https://hrwf.eu/nepal-24-korean-christians-arrested-for-alleged-missionary-activities
-      date: '2026-10-14'
-      description: 'NEPAL: 24 Korean Christians arrested for alleged missionary activities
-        The incident is latest case of hostility against Christians in the Himalayan
-        nation, Christian leaders say UCA NEWS (13.10.2026) Police in eastern Nepal
-        raided a Christian-run college and arrested 24 South Korean Christians follo'
-      source: Human Rights Without Frontiers
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nepal/
     state_dept_executive_summary: The constitution establishes the country as a “secular
       state” but defines secular as the “protection of religion and culture handed
@@ -24588,14 +24694,6 @@ countries:
       date: '2026-10-16'
       description: ''
       source: Info Chrétienne
-    - title: 'NEPAL: 24 Korean Christians arrested for alleged missionary activities'
-      url: https://hrwf.eu/nepal-24-korean-christians-arrested-for-alleged-missionary-activities
-      date: '2026-10-14'
-      description: 'NEPAL: 24 Korean Christians arrested for alleged missionary activities
-        The incident is latest case of hostility against Christians in the Himalayan
-        nation, Christian leaders say UCA NEWS (13.10.2026) Police in eastern Nepal
-        raided a Christian-run college and arrested 24 South Korean Christians follo'
-      source: Human Rights Without Frontiers
     - title: 24 South Korean Christians Arrested at Nepalese Bible College
       url: https://persecution.org/2026/10/13/24-south-korean-christians-arrested-at-nepalese-bible-college
       date: '2026-10-13'
@@ -24782,7 +24880,7 @@ countries:
       South Sudan's diverse landscape includes vast plains and plateaus, dry and tropical
       savannahs, inland floodplains, and forested mountains. The Nile River system
       is the defining physical feature of the country, running south to north across
-      its center, which is dominated by a large swamp known as the Sudd. South Sudan
+      its centre, which is dominated by a large swamp known as the Sudd. South Sudan
       has an estimated population of just over 12.7 million in 2024. Juba is the capital
       and largest city.
     country_polygon: true
@@ -24977,27 +25075,27 @@ sources:
     url: https://www.csw.org.uk/
     date: '2026'
   icc2026: *id010
-  forum18: *id023
+  forum18: *id024
   mec: *id019
   bitterwinter: *id077
   releaseintl: *id009
-  vom2026: *id020
+  vom2026: *id022
   chinaaid: *id078
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
     url: https://www.osce.org/odihr/freedom-of-religion-or-belief
     date: '2026'
-  hrw: *id021
+  hrw: *id020
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id014
   csi: *id079
-  cna: *id024
+  cna: *id021
   hrwf: *id011
   adf: *id015
-  wea: *id022
+  wea: *id023
   jubilee: *id012
   statedepartment2023afghanistan: *id080
   odwwl2025archiveafghanistan: *id081
@@ -25542,83 +25640,83 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-10-26 12:52 UTC
+  generated_at: 2026-10-27 12:05 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-10-26T12:52:03.002709+00:00'
+    fetched_at: '2026-10-27T12:04:47.714915+00:00'
     message: null
   - name: acn
     status: ok
-    fetched_at: '2026-10-26T12:51:29.055385+00:00'
+    fetched_at: '2026-10-27T12:04:22.158227+00:00'
     message: null
   - name: adf
     status: ok
-    fetched_at: '2026-10-26T12:52:05.043454+00:00'
+    fetched_at: '2026-10-27T12:04:49.631905+00:00'
     message: null
   - name: amnesty
     status: ok
-    fetched_at: '2026-10-26T12:51:53.193609+00:00'
+    fetched_at: '2026-10-27T12:04:39.805853+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-10-26T12:51:55.892519+00:00'
+    fetched_at: '2026-10-27T12:04:41.882966+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-10-26T12:51:38.250950+00:00'
+    fetched_at: '2026-10-27T12:04:29.335167+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-10-26T12:51:41.582757+00:00'
+    fetched_at: '2026-10-27T12:04:31.929964+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-10-26T12:52:00.360348+00:00'
+    fetched_at: '2026-10-27T12:04:45.452206+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-10-26T12:51:59.817856+00:00'
+    fetched_at: '2026-10-27T12:04:45.069236+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-10-26T12:51:32.858595+00:00'
+    fetched_at: '2026-10-27T12:04:25.014197+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-10-26T12:52:02.576558+00:00'
+    fetched_at: '2026-10-27T12:04:47.258976+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-10-26T12:51:34.900419+00:00'
+    fetched_at: '2026-10-27T12:04:26.911506+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-10-26T12:42:42.926494+00:00'
+    fetched_at: '2026-10-27T11:57:29.100954+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-10-26T12:51:27.687991+00:00'
+    fetched_at: '2026-10-27T12:04:20.737768+00:00'
     message: null
   - name: gdelt
     status: ok
-    fetched_at: '2026-10-26T12:48:32.698902+00:00'
+    fetched_at: '2026-10-27T12:02:16.770779+00:00'
     message: null
   - name: hrw
     status: ok
-    fetched_at: '2026-10-26T12:51:50.220897+00:00'
+    fetched_at: '2026-10-27T12:04:39.389743+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-10-26T12:52:04.173842+00:00'
+    fetched_at: '2026-10-27T12:04:48.736630+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-10-26T12:51:33.780994+00:00'
+    fetched_at: '2026-10-27T12:04:25.764740+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-10-26T12:51:44.947032+00:00'
+    fetched_at: '2026-10-27T12:04:34.195419+00:00'
     message: null
   - name: ippforb
     status: failed
@@ -25626,44 +25724,44 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-10-26T12:52:07.008804+00:00'
+    fetched_at: '2026-10-27T12:05:01.925574+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-10-26T12:51:37.303315+00:00'
+    fetched_at: '2026-10-27T12:04:28.549803+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-10-26T12:51:17.143179+00:00'
+    fetched_at: '2026-10-27T12:04:10.938028+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-10-26T12:52:07.410786+00:00'
+    fetched_at: '2026-10-27T12:05:02.313752+00:00'
     message: null
   - name: ohchr
     status: ok
-    fetched_at: '2026-10-26T12:51:15.301872+00:00'
+    fetched_at: '2026-10-27T12:04:09.353104+00:00'
     message: null
   - name: opendoors
     status: ok
-    fetched_at: '2026-10-26T12:42:41.791151+00:00'
+    fetched_at: '2026-10-27T11:57:28.038423+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-10-26T12:51:49.806936+00:00'
+    fetched_at: '2026-10-27T12:04:38.999606+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-10-26T12:42:46.048863+00:00'
+    fetched_at: '2026-10-27T11:57:31.188548+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-10-26T12:51:39.824880+00:00'
+    fetched_at: '2026-10-27T12:04:30.456414+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-10-26T12:46:03.391663+00:00'
+    fetched_at: '2026-10-27T11:59:56.875439+00:00'
     message: null
   - name: unsrforb
     status: failed
@@ -25671,23 +25769,23 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-10-26T12:43:32.056288+00:00'
+    fetched_at: '2026-10-27T11:58:09.819912+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-10-26T12:51:25.199128+00:00'
+    fetched_at: '2026-10-27T12:04:18.774385+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-10-26T12:51:40.553379+00:00'
+    fetched_at: '2026-10-27T12:04:31.264880+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-10-26T12:52:06.225416+00:00'
+    fetched_at: '2026-10-27T12:04:53.087800+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-10-26T12:52:31.751111+00:00'
+    fetched_at: '2026-10-27T12:05:26.646614+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
