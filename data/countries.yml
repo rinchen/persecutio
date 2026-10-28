@@ -537,9 +537,10 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
+    - icc2026
     - releaseintl
     - chinaaid
-    - hrwf
+    - fides
     - jubilee
     - ohchr2024
     - vdem2025forb
@@ -1050,9 +1051,10 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
+    - icc2026
     - releaseintl
     - chinaaid
-    - hrwf
+    - fides
     - jubilee
     - ohchr2024
     - vdem2025forb
@@ -1080,6 +1082,10 @@ countries:
     - *id005
     - *id006
     - &id009
+      title: International Christian Concern - Global Persecution Reports
+      url: https://www.persecution.org/
+      date: '2026'
+    - &id010
       title: Release International - Serving the Persecuted Church
       url: https://releaseinternational.org/
       date: '2026'
@@ -1088,8 +1094,8 @@ countries:
       url: https://www.chinaaid.org/
       date: '2026'
     - &id011
-      title: Human Rights Without Frontiers
-      url: https://hrwf.eu/
+      title: Agenzia Fides - Pontifical Mission Societies News
+      url: https://www.fides.org/en
       date: '2026'
     - &id012
       title: Jubilee Campaign
@@ -1112,6 +1118,16 @@ countries:
       2025, drew international condemnation. The charges were "illegally using information
       networks," a vague offense punish
     acn_classification: persecution
+    icc_articles: 1
+    icc_samples:
+    - title: Pastor Jin’s Release Does Not End China’s Persecution of Christians
+      url: https://persecution.org/2026/10/27/pastor-jins-release-does-not-end-chinas-persecution-of-christians
+      date: '2026-10-27'
+      description: The release earlier this year of Pastor Ezra Jin Mingri after nine
+        months in Chinese detention marked a significant victory for religious freedom
+        advocates, but it has done little to change the circumstances facing Christians
+        who refuse to submit to government control. Eight leaders of Jin’s own Zio
+      source: International Christian Concern
     releaseintl_articles: 1
     releaseintl_samples:
     - title: Chinese pastor released!
@@ -1122,6 +1138,24 @@ countries:
       source: Release International
     chinaaid_articles: 10
     chinaaid_samples:
+    - title: Police confront Chinese rights lawyer as surveillance continues after
+        prison release
+      url: https://chinaaid.org/news/police-confront-chinese-rights-lawyer-as-surveillance-continues-after-prison-release/?utm_source=rss&utm_medium=rss&utm_campaign=police-confront-chinese-rights-lawyer-as-surveillance-continues-after-prison-release
+      date: '2026-10-28'
+      description: '(SICHUAN, CHINA — Oct. 27, 2026) — Chinese human rights lawyer
+        Lu Siwei says four unidentified men followed him in southwestern China this
+        month, days after police visited his guesthouse in another province. He says
+        the surveillance has continued despite his release from prison last year.
+        Lu Siwei, '
+      source: ChinaAid
+    - title: Two Chinese house church leaders detained after police raids
+      url: https://chinaaid.org/news/two-chinese-house-church-leaders-detained-after-police-raids/?utm_source=rss&utm_medium=rss&utm_campaign=two-chinese-house-church-leaders-detained-after-police-raids
+      date: '2026-10-27'
+      description: (JIANGXI, CHINA — Oct. 27, 2026) — Two house church leaders remain
+        in criminal detention after police raids that swept up 27 Christians in southeastern
+        China, with authorities alleging illegal border crossings reportedly linked
+        to overseas theological training. Church leader Ding Xing’an and coworke
+      source: ChinaAid
     - title: Demolished Chinese church replaced by public park after religious crackdown
       url: https://chinaaid.org/news/demolished-chinese-church-replaced-by-public-park-after-religious-crackdown/?utm_source=rss&utm_medium=rss&utm_campaign=demolished-chinese-church-replaced-by-public-park-after-religious-crackdown
       date: '2026-10-23'
@@ -1131,34 +1165,18 @@ countries:
         prominently where Yazhong Church once stood. The former sanctuary, also known
         as
       source: ChinaAid
-    - title: Chinese police detain more than 20 Christians during house church gathering
-      url: https://chinaaid.org/news/chinese-police-detain-more-than-20-christians-during-house-church-gathering/?utm_source=rss&utm_medium=rss&utm_campaign=chinese-police-detain-more-than-20-christians-during-house-church-gathering
-      date: '2026-10-22'
-      description: '(JIANGXI PROVINCE, CHINA — Oct. 22, 2026) — Chinese police detained
-        more than 20 Christians during a Sunday gathering at a private home in southeastern
-        China, with several still in custody Monday amid broader restrictions on religious
-        worship outside government-approved churches, according to local '
-      source: ChinaAid
-    - title: Chinese police confront lawyers defending house church leaders in fraud
-        case
-      url: https://chinaaid.org/news/chinese-police-confront-lawyers-defending-house-church-leaders-in-fraud-case/?utm_source=rss&utm_medium=rss&utm_campaign=chinese-police-confront-lawyers-defending-house-church-leaders-in-fraud-case
-      date: '2026-10-21'
-      description: (SHAANXI, CHINA — Oct. 20, 2026) — Police shoved a human rights
-        lawyer from a courthouse and seized another attorney’s phone as they challenged
-        the prosecution of Christian leaders in northwestern China, according to the
-        lawyers. The confrontation highlighted continuing concerns about religious
-        free
-      source: ChinaAid
-    hrwf_articles: 1
-    hrwf_samples:
-    - title: 'CHINA: Religious issues and persecution – Bimonthly Digest October 01-15'
-      url: https://hrwf.eu/china-religious-persecution-and-issues-bimonthly-digest-october-01-15-2
-      date: '2026-10-18'
-      description: 'CHINA: Religious persecution and issues – Bimonthly Digest October
-        01-15 General 11.10.2026 China ranks 7th worldwide for Bible shortages China
-        Aid China ranks seventh worldwide for Bible shortages, with an estimated 5
-        million to 10 million Christians who want a Bible but do not have one, according '
-      source: Human Rights Without Frontiers
+    fides_articles: 1
+    fides_samples:
+    - title: 100 YEARS SINCE THE ORDINATIONS OF THE FIRST SIX CHINESE BISHOPS - The
+        Role and Significance of the First Six Dioceses Entrusted to Chinese Bishops
+      url: https://www.fides.org/en/news/78355-100_YEARS_SINCE_THE_ORDINATIONS_OF_THE_FIRST_SIX_CHINESE_BISHOPS_The_Role_and_Significance_of_the_First_Six_Dioceses_Entrusted_to_Chinese_Bishops
+      date: '2026-10-28'
+      description: 'by Professor Liu Zhiqing Rome – On October 28, 1926, exactly 100
+        years ago, Pope Pius XI consecrated six Chinese bishops in Rome: Philippe
+        Zhao Huaiyi, Odorico Cheng Hede, Melchior Sun Dezheng, Louis Chen Guodi, Joseph
+        Hu Ruoshan and Simon Zhu Kaimin. They were to lead, respectively, the Apostolic
+        V'
+      source: Agenzia Fides
     jubilee_articles: 1
     jubilee_samples:
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
@@ -1216,6 +1234,42 @@ countries:
       law, including agreements on the protection of international trade and investment
       and on mutual enforcement of judicial decisions.</p>
     recent_incidents:
+    - title: Police confront Chinese rights lawyer as surveillance continues after
+        prison release
+      url: https://chinaaid.org/news/police-confront-chinese-rights-lawyer-as-surveillance-continues-after-prison-release/?utm_source=rss&utm_medium=rss&utm_campaign=police-confront-chinese-rights-lawyer-as-surveillance-continues-after-prison-release
+      date: '2026-10-28'
+      description: '(SICHUAN, CHINA — Oct. 27, 2026) — Chinese human rights lawyer
+        Lu Siwei says four unidentified men followed him in southwestern China this
+        month, days after police visited his guesthouse in another province. He says
+        the surveillance has continued despite his release from prison last year.
+        Lu Siwei, '
+      source: ChinaAid
+    - title: 100 YEARS SINCE THE ORDINATIONS OF THE FIRST SIX CHINESE BISHOPS - The
+        Role and Significance of the First Six Dioceses Entrusted to Chinese Bishops
+      url: https://www.fides.org/en/news/78355-100_YEARS_SINCE_THE_ORDINATIONS_OF_THE_FIRST_SIX_CHINESE_BISHOPS_The_Role_and_Significance_of_the_First_Six_Dioceses_Entrusted_to_Chinese_Bishops
+      date: '2026-10-28'
+      description: 'by Professor Liu Zhiqing Rome – On October 28, 1926, exactly 100
+        years ago, Pope Pius XI consecrated six Chinese bishops in Rome: Philippe
+        Zhao Huaiyi, Odorico Cheng Hede, Melchior Sun Dezheng, Louis Chen Guodi, Joseph
+        Hu Ruoshan and Simon Zhu Kaimin. They were to lead, respectively, the Apostolic
+        V'
+      source: Agenzia Fides
+    - title: Pastor Jin’s Release Does Not End China’s Persecution of Christians
+      url: https://persecution.org/2026/10/27/pastor-jins-release-does-not-end-chinas-persecution-of-christians
+      date: '2026-10-27'
+      description: The release earlier this year of Pastor Ezra Jin Mingri after nine
+        months in Chinese detention marked a significant victory for religious freedom
+        advocates, but it has done little to change the circumstances facing Christians
+        who refuse to submit to government control. Eight leaders of Jin’s own Zio
+      source: International Christian Concern
+    - title: Two Chinese house church leaders detained after police raids
+      url: https://chinaaid.org/news/two-chinese-house-church-leaders-detained-after-police-raids/?utm_source=rss&utm_medium=rss&utm_campaign=two-chinese-house-church-leaders-detained-after-police-raids
+      date: '2026-10-27'
+      description: (JIANGXI, CHINA — Oct. 27, 2026) — Two house church leaders remain
+        in criminal detention after police raids that swept up 27 Christians in southeastern
+        China, with authorities alleging illegal border crossings reportedly linked
+        to overseas theological training. Church leader Ding Xing’an and coworke
+      source: ChinaAid
     - title: Demolished Chinese church replaced by public park after religious crackdown
       url: https://chinaaid.org/news/demolished-chinese-church-replaced-by-public-park-after-religious-crackdown/?utm_source=rss&utm_medium=rss&utm_campaign=demolished-chinese-church-replaced-by-public-park-after-religious-crackdown
       date: '2026-10-23'
@@ -1272,14 +1326,6 @@ countries:
         and the government s efforts to bring faith communities under state control.
         In '
       source: ChinaAid
-    - title: 'CHINA: Religious issues and persecution – Bimonthly Digest October 01-15'
-      url: https://hrwf.eu/china-religious-persecution-and-issues-bimonthly-digest-october-01-15-2
-      date: '2026-10-18'
-      description: 'CHINA: Religious persecution and issues – Bimonthly Digest October
-        01-15 General 11.10.2026 China ranks 7th worldwide for Bible shortages China
-        Aid China ranks seventh worldwide for Bible shortages, with an estimated 5
-        million to 10 million Christians who want a Bible but do not have one, according '
-      source: Human Rights Without Frontiers
     - title: 'China church roundup: Believers speak out as pastors remain imprisoned'
       url: https://chinaaid.org/news/china-church-roundup-believers-speak-out-as-pastors-remain-imprisoned/?utm_source=rss&utm_medium=rss&utm_campaign=china-church-roundup-believers-speak-out-as-pastors-remain-imprisoned
       date: '2026-10-14'
@@ -1295,25 +1341,6 @@ countries:
         5 million to 10 million Christians who want a Bible but do not have one, according
         to a new international study highlighting government restrictions on Scripture
         access. The 2026 Bible Access List, released in October by the Bible '
-      source: ChinaAid
-    - title: Formerly imprisoned Chinese pastor Ezra Jin to receive major human rights
-        prize
-      url: https://chinaaid.org/news/formerly-imprisoned-chinese-pastor-ezra-jin-to-receive-major-human-rights-prize/?utm_source=rss&utm_medium=rss&utm_campaign=formerly-imprisoned-chinese-pastor-ezra-jin-to-receive-major-human-rights-prize
-      date: '2026-10-09'
-      description: WASHINGTON — Oct. 9, 2026 — Pastor Ezra Jin Mingri, founder of
-        one of China s largest unregistered Protestant churches, has been named the
-        recipient of a major human rights prize for his advocacy on behalf of persecuted
-        believers. The Lantos Foundation for Human Rights and Justice announced Friday
-        t
-      source: ChinaAid
-    - title: Police in south-central China seal house church, order organizer detained
-        15 days
-      url: https://chinaaid.org/news/police-in-south-central-china-seal-house-church-order-organizer-detained-15-days/?utm_source=rss&utm_medium=rss&utm_campaign=police-in-south-central-china-seal-house-church-order-organizer-detained-15-days
-      date: '2026-10-09'
-      description: LEIYANG, HUNAN PROVINCE, CHINA — Oct. 8, 2026 — Police in south-central
-        China have sealed a house church meeting place and ordered a Christian organizer
-        detained for 15 days, another enforcement action against unregistered religious
-        gatherings in the region. The Leiyang City Public Security Bureau i
       source: ChinaAid
     - title: 'Prisoners of Conscience: Behind Bars for Belief in China, Nicaragua,
         Nigeria, and Pakistan'
@@ -2759,12 +2786,9 @@ countries:
     - *id004
     - *id005
     - *id006
-    - &id010
-      title: International Christian Concern - Global Persecution Reports
-      url: https://www.persecution.org/
-      date: '2026'
     - *id009
-    - &id022
+    - *id010
+    - &id020
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
@@ -2776,10 +2800,7 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id018
-      title: Agenzia Fides - Pontifical Mission Societies News
-      url: https://www.fides.org/en
-      date: '2026'
+    - *id011
     - &id015
       title: ADF International
       url: https://adfinternational.org/
@@ -3655,7 +3676,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id010
+    - *id009
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -3993,11 +4014,11 @@ countries:
     - *id004
     - *id005
     - *id006
-    - &id019
+    - &id017
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
-    - *id009
+    - *id010
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -5139,7 +5160,10 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id011
+    - &id019
+      title: Human Rights Without Frontiers
+      url: https://hrwf.eu/
+      date: '2026'
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -5549,7 +5573,6 @@ countries:
     - adf
     - wea
     - jubilee
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -5704,7 +5727,6 @@ countries:
     - adf
     - wea
     - jubilee
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
     sources:
@@ -5730,27 +5752,23 @@ countries:
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
-    - *id010
+    - *id009
     - *id013
     - *id014
     - &id079
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - &id021
+    - &id018
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
     - *id015
-    - &id023
+    - &id022
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
       date: '2026'
     - *id012
-    - &id017
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -5796,8 +5814,16 @@ countries:
         said. The assailants abducted the Christians in home break-ins that began
         at 3 a.m.
       source: Morning Star News
-    icc_articles: 1
+    icc_articles: 2
     icc_samples:
+    - title: Plateau Christian Leaders Question Military Response to Attacks
+      url: https://persecution.org/2026/10/28/plateau-christian-leaders-question-military-response-to-attacks
+      date: '2026-10-28'
+      description: Christian leaders representing indigenous youth organizations in
+        Nigeria’s Plateau state have accused security authorities of failing to adequately
+        protect vulnerable communities from armed attacks, calling for investigations
+        into alleged security lapses and the continuation of joint operations agai
+      source: International Christian Concern
     - title: Christian Mother Sentenced to 14 Years in Prison in Nigeria
       url: https://persecution.org/2026/10/21/christian-mother-sentenced-to-14-years-in-prison-in-nigeria
       date: '2026-10-21'
@@ -5849,7 +5875,7 @@ countries:
     cna_samples:
     - title: Seminarian training kicks off in Nigeria to combat sexual and gender-based
         violence
-      url: https://www.ewtnnews.com/world/seminarian-training-kicks-off-in-nigeria-to-combat-sexual-and-gender-based-violence
+      url: https://www.ewtnnews.com/world/africa/seminarian-training-kicks-off-in-nigeria-to-combat-sexual-and-gender-based-violence
       date: '2026-10-27'
       description: The initiative aims to reach at least 1,000 seminarians to prepare
         them to recognize different forms of abuse, support survivors, and promote
@@ -5897,23 +5923,6 @@ countries:
       date: '2026-08-17'
       description: window.option_df_18313 = {"outline":[],"backgroundColor":"#eef7fd","autoEnableOutline":"false","autoEnableThumbnail":"false","overwritePDFOutline":"false","direction":"1","pageSize":"0","source":"https:\/\/jubileecampaign.org\/wp-content\/uploads\/2026\/08\/HRC-63-Prisoners-of-Conscience.pdf","wpOpt
       source: Jubilee Campaign
-    gdelt_articles: 2
-    gdelt_samples:
-    - title: 'Persecution : Trump pressure on Nigeria just saved hundreds of Christian
-        lives * WorldNetDaily * by Sean Nelson , The Daily Signal'
-      url: https://www.wnd.com/2026/09/persecution-trumps-pressure-nigeria-just-saved-hundreds-christians
-      date: '2026-10-01'
-      description: ''
-      source: GDELT
-    - title: 'At least one Christian killed every 86 minutes in Nigeria : report'
-      url: https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
-      date: '2026-09-27'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 2
-    gdelt_sample_urls:
-    - https://www.wnd.com/2026/09/persecution-trumps-pressure-nigeria-just-saved-hundreds-christians
-    - https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5950,9 +5959,17 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1353
     recent_incidents:
+    - title: Plateau Christian Leaders Question Military Response to Attacks
+      url: https://persecution.org/2026/10/28/plateau-christian-leaders-question-military-response-to-attacks
+      date: '2026-10-28'
+      description: Christian leaders representing indigenous youth organizations in
+        Nigeria’s Plateau state have accused security authorities of failing to adequately
+        protect vulnerable communities from armed attacks, calling for investigations
+        into alleged security lapses and the continuation of joint operations agai
+      source: International Christian Concern
     - title: Seminarian training kicks off in Nigeria to combat sexual and gender-based
         violence
-      url: https://www.ewtnnews.com/world/seminarian-training-kicks-off-in-nigeria-to-combat-sexual-and-gender-based-violence
+      url: https://www.ewtnnews.com/world/africa/seminarian-training-kicks-off-in-nigeria-to-combat-sexual-and-gender-based-violence
       date: '2026-10-27'
       description: The initiative aims to reach at least 1,000 seminarians to prepare
         them to recognize different forms of abuse, support survivors, and promote
@@ -6011,17 +6028,6 @@ countries:
         held without charges and incommunicado after soldiers arrested him at a military
         hospital, where relatives attacked by Fulani gunmen were receiving treatment,
       source: Morning Star News
-    - title: 'Persecution : Trump pressure on Nigeria just saved hundreds of Christian
-        lives * WorldNetDaily * by Sean Nelson , The Daily Signal'
-      url: https://www.wnd.com/2026/09/persecution-trumps-pressure-nigeria-just-saved-hundreds-christians
-      date: '2026-10-01'
-      description: ''
-      source: GDELT
-    - title: 'At least one Christian killed every 86 minutes in Nigeria : report'
-      url: https://www.christianpost.com/news/at-least-one-christian-killed-every-86-minutes-in-nigeria-report.html
-      date: '2026-09-27'
-      description: ''
-      source: GDELT
     - title: Remembering Nigerian Victims of Violence Based on Christian Belief
       url: https://worldea.org/remembering-nigerian-victims-of-violence-based-on-christian-belief
       date: '2026-08-19'
@@ -6087,13 +6093,13 @@ countries:
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: Press Release August 11, 2026 Nigerian Court Rules Religious Police Cannot
         Arrest Christian Woman for Converting from Islam Read More
       url: https://adfinternational.org/news/nigerian-court-rules-religious-police-cannot-arrest-christian-woman-for-converting-from-islam
       date: ''
       description: ''
       source: ADF International
+    historical_incidents:
     - title: Press Release July 9, 2026 European Parliament strongly condemns ongoing
         persecution of Christians in Nigeria following village massacre Read More
       url: https://adfinternational.org/news/european-parliament-strongly-condemns-ongoing-persecution-of-christians-in-nigeria-following-village-massacre
@@ -6544,7 +6550,6 @@ countries:
     - gcr2026
     - acn2025
     - morningstarnews2026
-    - icc2026
     - bitterwinter
     - infochretienne
     - barnabas
@@ -6713,7 +6718,6 @@ countries:
     - gcr2026
     - acn2025
     - morningstarnews2026
-    - icc2026
     - bitterwinter
     - infochretienne
     - barnabas
@@ -6742,7 +6746,6 @@ countries:
     - *id005
     - *id006
     - *id016
-    - *id010
     - &id077
       title: Bitter Winter - Religious Liberty and Human Rights
       url: https://bitterwinter.org/
@@ -6751,7 +6754,10 @@ countries:
     - *id014
     - *id015
     - *id012
-    - *id017
+    - &id021
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -6796,25 +6802,6 @@ countries:
         families to flee their homes amid fears of further violence, sources said.
         Polic
       source: Morning Star News
-    icc_articles: 2
-    icc_samples:
-    - title: Christian’s Death Sentence Upheld in Pakistan
-      url: https://persecution.org/2026/10/16/christians-death-sentence-upheld-in-pakistan
-      date: '2026-10-16'
-      description: In 2018, two Christian brothers were sentenced to death over allegations
-        of blasphemy. After about a decade of fighting for their freedom, one brother
-        was acquitted by Pakistan’s Supreme Court on Oct. 7. The other brother, however,
-        is still on death row. According to Section 295-C of the country’s p
-      source: International Christian Concern
-    - title: Mob Burns Christian Man s Home, Pharmacy Over Blasphemy Allegation
-      url: https://persecution.org/2026/10/13/mob-burns-christian-mans-home-pharmacy-over-blasphemy-allegation
-      date: '2026-10-13'
-      description: A Christian man’s home and adjoining pharmacy in Pakistan’s Sheikhupura
-        district were burned by a mob on Oct. 9 following a blasphemy allegation,
-        sparking safety fears for his family and neighboring Christian residents.
-        Kamran Gill, a 40-year-old father of three from Gharial Kalan village near
-        Naran
-      source: International Christian Concern
     bitterwinter_articles: 1
     bitterwinter_samples:
     - title: 'Opinion: Pakistan’s Christian Marriage Laws Review and the Church'
@@ -6998,14 +6985,6 @@ countries:
       date: '2026-10-19'
       description: ''
       source: Info Chrétienne
-    - title: Christian’s Death Sentence Upheld in Pakistan
-      url: https://persecution.org/2026/10/16/christians-death-sentence-upheld-in-pakistan
-      date: '2026-10-16'
-      description: In 2018, two Christian brothers were sentenced to death over allegations
-        of blasphemy. After about a decade of fighting for their freedom, one brother
-        was acquitted by Pakistan’s Supreme Court on Oct. 7. The other brother, however,
-        is still on death row. According to Section 295-C of the country’s p
-      source: International Christian Concern
     - title: Calls for US Congress to End Impunity Surrounding Forced Religious Conversions
         and Child Marriage in Pakistan
       url: https://jubileecampaign.org/calls-for-us-congress-to-end-impunity-surrounding-forced-religious-conversions-and-child-marriage-in-pakistan
@@ -7023,15 +7002,6 @@ countries:
         the voice of the Church. The post Opinion: Pakistan’s Christian Marriage Laws
         Review and the Church first appeared on Bitter Winter .'
       source: Bitter Winter
-    - title: Mob Burns Christian Man s Home, Pharmacy Over Blasphemy Allegation
-      url: https://persecution.org/2026/10/13/mob-burns-christian-mans-home-pharmacy-over-blasphemy-allegation
-      date: '2026-10-13'
-      description: A Christian man’s home and adjoining pharmacy in Pakistan’s Sheikhupura
-        district were burned by a mob on Oct. 9 following a blasphemy allegation,
-        sparking safety fears for his family and neighboring Christian residents.
-        Kamran Gill, a 40-year-old father of three from Gharial Kalan village near
-        Naran
-      source: International Christian Concern
     - title: Christian’s Death Sentence Upheld under Blasphemy Law in Pakistan
       url: https://morningstarnews.org/2026/10/christians-death-sentence-upheld-under-blasphemy-law-in-pakistan
       date: '2026-10-12'
@@ -7126,7 +7096,6 @@ countries:
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: Press Release March 10, 2025 Pakistani Christian girl’s forced marriage
         annulled in win for religious freedom Read More
       url: https://adfinternational.org/news/forced-marriage-annulled
@@ -7139,6 +7108,7 @@ countries:
       date: ''
       description: ''
       source: ADF International
+    historical_incidents:
     - title: 'Press Release May 8, 2024 Freed from forced marriage: Pakistan court
         annuls marriage between young Christian girl and her abductor Read More'
       url: https://adfinternational.org/news/freed-from-forced-marriage-pakistan-court-annuls-marriage-between-young-christian-girl-and-her-abductor
@@ -7691,7 +7661,6 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
-    - morningstarnews2026
     - infochretienne
     - ohchr2024
     - vdem2025forb
@@ -7796,7 +7765,6 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
-    - morningstarnews2026
     - infochretienne
     - ohchr2024
     - vdem2025forb
@@ -7819,7 +7787,6 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id016
     - *id013
     - *id007
     - *id008
@@ -7838,16 +7805,6 @@ countries:
       one in five in Africa." } }, { "@type": "Question", "name": "What are the main
       causes of modern Christian persecution?", "acc'
     acn_classification: persecution
-    morningstarnews_articles: 1
-    morningstarnews_samples:
-    - title: Christian Woman in Somalia Beaten, Confined for Converting
-      url: https://morningstarnews.org/2026/10/christian-woman-in-somalia-beaten-confined-for-converting
-      date: '2026-10-07'
-      description: NAIROBI, Kenya (Morning Star News) – The Muslim uncle of a 20-year-old
-        woman in Somalia has confined her to his home, where he has beaten her and
-        deprived her of adequate food and water for converting to Christianity, sources
-        said. Mariam Fatuma has lost significant weight and become noticeably pale
-      source: Morning Star News
     infochretienne_articles: 1
     infochretienne_samples:
     - title: 'Somalie : une jeune chrétienne retenue captive chez son oncle en raison
@@ -7948,14 +7905,6 @@ countries:
       date: '2026-10-08'
       description: ''
       source: Info Chrétienne
-    - title: Christian Woman in Somalia Beaten, Confined for Converting
-      url: https://morningstarnews.org/2026/10/christian-woman-in-somalia-beaten-confined-for-converting
-      date: '2026-10-07'
-      description: NAIROBI, Kenya (Morning Star News) – The Muslim uncle of a 20-year-old
-        woman in Somalia has confined her to his home, where he has beaten her and
-        deprived her of adequate food and water for converting to Christianity, sources
-        said. Mariam Fatuma has lost significant weight and become noticeably pale
-      source: Morning Star News
     archive_modern_excerpt: Somalia is one of the most hostile nations for Christians
       and Christianity. Christians in the country find themselves in an exceedingly
       precarious situation, marked by multiple layers of threats. Despite suffering
@@ -8133,7 +8082,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id010
+    - *id009
     - *id015
     - *id007
     - *id008
@@ -8299,7 +8248,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - hrw
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -8413,7 +8361,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - hrw
     - ohchr2024
     - vdem2025forb
     sources:
@@ -8433,10 +8380,6 @@ countries:
     - *id002
     - *id004
     - *id006
-    - &id020
-      title: Human Rights Watch
-      url: https://www.hrw.org/
-      date: '2026'
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -8445,17 +8388,6 @@ countries:
     christian_population: 8170016
     christian_percentage: 8.33
     acn_classification: discrimination
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'EU, Belgium, Denmark: Raise Rights With Vietnam’s Leader'
-      url: https://www.hrw.org/news/2026/10/19/eu-belgium-denmark-raise-rights-with-vietnams-leader
-      date: '2026-10-19'
-      description: Click to expand Image Vietnam’s leader To Lam meeting President
-        of the European Commission Ursula von der Leyen during United Nations General
-        Assembly meetings, September 24, 2024. © 2024 Pool Union Europe/Agence Hans
-        Lucas via Reuters (Brussels) – Leaders of the European Union, Belgium, and
-        Denmark
-      source: Human Rights Watch
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom in Vietnam remains poor as the government regulates and controls
@@ -8493,16 +8425,6 @@ countries:
       groups.
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1701
-    recent_incidents:
-    - title: 'EU, Belgium, Denmark: Raise Rights With Vietnam’s Leader'
-      url: https://www.hrw.org/news/2026/10/19/eu-belgium-denmark-raise-rights-with-vietnams-leader
-      date: '2026-10-19'
-      description: Click to expand Image Vietnam’s leader To Lam meeting President
-        of the European Commission Ursula von der Leyen during United Nations General
-        Assembly meetings, September 24, 2024. © 2024 Pool Union Europe/Agence Hans
-        Lucas via Reuters (Brussels) – Leaders of the European Union, Belgium, and
-        Denmark
-      source: Human Rights Watch
     archive_modern_excerpt: Following the introduction of Decrees No. 95 and Directive
       24 in 2024 (Project 88, 1 March 2024), there is growing concern about the government's
       tightening control over religious groups. The constitution states that all individuals
@@ -9775,8 +9697,8 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id010
-    - *id018
+    - *id009
+    - *id011
     - *id015
     - *id012
     - *id007
@@ -10980,7 +10902,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id019
+    - *id017
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -11186,7 +11108,6 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
-    - infochretienne
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -11287,7 +11208,6 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
-    - infochretienne
     - ohchr2024
     - vdem2025forb
     sources:
@@ -11308,7 +11228,6 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id013
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -11319,14 +11238,6 @@ countries:
     christian_population: 499044
     christian_percentage: 0.3
     acn_classification: persecution
-    infochretienne_articles: 1
-    infochretienne_samples:
-    - title: '"Nous prions pour la paix" : au Bangladesh, un village chrétien pris
-        pour cible'
-      url: https://www.infochretienne.com/articles/nous-prions-pour-la-paix-au-bangladesh-un-village-chretien-pris-pour-cible
-      date: '2026-10-01'
-      description: ''
-      source: Info Chrétienne
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/bangladesh/
     state_dept_executive_summary: The constitution designates Islam as the state religion
       but upholds the principle of secularism. It prohibits religious discrimination
@@ -11405,13 +11316,6 @@ countries:
       equality. A push by more conservative religious interests appears to be driving
       a reversal in gender equality in some places. Far greater attention must be
       paid to the needs of these women. </p>
-    recent_incidents:
-    - title: '"Nous prions pour la paix" : au Bangladesh, un village chrétien pris
-        pour cible'
-      url: https://www.infochretienne.com/articles/nous-prions-pour-la-paix-au-bangladesh-un-village-chretien-pris-pour-cible
-      date: '2026-10-01'
-      description: ''
-      source: Info Chrétienne
     archive_modern_excerpt: Bangladesh is one of the few countries in the world where
       converts to Christian faith originate from four different backgrounds, namely
       from Muslim, Hindu, Buddhist and ethnic/tribal background. All, however, face
@@ -11776,6 +11680,7 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - morningstarnews2026
     - hrw
     - cna
     - hrwf
@@ -11896,6 +11801,7 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - morningstarnews2026
     - hrw
     - cna
     - hrwf
@@ -11920,9 +11826,13 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id020
-    - *id021
-    - *id011
+    - *id016
+    - &id024
+      title: Human Rights Watch
+      url: https://www.hrw.org/
+      date: '2026'
+    - *id018
+    - *id019
     - *id015
     - *id007
     - *id008
@@ -11934,15 +11844,26 @@ countries:
     christian_population: 5270537
     christian_percentage: 4.82
     acn_classification: discrimination
+    morningstarnews_articles: 1
+    morningstarnews_samples:
+    - title: Authorities in Egypt Hold Christian Incommunicado
+      url: https://morningstarnews.org/2026/10/authorities-in-egypt-hold-christian-incommunidado
+      date: '2026-10-27'
+      description: LONDON (Morning Star News) – Authorities in Egypt arrested a Coptic
+        Christian this month for Facebook posts criticizing forced Islamic education
+        of non-Muslims, while six young Copts detained over a TikTok video have been
+        ordered released. Egyptian Security officers arrested Sherif Wagih Fahmi,
+        a 41
+      source: Morning Star News
     hrw_articles: 1
     hrw_samples:
     - title: 'Egypt: Drop Charges Against Prominent Journalist'
       url: https://www.hrw.org/news/2026/10/27/egypt-drop-charges-against-prominent-journalist
       date: '2026-10-27'
-      description: Click to expand Image Lina Attalah, editor-in-chief of Mada Masr,
-        in Cairo, Egypt, November 24, 2017. © 2017 Roger Anis/AP Photo (Beirut) –
-        Egyptian authorities should drop their case against Lina Attalah, editor-in-chief
-        of the independent media outlet Mada Masr, ahead of her October 27, 2026 heari
+      description: 'Click to expand Image Lina Attalah, editor-in-chief of Mada Masr,
+        in Cairo, Egypt, November 24, 2017. © 2017 Roger Anis/AP Photo Update October
+        27, 2026: On October 27, 2026, the New Cairo Misdemeanor Court convicted Lina
+        Attalah after just one session, fined her 3 million Egyptian pounds (US$53,474'
       source: Human Rights Watch
     cna_articles: 2
     cna_samples:
@@ -12030,13 +11951,22 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1680
     recent_incidents:
+    - title: Authorities in Egypt Hold Christian Incommunicado
+      url: https://morningstarnews.org/2026/10/authorities-in-egypt-hold-christian-incommunidado
+      date: '2026-10-27'
+      description: LONDON (Morning Star News) – Authorities in Egypt arrested a Coptic
+        Christian this month for Facebook posts criticizing forced Islamic education
+        of non-Muslims, while six young Copts detained over a TikTok video have been
+        ordered released. Egyptian Security officers arrested Sherif Wagih Fahmi,
+        a 41
+      source: Morning Star News
     - title: 'Egypt: Drop Charges Against Prominent Journalist'
       url: https://www.hrw.org/news/2026/10/27/egypt-drop-charges-against-prominent-journalist
       date: '2026-10-27'
-      description: Click to expand Image Lina Attalah, editor-in-chief of Mada Masr,
-        in Cairo, Egypt, November 24, 2017. © 2017 Roger Anis/AP Photo (Beirut) –
-        Egyptian authorities should drop their case against Lina Attalah, editor-in-chief
-        of the independent media outlet Mada Masr, ahead of her October 27, 2026 heari
+      description: 'Click to expand Image Lina Attalah, editor-in-chief of Mada Masr,
+        in Cairo, Egypt, November 24, 2017. © 2017 Roger Anis/AP Photo Update October
+        27, 2026: On October 27, 2026, the New Cairo Misdemeanor Court convicted Lina
+        Attalah after just one session, fined her 3 million Egyptian pounds (US$53,474'
       source: Human Rights Watch
     - title: 'EGYPT: Christians arrested over alleged anti-Islam TikTok video'
       url: https://hrwf.eu/egypt-six-christians-arrested-over-tiktok-video-deemed-offensive-to-islam
@@ -12481,7 +12411,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id018
+    - *id011
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -13183,11 +13113,11 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id010
-    - *id022
+    - *id009
+    - *id020
     - *id013
-    - *id018
-    - *id017
+    - *id011
+    - *id021
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -13235,7 +13165,7 @@ countries:
       date: '2026-10-13'
       description: ''
       source: Info Chrétienne
-    fides_articles: 2
+    fides_articles: 1
     fides_samples:
     - title: 'ASIA/MYANMAR - In Loikaw, the Church rises again among the displaced:
         difficulties are mounting, but faith is also growing, says the Vicar General'
@@ -13246,16 +13176,6 @@ countries:
         and among families scattered by the war: the priest had returned, pastoral
         life was resuming, and the community could gather once again. Today, Fr Marko
         Phe By'
-      source: Agenzia Fides
-    - title: ASIA/MYANMAR - In a Country wounded by war, children are called to be
-        “missionaries of hope”
-      url: https://www.fides.org/en/news/78315-ASIA_MYANMAR_In_a_Country_wounded_by_war_children_are_called_to_be_missionaries_of_hope
-      date: '2026-10-20'
-      description: 'Yangon – In a situation marked by suffering and hardship, amid
-        countless difficulties, “you too can become a missionary of hope today”: this
-        was the appeal made during a gathering of more than 1,650 children and young
-        people brought together by the Pontifical Mission Societies in Myanmar in
-        the Cath'
       source: Agenzia Fides
     gdelt_articles: 1
     gdelt_samples:
@@ -13450,16 +13370,6 @@ countries:
       date: '2026-10-21'
       description: ''
       source: GDELT
-    - title: ASIA/MYANMAR - In a Country wounded by war, children are called to be
-        “missionaries of hope”
-      url: https://www.fides.org/en/news/78315-ASIA_MYANMAR_In_a_Country_wounded_by_war_children_are_called_to_be_missionaries_of_hope
-      date: '2026-10-20'
-      description: 'Yangon – In a situation marked by suffering and hardship, amid
-        countless difficulties, “you too can become a missionary of hope today”: this
-        was the appeal made during a gathering of more than 1,650 children and young
-        people brought together by the Pontifical Mission Societies in Myanmar in
-        the Cath'
-      source: Agenzia Fides
     - title: Myanmar’s Military Intensifies Attacks as U.S. Reopens Diplomatic Talks
       url: https://persecution.org/2026/10/19/myanmars-military-intensifies-attacks-as-u-s-reopens-diplomatic-talks
       date: '2026-10-19'
@@ -13765,7 +13675,7 @@ countries:
     - *id005
     - *id006
     - *id016
-    - *id010
+    - *id009
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -14802,7 +14712,6 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
-    - hrw
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -14982,7 +14891,6 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
-    - hrw
     - ohchr2024
     - vdem2025forb
     sources:
@@ -15000,7 +14908,6 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id020
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -15018,16 +14925,6 @@ countries:
       one in five in Africa." } }, { "@type": "Question", "name": "What are the main
       causes of modern Christian persecution?", "ac'
     acn_classification: persecution
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'Mali: Military Attacks on Civilians, Insurgent Abuses'
-      url: https://www.hrw.org/news/2026/10/19/mali-military-attacks-on-civilians-insurgent-abuses
-      date: '2026-10-19'
-      description: Click to expand Image Screenshot of a video posted online and analyzed
-        by Human Rights Watch showing the destruction of a health center following
-        an apparent Malian military drone strike in Talahandak village in the northern
-        Kidal region, Mali, on July 29, 2026. © Private Malian armed forces and the
-      source: Human Rights Watch
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/mali/
     state_dept_executive_summary: The new constitution that came into force in July
       recognizes the country as secular and prohibits religious discrimination and
@@ -15092,15 +14989,6 @@ countries:
       data-par-number="93">(h) Strengthen the judiciary so that victims can safely
       obtain redress before the courts and all perpetrators of violations of international
       humanitarian and human rights law are brought to justice. </p>'
-    recent_incidents:
-    - title: 'Mali: Military Attacks on Civilians, Insurgent Abuses'
-      url: https://www.hrw.org/news/2026/10/19/mali-military-attacks-on-civilians-insurgent-abuses
-      date: '2026-10-19'
-      description: Click to expand Image Screenshot of a video posted online and analyzed
-        by Human Rights Watch showing the destruction of a health center following
-        an apparent Malian military drone strike in Talahandak village in the northern
-        Kidal region, Mali, on July 29, 2026. © Private Malian armed forces and the
-      source: Human Rights Watch
     archive_modern_excerpt: In Mali, the extreme persecution of Christians has rendered
       many regions uninhabitable for them, with survival even for a single day being
       nearly impossible. Jihadist groups, traffickers and organized crime syndicates
@@ -16215,7 +16103,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id018
+    - *id011
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -17110,6 +16998,7 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - cna
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -17254,6 +17143,7 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - cna
     - ohchr2024
     - vdem2025forb
     sources:
@@ -17270,6 +17160,7 @@ countries:
     - *id003
     - *id004
     - *id006
+    - *id018
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -17280,6 +17171,16 @@ countries:
     christian_population: 73227447
     christian_percentage: 61.58
     acn_classification: discrimination
+    cna_articles: 1
+    cna_samples:
+    - title: Ethiopian Orthodox Church condemns killings in Oromia as Catholic bishops
+        call for reconciliation
+      url: https://www.ewtnnews.com/world/africa/ethiopian-orthodox-church-condemns-killings-in-oromia-as-catholic-bishops-call-for
+      date: '2026-10-27'
+      description: Catholic bishops in Ethiopia have joined leaders of the Ethiopian
+        Orthodox Tewahedo Church in condemning deadly attacks on Christians in Oromia
+        Regional State.
+      source: Catholic News Agency
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
     state_dept_executive_summary: The country is a secular state; the constitution
       requires the separation of religion and the state, establishes freedom of religious
@@ -17309,6 +17210,15 @@ countries:
       outskirts of Addis Ababa in March.
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1767
+    recent_incidents:
+    - title: Ethiopian Orthodox Church condemns killings in Oromia as Catholic bishops
+        call for reconciliation
+      url: https://www.ewtnnews.com/world/africa/ethiopian-orthodox-church-condemns-killings-in-oromia-as-catholic-bishops-call-for
+      date: '2026-10-27'
+      description: Catholic bishops in Ethiopia have joined leaders of the Ethiopian
+        Orthodox Tewahedo Church in condemning deadly attacks on Christians in Oromia
+        Regional State.
+      source: Catholic News Agency
     archive_modern_excerpt: In Ethiopia, all three categories of Christian communities
       face violations of religious freedom, with non-traditional Christians suffering
       the most severe mistreatment from both the local government and the Ethiopian
@@ -17487,7 +17397,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id022
+    - *id020
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -17911,7 +17821,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id010
+    - *id009
     - *id015
     - *id007
     - *id008
@@ -18425,9 +18335,9 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id022
+    - *id020
     - *id014
-    - *id018
+    - *id011
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -18931,11 +18841,11 @@ countries:
     - *id003
     - *id004
     - *id006
-    - &id024
+    - &id023
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id023
+    - *id022
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -20320,8 +20230,8 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id024
-    - *id022
+    - *id023
+    - *id020
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -20659,12 +20569,12 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id010
+    - *id009
     - *id014
+    - *id018
+    - *id019
+    - *id022
     - *id021
-    - *id011
-    - *id023
-    - *id017
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -20749,7 +20659,7 @@ countries:
         the attack by masked men that targeted a church funeral in the village of
         Hmoud in the
       source: WEA
-    gdelt_articles: 11
+    gdelt_articles: 10
     gdelt_samples:
     - title: Nine Killed , 40 Injured in Terror Attack on Church in Jordan
       url: https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
@@ -20766,7 +20676,7 @@ countries:
       date: '2026-10-24'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 11
+    gdelt_recent_articles: 10
     gdelt_sample_urls:
     - https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
     - https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
@@ -20911,11 +20821,6 @@ countries:
       source: WEA
     - title: Gunmen kill 7 at church in southern Jordan
       url: https://www.vanguardngr.com/2026/10/gunmen-kill-7-at-church-in-southern-jordan
-      date: '2026-10-23'
-      description: ''
-      source: GDELT
-    - title: Seven killed in Jordan church shooting
-      url: https://punchng.com/seven-killed-in-jordan-church-shooting
       date: '2026-10-23'
       description: ''
       source: GDELT
@@ -22289,8 +22194,8 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id024
-    - *id011
+    - *id023
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -22453,6 +22358,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - hrw
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -22563,6 +22469,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - hrw
     - ohchr2024
     - vdem2025forb
     sources:
@@ -22582,6 +22489,7 @@ countries:
     - *id002
     - *id004
     - *id006
+    - *id024
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -22590,6 +22498,17 @@ countries:
     christian_population: 42730
     christian_percentage: 0.42
     acn_classification: discrimination
+    hrw_articles: 1
+    hrw_samples:
+    - title: Azerbaijan’s Hijab Restrictions Exclude Girls From School
+      url: https://www.hrw.org/news/2026/10/27/azerbaijans-hijab-restrictions-exclude-girls-from-school
+      date: '2026-10-27'
+      description: 'Click to expand Image Three Azerbaijani women wearing headscarves
+        in Baku, Azerbaijan. © 2019 Getty Images School officials across Azerbaijan
+        have been turning away girls wearing hijabs following the introduction of
+        new government dress regulations, sparking protests across the country. Police
+        have '
+      source: Human Rights Watch
     uscirf_designation: SWL
     uscirf_key_findings:
     - Religious freedom conditions in Azerbaijan are poor. Authorities detain Shi’a
@@ -22629,6 +22548,16 @@ countries:
       to Iran.
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1922
+    recent_incidents:
+    - title: Azerbaijan’s Hijab Restrictions Exclude Girls From School
+      url: https://www.hrw.org/news/2026/10/27/azerbaijans-hijab-restrictions-exclude-girls-from-school
+      date: '2026-10-27'
+      description: 'Click to expand Image Three Azerbaijani women wearing headscarves
+        in Baku, Azerbaijan. © 2019 Getty Images School officials across Azerbaijan
+        have been turning away girls wearing hijabs following the introduction of
+        new government dress regulations, sparking protests across the country. Police
+        have '
+      source: Human Rights Watch
     archive_modern_excerpt: The constitution stipulates the separation of religion
       and state and the equality of all religions before the law. It also protects
       the right of individuals to express their religious beliefs and to practice
@@ -24332,8 +24261,8 @@ countries:
     - *id002
     - *id004
     - *id006
+    - *id020
     - *id022
-    - *id023
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -24428,7 +24357,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - icc2026
     - infochretienne
     - ohchr2024
   pew_slug: ''
@@ -24500,7 +24428,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - icc2026
     - infochretienne
     - ohchr2024
     sources:
@@ -24512,7 +24439,6 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id010
     - *id013
     - *id007
     freedom_house_status: Partly Free
@@ -24523,17 +24449,6 @@ countries:
     christian_population: 509335
     christian_percentage: 1.76
     acn_classification: discrimination
-    icc_articles: 1
-    icc_samples:
-    - title: 24 South Korean Christians Arrested at Nepalese Bible College
-      url: https://persecution.org/2026/10/13/24-south-korean-christians-arrested-at-nepalese-bible-college
-      date: '2026-10-13'
-      description: Nepalese Police have arrested 24 South Korean Christians after
-        complaints were lodged against them for “illegal religious teaching, training,
-        and promotion.” Sources in Nepal and South Korea state that the Koreans were
-        arrested at a gathering at the Nepal New Covenant College (NNCC) in Morang
-        Distri
-      source: International Christian Concern
     infochretienne_articles: 1
     infochretienne_samples:
     - title: 'Népal : 24 sud-coréens arrêtés lors d’un rassemblement dans un collège
@@ -24694,15 +24609,6 @@ countries:
       date: '2026-10-16'
       description: ''
       source: Info Chrétienne
-    - title: 24 South Korean Christians Arrested at Nepalese Bible College
-      url: https://persecution.org/2026/10/13/24-south-korean-christians-arrested-at-nepalese-bible-college
-      date: '2026-10-13'
-      description: Nepalese Police have arrested 24 South Korean Christians after
-        complaints were lodged against them for “illegal religious teaching, training,
-        and promotion.” Sources in Nepal and South Korea state that the Koreans were
-        arrested at a gathering at the Nepal New Covenant College (NNCC) in Morang
-        Distri
-      source: International Christian Concern
     archive_modern_excerpt: The constitution establishes the country as a “secular
       state” but defines secular as the “protection of religion and culture handed
       down from the time immemorial.” It provides for the right of citizens to profess
@@ -24901,7 +24807,7 @@ countries:
     - *id004
     - *id006
     - *id016
-    - *id010
+    - *id009
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -25046,7 +24952,7 @@ sources:
   statedepartment2023nepal: *id067
   statedepartment2023southsudan: *id068
   ohchr2024: *id007
-  gdelt2025: *id017
+  gdelt2025: *id021
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id069
@@ -25059,7 +24965,7 @@ sources:
   uscirf2025tajikistan: *id076
   morningstarnews2026: *id016
   infochretienne: *id013
-  fides: *id018
+  fides: *id011
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -25074,28 +24980,28 @@ sources:
     title: Christian Solidarity Worldwide - Persecution Reports
     url: https://www.csw.org.uk/
     date: '2026'
-  icc2026: *id010
-  forum18: *id024
-  mec: *id019
+  icc2026: *id009
+  forum18: *id023
+  mec: *id017
   bitterwinter: *id077
-  releaseintl: *id009
-  vom2026: *id022
+  releaseintl: *id010
+  vom2026: *id020
   chinaaid: *id078
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
     url: https://www.osce.org/odihr/freedom-of-religion-or-belief
     date: '2026'
-  hrw: *id020
+  hrw: *id024
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id014
   csi: *id079
-  cna: *id021
-  hrwf: *id011
+  cna: *id018
+  hrwf: *id019
   adf: *id015
-  wea: *id023
+  wea: *id022
   jubilee: *id012
   statedepartment2023afghanistan: *id080
   odwwl2025archiveafghanistan: *id081
@@ -25640,83 +25546,83 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-10-27 12:05 UTC
+  generated_at: 2026-10-28 12:44 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-10-27T12:04:47.714915+00:00'
+    fetched_at: '2026-10-28T12:43:57.061581+00:00'
     message: null
   - name: acn
     status: ok
-    fetched_at: '2026-10-27T12:04:22.158227+00:00'
+    fetched_at: '2026-10-28T12:43:24.600354+00:00'
     message: null
   - name: adf
     status: ok
-    fetched_at: '2026-10-27T12:04:49.631905+00:00'
+    fetched_at: '2026-10-28T12:43:59.166747+00:00'
     message: null
   - name: amnesty
     status: ok
-    fetched_at: '2026-10-27T12:04:39.805853+00:00'
+    fetched_at: '2026-10-28T12:43:45.063437+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-10-27T12:04:41.882966+00:00'
+    fetched_at: '2026-10-28T12:43:48.424328+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-10-27T12:04:29.335167+00:00'
+    fetched_at: '2026-10-28T12:43:33.216799+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-10-27T12:04:31.929964+00:00'
+    fetched_at: '2026-10-28T12:43:36.585312+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-10-27T12:04:45.452206+00:00'
+    fetched_at: '2026-10-28T12:43:54.509681+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-10-27T12:04:45.069236+00:00'
+    fetched_at: '2026-10-28T12:43:54.075800+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-10-27T12:04:25.014197+00:00'
+    fetched_at: '2026-10-28T12:43:27.948243+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-10-27T12:04:47.258976+00:00'
+    fetched_at: '2026-10-28T12:43:56.586876+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-10-27T12:04:26.911506+00:00'
+    fetched_at: '2026-10-28T12:43:30.348186+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-10-27T11:57:29.100954+00:00'
+    fetched_at: '2026-10-28T12:35:43.784023+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-10-27T12:04:20.737768+00:00'
+    fetched_at: '2026-10-28T12:43:23.253315+00:00'
     message: null
   - name: gdelt
-    status: ok
-    fetched_at: '2026-10-27T12:02:16.770779+00:00'
-    message: null
+    status: partial
+    fetched_at: '2026-10-28T12:41:00.066837+00:00'
+    message: 2 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-10-27T12:04:39.389743+00:00'
+    fetched_at: '2026-10-28T12:43:44.401138+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-10-27T12:04:48.736630+00:00'
+    fetched_at: '2026-10-28T12:43:58.158340+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-10-27T12:04:25.764740+00:00'
+    fetched_at: '2026-10-28T12:43:29.021704+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-10-27T12:04:34.195419+00:00'
+    fetched_at: '2026-10-28T12:43:39.137624+00:00'
     message: null
   - name: ippforb
     status: failed
@@ -25724,44 +25630,44 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-10-27T12:05:01.925574+00:00'
+    fetched_at: '2026-10-28T12:44:05.774486+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-10-27T12:04:28.549803+00:00'
+    fetched_at: '2026-10-28T12:43:32.425843+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-10-27T12:04:10.938028+00:00'
+    fetched_at: '2026-10-28T12:43:13.310456+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-10-27T12:05:02.313752+00:00'
+    fetched_at: '2026-10-28T12:44:06.273746+00:00'
     message: null
   - name: ohchr
     status: ok
-    fetched_at: '2026-10-27T12:04:09.353104+00:00'
+    fetched_at: '2026-10-28T12:43:11.690978+00:00'
     message: null
   - name: opendoors
     status: ok
-    fetched_at: '2026-10-27T11:57:28.038423+00:00'
+    fetched_at: '2026-10-28T12:35:42.781829+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-10-27T12:04:38.999606+00:00'
+    fetched_at: '2026-10-28T12:43:44.085578+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-10-27T11:57:31.188548+00:00'
+    fetched_at: '2026-10-28T12:35:46.996194+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-10-27T12:04:30.456414+00:00'
+    fetched_at: '2026-10-28T12:43:34.559290+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-10-27T11:59:56.875439+00:00'
+    fetched_at: '2026-10-28T12:38:35.209683+00:00'
     message: null
   - name: unsrforb
     status: failed
@@ -25769,23 +25675,23 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-10-27T11:58:09.819912+00:00'
+    fetched_at: '2026-10-28T12:36:27.664462+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-10-27T12:04:18.774385+00:00'
+    fetched_at: '2026-10-28T12:43:20.950737+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-10-27T12:04:31.264880+00:00'
+    fetched_at: '2026-10-28T12:43:35.308635+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-10-27T12:04:53.087800+00:00'
+    fetched_at: '2026-10-28T12:44:01.075470+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-10-27T12:05:26.646614+00:00'
+    fetched_at: '2026-10-28T12:44:30.537412+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
