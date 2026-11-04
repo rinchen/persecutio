@@ -566,6 +566,7 @@ countries:
     - releaseintl
     - vom2026
     - chinaaid
+    - hrw
     - fides
     - hrwf
     - ohchr2024
@@ -1081,6 +1082,7 @@ countries:
     - releaseintl
     - vom2026
     - chinaaid
+    - hrw
     - fides
     - hrwf
     - ohchr2024
@@ -1120,6 +1122,10 @@ countries:
     - &id077
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
+      date: '2026'
+    - &id018
+      title: Human Rights Watch
+      url: https://www.hrw.org/
       date: '2026'
     - &id012
       title: Agenzia Fides - Pontifical Mission Societies News
@@ -1213,6 +1219,17 @@ countries:
         church system was released Wednesday after serving a 16-month sentence. Two
         pastors convicted in the same case remain behind bars. Ma Tao, an elder o
       source: ChinaAid
+    hrw_articles: 1
+    hrw_samples:
+    - title: 'Thailand: Two Uyghurs at Risk of Return to China'
+      url: https://www.hrw.org/news/2026/11/03/thailand-two-uyghurs-at-risk-of-return-to-china
+      date: '2026-11-03'
+      description: Click to expand Image Detainees stand behind cell bars at the police
+        immigration detention center in Bangkok, Thailand, January 21, 2019. © 2019
+        Sakchai Lalit/AP Photo (Bangkok) – Thai authorities should not forcibly return
+        two Uyghur men to China, where they face grave risks of torture and other
+        se
+      source: Human Rights Watch
     fides_articles: 1
     fides_samples:
     - title: 100 YEARS SINCE THE ORDINATIONS OF THE FIRST SIX CHINESE BISHOPS - The
@@ -1285,6 +1302,15 @@ countries:
       law, including agreements on the protection of international trade and investment
       and on mutual enforcement of judicial decisions.</p>
     recent_incidents:
+    - title: 'Thailand: Two Uyghurs at Risk of Return to China'
+      url: https://www.hrw.org/news/2026/11/03/thailand-two-uyghurs-at-risk-of-return-to-china
+      date: '2026-11-03'
+      description: Click to expand Image Detainees stand behind cell bars at the police
+        immigration detention center in Bangkok, Thailand, January 21, 2019. © 2019
+        Sakchai Lalit/AP Photo (Bangkok) – Thai authorities should not forcibly return
+        two Uyghur men to China, where they face grave risks of torture and other
+        se
+      source: Human Rights Watch
     - title: 'CHINA: Religious persecution and issues – Bimonthly Digest October 16-31'
       url: https://hrwf.eu/china-religious-persecution-and-issues-bimonthly-digest-october-16-31
       date: '2026-11-01'
@@ -2523,7 +2549,6 @@ countries:
     - releaseintl
     - vom2026
     - infochretienne
-    - hrw
     - barnabas
     - fides
     - adf
@@ -2829,7 +2854,6 @@ countries:
     - releaseintl
     - vom2026
     - infochretienne
-    - hrw
     - barnabas
     - fides
     - adf
@@ -2864,10 +2888,6 @@ countries:
     - &id014
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
-      date: '2026'
-    - &id018
-      title: Human Rights Watch
-      url: https://www.hrw.org/
       date: '2026'
     - &id016
       title: Barnabas Aid - Persecuted Church News
@@ -2981,16 +3001,6 @@ countries:
       date: '2026-10-16'
       description: ''
       source: Info Chrétienne
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'India: Mass Voter Roll Exclusions Deeply Flawed'
-      url: https://www.hrw.org/news/2026/10/29/india-mass-voter-roll-exclusions-deeply-flawed
-      date: '2026-10-28'
-      description: Click to expand Image Protesters demand the scrapping of the Special
-        Intensive Revision (SIR) of electoral rolls and the resignation of India’s
-        top election official, in Hyderabad, India, on October 24, 2026. © 2026 Jwala
-        Kotesh/NurPhoto via AP Photo The Indian authorities’ removal of over 130 milli
-      source: Human Rights Watch
     barnabas_articles: 2
     barnabas_samples:
     - title: Seven Christians Arrested in Three Separate Incidents in Madhya Pradesh,
@@ -3091,14 +3101,6 @@ countries:
         beat them, sources said. The injuries that Vikas Salam and three others received
         in '
       source: Morning Star News
-    - title: 'India: Mass Voter Roll Exclusions Deeply Flawed'
-      url: https://www.hrw.org/news/2026/10/29/india-mass-voter-roll-exclusions-deeply-flawed
-      date: '2026-10-28'
-      description: Click to expand Image Protesters demand the scrapping of the Special
-        Intensive Revision (SIR) of electoral rolls and the resignation of India’s
-        top election official, in Hyderabad, India, on October 24, 2026. © 2026 Jwala
-        Kotesh/NurPhoto via AP Photo The Indian authorities’ removal of over 130 milli
-      source: Human Rights Watch
     - title: 'Beaten and Tortured for Christ in India: “God Brought Me Here”'
       url: https://www.persecution.com/stories/beaten-and-tortured-for-christ-in-india-god-brought-me-here
       date: '2026-10-24'
@@ -5647,6 +5649,7 @@ countries:
     - csi
     - adf
     - wea
+    - gdelt2025
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -5799,6 +5802,7 @@ countries:
     - csi
     - adf
     - wea
+    - gdelt2025
     - ohchr2024
     - vdem2025forb
     sources:
@@ -5829,10 +5833,14 @@ countries:
       url: https://www.csi-int.org/
       date: '2026'
     - *id017
-    - &id021
+    - &id022
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
       date: '2026'
+    - &id021
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id008
     - *id009
     freedom_house_status: Partly Free
@@ -5967,6 +5975,16 @@ countries:
         carries special weight for Christians: it invites us to remember those who
         hav'
       source: WEA
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: 'Nigeria : Persecution is not slowing down | Evangelicals Now'
+      url: https://www.e-n.org.uk/world-news/nigeria-persecution-is-not-slowing-down
+      date: '2026-10-16'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.e-n.org.uk/world-news/nigeria-persecution-is-not-slowing-down
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -6032,6 +6050,11 @@ countries:
       date: '2026-10-26'
       description: ''
       source: Info Chrétienne
+    - title: 'Nigeria : Persecution is not slowing down | Evangelicals Now'
+      url: https://www.e-n.org.uk/world-news/nigeria-persecution-is-not-slowing-down
+      date: '2026-10-16'
+      description: ''
+      source: GDELT
     - title: Assassinat d’une travailleuse humanitaire chrétienne au Nigeria
       url: https://www.infochretienne.com/articles/assassinat-dune-travailleuse-humanitaire-chretienne-au-nigeria
       date: '2026-10-14'
@@ -6131,13 +6154,13 @@ countries:
       date: ''
       description: ''
       source: ADF International
+    historical_incidents:
     - title: Press Release June 8, 2026 Christian Women and Girls Face Heightened
         Risk of Violence in Nigeria, UN Experts Warn Read More
       url: https://adfinternational.org/news/christian-women-and-girls-nigeria-un
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: Press Release December 2, 2025 U.S. Congress Holds Roundtable on Nigeria’s
         Christian Persecution Crisis Ahead of Report to President Trump Read More
       url: https://adfinternational.org/news/u-s-congress-holds-roundtable-on-nigerias-christian-persecution
@@ -6789,7 +6812,7 @@ countries:
       "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answer", "text": "Islam'
     acn_classification: persecution
-    morningstarnews_articles: 2
+    morningstarnews_articles: 1
     morningstarnews_samples:
     - title: Court in Pakistan Adjourns Hearing on Christians’ Abducted Daughter
       url: https://morningstarnews.org/2026/10/court-in-pakistan-adjourns-hearing-on-christians-abducted-daughter
@@ -6798,14 +6821,6 @@ countries:
         top constitutional court on Wednesday (Oct. 21) adjourned a hearing on a Christian
         couple’s petition seeking recovery of their daughter after learning that the
         Muslim accused of abducting her had not been served a summons becau
-      source: Morning Star News
-    - title: Christian’s Death Sentence Upheld under Blasphemy Law in Pakistan
-      url: https://morningstarnews.org/2026/10/christians-death-sentence-upheld-under-blasphemy-law-in-pakistan
-      date: '2026-10-12'
-      description: LAHORE, Pakistan (Christian Daily International Morning Star News)
-        – Pakistan’s Supreme Court on Wednesday (Oct. 7) announced that it had upheld
-        the death sentence of a Christian convicted under blasphemy laws while acquitting
-        his brother, with rights advocates questioning the contrasting outcomes a
       source: Morning Star News
     infochretienne_articles: 2
     infochretienne_samples:
@@ -6997,14 +7012,6 @@ countries:
         minority girls, extrajudicial killings, and the arbitrary detention of individuals
         accused of blasphemy are the key issues Jubilee Campaign, ExMuslims of No
       source: Jubilee Campaign
-    - title: Christian’s Death Sentence Upheld under Blasphemy Law in Pakistan
-      url: https://morningstarnews.org/2026/10/christians-death-sentence-upheld-under-blasphemy-law-in-pakistan
-      date: '2026-10-12'
-      description: LAHORE, Pakistan (Christian Daily International Morning Star News)
-        – Pakistan’s Supreme Court on Wednesday (Oct. 7) announced that it had upheld
-        the death sentence of a Christian convicted under blasphemy laws while acquitting
-        his brother, with rights advocates questioning the contrasting outcomes a
-      source: Morning Star News
     - title: 'Accusation de blasphème : une foule attaque un chrétien au Pakistan'
       url: https://www.infochretienne.com/articles/accusation-de-blaspheme-une-foule-attaque-un-chretien-au-pakistan
       date: '2026-10-12'
@@ -8051,8 +8058,17 @@ countries:
       "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answ'
     acn_classification: discrimination
-    icc_articles: 1
+    icc_articles: 2
     icc_samples:
+    - title: 'Fueling Persecution Part 2 of 4: When Aid Becomes More Expensive'
+      url: https://persecution.org/2026/11/04/fueling-persecution-part-2-of-4-when-aid-becomes-more-expensive
+      date: '2026-11-04'
+      description: By ICC Fellow Lisa Navarrette By 7 a.m., Connor has already checked
+        the fuel gauge twice. He works with a small Christian relief team in Syria,
+        where his day begins before the roads become crowded. In the back of the van
+        are boxes of food, medicine, bottled water, and hygiene supplies destined
+        for s
+      source: International Christian Concern
     - title: Christian Village Attacked in Syria
       url: https://persecution.org/2026/10/24/christian-village-attacked-in-syria
       date: '2026-10-24'
@@ -8107,6 +8123,15 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1242
     recent_incidents:
+    - title: 'Fueling Persecution Part 2 of 4: When Aid Becomes More Expensive'
+      url: https://persecution.org/2026/11/04/fueling-persecution-part-2-of-4-when-aid-becomes-more-expensive
+      date: '2026-11-04'
+      description: By ICC Fellow Lisa Navarrette By 7 a.m., Connor has already checked
+        the fuel gauge twice. He works with a small Christian relief team in Syria,
+        where his day begins before the roads become crowded. In the back of the van
+        are boxes of food, medicine, bottled water, and hygiene supplies destined
+        for s
+      source: International Christian Concern
     - title: Christian Village Attacked in Syria
       url: https://persecution.org/2026/10/24/christian-village-attacked-in-syria
       date: '2026-10-24'
@@ -13037,10 +13062,7 @@ countries:
     - *id006
     - *id014
     - *id012
-    - &id023
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
+    - *id021
     - *id008
     - *id009
     freedom_house_status: Not Free
@@ -13573,8 +13595,16 @@ countries:
       } }, { "@type": "Question", "name": "What are the main causes of modern Christian
       persecution?", "acceptedAnswer": '
     acn_classification: persecution
-    morningstarnews_articles: 1
+    morningstarnews_articles: 2
     morningstarnews_samples:
+    - title: Church Building in Omdurman, Sudan Threatened with Demolition
+      url: https://morningstarnews.org/2026/11/church-building-in-omdurman-sudan-threatened-with-demolition
+      date: '2026-11-03'
+      description: JUBA, South Sudan (Morning Star News) – A congregation in Omdurman,
+        Sudan fears their church building could be destroyed at any moment due to
+        government targeting and bureaucratic delay, sources said. Local land authorities
+        arrived unannounced at the Sudanese Church of Christ (SCOC) in the Al-Murzou
+      source: Morning Star News
     - title: Pastors Face Death Threats in Refugee Camp in South Sudan
       url: https://morningstarnews.org/2026/10/pastors-face-death-threats-in-refugee-camp-in-south-sudan
       date: '2026-10-16'
@@ -13620,6 +13650,14 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1258
     recent_incidents:
+    - title: Church Building in Omdurman, Sudan Threatened with Demolition
+      url: https://morningstarnews.org/2026/11/church-building-in-omdurman-sudan-threatened-with-demolition
+      date: '2026-11-03'
+      description: JUBA, South Sudan (Morning Star News) – A congregation in Omdurman,
+        Sudan fears their church building could be destroyed at any moment due to
+        government targeting and bureaucratic delay, sources said. Local land authorities
+        arrived unannounced at the Sudanese Church of Christ (SCOC) in the Al-Murzou
+      source: Morning Star News
     - title: Pastors Face Death Threats in Refugee Camp in South Sudan
       url: https://morningstarnews.org/2026/10/pastors-face-death-threats-in-refugee-camp-in-south-sudan
       date: '2026-10-16'
@@ -16712,8 +16750,9 @@ countries:
     opendoors_score: null
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
-      content="@GC_
+    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
+      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/d72fc33d5b8961c2ed9b72cb197413c9"},"headline":"Christian
+      Persecution by the Numbers: 2026 Global Tre'
     acn_classification: discrimination
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
     state_dept_executive_summary: The Basic Law declares Islam to be the state religion
@@ -18681,11 +18720,11 @@ countries:
     - *id003
     - *id004
     - *id006
-    - &id022
+    - &id023
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
-    - *id021
+    - *id022
     - *id008
     - *id009
     freedom_house_status: Not Free
@@ -18696,7 +18735,7 @@ countries:
     christian_population: 3758462
     christian_percentage: 19.29
     acn_classification: discrimination
-    forum18_articles: 2
+    forum18_articles: 1
     forum18_samples:
     - title: 'KAZAKHSTAN: Anti-war independent Orthodox priest given 4-year jail term'
       url: https://www.forum18.org/archive.php?article_id=3076
@@ -18706,16 +18745,6 @@ countries:
         charges on 7 October after a closed trial. "In the house where I lived, they
         planted prohibited substances," Fr Yakov wrote from prison. "I was accused
         of storin
-      source: Forum 18
-    - title: "KAZAKHSTAN: Hidden camera, \"special measures\", \"expert analyses\"\
-        , trial â\x80\x93 jail to follow?"
-      url: https://www.forum18.org/archive.php?article_id=3071
-      date: ''
-      description: Zhakipbek Ormanov and 8 other Muslims are on criminal trial in
-        Taldykorgan accused of membership of the banned Muslim missionary movement
-        Tabligh Jamaat. They face up to two years' imprisonment. The NSC secret police
-        hid a camera in Ormanov's home and recorded conversations, including on religion.
-        N
       source: Forum 18
     wea_articles: 1
     wea_samples:
@@ -18783,16 +18812,6 @@ countries:
         charges on 7 October after a closed trial. "In the house where I lived, they
         planted prohibited substances," Fr Yakov wrote from prison. "I was accused
         of storin
-      source: Forum 18
-    - title: "KAZAKHSTAN: Hidden camera, \"special measures\", \"expert analyses\"\
-        , trial â\x80\x93 jail to follow?"
-      url: https://www.forum18.org/archive.php?article_id=3071
-      date: ''
-      description: Zhakipbek Ormanov and 8 other Muslims are on criminal trial in
-        Taldykorgan accused of membership of the banned Muslim missionary movement
-        Tabligh Jamaat. They face up to two years' imprisonment. The NSC secret police
-        hid a camera in Ormanov's home and recorded conversations, including on religion.
-        N
       source: Forum 18
     archive_modern_excerpt: Religious freedom is restricted by legislation dating
       back to September 2011 and the Kazakhstan government is constantly working at
@@ -20070,7 +20089,7 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id022
+    - *id023
     - *id007
     - *id008
     - *id009
@@ -20322,7 +20341,6 @@ countries:
     - barnabas
     - hrwf
     - wea
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -20390,7 +20408,6 @@ countries:
     - barnabas
     - hrwf
     - wea
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
     sources:
@@ -20410,8 +20427,7 @@ countries:
     - *id010
     - *id016
     - *id013
-    - *id021
-    - *id023
+    - *id022
     - *id008
     - *id009
     freedom_house_status: Partly Free
@@ -20422,7 +20438,7 @@ countries:
     christian_population: 305222
     christian_percentage: 2.81
     acn_classification: discrimination
-    icc_articles: 3
+    icc_articles: 2
     icc_samples:
     - title: Community Mourns as Nine Killed in Jordanian Church Attack Buried
       url: https://persecution.org/2026/10/26/community-mourns-as-nine-killed-in-jordanian-church-attack-buried
@@ -20440,15 +20456,6 @@ countries:
         A terrorist attack during a church funeral service killed at least nine and
         injured 40 others. A gathering meant for mourning and celebration of a good
         and faithful servant became a scene of even deeper grief. Some of those affected
-      source: International Christian Concern
-    - title: Gunmen Attack Church, Kill 7 During Funeral in Jordan
-      url: https://persecution.org/2026/10/23/gunmen-attack-church-kill-7-during-funeral-in-jordan
-      date: '2026-10-23'
-      description: On Friday, gunmen opened fire during a funeral at Hammoud Church,
-        a Greek Orthodox Church in Karak governorate, Jordan. At least seven people
-        were killed, and 34 others were injured. (Those numbers were later revised
-        to nine deaths and 40 injured.) Authorities have launched an investigation,
-        and the
       source: International Christian Concern
     barnabas_articles: 1
     barnabas_samples:
@@ -20489,28 +20496,6 @@ countries:
         the attack by masked men that targeted a church funeral in the village of
         Hmoud in the
       source: WEA
-    gdelt_articles: 10
-    gdelt_samples:
-    - title: Nine Killed , 40 Injured in Terror Attack on Church in Jordan
-      url: https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
-      date: '2026-10-25'
-      description: ''
-      source: GDELT
-    - title: Terrorist Attack on Church in Jordan Karak Leaves Dozens Dead , Wounded
-      url: https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Terror Attack At Orthodox Church In Jordan Leaves 7 Dead , 40 Wounded
-      url: https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 10
-    gdelt_sample_urls:
-    - https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
-    - https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
-    - https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/jordan/
     state_dept_executive_summary: The constitution declares Islam the religion of
       the state but safeguards “the free exercise of all forms of worship and religious
@@ -20576,64 +20561,6 @@ countries:
         At least 34 others were injured as gunmen opened fire on a church in Hmoud,
         in the'
       source: Human Rights Without Frontiers
-    - title: Nine Killed , 40 Injured in Terror Attack on Church in Jordan
-      url: https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
-      date: '2026-10-25'
-      description: ''
-      source: GDELT
-    - title: Terrorist Attack on Church in Jordan Karak Leaves Dozens Dead , Wounded
-      url: https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Terror Attack At Orthodox Church In Jordan Leaves 7 Dead , 40 Wounded
-      url: https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Gunmen Attack Orthodox Church In Jordan During Service , Killing 7 &
-        Wounding Dozens
-      url: http://www.zerohedge.com/geopolitical/gunmen-attack-orthodox-church-jordan-during-service-killing-7-wounding-dozens
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Jordan Church Attack Death Toll Rises to 9 as Christian Leaders Call
-        for Unity
-      url: https://www.ncregister.com/cna/jordan-attack
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Jordan king orders  iron fist  response to deadly church attack
-      url: https://www.al-monitor.com/originals/2026/10/jordan-king-orders-iron-fist-response-deadly-church-attack
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: 'Jordan Church Attack : Death Toll Rises To 9 After Gunmen Open Fire
-        During Funeral'
-      url: https://www.newsx.com/world/jordan-church-attack-death-toll-rises-to-9-after-gunmen-open-fire-during-funeral-what-happened-286787
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Jordan King Abdullah orders firm response after deadly church attack
-        | Gun Violence News
-      url: https://www.aljazeera.com/news/2026/10/24/jordans-king-abdullah-orders-firm-response-after-deadly-church-attack
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: 8 killed in attack on church in Jordan
-      url: https://www.christiantoday.com/news/8-killed-in-attack-on-church-in-jordan
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Gunmen Attack Church, Kill 7 During Funeral in Jordan
-      url: https://persecution.org/2026/10/23/gunmen-attack-church-kill-7-during-funeral-in-jordan
-      date: '2026-10-23'
-      description: On Friday, gunmen opened fire during a funeral at Hammoud Church,
-        a Greek Orthodox Church in Karak governorate, Jordan. At least seven people
-        were killed, and 34 others were injured. (Those numbers were later revised
-        to nine deaths and 40 injured.) Authorities have launched an investigation,
-        and the
-      source: International Christian Concern
     - title: World Evangelical Alliance Condemns Deadly Shooting at Jordan Church
         Funeral
       url: https://worldea.org/world-evangelical-alliance-condemns-deadly-shooting-at-jordan-church-funeral
@@ -20644,11 +20571,6 @@ countries:
         the attack by masked men that targeted a church funeral in the village of
         Hmoud in the
       source: WEA
-    - title: Gunmen kill 7 at church in southern Jordan
-      url: https://www.vanguardngr.com/2026/10/gunmen-kill-7-at-church-in-southern-jordan
-      date: '2026-10-23'
-      description: ''
-      source: GDELT
     - title: Nine Christians Killed in Attack on Church Funeral in Jordan
       url: https://www.barnabasaid.org/us/news/nine-christians-killed-in-attack-on-church-funeral-in-jordan
       date: ''
@@ -22017,7 +21939,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id022
+    - *id023
     - *id008
     - *id009
     freedom_house_status: Not Free
@@ -24042,7 +23964,7 @@ countries:
     - *id006
     - *id010
     - *id007
-    - *id021
+    - *id022
     - *id008
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -24732,7 +24654,7 @@ sources:
   statedepartment2023nepal: *id066
   statedepartment2023southsudan: *id067
   ohchr2024: *id008
-  gdelt2025: *id023
+  gdelt2025: *id021
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id068
@@ -24761,7 +24683,7 @@ sources:
     url: https://www.csw.org.uk/
     date: '2026'
   icc2026: *id010
-  forum18: *id022
+  forum18: *id023
   mec: *id020
   bitterwinter: *id076
   releaseintl: *id011
@@ -24784,7 +24706,7 @@ sources:
     date: '2026'
   hrwf: *id013
   adf: *id017
-  wea: *id021
+  wea: *id022
   jubilee: *id019
   statedepartment2023afghanistan: *id079
   odwwl2025archiveafghanistan: *id080
@@ -25329,83 +25251,83 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-11-03 14:07 UTC
+  generated_at: 2026-11-04 14:21 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-11-03T14:06:28.097081+00:00'
+    fetched_at: '2026-11-04T14:21:18.977303+00:00'
     message: null
   - name: acn
     status: ok
-    fetched_at: '2026-11-03T14:05:46.171990+00:00'
+    fetched_at: '2026-11-04T14:20:49.736142+00:00'
     message: null
   - name: adf
     status: ok
-    fetched_at: '2026-11-03T14:06:30.047765+00:00'
+    fetched_at: '2026-11-04T14:21:21.436688+00:00'
     message: null
   - name: amnesty
     status: ok
-    fetched_at: '2026-11-03T14:06:07.913206+00:00'
+    fetched_at: '2026-11-04T14:21:09.708542+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-11-03T14:06:10.225808+00:00'
+    fetched_at: '2026-11-04T14:21:12.633310+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-11-03T14:05:52.372332+00:00'
+    fetched_at: '2026-11-04T14:20:57.480277+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-11-03T14:05:55.850806+00:00'
+    fetched_at: '2026-11-04T14:21:00.942734+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-11-03T14:06:26.348323+00:00'
+    fetched_at: '2026-11-04T14:21:16.836285+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-11-03T14:06:25.849447+00:00'
+    fetched_at: '2026-11-04T14:21:16.469451+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-11-03T14:05:49.160539+00:00'
+    fetched_at: '2026-11-04T14:20:52.066310+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-11-03T14:06:27.664043+00:00'
+    fetched_at: '2026-11-04T14:21:18.666570+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-11-03T14:05:50.781882+00:00'
+    fetched_at: '2026-11-04T14:20:53.832006+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-11-03T13:58:41.548340+00:00'
+    fetched_at: '2026-11-04T14:13:53.900331+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-11-03T14:05:45.070525+00:00'
+    fetched_at: '2026-11-04T14:20:48.323900+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-11-03T14:03:38.541476+00:00'
+    fetched_at: '2026-11-04T14:18:53.031389+00:00'
     message: 3 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-11-03T14:06:04.238884+00:00'
+    fetched_at: '2026-11-04T14:21:08.905288+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-11-03T14:06:29.089855+00:00'
+    fetched_at: '2026-11-04T14:21:20.549402+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-11-03T14:05:49.802601+00:00'
+    fetched_at: '2026-11-04T14:20:52.957187+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-11-03T14:05:58.176209+00:00'
+    fetched_at: '2026-11-04T14:21:04.431821+00:00'
     message: null
   - name: ippforb
     status: failed
@@ -25413,44 +25335,44 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-11-03T14:06:41.368482+00:00'
+    fetched_at: '2026-11-04T14:21:32.409381+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-11-03T14:05:51.760175+00:00'
+    fetched_at: '2026-11-04T14:20:54.543619+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-11-03T14:05:36.716750+00:00'
+    fetched_at: '2026-11-04T14:20:40.002088+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-11-03T14:06:41.747498+00:00'
+    fetched_at: '2026-11-04T14:21:32.783139+00:00'
     message: null
   - name: ohchr
     status: ok
-    fetched_at: '2026-11-03T14:05:36.229932+00:00'
+    fetched_at: '2026-11-04T14:20:39.642189+00:00'
     message: null
   - name: opendoors
     status: ok
-    fetched_at: '2026-11-03T13:58:40.420680+00:00'
+    fetched_at: '2026-11-04T14:13:52.781761+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-11-03T14:06:03.907628+00:00'
+    fetched_at: '2026-11-04T14:21:08.532896+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-11-03T13:58:44.674178+00:00'
+    fetched_at: '2026-11-04T14:13:56.099122+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-11-03T14:05:53.972194+00:00'
+    fetched_at: '2026-11-04T14:20:58.782383+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-11-03T14:01:09.120255+00:00'
+    fetched_at: '2026-11-04T14:16:26.708502+00:00'
     message: null
   - name: unsrforb
     status: failed
@@ -25458,23 +25380,23 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-11-03T13:59:21.411548+00:00'
+    fetched_at: '2026-11-04T14:14:34.066417+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-11-03T14:05:43.479288+00:00'
+    fetched_at: '2026-11-04T14:20:46.650899+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-11-03T14:05:54.810281+00:00'
+    fetched_at: '2026-11-04T14:20:59.564177+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-11-03T14:06:31.290270+00:00'
+    fetched_at: '2026-11-04T14:21:22.918517+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-11-03T14:07:06.173691+00:00'
+    fetched_at: '2026-11-04T14:21:57.103175+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
