@@ -538,7 +538,6 @@ countries:
     - gcr2026
     - acn2025
     - releaseintl
-    - vom2026
     - chinaaid
     - ohchr2024
     - vdem2025forb
@@ -1050,7 +1049,6 @@ countries:
     - gcr2026
     - acn2025
     - releaseintl
-    - vom2026
     - chinaaid
     - ohchr2024
     - vdem2025forb
@@ -1081,10 +1079,6 @@ countries:
       title: Release International - Serving the Persecuted Church
       url: https://releaseinternational.org/
       date: '2026'
-    - &id010
-      title: Voice of the Martyrs - Stories
-      url: https://www.persecution.com/
-      date: '2026'
     - &id078
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
@@ -1114,17 +1108,6 @@ countries:
       description: Chinese Pastor Zhang Shaojie is released from prison. The post
         Chinese pastor released! appeared first on Release International .
       source: Release International
-    vom_articles: 1
-    vom_samples:
-    - title: Imprisoned Pastor Reportedly Gravely Ill
-      url: https://www.persecution.com/stories/imprisoned-pastor-reportedly-gravely-ill
-      date: '2026-10-29'
-      description: ChinaAid reports that Pastor Wang Yi may be suffering from advanced
-        liver cancer. Wang, the founder and senior pastor of Early Rain Covenant Church
-        in Chengdu, Sichuan Province, has been imprisoned since December 2018. He
-        was sentenced in December 2019 on charges of "inciting subversion of state
-        pow
-      source: Voice of the Martyrs
     chinaaid_articles: 10
     chinaaid_samples:
     - title: Hundreds gather in Texas to pray for persecuted Chinese Christians
@@ -2727,17 +2710,20 @@ countries:
     - *id004
     - *id005
     - *id006
-    - &id011
+    - &id010
       title: Morning Star News - Christian Persecution Reports
       url: https://morningstarnews.org/
       date: '2026'
-    - &id013
+    - &id012
       title: International Christian Concern - Global Persecution Reports
       url: https://www.persecution.org/
       date: '2026'
     - *id009
-    - *id010
-    - &id012
+    - &id013
+      title: Voice of the Martyrs - Stories
+      url: https://www.persecution.com/
+      date: '2026'
+    - &id011
       title: Info Chrétienne - Actualités chrétiennes
       url: https://www.infochretienne.com/
       date: '2026'
@@ -3562,7 +3548,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id011
+    - *id010
     - &id014
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
@@ -5345,7 +5331,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id012
+    - *id011
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -5662,10 +5648,10 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id011
-    - *id013
     - *id010
     - *id012
+    - *id013
+    - *id011
     - &id016
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
@@ -6708,13 +6694,13 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id011
-    - *id013
+    - *id010
+    - *id012
     - &id020
       title: Bitter Winter - Religious Liberty and Human Rights
       url: https://bitterwinter.org/
       date: '2026'
-    - *id012
+    - *id011
     - *id016
     - *id017
     - *id015
@@ -7988,7 +7974,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id013
+    - *id012
     - *id015
     - *id007
     - *id008
@@ -10521,7 +10507,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id011
+    - *id010
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -10781,10 +10767,10 @@ countries:
           - 27.395744
     wiki_url: https://en.wikipedia.org/wiki/Algeria
     wiki_extract: Algeria, officially the People's Democratic Republic of Algeria,
-      is a country in North Africa. It is bordered to the northeast by Tunisia; to
-      the east by Libya; to the southeast by Niger; to the southwest by Mali, Mauritania,
-      and Western Sahara; to the west by Morocco; and to the north by the Mediterranean
-      Sea. Its capital and largest city is Algiers.
+      is a country in the Maghreb region of North Africa. It is bordered to the northeast
+      by Tunisia; to the east by Libya; to the southeast by Niger; to the southwest
+      by Mali, Mauritania, and Western Sahara; to the west by Morocco; and to the
+      north by the Mediterranean Sea. Its capital and largest city is Algiers.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -11742,9 +11728,9 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id011
-    - *id013
+    - *id010
     - *id012
+    - *id011
     - *id015
     - *id018
     - *id007
@@ -12314,7 +12300,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id013
+    - *id012
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -12624,7 +12610,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id013
+    - *id012
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -13535,8 +13521,8 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id011
-    - *id013
+    - *id010
+    - *id012
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -15384,7 +15370,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id010
+    - *id013
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -16725,8 +16711,9 @@ countries:
     opendoors_score: null
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
-      content="@GC_
+    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
+      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/d72fc33d5b8961c2ed9b72cb197413c9"},"headline":"Christian
+      Persecution by the Numbers: 2026 Global Tre'
     acn_classification: discrimination
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
     state_dept_executive_summary: The Basic Law declares Islam to be the state religion
@@ -17612,7 +17599,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id013
+    - *id012
     - *id016
     - *id015
     - *id007
@@ -18156,7 +18143,7 @@ countries:
     - *id005
     - *id006
     - *id020
-    - *id010
+    - *id013
     - *id016
     - *id014
     - *id007
@@ -20388,7 +20375,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id010
+    - *id013
     - *id016
     - *id021
     - *id024
@@ -20440,7 +20427,7 @@ countries:
         the attack by masked men that targeted a church funeral in the village of
         Hmoud in the
       source: WEA
-    gdelt_articles: 11
+    gdelt_articles: 10
     gdelt_samples:
     - title: Nine Killed , 40 Injured in Terror Attack on Church in Jordan
       url: https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
@@ -20457,7 +20444,7 @@ countries:
       date: '2026-10-24'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 11
+    gdelt_recent_articles: 10
     gdelt_sample_urls:
     - https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
     - https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
@@ -20570,11 +20557,6 @@ countries:
       source: WEA
     - title: Gunmen kill 7 at church in southern Jordan
       url: https://www.vanguardngr.com/2026/10/gunmen-kill-7-at-church-in-southern-jordan
-      date: '2026-10-23'
-      description: ''
-      source: GDELT
-    - title: Seven killed in Jordan church shooting
-      url: https://punchng.com/seven-killed-in-jordan-church-shooting
       date: '2026-10-23'
       description: ''
       source: GDELT
@@ -23377,8 +23359,8 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id013
     - *id012
+    - *id011
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -24023,7 +24005,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id013
+    - *id012
     - *id025
     - *id007
     freedom_house_status: Partly Free
@@ -24565,7 +24547,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id013
+    - *id012
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -24703,8 +24685,8 @@ sources:
   uscirf2025turkmenistan: *id075
   uscirf2025uzbekistan: *id076
   uscirf2025tajikistan: *id077
-  morningstarnews2026: *id011
-  infochretienne: *id012
+  morningstarnews2026: *id010
+  infochretienne: *id011
   fides: *id014
   aciprensa:
     title: ACI Prensa - Noticias católicas
@@ -24720,12 +24702,12 @@ sources:
     title: Christian Solidarity Worldwide - Persecution Reports
     url: https://www.csw.org.uk/
     date: '2026'
-  icc2026: *id013
+  icc2026: *id012
   forum18: *id023
   mec: *id019
   bitterwinter: *id020
   releaseintl: *id009
-  vom2026: *id010
+  vom2026: *id013
   chinaaid: *id078
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
@@ -25286,83 +25268,83 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-11-14 13:28 UTC
+  generated_at: 2026-11-15 13:56 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-11-14T13:27:50.302812+00:00'
+    fetched_at: '2026-11-15T13:55:57.055754+00:00'
     message: null
   - name: acn
     status: ok
-    fetched_at: '2026-11-14T13:27:27.298771+00:00'
+    fetched_at: '2026-11-15T13:55:37.201782+00:00'
     message: null
   - name: adf
     status: ok
-    fetched_at: '2026-11-14T13:27:52.172969+00:00'
+    fetched_at: '2026-11-15T13:55:58.940392+00:00'
     message: null
   - name: amnesty
     status: ok
-    fetched_at: '2026-11-14T13:27:42.363039+00:00'
+    fetched_at: '2026-11-15T13:55:49.362092+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-11-14T13:27:45.125960+00:00'
+    fetched_at: '2026-11-15T13:55:52.619363+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-11-14T13:27:32.885748+00:00'
+    fetched_at: '2026-11-15T13:55:43.298793+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-11-14T13:27:36.327411+00:00'
+    fetched_at: '2026-11-15T13:55:45.812850+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-11-14T13:27:48.318306+00:00'
+    fetched_at: '2026-11-15T13:55:54.918084+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-11-14T13:27:47.882406+00:00'
+    fetched_at: '2026-11-15T13:55:54.583267+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-11-14T13:27:29.530801+00:00'
+    fetched_at: '2026-11-15T13:55:40.085920+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-11-14T13:27:50.060873+00:00'
+    fetched_at: '2026-11-15T13:55:56.658156+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-11-14T13:27:31.273929+00:00'
+    fetched_at: '2026-11-15T13:55:41.411119+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-11-14T13:20:43.984483+00:00'
+    fetched_at: '2026-11-15T13:48:21.358902+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-11-14T13:27:25.968674+00:00'
+    fetched_at: '2026-11-15T13:55:35.711384+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-11-14T13:25:11.945993+00:00'
-    message: 1 of 4 queries failed
+    fetched_at: '2026-11-15T13:53:00.202764+00:00'
+    message: 2 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-11-14T13:27:41.847596+00:00'
+    fetched_at: '2026-11-15T13:55:48.894754+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-11-14T13:27:51.333027+00:00'
+    fetched_at: '2026-11-15T13:55:58.177086+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-11-14T13:27:30.459489+00:00'
+    fetched_at: '2026-11-15T13:55:40.712535+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-11-14T13:27:37.976875+00:00'
+    fetched_at: '2026-11-15T13:55:47.825206+00:00'
     message: null
   - name: ippforb
     status: failed
@@ -25370,44 +25352,44 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-11-14T13:27:55.148755+00:00'
+    fetched_at: '2026-11-15T13:56:01.153304+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-11-14T13:27:32.336747+00:00'
+    fetched_at: '2026-11-15T13:55:42.349810+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-11-14T13:27:17.617288+00:00'
+    fetched_at: '2026-11-15T13:55:26.225879+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-11-14T13:27:55.432095+00:00'
+    fetched_at: '2026-11-15T13:56:01.500415+00:00'
     message: null
   - name: ohchr
     status: ok
-    fetched_at: '2026-11-14T13:27:17.362447+00:00'
+    fetched_at: '2026-11-15T13:55:24.815953+00:00'
     message: null
   - name: opendoors
     status: ok
-    fetched_at: '2026-11-14T13:20:43.154645+00:00'
+    fetched_at: '2026-11-15T13:48:20.531561+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-11-14T13:27:41.503228+00:00'
+    fetched_at: '2026-11-15T13:55:48.654149+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-11-14T13:20:46.284207+00:00'
+    fetched_at: '2026-11-15T13:48:24.094905+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-11-14T13:27:34.039486+00:00'
+    fetched_at: '2026-11-15T13:55:44.723200+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-11-14T13:23:12.022327+00:00'
+    fetched_at: '2026-11-15T13:51:16.069124+00:00'
     message: null
   - name: unsrforb
     status: failed
@@ -25415,23 +25397,23 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-11-14T13:21:23.314231+00:00'
+    fetched_at: '2026-11-15T13:49:08.576519+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-11-14T13:27:24.625898+00:00'
+    fetched_at: '2026-11-15T13:55:34.527391+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-11-14T13:27:34.877855+00:00'
+    fetched_at: '2026-11-15T13:55:45.210146+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-11-14T13:27:54.168684+00:00'
+    fetched_at: '2026-11-15T13:56:00.851888+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-11-14T13:28:19.822332+00:00'
+    fetched_at: '2026-11-15T13:56:25.850116+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
