@@ -537,6 +537,7 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
+    - bitterwinter
     - releaseintl
     - chinaaid
     - ohchr2024
@@ -1048,6 +1049,7 @@ countries:
     - owid2024
     - gcr2026
     - acn2025
+    - bitterwinter
     - releaseintl
     - chinaaid
     - ohchr2024
@@ -1075,6 +1077,10 @@ countries:
     - *id004
     - *id005
     - *id006
+    - &id016
+      title: Bitter Winter - Religious Liberty and Human Rights
+      url: https://bitterwinter.org/
+      date: '2026'
     - &id009
       title: Release International - Serving the Persecuted Church
       url: https://releaseinternational.org/
@@ -1100,6 +1106,16 @@ countries:
       2025, drew international condemnation. The charges were "illegally using information
       networks," a vague offense punish
     acn_classification: persecution
+    bitterwinter_articles: 1
+    bitterwinter_samples:
+    - title: Sam Brownback Gives Names and Faces to China’s War on Faith
+      url: https://bitterwinter.org/sam-brownback-gives-names-and-faces-to-chinas-war-on-faith
+      date: '2026-11-16'
+      description: The former US Ambassador-at-Large for International Religious Freedom
+        tells the stories of Christians, Tibetan Buddhists, Falun Gong practitioners,
+        and Uyghurs who defied the Communist Party. The post Sam Brownback Gives Names
+        and Faces to China’s War on Faith first appeared on Bitter Winter .
+      source: Bitter Winter
     releaseintl_articles: 1
     releaseintl_samples:
     - title: Chinese pastor released!
@@ -1186,6 +1202,14 @@ countries:
       law, including agreements on the protection of international trade and investment
       and on mutual enforcement of judicial decisions.</p>
     recent_incidents:
+    - title: Sam Brownback Gives Names and Faces to China’s War on Faith
+      url: https://bitterwinter.org/sam-brownback-gives-names-and-faces-to-chinas-war-on-faith
+      date: '2026-11-16'
+      description: The former US Ambassador-at-Large for International Religious Freedom
+        tells the stories of Christians, Tibetan Buddhists, Falun Gong practitioners,
+        and Uyghurs who defied the Communist Party. The post Sam Brownback Gives Names
+        and Faces to China’s War on Faith first appeared on Bitter Winter .
+      source: Bitter Winter
     - title: Hundreds gather in Texas to pray for persecuted Chinese Christians
       url: https://chinaaid.org/news/hundreds-gather-in-texas-to-pray-for-persecuted-chinese-christians/?utm_source=rss&utm_medium=rss&utm_campaign=hundreds-gather-in-texas-to-pray-for-persecuted-chinese-christians
       date: '2026-11-14'
@@ -3914,12 +3938,12 @@ countries:
     - *id004
     - *id005
     - *id006
-    - &id019
+    - &id020
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
     - *id009
-    - &id017
+    - &id018
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
@@ -5652,7 +5676,7 @@ countries:
     - *id012
     - *id013
     - *id011
-    - &id016
+    - &id017
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
@@ -5660,7 +5684,7 @@ countries:
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - &id025
+    - &id024
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
@@ -5670,7 +5694,7 @@ countries:
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
       date: '2026'
-    - &id018
+    - &id019
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
@@ -5742,8 +5766,14 @@ countries:
         a third village, killing two more Christians. And in Kaduna State on Oct.
         6, 202
       source: Voice of the Martyrs
-    infochretienne_articles: 1
+    infochretienne_articles: 2
     infochretienne_samples:
+    - title: 'Nigeria : deux musulmans assassinés pour avoir défendu la paix avec
+        les chrétiens'
+      url: https://www.infochretienne.com/articles/nigeria-deux-musulmans-assassines-pour-avoir-defendu-la-paix-avec-les-chretiens
+      date: '2026-11-16'
+      description: ''
+      source: Info Chrétienne
     - title: Un prêtre libéré au Nigeria après cinq jours de captivité
       url: https://www.infochretienne.com/articles/un-pretre-libere-au-nigeria-apres-cinq-jours-de-captivite
       date: '2026-10-26'
@@ -5888,6 +5918,12 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1353
     recent_incidents:
+    - title: 'Nigeria : deux musulmans assassinés pour avoir défendu la paix avec
+        les chrétiens'
+      url: https://www.infochretienne.com/articles/nigeria-deux-musulmans-assassines-pour-avoir-defendu-la-paix-avec-les-chretiens
+      date: '2026-11-16'
+      description: ''
+      source: Info Chrétienne
     - title: The Nigerian Government’s Culture of Denial and Insecurity Addressed
         During Congressional Hearing – Congress wants Actions not Words
       url: https://jubileecampaign.org/the-nigerian-governments-culture-of-denial-and-insecurity-addressed-during-congressional-hearing-congress-wants-actions-not-words
@@ -6033,6 +6069,7 @@ countries:
       date: ''
       description: ''
       source: ADF International
+    historical_incidents:
     - title: Press Release August 13, 2026 UN Experts Release Letter to Nigerian Government
         Warning of Heightened Risk of Violence for Christian Women and Girls Read
         More
@@ -6040,7 +6077,6 @@ countries:
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: Press Release August 11, 2026 Nigerian Court Rules Religious Police Cannot
         Arrest Christian Woman for Converting from Islam Read More
       url: https://adfinternational.org/news/nigerian-court-rules-religious-police-cannot-arrest-christian-woman-for-converting-from-islam
@@ -6499,7 +6535,6 @@ countries:
     - morningstarnews2026
     - icc2026
     - bitterwinter
-    - infochretienne
     - barnabas
     - hrwf
     - adf
@@ -6668,7 +6703,6 @@ countries:
     - morningstarnews2026
     - icc2026
     - bitterwinter
-    - infochretienne
     - barnabas
     - hrwf
     - adf
@@ -6696,15 +6730,11 @@ countries:
     - *id006
     - *id010
     - *id012
-    - &id020
-      title: Bitter Winter - Religious Liberty and Human Rights
-      url: https://bitterwinter.org/
-      date: '2026'
-    - *id011
     - *id016
     - *id017
-    - *id015
     - *id018
+    - *id015
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -6754,13 +6784,6 @@ countries:
         believer. The post Pakistan’s Supreme Court Confirms Qaiser Ayub’s Death Sentence
         in Blasphemy Case first appeared on Bitter Winter .
       source: Bitter Winter
-    infochretienne_articles: 1
-    infochretienne_samples:
-    - title: 'Pakistan : la condamnation à mort d’un chrétien confirmée'
-      url: https://www.infochretienne.com/articles/pakistan-la-condamnation-a-mort-dun-chretien-confirmee
-      date: '2026-10-19'
-      description: ''
-      source: Info Chrétienne
     barnabas_articles: 1
     barnabas_samples:
     - title: Pakistan Supreme Court Criticized as It Upholds Death Sentence Against
@@ -6946,11 +6969,6 @@ countries:
         couple’s petition seeking recovery of their daughter after learning that the
         Muslim accused of abducting her had not been served a summons becau
       source: Morning Star News
-    - title: 'Pakistan : la condamnation à mort d’un chrétien confirmée'
-      url: https://www.infochretienne.com/articles/pakistan-la-condamnation-a-mort-dun-chretien-confirmee
-      date: '2026-10-19'
-      description: ''
-      source: Info Chrétienne
     - title: Calls for US Congress to End Impunity Surrounding Forced Religious Conversions
         and Child Marriage in Pakistan
       url: https://jubileecampaign.org/calls-for-us-congress-to-end-impunity-surrounding-forced-religious-conversions-and-child-marriage-in-pakistan
@@ -9594,7 +9612,7 @@ countries:
       url: https://www.hrw.org/
       date: '2026'
     - *id015
-    - *id018
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Free
@@ -9612,13 +9630,14 @@ countries:
     acn_classification: unclassified
     hrw_articles: 1
     hrw_samples:
-    - title: Rights on the Ballot Alongside US Congressional Elections
-      url: https://www.hrw.org/news/2026/11/06/rights-on-the-ballot-alongside-us-congressional-elections
-      date: '2026-11-06'
-      description: 'Click to expand Image A voter picks up an "I Voted" sticker after
-        casting their ballot in the US midterm elections on November 3, 2026. © 2026
-        AP Photo/George Walker IV Alongside the high-profile congressional and gubernatorial
-        races decided during the United States midterm elections on November 3, '
+    - title: 'Philippines: US Tech Hub to Displace Hundreds'
+      url: https://www.hrw.org/news/2026/11/16/philippines-us-tech-hub-to-displace-hundreds
+      date: '2026-11-16'
+      description: Click to expand Image Mander Matias, a 45-year-old farmer, points
+        to the farmland his family has been tilling for generations in Capas, Tarlac,
+        Philippines, and which he stands to lose because of the planned semiconductor
+        hub under the US-led Pax Silica initiative. © 2026 Lian Buan/Human Rights
+        Watc
       source: Human Rights Watch
     adf_articles: 12
     adf_samples:
@@ -9656,13 +9675,14 @@ countries:
       source: Jubilee Campaign
     ohchr_recommendation_count: 2030
     recent_incidents:
-    - title: Rights on the Ballot Alongside US Congressional Elections
-      url: https://www.hrw.org/news/2026/11/06/rights-on-the-ballot-alongside-us-congressional-elections
-      date: '2026-11-06'
-      description: 'Click to expand Image A voter picks up an "I Voted" sticker after
-        casting their ballot in the US midterm elections on November 3, 2026. © 2026
-        AP Photo/George Walker IV Alongside the high-profile congressional and gubernatorial
-        races decided during the United States midterm elections on November 3, '
+    - title: 'Philippines: US Tech Hub to Displace Hundreds'
+      url: https://www.hrw.org/news/2026/11/16/philippines-us-tech-hub-to-displace-hundreds
+      date: '2026-11-16'
+      description: Click to expand Image Mander Matias, a 45-year-old farmer, points
+        to the farmland his family has been tilling for generations in Capas, Tarlac,
+        Philippines, and which he stands to lose because of the planned semiconductor
+        hub under the US-led Pax Silica initiative. © 2026 Lian Buan/Human Rights
+        Watc
       source: Human Rights Watch
     - title: Calls for US Congress to End Impunity Surrounding Forced Religious Conversions
         and Child Marriage in Pakistan
@@ -10804,7 +10824,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id019
+    - *id020
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -11732,7 +11752,7 @@ countries:
     - *id012
     - *id011
     - *id015
-    - *id018
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -11975,6 +11995,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - fides
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -12039,6 +12060,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - fides
     - ohchr2024
     - vdem2025forb
     sources:
@@ -12054,6 +12076,7 @@ countries:
     - *id002
     - *id004
     - *id006
+    - *id014
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -12062,6 +12085,18 @@ countries:
     christian_population: 9975391
     christian_percentage: 88.72
     acn_classification: discrimination
+    fides_articles: 1
+    fides_samples:
+    - title: AMERICA/HAITI - Haiti faces security and humanitarian crisis ahead of
+        2027 elections
+      url: https://www.fides.org/en/news/78436-AMERICA_HAITI_Haiti_faces_security_and_humanitarian_crisis_ahead_of_2027_elections
+      date: '2026-11-16'
+      description: Port-au-Prince – Haiti continues to face a deep political, security
+        and humanitarian crisis. Escalating violence by armed gangs, rising internal
+        displacement and the steady deterioration of living conditions are creating
+        an increasingly alarming situation. In this context, the country is preparing
+        f
+      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
     state_dept_executive_summary: The 1987 constitution provides for the free exercise
       of all religions. Any religious group seeking official recognition must obtain
@@ -12090,6 +12125,17 @@ countries:
       just for Catholics or Christians.”
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 856
+    recent_incidents:
+    - title: AMERICA/HAITI - Haiti faces security and humanitarian crisis ahead of
+        2027 elections
+      url: https://www.fides.org/en/news/78436-AMERICA_HAITI_Haiti_faces_security_and_humanitarian_crisis_ahead_of_2027_elections
+      date: '2026-11-16'
+      description: Port-au-Prince – Haiti continues to face a deep political, security
+        and humanitarian crisis. Escalating violence by armed gangs, rising internal
+        displacement and the steady deterioration of living conditions are creating
+        an increasingly alarming situation. In this context, the country is preparing
+        f
+      source: Agenzia Fides
     archive_modern_excerpt: The 1987 constitution provides for the free exercise of
       all religions. Any religious group seeking official recognition must obtain
       it through a multistep registration process with the Bureau of Worship (BOW),
@@ -13020,8 +13066,8 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id016
-    - &id024
+    - *id017
+    - &id025
       title: GDELT Global Database of Events, Language, and Tone
       url: https://www.gdeltproject.org/
       date: '2025'
@@ -16966,7 +17012,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id016
+    - *id017
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -17600,7 +17646,7 @@ countries:
     - *id004
     - *id006
     - *id012
-    - *id016
+    - *id017
     - *id015
     - *id007
     - *id008
@@ -18142,9 +18188,9 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id020
-    - *id013
     - *id016
+    - *id013
+    - *id017
     - *id014
     - *id007
     - *id008
@@ -20290,6 +20336,7 @@ countries:
     - acn2025
     - vom2026
     - barnabas
+    - cna
     - wea
     - gdelt2025
     - ohchr2024
@@ -20357,6 +20404,7 @@ countries:
     - acn2025
     - vom2026
     - barnabas
+    - cna
     - wea
     - gdelt2025
     - ohchr2024
@@ -20376,9 +20424,10 @@ countries:
     - *id004
     - *id006
     - *id013
-    - *id016
-    - *id021
+    - *id017
     - *id024
+    - *id021
+    - *id025
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -20406,6 +20455,16 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    cna_articles: 1
+    cna_samples:
+    - title: 3 sentenced to death for Jordanian church attack; Churches cancel Christmas
+        celebrations
+      url: https://www.ewtnnews.com/world/middle-east/three-sentenced-to-death-for-jordanian-church-attack-churches-cancel-christmas-celebrations
+      date: '2026-11-15'
+      description: Jordan’s bishops asked for Christmas to be observed “with simplicity
+        and dignity, while preserving the spirituality of the glorious Nativity and
+        its human dimensions,” in support of victims’ families.
+      source: Catholic News Agency
     wea_articles: 2
     wea_samples:
     - title: WEA delegation lays wreath for Christians killed in Jordan church attack
@@ -20479,6 +20538,14 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1525
     recent_incidents:
+    - title: 3 sentenced to death for Jordanian church attack; Churches cancel Christmas
+        celebrations
+      url: https://www.ewtnnews.com/world/middle-east/three-sentenced-to-death-for-jordanian-church-attack-churches-cancel-christmas-celebrations
+      date: '2026-11-15'
+      description: Jordan’s bishops asked for Christmas to be observed “with simplicity
+        and dignity, while preserving the spirituality of the glorious Nativity and
+        its human dimensions,” in support of victims’ families.
+      source: Catholic News Agency
     - title: Extremists Kill 9 Christians at Funeral
       url: https://www.persecution.com/stories/extremists-kill-9-christians-at-funeral
       date: '2026-11-05'
@@ -21931,7 +21998,7 @@ countries:
     - *id004
     - *id006
     - *id023
-    - *id017
+    - *id018
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -21971,15 +22038,14 @@ countries:
       source: Forum 18
     hrwf_articles: 1
     hrwf_samples:
-    - title: 'RUSSIA: Religious issues and persecution – Bimonthly News Digest October
-        15-31'
-      url: https://hrwf.eu/russia-religious-issues-and-persecution-bimonthly-news-digest-october-15-31
-      date: '2026-11-04'
-      description: Religious issues and persecution – Bimonthly News Digest October
-        15-31 30.10.2026 Two more books of Jehovah s Witnesses are banned JW The court
-        in the Murmansk region recognized two editions of the Jehovah s Witnesses
-        Bible as extremist. On October 30, 2026, two more editions of the book Sacred
-        Scri
+    - title: 'UKRAINE: The Ukrainian Orthodox Church (UOC) excluded from Ukraine’s
+        Interfaith Dialogue Platform'
+      url: https://hrwf.eu/ukraine-the-ukrainian-orthodox-church-uoc-excluded-from-ukraines-interfaith-dialogue-platform
+      date: '2026-11-16'
+      description: 'UKRAINE: The Ukrainian Orthodox Church (UOC) excluded from Ukraine
+        s Interfaith Dialogue Platform By Willy Fautré, Director of Human Rights Without
+        Frontiers HRWF (16.11.2026) At a time when interreligious dialogue is particularly
+        vital for Ukraine and its people, one of the country s historically s'
       source: Human Rights Without Frontiers
     uscirf_designation: CPC
     uscirf_key_findings:
@@ -22020,16 +22086,6 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 2141
     recent_incidents:
-    - title: 'RUSSIA: Religious issues and persecution – Bimonthly News Digest October
-        15-31'
-      url: https://hrwf.eu/russia-religious-issues-and-persecution-bimonthly-news-digest-october-15-31
-      date: '2026-11-04'
-      description: Religious issues and persecution – Bimonthly News Digest October
-        15-31 30.10.2026 Two more books of Jehovah s Witnesses are banned JW The court
-        in the Murmansk region recognized two editions of the Jehovah s Witnesses
-        Bible as extremist. On October 30, 2026, two more editions of the book Sacred
-        Scri
-      source: Human Rights Without Frontiers
     - title: 'OCCUPIED UKRAINE: Baptist community banned, alongside Jehovah''s Witnesses,
         Orthodox Church of Ukraine, Greek Catholics'
       url: https://www.forum18.org/archive.php?article_id=3074
@@ -22470,6 +22526,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - hrw
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -22712,6 +22769,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - hrw
     - ohchr2024
     - vdem2025forb
     sources:
@@ -22727,6 +22785,7 @@ countries:
     - *id002
     - *id004
     - *id006
+    - *id022
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -22735,6 +22794,17 @@ countries:
     christian_population: 102510876
     christian_percentage: 91.46
     acn_classification: under_observation
+    hrw_articles: 1
+    hrw_samples:
+    - title: 'Philippines: US Tech Hub to Displace Hundreds'
+      url: https://www.hrw.org/news/2026/11/16/philippines-us-tech-hub-to-displace-hundreds
+      date: '2026-11-16'
+      description: Click to expand Image Mander Matias, a 45-year-old farmer, points
+        to the farmland his family has been tilling for generations in Capas, Tarlac,
+        Philippines, and which he stands to lose because of the planned semiconductor
+        hub under the US-led Pax Silica initiative. © 2026 Lian Buan/Human Rights
+        Watc
+      source: Human Rights Watch
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/philippines/
     state_dept_executive_summary: The constitution provides for the free exercise
       of religion and religious worship and prohibits the establishment of a state
@@ -22797,6 +22867,16 @@ countries:
       powerful economic interests in the country. This has nothing to do with anti-terrorism
       or anti-communism. The gross overreaction to people trying to defend their right
       to a clean, healthy and sustainable environment is totally unacceptable.</p>'
+    recent_incidents:
+    - title: 'Philippines: US Tech Hub to Displace Hundreds'
+      url: https://www.hrw.org/news/2026/11/16/philippines-us-tech-hub-to-displace-hundreds
+      date: '2026-11-16'
+      description: Click to expand Image Mander Matias, a 45-year-old farmer, points
+        to the farmland his family has been tilling for generations in Capas, Tarlac,
+        Philippines, and which he stands to lose because of the planned semiconductor
+        hub under the US-led Pax Silica initiative. © 2026 Lian Buan/Human Rights
+        Watc
+      source: Human Rights Watch
     archive_modern_excerpt: The constitution provides for the free exercise of religion
       and religious worship and prohibits the establishment of a state religion. The
       constitution provides for the separation of religion and state, and religious
@@ -23804,6 +23884,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - hrw
     - ohchr2024
   pew_slug: ''
   metadata:
@@ -23871,6 +23952,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - hrw
     - ohchr2024
     sources:
     - &id066
@@ -23880,6 +23962,7 @@ countries:
     - *id002
     - *id004
     - *id006
+    - *id022
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -23887,6 +23970,16 @@ countries:
     christian_population: 1352428
     christian_percentage: 14.31
     acn_classification: discrimination
+    hrw_articles: 1
+    hrw_samples:
+    - title: 'UAE: 5 Shia Residents Arrested Arbitrarily'
+      url: https://www.hrw.org/news/2026/11/16/uae-5-shia-residents-arrested-arbitrarily
+      date: '2026-11-16'
+      description: 'Click to expand Image Abu Dhabi Court House Complex, Dar Al-Omran,
+        Abu Dhabi, UAE, February 2017. © 2017 Artur Widak/NurPhoto via Getty Images
+        (Beirut) – Emirati authorities have arbitrarily detained at least five Shia
+        Muslim foreign residents since the United States and Israel carried out military '
+      source: Human Rights Watch
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/united-arab-emirates/
     state_dept_executive_summary: The constitution states that Islam is the country’s
       official religion. It provides for freedom of worship if it does not conflict
@@ -23915,6 +24008,15 @@ countries:
       by the government of promoting “a sectarian and hate-filled agenda.”
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1351
+    recent_incidents:
+    - title: 'UAE: 5 Shia Residents Arrested Arbitrarily'
+      url: https://www.hrw.org/news/2026/11/16/uae-5-shia-residents-arrested-arbitrarily
+      date: '2026-11-16'
+      description: 'Click to expand Image Abu Dhabi Court House Complex, Dar Al-Omran,
+        Abu Dhabi, UAE, February 2017. © 2017 Artur Widak/NurPhoto via Getty Images
+        (Beirut) – Emirati authorities have arbitrarily detained at least five Shia
+        Muslim foreign residents since the United States and Israel carried out military '
+      source: Human Rights Watch
     archive_modern_excerpt: The constitution states that Islam is the country’s official
       religion. It provides for freedom of worship if it does not conflict with public
       policy or morals. It states all persons are equal before the law and prohibits
@@ -24006,7 +24108,7 @@ countries:
     - *id004
     - *id006
     - *id012
-    - *id025
+    - *id024
     - *id007
     freedom_house_status: Partly Free
     freedom_house_pr: 5
@@ -24674,7 +24776,7 @@ sources:
   statedepartment2023nepal: *id068
   statedepartment2023southsudan: *id069
   ohchr2024: *id007
-  gdelt2025: *id024
+  gdelt2025: *id025
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id070
@@ -24704,8 +24806,8 @@ sources:
     date: '2026'
   icc2026: *id012
   forum18: *id023
-  mec: *id019
-  bitterwinter: *id020
+  mec: *id020
+  bitterwinter: *id016
   releaseintl: *id009
   vom2026: *id013
   chinaaid: *id078
@@ -24718,13 +24820,13 @@ sources:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
-  barnabas: *id016
+  barnabas: *id017
   csi: *id079
-  cna: *id025
-  hrwf: *id017
+  cna: *id024
+  hrwf: *id018
   adf: *id015
   wea: *id021
-  jubilee: *id018
+  jubilee: *id019
   statedepartment2023afghanistan: *id080
   odwwl2025archiveafghanistan: *id081
   statedepartment2023archiveafghanistan:
@@ -25268,83 +25370,83 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-11-15 13:56 UTC
+  generated_at: 2026-11-16 15:38 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-11-15T13:55:57.055754+00:00'
+    fetched_at: '2026-11-16T15:37:42.227383+00:00'
     message: null
   - name: acn
     status: ok
-    fetched_at: '2026-11-15T13:55:37.201782+00:00'
+    fetched_at: '2026-11-16T15:37:15.006409+00:00'
     message: null
   - name: adf
     status: ok
-    fetched_at: '2026-11-15T13:55:58.940392+00:00'
+    fetched_at: '2026-11-16T15:37:44.204908+00:00'
     message: null
   - name: amnesty
     status: ok
-    fetched_at: '2026-11-15T13:55:49.362092+00:00'
+    fetched_at: '2026-11-16T15:37:32.661797+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-11-15T13:55:52.619363+00:00'
+    fetched_at: '2026-11-16T15:37:34.996101+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-11-15T13:55:43.298793+00:00'
+    fetched_at: '2026-11-16T15:37:21.117939+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-11-15T13:55:45.812850+00:00'
+    fetched_at: '2026-11-16T15:37:25.216854+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-11-15T13:55:54.918084+00:00'
+    fetched_at: '2026-11-16T15:37:39.625193+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-11-15T13:55:54.583267+00:00'
+    fetched_at: '2026-11-16T15:37:39.045438+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-11-15T13:55:40.085920+00:00'
+    fetched_at: '2026-11-16T15:37:17.485535+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-11-15T13:55:56.658156+00:00'
+    fetched_at: '2026-11-16T15:37:41.687540+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-11-15T13:55:41.411119+00:00'
+    fetched_at: '2026-11-16T15:37:19.445771+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-11-15T13:48:21.358902+00:00'
+    fetched_at: '2026-11-16T15:30:02.120899+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-11-15T13:55:35.711384+00:00'
+    fetched_at: '2026-11-16T15:37:13.623372+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-11-15T13:53:00.202764+00:00'
-    message: 2 of 4 queries failed
+    fetched_at: '2026-11-16T15:34:43.980733+00:00'
+    message: 1 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-11-15T13:55:48.894754+00:00'
+    fetched_at: '2026-11-16T15:37:32.072435+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-11-15T13:55:58.177086+00:00'
+    fetched_at: '2026-11-16T15:37:43.389518+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-11-15T13:55:40.712535+00:00'
+    fetched_at: '2026-11-16T15:37:18.237995+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-11-15T13:55:47.825206+00:00'
+    fetched_at: '2026-11-16T15:37:27.433413+00:00'
     message: null
   - name: ippforb
     status: failed
@@ -25352,44 +25454,44 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-11-15T13:56:01.153304+00:00'
+    fetched_at: '2026-11-16T15:37:46.556266+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-11-15T13:55:42.349810+00:00'
+    fetched_at: '2026-11-16T15:37:20.404150+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-11-15T13:55:26.225879+00:00'
+    fetched_at: '2026-11-16T15:37:04.109569+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-11-15T13:56:01.500415+00:00'
+    fetched_at: '2026-11-16T15:37:46.833962+00:00'
     message: null
   - name: ohchr
     status: ok
-    fetched_at: '2026-11-15T13:55:24.815953+00:00'
+    fetched_at: '2026-11-16T15:37:02.196204+00:00'
     message: null
   - name: opendoors
     status: ok
-    fetched_at: '2026-11-15T13:48:20.531561+00:00'
+    fetched_at: '2026-11-16T15:30:01.172739+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-11-15T13:55:48.654149+00:00'
+    fetched_at: '2026-11-16T15:37:31.693367+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-11-15T13:48:24.094905+00:00'
+    fetched_at: '2026-11-16T15:30:06.329917+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-11-15T13:55:44.723200+00:00'
+    fetched_at: '2026-11-16T15:37:22.416691+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-11-15T13:51:16.069124+00:00'
+    fetched_at: '2026-11-16T15:32:53.723802+00:00'
     message: null
   - name: unsrforb
     status: failed
@@ -25397,23 +25499,23 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-11-15T13:49:08.576519+00:00'
+    fetched_at: '2026-11-16T15:30:52.500740+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-11-15T13:55:34.527391+00:00'
+    fetched_at: '2026-11-16T15:37:12.231403+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-11-15T13:55:45.210146+00:00'
+    fetched_at: '2026-11-16T15:37:23.571712+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-11-15T13:56:00.851888+00:00'
+    fetched_at: '2026-11-16T15:37:46.134238+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-11-15T13:56:25.850116+00:00'
+    fetched_at: '2026-11-16T15:38:11.278164+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
