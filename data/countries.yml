@@ -3925,7 +3925,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - &id021
+    - &id023
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
@@ -5448,6 +5448,7 @@ countries:
     - fides
     - adf
     - jubilee
+    - gdelt2025
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -5603,6 +5604,7 @@ countries:
     - fides
     - adf
     - jubilee
+    - gdelt2025
     - ohchr2024
     - vdem2025forb
     sources:
@@ -5626,7 +5628,7 @@ countries:
     - *id006
     - *id010
     - *id012
-    - &id023
+    - &id024
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
@@ -5635,11 +5637,11 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id019
+    - &id020
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - &id020
+    - &id021
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
@@ -5652,6 +5654,10 @@ countries:
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
+    - &id027
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -5833,6 +5839,17 @@ countries:
         against Christians in the Middle Belt of Nigeria. Rayburn House Office 2172
         was packed wh
       source: Jubilee Campaign
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: Christian widows in Nigeria hold fast to faith as they rebuild lives
+        after violence
+      url: https://www.christiantoday.com/news/christian-widows-in-nigeria-hold-fast-to-faith-as-they-rebuild-lives-after-violence
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.christiantoday.com/news/christian-widows-in-nigeria-hold-fast-to-faith-as-they-rebuild-lives-after-violence
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5957,6 +5974,12 @@ countries:
         2 release, sources said. Silvia Samuel, whose pregnant mother, Joy Samuel,
         died wh
       source: Morning Star News
+    - title: Christian widows in Nigeria hold fast to faith as they rebuild lives
+        after violence
+      url: https://www.christiantoday.com/news/christian-widows-in-nigeria-hold-fast-to-faith-as-they-rebuild-lives-after-violence
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
     - title: At Least 14 Christians Killed by Islamists in Plateau State, Nigeria
       url: https://www.barnabasaid.org/us/news/at-least-14-christians-killed-by-islamists-in-plateau-state-nigeria
       date: ''
@@ -6006,6 +6029,7 @@ countries:
       date: ''
       description: ''
       source: ADF International
+    historical_incidents:
     - title: Press Release September 25, 2026 Lawyers urge Nigerian Supreme Court
         to hear case of young musician who nears seventh year in prison on blasphemy
         charge Read More
@@ -6013,7 +6037,6 @@ countries:
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: Press Release August 27, 2026 Nigerian Journalist Cleared of Criminal
         Defamation Charges After Reporting on Christian Persecution Read More
       url: https://adfinternational.org/news/nigerian-journalist-cleared-of-criminal-defamation-charges-after-reporting-on-christian-persecution
@@ -8107,6 +8130,7 @@ countries:
     - owid2024
     - acn2025
     - icc2026
+    - hrw
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -8221,6 +8245,7 @@ countries:
     - owid2024
     - acn2025
     - icc2026
+    - hrw
     - ohchr2024
     - vdem2025forb
     sources:
@@ -8241,6 +8266,10 @@ countries:
     - *id004
     - *id006
     - *id012
+    - &id019
+      title: Human Rights Watch
+      url: https://www.hrw.org/
+      date: '2026'
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -8259,6 +8288,17 @@ countries:
         in the central city of Huế on Tuesday, escalating a decades-long dispute over
         church property and raising renewed concerns about religious freedom in '
       source: International Christian Concern
+    hrw_articles: 1
+    hrw_samples:
+    - title: 'Australia: Use Vietnam Dialogue to Press for Rights Reforms'
+      url: https://www.hrw.org/news/2026/11/22/australia-use-vietnam-dialogue-to-press-for-rights-reforms
+      date: '2026-11-22'
+      description: Click to expand Image Vietnam's President To Lam leads his delegation
+        in a meeting with Philippine President Ferdinand Marcos Jr. at Malacanang
+        Palace in Manila, Philippines, June 1, 2026. © 2026 Rolex Dela Pena/AP Photo
+        (Sydney) – Australian officials should press the Vietnamese government to
+        relea
+      source: Human Rights Watch
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom in Vietnam remains poor as the government regulates and controls
@@ -8297,6 +8337,15 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1701
     recent_incidents:
+    - title: 'Australia: Use Vietnam Dialogue to Press for Rights Reforms'
+      url: https://www.hrw.org/news/2026/11/22/australia-use-vietnam-dialogue-to-press-for-rights-reforms
+      date: '2026-11-22'
+      description: Click to expand Image Vietnam's President To Lam leads his delegation
+        in a meeting with Philippine President Ferdinand Marcos Jr. at Malacanang
+        Palace in Manila, Philippines, June 1, 2026. © 2026 Rolex Dela Pena/AP Photo
+        (Sydney) – Australian officials should press the Vietnamese government to
+        relea
+      source: Human Rights Watch
     - title: Vietnam Demolishes Historic Catholic Property Amid Church Land Dispute
       url: https://persecution.org/2026/11/20/vietnam-demolishes-historic-catholic-property-amid-church-land-dispute
       date: '2026-11-20'
@@ -8639,9 +8688,9 @@ countries:
     - hrw
     - csi
     - cna
+    - fides
     - adf
     - jubilee
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
   pew_slug: america
@@ -9565,9 +9614,9 @@ countries:
     - hrw
     - csi
     - cna
+    - fides
     - adf
     - jubilee
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
     sources:
@@ -9584,18 +9633,12 @@ countries:
     - *id005
     - *id006
     - *id018
-    - &id027
-      title: Human Rights Watch
-      url: https://www.hrw.org/
-      date: '2026'
     - *id019
     - *id020
+    - *id021
+    - *id022
     - *id013
     - *id017
-    - &id026
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
     - *id007
     - *id008
     freedom_house_status: Free
@@ -9658,6 +9701,17 @@ countries:
         violation of international law” and “a grave violation of the fundamental
         human right to religious freedom.”
       source: Catholic News Agency
+    fides_articles: 1
+    fides_samples:
+    - title: 'St. Louis: On the Trail of the French Roots of a Diocese'
+      url: https://www.fides.org/en/news/78460-St_Louis_On_the_Trail_of_the_French_Roots_of_a_Diocese
+      date: '2026-11-21'
+      description: by Marie-Lucile Kubacki St. Louis - The road climbs gently toward
+        Carondelet, in the south of St. Louis, Missouri, through a neighborhood of
+        small brick houses. In the one-dollar bus, passengers from popular suburbs
+        with their arms full of heavy plastic bags gaze tiredly out the window. Behind
+        its f
+      source: Agenzia Fides
     adf_articles: 12
     adf_samples:
     - title: Press Release November 19, 2026 U.S. lawmakers urge President of Egypt
@@ -9694,31 +9748,6 @@ countries:
         minority girls, extrajudicial killings, and the arbitrary detention of individuals
         accused of blasphemy are the key issues Jubilee Campaign, ExMuslims of No
       source: Jubilee Campaign
-    gdelt_articles: 3
-    gdelt_samples:
-    - title: American politicians talk about persecuted Christians abroad – but here
-        what happens when those Christians migrate to the US | National
-      url: https://www.thedigitalcourier.com/news/national/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_946a5fef-0398-5d45-8abc-451954f85966.html
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: American politicians talk about persecuted Christians abroad – but here
-        what happens when those Christians migrate to the US | News
-      url: http://www.grandrapidsmn.com/around_the_web/news/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_f6951762-b913-5147-a54f-2aaf0882ab85.html
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: American politicians talk about persecuted Christians abroad – but here
-        what happens when those Christians migrate to the US | News
-      url: https://www.mesabitribune.com/around_the_web/news/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_20751e10-4c25-58a0-865c-75aecd83ad3b.html
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 3
-    gdelt_sample_urls:
-    - https://www.thedigitalcourier.com/news/national/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_946a5fef-0398-5d45-8abc-451954f85966.html
-    - http://www.grandrapidsmn.com/around_the_web/news/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_f6951762-b913-5147-a54f-2aaf0882ab85.html
-    - https://www.mesabitribune.com/around_the_web/news/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_20751e10-4c25-58a0-865c-75aecd83ad3b.html
     ohchr_recommendation_count: 2030
     recent_incidents:
     - title: China Freedom Alliance calls for U.S. trade policy tied to religious
@@ -9748,24 +9777,6 @@ countries:
         hub under the US-led Pax Silica initiative. © 2026 Lian Buan/Human Rights
         Watc
       source: Human Rights Watch
-    - title: American politicians talk about persecuted Christians abroad – but here
-        what happens when those Christians migrate to the US | National
-      url: https://www.thedigitalcourier.com/news/national/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_946a5fef-0398-5d45-8abc-451954f85966.html
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: American politicians talk about persecuted Christians abroad – but here
-        what happens when those Christians migrate to the US | News
-      url: http://www.grandrapidsmn.com/around_the_web/news/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_f6951762-b913-5147-a54f-2aaf0882ab85.html
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: American politicians talk about persecuted Christians abroad – but here
-        what happens when those Christians migrate to the US | News
-      url: https://www.mesabitribune.com/around_the_web/news/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_20751e10-4c25-58a0-865c-75aecd83ad3b.html
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
     - title: Calls for US Congress to End Impunity Surrounding Forced Religious Conversions
         and Child Marriage in Pakistan
       url: https://jubileecampaign.org/calls-for-us-congress-to-end-impunity-surrounding-forced-religious-conversions-and-child-marriage-in-pakistan
@@ -9860,7 +9871,6 @@ countries:
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: Press Release March 1, 2024 US Senate moves to “leverage all diplomatic
         and sanctions tools available” to hold global violators accountable for religious
         freedom abuses Read More
@@ -10898,7 +10908,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id021
+    - *id023
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -11824,7 +11834,7 @@ countries:
     - *id006
     - *id012
     - *id011
-    - *id020
+    - *id021
     - *id013
     - *id017
     - *id007
@@ -12407,7 +12417,7 @@ countries:
     - *id005
     - *id006
     - *id012
-    - *id021
+    - *id023
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -15141,12 +15151,12 @@ countries:
         - - -5.404342
           - 10.370737
     wiki_url: https://en.wikipedia.org/wiki/Burkina_Faso
-    wiki_extract: Burkina Faso is a landlocked country in West Africa. It is bordered
-      by Mali to the northwest, Niger to the northeast, Benin to the southeast, Togo
-      and Ghana to the south, and Ivory Coast to the southwest. It covers an area
-      of 274,223 km2 (105,878 sq mi). In 2024, the country had an estimated population
-      of approximately 23,286,000. Its citizens are known as Burkinabes, and its capital
-      and largest city is Ouagadougou.
+    wiki_extract: Burkina Faso, formerly known as Upper Volta, is a landlocked country
+      in West Africa. It is bordered by Mali to the northwest, Niger to the northeast,
+      Benin to the southeast, Togo and Ghana to the south, and Ivory Coast to the
+      southwest. It covers an area of 274,223 km2 (105,878 sq mi). In 2024, the country
+      had an estimated population of approximately 23,286,000. Its citizens are known
+      as Burkinabes, and its capital and largest city is Ouagadougou.
     country_polygon: true
     source_ids:
     - odwwl2024
@@ -15556,7 +15566,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id023
+    - *id024
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -17026,7 +17036,9 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - vom2026
     - barnabas
+    - cna
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -17171,7 +17183,9 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
+    - vom2026
     - barnabas
+    - cna
     - ohchr2024
     - vdem2025forb
     sources:
@@ -17188,7 +17202,9 @@ countries:
     - *id003
     - *id004
     - *id006
+    - *id024
     - *id015
+    - *id021
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -17199,6 +17215,18 @@ countries:
     christian_population: 73227447
     christian_percentage: 61.58
     acn_classification: discrimination
+    vom_articles: 1
+    vom_samples:
+    - title: 'ETHIOPIA: Christian Persecution Not Something We Pray For, But God Uses
+        It'
+      url: https://www.persecution.com/stories/ethiopia-christian-persecution-not-something-we-pray-for-but-god-uses-it
+      date: '2026-11-21'
+      description: As a young man, Pastor Desalegn Abebe was forced out of his family
+        home when he chose to follow Jesus Christ. For many months he lived in the
+        forest, foraging fruit and climbing trees at night to sleep out of reach of
+        wild animals. Despite so much difficulty, Desalegn says he often spent nights
+        in t
+      source: Voice of the Martyrs
     barnabas_articles: 1
     barnabas_samples:
     - title: Sixty Christians Killed by Militants in Oromia, Ethiopia
@@ -17206,6 +17234,16 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    cna_articles: 1
+    cna_samples:
+    - title: Kenyan priest urges continued welcome for people fleeing fighting in
+        Ethiopia
+      url: https://www.ewtnnews.com/world/africa/kenyan-priest-urges-continued-welcome-for-people-fleeing-fighting-in-ethiopia
+      date: '2026-11-22'
+      description: “Let us not give up on them,” Father Edward Ltange, a parish priest
+        working in the Kenyan border town of Moyale, said of the Ethiopians who have
+        fled their country due to violence.
+      source: Catholic News Agency
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/ethiopia/
     state_dept_executive_summary: The country is a secular state; the constitution
       requires the separation of religion and the state, establishes freedom of religious
@@ -17236,6 +17274,24 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1767
     recent_incidents:
+    - title: Kenyan priest urges continued welcome for people fleeing fighting in
+        Ethiopia
+      url: https://www.ewtnnews.com/world/africa/kenyan-priest-urges-continued-welcome-for-people-fleeing-fighting-in-ethiopia
+      date: '2026-11-22'
+      description: “Let us not give up on them,” Father Edward Ltange, a parish priest
+        working in the Kenyan border town of Moyale, said of the Ethiopians who have
+        fled their country due to violence.
+      source: Catholic News Agency
+    - title: 'ETHIOPIA: Christian Persecution Not Something We Pray For, But God Uses
+        It'
+      url: https://www.persecution.com/stories/ethiopia-christian-persecution-not-something-we-pray-for-but-god-uses-it
+      date: '2026-11-21'
+      description: As a young man, Pastor Desalegn Abebe was forced out of his family
+        home when he chose to follow Jesus Christ. For many months he lived in the
+        forest, foraging fruit and climbing trees at night to sleep out of reach of
+        wild animals. Despite so much difficulty, Desalegn says he often spent nights
+        in t
+      source: Voice of the Martyrs
     - title: Sixty Christians Killed by Militants in Oromia, Ethiopia
       url: https://www.barnabasaid.org/us/news/sixty-christians-killed-by-militants-in-oromia-ethiopia
       date: ''
@@ -18790,12 +18846,12 @@ countries:
     - *id003
     - *id004
     - *id006
-    - &id024
+    - &id025
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
     - *id018
-    - &id025
+    - &id026
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
       date: '2026'
@@ -20174,8 +20230,8 @@ countries:
     - *id002
     - *id003
     - *id004
+    - *id025
     - *id024
-    - *id023
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -20431,7 +20487,6 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
-    - vom2026
     - barnabas
     - fides
     - wea
@@ -20499,7 +20554,6 @@ countries:
     - odwwl2026
     - owid2024
     - acn2025
-    - vom2026
     - barnabas
     - fides
     - wea
@@ -20520,11 +20574,10 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id023
     - *id015
     - *id022
-    - *id025
     - *id026
+    - *id027
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -20535,16 +20588,6 @@ countries:
     christian_population: 305222
     christian_percentage: 2.81
     acn_classification: discrimination
-    vom_articles: 1
-    vom_samples:
-    - title: Extremists Kill 9 Christians at Funeral
-      url: https://www.persecution.com/stories/extremists-kill-9-christians-at-funeral
-      date: '2026-11-05'
-      description: 'On Friday, Oct. 23, 2026, Islamists attacked a Christian funeral
-        procession in Karak, Jordan, killing 9 and wounding 40, many of whom remain
-        hospitalized. "This attack has deeply shocked the people of Jordan, especially
-        the Christian community," said a longtime front-line worker. "Among the injured '
-      source: Voice of the Martyrs
     barnabas_articles: 1
     barnabas_samples:
     - title: Nine Christians Killed in Attack on Church Funeral in Jordan
@@ -20585,7 +20628,7 @@ countries:
         the attack by masked men that targeted a church funeral in the village of
         Hmoud in the
       source: WEA
-    gdelt_articles: 13
+    gdelt_articles: 5
     gdelt_samples:
     - title: After an Islamist terror attack on a church in Jordan , are Christians
         still safe ?
@@ -20593,9 +20636,9 @@ countries:
       date: '2026-11-06'
       description: ''
       source: GDELT
-    - title: Nine Killed , 40 Injured in Terror Attack on Church in Jordan
-      url: https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
-      date: '2026-10-25'
+    - title: Terror Attack At Orthodox Church In Jordan Leaves 7 Dead , 40 Wounded
+      url: https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
+      date: '2026-10-24'
       description: ''
       source: GDELT
     - title: Terrorist Attack on Church in Jordan Karak Leaves Dozens Dead , Wounded
@@ -20603,10 +20646,10 @@ countries:
       date: '2026-10-24'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 13
+    gdelt_recent_articles: 5
     gdelt_sample_urls:
     - https://www.americamagazine.org/politics-society/weekly-dispatch/2026/11/05/islamist-terror-attack-karak-jordan-christian-community
-    - https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
+    - https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
     - https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/jordan/
     state_dept_executive_summary: The constitution declares Islam the religion of
@@ -20654,14 +20697,6 @@ countries:
       date: '2026-11-06'
       description: ''
       source: GDELT
-    - title: Extremists Kill 9 Christians at Funeral
-      url: https://www.persecution.com/stories/extremists-kill-9-christians-at-funeral
-      date: '2026-11-05'
-      description: 'On Friday, Oct. 23, 2026, Islamists attacked a Christian funeral
-        procession in Karak, Jordan, killing 9 and wounding 40, many of whom remain
-        hospitalized. "This attack has deeply shocked the people of Jordan, especially
-        the Christian community," said a longtime front-line worker. "Among the injured '
-      source: Voice of the Martyrs
     - title: WEA delegation lays wreath for Christians killed in Jordan church attack
       url: https://worldea.org/wea-delegation-karak-jordan-church-attack
       date: '2026-11-02'
@@ -20671,9 +20706,9 @@ countries:
         attack that killed nine Jordanian Christians attending a church funeral. At
         t
       source: WEA
-    - title: Nine Killed , 40 Injured in Terror Attack on Church in Jordan
-      url: https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
-      date: '2026-10-25'
+    - title: Terror Attack At Orthodox Church In Jordan Leaves 7 Dead , 40 Wounded
+      url: https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
+      date: '2026-10-24'
       description: ''
       source: GDELT
     - title: Terrorist Attack on Church in Jordan Karak Leaves Dozens Dead , Wounded
@@ -20681,53 +20716,8 @@ countries:
       date: '2026-10-24'
       description: ''
       source: GDELT
-    - title: Terror Attack At Orthodox Church In Jordan Leaves 7 Dead , 40 Wounded
-      url: https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Gunmen Attack Orthodox Church In Jordan During Service , Killing 7 &
-        Wounding Dozens
-      url: http://www.zerohedge.com/geopolitical/gunmen-attack-orthodox-church-jordan-during-service-killing-7-wounding-dozens
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Jordan Church Attack Death Toll Rises to 9 as Christian Leaders Call
-        for Unity
-      url: https://www.ncregister.com/cna/jordan-attack
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
     - title: Jordan king orders  iron fist  response to deadly church attack
       url: https://www.al-monitor.com/originals/2026/10/jordan-king-orders-iron-fist-response-deadly-church-attack
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: 'Jordan Church Attack : Death Toll Rises To 9 After Gunmen Open Fire
-        During Funeral'
-      url: https://www.newsx.com/world/jordan-church-attack-death-toll-rises-to-9-after-gunmen-open-fire-during-funeral-what-happened-286787
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Jordan King Abdullah orders firm response after deadly church attack
-        | Gun Violence News
-      url: https://www.aljazeera.com/news/2026/10/24/jordans-king-abdullah-orders-firm-response-after-deadly-church-attack
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: 8 killed in attack on church in Jordan
-      url: https://www.christiantoday.com/news/8-killed-in-attack-on-church-in-jordan
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Survivor of deadly attack on Jordan church describes people crawling
-        for their lives
-      url: https://www.clickorlando.com/news/world/2026/10/24/survivor-of-deadly-attack-on-jordan-church-describes-people-crawling-for-their-lives
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    - title: Death toll from Jordan church attack rises to nine
-      url: https://www.thehindu.com/news/international/death-toll-from-jordan-church-attack-rises-to-nine/article71620464.ece
       date: '2026-10-24'
       description: ''
       source: GDELT
@@ -22116,7 +22106,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id024
+    - *id025
     - *id016
     - *id007
     - *id008
@@ -22915,7 +22905,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id027
+    - *id019
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -24040,7 +24030,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - hrw
     - ohchr2024
   pew_slug: ''
   metadata:
@@ -24108,7 +24097,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - hrw
     - ohchr2024
     sources:
     - &id068
@@ -24118,7 +24106,6 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id027
     - *id007
     freedom_house_status: Not Free
     freedom_house_pr: 7
@@ -24126,16 +24113,6 @@ countries:
     christian_population: 1352428
     christian_percentage: 14.31
     acn_classification: discrimination
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'UAE: 5 Shia Residents Arrested Arbitrarily'
-      url: https://www.hrw.org/news/2026/11/16/uae-5-shia-residents-arrested-arbitrarily
-      date: '2026-11-16'
-      description: 'Click to expand Image Abu Dhabi Court House Complex, Dar Al-Omran,
-        Abu Dhabi, UAE, February 2017. © 2017 Artur Widak/NurPhoto via Getty Images
-        (Beirut) – Emirati authorities have arbitrarily detained at least five Shia
-        Muslim foreign residents since the United States and Israel carried out military '
-      source: Human Rights Watch
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/united-arab-emirates/
     state_dept_executive_summary: The constitution states that Islam is the country’s
       official religion. It provides for freedom of worship if it does not conflict
@@ -24164,15 +24141,6 @@ countries:
       by the government of promoting “a sectarian and hate-filled agenda.”
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1351
-    recent_incidents:
-    - title: 'UAE: 5 Shia Residents Arrested Arbitrarily'
-      url: https://www.hrw.org/news/2026/11/16/uae-5-shia-residents-arrested-arbitrarily
-      date: '2026-11-16'
-      description: 'Click to expand Image Abu Dhabi Court House Complex, Dar Al-Omran,
-        Abu Dhabi, UAE, February 2017. © 2017 Artur Widak/NurPhoto via Getty Images
-        (Beirut) – Emirati authorities have arbitrarily detained at least five Shia
-        Muslim foreign residents since the United States and Israel carried out military '
-      source: Human Rights Watch
     archive_modern_excerpt: The constitution states that Islam is the country’s official
       religion. It provides for freedom of worship if it does not conflict with public
       policy or morals. It states all persons are equal before the law and prohibits
@@ -24926,7 +24894,7 @@ sources:
   statedepartment2023nepal: *id070
   statedepartment2023southsudan: *id071
   ohchr2024: *id007
-  gdelt2025: *id026
+  gdelt2025: *id027
   owid2024: *id004
   odwwl2026: *id003
   uscirf2025russia: *id072
@@ -24955,27 +24923,27 @@ sources:
     url: https://www.csw.org.uk/
     date: '2026'
   icc2026: *id012
-  forum18: *id024
-  mec: *id021
+  forum18: *id025
+  mec: *id023
   bitterwinter: *id014
   releaseintl: *id009
-  vom2026: *id023
+  vom2026: *id024
   chinaaid: *id018
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
     url: https://www.osce.org/odihr/freedom-of-religion-or-belief
     date: '2026'
-  hrw: *id027
+  hrw: *id019
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id015
-  csi: *id019
-  cna: *id020
+  csi: *id020
+  cna: *id021
   hrwf: *id016
   adf: *id013
-  wea: *id025
+  wea: *id026
   jubilee: *id017
   statedepartment2023afghanistan: *id080
   odwwl2025archiveafghanistan: *id081
@@ -25520,83 +25488,83 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-11-21 14:37 UTC
+  generated_at: 2026-11-22 14:33 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-11-21T14:37:28.450276+00:00'
+    fetched_at: '2026-11-22T14:33:00.064055+00:00'
     message: null
   - name: acn
     status: ok
-    fetched_at: '2026-11-21T14:37:00.638664+00:00'
+    fetched_at: '2026-11-22T14:32:29.183291+00:00'
     message: null
   - name: adf
     status: ok
-    fetched_at: '2026-11-21T14:37:31.892167+00:00'
+    fetched_at: '2026-11-22T14:33:01.968187+00:00'
     message: null
   - name: amnesty
     status: ok
-    fetched_at: '2026-11-21T14:37:19.134201+00:00'
+    fetched_at: '2026-11-22T14:32:45.202202+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-11-21T14:37:21.578084+00:00'
+    fetched_at: '2026-11-22T14:32:48.303289+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-11-21T14:37:07.949010+00:00'
+    fetched_at: '2026-11-22T14:32:35.084158+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-11-21T14:37:13.094669+00:00'
+    fetched_at: '2026-11-22T14:32:38.085400+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-11-21T14:37:25.845329+00:00'
+    fetched_at: '2026-11-22T14:32:52.662877+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-11-21T14:37:25.421870+00:00'
+    fetched_at: '2026-11-22T14:32:52.194856+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-11-21T14:37:04.241944+00:00'
+    fetched_at: '2026-11-22T14:32:31.138735+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-11-21T14:37:27.976149+00:00'
+    fetched_at: '2026-11-22T14:32:59.758742+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-11-21T14:37:06.016631+00:00'
+    fetched_at: '2026-11-22T14:32:33.269476+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-11-21T14:29:47.081973+00:00'
+    fetched_at: '2026-11-22T14:25:49.054095+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-11-21T14:36:58.826082+00:00'
+    fetched_at: '2026-11-22T14:32:27.842530+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-11-21T14:34:11.894965+00:00'
-    message: 1 of 4 queries failed
+    fetched_at: '2026-11-22T14:30:28.471999+00:00'
+    message: 2 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-11-21T14:37:18.806605+00:00'
+    fetched_at: '2026-11-22T14:32:44.977489+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-11-21T14:37:31.020527+00:00'
+    fetched_at: '2026-11-22T14:33:01.151093+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-11-21T14:37:04.910897+00:00'
+    fetched_at: '2026-11-22T14:32:32.134646+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-11-21T14:37:14.991449+00:00'
+    fetched_at: '2026-11-22T14:32:40.232232+00:00'
     message: null
   - name: ippforb
     status: failed
@@ -25604,44 +25572,44 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-11-21T14:37:33.689305+00:00'
+    fetched_at: '2026-11-22T14:33:04.525103+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-11-21T14:37:07.210929+00:00'
+    fetched_at: '2026-11-22T14:32:34.343421+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-11-21T14:36:47.772428+00:00'
+    fetched_at: '2026-11-22T14:32:19.268020+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-11-21T14:37:34.117349+00:00'
+    fetched_at: '2026-11-22T14:33:04.835662+00:00'
     message: null
   - name: ohchr
     status: ok
-    fetched_at: '2026-11-21T14:36:46.387371+00:00'
+    fetched_at: '2026-11-22T14:32:18.086036+00:00'
     message: null
   - name: opendoors
     status: ok
-    fetched_at: '2026-11-21T14:29:45.888299+00:00'
+    fetched_at: '2026-11-22T14:25:47.878237+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-11-21T14:37:18.439330+00:00'
+    fetched_at: '2026-11-22T14:32:44.612479+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-11-21T14:29:49.900045+00:00'
+    fetched_at: '2026-11-22T14:25:51.173130+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-11-21T14:37:11.847110+00:00'
+    fetched_at: '2026-11-22T14:32:36.366914+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-11-21T14:32:24.085170+00:00'
+    fetched_at: '2026-11-22T14:28:33.122772+00:00'
     message: null
   - name: unsrforb
     status: failed
@@ -25649,23 +25617,23 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-11-21T14:30:34.874631+00:00'
+    fetched_at: '2026-11-22T14:26:28.578433+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-11-21T14:36:57.150979+00:00'
+    fetched_at: '2026-11-22T14:32:26.154228+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-11-21T14:37:12.450755+00:00'
+    fetched_at: '2026-11-22T14:32:37.249467+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-11-21T14:37:33.043440+00:00'
+    fetched_at: '2026-11-22T14:33:03.326242+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-11-21T14:37:58.450700+00:00'
+    fetched_at: '2026-11-22T14:33:29.224152+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
