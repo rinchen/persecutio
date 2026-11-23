@@ -210,7 +210,7 @@ countries:
     - ohchr2024
     - vdem2025forb
     sources:
-    - &id029
+    - &id028
       title: BBC News - Taliban tortured and massacred Hazara men 2021
       url: https://www.bbc.com/news/world-asia-58277463
       date: '2021'
@@ -218,7 +218,7 @@ countries:
       title: Open Doors World Watch List 2024
       url: https://www.opendoors.org/en-US/persecution/countries/
       date: '2024'
-    - &id028
+    - &id027
       title: USCIRF 2023 Annual Report - Afghanistan
       url: https://www.uscirf.gov/countries/afghanistan
       date: '2023'
@@ -1057,12 +1057,12 @@ countries:
     - ohchr2024
     - vdem2025forb
     sources:
-    - &id031
+    - &id030
       title: Pew Research - Measuring Religion in China
       url: https://www.pewresearch.org/religion/2023/08/30/measuring-religion-in-china/
       date: '2023'
     - *id001
-    - &id030
+    - &id029
       title: USCIRF 2023 Annual Report - China
       url: https://www.uscirf.gov/countries/china
       date: '2023'
@@ -1091,7 +1091,7 @@ countries:
       title: ChinaAid - Persecution Monitoring
       url: https://www.chinaaid.org/
       date: '2026'
-    - &id016
+    - &id026
       title: Human Rights Without Frontiers
       url: https://hrwf.eu/
       date: '2026'
@@ -1634,7 +1634,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id032
+    - &id031
       title: USCIRF 2023 Annual Report - Colombia
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -1918,7 +1918,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id033
+    - &id032
       title: USCIRF 2023 Annual Report - Cuba
       url: https://www.uscirf.gov/countries/cuba
       date: '2023'
@@ -2259,7 +2259,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id034
+    - &id033
       title: USCIRF 2023 Annual Report - Eritrea
       url: https://www.uscirf.gov/countries/eritrea
       date: '2023'
@@ -2742,7 +2742,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id035
+    - &id034
       title: USCIRF 2023 Annual Report - India
       url: https://www.uscirf.gov/countries/india
       date: '2023'
@@ -2851,8 +2851,13 @@ countries:
         in China. The post Police stand aside as Indian pastor beaten appeared first
         on Release International .
       source: Release International
-    infochretienne_articles: 1
+    infochretienne_articles: 2
     infochretienne_samples:
+    - title: 'Inde : des chrétiens dénoncent une hausse des agressions au Bengale-Occidental'
+      url: https://www.infochretienne.com/articles/inde-des-chretiens-denoncent-une-hausse-des-agressions-au-bengale-occidental
+      date: '2026-11-23'
+      description: ''
+      source: Info Chrétienne
     - title: 'Inde : des chrétiens quittent leur domicile après une attaque'
       url: https://www.infochretienne.com/articles/inde-des-chretiens-quittent-leur-domicile-apres-une-attaque
       date: '2026-11-05'
@@ -2905,6 +2910,11 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1506
     recent_incidents:
+    - title: 'Inde : des chrétiens dénoncent une hausse des agressions au Bengale-Occidental'
+      url: https://www.infochretienne.com/articles/inde-des-chretiens-denoncent-une-hausse-des-agressions-au-bengale-occidental
+      date: '2026-11-23'
+      description: ''
+      source: Info Chrétienne
     - title: Hindu Nationalists Target Christians in West Bengal, India
       url: https://persecution.org/2026/11/16/hindu-nationalists-target-christians-in-west-bengal-india
       date: '2026-11-16'
@@ -3556,7 +3566,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id036
+    - &id035
       title: USCIRF 2023 Annual Report - Indonesia
       url: https://www.uscirf.gov/countries/indonesia
       date: '2023'
@@ -3908,7 +3918,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id037
+    - &id036
       title: USCIRF 2023 Annual Report - Iran
       url: https://www.uscirf.gov/countries/iran
       date: '2023'
@@ -3925,7 +3935,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - &id023
+    - &id021
       title: Middle East Concern - News
       url: https://www.meconcern.org/
       date: '2026'
@@ -4257,7 +4267,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id038
+    - &id037
       title: USCIRF 2023 Annual Report - Iraq
       url: https://www.uscirf.gov/countries/iraq
       date: '2023'
@@ -4549,7 +4559,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id039
+    - &id038
       title: USCIRF 2023 Annual Report - Laos
       url: https://www.uscirf.gov/countries/laos
       date: '2023'
@@ -5045,7 +5055,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id040
+    - &id039
       title: USCIRF 2023 Annual Report - Mexico
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -5293,7 +5303,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id041
+    - &id040
       title: USCIRF 2023 Annual Report - Nicaragua
       url: https://www.uscirf.gov/countries/nicaragua
       date: '2023'
@@ -5448,7 +5458,6 @@ countries:
     - fides
     - adf
     - jubilee
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -5604,12 +5613,11 @@ countries:
     - fides
     - adf
     - jubilee
-    - gdelt2025
     - ohchr2024
     - vdem2025forb
     sources:
     - *id001
-    - &id042
+    - &id041
       title: USCIRF 2023 Annual Report - Nigeria
       url: https://www.uscirf.gov/countries/nigeria
       date: '2023'
@@ -5628,7 +5636,7 @@ countries:
     - *id006
     - *id010
     - *id012
-    - &id024
+    - &id022
       title: Voice of the Martyrs - Stories
       url: https://www.persecution.com/
       date: '2026'
@@ -5637,15 +5645,15 @@ countries:
       title: Barnabas Aid - Persecuted Church News
       url: https://www.barnabasaid.org/
       date: '2026'
-    - &id020
+    - &id019
       title: Christian Solidarity International
       url: https://www.csi-int.org/
       date: '2026'
-    - &id021
+    - &id020
       title: Catholic News Agency
       url: https://www.catholicnewsagency.com/
       date: '2026'
-    - &id022
+    - &id016
       title: Agenzia Fides - Pontifical Mission Societies News
       url: https://www.fides.org/en
       date: '2026'
@@ -5654,10 +5662,6 @@ countries:
       title: Jubilee Campaign
       url: https://jubileecampaign.org/
       date: '2026'
-    - &id027
-      title: GDELT Global Database of Events, Language, and Tone
-      url: https://www.gdeltproject.org/
-      date: '2025'
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -5839,17 +5843,6 @@ countries:
         against Christians in the Middle Belt of Nigeria. Rayburn House Office 2172
         was packed wh
       source: Jubilee Campaign
-    gdelt_articles: 1
-    gdelt_samples:
-    - title: Christian widows in Nigeria hold fast to faith as they rebuild lives
-        after violence
-      url: https://www.christiantoday.com/news/christian-widows-in-nigeria-hold-fast-to-faith-as-they-rebuild-lives-after-violence
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
-    gdelt_recent_articles: 1
-    gdelt_sample_urls:
-    - https://www.christiantoday.com/news/christian-widows-in-nigeria-hold-fast-to-faith-as-they-rebuild-lives-after-violence
     uscirf_designation: CPC
     uscirf_key_findings:
     - Religious freedom conditions in Nigeria are particularly severe as the government
@@ -5974,12 +5967,6 @@ countries:
         2 release, sources said. Silvia Samuel, whose pregnant mother, Joy Samuel,
         died wh
       source: Morning Star News
-    - title: Christian widows in Nigeria hold fast to faith as they rebuild lives
-        after violence
-      url: https://www.christiantoday.com/news/christian-widows-in-nigeria-hold-fast-to-faith-as-they-rebuild-lives-after-violence
-      date: '2026-10-24'
-      description: ''
-      source: GDELT
     - title: At Least 14 Christians Killed by Islamists in Plateau State, Nigeria
       url: https://www.barnabasaid.org/us/news/at-least-14-christians-killed-by-islamists-in-plateau-state-nigeria
       date: ''
@@ -6029,7 +6016,6 @@ countries:
       date: ''
       description: ''
       source: ADF International
-    historical_incidents:
     - title: Press Release September 25, 2026 Lawyers urge Nigerian Supreme Court
         to hear case of young musician who nears seventh year in prison on blasphemy
         charge Read More
@@ -6037,6 +6023,7 @@ countries:
       date: ''
       description: ''
       source: ADF International
+    historical_incidents:
     - title: Press Release August 27, 2026 Nigerian Journalist Cleared of Criminal
         Defamation Charges After Reporting on Christian Persecution Read More
       url: https://adfinternational.org/news/nigerian-journalist-cleared-of-criminal-defamation-charges-after-reporting-on-christian-persecution
@@ -6349,7 +6336,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id043
+    - &id042
       title: USCIRF 2023 Annual Report - North Korea
       url: https://www.uscirf.gov/countries/north-korea
       date: '2023'
@@ -6502,7 +6489,7 @@ countries:
     - icc2026
     - bitterwinter
     - barnabas
-    - hrwf
+    - fides
     - adf
     - jubilee
     - ohchr2024
@@ -6670,14 +6657,14 @@ countries:
     - icc2026
     - bitterwinter
     - barnabas
-    - hrwf
+    - fides
     - adf
     - jubilee
     - ohchr2024
     - vdem2025forb
     sources:
     - *id001
-    - &id044
+    - &id043
       title: USCIRF 2023 Annual Report - Pakistan
       url: https://www.uscirf.gov/countries/pakistan
       date: '2023'
@@ -6758,26 +6745,18 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    hrwf_articles: 2
-    hrwf_samples:
-    - title: 'PAKISTAN: Supreme Court confirms Qaiser Ayub’s death sentence in blasphemy
-        case'
-      url: https://hrwf.eu/pakistan-supreme-court-confirms-qaiser-ayubs-death-sentence-in-blasphemy-case
-      date: '2026-11-13'
-      description: 'PAKISTAN: Supreme Court confirms Qaiser Ayub’s death sentence
-        in blasphemy case His younger brother, Amoon, was acquitted after twelve years
-        in jail. Two days later, a mob in Punjab burned the clinic of another accused
-        believer. Bitter Winter (06.11.2026) On October 7, 2026, with a decision only
-        rec'
-      source: Human Rights Without Frontiers
-    - title: 'PAKISTAN: An alarming report on Hindus reaches the British Parliament'
-      url: https://hrwf.eu/pakistan-an-alarming-report-on-hindus-reaches-the-british-parliament
-      date: '2026-11-13'
-      description: 'PAKISTAN: An alarming report on Hindus reaches the British Parliament
-        A dossier on desecrated temples, seized land, and abducted girls in Sindh
-        prompts calls to reconsider aid to Islamabad. by A. Sahara Alexander Bitter
-        Winter (09.11.2026) In late October 2026, the British Hindu advocacy organizatio'
-      source: Human Rights Without Frontiers
+    fides_articles: 1
+    fides_samples:
+    - title: 'ASIA/PAKISTAN - Capuchin Friars: “Building bridges of peace and justice
+        is our mission”'
+      url: https://www.fides.org/en/news/78464-ASIA_PAKISTAN_Capuchin_Friars_Building_bridges_of_peace_and_justice_is_our_mission
+      date: '2026-11-23'
+      description: by Paolo Affatato Lahore – “Building bridges of peace and justice
+        is the mission of the Capuchin Friars Minor in Pakistan. In a religiously
+        diverse society such as Pakistan, interreligious dialogue, human dignity and
+        the rule of law are essential pillars for peaceful coexistence. In this context,
+        we
+      source: Agenzia Fides
     adf_articles: 8
     adf_samples:
     - title: Press Release October 13, 2026 Pakistani court orders to reopen case
@@ -6900,6 +6879,16 @@ countries:
       cooperation with the United Nations Children &rsquo; s Fund (UNICEF), among
       other entities.</p>'
     recent_incidents:
+    - title: 'ASIA/PAKISTAN - Capuchin Friars: “Building bridges of peace and justice
+        is our mission”'
+      url: https://www.fides.org/en/news/78464-ASIA_PAKISTAN_Capuchin_Friars_Building_bridges_of_peace_and_justice_is_our_mission
+      date: '2026-11-23'
+      description: by Paolo Affatato Lahore – “Building bridges of peace and justice
+        is the mission of the Capuchin Friars Minor in Pakistan. In a religiously
+        diverse society such as Pakistan, interreligious dialogue, human dignity and
+        the rule of law are essential pillars for peaceful coexistence. In this context,
+        we
+      source: Agenzia Fides
     - title: Advocacy Efforts for Pakistani Christian’s Release Grow More Urgent
       url: https://persecution.org/2026/11/21/advocacy-efforts-for-pakistani-christians-release-grow-more-urgent
       date: '2026-11-21'
@@ -6926,24 +6915,6 @@ countries:
         including 49 Christian victims, according to a new report. The Centre for
         Soci
       source: Morning Star News
-    - title: 'PAKISTAN: Supreme Court confirms Qaiser Ayub’s death sentence in blasphemy
-        case'
-      url: https://hrwf.eu/pakistan-supreme-court-confirms-qaiser-ayubs-death-sentence-in-blasphemy-case
-      date: '2026-11-13'
-      description: 'PAKISTAN: Supreme Court confirms Qaiser Ayub’s death sentence
-        in blasphemy case His younger brother, Amoon, was acquitted after twelve years
-        in jail. Two days later, a mob in Punjab burned the clinic of another accused
-        believer. Bitter Winter (06.11.2026) On October 7, 2026, with a decision only
-        rec'
-      source: Human Rights Without Frontiers
-    - title: 'PAKISTAN: An alarming report on Hindus reaches the British Parliament'
-      url: https://hrwf.eu/pakistan-an-alarming-report-on-hindus-reaches-the-british-parliament
-      date: '2026-11-13'
-      description: 'PAKISTAN: An alarming report on Hindus reaches the British Parliament
-        A dossier on desecrated temples, seized land, and abducted girls in Sindh
-        prompts calls to reconsider aid to Islamabad. by A. Sahara Alexander Bitter
-        Winter (09.11.2026) In late October 2026, the British Hindu advocacy organizatio'
-      source: Human Rights Without Frontiers
     - title: Calls for US Congress to End Impunity Surrounding Forced Religious Conversions
         and Child Marriage in Pakistan
       url: https://jubileecampaign.org/calls-for-us-congress-to-end-impunity-surrounding-forced-religious-conversions-and-child-marriage-in-pakistan
@@ -7278,7 +7249,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id045
+    - &id044
       title: USCIRF 2023 Annual Report - Saudi Arabia
       url: https://www.uscirf.gov/countries/saudi-arabia
       date: '2023'
@@ -7671,7 +7642,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id046
+    - &id045
       title: USCIRF 2023 Annual Report - Somalia
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -7950,7 +7921,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id047
+    - &id046
       title: USCIRF 2023 Annual Report - Syria
       url: https://www.uscirf.gov/countries/syria
       date: '2023'
@@ -7986,8 +7957,13 @@ countries:
       "name": "What are the main causes of modern Christian persecution?", "acceptedAnswer":
       { "@type": "Answ'
     acn_classification: discrimination
-    infochretienne_articles: 1
+    infochretienne_articles: 2
     infochretienne_samples:
+    - title: En Syrie, une ville chrétienne réclame la sécurité après un rapt
+      url: https://www.infochretienne.com/articles/en-syrie-une-ville-chretienne-reclame-la-securite-apres-un-rapt
+      date: '2026-11-23'
+      description: ''
+      source: Info Chrétienne
     - title: 'Syrie : les chefs religieux chrétiens s''alarment après une série de
         rapts'
       url: https://www.infochretienne.com/articles/syrie-les-chefs-religieux-chretiens-salarment-apres-une-serie-de-rapts
@@ -8040,6 +8016,11 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1242
     recent_incidents:
+    - title: En Syrie, une ville chrétienne réclame la sécurité après un rapt
+      url: https://www.infochretienne.com/articles/en-syrie-une-ville-chretienne-reclame-la-securite-apres-un-rapt
+      date: '2026-11-23'
+      description: ''
+      source: Info Chrétienne
     - title: 'Syrie : les chefs religieux chrétiens s''alarment après une série de
         rapts'
       url: https://www.infochretienne.com/articles/syrie-les-chefs-religieux-chretiens-salarment-apres-une-serie-de-rapts
@@ -8250,7 +8231,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id048
+    - &id047
       title: USCIRF 2023 Annual Report - Vietnam
       url: https://www.uscirf.gov/countries/vietnam
       date: '2023'
@@ -8266,7 +8247,7 @@ countries:
     - *id004
     - *id006
     - *id012
-    - &id019
+    - &id079
       title: Human Rights Watch
       url: https://www.hrw.org/
       date: '2026'
@@ -8551,7 +8532,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id049
+    - &id048
       title: USCIRF 2023 Annual Report - Yemen
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -8685,12 +8666,12 @@ countries:
     - gcr2026
     - acn2025
     - chinaaid
-    - hrw
     - csi
     - cna
     - fides
     - adf
     - jubilee
+    - gdelt2025
     - ohchr2024
     - vdem2025forb
   pew_slug: america
@@ -9611,20 +9592,20 @@ countries:
     - gcr2026
     - acn2025
     - chinaaid
-    - hrw
     - csi
     - cna
     - fides
     - adf
     - jubilee
+    - gdelt2025
     - ohchr2024
     - vdem2025forb
     sources:
-    - &id052
+    - &id051
       title: Pew Research - Religion in America
       url: https://www.pewresearch.org/collections/religious-landscape-study/
       date: '2023'
-    - &id050
+    - &id049
       title: USCIRF 2023 Annual Report - United States
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -9635,10 +9616,13 @@ countries:
     - *id018
     - *id019
     - *id020
-    - *id021
-    - *id022
+    - *id016
     - *id013
     - *id017
+    - &id025
+      title: GDELT Global Database of Events, Language, and Tone
+      url: https://www.gdeltproject.org/
+      date: '2025'
     - *id007
     - *id008
     freedom_house_status: Free
@@ -9666,17 +9650,6 @@ countries:
         Now he wants Congress to reverse that decision and make religious freedom
         a conditio
       source: ChinaAid
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'Philippines: US Tech Hub to Displace Hundreds'
-      url: https://www.hrw.org/news/2026/11/16/philippines-us-tech-hub-to-displace-hundreds
-      date: '2026-11-16'
-      description: Click to expand Image Mander Matias, a 45-year-old farmer, points
-        to the farmland his family has been tilling for generations in Capas, Tarlac,
-        Philippines, and which he stands to lose because of the planned semiconductor
-        hub under the US-led Pax Silica initiative. © 2026 Lian Buan/Human Rights
-        Watc
-      source: Human Rights Watch
     csi_articles: 2
     csi_samples:
     - title: CSI President Dr. John Eibner addresses U.S. Congress on worldwide persecution
@@ -9748,6 +9721,17 @@ countries:
         minority girls, extrajudicial killings, and the arbitrary detention of individuals
         accused of blasphemy are the key issues Jubilee Campaign, ExMuslims of No
       source: Jubilee Campaign
+    gdelt_articles: 1
+    gdelt_samples:
+    - title: American politicians talk about persecuted Christians abroad – but here
+        what happens when those Christians migrate to the US | News
+      url: https://www.mesabitribune.com/around_the_web/news/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_20751e10-4c25-58a0-865c-75aecd83ad3b.html
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    gdelt_recent_articles: 1
+    gdelt_sample_urls:
+    - https://www.mesabitribune.com/around_the_web/news/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_20751e10-4c25-58a0-865c-75aecd83ad3b.html
     ohchr_recommendation_count: 2030
     recent_incidents:
     - title: China Freedom Alliance calls for U.S. trade policy tied to religious
@@ -9768,15 +9752,12 @@ countries:
         violation of international law” and “a grave violation of the fundamental
         human right to religious freedom.”
       source: Catholic News Agency
-    - title: 'Philippines: US Tech Hub to Displace Hundreds'
-      url: https://www.hrw.org/news/2026/11/16/philippines-us-tech-hub-to-displace-hundreds
-      date: '2026-11-16'
-      description: Click to expand Image Mander Matias, a 45-year-old farmer, points
-        to the farmland his family has been tilling for generations in Capas, Tarlac,
-        Philippines, and which he stands to lose because of the planned semiconductor
-        hub under the US-led Pax Silica initiative. © 2026 Lian Buan/Human Rights
-        Watc
-      source: Human Rights Watch
+    - title: American politicians talk about persecuted Christians abroad – but here
+        what happens when those Christians migrate to the US | News
+      url: https://www.mesabitribune.com/around_the_web/news/american-politicians-talk-about-persecuted-christians-abroad-but-here-s-what-happens-when-those-christians/article_20751e10-4c25-58a0-865c-75aecd83ad3b.html
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
     - title: Calls for US Congress to End Impunity Surrounding Forced Religious Conversions
         and Child Marriage in Pakistan
       url: https://jubileecampaign.org/calls-for-us-congress-to-end-impunity-surrounding-forced-religious-conversions-and-child-marriage-in-pakistan
@@ -10614,7 +10595,7 @@ countries:
     - ohchr2024
     - vdem2025forb
     sources:
-    - &id051
+    - &id050
       title: USCIRF 2023 Annual Report - Uganda
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -10891,7 +10872,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id053
+    - &id052
       title: USCIRF 2023 Annual Report - Algeria
       url: https://www.uscirf.gov/countries/algeria
       date: '2023'
@@ -10908,7 +10889,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id023
+    - *id021
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -11218,7 +11199,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id054
+    - &id053
       title: USCIRF 2023 Annual Report - Bangladesh
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -11545,7 +11526,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id055
+    - &id054
       title: USCIRF 2023 Annual Report - Central African Republic
       url: https://www.uscirf.gov/countries/central-african-republic
       date: '2023'
@@ -11816,7 +11797,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id056
+    - &id055
       title: USCIRF 2023 Annual Report - Egypt
       url: https://www.uscirf.gov/countries/egypt
       date: '2023'
@@ -11834,7 +11815,7 @@ countries:
     - *id006
     - *id012
     - *id011
-    - *id021
+    - *id020
     - *id013
     - *id017
     - *id007
@@ -12089,6 +12070,7 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - fides
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -12153,11 +12135,12 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
+    - fides
     - ohchr2024
     - vdem2025forb
     sources:
     - *id001
-    - &id057
+    - &id056
       title: USCIRF 2023 Annual Report - Haiti
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -12168,6 +12151,7 @@ countries:
     - *id002
     - *id004
     - *id006
+    - *id016
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -12176,6 +12160,17 @@ countries:
     christian_population: 9975391
     christian_percentage: 88.72
     acn_classification: discrimination
+    fides_articles: 1
+    fides_samples:
+    - title: AMERICA/HAITI - The Church brings hope amid violence
+      url: https://www.fides.org/en/news/78465-AMERICA_HAITI_The_Church_brings_hope_amid_violence
+      date: '2026-11-23'
+      description: Port-au-Prince – Thousands of Haitians have taken to the streets
+        to express their support for El Salvador's President Nayib Bukele, as some
+        2,500 Salvadoran troops deployed in Haiti step up operations against criminal
+        gangs under a bilateral agreement between the two countries . What was initially
+        p
+      source: Agenzia Fides
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/haiti/
     state_dept_executive_summary: The 1987 constitution provides for the free exercise
       of all religions. Any religious group seeking official recognition must obtain
@@ -12204,6 +12199,16 @@ countries:
       just for Catholics or Christians.”
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 856
+    recent_incidents:
+    - title: AMERICA/HAITI - The Church brings hope amid violence
+      url: https://www.fides.org/en/news/78465-AMERICA_HAITI_The_Church_brings_hope_amid_violence
+      date: '2026-11-23'
+      description: Port-au-Prince – Thousands of Haitians have taken to the streets
+        to express their support for El Salvador's President Nayib Bukele, as some
+        2,500 Salvadoran troops deployed in Haiti step up operations against criminal
+        gangs under a bilateral agreement between the two countries . What was initially
+        p
+      source: Agenzia Fides
     archive_modern_excerpt: The 1987 constitution provides for the free exercise of
       all religions. Any religious group seeking official recognition must obtain
       it through a multistep registration process with the Bureau of Worship (BOW),
@@ -12399,7 +12404,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id058
+    - &id057
       title: USCIRF 2023 Annual Report - Libya
       url: https://www.uscirf.gov/countries/libya
       date: '2023'
@@ -12417,7 +12422,7 @@ countries:
     - *id005
     - *id006
     - *id012
-    - *id023
+    - *id021
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -12732,7 +12737,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id059
+    - &id058
       title: USCIRF 2023 Annual Report - Malaysia
       url: https://www.uscirf.gov/countries/malaysia
       date: '2023'
@@ -13119,9 +13124,9 @@ countries:
     wiki_extract: Myanmar, officially the Republic of the Union of Myanmar and also
       referred to as Burma, is a country in northwest Southeast Asia. It is the largest
       country by area in Mainland Southeast Asia and had a population of about 51
-      million at the 2024 census. It is bordered by India and Bangladesh to the northwest,
-      China to the northeast, Laos and Thailand to the east and southeast, and the
-      Andaman Sea and the Bay of Bengal to the south and southwest. The country's
+      million at the time of 2024 census. It is bordered by India and Bangladesh to
+      the northwest, China to the northeast, Laos and Thailand to the east and southeast,
+      and the Andaman Sea and the Bay of Bengal to the south and southwest. The country's
       capital city is Naypyidaw, while its largest city is Yangon.
     country_polygon: true
     source_ids:
@@ -13140,7 +13145,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id060
+    - &id059
       title: USCIRF 2023 Annual Report - Myanmar
       url: https://www.uscirf.gov/countries/burma
       date: '2023'
@@ -13158,7 +13163,7 @@ countries:
     - *id005
     - *id006
     - *id015
-    - *id022
+    - *id016
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -13451,7 +13456,6 @@ countries:
     - acn2025
     - morningstarnews2026
     - icc2026
-    - fides
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -13642,12 +13646,11 @@ countries:
     - acn2025
     - morningstarnews2026
     - icc2026
-    - fides
     - ohchr2024
     - vdem2025forb
     sources:
     - *id001
-    - &id061
+    - &id060
       title: USCIRF 2023 Annual Report - Sudan
       url: https://www.uscirf.gov/countries/sudan
       date: '2023'
@@ -13666,7 +13669,6 @@ countries:
     - *id006
     - *id010
     - *id012
-    - *id022
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -13722,16 +13724,6 @@ countries:
         man — a marriage she opposed because of her Christian faith and her unwillingness
         to be '
       source: International Christian Concern
-    fides_articles: 1
-    fides_samples:
-    - title: AFRICA/SUDAN - Bishops call for peace as war spreads
-      url: https://www.fides.org/en/news/78444-AFRICA_SUDAN_Bishops_call_for_peace_as_war_spreads
-      date: '2026-11-18'
-      description: Khartoum – “We appeal to the African Union, the United Nations,
-        IGAD , the Holy See and the international communities to intensify coordinated
-        diplomatic efforts towards immediate cessation of hostilities, inclusive dialogue
-        and restoration of peace in Sudan.” This is the appeal issued by the Bishop
-      source: Agenzia Fides
     uscirf_designation: none
     uscirf_key_findings:
     - Religious freedom conditions in Sudan have improved significantly, although
@@ -13776,14 +13768,6 @@ countries:
         leaving two pastors and several congregants injured, according to church sources.
         After facing death threats earlier this year from refugees from Sudan, '
       source: Morning Star News
-    - title: AFRICA/SUDAN - Bishops call for peace as war spreads
-      url: https://www.fides.org/en/news/78444-AFRICA_SUDAN_Bishops_call_for_peace_as_war_spreads
-      date: '2026-11-18'
-      description: Khartoum – “We appeal to the African Union, the United Nations,
-        IGAD , the Holy See and the international communities to intensify coordinated
-        diplomatic efforts towards immediate cessation of hostilities, inclusive dialogue
-        and restoration of peace in Sudan.” This is the appeal issued by the Bishop
-      source: Agenzia Fides
     - title: Pastor Jailed in South Sudan for Christian Song with Musical Instruments
       url: https://morningstarnews.org/2026/11/pastor-jailed-in-south-sudan-for-christian-song-with-musical-instruments
       date: '2026-11-17'
@@ -14046,7 +14030,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id062
+    - &id061
       title: USCIRF 2023 Annual Report - Turkey
       url: https://www.uscirf.gov/countries/turkey
       date: '2023'
@@ -14438,7 +14422,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id063
+    - &id062
       title: USCIRF 2023 Annual Report - Venezuela
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -14629,7 +14613,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id064
+    - &id063
       title: USCIRF 2023 Annual Report - Zimbabwe
       url: https://www.uscirf.gov/annual-reports
       date: '2023'
@@ -15566,7 +15550,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id024
+    - *id022
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -15871,7 +15855,7 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id022
+    - *id016
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -16124,7 +16108,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id078
+    - &id077
       title: USCIRF 2025 Annual Report - Uzbekistan
       url: https://www.uscirf.gov/countries/uzbekistan
       date: '2025'
@@ -16405,7 +16389,7 @@ countries:
     - *id004
     - *id005
     - *id006
-    - *id022
+    - *id016
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -16674,7 +16658,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id077
+    - &id076
       title: USCIRF 2025 Annual Report - Turkmenistan
       url: https://www.uscirf.gov/countries/turkmenistan
       date: '2025'
@@ -16943,9 +16927,8 @@ countries:
     opendoors_score: null
     christian_population: 365012
     christian_percentage: 8.07
-    gcr_notes: 'praying-over-the-bible.jpg" /> {"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/#article","isPartOf":{"@id":"https:\/\/globalchristianrelief.org\/stories\/christian-persecution-statistics\/"},"author":{"name":"Global
-      Christian Relief","@id":"https:\/\/globalchristianrelief.org\/#\/schema\/person\/d72fc33d5b8961c2ed9b72cb197413c9"},"headline":"Christian
-      Persecution by the Numbers: 2026 Global Tre'
+    gcr_notes: praying-over-the-bible.jpg" fetchpriority="high"> <meta name="twitter:site"
+      content="@GC_
     acn_classification: discrimination
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/oman/
     state_dept_executive_summary: The Basic Law declares Islam to be the state religion
@@ -17202,9 +17185,9 @@ countries:
     - *id003
     - *id004
     - *id006
-    - *id024
+    - *id022
     - *id015
-    - *id021
+    - *id020
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -17580,6 +17563,7 @@ countries:
     - acn2025
     - icc2026
     - barnabas
+    - fides
     - adf
     - ohchr2024
     - vdem2025forb
@@ -17861,6 +17845,7 @@ countries:
     - acn2025
     - icc2026
     - barnabas
+    - fides
     - adf
     - ohchr2024
     - vdem2025forb
@@ -17879,6 +17864,7 @@ countries:
     - *id006
     - *id012
     - *id015
+    - *id016
     - *id013
     - *id007
     - *id008
@@ -17904,6 +17890,17 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
+    fides_articles: 1
+    fides_samples:
+    - title: AFRICA/DR CONGO - Tensions in Lubumbashi; Christ the King celebration
+        cancelled in Kinshasa
+      url: https://www.fides.org/en/news/78466-AFRICA_DR_CONGO_Tensions_in_Lubumbashi_Christ_the_King_celebration_cancelled_in_Kinshasa
+      date: '2026-11-23'
+      description: Kinshasa – The residence of the Archbishop of Lubumbashi, Archbishop
+        Fulgence Muteba, has been surrounded by security forces since last night,
+        while in Kinshasa the authorities have cancelled the celebration of the Solemnity
+        of Christ the King, which was due to take place at the Tata Raphaël Stadium
+      source: Agenzia Fides
     adf_articles: 1
     adf_samples:
     - title: 'Press Release May 14, 2026 East African Court case filed: Christian
@@ -17942,6 +17939,15 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1597
     recent_incidents:
+    - title: AFRICA/DR CONGO - Tensions in Lubumbashi; Christ the King celebration
+        cancelled in Kinshasa
+      url: https://www.fides.org/en/news/78466-AFRICA_DR_CONGO_Tensions_in_Lubumbashi_Christ_the_King_celebration_cancelled_in_Kinshasa
+      date: '2026-11-23'
+      description: Kinshasa – The residence of the Archbishop of Lubumbashi, Archbishop
+        Fulgence Muteba, has been surrounded by security forces since last night,
+        while in Kinshasa the authorities have cancelled the celebration of the Solemnity
+        of Christ the King, which was due to take place at the Tata Raphaël Stadium
+      source: Agenzia Fides
     - title: At Least 26 Killed in DRC s Mambasa Territory Amid Ebola Crisis
       url: https://persecution.org/2026/11/12/at-least-26-killed-in-drcs-mambasa-territory-amid-ebola-crisis
       date: '2026-11-12'
@@ -18830,7 +18836,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id075
+    - &id074
       title: USCIRF 2025 Annual Report - Kazakhstan
       url: https://www.uscirf.gov/countries/kazakhstan
       date: '2025'
@@ -18846,12 +18852,12 @@ countries:
     - *id003
     - *id004
     - *id006
-    - &id025
+    - &id023
       title: Forum 18 - Freedom of Religion or Belief News
       url: https://www.forum18.org/
       date: '2026'
     - *id018
-    - &id026
+    - &id024
       title: World Evangelical Alliance - Religious Liberty
       url: https://worldea.org/
       date: '2026'
@@ -19130,7 +19136,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id079
+    - &id078
       title: USCIRF 2025 Annual Report - Tajikistan
       url: https://www.uscirf.gov/countries/tajikistan
       date: '2025'
@@ -20215,7 +20221,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id076
+    - &id075
       title: USCIRF 2025 Annual Report - Kyrgyzstan
       url: https://www.uscirf.gov/countries/kyrgyzstan
       date: '2025'
@@ -20230,8 +20236,8 @@ countries:
     - *id002
     - *id003
     - *id004
-    - *id025
-    - *id024
+    - *id023
+    - *id022
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -20488,7 +20494,6 @@ countries:
     - owid2024
     - acn2025
     - barnabas
-    - fides
     - wea
     - gdelt2025
     - ohchr2024
@@ -20555,7 +20560,6 @@ countries:
     - owid2024
     - acn2025
     - barnabas
-    - fides
     - wea
     - gdelt2025
     - ohchr2024
@@ -20575,9 +20579,8 @@ countries:
     - *id004
     - *id006
     - *id015
-    - *id022
-    - *id026
-    - *id027
+    - *id024
+    - *id025
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -20595,18 +20598,6 @@ countries:
       date: ''
       description: ''
       source: Barnabas Aid
-    fides_articles: 1
-    fides_samples:
-    - title: ASIA/JORDAN - Three defendants sentenced to death for attack on Al-Karak
-        Church
-      url: https://www.fides.org/en/news/78443-ASIA_JORDAN_Three_defendants_sentenced_to_death_for_attack_on_Al_Karak_Church
-      date: '2026-11-17'
-      description: Amman – Jordanian court has sentenced three men to death after
-        finding them guilty of carrying out an armed attack targeting people attending
-        a Christian funeral at a Greek Orthodox church in the town of Hamoud-Al-Karak,
-        in southern Jordan. The attack killed ten people and dozens were injured.
-        Accor
-      source: Agenzia Fides
     wea_articles: 2
     wea_samples:
     - title: WEA delegation lays wreath for Christians killed in Jordan church attack
@@ -20628,7 +20619,7 @@ countries:
         the attack by masked men that targeted a church funeral in the village of
         Hmoud in the
       source: WEA
-    gdelt_articles: 5
+    gdelt_articles: 19
     gdelt_samples:
     - title: After an Islamist terror attack on a church in Jordan , are Christians
         still safe ?
@@ -20636,21 +20627,21 @@ countries:
       date: '2026-11-06'
       description: ''
       source: GDELT
-    - title: Terror Attack At Orthodox Church In Jordan Leaves 7 Dead , 40 Wounded
-      url: https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
-      date: '2026-10-24'
+    - title: Jordan arrests three suspects in deadly church attack
+      url: https://www.standard.net.au/story/9380283/jordan-arrests-three-suspects-in-deadly-church-attack
+      date: '2026-10-26'
       description: ''
       source: GDELT
-    - title: Terrorist Attack on Church in Jordan Karak Leaves Dozens Dead , Wounded
-      url: https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
-      date: '2026-10-24'
+    - title: 'Arab News | Jordan arrests 3 over church attack : state TV'
+      url: https://www.arabnews.com/middle-east/jordan-arrests-3-over-church-attack-state-tv-3008281
+      date: '2026-10-26'
       description: ''
       source: GDELT
-    gdelt_recent_articles: 5
+    gdelt_recent_articles: 19
     gdelt_sample_urls:
     - https://www.americamagazine.org/politics-society/weekly-dispatch/2026/11/05/islamist-terror-attack-karak-jordan-christian-community
-    - https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
-    - https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
+    - https://www.standard.net.au/story/9380283/jordan-arrests-three-suspects-in-deadly-church-attack
+    - https://www.arabnews.com/middle-east/jordan-arrests-3-over-church-attack-state-tv-3008281
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/jordan/
     state_dept_executive_summary: The constitution declares Islam the religion of
       the state but safeguards “the free exercise of all forms of worship and religious
@@ -20681,16 +20672,6 @@ countries:
     state_dept_christian_mentions: true
     ohchr_recommendation_count: 1525
     recent_incidents:
-    - title: ASIA/JORDAN - Three defendants sentenced to death for attack on Al-Karak
-        Church
-      url: https://www.fides.org/en/news/78443-ASIA_JORDAN_Three_defendants_sentenced_to_death_for_attack_on_Al_Karak_Church
-      date: '2026-11-17'
-      description: Amman – Jordanian court has sentenced three men to death after
-        finding them guilty of carrying out an armed attack targeting people attending
-        a Christian funeral at a Greek Orthodox church in the town of Hamoud-Al-Karak,
-        in southern Jordan. The attack killed ten people and dozens were injured.
-        Accor
-      source: Agenzia Fides
     - title: After an Islamist terror attack on a church in Jordan , are Christians
         still safe ?
       url: https://www.americamagazine.org/politics-society/weekly-dispatch/2026/11/05/islamist-terror-attack-karak-jordan-christian-community
@@ -20706,21 +20687,109 @@ countries:
         attack that killed nine Jordanian Christians attending a church funeral. At
         t
       source: WEA
-    - title: Terror Attack At Orthodox Church In Jordan Leaves 7 Dead , 40 Wounded
-      url: https://dailycaller.com/2026/10/24/jordan-orthodox-church-funeral-shooting-karak
+    - title: Jordan arrests three suspects in deadly church attack
+      url: https://www.standard.net.au/story/9380283/jordan-arrests-three-suspects-in-deadly-church-attack
+      date: '2026-10-26'
+      description: ''
+      source: GDELT
+    - title: 'Arab News | Jordan arrests 3 over church attack : state TV'
+      url: https://www.arabnews.com/middle-east/jordan-arrests-3-over-church-attack-state-tv-3008281
+      date: '2026-10-26'
+      description: ''
+      source: GDELT
+    - title: Nine Killed , 40 Injured in Terror Attack on Church in Jordan
+      url: https://townhall.com/news/josephchalfant/2026/10/25/nine-killed-40-injured-in-terror-attack-on-church-in-jordan-n2685270
+      date: '2026-10-25'
+      description: ''
+      source: GDELT
+    - title: Survivor of deadly attack on Jordan church describes people crawling
+        for their lives
+      url: https://www.asiaone.com/asia/survivor-deadly-attack-jordan-church-describes-people-crawling-their-lives
+      date: '2026-10-25'
+      description: ''
+      source: GDELT
+    - title: Survivor of deadly attack on Jordan church describes people crawling
+        for their lives
+      url: https://www.asiaone.com:443/asia/survivor-deadly-attack-jordan-church-describes-people-crawling-their-lives
+      date: '2026-10-25'
+      description: ''
+      source: GDELT
+    - title: Jordan King Vows  Harshest Penaltie After Gunmen Kill Nine at Church
+        Funeral and Wounding Nearly 40
+      url: https://www.ibtimes.co.uk/jordan-church-funeral-shooting-kills-nine-1827634
+      date: '2026-10-25'
+      description: ''
+      source: GDELT
+    - title: Jordan king vows no leniency after rare attack on Christian minority
+      url: https://www.middle-east-online.com/en/jordan-king-vows-no-leniency-after-rare-attack-christian-minority
+      date: '2026-10-25'
+      description: ''
+      source: GDELT
+    - title: Jordan Church Attack Death Toll Rises to 9 as Christian Leaders Call
+        for Unity
+      url: https://www.ncregister.com/cna/jordan-attack
       date: '2026-10-24'
       description: ''
       source: GDELT
-    - title: Terrorist Attack on Church in Jordan Karak Leaves Dozens Dead , Wounded
-      url: https://english.aawsat.com/arab-world/5332722-terrorist-attack-church-jordans-karak-leaves-dozens-dead-wounded
+    - title: 'Jordan Church Attack : Death Toll Rises To 9 After Gunmen Open Fire
+        During Funeral'
+      url: https://www.newsx.com/world/jordan-church-attack-death-toll-rises-to-9-after-gunmen-open-fire-during-funeral-what-happened-286787
       date: '2026-10-24'
       description: ''
       source: GDELT
-    - title: Jordan king orders  iron fist  response to deadly church attack
-      url: https://www.al-monitor.com/originals/2026/10/jordan-king-orders-iron-fist-response-deadly-church-attack
+    - title: Jordan King Abdullah orders firm response after deadly church attack
+        | Gun Violence News
+      url: https://www.aljazeera.com/news/2026/10/24/jordans-king-abdullah-orders-firm-response-after-deadly-church-attack
       date: '2026-10-24'
       description: ''
       source: GDELT
+    - title: Survivor describes deadly attack by gunmen on a church in Jordan
+      url: https://www.wsbradio.com/news/world/survivor-deadly/N6RZPTVSEE453HEEQLABU2EUUE
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    - title: Survivor of deadly attack on Jordan church describes people crawling
+        for their lives
+      url: https://www.stcatharinesstandard.ca/news/world/survivor-of-deadly-attack-on-jordan-church-describes-people-crawling-for-their-lives/article_f24f572b-b44b-5325-88c9-8003b3da4db1.html
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    - title: Deadly church attack shocks Jordan deep - rooted Christian community
+      url: https://www.thenationalnews.com/news/mena/2026/10/24/jordan-christians-church
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    - title: Survivor of deadly attack on Jordan church describes people crawling
+        for their lives
+      url: https://krmg.com/2026/10/24/survivor-of-deadly-attack-on-jordan-church-describes-people-crawling-for-their-lives
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    - title: Survivor of deadly attack on Jordan church describes people crawling
+        for their lives
+      url: http://www.rockymounttelegram.com/news/world/survivor-of-deadly-attack-on-jordan-church-describes-people-crawling-for-their-lives/article_b7eae8a5-9e16-5520-943a-f4dec3ae9e6c.html
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    - title: Survivor of deadly attack on Jordan church describes people crawling
+        for their lives
+      url: https://www.cjme.com/2026/10/24/survivor-of-deadly-attack-on-jordan-church-describes-people-crawling-for-their-lives
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    - title: Gunmen open fire at a church during a funeral in Jordan , killing 7 and
+        wounding 40
+      url: https://www.wmuk.org/npr-news/2026-10-24/gunmen-open-fire-at-a-church-during-a-funeral-in-jordan-killing-7-and-wounding-40
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    - title: Gunmen open fire at a church during a funeral in Jordan , killing 7 and
+        wounding 40
+      url: https://www.wlrn.org/npr-breaking-news/2026-10-24/gunmen-open-fire-at-a-church-during-a-funeral-in-jordan-killing-7-and-wounding-40
+      date: '2026-10-24'
+      description: ''
+      source: GDELT
+    historical_incidents:
     - title: World Evangelical Alliance condemns deadly shooting at Jordan church
         funeral
       url: https://worldea.org/world-evangelical-alliance-condemns-deadly-shooting-at-jordan-church-funeral
@@ -20731,11 +20800,6 @@ countries:
         the attack by masked men that targeted a church funeral in the village of
         Hmoud in the
       source: WEA
-    - title: Gunmen kill 7 at church in southern Jordan
-      url: https://www.vanguardngr.com/2026/10/gunmen-kill-7-at-church-in-southern-jordan
-      date: '2026-10-23'
-      description: ''
-      source: GDELT
     - title: Nine Christians Killed in Attack on Church Funeral in Jordan
       url: https://www.barnabasaid.org/us/news/nine-christians-killed-in-attack-on-church-funeral-in-jordan
       date: ''
@@ -22091,7 +22155,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id072
+    - &id071
       title: USCIRF 2025 Annual Report - Russia
       url: https://www.uscirf.gov/countries/russia
       date: '2025'
@@ -22106,8 +22170,8 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id025
-    - *id016
+    - *id023
+    - *id026
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -22375,7 +22439,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id073
+    - &id072
       title: USCIRF 2025 Annual Report - Azerbaijan
       url: https://www.uscirf.gov/countries/azerbaijan
       date: '2025'
@@ -22531,7 +22595,7 @@ countries:
     - vdem2025forb
     sources:
     - *id001
-    - &id074
+    - &id073
       title: USCIRF 2025 Annual Report - Sri Lanka
       url: https://www.uscirf.gov/countries/sri-lanka
       date: '2025'
@@ -22646,7 +22710,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - hrw
     - ohchr2024
     - vdem2025forb
   pew_slug: ''
@@ -22889,7 +22952,6 @@ countries:
     - freedomhouse2024
     - owid2024
     - acn2025
-    - hrw
     - ohchr2024
     - vdem2025forb
     sources:
@@ -22905,7 +22967,6 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id019
     - *id007
     - *id008
     freedom_house_status: Partly Free
@@ -22914,17 +22975,6 @@ countries:
     christian_population: 102510876
     christian_percentage: 91.46
     acn_classification: under_observation
-    hrw_articles: 1
-    hrw_samples:
-    - title: 'Philippines: US Tech Hub to Displace Hundreds'
-      url: https://www.hrw.org/news/2026/11/16/philippines-us-tech-hub-to-displace-hundreds
-      date: '2026-11-16'
-      description: Click to expand Image Mander Matias, a 45-year-old farmer, points
-        to the farmland his family has been tilling for generations in Capas, Tarlac,
-        Philippines, and which he stands to lose because of the planned semiconductor
-        hub under the US-led Pax Silica initiative. © 2026 Lian Buan/Human Rights
-        Watc
-      source: Human Rights Watch
     state_dept_url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/philippines/
     state_dept_executive_summary: The constitution provides for the free exercise
       of religion and religious worship and prohibits the establishment of a state
@@ -22987,16 +23037,6 @@ countries:
       powerful economic interests in the country. This has nothing to do with anti-terrorism
       or anti-communism. The gross overreaction to people trying to defend their right
       to a clean, healthy and sustainable environment is totally unacceptable.</p>'
-    recent_incidents:
-    - title: 'Philippines: US Tech Hub to Displace Hundreds'
-      url: https://www.hrw.org/news/2026/11/16/philippines-us-tech-hub-to-displace-hundreds
-      date: '2026-11-16'
-      description: Click to expand Image Mander Matias, a 45-year-old farmer, points
-        to the farmland his family has been tilling for generations in Capas, Tarlac,
-        Philippines, and which he stands to lose because of the planned semiconductor
-        hub under the US-led Pax Silica initiative. © 2026 Lian Buan/Human Rights
-        Watc
-      source: Human Rights Watch
     archive_modern_excerpt: The constitution provides for the free exercise of religion
       and religious worship and prohibits the establishment of a state religion. The
       constitution provides for the separation of religion and state, and religious
@@ -23217,7 +23257,7 @@ countries:
     - *id002
     - *id004
     - *id006
-    - *id022
+    - *id016
     - *id007
     - *id008
     freedom_house_status: Not Free
@@ -23573,7 +23613,7 @@ countries:
     - ohchr2024
     - vdem2025forb
     sources:
-    - &id065
+    - &id064
       title: U.S. State Department IRF Report 2023 - Kenya
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kenya/
       date: '2023'
@@ -23830,7 +23870,7 @@ countries:
     - acn2025
     - ohchr2024
     sources:
-    - &id066
+    - &id065
       title: U.S. State Department IRF Report 2023 - Tanzania
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/tanzania/
       date: '2023'
@@ -23952,7 +23992,7 @@ countries:
     - acn2025
     - ohchr2024
     sources:
-    - &id067
+    - &id066
       title: U.S. State Department IRF Report 2023 - Kuwait
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/kuwait/
       date: '2023'
@@ -24099,7 +24139,7 @@ countries:
     - acn2025
     - ohchr2024
     sources:
-    - &id068
+    - &id067
       title: U.S. State Department IRF Report 2023 - United Arab Emirates
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/united-arab-emirates/
       date: '2023'
@@ -24220,7 +24260,7 @@ countries:
     - acn2025
     - ohchr2024
     sources:
-    - &id069
+    - &id068
       title: U.S. State Department IRF Report 2023 - Lebanon
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/lebanon/
       date: '2023'
@@ -24371,7 +24411,7 @@ countries:
     - acn2025
     - ohchr2024
     sources:
-    - &id070
+    - &id069
       title: U.S. State Department IRF Report 2023 - Nepal
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/nepal/
       date: '2023'
@@ -24723,7 +24763,7 @@ countries:
     - icc2026
     - ohchr2024
     sources:
-    - &id071
+    - &id070
       title: U.S. State Department IRF Report 2023 - South Sudan
       url: https://www.state.gov/reports/2023-report-on-international-religious-freedom/south-sudan/
       date: '2023'
@@ -24844,70 +24884,70 @@ sources:
       Faith 2022-24 / Report on Christian persecution
     url: https://acninternational.org/new-acn-report-persecution-of-christians-has-worsened-around-the-globe/
     date: '2024'
-  uscirf2023afghanistan: *id028
-  bbc2021: *id029
-  uscirf2023china: *id030
-  pew2023china: *id031
-  uscirf2023colombia: *id032
-  uscirf2023cuba: *id033
-  uscirf2023eritrea: *id034
-  uscirf2023india: *id035
-  uscirf2023indonesia: *id036
-  uscirf2023iran: *id037
-  uscirf2023iraq: *id038
-  uscirf2023laos: *id039
-  uscirf2023mexico: *id040
-  uscirf2023nicaragua: *id041
-  uscirf2023nigeria: *id042
-  uscirf2023northkorea: *id043
-  uscirf2023pakistan: *id044
-  uscirf2023saudiarabia: *id045
-  uscirf2023somalia: *id046
-  uscirf2023syria: *id047
-  uscirf2023vietnam: *id048
-  uscirf2023yemen: *id049
-  uscirf2023unitedstates: *id050
-  uscirf2023uganda: *id051
-  pew2023america: *id052
-  uscirf2023algeria: *id053
-  uscirf2023bangladesh: *id054
-  uscirf2023car: *id055
-  uscirf2023egypt: *id056
-  uscirf2023haiti: *id057
-  uscirf2023libya: *id058
-  uscirf2023malaysia: *id059
-  uscirf2023myanmar: *id060
-  uscirf2023sudan: *id061
-  uscirf2023turkey: *id062
-  uscirf2023venezuela: *id063
-  uscirf2023zimbabwe: *id064
+  uscirf2023afghanistan: *id027
+  bbc2021: *id028
+  uscirf2023china: *id029
+  pew2023china: *id030
+  uscirf2023colombia: *id031
+  uscirf2023cuba: *id032
+  uscirf2023eritrea: *id033
+  uscirf2023india: *id034
+  uscirf2023indonesia: *id035
+  uscirf2023iran: *id036
+  uscirf2023iraq: *id037
+  uscirf2023laos: *id038
+  uscirf2023mexico: *id039
+  uscirf2023nicaragua: *id040
+  uscirf2023nigeria: *id041
+  uscirf2023northkorea: *id042
+  uscirf2023pakistan: *id043
+  uscirf2023saudiarabia: *id044
+  uscirf2023somalia: *id045
+  uscirf2023syria: *id046
+  uscirf2023vietnam: *id047
+  uscirf2023yemen: *id048
+  uscirf2023unitedstates: *id049
+  uscirf2023uganda: *id050
+  pew2023america: *id051
+  uscirf2023algeria: *id052
+  uscirf2023bangladesh: *id053
+  uscirf2023car: *id054
+  uscirf2023egypt: *id055
+  uscirf2023haiti: *id056
+  uscirf2023libya: *id057
+  uscirf2023malaysia: *id058
+  uscirf2023myanmar: *id059
+  uscirf2023sudan: *id060
+  uscirf2023turkey: *id061
+  uscirf2023venezuela: *id062
+  uscirf2023zimbabwe: *id063
   freedomhouse2024: *id002
   statedepartment2023:
     title: U.S. State Department International Religious Freedom Report 2023
     url: https://www.state.gov/international-religious-freedom-reports/
     date: '2023'
-  statedepartment2023kenya: *id065
-  statedepartment2023tanzania: *id066
-  statedepartment2023kuwait: *id067
-  statedepartment2023unitedarabemirates: *id068
-  statedepartment2023lebanon: *id069
-  statedepartment2023nepal: *id070
-  statedepartment2023southsudan: *id071
+  statedepartment2023kenya: *id064
+  statedepartment2023tanzania: *id065
+  statedepartment2023kuwait: *id066
+  statedepartment2023unitedarabemirates: *id067
+  statedepartment2023lebanon: *id068
+  statedepartment2023nepal: *id069
+  statedepartment2023southsudan: *id070
   ohchr2024: *id007
-  gdelt2025: *id027
+  gdelt2025: *id025
   owid2024: *id004
   odwwl2026: *id003
-  uscirf2025russia: *id072
-  uscirf2025azerbaijan: *id073
-  uscirf2025srilanka: *id074
-  uscirf2025kazakhstan: *id075
-  uscirf2025kyrgyzstan: *id076
-  uscirf2025turkmenistan: *id077
-  uscirf2025uzbekistan: *id078
-  uscirf2025tajikistan: *id079
+  uscirf2025russia: *id071
+  uscirf2025azerbaijan: *id072
+  uscirf2025srilanka: *id073
+  uscirf2025kazakhstan: *id074
+  uscirf2025kyrgyzstan: *id075
+  uscirf2025turkmenistan: *id076
+  uscirf2025uzbekistan: *id077
+  uscirf2025tajikistan: *id078
   morningstarnews2026: *id010
   infochretienne: *id011
-  fides: *id022
+  fides: *id016
   aciprensa:
     title: ACI Prensa - Noticias católicas
     url: https://www.aciprensa.com/
@@ -24923,27 +24963,27 @@ sources:
     url: https://www.csw.org.uk/
     date: '2026'
   icc2026: *id012
-  forum18: *id025
-  mec: *id023
+  forum18: *id023
+  mec: *id021
   bitterwinter: *id014
   releaseintl: *id009
-  vom2026: *id024
+  vom2026: *id022
   chinaaid: *id018
   osce:
     title: OSCE / ODIHR - Freedom of Religion or Belief
     url: https://www.osce.org/odihr/freedom-of-religion-or-belief
     date: '2026'
-  hrw: *id019
+  hrw: *id079
   amnesty:
     title: Amnesty International
     url: https://www.amnesty.org/
     date: '2026'
   barnabas: *id015
-  csi: *id020
-  cna: *id021
-  hrwf: *id016
+  csi: *id019
+  cna: *id020
+  hrwf: *id026
   adf: *id013
-  wea: *id026
+  wea: *id024
   jubilee: *id017
   statedepartment2023afghanistan: *id080
   odwwl2025archiveafghanistan: *id081
@@ -25488,83 +25528,83 @@ sources:
     date: '2023'
 fetched:
   natural_earth_geojson: data/fetched/natural_earth_110m.geojson
-  generated_at: 2026-11-22 14:33 UTC
+  generated_at: 2026-11-23 18:00 UTC
   source_statuses:
   - name: aciprensa
     status: ok
-    fetched_at: '2026-11-22T14:33:00.064055+00:00'
+    fetched_at: '2026-11-23T18:00:27.024020+00:00'
     message: null
   - name: acn
     status: ok
-    fetched_at: '2026-11-22T14:32:29.183291+00:00'
+    fetched_at: '2026-11-23T17:59:48.497534+00:00'
     message: null
   - name: adf
     status: ok
-    fetched_at: '2026-11-22T14:33:01.968187+00:00'
+    fetched_at: '2026-11-23T18:00:30.357148+00:00'
     message: null
   - name: amnesty
     status: ok
-    fetched_at: '2026-11-22T14:32:45.202202+00:00'
+    fetched_at: '2026-11-23T18:00:17.477264+00:00'
     message: null
   - name: barnabas
     status: ok
-    fetched_at: '2026-11-22T14:32:48.303289+00:00'
+    fetched_at: '2026-11-23T18:00:20.048102+00:00'
     message: null
   - name: bitterwinter
     status: ok
-    fetched_at: '2026-11-22T14:32:35.084158+00:00'
+    fetched_at: '2026-11-23T18:00:03.110339+00:00'
     message: null
   - name: chinaaid
     status: ok
-    fetched_at: '2026-11-22T14:32:38.085400+00:00'
+    fetched_at: '2026-11-23T18:00:07.434344+00:00'
     message: null
   - name: cna
     status: ok
-    fetched_at: '2026-11-22T14:32:52.662877+00:00'
+    fetched_at: '2026-11-23T18:00:24.329388+00:00'
     message: null
   - name: csi
     status: ok
-    fetched_at: '2026-11-22T14:32:52.194856+00:00'
+    fetched_at: '2026-11-23T18:00:23.897805+00:00'
     message: null
   - name: csw
     status: ok
-    fetched_at: '2026-11-22T14:32:31.138735+00:00'
+    fetched_at: '2026-11-23T17:59:51.441947+00:00'
     message: null
   - name: fides
     status: ok
-    fetched_at: '2026-11-22T14:32:59.758742+00:00'
+    fetched_at: '2026-11-23T18:00:26.479117+00:00'
     message: null
   - name: forum18
     status: ok
-    fetched_at: '2026-11-22T14:32:33.269476+00:00'
+    fetched_at: '2026-11-23T17:59:53.395365+00:00'
     message: null
   - name: freedomhouse
     status: ok
-    fetched_at: '2026-11-22T14:25:49.054095+00:00'
+    fetched_at: '2026-11-23T17:52:37.574096+00:00'
     message: null
   - name: gcr
     status: ok
-    fetched_at: '2026-11-22T14:32:27.842530+00:00'
+    fetched_at: '2026-11-23T17:59:46.992512+00:00'
     message: null
   - name: gdelt
     status: partial
-    fetched_at: '2026-11-22T14:30:28.471999+00:00'
+    fetched_at: '2026-11-23T17:57:05.594927+00:00'
     message: 2 of 4 queries failed
   - name: hrw
     status: ok
-    fetched_at: '2026-11-22T14:32:44.977489+00:00'
+    fetched_at: '2026-11-23T18:00:17.014630+00:00'
     message: null
   - name: hrwf
     status: ok
-    fetched_at: '2026-11-22T14:33:01.151093+00:00'
+    fetched_at: '2026-11-23T18:00:29.485676+00:00'
     message: null
   - name: icc
     status: ok
-    fetched_at: '2026-11-22T14:32:32.134646+00:00'
+    fetched_at: '2026-11-23T17:59:52.107094+00:00'
     message: null
   - name: infochretienne
     status: ok
-    fetched_at: '2026-11-22T14:32:40.232232+00:00'
+    fetched_at: '2026-11-23T18:00:12.538115+00:00'
     message: null
   - name: ippforb
     status: failed
@@ -25572,44 +25612,44 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: jubilee
     status: ok
-    fetched_at: '2026-11-22T14:33:04.525103+00:00'
+    fetched_at: '2026-11-23T18:00:32.471136+00:00'
     message: null
   - name: mec
     status: ok
-    fetched_at: '2026-11-22T14:32:34.343421+00:00'
+    fetched_at: '2026-11-23T17:59:54.769138+00:00'
     message: null
   - name: morningstarnews
     status: ok
-    fetched_at: '2026-11-22T14:32:19.268020+00:00'
+    fetched_at: '2026-11-23T17:59:36.030167+00:00'
     message: null
   - name: natural_earth_110m
     url: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_110m_admin_0_countries.geojson
     status: ok
-    fetched_at: '2026-11-22T14:33:04.835662+00:00'
+    fetched_at: '2026-11-23T18:00:32.860410+00:00'
     message: null
   - name: ohchr
     status: ok
-    fetched_at: '2026-11-22T14:32:18.086036+00:00'
+    fetched_at: '2026-11-23T17:59:35.617017+00:00'
     message: null
   - name: opendoors
     status: ok
-    fetched_at: '2026-11-22T14:25:47.878237+00:00'
+    fetched_at: '2026-11-23T17:52:36.528903+00:00'
     message: null
   - name: osce
     status: ok
-    fetched_at: '2026-11-22T14:32:44.612479+00:00'
+    fetched_at: '2026-11-23T18:00:16.785243+00:00'
     message: null
   - name: owid
     status: ok
-    fetched_at: '2026-11-22T14:25:51.173130+00:00'
+    fetched_at: '2026-11-23T17:52:40.352604+00:00'
     message: null
   - name: releaseintl
     status: ok
-    fetched_at: '2026-11-22T14:32:36.366914+00:00'
+    fetched_at: '2026-11-23T18:00:05.869175+00:00'
     message: null
   - name: statedepartment
     status: ok
-    fetched_at: '2026-11-22T14:28:33.122772+00:00'
+    fetched_at: '2026-11-23T17:55:16.693765+00:00'
     message: null
   - name: unsrforb
     status: failed
@@ -25617,23 +25657,23 @@ fetched:
     message: 'fetch failed: HTTPError: HTTP Error 403: Forbidden'
   - name: uscirf
     status: ok
-    fetched_at: '2026-11-22T14:26:28.578433+00:00'
+    fetched_at: '2026-11-23T17:53:24.623493+00:00'
     message: null
   - name: vid
     status: partial
-    fetched_at: '2026-11-22T14:32:26.154228+00:00'
+    fetched_at: '2026-11-23T17:59:44.924331+00:00'
     message: parse_limited
   - name: vom
     status: ok
-    fetched_at: '2026-11-22T14:32:37.249467+00:00'
+    fetched_at: '2026-11-23T18:00:06.560061+00:00'
     message: null
   - name: wea
     status: ok
-    fetched_at: '2026-11-22T14:33:03.326242+00:00'
+    fetched_at: '2026-11-23T18:00:31.943660+00:00'
     message: null
   - name: wikipedia
     status: ok
-    fetched_at: '2026-11-22T14:33:29.224152+00:00'
+    fetched_at: '2026-11-23T18:00:57.312134+00:00'
     message: ok=70 partial=0 failed=0
   data_sources:
     freedom_house: data/fetched/freedom_house.json
