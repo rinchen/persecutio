@@ -21,10 +21,12 @@ from fetch_common import (
 ensure_fetched_dir()
 
 WWL_URL = "https://www.opendoors.org/en-US/persecution/countries/"
-# Official scores/ranks table (HTML country map is JS-only on opendoors.org).
+# Documentation hub links the latest scores/ranks table (JS-rendered page).
+WWL_DOCS_URL = "https://www.opendoors.org/research-advocacy/wwl-documentation/"
+# Last known direct link (fallback if the docs page shape changes).
 WWL_SCORES_PDF_URL = (
-    "https://www.opendoors.org/research-reports/wwl-documentation/"
-    "WWL2026-Table-of-Scores-and-Ranks-50-points-v2.pdf"
+    "https://cdn.sanity.io/files/c61knduu/production/"
+    "eed6cb1f37bb5a5459f49396d2d3721e757f70e2.pdf"
 )
 WWL_UK_URL = "https://www.opendoorsuk.org/persecution/world-watch-list/"
 CACHE_PATH = FETCHED / "opendoors.json"
@@ -174,6 +176,50 @@ def parse_uk_wwl_rankings(html: str) -> dict | None:
     return {"year": year, "countries": countries}
 
 
+def discover_scores_pdf_url(html: str | None) -> str | None:
+    """Find the newest "Country scores and ranks" PDF linked on the docs page.
+
+    The CMS embeds its payload with escaped quotes, so accept either form. Each
+    accordion record reads ``{"answer": [...], "question": "World Watch List 20XX"}``;
+    the table link is the first PDF mark in the answer after that label.
+    """
+    if not html:
+        return None
+    text = html.replace('\\"', '"')
+    newest: tuple[int, str] | None = None
+    for m in re.finditer(r'"question"\s*:\s*"World Watch List\s+(20\d{2})"', text):
+        start = text.rfind('"answer"', 0, m.start())
+        if start == -1:
+            continue
+        link = re.search(
+            r'"text"\s*:\s*"Country scores and ranks".{0,4000}?'
+            r'(https://[^"\s\\]+?\.pdf)',
+            text[start:m.start()],
+            re.S,
+        )
+        if not link:
+            continue
+        year = int(m.group(1))
+        if newest is None or year > newest[0]:
+            newest = (year, link.group(1))
+    return newest[1] if newest else None
+
+
+def try_scores_pdf(url: str, label: str = "scores PDF") -> dict | None:
+    """Download and parse a WWL scores/ranks PDF; ``None`` on any failure."""
+    print(f"Fetching WWL {label}...")
+    data, err = fetch_bytes(url, timeout=60, user_agent=USER_AGENT)
+    if not data:
+        print(f"  {label.capitalize()} fetch failed: {err}")
+        return None
+    parsed = parse_wwl_scores_pdf(data)
+    if parsed and len(parsed.get("countries") or {}) >= 45:
+        print(f"  Parsed {len(parsed['countries'])} countries from {label}")
+        return parsed
+    print(f"  {label.capitalize()} present but could not parse top-50 rows")
+    return None
+
+
 def try_fetch_live():
     """Return ``{"year", "countries", "source"}`` from a live Open Doors surface."""
     print("Fetching WWL main page...")
@@ -191,20 +237,30 @@ def try_fetch_live():
     except Exception as e:
         print(f"  Failed to fetch main page: {e}")
 
-    print("Fetching WWL scores PDF...")
-    data, err = fetch_bytes(WWL_SCORES_PDF_URL, timeout=60, user_agent=USER_AGENT)
-    if data:
-        parsed = parse_wwl_scores_pdf(data)
-        if parsed and len(parsed.get("countries") or {}) >= 45:
-            print(f"  Parsed {len(parsed['countries'])} countries from scores PDF")
+    print("Fetching WWL documentation page...")
+    docs_html = None
+    try:
+        docs_html = fetch_url(WWL_DOCS_URL, timeout=30)
+    except Exception as e:
+        print(f"  Documentation page fetch failed: {e}")
+
+    pdf_urls: list[str] = []
+    discovered = discover_scores_pdf_url(docs_html)
+    if discovered:
+        print(f"  Found scores table link: {discovered}")
+        pdf_urls.append(discovered)
+    if WWL_SCORES_PDF_URL not in pdf_urls:
+        pdf_urls.append(WWL_SCORES_PDF_URL)
+
+    for i, url in enumerate(pdf_urls):
+        label = "scores PDF" if i == 0 else "fallback scores PDF"
+        parsed = try_scores_pdf(url, label)
+        if parsed:
             return {
                 "year": parsed["year"],
                 "countries": parsed["countries"],
                 "source": f"Open Doors WWL {parsed['year']} scores PDF",
             }
-        print("  Scores PDF present but could not parse top-50 rows")
-    else:
-        print(f"  Scores PDF fetch failed: {err}")
 
     print("Fetching Open Doors UK WWL rankings page...")
     try:

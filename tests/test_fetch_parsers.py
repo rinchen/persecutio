@@ -31,6 +31,7 @@ from fetch_state_dept import (  # noqa: E402
     strip_tags,
 )
 from fetch_opendoors import (  # noqa: E402
+    discover_scores_pdf_url,
     normalize_wwl_country_name,
     parse_uk_wwl_rankings,
     parse_wwl_scores_text,
@@ -315,6 +316,34 @@ class TestOpenDoorsWwlParsers(unittest.TestCase):
                 "World Watch List 2026\n1 North Korea 16.667 16.667 16.667 16.667 16.667 13.889 97 1 98 -0.5"
             )
         )
+
+    @staticmethod
+    def _docs_record(year: int, url: str) -> str:
+        return (
+            '{"_key":"x","answer":[{"_type":"block","children":[{"_type":"span",'
+            '"text":"Country scores and ranks"}],"markDefs":[{"_type":"customLink",'
+            '"customLink":{"external":"%s"}}],"style":"normal"}],'
+            '"question":"World Watch List %d"}' % (url, year)
+        )
+
+    def test_discover_scores_pdf_picks_newest_year(self):
+        payload = ",".join([
+            self._docs_record(2025, "https://cdn.example.org/wwl2025.pdf"),
+            self._docs_record(2026, "https://cdn.example.org/wwl2026.pdf"),
+        ])
+        # The CMS payload is embedded with escaped quotes in the page HTML.
+        self.assertEqual(
+            discover_scores_pdf_url(payload.replace('"', '\\"')),
+            "https://cdn.example.org/wwl2026.pdf",
+        )
+
+    def test_discover_scores_pdf_ignores_linkless_markup(self):
+        html = (
+            '<script>{"name":"World Watch List 2026",'
+            '"acceptedAnswer":{"text":"Country scores and ranks"}}</script>'
+        )
+        self.assertIsNone(discover_scores_pdf_url(html))
+        self.assertIsNone(discover_scores_pdf_url(None))
 
     def test_parse_uk_rankings_list(self):
         items = "".join(f"<li>{name}</li>" for name in [
